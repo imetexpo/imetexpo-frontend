@@ -154,7 +154,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 w-full left-0 right-0 z-50 bg-black text-white">
+      <div className="fixed top-0 w-full left-0 right-0 z-50 bg-[#03193D] text-white">
 
         {/* TOP BAR */}
         <div
