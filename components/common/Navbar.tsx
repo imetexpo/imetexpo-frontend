@@ -200,10 +200,10 @@ export default function Navbar() {
                 </UTMLink>
                 <div className="hidden sm:block border-l border-white/20 pl-4">
                   <h1 className="font-[var(--font-montserrat)] text-[28px] font-semibold tracking-tight text-white leading-none">
-                    India Tyre Show
+                   22 - 24 APRIL 2027
                   </h1>
                   <p className="font-[var(--font-montserrat)] text-[12px] text-gray-300 mt-1">
-                    22–24 April 2026 • Mumbai, India
+                    Auto Cluster Exhibition Center • Pune, India
                   </p>
                 </div>
               </div>
