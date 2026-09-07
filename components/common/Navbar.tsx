@@ -127,7 +127,7 @@ export default function Navbar() {
   const showLogo = isScrolled && scrollDirection === 'down';
 
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2026-04-22T09:00:00').getTime();
+    const targetDate = new Date('2027-04-22T09:00:00').getTime();
     const diff = targetDate - Date.now();
     if (diff <= 0) return { days: 0, hours: 0, minutes: 0 };
     return {
