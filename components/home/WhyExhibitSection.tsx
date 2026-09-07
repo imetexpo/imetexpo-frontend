@@ -13,7 +13,7 @@ const reasons = [
 
 export default function WhyExhibitSection() {
   return (
-    <section className="bg-black text-white py-16 sm:py-20 lg:py-28">
+    <section className="bg-[#03193D] text-white py-16 sm:py-20 lg:py-28">
       <Container>
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-stretch">
           
