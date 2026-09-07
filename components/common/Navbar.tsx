@@ -27,7 +27,7 @@ const navItems = [
     ],
   },
   {
-    title: 'Attend',
+    title: 'Visit',
     links: [
       { text: 'Why Visit', href: '/why-visit/' },
       { text: 'Event Sectors', href: '/sectors/' },
@@ -47,6 +47,7 @@ const navItems = [
     ],
   },
   { title: 'Conference', href: '/conference/', links: [] },
+  { title: 'Awards', href: '/conference/', links: [] },
   { title: 'Contact us', href: '/contact-us/', links: [] },
   
 ];
