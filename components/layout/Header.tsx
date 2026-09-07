@@ -91,20 +91,20 @@ export default function Header() {
         </div>
 
         <div className="flex gap-3 mt-3">
-          <Link
+          {/* <Link
             href="/exhibiting-enquiry/"
             onClick={() => setIsMobileMenuOpen(false)}
             className="flex-1 bg-[#CC9808] text-white text-center py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#cc7000] transition rounded-sm"
-          >
+          > */}
             Exhibit
-          </Link>
+          {/* </Link>
           <Link
             href="/visitor-registration/"
             onClick={() => setIsMobileMenuOpen(false)}
             className="flex-1 bg-[#CC9808] text-white text-center py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#cc7000] transition rounded-sm"
           >
             Register
-          </Link>
+          </Link> */}
         </div>
       </div>
 
