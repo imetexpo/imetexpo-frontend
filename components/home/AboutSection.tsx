@@ -39,13 +39,13 @@ export default function AboutSection() {
 
             <div className="font-sans text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed space-y-4">
               <p className="text-justify font-normal">
-                For three decades, India Tyre Show has been the premier international exhibition 
+                For three decades,IndiaMethas been the premier international exhibition 
                 for tyre manufacturing and rubber technology. It brings together global tyre professionals, 
                 decision-makers, and innovators to connect, collaborate, and explore the technologies 
                 shaping the future of the industry.
               </p>
               <p className="text-justify font-normal">
-                Showcasing state-of-the-art equipment, technologies, and services, India Tyre Show helps 
+                Showcasing state-of-the-art equipment, technologies, and services,IndiaMethelps 
                 companies overcome challenges, expand into key markets, and build lasting partnerships. 
                 Whether you&apos;re exploring new opportunities or reinforcing your market presence, 
                 this is where the tyre community meets to advance the industry.

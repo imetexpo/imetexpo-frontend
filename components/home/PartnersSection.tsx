@@ -113,7 +113,7 @@ export default function PartnersSection() {
               Partners & Sponsors
             </h2>
             <p className="text-gray-600 mt-2 text-sm sm:text-base font-sans">
-              Meet our valued partners and sponsors who make India Tyre Show possible
+              Meet our valued partners and sponsors who makeIndiaMetpossible
             </p>
           </div>
         </Container>

@@ -31,7 +31,7 @@ export default function WhyExhibitSection() {
 
               <p className="font-sans text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mt-2">
                 In a market defined by rapid modernisation, localisation, and sustainability demands,
-                India Tyre Show provides direct access to decision-makers shaping the future of tyre
+               IndiaMetprovides direct access to decision-makers shaping the future of tyre
                 manufacturing and rubber technology across the globe. It&apos;s where global suppliers connect
                 with real projects, demonstrate ROI-driven technologies, and secure long-term growth opportunities.
               </p>
