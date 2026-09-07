@@ -74,10 +74,10 @@ export default function HeroSection() {
           <div className="mt-4 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-5 lg:gap-8">
             {/* Description — fixed readable font size, no vw */}
             <p className="font-sans text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl">
-              Celebrating 30 Years of Driving Mining Innovation and Business Growth.
-              MiningWorld Russia unites equipment manufacturers, technology pioneers,
-              and buyers from across the CIS to accelerate the future of mining and
-              mineral processing.
+              INDIAMET Expo connects global technology leaders, metrology experts, 
+              manufacturers, and quality professionals to discover advanced measurement, 
+              inspection, calibration, and quality solutions driving the next generation of 
+              precision manufacturing.
             </p>
 
             {/* Exhibit button */}

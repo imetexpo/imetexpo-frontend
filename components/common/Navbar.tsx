@@ -195,7 +195,7 @@ export default function Navbar() {
                   <img
                     src="/ITS_logo_white.png"
                     alt="India Tyre Show"
-                    className="h-10 sm:h-12 w-auto cursor-pointer object-contain"
+                    className="h-20 sm:h-22 w-auto cursor-pointer object-contain"
                   />
                 </UTMLink>
                 <div className="hidden sm:block border-l border-white/20 pl-4">
