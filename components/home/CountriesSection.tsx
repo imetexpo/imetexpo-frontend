@@ -22,7 +22,7 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-[#03193D]" />
       
       {/* Orange polygon overlay — inline style for clip-path */}
       <div 
