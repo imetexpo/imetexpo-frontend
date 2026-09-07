@@ -166,7 +166,7 @@ export default function Navbar() {
           }}
         >
           {/* Ticker strip */}
-          <div className="bg-[#432500] w-full">
+          <div className="bg-[#03193D] w-full">
             <Container className="flex items-center justify-end py-1.5">
               <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-white">
                 <span>
