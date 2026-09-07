@@ -199,10 +199,10 @@ export default function Navbar() {
                   />
                 </UTMLink>
                 <div className="hidden sm:block border-l border-white/20 pl-4">
-                  <h1 className="font-[var(--font-montserrat)] text-[28px] font-semibold tracking-tight text-white leading-none">
+                  <h1 className="font-[var(--font-montserrat)] text-[18px] tracking-tight text-white leading-none">
                    22 - 24 APRIL 2027
                   </h1>
-                  <p className="font-[var(--font-montserrat)] text-[12px] text-gray-300 mt-1">
+                  <p className="font-[var(--font-montserrat)] text-[18px] text-white-300 mt-1">
                     Auto Cluster Exhibition Center • Pune, India
                   </p>
                 </div>
@@ -258,7 +258,7 @@ export default function Navbar() {
                 >
                   {item.links && item.links.length > 0 ? (
                     <>
-                      <button className="flex items-center gap-1 text-sm xl:text-base hover:text-orange-500 transition-colors whitespace-nowrap py-2">
+                      <button className="flex items-center gap-1 text-sm xl:text-base hover:text-[#CC9808] transition-colors whitespace-nowrap py-2">
                         {item.title}
                         <ChevronDown
                           className={`h-3 w-3 transition-transform duration-200 ${
@@ -268,7 +268,7 @@ export default function Navbar() {
                       </button>
                       {openDropdown === item.title && (
                         <div
-                          className="absolute left-0 top-full z-50 w-56 rounded-md bg-[#1e1e1e] shadow-lg border border-gray-700"
+                          className="absolute left-0 top-full z-50 w-56 rounded-md bg-[#021533] shadow-lg border border-gray-700"
                           onMouseEnter={() => handleMouseEnter(item.title)}
                           onMouseLeave={handleMouseLeave}
                         >
@@ -277,7 +277,7 @@ export default function Navbar() {
                               <UTMLink
                                 key={link.text}
                                 href={link.href}
-                                className="block px-4 py-2 text-sm hover:bg-orange-500 hover:text-white transition-colors"
+                                className="block px-4 py-2 text-sm hover:bg-[#CC9808] hover:text-white transition-colors"
                               >
                                 {link.text}
                               </UTMLink>
@@ -289,7 +289,7 @@ export default function Navbar() {
                   ) : (
                     <UTMLink
                       href={item.href || '#'}
-                      className="text-sm xl:text-base hover:text-orange-500 transition-colors whitespace-nowrap block py-2"
+                      className="text-sm xl:text-base hover:text-[#CC9808] transition-colors whitespace-nowrap block py-2"
                     >
                       {item.title}
                     </UTMLink>
