@@ -30,7 +30,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-[-1] bg-gradient-to-t from-black via-black/50 to-transparent" />
 
       {/* Slideshow background */}
-      <div className="absolute inset-0 z-[-2] size-full bg-black">
+      <div className="absolute inset-0 z-[-2] size-full bg-[#03193D]">
         <div className="relative h-full w-full overflow-hidden">
           {slides.map((slide, index) => (
             <div

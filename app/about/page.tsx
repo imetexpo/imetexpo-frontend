@@ -174,7 +174,7 @@ export default function AboutPage() {
   
                 <div className="mt-8 sm:mt-10">
                   <Link href="/why-exhibit">
-                    <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                    <button className="bg-[#CC9808] hover: text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                       Why Exhibit
                     </button>
                   </Link>
