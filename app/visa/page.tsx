@@ -33,7 +33,7 @@ export default function VisaPage() {
           <Container className="py-16 lg:py-20">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-10 xl:gap-12">
               {/* Text Card */}
-              <div className="bg-gray-100 relative flex min-h-[500px] flex-col p-5 text-black rounded-lg lg:p-10">
+              <div className="bg-gray-100 relative flex min-h-[500px] flex-col p-5 text-[#03193D] rounded-lg lg:p-10">
                 <div className="z-10 flex flex-col gap-5">
                   <h2 className="text-3xl md:text-4xl font-bold">
                     How can our Official Travel Partner Support You?
@@ -49,7 +49,7 @@ export default function VisaPage() {
                       <Link
                         href="https://visa-russian.ru/index_eng.php"
                         target="_blank"
-                        className="text-orange-500 hover:text-black transition-colors"
+                        className="text-orange-500 hover:text-[#03193D] transition-colors"
                       >
                         <strong>Visa-Russian.ru</strong>
                       </Link>
@@ -70,7 +70,7 @@ export default function VisaPage() {
                       <Link
                         href="https://visa-russian.ru/index_eng.php"
                         target="_blank"
-                        className="text-orange-500 hover:text-black transition-colors"
+                        className="text-orange-500 hover:text-[#03193D] transition-colors"
                       >
                         <strong>Visa-Russian.ru</strong>
                       </Link>{" "}
@@ -83,7 +83,7 @@ export default function VisaPage() {
                       target="_blank"
                       className="inline-block"
                     >
-                      <button className="transition-all duration-300 overflow-hidden bg-orange-500 px-8 py-3 font-bebas text-xl text-white hover:bg-black rounded">
+                      <button className="transition-all duration-300 overflow-hidden bg-orange-500 px-8 py-3 font-bebas text-xl text-white hover:bg-[#03193D] rounded">
                         Visit our Travel Partner Website
                       </button>
                     </Link>
@@ -110,12 +110,12 @@ export default function VisaPage() {
       <div className="animated-block">
         <div className="animated-block-target">
           <Container className="py-16 lg:py-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold py-10 text-black text-center">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold py-10 text-[#03193D] text-center">
               Invitation for a Visa
             </h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-10 xl:gap-12">
               {/* Business Visa Card */}
-              <div className="bg-gray-100 relative flex min-h-[500px] flex-col p-5 text-black rounded-lg lg:p-10">
+              <div className="bg-gray-100 relative flex min-h-[500px] flex-col p-5 text-[#03193D] rounded-lg lg:p-10">
                 <div className="z-10 flex flex-col gap-5">
                   <h2 className="text-3xl md:text-4xl font-bold">
                     Business Visa for Your Visit to MiningWorld
@@ -153,7 +153,7 @@ export default function VisaPage() {
                       target="_blank"
                       className="inline-block"
                     >
-                      <button className="transition-all duration-300 overflow-hidden bg-orange-500 px-8 py-3 font-bebas text-xl text-white hover:bg-black rounded">
+                      <button className="transition-all duration-300 overflow-hidden bg-orange-500 px-8 py-3 font-bebas text-xl text-white hover:bg-[#03193D] rounded">
                         Apply Today
                       </button>
                     </Link>
@@ -162,7 +162,7 @@ export default function VisaPage() {
               </div>
 
               {/* Tourist Visa Card */}
-              <div className="bg-gray-100 relative flex min-h-[500px] flex-col p-5 text-black rounded-lg lg:p-10">
+              <div className="bg-gray-100 relative flex min-h-[500px] flex-col p-5 text-[#03193D] rounded-lg lg:p-10">
                 <div className="z-10 flex flex-col gap-5">
                   <h2 className="text-3xl md:text-4xl font-bold">
                     Tourist Visa for Your Visit to MiningWorld
@@ -196,7 +196,7 @@ export default function VisaPage() {
                       <Link
                         href="https://visa-russian.ru/"
                         target="_blank"
-                        className="text-orange-500 hover:text-black transition-colors"
+                        className="text-orange-500 hover:text-[#03193D] transition-colors"
                       >
                         Visa-Russian.ru
                       </Link>
@@ -207,7 +207,7 @@ export default function VisaPage() {
                         Phone:{" "}
                         <Link
                           href="tel:+74959358385"
-                          className="text-orange-500 hover:text-black transition-colors"
+                          className="text-orange-500 hover:text-[#03193D] transition-colors"
                         >
                           +7 (495) 935-83-85
                         </Link>
@@ -216,7 +216,7 @@ export default function VisaPage() {
                         <Link
                           href="https://api.whatsapp.com/send?phone=79035460935"
                           target="_blank"
-                          className="text-orange-500 hover:text-black transition-colors font-bold"
+                          className="text-orange-500 hover:text-[#03193D] transition-colors font-bold"
                         >
                           WhatsApp
                         </Link>
@@ -225,7 +225,7 @@ export default function VisaPage() {
                         Email:{" "}
                         <Link
                           href="mailto:visa@visa-russian.ru"
-                          className="text-orange-500 hover:text-black transition-colors font-bold"
+                          className="text-orange-500 hover:text-[#03193D] transition-colors font-bold"
                         >
                           visa@visa-russian.ru
                         </Link>

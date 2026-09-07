@@ -61,7 +61,7 @@ export default function DelegatesPackagesPage() {
       {/* PAGE HEADER */}
       <div className="bg-orange-50 pt-18 pb-16">
         <SectionContainer>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-black">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#03193D]">
             Become a Delegate
           </h1>
           <p className="mt-4 max-w-4xl text-lg text-gray-600">

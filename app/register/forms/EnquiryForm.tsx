@@ -181,7 +181,7 @@ export default function EnquiryForm() {
           Your visitor registration for ITS Tyre Expo 2026 has been submitted successfully.
           A confirmation email has been sent to your registered email address.
         </p>
-        <Link href="/" className="inline-block bg-[#CC9808] text-white px-6 py-2 rounded-lg hover:bg-black transition">
+        <Link href="/" className="inline-block bg-[#CC9808] text-white px-6 py-2 rounded-lg hover:bg-[#03193D] transition">
           Back to Home
         </Link>
       </div>
@@ -416,7 +416,7 @@ export default function EnquiryForm() {
       <button
         type="submit"
         disabled={loading || !termsAccepted}
-        className="w-full bg-[#CC9808] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-[#CC9808] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-[#03193D] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? (
           <span className="flex items-center justify-center gap-2">

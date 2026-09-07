@@ -310,7 +310,7 @@ export default function Navbar() {
               <UTMLink
                 href="/login/"
                 className="bg-[#CC9808] font-bold uppercase tracking-wider text-white px-4 py-2 text-xs 
-                  hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap inline-block rounded-sm"
+                  hover:bg-white hover:text-[#03193D] transition-all duration-300 whitespace-nowrap inline-block rounded-sm"
               >
                 Login
               </UTMLink>

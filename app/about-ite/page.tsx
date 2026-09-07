@@ -18,7 +18,7 @@ export default function AboutITEPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-black">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#03193D]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -274,7 +274,7 @@ export default function AboutITEPage() {
               <Container>
                 <div className="lg:col-span-3">
                   <div className="flex flex-col gap-4 sm:gap-5">
-                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black"><br />About Us</h2>
+                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]"><br />About Us</h2>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700">
                       ITE Group is a business events organiser that has been operating in the Asian market since 1991. Every year, we host more than 30 of the largest industry events, including exhibitions, summits, and conferences. Powered by the Connect digital platform, the ITE ecosystem offers unique hybrid solutions for industry communities across Asia, the ASEAN countries, and beyond.
                       <br /><br />
@@ -294,7 +294,7 @@ export default function AboutITEPage() {
                           <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#CC9808]">
                             {stat.value}
                           </h3>
-                          <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold uppercase text-black">
+                          <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold uppercase text-[#03193D]">
                             {stat.label}
                           </p>
                         </div>
@@ -312,7 +312,7 @@ export default function AboutITEPage() {
               <Container>
                 <div className="mb-6 sm:mb-8 flex flex-col lg:flex-row justify-between lg:items-end gap-4">
                   <div className="lg:basis-2/3">
-                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black">Working for Your Success</h3>
+                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">Working for Your Success</h3>
                     <p className="mt-3 text-sm sm:text-base md:text-lg text-gray-700">
                       At ITE Group, our goal is to empower businesses by creating impactful events that drive industry growth and foster valuable connections. We are dedicated to supporting our clients' success and facilitating meaningful opportunities for professionals worldwide.
                     </p>
@@ -334,7 +334,7 @@ export default function AboutITEPage() {
                         />
                       </div>
                       <div className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
-                        <h4 className="text-lg sm:text-xl font-bold text-black">{item.title}</h4>
+                        <h4 className="text-lg sm:text-xl font-bold text-[#03193D]">{item.title}</h4>
                         <p className="text-sm text-gray-600 leading-relaxed">{item.content}</p>
                       </div>
                     </div>
@@ -350,7 +350,7 @@ export default function AboutITEPage() {
               <Container>
                 <div className="flex w-full items-end justify-between gap-6 sm:gap-10 max-lg:flex-wrap lg:gap-20 2xl:gap-40">
                   <div>
-                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black">Our Exhibitions at a Glance</h3>
+                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">Our Exhibitions at a Glance</h3>
                     <p className="mt-3 text-sm sm:text-base text-gray-700">
                       Each year, we organise and host over 30 leading industry events across key sectors, including exhibitions, summits, and conferences.
                       <br /><br />
@@ -374,13 +374,13 @@ export default function AboutITEPage() {
                           }}
                         />
                       </div>
-                      <h4 className="text-lg sm:text-xl font-bold text-black">{exhibition.title}</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-[#03193D]">{exhibition.title}</h4>
                       <p className="text-sm sm:text-base text-gray-600 line-clamp-2">{exhibition.description}</p>
                       <p className="text-xs sm:text-sm">Start Date: <span className="font-bold">{exhibition.startDate}</span></p>
                       <p className="text-xs sm:text-sm">End Date: <span className="font-bold">{exhibition.endDate}</span></p>
                       <p className="text-xs sm:text-sm">Venue: <span className="font-bold line-clamp-2">{exhibition.venue}</span></p>
                       <Link href={exhibition.siteLink} target="_blank" className="mt-auto block">
-                        <button className="flex-center group gap-2 font-bebas text-xl sm:text-2xl text-[#CC9808] transition-all hover:text-black">
+                        <button className="flex-center group gap-2 font-bebas text-xl sm:text-2xl text-[#CC9808] transition-all hover:text-[#03193D]">
                           Visit Website
                           <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                             <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>

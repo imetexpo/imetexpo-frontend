@@ -93,7 +93,7 @@ export default function CompanyCard({ company, onProductBrochureClick }: Company
         {/* Content */}
         <div className="p-4 sm:p-5 flex flex-col justify-between flex-1">
           {/* Company Name */}
-          <h3 className="font-bebas text-xl sm:text-2xl text-black mb-3 leading-tight line-clamp-2 uppercase font-bold">
+          <h3 className="font-bebas text-xl sm:text-2xl text-[#03193D] mb-3 leading-tight line-clamp-2 uppercase font-bold">
             {company.name}
           </h3>
 
@@ -105,7 +105,7 @@ export default function CompanyCard({ company, onProductBrochureClick }: Company
             </div>
             <div className="flex items-center gap-2">
               <MapPin size={14} className="text-gray-400 flex-shrink-0" />
-              <span className="font-bold text-black">Stand #{company.stand}</span>
+              <span className="font-bold text-[#03193D]">Stand #{company.stand}</span>
             </div>
             <div className="flex items-center gap-2">
               <Globe size={14} className="text-gray-400 flex-shrink-0" />
@@ -120,7 +120,7 @@ export default function CompanyCard({ company, onProductBrochureClick }: Company
           >
             <button
               onClick={handleBrochureClick}
-              className="px-3 py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 border border-gray-300 rounded-sm hover:bg-black hover:text-white hover:border-black transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
+              className="px-3 py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-800 border border-gray-300 rounded-sm hover:bg-[#03193D] hover:text-white hover:border-black transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <ExternalLink size={12} />
               <span>Details</span>
@@ -128,7 +128,7 @@ export default function CompanyCard({ company, onProductBrochureClick }: Company
 
             <button
               onClick={handleConnectClick}
-              className="px-3 py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white bg-[#CC9808] rounded-sm hover:bg-black transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
+              className="px-3 py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white bg-[#CC9808] rounded-sm hover:bg-[#03193D] transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <MessageCircle size={12} />
               <span>Connect</span>

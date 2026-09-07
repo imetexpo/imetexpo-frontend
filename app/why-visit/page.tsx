@@ -20,7 +20,7 @@ export default function WhyVisitPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-black">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#03193D]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -134,7 +134,7 @@ export default function WhyVisitPage() {
               <div className="w-full grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
                 <div className="order-2 lg:order-1">
                   <br /><br />
-                  <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-black">
+                  <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#03193D]">
                     The Heart of the Tyre Manufacturing Industry
                   </h2>
                   <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
@@ -145,7 +145,7 @@ export default function WhyVisitPage() {
                       <React.Fragment key={idx}>
                         <div className="text-center flex-1 min-w-[80px]">
                           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">{stat.value}</h3>
-                          <p className="text-[10px] sm:text-xs tracking-wider text-black font-semibold mt-1 uppercase">{stat.label}</p>
+                          <p className="text-[10px] sm:text-xs tracking-wider text-[#03193D] font-semibold mt-1 uppercase">{stat.label}</p>
                         </div>
                         {idx < stats.length - 1 && (
                           <div className="hidden md:block h-12 w-px bg-gray-200"></div>
@@ -155,7 +155,7 @@ export default function WhyVisitPage() {
                   </div>
                   <div className="mt-8 sm:mt-10">
                     <Link href="/visitor-registration">
-                      <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         Get your Badge Today
                       </button>
                     </Link>
@@ -185,7 +185,7 @@ export default function WhyVisitPage() {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="absolute inset-0 bg-black/50"></div>
+              <div className="absolute inset-0 bg-[#03193D]/50"></div>
               <Container>
                 <div className="relative z-10 flex flex-col gap-4 sm:gap-5">
                   <p className="text-sm sm:text-base font-bold text-[#CC9808]">
@@ -195,7 +195,7 @@ export default function WhyVisitPage() {
                     Where Tyre Manufacturing's Key Players Meet and Opportunities Take Shape
                   </h3>
                   <Link href="/exhibition-directory" target="_blank">
-                    <button className="inline-block bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                    <button className="inline-block bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                       Explore the Exhibitors List
                     </button>
                   </Link>
@@ -215,7 +215,7 @@ export default function WhyVisitPage() {
                   <div className="animated-block-target">
                 <div className="grid items-stretch gap-6 sm:gap-8 lg:grid-cols-2">
                       <div className={`flex flex-col justify-center bg-[#FCF8F3] border border-gray-100 p-6 sm:p-8 lg:p-10 rounded-sm shadow-sm ${isReverse ? "lg:order-2" : "lg:order-1"}`}>
-                        <h4 className="font-bebas text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+                        <h4 className="font-bebas text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#03193D] leading-tight">
                           {item.title}
                         </h4>
                         <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-700 leading-relaxed font-sans max-w-[600px]">
@@ -248,7 +248,7 @@ export default function WhyVisitPage() {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute inset-0 bg-[#03193D]/60"></div>
               <Container>
                 <div className="relative z-10 grid items-center gap-8 sm:gap-10 md:grid-cols-12">
                   <div className="flex justify-center md:col-span-4">
@@ -266,7 +266,7 @@ export default function WhyVisitPage() {
                       Make sure you grab your copy of the event brochure to learn more about the show and explore your participation opportunities.
                     </p>
                     <Link href="/event-brochure">
-                      <button className="bg-[#CC9808] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#CC9808] hover:bg-white hover:text-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         Download Now
                       </button>
                     </Link>
@@ -283,7 +283,7 @@ export default function WhyVisitPage() {
             <div className="animated-block-target">
               <div className="w-full grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
                 <div className="order-2 lg:order-1">
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-black">
+                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#03193D]">
                     Discover the Key Business Areas of Our Attendees
                   </h3>
                   <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
@@ -294,7 +294,7 @@ export default function WhyVisitPage() {
                       <React.Fragment key={idx}>
                         <div className="text-center flex-1 min-w-[80px]">
                           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">{area.percentage}</h3>
-                          <p className="text-[10px] sm:text-xs tracking-wider text-black font-semibold mt-1 uppercase">{area.label}</p>
+                          <p className="text-[10px] sm:text-xs tracking-wider text-[#03193D] font-semibold mt-1 uppercase">{area.label}</p>
                         </div>
                         {idx < businessAreas.length - 1 && (
                           <div className="hidden md:block h-12 w-px bg-gray-200"></div>
@@ -304,7 +304,7 @@ export default function WhyVisitPage() {
                   </div>
                   <div className="mt-8 sm:mt-10">
                     <Link href="/post-show-report">
-                      <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         Download Your Post-Show Report
                       </button>
                     </Link>
@@ -327,7 +327,7 @@ export default function WhyVisitPage() {
         <Container>
           <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
-              <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black">
+              <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">
                 Who is ITS Tyre Expo for?
               </h3>
               <div className="mt-8 sm:mt-10 grid gap-5 sm:gap-6 md:grid-cols-2">
@@ -337,7 +337,7 @@ export default function WhyVisitPage() {
                     alt="Visitor Industries"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/60"></div>
+                  <div className="absolute inset-0 bg-[#03193D]/60"></div>
                   <div className="relative z-10 p-6 sm:p-8">
                     <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg text-white font-sans">
                       {visitorIndustries.map((industry, idx) => (
@@ -352,7 +352,7 @@ export default function WhyVisitPage() {
                     alt="Supplier Industries"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/60"></div>
+                  <div className="absolute inset-0 bg-[#03193D]/60"></div>
                   <div className="relative z-10 p-6 sm:p-8">
                     <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg text-white font-sans">
                       {supplierIndustries.map((industry, idx) => (
@@ -370,7 +370,7 @@ export default function WhyVisitPage() {
         <Container>
           <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
-              <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black">
+              <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">
                 Have a Look at Our Past Exhibitors
               </h3>
               <div className="mt-8 sm:mt-10 bg-[#FCF8F3] border border-gray-100 p-6 sm:p-8 rounded-sm shadow-sm">
@@ -383,7 +383,7 @@ export default function WhyVisitPage() {
                 </div>
                 <div className="mt-6 sm:mt-8 flex justify-center">
                   <Link href="https://catalogue.ite-expo.ru/en-GB/exhibitorlist.aspx?project_id=541" target="_blank">
-                    <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                    <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                       View the Exhibitor List
                     </button>
                   </Link>
@@ -402,7 +402,7 @@ export default function WhyVisitPage() {
             <div className="animated-block-target">
               <div className="mb-6 sm:mb-8 flex flex-col lg:flex-row justify-between lg:items-end gap-4">
                 <div className="lg:basis-2/3">
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black">
+                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">
                     Beyond an Exhibition
                   </h3>
                   <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -420,13 +420,13 @@ export default function WhyVisitPage() {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                      <div className="absolute inset-0 bg-[#03193D]/20 group-hover:bg-[#03193D]/40 transition"></div>
                     </div>
                     <div className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
-                      <h4 className="text-lg sm:text-xl font-bold text-black">{item.title}</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-[#03193D]">{item.title}</h4>
                       <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">{item.description}</p>
                       <Link href={item.buttonLink}>
-                        <button className="bg-[#CC9808] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           {item.buttonText}
                         </button>
                       </Link>
@@ -442,17 +442,17 @@ export default function WhyVisitPage() {
         <Container>
           <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
-              <div className="w-full flex flex-col text-black">
-                <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black">
+              <div className="w-full flex flex-col text-[#03193D]">
+                <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">
                   When and Where
                 </h3>
                 <div className="mt-4 sm:mt-5 grid gap-5 sm:gap-6 lg:grid-cols-2 font-sans">
                   <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 shadow-sm">
-                    <p className="mb-2 font-bold text-sm sm:text-base text-black">Venue</p>
+                    <p className="mb-2 font-bold text-sm sm:text-base text-[#03193D]">Venue</p>
                     <h4 className="text-lg sm:text-xl font-bold text-gray-800">BITEC, Bangkok, Thailand</h4>
                   </div>
                   <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 shadow-sm">
-                    <p className="mb-2 font-bold text-sm sm:text-base text-black">Opening Hours</p>
+                    <p className="mb-2 font-bold text-sm sm:text-base text-[#03193D]">Opening Hours</p>
                     <h4 className="text-lg sm:text-xl font-bold text-gray-800">15 October 2026: 10:00 - 18:00</h4>
                     <h4 className="text-lg sm:text-xl font-bold text-gray-800">16 October 2026: 10:00 - 18:00</h4>
                     <h4 className="text-lg sm:text-xl font-bold text-gray-800">17 October 2026: 10:00 - 16:00</h4>
@@ -474,7 +474,7 @@ export default function WhyVisitPage() {
         {/* Quick Navigation */}
         <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
           <div className="animated-block-target">
-            <div className="border-t-8 border-orange-600 bg-black py-12 sm:py-16 lg:py-20 text-white">
+            <div className="border-t-8 border-orange-600 bg-[#03193D] py-12 sm:py-16 lg:py-20 text-white">
               <Container>
                 <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                   Quick Navigation

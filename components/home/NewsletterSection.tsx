@@ -5,7 +5,7 @@ import Container from '../ui/container';
 
 export default function NewsletterSection() {
   return (
-    <section className="bg-black py-16 sm:py-20 lg:py-24 text-white border-t border-white/10">
+    <section className="bg-[#03193D] py-16 sm:py-20 lg:py-24 text-white border-t border-white/10">
       <Container>
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10">
           <div className="max-w-[900px] text-center lg:text-left">
@@ -20,7 +20,7 @@ export default function NewsletterSection() {
           <div className="flex-shrink-0">
             <Button
               href="/newsletter/"
-              className="bg-[#CC9808] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-full sm:w-auto text-center"
+              className="bg-[#CC9808] hover:bg-white hover:text-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-full sm:w-auto text-center"
             >
               SIGN UP TODAY
             </Button>

@@ -147,12 +147,12 @@ export default function ExhibitorForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="font-bebas text-4xl text-black mb-3 uppercase tracking-wide">Thank You!</h2>
+        <h2 className="font-bebas text-4xl text-[#03193D] mb-3 uppercase tracking-wide">Thank You!</h2>
         <p className="text-sm text-gray-600 mb-6 leading-relaxed">
           Your enquiry has been submitted successfully. Our team will contact you shortly.
         </p>
         <Link href="/">
-          <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+          <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
             Back to Home
           </button>
         </Link>
@@ -356,7 +356,7 @@ export default function ExhibitorForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-[#CC9808] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+          className="w-full bg-[#CC9808] hover:bg-[#03193D] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
           {isSubmitting ? "Submitting..." : "Submit Enquiry"}
         </button>

@@ -173,7 +173,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* Mobile Overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-black/50 lg:hidden" onClick={() => setMobileOpen(false)} />
+        <div className="fixed inset-0 z-40 bg-[#03193D]/50 lg:hidden" onClick={() => setMobileOpen(false)} />
       )}
 
       {/* Main Content */}

@@ -19,7 +19,7 @@ export default function PlanYourTravelPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-black">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#03193D]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -225,7 +225,7 @@ export default function PlanYourTravelPage() {
             <Container className="py-10">
               <div className="mb-5 flex flex-col lg:flex-row justify-between lg:items-start gap-6">
                 <div className="lg:w-3/4">
-                  <h1 className="font-bebas text-5xl text-black md:text-6xl lg:text-7xl uppercase">
+                  <h1 className="font-bebas text-5xl text-[#03193D] md:text-6xl lg:text-7xl uppercase">
                     Blend business opportunity and Bangkok's vibrant culture when you visit <span className="text-[#CC9808]">ITS Tyre Expo</span>
                   </h1>
                   <p className="mt-5 text-lg text-gray-700 leading-relaxed font-sans">
@@ -242,14 +242,14 @@ export default function PlanYourTravelPage() {
           <div className="animated-block-target">
             <Container>
               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 border-b border-gray-200 pb-8 mb-10">
-                <h2 className="font-bebas text-4xl text-black md:text-5xl uppercase">
+                <h2 className="font-bebas text-4xl text-[#03193D] md:text-5xl uppercase">
                   Travel <span className="text-[#CC9808]">Information</span> & Guidelines
                 </h2>
                 <div className="inline-flex bg-[#FCF8F3] border border-gray-150 p-1 rounded-sm gap-2">
                   <button
                     onClick={() => setActiveTab("exhibitor")}
                     className={`px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer ${
-                      activeTab === "exhibitor" ? "bg-[#CC9808] text-white" : "bg-transparent text-black hover:text-[#CC9808]"
+                      activeTab === "exhibitor" ? "bg-[#CC9808] text-white" : "bg-transparent text-[#03193D] hover:text-[#CC9808]"
                     }`}
                   >
                     For Exhibitors
@@ -257,7 +257,7 @@ export default function PlanYourTravelPage() {
                   <button
                     onClick={() => setActiveTab("visitor")}
                     className={`px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer ${
-                      activeTab === "visitor" ? "bg-[#CC9808] text-white" : "bg-transparent text-black hover:text-[#CC9808]"
+                      activeTab === "visitor" ? "bg-[#CC9808] text-white" : "bg-transparent text-[#03193D] hover:text-[#CC9808]"
                     }`}
                   >
                     For Visitors
@@ -281,7 +281,7 @@ export default function PlanYourTravelPage() {
                         />
                       </div>
                       <div className="flex-1 text-center md:text-left space-y-2">
-                        <h4 className="font-bebas text-2xl font-bold text-black uppercase tracking-wide">
+                        <h4 className="font-bebas text-2xl font-bold text-[#03193D] uppercase tracking-wide">
                           {item.title}
                         </h4>
                         <p className="text-sm text-gray-600 leading-relaxed">
@@ -290,7 +290,7 @@ export default function PlanYourTravelPage() {
                       </div>
                       <div className="shrink-0 mt-4 md:mt-0">
                         <Link href={item.buttonLink}>
-                          <button className="bg-[#CC9808] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                          <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                             {item.buttonText}
                           </button>
                         </Link>
@@ -308,7 +308,7 @@ export default function PlanYourTravelPage() {
           <div className="animated-block-target">
             <Container>
               <div className="border-l-4 border-[#CC9808] pl-6 mb-10">
-                <h2 className="font-bebas text-4xl text-black md:text-5xl uppercase">
+                <h2 className="font-bebas text-4xl text-[#03193D] md:text-5xl uppercase">
                   Hotel Accommodation Deals
                 </h2>
                 <p className="mt-2 text-sm font-bold text-[#CC9808] uppercase tracking-wider">
@@ -332,7 +332,7 @@ export default function PlanYourTravelPage() {
                         />
                       </div>
                       <div className="mt-4">
-                        <h4 className="font-bebas text-2xl font-bold text-black uppercase tracking-wide line-clamp-1">
+                        <h4 className="font-bebas text-2xl font-bold text-[#03193D] uppercase tracking-wide line-clamp-1">
                           {hotel.name}
                         </h4>
                         <p className="mt-3 text-sm text-gray-600 leading-relaxed line-clamp-3">
@@ -342,12 +342,12 @@ export default function PlanYourTravelPage() {
                     </div>
                     <div className="mt-6 flex gap-3 pt-4 border-t border-gray-150">
                       <Link href={hotel.bookLink} target="_blank" className="flex-1">
-                        <button className="w-full bg-[#CC9808] hover:bg-black text-white py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="w-full bg-[#CC9808] hover:bg-[#03193D] text-white py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Book Room
                         </button>
                       </Link>
                       <Link href={hotel.mapLink} target="_blank" className="flex-1">
-                        <button className="w-full border border-[#CC9808] text-[#CC9808] hover:bg-black hover:text-white hover:border-black py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="w-full border border-[#CC9808] text-[#CC9808] hover:bg-[#03193D] hover:text-white hover:border-black py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Location
                         </button>
                       </Link>
@@ -366,7 +366,7 @@ export default function PlanYourTravelPage() {
         {/* Quick Navigation */}
         <div className="animated-block mt-20">
           <div className="animated-block-target">
-            <div className="border-t border-[#CC9808] bg-black py-16 text-white">
+            <div className="border-t border-[#CC9808] bg-[#03193D] py-16 text-white">
               <Container>
                 <h2 className="font-bebas text-5xl md:text-6xl uppercase tracking-wider text-center lg:text-left">
                   Quick Navigation

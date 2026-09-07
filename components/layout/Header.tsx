@@ -61,7 +61,7 @@ export default function Header() {
       </div>
 
       {/* ✅ Mobile Header (starts right below the brown ticker at top-[42px]) */}
-      <div className="lg:hidden bg-black border-b border-white/10 px-4 py-3 fixed top-[42px] left-0 w-full z-50 shadow-lg">
+      <div className="lg:hidden bg-[#03193D] border-b border-white/10 px-4 py-3 fixed top-[42px] left-0 w-full z-50 shadow-lg">
         <div className="flex items-center justify-between">
           <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
             <Image
@@ -77,7 +77,7 @@ export default function Header() {
             <Link
               href="/login/"
               className="bg-[#2A2A2A] text-white px-3 py-1 text-xs border border-white/20
-              hover:bg-[#CC9808] hover:text-black transition-all duration-300 rounded-sm"
+              hover:bg-[#CC9808] hover:text-[#03193D] transition-all duration-300 rounded-sm"
             >
               Login
             </Link>

@@ -80,7 +80,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <>
       {/* Overlay */}
       <div 
-        className="fixed inset-0 bg-black/60 z-40 lg:hidden transition-opacity duration-300" 
+        className="fixed inset-0 bg-[#03193D]/60 z-40 lg:hidden transition-opacity duration-300" 
         onClick={onClose} 
       />
       
@@ -152,7 +152,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <Link
             href="/exhibiting-enquiry/"
             onClick={onClose}
-            className="block w-full text-center bg-[#CC9808] border border-[#CC9808] hover:bg-black text-white py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm font-bebas"
+            className="block w-full text-center bg-[#CC9808] border border-[#CC9808] hover:bg-[#03193D] text-white py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm font-bebas"
           >
             Exhibit
           </Link>

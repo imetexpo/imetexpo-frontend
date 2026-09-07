@@ -39,7 +39,7 @@ export default function WhyExhibitSection() {
 
             <Link
               href="/why-exhibit/"
-              className="inline-block bg-[#CC9808] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 w-fit text-center"
+              className="inline-block bg-[#CC9808] hover:bg-white hover:text-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 w-fit text-center"
             >
               Explore Benefits of Participating
             </Link>

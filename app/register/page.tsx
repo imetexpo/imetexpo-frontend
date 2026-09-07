@@ -82,7 +82,7 @@ function RegisterPageContent() {
             <p className="text-[#CC9808] font-sans text-[14px] font-semibold uppercase tracking-[1.5px]">
               ITS Tyre Expo 2026
             </p>
-            <h1 className="font-bebas font-bold text-[38px] lg:text-[48px] leading-[1.15] tracking-[1px] uppercase text-black mt-2">
+            <h1 className="font-bebas font-bold text-[38px] lg:text-[48px] leading-[1.15] tracking-[1px] uppercase text-[#03193D] mt-2">
               {hero.title}
             </h1>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mt-4">{hero.subtitle}</p>

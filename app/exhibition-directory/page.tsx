@@ -116,7 +116,7 @@ export default function CompanyDirectory() {
           <main className="pb-16">
             <Container>
               <div className="border-b border-gray-200 pb-6 mb-8 mt-4">
-            <h1 className="font-bebas text-5xl sm:text-6xl text-black uppercase tracking-wide">
+            <h1 className="font-bebas text-5xl sm:text-6xl text-[#03193D] uppercase tracking-wide">
               <br />
               Exhibitor <span className="text-[#CC9808]">Directory</span>
             </h1>
@@ -289,7 +289,7 @@ export default function CompanyDirectory() {
               <div className="text-gray-400 mb-4">
                 <Search size={48} className="mx-auto" />
               </div>
-              <h3 className="font-bebas text-3xl text-black mb-2 uppercase tracking-wide">No companies found</h3>
+              <h3 className="font-bebas text-3xl text-[#03193D] mb-2 uppercase tracking-wide">No companies found</h3>
               <p className="text-sm text-gray-600 max-w-xs mx-auto leading-relaxed">
                 Try adjusting your search or filter to find what you're looking for.
               </p>
@@ -299,7 +299,7 @@ export default function CompanyDirectory() {
                   setSelectedLetter(null)
                   setCurrentPage(1)
                 }}
-                className="mt-6 bg-[#CC9808] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer"
+                className="mt-6 bg-[#CC9808] hover:bg-[#03193D] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer"
               >
                 Clear all filters
               </button>

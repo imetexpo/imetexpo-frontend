@@ -33,7 +33,7 @@ export default function AboutSection() {
               About India Tyre Show
             </p>
 
-            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-black leading-tight uppercase tracking-tight">
+            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#03193D] leading-tight uppercase tracking-tight">
               POWERING THE FUTURE OF TYRE INDUSTRY
             </h2>
 
@@ -59,7 +59,7 @@ export default function AboutSection() {
             <div className="mt-4 sm:mt-5 lg:mt-6">
               <Button
                 href="/about-indiatyreshow/"
-                className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 inline-block rounded-sm"
+                className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 inline-block rounded-sm"
               >
                 Learn More
               </Button>

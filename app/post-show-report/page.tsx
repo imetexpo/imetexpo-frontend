@@ -216,10 +216,10 @@ export default function PostShowReportPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="font-bebas text-4xl text-black mb-3 uppercase tracking-wide">Thank You!</h2>
+            <h2 className="font-bebas text-4xl text-[#03193D] mb-3 uppercase tracking-wide">Thank You!</h2>
             <p className="text-sm text-gray-655 mb-6 leading-relaxed">Your post-show report has been sent to your email address.</p>
             <Link href="/">
-              <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+              <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
                 Back to Home
               </button>
             </Link>
@@ -242,7 +242,7 @@ export default function PostShowReportPage() {
                   Post-Show Report
                 </p>
                 
-                <h1 className="font-bebas text-5xl sm:text-6xl leading-[1.05] tracking-tight uppercase text-black">
+                <h1 className="font-bebas text-5xl sm:text-6xl leading-[1.05] tracking-tight uppercase text-[#03193D]">
                   ITS Tyre Expo <span className="text-[#CC9808]">Post-Show Report</span>
                 </h1>
               </div>
@@ -267,7 +267,7 @@ export default function PostShowReportPage() {
 
               {/* WHY DOWNLOAD */}
               <div className="space-y-4 pt-4 border-t border-gray-200">
-                <h3 className="font-bebas text-2xl text-black uppercase font-bold">
+                <h3 className="font-bebas text-2xl text-[#03193D] uppercase font-bold">
                   Why Download the Report:
                 </h3>
                 <ul className="text-xs text-gray-655 space-y-2.5">
@@ -290,7 +290,7 @@ export default function PostShowReportPage() {
             {/* RIGHT SECTION - Form */}
             <div className="bg-[#FCF8F3] border border-gray-100 rounded-sm p-6 md:p-8 shadow-sm">
               <div className="mb-6">
-                <h2 className="text-black font-bebas text-3xl font-bold uppercase tracking-wide">
+                <h2 className="text-[#03193D] font-bebas text-3xl font-bold uppercase tracking-wide">
                   Download Post-Show <span className="text-[#CC9808]">Report</span>
                 </h2>
                 <p className="text-xs text-gray-600 font-sans">Fill in the details to download the report from our previous show.</p>
@@ -426,7 +426,7 @@ export default function PostShowReportPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#CC9808] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="w-full bg-[#CC9808] hover:bg-[#03193D] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
                     {isSubmitting ? 'Submitting...' : 'DOWNLOAD REPORT'}
                   </button>

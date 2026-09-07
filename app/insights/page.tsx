@@ -84,10 +84,10 @@ export default function InsightsPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="font-bebas text-4xl text-black mb-3 uppercase tracking-wide">Thank You!</h2>
+            <h2 className="font-bebas text-4xl text-[#03193D] mb-3 uppercase tracking-wide">Thank You!</h2>
             <p className="text-sm text-gray-600 mb-6 leading-relaxed">Your report has been sent to your email address.</p>
             <Link href="/">
-              <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+              <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
                 Back to Home
               </button>
             </Link>
@@ -110,7 +110,7 @@ export default function InsightsPage() {
                   Explore Insights
                 </p>
                 
-                <h1 className="font-bebas text-5xl sm:text-6xl leading-[1.05] tracking-tight uppercase text-black">
+                <h1 className="font-bebas text-5xl sm:text-6xl leading-[1.05] tracking-tight uppercase text-[#03193D]">
                   Unlock Market <span className="text-[#CC9808]">Opportunities</span>
                 </h1>
               </div>
@@ -141,7 +141,7 @@ export default function InsightsPage() {
                       ✓
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-black mb-1 font-sans">
+                      <h4 className="text-sm font-bold text-[#03193D] mb-1 font-sans">
                         {item.title}
                       </h4>
                       <p className="text-xs text-gray-650 leading-relaxed font-sans">
@@ -156,7 +156,7 @@ export default function InsightsPage() {
             {/* RIGHT SECTION - FORM */}
             <div className="bg-[#FCF8F3] border border-gray-100 rounded-sm p-6 md:p-8 shadow-sm">
               <div className="mb-6">
-                <h3 className="text-black font-bebas text-3xl mb-1 uppercase tracking-wide font-bold">
+                <h3 className="text-[#03193D] font-bebas text-3xl mb-1 uppercase tracking-wide font-bold">
                   Get The Free <span className="text-[#CC9808]">Market Report</span>
                 </h3>
                 <p className="text-xs text-gray-600 font-sans">One step closer to unlocking exclusive market insights.</p>
@@ -250,7 +250,7 @@ export default function InsightsPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#CC9808] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="w-full bg-[#CC9808] hover:bg-[#03193D] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit Request'}
                   </button>

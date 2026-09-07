@@ -166,7 +166,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
             {/* Mobile Sidebar */}
-            {sidebarOpen && <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm lg:hidden" onClick={() => setSidebarOpen(false)} />}
+            {sidebarOpen && <div className="fixed inset-0 z-50 bg-[#03193D]/80 backdrop-blur-sm lg:hidden" onClick={() => setSidebarOpen(false)} />}
             <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-gradient-to-b from-gray-900 to-gray-800 border-r border-gray-700 transform transition-all duration-300 lg:hidden ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="px-6 py-5 flex items-center justify-between border-b border-gray-700">
                     <div className="flex items-center gap-3">

@@ -232,7 +232,7 @@ export default function FurnitureRequirementsPage() {
                     {item.category}
                   </div>
                   {item.stockStatus === 'out_of_stock' && (
-                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-[#03193D]/50 flex items-center justify-center">
                       <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Out of Stock</span>
                     </div>
                   )}

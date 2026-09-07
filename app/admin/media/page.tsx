@@ -107,7 +107,7 @@ export default function MediaPage() {
                                 </div>
                                 <p className="text-xs text-gray-500 mt-1">{item.category}</p>
                             </div>
-                            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-3">
+                            <div className="absolute inset-0 bg-[#03193D]/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-3">
                                 <button className="p-2 bg-white rounded-full hover:bg-gray-100">
                                     <Download size={16} className="text-gray-800" />
                                 </button>

@@ -103,12 +103,12 @@ function HeroSection() {
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
                                     <Link href="/visitor-registration">
-                                        <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+                                        <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
                                             Become a Delegate
                                         </button>
                                     </Link>
                                     <Link href="/become-partner">
-                                        <button className="border border-white hover:bg-white hover:text-black text-white px-8 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer bg-transparent">
+                                        <button className="border border-white hover:bg-white hover:text-[#03193D] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer bg-transparent">
                                             Become a Partner
                                         </button>
                                     </Link>
@@ -139,7 +139,7 @@ function AboutSection() {
                         <div className="order-2 lg:order-1 space-y-6">
                           <div className="space-y-3">
                             <p className="text-[#CC9808] text-xs font-bold uppercase tracking-wider">About The Conference</p>
-                            <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl leading-tight text-black uppercase">
+                            <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl leading-tight text-[#03193D] uppercase">
                                 Where <span className="text-[#CC9808]">Innovation</span> Meets <span className="text-[#CC9808]">Excellence</span>
                             </h2>
                           </div>
@@ -205,7 +205,7 @@ function SpeakersSection() {
                 <div className="animated-block-target">
                     <div className="text-center mb-10 max-w-2xl mx-auto space-y-3">
                         <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Speakers</p>
-                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
+                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase">
                             Industry <span className="text-[#CC9808]">Experts</span>
                         </h2>
                         <p className="text-sm text-gray-650 leading-relaxed font-sans">
@@ -238,7 +238,7 @@ function SpeakersSection() {
                                           </div>
                                       </div>
                                       <div className="p-5 font-sans">
-                                          <h3 className="font-bebas text-2xl text-black group-hover:text-[#CC9808] transition-colors uppercase font-bold">
+                                          <h3 className="font-bebas text-2xl text-[#03193D] group-hover:text-[#CC9808] transition-colors uppercase font-bold">
                                               {speaker.name}
                                           </h3>
                                           <p className="text-[#CC9808] text-xs font-bold uppercase tracking-wide mt-1">{speaker.title}</p>
@@ -267,7 +267,7 @@ function ConferenceProgramme() {
                     <Container>
                         <div className="text-center mb-8 space-y-3">
                             <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Schedule</p>
-                            <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
+                            <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase">
                                 Conference <span className="text-[#CC9808]">Programme</span>
                             </h2>
                         </div>
@@ -289,7 +289,7 @@ function ConferenceProgramme() {
 
                         <div className="bg-white border border-gray-100 rounded-sm p-6 sm:p-8 shadow-sm">
                             <div className="mb-6 pb-4 border-b border-gray-200">
-                                <h3 className="font-bebas text-2xl text-black uppercase font-bold">{selectedDay.day}</h3>
+                                <h3 className="font-bebas text-2xl text-[#03193D] uppercase font-bold">{selectedDay.day}</h3>
                                 <p className="mt-1 text-xs font-bold text-[#CC9808] uppercase tracking-wider">{selectedDay.description}</p>
                             </div>
 
@@ -299,7 +299,7 @@ function ConferenceProgramme() {
                                         <div className="grid grid-cols-1 md:grid-cols-[150px_1fr] gap-3 md:gap-6 items-start font-sans">
                                             <div className="text-[#CC9808] font-bold text-xs uppercase tracking-wider pt-0.5">{session.time}</div>
                                             <div className="space-y-2">
-                                                <h4 className="text-base sm:text-lg font-bold text-black group-hover:text-[#CC9808] transition-colors uppercase font-sans">
+                                                <h4 className="text-base sm:text-lg font-bold text-[#03193D] group-hover:text-[#CC9808] transition-colors uppercase font-sans">
                                                     {session.title}
                                                 </h4>
                                                 {session.description && (
@@ -351,7 +351,7 @@ function WhyAttendSection() {
                 <div className="animated-block-target">
                     <div className="text-center mb-10 space-y-3">
                         <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Why Attend</p>
-                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
+                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase">
                             Why Attend <span className="text-[#CC9808]">ITS Tyre Expo 2026</span>
                         </h2>
                     </div>
@@ -385,7 +385,7 @@ function BecomeDelegate() {
                 <div className="animated-block-target">
                     <div className="text-center mb-10 space-y-3">
                         <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Registration</p>
-                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
+                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase">
                             Become a <span className="text-[#CC9808]">Delegate</span>
                         </h2>
                         <p className="text-xs font-bold text-gray-505 uppercase tracking-wide">Prices include GST</p>
@@ -396,7 +396,7 @@ function BecomeDelegate() {
                             <div key={idx} className="relative flex flex-col justify-between overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300">
                                 <div>
                                     <div className="text-center mb-6 border-b border-gray-200 pb-4">
-                                        <h3 className="font-bebas text-2xl text-black uppercase font-bold">{pkg.title}</h3>
+                                        <h3 className="font-bebas text-2xl text-[#03193D] uppercase font-bold">{pkg.title}</h3>
                                         <div className="mt-2 text-4xl font-bebas text-[#CC9808] font-bold">{pkg.price}</div>
                                     </div>
                                     <ul className="space-y-3 mb-8 font-sans">
@@ -408,7 +408,7 @@ function BecomeDelegate() {
                                         ))}
                                     </ul>
                                 </div>
-                                <button className="w-full bg-[#CC9808] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+                                <button className="w-full bg-[#CC9808] hover:bg-[#03193D] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
                                     REGISTER NOW
                                 </button>
                             </div>
@@ -430,12 +430,12 @@ function VenueSection() {
                         <div className="order-2 lg:order-1 space-y-6">
                           <div className="space-y-3">
                             <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Venue</p>
-                            <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase leading-tight">
+                            <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase leading-tight">
                                 Event <span className="text-[#CC9808]">Location</span>
                             </h2>
                           </div>
                           <div>
-                              <h3 className="text-lg font-bold text-black uppercase font-sans">Auto Cluster Exhibition Centre</h3>
+                              <h3 className="text-lg font-bold text-[#03193D] uppercase font-sans">Auto Cluster Exhibition Centre</h3>
                               <p className="mt-2 text-sm text-gray-600 leading-relaxed font-sans">
                                   Chinchwad East, Old Mumbai - Pune Hwy, MIDC, Chinchwad,<br />
                                   Pimpri-Chinchwad, Maharashtra 411019, India
@@ -445,21 +445,21 @@ function VenueSection() {
                               <div className="flex items-center gap-3 p-3 bg-[#FCF8F3] border border-gray-100 rounded-sm">
                                   <span className="text-2xl">✈️</span>
                                   <div>
-                                      <span className="font-bold text-xs uppercase tracking-wider text-black">From Airport:</span>
+                                      <span className="font-bold text-xs uppercase tracking-wider text-[#03193D]">From Airport:</span>
                                       <span className="text-gray-650 text-xs font-medium ml-2">15 km, 30 minutes</span>
                                   </div>
                               </div>
                               <div className="flex items-center gap-3 p-3 bg-[#FCF8F3] border border-gray-100 rounded-sm">
                                   <span className="text-2xl">🚂</span>
                                   <div>
-                                      <span className="font-bold text-xs uppercase tracking-wider text-black">From Railway Station:</span>
+                                      <span className="font-bold text-xs uppercase tracking-wider text-[#03193D]">From Railway Station:</span>
                                       <span className="text-gray-650 text-xs font-medium ml-2">8 km, 20 minutes</span>
                                   </div>
                               </div>
                               <div className="flex items-center gap-3 p-3 bg-[#FCF8F3] border border-gray-100 rounded-sm">
                                   <span className="text-2xl">🏨</span>
                                   <div>
-                                      <span className="font-bold text-xs uppercase tracking-wider text-black">Nearby Hotels:</span>
+                                      <span className="font-bold text-xs uppercase tracking-wider text-[#03193D]">Nearby Hotels:</span>
                                       <span className="text-gray-650 text-xs font-medium ml-2">Within 2 km radius</span>
                                   </div>
                               </div>
@@ -488,7 +488,7 @@ function OrganizerSection() {
                 <div className="animated-block-target">
                     <div className="text-center mb-10 space-y-3">
                         <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Organizer</p>
-                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
+                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase">
                             Behind the <span className="text-[#CC9808]">Event</span>
                         </h2>
                     </div>
@@ -502,7 +502,7 @@ function OrganizerSection() {
                             </p>
                         </div>
                         <div className="relative flex flex-col justify-between overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 shadow-sm">
-                            <h3 className="font-bebas text-2xl text-black uppercase font-bold">Contact Information</h3>
+                            <h3 className="font-bebas text-2xl text-[#03193D] uppercase font-bold">Contact Information</h3>
                             <div className="mt-3 space-y-2 text-xs text-gray-650 leading-relaxed font-semibold">
                                 <p>📧 info@tyre-expo.com</p>
                                 <p>📞 +91 1234567890</p>
@@ -525,7 +525,7 @@ function Contacts() {
                     <Container>
                         <div className="text-center mb-10 space-y-3">
                             <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Get In Touch</p>
-                            <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
+                            <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase">
                                 Contact <span className="text-[#CC9808]">Information</span>
                             </h2>
                         </div>
@@ -535,7 +535,7 @@ function Contacts() {
                                 <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-gray-50 border border-gray-150 mb-4">
                                     <span className="text-2xl">🤝</span>
                                 </div>
-                                <h3 className="font-bebas text-2xl text-black uppercase font-bold">For Participation & Partnership</h3>
+                                <h3 className="font-bebas text-2xl text-[#03193D] uppercase font-bold">For Participation & Partnership</h3>
                                 <div className="mt-3 space-y-1.5 text-xs text-gray-650 font-semibold">
                                     <p>📧 partnership@tyre-expo.com</p>
                                     <p>📞 +91 9876543210</p>
@@ -545,7 +545,7 @@ function Contacts() {
                                 <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-gray-50 border border-gray-150 mb-4">
                                     <span className="text-2xl">🎤</span>
                                 </div>
-                                <h3 className="font-bebas text-2xl text-black uppercase font-bold">For Speaking Opportunities</h3>
+                                <h3 className="font-bebas text-2xl text-[#03193D] uppercase font-bold">For Speaking Opportunities</h3>
                                 <div className="mt-3 space-y-1.5 text-xs text-gray-650 font-semibold">
                                     <p>📧 speakers@tyre-expo.com</p>
                                     <p>📞 +91 9876543211</p>
@@ -569,7 +569,7 @@ function FAQ() {
                 <div className="animated-block-target">
                     <div className="text-center mb-10 space-y-3">
                         <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">FAQ</p>
-                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
+                        <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase">
                             Frequently Asked <span className="text-[#CC9808]">Questions</span>
                         </h2>
                     </div>
@@ -583,7 +583,7 @@ function FAQ() {
                                         onClick={() => setOpenIndex(isOpen ? null : index)}
                                         className="flex w-full items-center justify-between p-4 sm:p-5 text-left transition-all hover:bg-gray-50 cursor-pointer"
                                     >
-                                        <h3 className="text-base font-bold text-black pr-4 uppercase">{item.question}</h3>
+                                        <h3 className="text-base font-bold text-[#03193D] pr-4 uppercase">{item.question}</h3>
                                         <div className="relative shrink-0">
                                             <svg
                                                 width="20"

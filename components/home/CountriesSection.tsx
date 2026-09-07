@@ -45,7 +45,7 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
           Explore the 2026 Exhibitor List
         </Link>
 
-        <div className="mt-8 sm:mt-10 lg:mt-12 bg-black/75 backdrop-blur-md border border-white/10 rounded-sm px-6 py-6 flex flex-wrap gap-6 sm:gap-8 items-center justify-center md:justify-start">
+        <div className="mt-8 sm:mt-10 lg:mt-12 bg-[#03193D]/75 backdrop-blur-md border border-white/10 rounded-sm px-6 py-6 flex flex-wrap gap-6 sm:gap-8 items-center justify-center md:justify-start">
           {countries.map((country) => (
             <div key={country.name} className="flex items-center gap-3">
               <Image

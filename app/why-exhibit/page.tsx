@@ -106,7 +106,7 @@ export default function WhyExhibitPage() {
                   <div className="lg:col-span-5">
                     <div className="flex flex-col gap-5">
                       <p className="font-bold text-[#CC9808]"><br /><br /> Your Gateway to Tyre Manufacturing Growth in ASEAN</p>
-                      <h2 className="font-bebas text-6xl text-black md:text-7xl">Powering Progress in the Global Rubber & Tyre Industry</h2>
+                      <h2 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Powering Progress in the Global Rubber & Tyre Industry</h2>
                       <p className="text-lg text-gray-700">
                         As the global tyre industry shifts toward sustainability, automation, and high-performance materials, Southeast Asia's tyre manufacturing sector is experiencing unprecedented growth. ITS Tyre Expo connects you directly with the region's leading tyre manufacturers, rubber processors, OEMs, and government agencies driving this transformation.
                       </p>
@@ -114,24 +114,24 @@ export default function WhyExhibitPage() {
                     <div className="mt-10 flex flex-wrap gap-8 2xl:gap-16">
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
                         <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">10th</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-black font-sans">Edition</p>
+                        <p className="text-sm font-semibold tracking-wider uppercase text-[#03193D] font-sans">Edition</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
                         <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">8,500+</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-black font-sans">Trade Visitors</p>
+                        <p className="text-sm font-semibold tracking-wider uppercase text-[#03193D] font-sans">Trade Visitors</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
                         <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">350+</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-black font-sans">Exhibitors</p>
+                        <p className="text-sm font-semibold tracking-wider uppercase text-[#03193D] font-sans">Exhibitors</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center font-bebas last-of-type:border-none lg:border-r lg:pr-8 2xl:pr-16">
                         <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">60+</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-black font-sans">Conference Speakers</p>
+                        <p className="text-sm font-semibold tracking-wider uppercase text-[#03193D] font-sans">Conference Speakers</p>
                       </div>
                     </div>
                     <div className="mt-10">
                       <Link href="/about-its-tyre-expo">
-                        <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           About ITS Tyre Expo
                         </button>
                       </Link>
@@ -147,7 +147,7 @@ export default function WhyExhibitPage() {
             <div className="animated-block-target">
               <Container>
                 <div className="grid gap-5">
-                  <h2 className="font-bebas text-6xl text-black md:text-7xl">Why Exhibit at ITS Tyre Expo</h2>
+                  <h2 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Why Exhibit at ITS Tyre Expo</h2>
                   <p className="text-lg text-gray-700">
                     Exhibiting at ITS Tyre Expo puts you at the center of Southeast Asia's fastest-growing tyre manufacturing hub. Connect directly with over 8,500 professionals with real purchasing power, showcase your solutions to a USD 45 billion industry, and expand your network across 50+ countries. This is your chance to generate high-quality leads, forge valuable partnerships, and position your brand as a leader in the region's rapidly modernizing rubber and tyre sector.
                   </p>
@@ -179,13 +179,13 @@ export default function WhyExhibitPage() {
                       <div className="flex items-center justify-center h-16 w-16 rounded-sm bg-[#FCF8F3] border border-gray-100 shadow-sm">
                         <img src={benefit.icon} alt={benefit.title} className="h-8 w-8 object-contain" />
                       </div>
-                      <h3 className="font-bebas text-2xl text-black mt-2 font-bold">{benefit.title}</h3>
+                      <h3 className="font-bebas text-2xl text-[#03193D] mt-2 font-bold">{benefit.title}</h3>
                       <p className="text-sm text-gray-600 leading-relaxed">{benefit.desc}</p>
                     </div>
                   ))}
                 </div>
                 <Link href="/exhibiting-enquiry">
-                  <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Book A Stand</button>
+                  <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Book A Stand</button>
                 </Link>
               </Container>
             </div>
@@ -201,7 +201,7 @@ export default function WhyExhibitPage() {
                   <div className="lg:col-span-3">
                     <div className="flex flex-col gap-5">
                       <p className="font-bold text-orange-600">Visitor Breakdown</p>
-                      <h3 className="font-bebas text-6xl text-black md:text-7xl">Connecting You to Global Tyre Industry Decision-Makers</h3>
+                      <h3 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Connecting You to Global Tyre Industry Decision-Makers</h3>
                       <p className="text-lg text-gray-700">
                         From tyre manufacturing executives and procurement specialists to R&D engineers and distributors, our visitors are key players driving growth, innovation, and modernization across the ASEAN rubber industry.
                       </p>
@@ -209,24 +209,24 @@ export default function WhyExhibitPage() {
                     <div className="mt-10 grid grid-cols-2 gap-6 bg-[#FCF8F3] border border-gray-100 p-8 rounded-sm font-sans">
                       <div className="flex w-fit flex-col">
                         <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">48%</h3>
-                        <p className="text-sm font-semibold uppercase text-black">First Time Exhibitors</p>
+                        <p className="text-sm font-semibold uppercase text-[#03193D]">First Time Exhibitors</p>
                       </div>
                       <div className="flex w-fit flex-col">
                         <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">52%</h3>
-                        <p className="text-sm font-semibold uppercase text-black">First Time Visitors</p>
+                        <p className="text-sm font-semibold uppercase text-[#03193D]">First Time Visitors</p>
                       </div>
                       <div className="flex w-fit flex-col">
                         <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">35%</h3>
-                        <p className="text-sm font-semibold uppercase text-black">With Budgets Over $5 Million</p>
+                        <p className="text-sm font-semibold uppercase text-[#03193D]">With Budgets Over $5 Million</p>
                       </div>
                       <div className="flex w-fit flex-col">
                         <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">28%</h3>
-                        <p className="text-sm font-semibold uppercase text-black">C-Level Decision Makers</p>
+                        <p className="text-sm font-semibold uppercase text-[#03193D]">C-Level Decision Makers</p>
                       </div>
                     </div>
                     <div className="mt-10">
                       <Link href="/exhibiting-enquiry">
-                        <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Enquire to Exhibit</button>
+                        <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Enquire to Exhibit</button>
                       </Link>
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export default function WhyExhibitPage() {
                   />
                 </div>
                 {/* DARK OVERLAY */}
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-[#03193D]/60"></div>
                 {/* CONTENT */}
                 <Container className="relative z-10">
                   <div className="grid items-center gap-10 md:grid-cols-12">
@@ -277,7 +277,7 @@ export default function WhyExhibitPage() {
                         about the show and explore your participation opportunities.
                       </p>
                       <Link href="/event-brochure">
-                        <button className="bg-[#CC9808] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#CC9808] hover:bg-white hover:text-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Download Now
                         </button>
                       </Link>
@@ -292,7 +292,7 @@ export default function WhyExhibitPage() {
           <div className="animated-block mt-20">
             <div className="animated-block-target">
               <Container>
-                <h2 className="mb-10 font-bebas text-6xl text-black md:text-7xl">Why Southeast Asia?</h2>
+                <h2 className="mb-10 font-bebas text-6xl text-[#03193D] md:text-7xl">Why Southeast Asia?</h2>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
@@ -315,7 +315,7 @@ export default function WhyExhibitPage() {
                       <div className="absolute inset-0">
                         <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
                       </div>
-                      <div className="absolute inset-0 bg-black/60"></div>
+                      <div className="absolute inset-0 bg-[#03193D]/60"></div>
                       <div className="relative z-10 flex h-full flex-col justify-end gap-4 p-6 font-sans">
                         <h3 className="text-xl font-bold leading-tight">{item.title}</h3>
                         <p className="text-sm text-gray-300 leading-relaxed">{item.desc}</p>
@@ -334,7 +334,7 @@ export default function WhyExhibitPage() {
                 <div className="mb-10 flex justify-between max-lg:flex-col lg:items-end">
                   <div className="lg:basis-2/3">
                     <p className="font-bold text-[#CC9808]">Testimonials</p>
-                    <h3 className="my-3 font-bebas text-6xl text-black md:text-7xl">Why the Industry Chooses ITS Tyre Expo</h3>
+                    <h3 className="my-3 font-bebas text-6xl text-[#03193D] md:text-7xl">Why the Industry Chooses ITS Tyre Expo</h3>
                   </div>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -351,7 +351,7 @@ export default function WhyExhibitPage() {
                           {testimonial.name.charAt(0)}
                         </div>
                         <div>
-                          <h5 className="text-sm font-bold text-black">{testimonial.name}</h5>
+                          <h5 className="text-sm font-bold text-[#03193D]">{testimonial.name}</h5>
                           <p className="text-xs text-gray-500 leading-tight mt-1">{testimonial.title}<br />{testimonial.company}</p>
                         </div>
                       </div>
@@ -365,16 +365,16 @@ export default function WhyExhibitPage() {
           {/* When and Where Section */}
           <div className="animated-block mt-20">
             <div className="animated-block-target">
-              <Container className="text-black">
+              <Container className="text-[#03193D]">
                 <h2 className="mb-10 font-bebas text-6xl md:text-7xl">When and Where</h2>
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 font-sans">
-                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-black">Opening Hours</p>
+                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#03193D]">Opening Hours</p>
                     <h4 className="text-lg font-bold text-gray-800">22, 23 April 2026: 10:00 - 18:00</h4>
                     <h4 className="mt-2 text-lg font-bold text-gray-800">24 April 2026: 10:00 - 16:00</h4>
                   </div>
                   <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 font-sans">
-                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-black">Venue</p>
+                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#03193D]">Venue</p>
                     <h4 className="text-lg font-bold text-gray-800">Pavilion 1 & 2, Crocus Expo IEC, Moscow, Russia</h4>
                   </div>
                 </div>
@@ -395,7 +395,7 @@ export default function WhyExhibitPage() {
           {/* Quick Navigation Footer */}
           <div className="animated-block mt-20">
             <div className="animated-block-target">
-              <div className="border-t-8 border-[#CC9808] bg-black py-20 text-white">
+              <div className="border-t-8 border-[#CC9808] bg-[#03193D] py-20 text-white">
                 <Container>
                   <h2 className="font-bebas text-6xl md:text-7xl">Quick Navigation</h2>
                   <div className="mt-16 grid grid-cols-2 gap-y-10 md:grid-cols-5">
