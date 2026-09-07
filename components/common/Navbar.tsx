@@ -211,13 +211,13 @@ export default function Navbar() {
               <div className="hidden sm:flex gap-3">
                 <UTMLink
                   href="/exhibiting-enquiry/"
-                  className="bg-[#CC9808] hover:bg-[#d67300] text-white text-center px-6 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm"
+                  className="bg-[#CC9808] hover:bg-[#021533] text-white text-center px-6 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm"
                 >
                   Exhibit
                 </UTMLink>
                 <UTMLink
                   href="/visitor-registration/"
-                  className="bg-[#CC9808] hover:bg-[#d67300] text-white text-center px-6 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm"
+                  className="bg-[#CC9808] hover:bg-[#021533] text-white text-center px-6 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm"
                 >
                   Register
                 </UTMLink>
