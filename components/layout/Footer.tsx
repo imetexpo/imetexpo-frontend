@@ -100,18 +100,18 @@ export default function Footer() {
             <div className="text-left md:text-right text-[10px] text-neutral-500 font-medium">
               Powered By{' '}
               <a
-                href="https://prismetic.com/"
+                href="https://maxxmedia.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold text-white uppercase hover:text-[#CC9808] transition-colors"
               >
-                PRISMETIC
+                Maxx Business Media Pvt. Ltd.,
               </a>
             </div>
           </div>
 
           <div className="mt-6 flex flex-col gap-4 border-t border-neutral-900 pt-6 text-[11px] text-neutral-500 md:flex-row md:justify-between md:items-center">
-            <p>© India Tyre Show 2026. All Rights Reserved.</p>
+            <p>© IndiaMet 2027. All Rights Reserved.</p>
             <div className="flex items-center gap-3 flex-wrap">
               <Link href="#" className="hover:text-white transition-colors">Terms of Use</Link>
               <span className="text-neutral-800">|</span>
