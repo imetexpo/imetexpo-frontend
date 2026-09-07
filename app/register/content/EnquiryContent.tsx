@@ -37,7 +37,7 @@ export default function EnquiryContent() {
         </ul>
       </div>
 
-      <div className="bg-gradient-to-r from-[#CC9808] to-orange-600 rounded-2xl p-6 text-white">
+      <div className="bg-gradient-to-r from-[#CC9808] to-[#03193D] rounded-2xl p-6 text-white">
         <h3 className="font-bebas text-2xl mb-2">Free Registration</h3>
         <p className="text-sm text-white/90 mb-4">
           Register now to get free entry to the exhibition and conference sessions.

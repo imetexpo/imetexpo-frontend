@@ -123,7 +123,6 @@ export default function ExhibitorDetailPage() {
       </div>
     );
   }
-
   if (error || !company) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center font-sans">
