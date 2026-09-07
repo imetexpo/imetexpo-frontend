@@ -48,8 +48,10 @@ const navItems = [
       { text: 'Media Gallery', href: '/media-gallery/' },
     ],
   },
-  { title: 'Contact us', href: '/contact-us/', links: [] },
+  
   { title: 'Conference', href: '/conference/', links: [] },
+  { title: 'Awards', href: '/conference/', links: [] },
+  { title: 'Contact us', href: '/contact-us/', links: [] },
 ];
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
