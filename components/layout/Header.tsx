@@ -11,24 +11,24 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Dynamic countdown timer calculation for Mobile header
-  const calculateTimeLeft = () => {
-    const targetDate = new Date('2027-04-22T09:00:00').getTime();
-    const diff = targetDate - Date.now();
-    if (diff <= 0) return { days: 0, hours: 0, minutes: 0 };
-    return {
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((diff / (1000 * 60)) % 60),
-    };
-  };
+  // const calculateTimeLeft = () => {
+  //   const targetDate = new Date('2027-04-22T09:00:00').getTime();
+  //   const diff = targetDate - Date.now();
+  //   if (diff <= 0) return { days: 0, hours: 0, minutes: 0 };
+  //   return {
+  //     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+  //     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+  //     minutes: Math.floor((diff / (1000 * 60)) % 60),
+  //   };
+  // };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000);
-    return () => clearInterval(timer);
-  }, []);
+  // const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  // useEffect(() => {
+  //   const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
-  return (
+  // return (
     <>
       {/* ✅ Desktop — Navbar handles ALL scroll logic internally */}
       <div className="hidden lg:block fixed top-0 left-0 w-full z-100">
@@ -42,20 +42,20 @@ export default function Header() {
             22–24 April 2027 • Auto Cluster Exhibition Center, Pune, India
           </div>
           <div className="flex items-center gap-2.5 justify-center mt-0.5">
-            <span>
+            {/* <span>
               <strong className="text-[11px] font-bold text-[#CC9808]">{String(timeLeft.days).padStart(2, '0')}</strong>{' '}
               <span className="text-gray-305 text-[10px]">Days</span>
-            </span>
-            <span className="text-white/20">|</span>
-            <span>
-              <strong className="text-[11px] font-bold text-[#CC9808]">{String(timeLeft.hours).padStart(2, '0')}</strong>{' '}
+            </span> */}
+            {/* <span className="text-white/20">|</span>
+            <span> */}
+              {/* <strong className="text-[11px] font-bold text-[#CC9808]">{String(timeLeft.hours).padStart(2, '0')}</strong>{' '}
               <span className="text-gray-305 text-[10px]">Hours</span>
-            </span>
-            <span className="text-white/20">|</span>
+            </span> */}
+            {/* <span className="text-white/20">|</span>
             <span>
               <strong className="text-[11px] font-bold text-[#CC9808]">{String(timeLeft.minutes).padStart(2, '0')}</strong>{' '}
               <span className="text-gray-305 text-[10px]">Mins</span>
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
@@ -117,5 +117,5 @@ export default function Header() {
         onClose={() => setIsMobileMenuOpen(false)}
       />
     </>
-  );
+  // );
 }
