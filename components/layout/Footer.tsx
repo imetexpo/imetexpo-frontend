@@ -18,8 +18,8 @@ export default function Footer() {
               height={50}
               className="object-contain"
             />
-            <p className="text-xs text-gray-500 font-sans mt-2">
-              The premier international exhibition for tyre manufacturing and rubber technology.
+            <p className="text-xs text-gray-100 font-sans mt-2">
+              The Premier Exhibition for Metrology, Measurement & Quality Technology.
             </p>
           </div>
 
@@ -30,10 +30,10 @@ export default function Footer() {
                 Contacts and Support
               </h5>
               <a
-                href="mailto:miningsupportrussia@ite.group"
+                href="mailto:pad@maxxmedia.in"
                 className="hover:text-[#CC9808] transition-colors text-sm"
               >
-                miningsupportrussia@ite.group
+                pad@maxxmedia.in
               </a>
             </div>
 
@@ -42,7 +42,7 @@ export default function Footer() {
                 Hotline
               </h5>
               <a href="tel:+74957995585" className="hover:text-[#CC9808] transition-colors text-sm">
-                +7-(495)-799-55-85
+                +91 91483 19993
               </a>
             </div>
 
@@ -74,8 +74,7 @@ export default function Footer() {
               Exhibition Venue
             </h5>
             <p className="text-sm leading-relaxed">
-              Crocus Expo IEC, Russia, Moscow, Pavilion 1
-            </p>
+              Auto Cluster Exhibition Center, Pune, India            </p>
           </div>
         </div>
       </Container>
@@ -86,12 +85,12 @@ export default function Footer() {
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             {/* Organised By */}
             <div className="flex items-center gap-3">
-              <span className="text-[10px] uppercase tracking-wider text-neutral-500 font-bold">Organised By</span>
+              <span className="text-[20px] uppercase tracking-wider text-neutral-100 font-bold">Organised By</span>
               <Image
                 src="/maxx_logo (1).png"
                 alt="ITE"
-                width={70}
-                height={25}
+                width={270}
+                height={75}
                 className="object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
               />
             </div>
