@@ -96,7 +96,7 @@ export default function Footer() {
             </div>
 
             {/* Powered By */}
-            <div className="text-left md:text-right text-[10px] text-neutral-500 font-medium">
+            {/* <div className="text-left md:text-right text-[10px] text-neutral-500 font-medium">
               Powered By{' '}
               <a
                 href="https://maxxmedia.in/"
@@ -107,7 +107,7 @@ export default function Footer() {
                 Maxx Business Media Pvt. Ltd.,
               </a>
             </div>
-          </div>
+          </div> */}
 
           <div className="mt-6 flex flex-col gap-4 border-t border-neutral-900 pt-6 text-[18px] text-neutral-500 md:flex-row md:justify-between md:items-center">
             <p>© IndiaMet 2027. All Rights Reserved.</p>
