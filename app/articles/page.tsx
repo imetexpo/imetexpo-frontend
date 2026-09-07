@@ -46,7 +46,7 @@ export default function ArticlesPage() {
         <Container>
           <div className="border-b border-gray-250 pb-6 mb-8 mt-10">
             <h1 className="font-bebas text-5xl sm:text-6xl text-black uppercase tracking-wide">
-              Industry <span className="text-[#F08400]">Insights & News</span>
+              Industry <span className="text-[#CC9808]">Insights & News</span>
             </h1>
             <p className="mt-2 text-sm text-gray-650 font-sans">
               Stay up-to-date with technical breakthroughs, market trends, and updates from the tyre expo team.
@@ -63,7 +63,7 @@ export default function ArticlesPage() {
                 setSearchTerm(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] text-sm bg-white"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] text-sm bg-white"
             />
           </div>
 
@@ -90,7 +90,7 @@ export default function ArticlesPage() {
                     <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
                       {formatDate(article.publishedDate)}
                     </p>
-                    <h2 className="font-bebas text-2xl text-black line-clamp-2 group-hover:text-[#F08400] transition-colors duration-300 uppercase font-bold">
+                    <h2 className="font-bebas text-2xl text-black line-clamp-2 group-hover:text-[#CC9808] transition-colors duration-300 uppercase font-bold">
                       {article.title}
                     </h2>
                     {article.excerpt && (
@@ -101,7 +101,7 @@ export default function ArticlesPage() {
                   </div>
                 </div>
                 <div className="p-5 pt-0 mt-auto">
-                  <span className="text-xs font-bold text-[#F08400] group-hover:text-black transition-colors uppercase tracking-wider flex items-center gap-1">
+                  <span className="text-xs font-bold text-[#CC9808] group-hover:text-black transition-colors uppercase tracking-wider flex items-center gap-1">
                     Read Article →
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export default function ArticlesPage() {
                     onClick={() => handlePageChange(page)}
                     className={`w-8 h-8 rounded-sm text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                       currentPage === page
-                        ? "bg-[#F08400] text-white border border-[#F08400]"
+                        ? "bg-[#CC9808] text-white border border-[#CC9808]"
                         : "bg-white border border-gray-300 text-slate-700 hover:bg-slate-50"
                     }`}
                   >

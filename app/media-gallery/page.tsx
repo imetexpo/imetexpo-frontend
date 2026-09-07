@@ -121,7 +121,7 @@ export default function MediaGalleryPage() {
         <Container>
           <div className="border-b border-gray-250 pb-6 mb-8 mt-10">
             <h1 className="font-bebas text-5xl sm:text-6xl text-black uppercase tracking-wide">
-              A Visual Journey Through <span className="text-[#F08400]">ITS Tyre Expo</span>
+              A Visual Journey Through <span className="text-[#CC9808]">ITS Tyre Expo</span>
             </h1>
             <p className="mt-2 text-sm text-gray-650 font-sans">
               Discover the stories behind the images that have shaped ITS Tyre Expo's legacy as a key event in the tyre manufacturing and rubber processing sector.
@@ -148,7 +148,7 @@ export default function MediaGalleryPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition duration-300"></div>
                   {/* Category Title */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="font-bebas text-2xl text-white uppercase group-hover:text-[#F08400] transition-colors duration-300 font-bold tracking-wide">
+                    <h3 className="font-bebas text-2xl text-white uppercase group-hover:text-[#CC9808] transition-colors duration-300 font-bold tracking-wide">
                       {category.title}
                     </h3>
                   </div>

@@ -143,7 +143,7 @@ export default function ExhibitorForm() {
     return (
       <div className="bg-white rounded-sm border border-gray-100 p-8 max-w-md mx-auto text-center shadow-sm">
         <div className="w-16 h-16 bg-[#FCF8F3] border border-gray-150 rounded-sm flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-[#F08400]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8 text-[#CC9808]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -152,7 +152,7 @@ export default function ExhibitorForm() {
           Your enquiry has been submitted successfully. Our team will contact you shortly.
         </p>
         <Link href="/">
-          <button className="bg-[#F08400] hover:bg-black text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+          <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
             Back to Home
           </button>
         </Link>
@@ -176,7 +176,7 @@ export default function ExhibitorForm() {
                   value={option}
                   checked={formData.interestLevel === option}
                   onChange={handleChange}
-                  className="w-4 h-4 text-[#F08400] focus:ring-[#F08400]"
+                  className="w-4 h-4 text-[#CC9808] focus:ring-[#CC9808]"
                   required
                 />
                 <span className="text-gray-700 text-sm">{option}</span>
@@ -197,7 +197,7 @@ export default function ExhibitorForm() {
             value={formData.firstName}
             onChange={handleChange}
             placeholder="First name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -211,7 +211,7 @@ export default function ExhibitorForm() {
             value={formData.lastName}
             onChange={handleChange}
             placeholder="Last name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -227,7 +227,7 @@ export default function ExhibitorForm() {
           value={formData.companyName}
           onChange={handleChange}
           placeholder="Company name"
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
           required
         />
       </div>
@@ -242,7 +242,7 @@ export default function ExhibitorForm() {
           value={formData.companyWebsite}
           onChange={handleChange}
           placeholder="www.yourcompany.com"
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
           required
         />
       </div>
@@ -258,7 +258,7 @@ export default function ExhibitorForm() {
             value={formData.jobTitle}
             onChange={handleChange}
             placeholder="Job title"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -272,7 +272,7 @@ export default function ExhibitorForm() {
             value={formData.country}
             onChange={handleChange}
             placeholder="Country"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -289,7 +289,7 @@ export default function ExhibitorForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="+1 234 567 8900"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -303,7 +303,7 @@ export default function ExhibitorForm() {
             value={formData.workEmail}
             onChange={handleChange}
             placeholder="email@company.com"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -317,7 +317,7 @@ export default function ExhibitorForm() {
           name="productSector"
           value={formData.productSector}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm cursor-pointer"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm cursor-pointer"
           required
         >
           <option value="">Select a product sector</option>
@@ -339,7 +339,7 @@ export default function ExhibitorForm() {
             name="agreeToTerms"
             checked={formData.agreeToTerms}
             onChange={handleChange}
-            className="w-4 h-4 text-[#F08400] focus:ring-[#F08400] rounded-sm border-gray-300 cursor-pointer"
+            className="w-4 h-4 text-[#CC9808] focus:ring-[#CC9808] rounded-sm border-gray-300 cursor-pointer"
             required
           />
           <span className="text-sm text-gray-650">I agree to fill out this form</span>
@@ -356,7 +356,7 @@ export default function ExhibitorForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-[#F08400] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+          className="w-full bg-[#CC9808] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
           {isSubmitting ? "Submitting..." : "Submit Enquiry"}
         </button>
@@ -366,7 +366,7 @@ export default function ExhibitorForm() {
         By submitting this form, you agree to receive marketing communications,
         updates, and promotional materials from us. You can unsubscribe anytime.
         For more information on how we handle your data, please refer to our{" "}
-        <Link href="/privacy-policy" className="text-[#F08400] hover:underline ml-1">
+        <Link href="/privacy-policy" className="text-[#CC9808] hover:underline ml-1">
           Privacy Policy
         </Link>
         .

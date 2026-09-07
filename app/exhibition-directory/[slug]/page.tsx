@@ -117,7 +117,7 @@ export default function ExhibitorDetailPage() {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center font-sans">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-[#F08400] mx-auto mb-4" />
+          <Loader2 className="w-12 h-12 animate-spin text-[#CC9808] mx-auto mb-4" />
           <p className="text-slate-650 text-sm">Loading company details...</p>
         </div>
       </div>
@@ -132,7 +132,7 @@ export default function ExhibitorDetailPage() {
           <p className="text-slate-700 text-sm mb-4">{error || 'Company not found'}</p>
           <button
             onClick={() => router.push('/exhibition-directory')}
-            className="bg-[#F08400] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer"
+            className="bg-[#CC9808] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer"
           >
             Back to Directory
           </button>
@@ -172,7 +172,7 @@ export default function ExhibitorDetailPage() {
 
               <Link
                 href="/exhibition-directory"
-                className="px-6 py-2 bg-[#F08400] hover:bg-black text-white rounded-sm font-bold text-xs uppercase tracking-wider transition-colors"
+                className="px-6 py-2 bg-[#CC9808] hover:bg-black text-white rounded-sm font-bold text-xs uppercase tracking-wider transition-colors"
               >
                 BACK TO EXHIBITOR LIST
               </Link>
@@ -234,7 +234,7 @@ export default function ExhibitorDetailPage() {
                     router.push('/exhibition-directory');
                     setShowMobileMenu(false);
                   }}
-                  className="w-full py-3 px-4 bg-[#F08400] text-white rounded-sm font-bold text-xs uppercase tracking-wider cursor-pointer hover:bg-black transition-colors"
+                  className="w-full py-3 px-4 bg-[#CC9808] text-white rounded-sm font-bold text-xs uppercase tracking-wider cursor-pointer hover:bg-black transition-colors"
                 >
                   Back to Exhibitor List
                 </button>
@@ -346,7 +346,7 @@ export default function ExhibitorDetailPage() {
                 <div>
                   <div className="inline-flex items-center gap-3 bg-white border border-gray-150 px-4 py-2.5 rounded-sm">
                     <span className="font-bold text-slate-800 text-sm uppercase tracking-wider">Stand No:</span>
-                    <span className="text-xl font-bold text-[#F08400]">#{company.standNumber}</span>
+                    <span className="text-xl font-bold text-[#CC9808]">#{company.standNumber}</span>
                   </div>
                 </div>
 
@@ -355,7 +355,7 @@ export default function ExhibitorDetailPage() {
                     {company.sector.map((sector: string, index: number) => (
                       <span
                         key={index}
-                        className="bg-[#F08400] text-white px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider"
+                        className="bg-[#CC9808] text-white px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider"
                       >
                         {sector}
                       </span>
@@ -369,7 +369,7 @@ export default function ExhibitorDetailPage() {
                       href={company.website.startsWith('http') ? company.website : `https://${company.website}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[#F08400] font-sans font-bold text-xs uppercase tracking-wider hover:text-black transition-colors"
+                      className="inline-flex items-center gap-2 text-[#CC9808] font-sans font-bold text-xs uppercase tracking-wider hover:text-black transition-colors"
                     >
                       <Globe size={16} />
                       <span>Visit Website</span>
@@ -397,7 +397,7 @@ export default function ExhibitorDetailPage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
                   className={`px-5 py-2.5 rounded-sm font-bold border transition-colors flex items-center gap-2 text-xs uppercase tracking-wider cursor-pointer ${isActive
-                      ? 'bg-[#F08400] text-white border-[#F08400]'
+                      ? 'bg-[#CC9808] text-white border-[#CC9808]'
                       : 'bg-white text-slate-700 border-gray-300 hover:bg-slate-50'
                     }`}
                 >
@@ -408,7 +408,7 @@ export default function ExhibitorDetailPage() {
             })}
             <button
               onClick={handleConnectClick}
-              className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-[#F08400] border border-[#F08400] rounded-sm hover:bg-black hover:border-black transition-colors flex items-center gap-2 ml-auto cursor-pointer"
+              className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-[#CC9808] border border-[#CC9808] rounded-sm hover:bg-black hover:border-black transition-colors flex items-center gap-2 ml-auto cursor-pointer"
             >
               <MessageCircle size={14} />
               <span>Book Appointment</span>
@@ -437,7 +437,7 @@ export default function ExhibitorDetailPage() {
                   <ul className="space-y-3 font-sans">
                     <li className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-white border border-gray-150 rounded-sm flex items-center justify-center flex-shrink-0">
-                        <MapPin size={18} className="text-[#F08400]" />
+                        <MapPin size={18} className="text-[#CC9808]" />
                       </div>
                       <div>
                         <p className="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Pavilion</p>
@@ -446,7 +446,7 @@ export default function ExhibitorDetailPage() {
                     </li>
                     <li className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-white border border-gray-150 rounded-sm flex items-center justify-center flex-shrink-0">
-                        <Building size={18} className="text-[#F08400]" />
+                        <Building size={18} className="text-[#CC9808]" />
                       </div>
                       <div>
                         <p className="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Hall</p>
@@ -455,7 +455,7 @@ export default function ExhibitorDetailPage() {
                     </li>
                     <li className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-white border border-gray-150 rounded-sm flex items-center justify-center flex-shrink-0">
-                        <MapPin size={18} className="text-[#F08400]" />
+                        <MapPin size={18} className="text-[#CC9808]" />
                       </div>
                       <div>
                         <p className="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Stand Number</p>
@@ -465,7 +465,7 @@ export default function ExhibitorDetailPage() {
                     {company.fullAddress && (
                       <li className="flex items-start gap-3 pt-3 border-t border-gray-150 mt-2">
                         <div className="w-10 h-10 bg-white border border-gray-150 rounded-sm flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MapPin size={18} className="text-[#F08400]" />
+                          <MapPin size={18} className="text-[#CC9808]" />
                         </div>
                         <div>
                           <p className="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Company Address</p>
@@ -555,7 +555,7 @@ export default function ExhibitorDetailPage() {
                     </div>
                     {product.price && (
                       <div className="mt-4">
-                        <span className="inline-block bg-[#F08400] text-white px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider">
+                        <span className="inline-block bg-[#CC9808] text-white px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider">
                           {product.price}
                         </span>
                       </div>
@@ -648,7 +648,7 @@ export default function ExhibitorDetailPage() {
                                 <div className="flex flex-col sm:flex-row gap-2">
                                   <button
                                     onClick={() => setSelectedPdf({ url: brochureUrl, name: brochureName })}
-                                    className="px-3 py-2 bg-[#F08400] text-white rounded-sm text-xs font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                                    className="px-3 py-2 bg-[#CC9808] text-white rounded-sm text-xs font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                                   >
                                     <Eye size={14} /> View
                                   </button>
@@ -694,7 +694,7 @@ export default function ExhibitorDetailPage() {
 
               <Link
                 href="/exhibition-directory"
-                className="px-5 py-2.5 rounded-sm text-xs font-bold uppercase tracking-wider transition-colors text-white bg-[#F08400] hover:bg-black"
+                className="px-5 py-2.5 rounded-sm text-xs font-bold uppercase tracking-wider transition-colors text-white bg-[#CC9808] hover:bg-black"
               >
                 <span>Back to List</span>
               </Link>

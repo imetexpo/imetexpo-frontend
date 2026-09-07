@@ -93,7 +93,7 @@ export default function CompanyDirectory() {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center font-sans">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-[#F08400] mx-auto mb-4" />
+          <Loader2 className="w-12 h-12 animate-spin text-[#CC9808] mx-auto mb-4" />
           <p className="text-slate-650 text-sm">Loading exhibitors...</p>
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function CompanyDirectory() {
               <div className="border-b border-gray-200 pb-6 mb-8 mt-4">
             <h1 className="font-bebas text-5xl sm:text-6xl text-black uppercase tracking-wide">
               <br />
-              Exhibitor <span className="text-[#F08400]">Directory</span>
+              Exhibitor <span className="text-[#CC9808]">Directory</span>
             </h1>
             <p className="mt-2 text-sm text-gray-600 font-sans">
               Find and connect with key tyre and rubber industry suppliers at ITS Tyre Expo.
@@ -134,7 +134,7 @@ export default function CompanyDirectory() {
                   setCurrentPage(1)
                 }}
                 className={`px-3 sm:px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm transition-colors cursor-pointer ${!selectedLetter
-                    ? 'bg-[#F08400] text-white border border-[#F08400]'
+                    ? 'bg-[#CC9808] text-white border border-[#CC9808]'
                     : 'bg-white text-slate-800 hover:bg-slate-100 border border-gray-300'
                   }`}
               >
@@ -150,7 +150,7 @@ export default function CompanyDirectory() {
                       setCurrentPage(1)
                     }}
                     className={`w-8 h-8 sm:w-9 sm:h-9 rounded-sm text-xs font-bold uppercase tracking-wider transition-colors border flex items-center justify-center cursor-pointer ${selectedLetter === letter
-                        ? 'bg-[#F08400] text-white border-[#F08400]'
+                        ? 'bg-[#CC9808] text-white border-[#CC9808]'
                         : 'bg-white text-slate-700 hover:bg-slate-100 border-gray-300'
                       }`}
                   >
@@ -177,7 +177,7 @@ export default function CompanyDirectory() {
                   setSearchQuery(e.target.value)
                   setCurrentPage(1)
                 }}
-                className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] text-sm bg-white"
+                className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] text-sm bg-white"
               />
               {searchQuery && (
                 <button
@@ -197,21 +197,21 @@ export default function CompanyDirectory() {
           <div className="flex justify-end mb-6 gap-2">
             <button
               onClick={() => setViewMode('grid')}
-              className={`p-2 rounded-sm transition-colors cursor-pointer ${viewMode === 'grid' ? 'bg-[#F08400] text-white border border-[#F08400]' : 'bg-white text-slate-600 border border-gray-300'
+              className={`p-2 rounded-sm transition-colors cursor-pointer ${viewMode === 'grid' ? 'bg-[#CC9808] text-white border border-[#CC9808]' : 'bg-white text-slate-600 border border-gray-300'
                 }`}
             >
               <GridIcon />
             </button>
             <button
               onClick={() => setViewMode('gallery')}
-              className={`p-2 rounded-sm transition-colors cursor-pointer ${viewMode === 'gallery' ? 'bg-[#F08400] text-white border border-[#F08400]' : 'bg-white text-slate-600 border border-gray-300'
+              className={`p-2 rounded-sm transition-colors cursor-pointer ${viewMode === 'gallery' ? 'bg-[#CC9808] text-white border border-[#CC9808]' : 'bg-white text-slate-600 border border-gray-300'
                 }`}
             >
               <GalleryIcon />
             </button>
             <button
               onClick={() => setViewMode('list')}
-              className={`p-2 rounded-sm transition-colors cursor-pointer ${viewMode === 'list' ? 'bg-[#F08400] text-white border border-[#F08400]' : 'bg-white text-slate-600 border border-gray-300'
+              className={`p-2 rounded-sm transition-colors cursor-pointer ${viewMode === 'list' ? 'bg-[#CC9808] text-white border border-[#CC9808]' : 'bg-white text-slate-600 border border-gray-300'
                 }`}
             >
               <ListIcon />
@@ -221,7 +221,7 @@ export default function CompanyDirectory() {
           {/* Companies Grid */}
           {loading ? (
             <div className="flex justify-center py-12">
-              <Loader2 className="w-8 h-8 animate-spin text-[#F08400]" />
+              <Loader2 className="w-8 h-8 animate-spin text-[#CC9808]" />
             </div>
           ) : (
             <CompanyGrid
@@ -258,7 +258,7 @@ export default function CompanyDirectory() {
                         key={page}
                         onClick={() => setCurrentPage(page)}
                         className={`w-8 h-8 sm:w-9 sm:h-9 rounded-sm text-xs font-bold uppercase tracking-wider flex items-center justify-center transition-colors cursor-pointer ${currentPage === page
-                            ? 'bg-[#F08400] text-white border border-[#F08400]'
+                            ? 'bg-[#CC9808] text-white border border-[#CC9808]'
                             : 'bg-white text-slate-700 hover:bg-slate-100 border border-gray-300'
                           }`}
                       >
@@ -299,7 +299,7 @@ export default function CompanyDirectory() {
                   setSelectedLetter(null)
                   setCurrentPage(1)
                 }}
-                className="mt-6 bg-[#F08400] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer"
+                className="mt-6 bg-[#CC9808] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer"
               >
                 Clear all filters
               </button>

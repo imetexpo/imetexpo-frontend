@@ -21,7 +21,7 @@ export default function WhyExhibitSection() {
           <div className="flex-1 flex flex-col gap-5 justify-between">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col">
-                <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-[#F08400] uppercase">
+                <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-[#CC9808] uppercase">
                   WHY EXHIBIT
                 </h2>
                 <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-white uppercase">
@@ -39,7 +39,7 @@ export default function WhyExhibitSection() {
 
             <Link
               href="/why-exhibit/"
-              className="inline-block bg-[#F08400] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 w-fit text-center"
+              className="inline-block bg-[#CC9808] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 w-fit text-center"
             >
               Explore Benefits of Participating
             </Link>
@@ -55,7 +55,7 @@ export default function WhyExhibitSection() {
                 key={index}
                 className="flex items-start gap-4 sm:gap-5 border-b border-white/10 pb-5 pt-5 first:pt-0 last:border-b-0"
               >
-                <span className="text-[#F08400] text-sm sm:text-base font-bold font-sans flex-shrink-0 mt-1">
+                <span className="text-[#CC9808] text-sm sm:text-base font-bold font-sans flex-shrink-0 mt-1">
                   0{index + 1}.
                 </span>
                 <p className="font-bebas text-lg sm:text-xl md:text-2xl tracking-wide leading-snug text-gray-200 uppercase">

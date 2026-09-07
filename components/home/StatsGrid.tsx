@@ -20,7 +20,7 @@ export default function StatsGrid({ stats }: StatsGridProps) {
               ${index !== stats.length - 1 ? 'sm:border-r sm:border-gray-200' : ''}
             `}
           >
-            <span className="font-bebas text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F08400] leading-none tracking-wide">
+            <span className="font-bebas text-3xl sm:text-4xl lg:text-5xl font-bold text-[#CC9808] leading-none tracking-wide">
               {stat.number}
             </span>
             <span className="mt-1.5 sm:mt-3 text-[10px] sm:text-xs font-semibold text-black uppercase tracking-wider leading-tight font-sans">

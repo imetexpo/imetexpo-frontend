@@ -226,7 +226,7 @@ export default function PlanYourTravelPage() {
               <div className="mb-5 flex flex-col lg:flex-row justify-between lg:items-start gap-6">
                 <div className="lg:w-3/4">
                   <h1 className="font-bebas text-5xl text-black md:text-6xl lg:text-7xl uppercase">
-                    Blend business opportunity and Bangkok's vibrant culture when you visit <span className="text-[#F08400]">ITS Tyre Expo</span>
+                    Blend business opportunity and Bangkok's vibrant culture when you visit <span className="text-[#CC9808]">ITS Tyre Expo</span>
                   </h1>
                   <p className="mt-5 text-lg text-gray-700 leading-relaxed font-sans">
                     Join thousands of tyre industry leaders and peers to forge valuable connections, discover cutting-edge trends in the industry, and immerse yourself in the rich culture and vibrant energy of Bangkok—a city that blends innovation with timeless charm.
@@ -243,13 +243,13 @@ export default function PlanYourTravelPage() {
             <Container>
               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 border-b border-gray-200 pb-8 mb-10">
                 <h2 className="font-bebas text-4xl text-black md:text-5xl uppercase">
-                  Travel <span className="text-[#F08400]">Information</span> & Guidelines
+                  Travel <span className="text-[#CC9808]">Information</span> & Guidelines
                 </h2>
                 <div className="inline-flex bg-[#FCF8F3] border border-gray-150 p-1 rounded-sm gap-2">
                   <button
                     onClick={() => setActiveTab("exhibitor")}
                     className={`px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer ${
-                      activeTab === "exhibitor" ? "bg-[#F08400] text-white" : "bg-transparent text-black hover:text-[#F08400]"
+                      activeTab === "exhibitor" ? "bg-[#CC9808] text-white" : "bg-transparent text-black hover:text-[#CC9808]"
                     }`}
                   >
                     For Exhibitors
@@ -257,7 +257,7 @@ export default function PlanYourTravelPage() {
                   <button
                     onClick={() => setActiveTab("visitor")}
                     className={`px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer ${
-                      activeTab === "visitor" ? "bg-[#F08400] text-white" : "bg-transparent text-black hover:text-[#F08400]"
+                      activeTab === "visitor" ? "bg-[#CC9808] text-white" : "bg-transparent text-black hover:text-[#CC9808]"
                     }`}
                   >
                     For Visitors
@@ -290,7 +290,7 @@ export default function PlanYourTravelPage() {
                       </div>
                       <div className="shrink-0 mt-4 md:mt-0">
                         <Link href={item.buttonLink}>
-                          <button className="bg-[#F08400] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                          <button className="bg-[#CC9808] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                             {item.buttonText}
                           </button>
                         </Link>
@@ -307,11 +307,11 @@ export default function PlanYourTravelPage() {
         <div className="animated-block mt-16 lg:mt-24">
           <div className="animated-block-target">
             <Container>
-              <div className="border-l-4 border-[#F08400] pl-6 mb-10">
+              <div className="border-l-4 border-[#CC9808] pl-6 mb-10">
                 <h2 className="font-bebas text-4xl text-black md:text-5xl uppercase">
                   Hotel Accommodation Deals
                 </h2>
-                <p className="mt-2 text-sm font-bold text-[#F08400] uppercase tracking-wider">
+                <p className="mt-2 text-sm font-bold text-[#CC9808] uppercase tracking-wider">
                   Save 20% by using the promo code "EXPO" when booking through official links
                 </p>
               </div>
@@ -342,12 +342,12 @@ export default function PlanYourTravelPage() {
                     </div>
                     <div className="mt-6 flex gap-3 pt-4 border-t border-gray-150">
                       <Link href={hotel.bookLink} target="_blank" className="flex-1">
-                        <button className="w-full bg-[#F08400] hover:bg-black text-white py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="w-full bg-[#CC9808] hover:bg-black text-white py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Book Room
                         </button>
                       </Link>
                       <Link href={hotel.mapLink} target="_blank" className="flex-1">
-                        <button className="w-full border border-[#F08400] text-[#F08400] hover:bg-black hover:text-white hover:border-black py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="w-full border border-[#CC9808] text-[#CC9808] hover:bg-black hover:text-white hover:border-black py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Location
                         </button>
                       </Link>
@@ -366,7 +366,7 @@ export default function PlanYourTravelPage() {
         {/* Quick Navigation */}
         <div className="animated-block mt-20">
           <div className="animated-block-target">
-            <div className="border-t border-[#F08400] bg-black py-16 text-white">
+            <div className="border-t border-[#CC9808] bg-black py-16 text-white">
               <Container>
                 <h2 className="font-bebas text-5xl md:text-6xl uppercase tracking-wider text-center lg:text-left">
                   Quick Navigation
@@ -375,10 +375,10 @@ export default function PlanYourTravelPage() {
                   {quickLinks.map((item, idx) => (
                     <div key={idx} className="relative flex flex-col items-center justify-center text-center">
                       <Link href={item.link} className="flex flex-col items-center group">
-                        <div className="flex h-16 w-16 items-center justify-center rounded-sm bg-gray-800 transition-colors group-hover:bg-[#F08400]">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-sm bg-gray-800 transition-colors group-hover:bg-[#CC9808]">
                           <div className="text-2xl">{item.icon}</div>
                         </div>
-                        <p className="mt-4 text-xs font-bold uppercase tracking-wider text-gray-300 transition-colors group-hover:text-[#F08400]">
+                        <p className="mt-4 text-xs font-bold uppercase tracking-wider text-gray-300 transition-colors group-hover:text-[#CC9808]">
                           {item.label}
                         </p>
                       </Link>

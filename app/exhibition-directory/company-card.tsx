@@ -128,7 +128,7 @@ export default function CompanyCard({ company, onProductBrochureClick }: Company
 
             <button
               onClick={handleConnectClick}
-              className="px-3 py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white bg-[#F08400] rounded-sm hover:bg-black transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
+              className="px-3 py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white bg-[#CC9808] rounded-sm hover:bg-black transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <MessageCircle size={12} />
               <span>Connect</span>

@@ -107,7 +107,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         onClick={() => toggleDropdown(item.title)}
                         className="w-full flex items-center justify-between py-2 text-white transition-colors cursor-pointer group"
                       >
-                        <span className="font-bold text-white text-lg sm:text-xl font-sans tracking-tight group-hover:text-[#F08400] transition-colors">
+                        <span className="font-bold text-white text-lg sm:text-xl font-sans tracking-tight group-hover:text-[#CC9808] transition-colors">
                           {item.title}
                         </span>
                         <span className="text-2xl text-neutral-400 font-light pr-1 select-none leading-none">
@@ -122,7 +122,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                               key={link.text}
                               href={link.href}
                               onClick={onClose}
-                              className="block text-[15px] text-gray-300 hover:text-[#F08400] font-sans font-medium transition-colors"
+                              className="block text-[15px] text-gray-300 hover:text-[#CC9808] font-sans font-medium transition-colors"
                             >
                               {link.text}
                             </Link>
@@ -135,7 +135,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                       <Link
                         href={item.href || '#'}
                         onClick={onClose}
-                        className="block py-2 font-bold text-white text-lg sm:text-xl font-sans tracking-tight hover:text-[#F08400] transition-colors"
+                        className="block py-2 font-bold text-white text-lg sm:text-xl font-sans tracking-tight hover:text-[#CC9808] transition-colors"
                       >
                         {item.title}
                       </Link>
@@ -152,7 +152,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <Link
             href="/exhibiting-enquiry/"
             onClick={onClose}
-            className="block w-full text-center bg-[#F08400] border border-[#F08400] hover:bg-black text-white py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm font-bebas"
+            className="block w-full text-center bg-[#CC9808] border border-[#CC9808] hover:bg-black text-white py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm font-bebas"
           >
             Exhibit
           </Link>

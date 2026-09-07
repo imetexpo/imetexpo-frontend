@@ -124,13 +124,13 @@ export default function PartnerForm() {
       <Toaster position="top-right" />
       
       <div className="max-w-3xl mx-auto rounded-2xl bg-orange-50/30 p-6 md:p-8 border border-orange-200 shadow-lg">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#F08400] mb-6">Partner Registration Form</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#CC9808] mb-6">Partner Registration Form</h2>
         
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                First Name <span className="text-[#F08400]">*</span>
+                First Name <span className="text-[#CC9808]">*</span>
               </label>
               <input 
                 type="text" 
@@ -138,14 +138,14 @@ export default function PartnerForm() {
                 value={formData.firstName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="Enter your first name"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Last Name <span className="text-[#F08400]">*</span>
+                Last Name <span className="text-[#CC9808]">*</span>
               </label>
               <input 
                 type="text" 
@@ -153,14 +153,14 @@ export default function PartnerForm() {
                 value={formData.lastName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="Enter your last name"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Job Title <span className="text-[#F08400]">*</span>
+                Job Title <span className="text-[#CC9808]">*</span>
               </label>
               <input 
                 type="text" 
@@ -168,14 +168,14 @@ export default function PartnerForm() {
                 value={formData.jobTitle}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="Enter your job title"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Email <span className="text-[#F08400]">*</span>
+                Email <span className="text-[#CC9808]">*</span>
               </label>
               <input 
                 type="email" 
@@ -183,7 +183,7 @@ export default function PartnerForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="example@company.com"
               />
             </div>
@@ -191,7 +191,7 @@ export default function PartnerForm() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Mobile Phone <span className="text-[#F08400]">*</span>
+              Mobile Phone <span className="text-[#CC9808]">*</span>
             </label>
             <div className="flex">
               <div className="flex items-center gap-2 border border-gray-300 bg-gray-50 px-4 py-2.5 rounded-l-lg border-r-0">
@@ -203,7 +203,7 @@ export default function PartnerForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="flex-1 px-4 py-2.5 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="flex-1 px-4 py-2.5 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="9876543210"
                 maxLength={10}
               />
@@ -214,7 +214,7 @@ export default function PartnerForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Company Name <span className="text-[#F08400]">*</span>
+                Company Name <span className="text-[#CC9808]">*</span>
               </label>
               <input 
                 type="text" 
@@ -222,7 +222,7 @@ export default function PartnerForm() {
                 value={formData.companyName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="Enter company name"
               />
             </div>
@@ -236,14 +236,14 @@ export default function PartnerForm() {
                 name="gstin"
                 value={formData.gstin}
                 onChange={handleChange}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="22AAAAA0000A1Z5 (Optional)"
               />
             </div>
 
             <div className="md:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Address <span className="text-[#F08400]">*</span>
+                Address <span className="text-[#CC9808]">*</span>
               </label>
               <textarea 
                 name="address"
@@ -251,14 +251,14 @@ export default function PartnerForm() {
                 onChange={handleChange}
                 required
                 rows={2}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white resize-none"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white resize-none"
                 placeholder="Enter company address"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                City <span className="text-[#F08400]">*</span>
+                City <span className="text-[#CC9808]">*</span>
               </label>
               <input 
                 type="text" 
@@ -266,14 +266,14 @@ export default function PartnerForm() {
                 value={formData.city}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="Enter city"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                State <span className="text-[#F08400]">*</span>
+                State <span className="text-[#CC9808]">*</span>
               </label>
               <input 
                 type="text" 
@@ -281,14 +281,14 @@ export default function PartnerForm() {
                 value={formData.state}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="Enter state"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Pincode <span className="text-[#F08400]">*</span>
+                Pincode <span className="text-[#CC9808]">*</span>
               </label>
               <input 
                 type="text" 
@@ -297,7 +297,7 @@ export default function PartnerForm() {
                 onChange={handleChange}
                 required
                 maxLength={6}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="Enter pincode"
               />
             </div>
@@ -311,21 +311,21 @@ export default function PartnerForm() {
                 name="website"
                 value={formData.website}
                 onChange={handleChange}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
                 placeholder="https://example.com"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Partnership Type <span className="text-[#F08400]">*</span>
+                Partnership Type <span className="text-[#CC9808]">*</span>
               </label>
               <select
                 name="partnershipType"
                 value={formData.partnershipType}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition-all bg-white"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition-all bg-white"
               >
                 <option value="">Select Partnership Type</option>
                 <option value="platinum">Platinum Partner</option>
@@ -345,7 +345,7 @@ export default function PartnerForm() {
                 name="marketingConsent"
                 checked={formData.marketingConsent}
                 onChange={handleChange}
-                className="mt-1 h-5 w-5 border-gray-300 rounded focus:ring-[#F08400] text-[#F08400]"
+                className="mt-1 h-5 w-5 border-gray-300 rounded focus:ring-[#CC9808] text-[#CC9808]"
               />
               <label htmlFor="marketing" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
                 I want to stay informed about exhibitions organized by
@@ -363,13 +363,13 @@ export default function PartnerForm() {
                 checked={formData.privacyConsent}
                 onChange={handleChange}
                 required
-                className="mt-1 h-5 w-5 border-gray-300 rounded focus:ring-[#F08400] text-[#F08400]"
+                className="mt-1 h-5 w-5 border-gray-300 rounded focus:ring-[#CC9808] text-[#CC9808]"
               />
               <label htmlFor="consent" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
                 I hereby give consent to <strong>Tyre Expo Organizing Committee</strong>
                 for automated and mixed processing of my personal data in accordance
-                with the <a href="/privacy-policy" className="text-[#F08400] hover:text-[#d97000] underline font-medium">Personal Data Policy</a>.
-                <span className="text-[#F08400] ml-1">*</span>
+                with the <a href="/privacy-policy" className="text-[#CC9808] hover:text-[#d97000] underline font-medium">Personal Data Policy</a>.
+                <span className="text-[#CC9808] ml-1">*</span>
               </label>
             </div>
           </div>
@@ -377,7 +377,7 @@ export default function PartnerForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full bg-[#F08400] hover:bg-[#d97000] text-white font-semibold py-3 px-4 rounded-lg transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#F08400] focus:ring-offset-2 ${
+            className={`w-full bg-[#CC9808] hover:bg-[#d97000] text-white font-semibold py-3 px-4 rounded-lg transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#CC9808] focus:ring-offset-2 ${
               isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
             }`}
           >
@@ -385,7 +385,7 @@ export default function PartnerForm() {
           </button>
           
           <p className="text-xs text-gray-500 mt-3 text-center">
-            All fields marked with <span className="text-[#F08400]">*</span> are required
+            All fields marked with <span className="text-[#CC9808]">*</span> are required
           </p>
         </form>
       </div>

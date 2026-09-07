@@ -43,17 +43,17 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-2.5 justify-center mt-0.5">
             <span>
-              <strong className="text-[11px] font-bold text-[#F08400]">{String(timeLeft.days).padStart(2, '0')}</strong>{' '}
+              <strong className="text-[11px] font-bold text-[#CC9808]">{String(timeLeft.days).padStart(2, '0')}</strong>{' '}
               <span className="text-gray-305 text-[10px]">Days</span>
             </span>
             <span className="text-white/20">|</span>
             <span>
-              <strong className="text-[11px] font-bold text-[#F08400]">{String(timeLeft.hours).padStart(2, '0')}</strong>{' '}
+              <strong className="text-[11px] font-bold text-[#CC9808]">{String(timeLeft.hours).padStart(2, '0')}</strong>{' '}
               <span className="text-gray-305 text-[10px]">Hours</span>
             </span>
             <span className="text-white/20">|</span>
             <span>
-              <strong className="text-[11px] font-bold text-[#F08400]">{String(timeLeft.minutes).padStart(2, '0')}</strong>{' '}
+              <strong className="text-[11px] font-bold text-[#CC9808]">{String(timeLeft.minutes).padStart(2, '0')}</strong>{' '}
               <span className="text-gray-305 text-[10px]">Mins</span>
             </span>
           </div>
@@ -77,7 +77,7 @@ export default function Header() {
             <Link
               href="/login/"
               className="bg-[#2A2A2A] text-white px-3 py-1 text-xs border border-white/20
-              hover:bg-[#F08400] hover:text-black transition-all duration-300 rounded-sm"
+              hover:bg-[#CC9808] hover:text-black transition-all duration-300 rounded-sm"
             >
               Login
             </Link>
@@ -85,7 +85,7 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-1 hover:bg-white/10 rounded-sm transition cursor-pointer"
             >
-              <Menu size={28} className="text-[#F08400]" />
+              <Menu size={28} className="text-[#CC9808]" />
             </button>
           </div>
         </div>
@@ -94,14 +94,14 @@ export default function Header() {
           <Link
             href="/exhibiting-enquiry/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="flex-1 bg-[#F08400] text-white text-center py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#cc7000] transition rounded-sm"
+            className="flex-1 bg-[#CC9808] text-white text-center py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#cc7000] transition rounded-sm"
           >
             Exhibit
           </Link>
           <Link
             href="/visitor-registration/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="flex-1 bg-[#F08400] text-white text-center py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#cc7000] transition rounded-sm"
+            className="flex-1 bg-[#CC9808] text-white text-center py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#cc7000] transition rounded-sm"
           >
             Register
           </Link>

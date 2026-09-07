@@ -20,7 +20,7 @@ export default function NewsletterSection() {
           <div className="flex-shrink-0">
             <Button
               href="/newsletter/"
-              className="bg-[#F08400] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-full sm:w-auto text-center"
+              className="bg-[#CC9808] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-full sm:w-auto text-center"
             >
               SIGN UP TODAY
             </Button>

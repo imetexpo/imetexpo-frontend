@@ -41,7 +41,7 @@ function Input({ label, placeholder, required, type = "text", value, onChange, n
   return (
     <div className="space-y-1">
       <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-        {label} {required && <span className="text-[#F08400]">*</span>}
+        {label} {required && <span className="text-[#CC9808]">*</span>}
       </label>
       <input
         type={type}
@@ -50,7 +50,7 @@ function Input({ label, placeholder, required, type = "text", value, onChange, n
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+        className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
       />
     </div>
   );
@@ -61,14 +61,14 @@ function Select({ label, required, value, onChange, name, options = [] }: Select
   return (
     <div className="space-y-1">
       <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-        {label} {required && <span className="text-[#F08400]">*</span>}
+        {label} {required && <span className="text-[#CC9808]">*</span>}
       </label>
       <select
         name={name}
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm cursor-pointer"
+        className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm cursor-pointer"
       >
         <option value="">Select {label}</option>
         {options.map((option) => (
@@ -93,7 +93,7 @@ function CheckboxGroup({ label, options, required, selectedValues = [], onChange
   return (
     <div className="space-y-2">
       <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-        {label} {required && <span className="text-[#F08400]">*</span>}
+        {label} {required && <span className="text-[#CC9808]">*</span>}
       </label>
       <div className="max-h-48 overflow-y-auto border border-gray-300 rounded-sm p-3 bg-white shadow-inner">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -104,7 +104,7 @@ function CheckboxGroup({ label, options, required, selectedValues = [], onChange
                 name={name}
                 checked={selectedValues.includes(option)}
                 onChange={() => handleCheckboxChange(option)}
-                className="mt-0.5 w-4 h-4 text-[#F08400] focus:ring-[#F08400] rounded-sm border-gray-300"
+                className="mt-0.5 w-4 h-4 text-[#CC9808] focus:ring-[#CC9808] rounded-sm border-gray-300"
               />
               <span className="text-xs text-gray-650 font-medium">{option}</span>
             </label>
@@ -212,14 +212,14 @@ export default function PostShowReportPage() {
         <Container>
           <div className="bg-[#FCF8F3] border border-gray-100 rounded-sm p-8 max-w-md text-center shadow-sm mx-auto">
             <div className="w-16 h-16 bg-white border border-gray-150 rounded-sm flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8 text-[#F08400]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 text-[#CC9808]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
             <h2 className="font-bebas text-4xl text-black mb-3 uppercase tracking-wide">Thank You!</h2>
             <p className="text-sm text-gray-655 mb-6 leading-relaxed">Your post-show report has been sent to your email address.</p>
             <Link href="/">
-              <button className="bg-[#F08400] hover:bg-black text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+              <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
                 Back to Home
               </button>
             </Link>
@@ -238,12 +238,12 @@ export default function PostShowReportPage() {
             {/* LEFT SECTION - Content */}
             <div className="flex flex-col gap-6 lg:sticky lg:top-44 h-fit">
               <div className="space-y-3">
-                <p className="text-[#F08400] text-xs font-bold uppercase tracking-wider">
+                <p className="text-[#CC9808] text-xs font-bold uppercase tracking-wider">
                   Post-Show Report
                 </p>
                 
                 <h1 className="font-bebas text-5xl sm:text-6xl leading-[1.05] tracking-tight uppercase text-black">
-                  ITS Tyre Expo <span className="text-[#F08400]">Post-Show Report</span>
+                  ITS Tyre Expo <span className="text-[#CC9808]">Post-Show Report</span>
                 </h1>
               </div>
 
@@ -257,7 +257,7 @@ export default function PostShowReportPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-[#FCF8F3] border border-gray-100 p-6 rounded-sm shadow-sm">
                 {statsData.map((stat, idx) => (
                   <div key={idx} className="text-center">
-                    <h3 className="text-3xl font-bebas text-[#F08400] uppercase font-bold">
+                    <h3 className="text-3xl font-bebas text-[#CC9808] uppercase font-bold">
                       {stat.value}
                     </h3>
                     <p className="text-[10px] uppercase font-bold text-gray-600 mt-1 tracking-wider">{stat.label}</p>
@@ -272,15 +272,15 @@ export default function PostShowReportPage() {
                 </h3>
                 <ul className="text-xs text-gray-655 space-y-2.5">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#F08400]">•</span>
+                    <span className="text-[#CC9808]">•</span>
                     <span>Evaluate audience quality and identify new growth opportunities.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#F08400]">•</span>
+                    <span className="text-[#CC9808]">•</span>
                     <span>Benchmark the results you can expect by participating in the next edition.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#F08400]">•</span>
+                    <span className="text-[#CC9808]">•</span>
                     <span>See which sectors and solutions were most in demand at the event.</span>
                   </li>
                 </ul>
@@ -291,7 +291,7 @@ export default function PostShowReportPage() {
             <div className="bg-[#FCF8F3] border border-gray-100 rounded-sm p-6 md:p-8 shadow-sm">
               <div className="mb-6">
                 <h2 className="text-black font-bebas text-3xl font-bold uppercase tracking-wide">
-                  Download Post-Show <span className="text-[#F08400]">Report</span>
+                  Download Post-Show <span className="text-[#CC9808]">Report</span>
                 </h2>
                 <p className="text-xs text-gray-600 font-sans">Fill in the details to download the report from our previous show.</p>
               </div>
@@ -406,7 +406,7 @@ export default function PostShowReportPage() {
                     id="captcha"
                     checked={formData.captcha}
                     onChange={handleCaptchaChange}
-                    className="w-4 h-4 text-[#F08400] focus:ring-[#F08400] rounded-sm border-gray-300 cursor-pointer"
+                    className="w-4 h-4 text-[#CC9808] focus:ring-[#CC9808] rounded-sm border-gray-300 cursor-pointer"
                     required
                   />
                   <label htmlFor="captcha" className="text-gray-650 text-sm cursor-pointer select-none">
@@ -426,7 +426,7 @@ export default function PostShowReportPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#F08400] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="w-full bg-[#CC9808] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
                     {isSubmitting ? 'Submitting...' : 'DOWNLOAD REPORT'}
                   </button>
@@ -436,7 +436,7 @@ export default function PostShowReportPage() {
                   By submitting this form, you agree to receive marketing communications, 
                   updates, and promotional materials from us. You can unsubscribe anytime. 
                   For more information, please refer to our 
-                  <Link href="/privacy-policy" className="text-[#F08400] hover:underline ml-1 font-semibold">Privacy Policy</Link>.
+                  <Link href="/privacy-policy" className="text-[#CC9808] hover:underline ml-1 font-semibold">Privacy Policy</Link>.
                 </p>
               </form>
             </div>

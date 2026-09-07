@@ -95,13 +95,13 @@ export default function DelegatesPackagesPage() {
                       key={pkg.id}
                       className="flex flex-col bg-orange-50/30 rounded-2xl p-6 border border-orange-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     >
-                      <h3 className="text-2xl font-bold text-[#F08400] mb-3">{pkg.title}</h3>
+                      <h3 className="text-2xl font-bold text-[#CC9808] mb-3">{pkg.title}</h3>
                       
                       <ul className="space-y-2 mb-6 flex-1">
                         {pkg.features.map((feature, index) => (
                           <li key={index} className="flex items-start text-sm text-gray-700">
                             <svg
-                              className="mr-2 mt-0.5 flex-shrink-0 text-[#F08400]"
+                              className="mr-2 mt-0.5 flex-shrink-0 text-[#CC9808]"
                               width="16"
                               height="16"
                               viewBox="0 0 20 20"
@@ -110,7 +110,7 @@ export default function DelegatesPackagesPage() {
                             >
                               <path
                                 d="M16.6667 5L7.50004 14.1667L3.33337 10"
-                                stroke="#F08400"
+                                stroke="#CC9808"
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
@@ -122,7 +122,7 @@ export default function DelegatesPackagesPage() {
                       </ul>
 
                       <div className="mt-auto pt-4 border-t border-orange-200">
-                        <div className="text-2xl font-bold text-[#F08400]">{pkg.price}</div>
+                        <div className="text-2xl font-bold text-[#CC9808]">{pkg.price}</div>
                       </div>
                     </div>
                   ))}
@@ -136,19 +136,19 @@ export default function DelegatesPackagesPage() {
 
                 <div className="grid grid-cols-2 gap-x-10 gap-y-8">
                   <div className="group hover:translate-x-1 transition-transform">
-                    <p className="text-5xl font-bold text-[#F08400]">500+</p>
+                    <p className="text-5xl font-bold text-[#CC9808]">500+</p>
                     <p className="mt-2 text-lg text-gray-700">Industry Professionals</p>
                   </div>
                   <div className="group hover:translate-x-1 transition-transform">
-                    <p className="text-5xl font-bold text-[#F08400]">30+</p>
+                    <p className="text-5xl font-bold text-[#CC9808]">30+</p>
                     <p className="mt-2 text-lg text-gray-700">Expert Speakers</p>
                   </div>
                   <div className="group hover:translate-x-1 transition-transform">
-                    <p className="text-5xl font-bold text-[#F08400]">4+</p>
+                    <p className="text-5xl font-bold text-[#CC9808]">4+</p>
                     <p className="mt-2 text-lg text-gray-700">Networking Events</p>
                   </div>
                   <div className="group hover:translate-x-1 transition-transform">
-                    <p className="text-5xl font-bold text-[#F08400]">20+</p>
+                    <p className="text-5xl font-bold text-[#CC9808]">20+</p>
                     <p className="mt-2 text-lg text-gray-700">Hours of Content</p>
                   </div>
                 </div>

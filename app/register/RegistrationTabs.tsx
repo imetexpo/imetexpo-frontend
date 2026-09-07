@@ -39,7 +39,7 @@ export default function RegistrationTabs({ activeTab, onTabChange }: Registratio
             onClick={() => onTabChange(tab)}
             className={`flex items-center justify-center gap-2 py-4 px-3 text-sm font-bold uppercase tracking-wide transition-colors ${
               isActive
-                ? "bg-[#F08400] text-white"
+                ? "bg-[#CC9808] text-white"
                 : "bg-white text-gray-700 hover:bg-gray-50"
             }`}
           >

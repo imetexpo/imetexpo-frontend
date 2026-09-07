@@ -67,7 +67,7 @@ export default function HeroSection() {
           >
             <br />
             <span className="text-white">MININGWORLD </span>
-            <span className="text-[#F08400]">2027</span>
+            <span className="text-[#CC9808]">2027</span>
           </h1>
 
           {/* BOTTOM ROW — stacks on mobile, side-by-side on lg+ */}
@@ -84,7 +84,7 @@ export default function HeroSection() {
             <div className="flex-shrink-0 w-full lg:w-auto">
               <Link
                 href="/exhibiting-enquiry/"
-                className="inline-block w-full lg:w-auto text-center bg-[#F08400] hover:bg-[#d67300] text-white px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm shadow-lg hover:scale-105"
+                className="inline-block w-full lg:w-auto text-center bg-[#CC9808] hover:bg-[#d67300] text-white px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm shadow-lg hover:scale-105"
               >
                 Exhibit
               </Link>

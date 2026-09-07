@@ -80,14 +80,14 @@ export default function InsightsPage() {
         <Container>
           <div className="bg-[#FCF8F3] border border-gray-100 rounded-sm p-8 max-w-md text-center shadow-sm mx-auto">
             <div className="w-16 h-16 bg-white border border-gray-150 rounded-sm flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8 text-[#F08400]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 text-[#CC9808]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
             <h2 className="font-bebas text-4xl text-black mb-3 uppercase tracking-wide">Thank You!</h2>
             <p className="text-sm text-gray-600 mb-6 leading-relaxed">Your report has been sent to your email address.</p>
             <Link href="/">
-              <button className="bg-[#F08400] hover:bg-black text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+              <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
                 Back to Home
               </button>
             </Link>
@@ -106,12 +106,12 @@ export default function InsightsPage() {
             {/* LEFT SECTION */}
             <div className="flex flex-col gap-6 lg:sticky lg:top-44 h-fit">
               <div className="space-y-3">
-                <p className="text-[#F08400] text-xs font-bold uppercase tracking-wider">
+                <p className="text-[#CC9808] text-xs font-bold uppercase tracking-wider">
                   Explore Insights
                 </p>
                 
                 <h1 className="font-bebas text-5xl sm:text-6xl leading-[1.05] tracking-tight uppercase text-black">
-                  Unlock Market <span className="text-[#F08400]">Opportunities</span>
+                  Unlock Market <span className="text-[#CC9808]">Opportunities</span>
                 </h1>
               </div>
 
@@ -137,7 +137,7 @@ export default function InsightsPage() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-3">
-                    <div className="w-6 h-6 border border-gray-150 bg-white rounded-sm flex items-center justify-center text-[#F08400] text-xs font-bold mt-0.5 shrink-0">
+                    <div className="w-6 h-6 border border-gray-150 bg-white rounded-sm flex items-center justify-center text-[#CC9808] text-xs font-bold mt-0.5 shrink-0">
                       ✓
                     </div>
                     <div>
@@ -157,7 +157,7 @@ export default function InsightsPage() {
             <div className="bg-[#FCF8F3] border border-gray-100 rounded-sm p-6 md:p-8 shadow-sm">
               <div className="mb-6">
                 <h3 className="text-black font-bebas text-3xl mb-1 uppercase tracking-wide font-bold">
-                  Get The Free <span className="text-[#F08400]">Market Report</span>
+                  Get The Free <span className="text-[#CC9808]">Market Report</span>
                 </h3>
                 <p className="text-xs text-gray-600 font-sans">One step closer to unlocking exclusive market insights.</p>
               </div>
@@ -173,7 +173,7 @@ export default function InsightsPage() {
                     placeholder="Type your Company Name"
                     value={formData.companyName}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
                     required
                   />
                 </div>
@@ -188,7 +188,7 @@ export default function InsightsPage() {
                     placeholder="Type your Job Title"
                     value={formData.jobTitle}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
                     required
                   />
                 </div>
@@ -201,7 +201,7 @@ export default function InsightsPage() {
                     name="country"
                     value={formData.country}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm cursor-pointer"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm cursor-pointer"
                     required
                   >
                     <option value="">Select your country</option>
@@ -221,7 +221,7 @@ export default function InsightsPage() {
                     placeholder="Type your email"
                     value={formData.workEmail}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
                     required
                   />
                 </div>
@@ -233,7 +233,7 @@ export default function InsightsPage() {
                     name="confirmRequest"
                     checked={formData.confirmRequest}
                     onChange={handleChange}
-                    className="w-4 h-4 text-[#F08400] rounded-sm border-gray-300 focus:ring-[#F08400] cursor-pointer"
+                    className="w-4 h-4 text-[#CC9808] rounded-sm border-gray-300 focus:ring-[#CC9808] cursor-pointer"
                     required
                   />
                   <span className="text-sm text-gray-650">I'm not a robot</span>
@@ -250,7 +250,7 @@ export default function InsightsPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#F08400] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="w-full bg-[#CC9808] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit Request'}
                   </button>
@@ -260,7 +260,7 @@ export default function InsightsPage() {
                   T&C: By submitting this form, you agree to receive marketing communications, 
                   updates, and promotional materials from us. You can unsubscribe anytime. 
                   For more information, please refer to our 
-                  <Link href="/privacy-policy" className="text-[#F08400] hover:underline ml-1 font-semibold">Privacy Policy</Link>.
+                  <Link href="/privacy-policy" className="text-[#CC9808] hover:underline ml-1 font-semibold">Privacy Policy</Link>.
                 </p>
               </form>
             </div>

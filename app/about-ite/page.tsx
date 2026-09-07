@@ -291,7 +291,7 @@ export default function AboutITEPage() {
                     {stats.map((stat, idx) => (
                       <div key={idx} className="flex w-1/2 sm:w-1/3 md:w-1/4 items-start justify-start">
                         <div className="px-4 sm:px-6 md:px-8 text-start">
-                          <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#F08400]">
+                          <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#CC9808]">
                             {stat.value}
                           </h3>
                           <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold uppercase text-black">
@@ -380,7 +380,7 @@ export default function AboutITEPage() {
                       <p className="text-xs sm:text-sm">End Date: <span className="font-bold">{exhibition.endDate}</span></p>
                       <p className="text-xs sm:text-sm">Venue: <span className="font-bold line-clamp-2">{exhibition.venue}</span></p>
                       <Link href={exhibition.siteLink} target="_blank" className="mt-auto block">
-                        <button className="flex-center group gap-2 font-bebas text-xl sm:text-2xl text-[#F08400] transition-all hover:text-black">
+                        <button className="flex-center group gap-2 font-bebas text-xl sm:text-2xl text-[#CC9808] transition-all hover:text-black">
                           Visit Website
                           <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                             <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>

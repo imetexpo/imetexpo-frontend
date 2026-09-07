@@ -90,20 +90,20 @@ function HeroSection() {
                     <Container>
                         <div className="relative z-20 flex min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] w-full items-center py-12 sm:py-16 lg:py-20">
                             <div className="max-w-3xl space-y-6">
-                                <div className="inline-block px-4 py-1.5 bg-[#F08400]/20 backdrop-blur-sm border border-[#F08400]/30 rounded-sm">
-                                    <span className="text-[#F08400] font-bold text-xs uppercase tracking-wider">
+                                <div className="inline-block px-4 py-1.5 bg-[#CC9808]/20 backdrop-blur-sm border border-[#CC9808]/30 rounded-sm">
+                                    <span className="text-[#CC9808] font-bold text-xs uppercase tracking-wider">
                                         October 08-09, 2026 | Pune, India
                                     </span>
                                 </div>
                                 <h1 className="font-bebas text-5xl sm:text-7xl md:text-8xl text-white leading-[1.05] tracking-tight uppercase">
-                                    ITS TYRE EXPO <span className="text-[#F08400]">CONFERENCE 2026</span>
+                                    ITS TYRE EXPO <span className="text-[#CC9808]">CONFERENCE 2026</span>
                                 </h1>
                                 <p className="text-base sm:text-lg md:text-xl text-gray-250 leading-relaxed font-sans max-w-2xl">
                                     International Conference on Tyre Manufacturing Technology, Rubber Compounds, Automation, and Sustainable Solutions
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
                                     <Link href="/visitor-registration">
-                                        <button className="bg-[#F08400] hover:bg-black text-white px-8 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+                                        <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
                                             Become a Delegate
                                         </button>
                                     </Link>
@@ -138,9 +138,9 @@ function AboutSection() {
                     <div className="w-full grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
                         <div className="order-2 lg:order-1 space-y-6">
                           <div className="space-y-3">
-                            <p className="text-[#F08400] text-xs font-bold uppercase tracking-wider">About The Conference</p>
+                            <p className="text-[#CC9808] text-xs font-bold uppercase tracking-wider">About The Conference</p>
                             <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl leading-tight text-black uppercase">
-                                Where <span className="text-[#F08400]">Innovation</span> Meets <span className="text-[#F08400]">Excellence</span>
+                                Where <span className="text-[#CC9808]">Innovation</span> Meets <span className="text-[#CC9808]">Excellence</span>
                             </h2>
                           </div>
                           <p className="text-base sm:text-lg leading-relaxed text-gray-705 font-sans">
@@ -151,7 +151,7 @@ function AboutSection() {
                           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-[#FCF8F3] border border-gray-100 p-6 rounded-sm shadow-sm">
                               {stats.map((stat, idx) => (
                                   <div key={idx} className="text-center">
-                                      <h3 className="text-3xl font-bebas text-[#F08400] uppercase font-bold">{stat.value}</h3>
+                                      <h3 className="text-3xl font-bebas text-[#CC9808] uppercase font-bold">{stat.value}</h3>
                                       <p className="text-[10px] uppercase font-bold text-gray-600 mt-1 tracking-wider">{stat.label}</p>
                                   </div>
                               ))}
@@ -204,9 +204,9 @@ function SpeakersSection() {
             <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
                 <div className="animated-block-target">
                     <div className="text-center mb-10 max-w-2xl mx-auto space-y-3">
-                        <p className="text-xs font-bold text-[#F08400] uppercase tracking-wider">Speakers</p>
+                        <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Speakers</p>
                         <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
-                            Industry <span className="text-[#F08400]">Experts</span>
+                            Industry <span className="text-[#CC9808]">Experts</span>
                         </h2>
                         <p className="text-sm text-gray-650 leading-relaxed font-sans">
                             Leading voices from global tyre manufacturers, technology providers, and research institutions
@@ -238,10 +238,10 @@ function SpeakersSection() {
                                           </div>
                                       </div>
                                       <div className="p-5 font-sans">
-                                          <h3 className="font-bebas text-2xl text-black group-hover:text-[#F08400] transition-colors uppercase font-bold">
+                                          <h3 className="font-bebas text-2xl text-black group-hover:text-[#CC9808] transition-colors uppercase font-bold">
                                               {speaker.name}
                                           </h3>
-                                          <p className="text-[#F08400] text-xs font-bold uppercase tracking-wide mt-1">{speaker.title}</p>
+                                          <p className="text-[#CC9808] text-xs font-bold uppercase tracking-wide mt-1">{speaker.title}</p>
                                           <p className="text-gray-500 text-xs mt-1">{speaker.company}</p>
                                       </div>
                                     </div>
@@ -266,9 +266,9 @@ function ConferenceProgramme() {
                 <div className="bg-[#FCF8F3] py-16 border-t border-b border-gray-150">
                     <Container>
                         <div className="text-center mb-8 space-y-3">
-                            <p className="text-xs font-bold text-[#F08400] uppercase tracking-wider">Schedule</p>
+                            <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Schedule</p>
                             <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
-                                Conference <span className="text-[#F08400]">Programme</span>
+                                Conference <span className="text-[#CC9808]">Programme</span>
                             </h2>
                         </div>
 
@@ -278,7 +278,7 @@ function ConferenceProgramme() {
                                     key={index}
                                     onClick={() => setActiveDay(index)}
                                     className={`px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 border rounded-sm cursor-pointer ${activeDay === index
-                                        ? "bg-[#F08400] border-[#F08400] text-white shadow-sm"
+                                        ? "bg-[#CC9808] border-[#CC9808] text-white shadow-sm"
                                         : "bg-white border-gray-300 text-gray-700 hover:bg-slate-50"
                                         }`}
                                 >
@@ -290,16 +290,16 @@ function ConferenceProgramme() {
                         <div className="bg-white border border-gray-100 rounded-sm p-6 sm:p-8 shadow-sm">
                             <div className="mb-6 pb-4 border-b border-gray-200">
                                 <h3 className="font-bebas text-2xl text-black uppercase font-bold">{selectedDay.day}</h3>
-                                <p className="mt-1 text-xs font-bold text-[#F08400] uppercase tracking-wider">{selectedDay.description}</p>
+                                <p className="mt-1 text-xs font-bold text-[#CC9808] uppercase tracking-wider">{selectedDay.description}</p>
                             </div>
 
                             <div className="space-y-4">
                                 {selectedDay.sessions.map((session, idx) => (
                                     <div key={idx} className="group hover:bg-[#FCF8F3] p-4 rounded-sm border border-transparent hover:border-gray-100 transition-all duration-350">
                                         <div className="grid grid-cols-1 md:grid-cols-[150px_1fr] gap-3 md:gap-6 items-start font-sans">
-                                            <div className="text-[#F08400] font-bold text-xs uppercase tracking-wider pt-0.5">{session.time}</div>
+                                            <div className="text-[#CC9808] font-bold text-xs uppercase tracking-wider pt-0.5">{session.time}</div>
                                             <div className="space-y-2">
-                                                <h4 className="text-base sm:text-lg font-bold text-black group-hover:text-[#F08400] transition-colors uppercase font-sans">
+                                                <h4 className="text-base sm:text-lg font-bold text-black group-hover:text-[#CC9808] transition-colors uppercase font-sans">
                                                     {session.title}
                                                 </h4>
                                                 {session.description && (
@@ -316,7 +316,7 @@ function ConferenceProgramme() {
                                                     <div className="flex flex-wrap gap-4 pt-2">
                                                         {session.speakers.map((speaker, i) => (
                                                             <p key={i} className="text-xs text-gray-500 font-semibold bg-gray-50 px-2.5 py-1 border border-gray-150 rounded-sm">
-                                                                <span className="text-[#F08400]">Speaker:</span> {speaker.name} ({speaker.position})
+                                                                <span className="text-[#CC9808]">Speaker:</span> {speaker.name} ({speaker.position})
                                                             </p>
                                                         ))}
                                                     </div>
@@ -350,9 +350,9 @@ function WhyAttendSection() {
             <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
                 <div className="animated-block-target">
                     <div className="text-center mb-10 space-y-3">
-                        <p className="text-xs font-bold text-[#F08400] uppercase tracking-wider">Why Attend</p>
+                        <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Why Attend</p>
                         <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
-                            Why Attend <span className="text-[#F08400]">ITS Tyre Expo 2026</span>
+                            Why Attend <span className="text-[#CC9808]">ITS Tyre Expo 2026</span>
                         </h2>
                     </div>
 
@@ -360,7 +360,7 @@ function WhyAttendSection() {
                         {reasons.map((reason, idx) => (
                             <div key={idx} className="relative flex flex-col overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 shadow-sm hover:shadow-md transition-all duration-300">
                                 <div className="text-4xl mb-4">{reason.icon}</div>
-                                <h3 className="font-bebas text-2xl text-[#F08400] uppercase font-bold">{reason.title}</h3>
+                                <h3 className="font-bebas text-2xl text-[#CC9808] uppercase font-bold">{reason.title}</h3>
                                 <p className="mt-3 text-xs text-gray-650 font-sans leading-relaxed">{reason.description}</p>
                             </div>
                         ))}
@@ -384,9 +384,9 @@ function BecomeDelegate() {
             <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
                 <div className="animated-block-target">
                     <div className="text-center mb-10 space-y-3">
-                        <p className="text-xs font-bold text-[#F08400] uppercase tracking-wider">Registration</p>
+                        <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Registration</p>
                         <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
-                            Become a <span className="text-[#F08400]">Delegate</span>
+                            Become a <span className="text-[#CC9808]">Delegate</span>
                         </h2>
                         <p className="text-xs font-bold text-gray-505 uppercase tracking-wide">Prices include GST</p>
                     </div>
@@ -397,18 +397,18 @@ function BecomeDelegate() {
                                 <div>
                                     <div className="text-center mb-6 border-b border-gray-200 pb-4">
                                         <h3 className="font-bebas text-2xl text-black uppercase font-bold">{pkg.title}</h3>
-                                        <div className="mt-2 text-4xl font-bebas text-[#F08400] font-bold">{pkg.price}</div>
+                                        <div className="mt-2 text-4xl font-bebas text-[#CC9808] font-bold">{pkg.price}</div>
                                     </div>
                                     <ul className="space-y-3 mb-8 font-sans">
                                         {pkg.features.map((feature, i) => (
                                             <li key={i} className="flex items-start gap-2.5 text-xs text-gray-650 leading-relaxed">
-                                                <span className="text-[#F08400] font-bold">✓</span>
+                                                <span className="text-[#CC9808] font-bold">✓</span>
                                                 <span>{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
-                                <button className="w-full bg-[#F08400] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+                                <button className="w-full bg-[#CC9808] hover:bg-black text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
                                     REGISTER NOW
                                 </button>
                             </div>
@@ -429,9 +429,9 @@ function VenueSection() {
                     <div className="w-full grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
                         <div className="order-2 lg:order-1 space-y-6">
                           <div className="space-y-3">
-                            <p className="text-xs font-bold text-[#F08400] uppercase tracking-wider">Venue</p>
+                            <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Venue</p>
                             <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase leading-tight">
-                                Event <span className="text-[#F08400]">Location</span>
+                                Event <span className="text-[#CC9808]">Location</span>
                             </h2>
                           </div>
                           <div>
@@ -487,15 +487,15 @@ function OrganizerSection() {
             <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
                 <div className="animated-block-target">
                     <div className="text-center mb-10 space-y-3">
-                        <p className="text-xs font-bold text-[#F08400] uppercase tracking-wider">Organizer</p>
+                        <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Organizer</p>
                         <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
-                            Behind the <span className="text-[#F08400]">Event</span>
+                            Behind the <span className="text-[#CC9808]">Event</span>
                         </h2>
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto font-sans">
                         <div className="relative flex flex-col justify-between overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 shadow-sm">
-                            <h3 className="font-bebas text-2xl text-[#F08400] uppercase font-bold">Maxx Business Media</h3>
+                            <h3 className="font-bebas text-2xl text-[#CC9808] uppercase font-bold">Maxx Business Media</h3>
                             <p className="mt-3 text-xs text-gray-650 leading-relaxed">
                                 Tyre Expo is organized by Maxx Business Media, a leading exhibition organizer with a strong portfolio
                                 of industrial trade fairs and conferences across key manufacturing sectors.
@@ -524,9 +524,9 @@ function Contacts() {
                 <div className="bg-[#FCF8F3] py-16 border-t border-b border-gray-150">
                     <Container>
                         <div className="text-center mb-10 space-y-3">
-                            <p className="text-xs font-bold text-[#F08400] uppercase tracking-wider">Get In Touch</p>
+                            <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Get In Touch</p>
                             <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
-                                Contact <span className="text-[#F08400]">Information</span>
+                                Contact <span className="text-[#CC9808]">Information</span>
                             </h2>
                         </div>
 
@@ -568,9 +568,9 @@ function FAQ() {
             <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
                 <div className="animated-block-target">
                     <div className="text-center mb-10 space-y-3">
-                        <p className="text-xs font-bold text-[#F08400] uppercase tracking-wider">FAQ</p>
+                        <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">FAQ</p>
                         <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-black uppercase">
-                            Frequently Asked <span className="text-[#F08400]">Questions</span>
+                            Frequently Asked <span className="text-[#CC9808]">Questions</span>
                         </h2>
                     </div>
 
@@ -593,7 +593,7 @@ function FAQ() {
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 className={`size-5 transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}
                                             >
-                                                <path d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z" fill="#F08400" fillRule="evenodd" clipRule="evenodd"></path>
+                                                <path d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z" fill="#CC9808" fillRule="evenodd" clipRule="evenodd"></path>
                                             </svg>
                                         </div>
                                     </button>

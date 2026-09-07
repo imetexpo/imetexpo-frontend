@@ -109,14 +109,14 @@ export default function DelegateForm() {
       <Toaster position="top-right" />
       
       <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-orange-200 bg-white p-6 shadow-lg">
-        <h3 className="text-2xl font-bold text-[#F08400] border-b border-orange-200 pb-3">
+        <h3 className="text-2xl font-bold text-[#CC9808] border-b border-orange-200 pb-3">
           Register as Delegate
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="mb-1 block text-sm font-medium text-gray-700">
-              First Name<span className="ml-1 text-[#F08400]">*</span>
+              First Name<span className="ml-1 text-[#CC9808]">*</span>
             </label>
             <input
               type="text"
@@ -124,14 +124,14 @@ export default function DelegateForm() {
               value={formData.firstName}
               onChange={handleChange}
               required
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors"
               placeholder="First name"
             />
           </div>
 
           <div>
             <label className="mb-1 block text-sm font-medium text-gray-700">
-              Last Name<span className="ml-1 text-[#F08400]">*</span>
+              Last Name<span className="ml-1 text-[#CC9808]">*</span>
             </label>
             <input
               type="text"
@@ -139,7 +139,7 @@ export default function DelegateForm() {
               value={formData.lastName}
               onChange={handleChange}
               required
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors"
               placeholder="Last name"
             />
           </div>
@@ -147,7 +147,7 @@ export default function DelegateForm() {
 
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">
-            Company Name<span className="ml-1 text-[#F08400]">*</span>
+            Company Name<span className="ml-1 text-[#CC9808]">*</span>
           </label>
           <input
             type="text"
@@ -155,14 +155,14 @@ export default function DelegateForm() {
             value={formData.company}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors"
             placeholder="Company name"
           />
         </div>
 
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">
-            Job Title<span className="ml-1 text-[#F08400]">*</span>
+            Job Title<span className="ml-1 text-[#CC9808]">*</span>
           </label>
           <input
             type="text"
@@ -170,14 +170,14 @@ export default function DelegateForm() {
             value={formData.jobTitle}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors"
             placeholder="Job title"
           />
         </div>
 
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">
-            Work Email<span className="ml-1 text-[#F08400]">*</span>
+            Work Email<span className="ml-1 text-[#CC9808]">*</span>
           </label>
           <input
             type="email"
@@ -185,14 +185,14 @@ export default function DelegateForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors"
             placeholder="you@company.com"
           />
         </div>
 
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">
-            Phone<span className="ml-1 text-[#F08400]">*</span>
+            Phone<span className="ml-1 text-[#CC9808]">*</span>
           </label>
           <div className="flex">
             <div className="flex items-center gap-2 border border-gray-300 bg-gray-50 px-3 py-2 rounded-l-lg border-r-0">
@@ -204,7 +204,7 @@ export default function DelegateForm() {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="flex-1 rounded-r-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors"
+              className="flex-1 rounded-r-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors"
               placeholder="9876543210"
             />
           </div>
@@ -212,14 +212,14 @@ export default function DelegateForm() {
 
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">
-            Country<span className="ml-1 text-[#F08400]">*</span>
+            Country<span className="ml-1 text-[#CC9808]">*</span>
           </label>
           <select
             name="country"
             value={formData.country}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors bg-white"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors bg-white"
           >
             <option value="">
               {countriesLoading ? "Loading countries..." : "Select Country"}
@@ -235,7 +235,7 @@ export default function DelegateForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="mb-1 block text-sm font-medium text-gray-700">
-              State<span className="ml-1 text-[#F08400]">*</span>
+              State<span className="ml-1 text-[#CC9808]">*</span>
             </label>
             <input
               type="text"
@@ -244,13 +244,13 @@ export default function DelegateForm() {
               onChange={handleChange}
               required
               placeholder="Enter your state"
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors"
             />
           </div>
 
           <div>
             <label className="mb-1 block text-sm font-medium text-gray-700">
-              City<span className="ml-1 text-[#F08400]">*</span>
+              City<span className="ml-1 text-[#CC9808]">*</span>
             </label>
             <input
               type="text"
@@ -259,21 +259,21 @@ export default function DelegateForm() {
               onChange={handleChange}
               required
               placeholder="Enter your city"
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors"
             />
           </div>
         </div>
 
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">
-            Select Package<span className="ml-1 text-[#F08400]">*</span>
+            Select Package<span className="ml-1 text-[#CC9808]">*</span>
           </label>
           <select
             name="package"
             value={formData.package}
             onChange={handleChange}
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#F08400] focus:outline-none focus:ring-1 focus:ring-[#F08400] transition-colors bg-white"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#CC9808] focus:outline-none focus:ring-1 focus:ring-[#CC9808] transition-colors bg-white"
           >
             <option value="">Choose Delegate Category</option>
             <option value="student">STUDENT - ₹3,500</option>
@@ -289,17 +289,17 @@ export default function DelegateForm() {
             checked={formData.notRobot}
             onChange={(e) => setFormData(prev => ({ ...prev, notRobot: e.target.checked }))}
             required
-            className="mt-1 text-[#F08400] focus:ring-[#F08400] rounded"
+            className="mt-1 text-[#CC9808] focus:ring-[#CC9808] rounded"
           />
           <label className="text-sm text-gray-700">
-            I confirm that I am not a robot<span className="ml-1 text-[#F08400]">*</span>
+            I confirm that I am not a robot<span className="ml-1 text-[#CC9808]">*</span>
           </label>
         </div>
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full rounded-lg bg-[#F08400] px-6 py-3 text-sm font-semibold text-white hover:bg-[#d97000] hover:scale-105 transition-all duration-300 ${
+          className={`w-full rounded-lg bg-[#CC9808] px-6 py-3 text-sm font-semibold text-white hover:bg-[#d97000] hover:scale-105 transition-all duration-300 ${
             isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
           }`}
         >
@@ -311,7 +311,7 @@ export default function DelegateForm() {
           communications. You can unsubscribe anytime. Read our{' '}
           <a
             href="/privacy-policy"
-            className="text-[#F08400] underline"
+            className="text-[#CC9808] underline"
             target="_blank"
             rel="noopener noreferrer"
           >

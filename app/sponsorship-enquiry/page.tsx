@@ -250,7 +250,7 @@ export default function SponsorshipEnquiryPage() {
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h2>
           <p className="text-gray-600 mb-6">Your sponsorship enquiry has been submitted successfully. Our team will contact you shortly.</p>
-          <Link href="/" className="inline-block bg-[#F08400] text-white px-6 py-2 rounded-lg hover:bg-black transition">
+          <Link href="/" className="inline-block bg-[#CC9808] text-white px-6 py-2 rounded-lg hover:bg-black transition">
             Back to Home
           </Link>
         </div>
@@ -266,7 +266,7 @@ export default function SponsorshipEnquiryPage() {
             
             {/* LEFT SIDE - HEADER CONTENT */}
             <div className="flex flex-col gap-6 lg:sticky lg:top-44 h-fit">
-              <p className="text-[#F08400] font-sans text-[14px] font-semibold uppercase tracking-[1.5px]">
+              <p className="text-[#CC9808] font-sans text-[14px] font-semibold uppercase tracking-[1.5px]">
                 Partner With Us
               </p>
               <h1 className="font-bebas font-bold text-[38px] lg:text-[48px] leading-[1.15] tracking-[1px] uppercase text-black">
@@ -286,7 +286,7 @@ export default function SponsorshipEnquiryPage() {
               <div className="mt-4">
                 {/* <Button
                href="/contact-us/"
-                  className="bg-[#F08400] text-white px-8 py-3 text-sm font-extrabold uppercase tracking-[1.5px] hover:bg-black transition-all duration-300"
+                  className="bg-[#CC9808] text-white px-8 py-3 text-sm font-extrabold uppercase tracking-[1.5px] hover:bg-black transition-all duration-300"
                 >
                   Download Sponsorship Brochure
                 </Button> */}
@@ -308,7 +308,7 @@ export default function SponsorshipEnquiryPage() {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       placeholder="Type your first name"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white"
                       required
                     />
                   </div>
@@ -322,7 +322,7 @@ export default function SponsorshipEnquiryPage() {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       placeholder="Type your last name"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white"
                       required
                     />
                   </div>
@@ -339,7 +339,7 @@ export default function SponsorshipEnquiryPage() {
                     value={formData.companyName}
                     onChange={handleInputChange}
                     placeholder="Type your Company Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white"
                     required
                   />
                 </div>
@@ -355,7 +355,7 @@ export default function SponsorshipEnquiryPage() {
                     value={formData.jobTitle}
                     onChange={handleInputChange}
                     placeholder="Type your Job Title"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white"
                     required
                   />
                 </div>
@@ -370,7 +370,7 @@ export default function SponsorshipEnquiryPage() {
                       name="country"
                       value={formData.country}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white"
                       required
                     >
                       <option value="">Select your country</option>
@@ -389,7 +389,7 @@ export default function SponsorshipEnquiryPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="Type your phone number"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white"
                       required
                     />
                   </div>
@@ -406,7 +406,7 @@ export default function SponsorshipEnquiryPage() {
                     value={formData.workEmail}
                     onChange={handleInputChange}
                     placeholder="Type your email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white"
                     required
                   />
                 </div>
@@ -424,7 +424,7 @@ export default function SponsorshipEnquiryPage() {
                             type="checkbox"
                             checked={formData.productSectors.includes(sector)}
                             onChange={() => handleSectorToggle(sector)}
-                            className="mt-0.5 w-4 h-4 text-[#F08400] rounded border-gray-300 focus:ring-[#F08400]"
+                            className="mt-0.5 w-4 h-4 text-[#CC9808] rounded border-gray-300 focus:ring-[#CC9808]"
                           />
                           <span className="text-sm text-gray-700">{sector}</span>
                         </label>
@@ -444,7 +444,7 @@ export default function SponsorshipEnquiryPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#F08400] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#CC9808] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
                 </button>
@@ -454,7 +454,7 @@ export default function SponsorshipEnquiryPage() {
                   T&C’s: By submitting this form, you agree to receive marketing communications, updates, 
                   and promotional materials from us. You can unsubscribe anytime by clicking the "unsubscribe" 
                   link in our emails. For more information on how we handle your data, please refer to our 
-                  <Link href="/privacy-policy" className="text-[#F08400] hover:underline ml-1">Privacy Policy</Link>.
+                  <Link href="/privacy-policy" className="text-[#CC9808] hover:underline ml-1">Privacy Policy</Link>.
                 </p>
               </form>
             </div>

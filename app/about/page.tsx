@@ -105,7 +105,7 @@ export default function AboutPage() {
             <Container>
               <div className="flex flex-col gap-2.5 max-w-4xl">
                 <h1 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase leading-none tracking-tight">
-                  ABOUT <span className="text-[#F08400]">INDIA TYRE SHOW</span>
+                  ABOUT <span className="text-[#CC9808]">INDIA TYRE SHOW</span>
                 </h1>
                 <p className="font-sans text-sm sm:text-base md:text-lg text-neutral-450 mt-1 max-w-3xl leading-relaxed">
                   From Material to Mobility: Powering the Future of the Rubber & Tyre Industry
@@ -146,35 +146,35 @@ export default function AboutPage() {
                 {/* STATS SECTION */}
                 <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-between bg-[#FCF8F3] border border-gray-100 px-4 sm:px-6 py-6 sm:py-8 rounded-sm gap-4 sm:gap-0">
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F08400] font-bold">10th</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">10th</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-black font-semibold mt-1 font-sans">EDITION</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F08400] font-bold">8,500+</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">8,500+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-black font-semibold mt-1 font-sans">VISITORS</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F08400] font-bold">350+</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">350+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-black font-semibold mt-1 font-sans">EXHIBITORS</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F08400] font-bold">60+</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">60+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-black font-semibold mt-1 font-sans">SPEAKERS</p>
                   </div>
                 </div>
   
                 <div className="mt-8 sm:mt-10">
                   <Link href="/why-exhibit">
-                    <button className="bg-[#F08400] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                    <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                       Why Exhibit
                     </button>
                   </Link>
@@ -216,7 +216,7 @@ export default function AboutPage() {
                           
                         <div className="mt-5">
                           <Link href={item.buttonLink}>
-                            <button className="bg-[#F08400] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                            <button className="bg-[#CC9808] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                               {item.buttonText}
                             </button>
                           </Link>
@@ -265,7 +265,7 @@ export default function AboutPage() {
                         </p>
                   
                         <Link href="/event-brochure">
-                          <button className="bg-[#F08400] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit">
+                          <button className="bg-[#CC9808] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit">
                             Download Now
                           </button>
                         </Link>
@@ -302,7 +302,7 @@ export default function AboutPage() {
                           
                   <div className="mt-6 sm:mt-8">
                     <Link href="/exhibition-directory" target="_blank">
-                      <button className="bg-[#F08400] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         View Full Exhibitor List
                       </button>
                     </Link>
@@ -373,7 +373,7 @@ export default function AboutPage() {
                           <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">{event.description}</p>
                           {event.buttonText && (
                             <Link href={event.buttonLink}>
-                              <button className="bg-[#F08400] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mt-2">
+                              <button className="bg-[#CC9808] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mt-2">
                                 {event.buttonText}
                               </button>
                             </Link>
@@ -424,7 +424,7 @@ export default function AboutPage() {
             </div>
           </div>
           
-          <hr className="border-t-6 border-[#F08400]" />
+          <hr className="border-t-6 border-[#CC9808]" />
         </div>
         <BackToTop/>
       </div>

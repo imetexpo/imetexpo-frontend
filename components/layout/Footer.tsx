@@ -31,7 +31,7 @@ export default function Footer() {
               </h5>
               <a
                 href="mailto:miningsupportrussia@ite.group"
-                className="hover:text-[#F08400] transition-colors text-sm"
+                className="hover:text-[#CC9808] transition-colors text-sm"
               >
                 miningsupportrussia@ite.group
               </a>
@@ -41,7 +41,7 @@ export default function Footer() {
               <h5 className="text-sm font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Hotline
               </h5>
-              <a href="tel:+74957995585" className="hover:text-[#F08400] transition-colors text-sm">
+              <a href="tel:+74957995585" className="hover:text-[#CC9808] transition-colors text-sm">
                 +7-(495)-799-55-85
               </a>
             </div>
@@ -50,7 +50,7 @@ export default function Footer() {
               <h5 className="text-sm font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Visitor Support
               </h5>
-              <a href="tel:+74957995585" className="hover:text-[#F08400] transition-colors text-sm">
+              <a href="tel:+74957995585" className="hover:text-[#CC9808] transition-colors text-sm">
                 +7-(495)-799-55-85
               </a>
             </div>
@@ -103,7 +103,7 @@ export default function Footer() {
                 href="https://prismetic.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-white uppercase hover:text-[#F08400] transition-colors"
+                className="font-bold text-white uppercase hover:text-[#CC9808] transition-colors"
               >
                 PRISMETIC
               </a>

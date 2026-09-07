@@ -181,7 +181,7 @@ export default function EnquiryForm() {
           Your visitor registration for ITS Tyre Expo 2026 has been submitted successfully.
           A confirmation email has been sent to your registered email address.
         </p>
-        <Link href="/" className="inline-block bg-[#F08400] text-white px-6 py-2 rounded-lg hover:bg-black transition">
+        <Link href="/" className="inline-block bg-[#CC9808] text-white px-6 py-2 rounded-lg hover:bg-black transition">
           Back to Home
         </Link>
       </div>
@@ -201,7 +201,7 @@ export default function EnquiryForm() {
           onChange={handleInputChange}
           required
           placeholder="Enter your full name"
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
         />
       </div>
 
@@ -216,7 +216,7 @@ export default function EnquiryForm() {
           onChange={handleInputChange}
           required
           placeholder="Your job title/position"
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
         />
       </div>
 
@@ -231,7 +231,7 @@ export default function EnquiryForm() {
           onChange={handleInputChange}
           required
           placeholder="Your company/organization name"
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
         />
       </div>
 
@@ -246,7 +246,7 @@ export default function EnquiryForm() {
           required
           placeholder="ex: #20, 4th cross, RK Road"
           rows={3}
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm resize-none"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm resize-none"
         />
       </div>
 
@@ -259,7 +259,7 @@ export default function EnquiryForm() {
           value={formData.country}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
         >
           <option value="">Select Country</option>
           {countries.map((country) => (
@@ -282,7 +282,7 @@ export default function EnquiryForm() {
             onChange={handleInputChange}
             required
             placeholder="Enter your state"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
           />
         </div>
         <div>
@@ -296,7 +296,7 @@ export default function EnquiryForm() {
             onChange={handleInputChange}
             required
             placeholder="Enter your city"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
           />
         </div>
       </div>
@@ -312,7 +312,7 @@ export default function EnquiryForm() {
           onChange={handleInputChange}
           required
           placeholder="Enter your postal code"
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
         />
       </div>
 
@@ -327,7 +327,7 @@ export default function EnquiryForm() {
           onChange={handleInputChange}
           required
           placeholder="Enter your email address"
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
         />
         <p className="mt-1 text-xs text-gray-500">
           We'll send your registration confirmation and updates to this email.
@@ -349,7 +349,7 @@ export default function EnquiryForm() {
             onChange={handleInputChange}
             required
             placeholder="Enter your mobile number"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
           />
         </div>
       </div>
@@ -363,7 +363,7 @@ export default function EnquiryForm() {
           value={formData.profile}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
         >
           <option value="">Select your industry profile</option>
           <option value="Tyre Manufacturing">Tyre Manufacturing</option>
@@ -391,7 +391,7 @@ export default function EnquiryForm() {
           value={formData.promocode}
           onChange={handleInputChange}
           placeholder="Enter promo code if you have one"
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F08400] focus:border-[#F08400] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9808] focus:border-[#CC9808] outline-none transition bg-white text-sm"
         />
       </div>
 
@@ -402,12 +402,12 @@ export default function EnquiryForm() {
           checked={termsAccepted}
           onChange={(e) => setTermsAccepted(e.target.checked)}
           required
-          className="mt-1 w-4 h-4 text-[#F08400] rounded border-gray-300 focus:ring-[#F08400]"
+          className="mt-1 w-4 h-4 text-[#CC9808] rounded border-gray-300 focus:ring-[#CC9808]"
         />
         <label htmlFor="terms-enquiry" className="text-sm text-gray-600 cursor-pointer">
           I agree to receive marketing communications, updates, and promotional materials from ITS Tyre Expo.
           I can unsubscribe anytime. For more information, please refer to our{" "}
-          <Link href="/privacy-policy" className="text-[#F08400] hover:underline">
+          <Link href="/privacy-policy" className="text-[#CC9808] hover:underline">
             Privacy Policy
           </Link>.
         </label>
@@ -416,7 +416,7 @@ export default function EnquiryForm() {
       <button
         type="submit"
         disabled={loading || !termsAccepted}
-        className="w-full bg-[#F08400] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-[#CC9808] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? (
           <span className="flex items-center justify-center gap-2">
@@ -433,7 +433,7 @@ export default function EnquiryForm() {
 
       <p className="text-xs text-gray-500 text-center mt-4">
         Need assistance? Contact us at{" "}
-        <a href="mailto:support@tyre-expo.com" className="text-[#F08400] hover:underline">
+        <a href="mailto:support@tyre-expo.com" className="text-[#CC9808] hover:underline">
           support@tyre-expo.com
         </a>
       </p>

@@ -144,7 +144,7 @@ export default function WhyVisitPage() {
                     {stats.map((stat, idx) => (
                       <React.Fragment key={idx}>
                         <div className="text-center flex-1 min-w-[80px]">
-                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F08400] font-bold">{stat.value}</h3>
+                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">{stat.value}</h3>
                           <p className="text-[10px] sm:text-xs tracking-wider text-black font-semibold mt-1 uppercase">{stat.label}</p>
                         </div>
                         {idx < stats.length - 1 && (
@@ -155,7 +155,7 @@ export default function WhyVisitPage() {
                   </div>
                   <div className="mt-8 sm:mt-10">
                     <Link href="/visitor-registration">
-                      <button className="bg-[#F08400] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         Get your Badge Today
                       </button>
                     </Link>
@@ -188,14 +188,14 @@ export default function WhyVisitPage() {
               <div className="absolute inset-0 bg-black/50"></div>
               <Container>
                 <div className="relative z-10 flex flex-col gap-4 sm:gap-5">
-                  <p className="text-sm sm:text-base font-bold text-[#F08400]">
+                  <p className="text-sm sm:text-base font-bold text-[#CC9808]">
                     Connect with the Global Tyre Network at ITS Tyre Expo
                   </p>
                   <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-white max-w-[1000px]">
                     Where Tyre Manufacturing's Key Players Meet and Opportunities Take Shape
                   </h3>
                   <Link href="/exhibition-directory" target="_blank">
-                    <button className="inline-block bg-[#F08400] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                    <button className="inline-block bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                       Explore the Exhibitors List
                     </button>
                   </Link>
@@ -266,7 +266,7 @@ export default function WhyVisitPage() {
                       Make sure you grab your copy of the event brochure to learn more about the show and explore your participation opportunities.
                     </p>
                     <Link href="/event-brochure">
-                      <button className="bg-[#F08400] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#CC9808] hover:bg-white hover:text-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         Download Now
                       </button>
                     </Link>
@@ -293,7 +293,7 @@ export default function WhyVisitPage() {
                     {businessAreas.map((area, idx) => (
                       <React.Fragment key={idx}>
                         <div className="text-center flex-1 min-w-[80px]">
-                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F08400] font-bold">{area.percentage}</h3>
+                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">{area.percentage}</h3>
                           <p className="text-[10px] sm:text-xs tracking-wider text-black font-semibold mt-1 uppercase">{area.label}</p>
                         </div>
                         {idx < businessAreas.length - 1 && (
@@ -304,7 +304,7 @@ export default function WhyVisitPage() {
                   </div>
                   <div className="mt-8 sm:mt-10">
                     <Link href="/post-show-report">
-                      <button className="bg-[#F08400] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         Download Your Post-Show Report
                       </button>
                     </Link>
@@ -383,7 +383,7 @@ export default function WhyVisitPage() {
                 </div>
                 <div className="mt-6 sm:mt-8 flex justify-center">
                   <Link href="https://catalogue.ite-expo.ru/en-GB/exhibitorlist.aspx?project_id=541" target="_blank">
-                    <button className="bg-[#F08400] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                    <button className="bg-[#CC9808] hover:bg-black text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                       View the Exhibitor List
                     </button>
                   </Link>
@@ -426,7 +426,7 @@ export default function WhyVisitPage() {
                       <h4 className="text-lg sm:text-xl font-bold text-black">{item.title}</h4>
                       <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">{item.description}</p>
                       <Link href={item.buttonLink}>
-                        <button className="bg-[#F08400] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#CC9808] hover:bg-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           {item.buttonText}
                         </button>
                       </Link>
