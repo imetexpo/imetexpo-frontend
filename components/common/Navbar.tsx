@@ -46,8 +46,9 @@ const navItems = [
       { text: 'Conference Programme', href: '/conference-programme/' },
     ],
   },
-  { title: 'Contact us', href: '/contact-us/', links: [] },
   { title: 'Conference', href: '/conference/', links: [] },
+  { title: 'Contact us', href: '/contact-us/', links: [] },
+  
 ];
 
 const innerPadding = 'px-[calc(1rem+1cm)] sm:px-[calc(1.5rem+1cm)] lg:px-[calc(2rem+1cm)] xl:px-[calc(3rem+1cm)]';
