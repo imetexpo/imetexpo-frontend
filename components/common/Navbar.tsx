@@ -227,7 +227,7 @@ export default function Navbar() {
         </div>
 
         {/* NAV ROW */}
-        <div className="border-t border-white/10 bg-[#03193D]/90 backdrop-blur-md">
+        <div className="border-t border-white/10 bg-[#021533]/90 backdrop-blur-md">
           <Container className="flex items-center py-1 min-h-[44px]">
             <div
               style={{
