@@ -87,7 +87,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       />
       
       {/* Floating Rounded Menu Card */}
-      <div className="fixed top-[160px] left-4 right-4 bottom-4 bg-[#0A0A0A] border border-neutral-900 z-45 shadow-2xl overflow-y-auto rounded-[28px] p-6 text-white lg:hidden flex flex-col justify-between font-sans transition-all duration-300 animate-slide-up no-scrollbar">
+      <div className="fixed top-[160px] left-4 right-4 bottom-4 bg-[#03193D] border border-neutral-900 z-45 shadow-2xl overflow-y-auto rounded-[28px] p-6 text-white lg:hidden flex flex-col justify-between font-sans transition-all duration-300 animate-slide-up no-scrollbar">
         
         {/* Main Content Area */}
         <div className="flex-1">
