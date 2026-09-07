@@ -109,7 +109,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-col gap-4 border-t border-neutral-900 pt-6 text-[11px] text-neutral-500 md:flex-row md:justify-between md:items-center">
+          <div className="mt-6 flex flex-col gap-4 border-t border-neutral-900 pt-6 text-[18px] text-neutral-500 md:flex-row md:justify-between md:items-center">
             <p>© IndiaMet 2027. All Rights Reserved.</p>
             <div className="flex items-center gap-3 flex-wrap">
               <Link href="#" className="hover:text-white transition-colors">Terms of Use</Link>
