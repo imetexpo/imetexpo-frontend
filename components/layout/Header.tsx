@@ -12,7 +12,7 @@ export default function Header() {
 
   // Dynamic countdown timer calculation for Mobile header
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2026-04-22T09:00:00').getTime();
+    const targetDate = new Date('2027-04-22T09:00:00').getTime();
     const diff = targetDate - Date.now();
     if (diff <= 0) return { days: 0, hours: 0, minutes: 0 };
     return {
@@ -36,10 +36,10 @@ export default function Header() {
       </div>
 
       {/* ✅ Mobile Countdown Banner (Brown bar at top-0 - 2 rows matching reference) */}
-      <div className="lg:hidden fixed top-0 left-0 w-full bg-[#432500] z-50 py-2 px-4 shadow-sm border-b border-black/10">
+      <div className="lg:hidden fixed top-0 left-0 w-full bg-[#03193D] z-50 py-2 px-4 shadow-sm border-b border-black/10">
         <div className="flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold uppercase tracking-wider text-white text-center font-sans">
           <div className="text-[10px] text-gray-300 tracking-wide">
-            22–24 April 2026 • BITEC, Bangkok, Thailand
+            22–24 April 2027 • Auto Cluster Exhibition Center, Pune, India
           </div>
           <div className="flex items-center gap-2.5 justify-center mt-0.5">
             <span>
