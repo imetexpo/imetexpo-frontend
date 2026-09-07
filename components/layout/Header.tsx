@@ -67,8 +67,8 @@ export default function Header() {
             <Image
               src="/ITS_logo_white.png"
               alt="India Tyre Show"
-              width={120}
-              height={35}
+              width={270}
+              height={100}
               className="object-contain w-[100px] sm:w-[120px] h-auto"
             />
           </Link>
@@ -76,7 +76,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/login/"
-              className="bg-[#2A2A2A] text-white px-3 py-1 text-xs border border-white/20
+              className="bg-[#CC9808] text-white px-3 py-1 text-xs border border-white/20
               hover:bg-[#CC9808] hover:text-[#03193D] transition-all duration-300 rounded-sm"
             >
               Login
