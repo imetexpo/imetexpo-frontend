@@ -147,28 +147,28 @@ export default function AboutPage() {
                 {/* STATS SECTION */}
                 <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-between bg-[#FCF8F3] border border-gray-100 px-4 sm:px-6 py-6 sm:py-8 rounded-sm gap-4 sm:gap-0">
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">10th</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">1st</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#03193D] font-semibold mt-1 font-sans">EDITION</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">8,500+</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">10,000+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#03193D] font-semibold mt-1 font-sans">VISITORS</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">350+</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">150+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#03193D] font-semibold mt-1 font-sans">EXHIBITORS</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">60+</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">50+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#03193D] font-semibold mt-1 font-sans">SPEAKERS</p>
                   </div>
                 </div>

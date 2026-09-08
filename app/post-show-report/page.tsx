@@ -138,10 +138,10 @@ const sendSizes = ["Up to 100 sqm", "100-200 sqm", "200-500 sqm", "500+ sqm"];
 const hearAboutOptions = ["Google", "LinkedIn", "Email", "Word of Mouth", "Conference", "Other"];
 
 const statsData = [
-  { value: "8,500+", label: "Visitors" },
-  { value: "350+", label: "Exhibitors" },
-  { value: "50+", label: "Countries" },
-  { value: "10th", label: "Edition" },
+  { value: "10,000+", label: "Visitors" },
+  { value: "150+", label: "Exhibitors" },
+  { value: "20+", label: "Countries" },
+  { value: "1st", label: "Edition" },
 ];
 
 export default function PostShowReportPage() {

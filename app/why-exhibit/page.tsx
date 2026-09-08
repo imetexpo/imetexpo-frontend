@@ -113,26 +113,26 @@ export default function WhyExhibitPage() {
                     </div>
                     <div className="mt-10 flex flex-wrap gap-8 2xl:gap-16">
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">10th</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">1st</h3>
                         <p className="text-sm font-semibold tracking-wider uppercase text-[#03193D] font-sans">Edition</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">8,500+</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">10,000+</h3>
                         <p className="text-sm font-semibold tracking-wider uppercase text-[#03193D] font-sans">Trade Visitors</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">350+</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">150+</h3>
                         <p className="text-sm font-semibold tracking-wider uppercase text-[#03193D] font-sans">Exhibitors</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center font-bebas last-of-type:border-none lg:border-r lg:pr-8 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">60+</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] md:text-6xl">50+</h3>
                         <p className="text-sm font-semibold tracking-wider uppercase text-[#03193D] font-sans">Conference Speakers</p>
                       </div>
                     </div>
                     <div className="mt-10">
                       <Link href="/about-its-tyre-expo">
                         <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
-                          About ITS Tyre Expo
+                          About INDIAMET Expo
                         </button>
                       </Link>
                     </div>
@@ -147,9 +147,9 @@ export default function WhyExhibitPage() {
             <div className="animated-block-target">
               <Container>
                 <div className="grid gap-5">
-                  <h2 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Why Exhibit at ITS Tyre Expo</h2>
+                  <h2 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Why Exhibit at INDIAMET Expo</h2>
                   <p className="text-lg text-gray-700">
-                    Exhibiting at ITS Tyre Expo puts you at the center of Southeast Asia's fastest-growing tyre manufacturing hub. Connect directly with over 8,500 professionals with real purchasing power, showcase your solutions to a USD 45 billion industry, and expand your network across 50+ countries. This is your chance to generate high-quality leads, forge valuable partnerships, and position your brand as a leader in the region's rapidly modernizing rubber and tyre sector.
+                    Exhibiting at INDIAMET Expo puts you at the center of India's fastest-growing metrology and measurement technology hub. Connect directly with over 10,000 professionals with real purchasing power, showcase your solutions to a USD 45 billion industry, and expand your network across 50+ countries. This is your chance to generate high-quality leads, forge valuable partnerships, and position your brand as a leader in the region's rapidly modernizing rubber and tyre sector.
                   </p>
                 </div>
                 <div className="my-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

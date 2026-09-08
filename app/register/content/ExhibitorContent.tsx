@@ -1,8 +1,8 @@
 const statsData = [
-  { value: "8,500+", label: "Trade Visitors" },
-  { value: "350+", label: "Exhibitors" },
-  { value: "50+", label: "Visiting Countries" },
-  { value: "10th", label: "Edition" },
+  { value: "10,000+", label: "Trade Visitors" },
+  { value: "150+", label: "Exhibitors" },
+  { value: "20+", label: "Visiting Countries" },
+  { value: "1st", label: "Edition" },
 ];
 
 export default function ExhibitorContent() {

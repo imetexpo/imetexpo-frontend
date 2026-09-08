@@ -16,10 +16,10 @@ export default function BrochureContent() {
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-[#f5f5f5] border border-gray-100 p-6 rounded-sm shadow-sm">
         {[
-          { value: "8,500+", label: "Visitors" },
-          { value: "350+", label: "Exhibitors" },
-          { value: "50+", label: "Countries" },
-          { value: "10th", label: "Edition" },
+          { value: "10,000+", label: "Visitors" },
+          { value: "150+", label: "Exhibitors" },
+          { value: "20+", label: "Countries" },
+          { value: "1st", label: "Edition" },
         ].map((item, i) => (
           <div key={i} className="text-center">
             <h3 className="text-3xl font-bebas text-[#CC9808] uppercase font-bold">{item.value}</h3>
