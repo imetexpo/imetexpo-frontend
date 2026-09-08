@@ -30,37 +30,44 @@ export default function AboutPage() {
   const ecosystemItems = [
     {
       title: "The Exhibition",
-      description: "At the heart of the ecosystem is the annual ITS Tyre Expo exhibition in Bangkok. It brings together the full spectrum of the tyre manufacturing industry, offering a high-impact platform to:",
+      description: "At the heart of the INDIAMET ecosystem is the international exhibition dedicated to metrology, measurement technology, inspection, calibration, and quality engineering. It brings together the complete spectrum of the precision manufacturing and quality industry, offering a high-impact platform to:",
       points: [
-        "Establish direct, face-to-face business connections.",
-        "Showcase machinery, equipment, technologies, and tyre solutions.",
-        "Meet thousands of procurement decision-makers and industry specialists in one place."
+        "Build direct, face-to-face business connections with industry leaders and decision-makers.",
+        "Showcase advanced metrology, measurement, inspection, and calibration technologies.",
+        "Meet manufacturers, engineers, quality professionals, procurement leaders, and industry specialists from across India and global markets."
       ],
       buttonText: "Why Exhibit",
       buttonLink: "/why-exhibit"
     },
     {
-      title: "Conference",
-      description: "Throughout the exhibition and beyond, the ecosystem includes a robust program of conferences, forums, and summits. These events are curated to foster dialogue around tyre innovation, sustainability, and market development.",
-      points: [
-        "Gain insights from top-level speakers and tyre industry leaders.",
-        "Discuss emerging challenges, regulations, and best practices in tyre manufacturing.",
-        "Participate in sector-specific sessions for materials, equipment, testing, and digital technologies."
-      ],
-      buttonText: "Explore Agenda",
-      buttonLink: "/conference-programme"
-    },
-    {
-      title: "ITS Tyre Expo Connect",
-      description: "ITS Tyre Expo Connect is the ecosystem's digital layer – an online platform designed to keep the conversation going before, during, and after the exhibition. Through Connect, participants can:",
-      points: [
-        "Network with buyers, suppliers, and industry peers 365 days a year.",
-        "Access curated content, market news, and exhibitor updates.",
-        "Schedule meetings and follow up on new business leads online."
-      ],
-      buttonText: "Explore Connect",
-      buttonLink: "/leadscanning"
-    }
+  title: "INDIAMET Summit",
+
+  description: "Throughout the exhibition and beyond, INDIAMET brings together industry leaders, technology experts, and manufacturing professionals through conferences, forums, and focused summit sessions. These programmes are designed to explore the latest developments in metrology, measurement technology, inspection, quality, and precision manufacturing.",
+
+  points: [
+    "Gain insights from leading metrology experts, manufacturing leaders, and technology innovators.",
+    "Discuss emerging technologies, industry challenges, standards, and best practices in measurement and quality.",
+    "Participate in focused sessions covering CMMs, 3D measurement, vision inspection, calibration, automation, and Industry 4.0."
+  ],
+
+  buttonText: "Explore Summit",
+  buttonLink: "/conference-programme"
+},
+
+{
+  title: "INDIAMET Connect",
+
+  description: "INDIAMET Connect is the digital layer of the INDIAMET ecosystem — an online platform designed to keep industry professionals connected before, during, and after the exhibition. Through Connect, participants can:",
+
+  points: [
+    "Connect with manufacturers, buyers, suppliers, and metrology professionals throughout the year.",
+    "Access industry insights, technology updates, expert content, and exhibitor information.",
+    "Discover new business opportunities, connect with exhibitors, and follow up with potential partners online."
+  ],
+
+  buttonText: "Explore Connect",
+  buttonLink: "/connect"
+}
   ];
 
   const keyEvents = [
@@ -284,13 +291,13 @@ export default function AboutPage() {
               <div className="w-full max-w-[1600px] 2xl:max-w-[1800px] mx-auto">
                 <Container>
                   <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">
-                    Meet the Leading Exhibitors of 2026
+                    Meet the Leading Exhibitors of 2027
                   </h3>
                 </Container>
                           
                 <div className="mt-6 sm:mt-8 lg:mt-10 mx-4 bg-[#FCF8F3] border border-gray-100 p-6 sm:p-8 flex flex-col rounded-sm shadow-sm">
                   <h4 className="font-bebas text-3xl sm:text-4xl lg:text-5xl text-[#03193D]">
-                    Exhibiting at ITS Tyre Expo Elevates Your Brand and Expands Your Network
+                    Exhibiting at INDIAMET Elevates Your Brand and Expands Your Business Network
                   </h4>
                           
                   <div className="mt-6 sm:mt-8 w-full overflow-hidden rounded-sm">
@@ -322,13 +329,13 @@ export default function AboutPage() {
                   <div className="mt-1 sm:mt-1 lg:mt-2 grid gap-5 sm:gap-6 lg:grid-cols-2">
                     <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 font-sans">
                       <p className="mb-2 font-bold text-sm sm:text-base text-[#03193D]">Opening Hours</p>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">15 October 2026: 10:00 - 18:00</h4>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">16 October 2026: 10:00 - 18:00</h4>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">17 October 2026: 10:00 - 16:00</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">22 April 2027: 10:00 - 18:00</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">23 April 2027: 10:00 - 18:00</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">24 April 2027: 10:00 - 16:00</h4>
                     </div>
                     <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 font-sans">
                       <p className="mb-2 font-bold text-sm sm:text-base text-[#03193D]">Venue</p>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">BITEC, Bangkok, Thailand</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">Auto Cluster Exhibition Center, Pune, India</h4>
                     </div>
                   </div>
                   <div className="mt-6 sm:mt-8 overflow-hidden rounded-lg">
