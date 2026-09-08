@@ -291,7 +291,7 @@ export default function PostShowReportPage() {
             <div className="bg-[#FCF8F3] border border-gray-100 rounded-sm p-6 md:p-8 shadow-sm">
               <div className="mb-6">
                 <h2 className="text-[#03193D] font-bebas text-3xl font-bold uppercase tracking-wide">
-                  Download Post-Show <span className="text-[#CC9808]">Report</span>
+                  Download Expo <span className="text-[#CC9808]">Brochure</span>
                 </h2>
                 <p className="text-xs text-gray-600 font-sans">Fill in the details to download the report from our previous show.</p>
               </div>

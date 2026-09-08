@@ -58,7 +58,7 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
             href="/post-show-report/"
             className="inline-block bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
           >
-            Download Post-Show Report
+            Download Expo Brochure
           </Link>
         </div>
       </Container>
