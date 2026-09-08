@@ -34,18 +34,18 @@ const countriesData = [
 
 const outcomesData = [
   {
-    title: '70%',
-    content: 'of exhibitors engaged with and sold to existing customers, reinforcing long-term business relationships.',
+    title: 'GENERATE NEW LEADS',
+    content: 'Meet manufacturers, quality professionals, engineers, procurement teams, and decision-makers actively looking for advanced measurement, inspection, calibration, and quality solutions.',
     image: 'https://cdn.itegroupnews.com/M_Wr_106471c763.png',
   },
   {
-    title: '62%',
-    content: 'of exhibitors strengthened brand visibility and market positioning among key industry players',
+    title: 'STRENGTHEN YOUR BRAND',
+    content: 'Position your company alongside leading global and Indian metrology brands and increase visibility among key players across automotive, aerospace, engineering, defence, electronics, medical devices, and other precision industries.',
     image: 'https://cdn.itegroupnews.com/2_edefccdfd0.png',
   },
   {
-    title: '61%',
-    content: 'of exhibitors acquired new leads and expanded their client base, unlocking fresh opportunities in the global market.',
+    title: 'BUILD LASTING BUSINESS RELATIONSHIPS',
+    content: 'Engage directly with existing customers, develop new partnerships, explore emerging markets, and create opportunities for long-term business growth.',
     image: 'https://cdn.itegroupnews.com/3_5ab1f32ff9.png',
   },
 ];

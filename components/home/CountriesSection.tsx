@@ -35,14 +35,16 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
           Countries Represented
         </p>
         <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-white uppercase tracking-tight mt-3">
-          DISCOVER THE GLOBAL REACH OF INDIA TYRE SHOW
+          CONNECTING THE WORLD OF METROLOGY
         </h2>
+
+
         
         <Link
           href="/exhibitor-list/"
           className="inline-block bg-[#CC9808] hover:bg-[#d67300] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 whitespace-nowrap"
         >
-          Explore the 2026 Exhibitor List
+          Explore the 2027 Exhibitor List
         </Link>
 
         <div className="mt-8 sm:mt-10 lg:mt-12 bg-[#03193D]/75 backdrop-blur-md border border-white/10 rounded-sm px-6 py-6 flex flex-wrap gap-6 sm:gap-8 items-center justify-center md:justify-start">

@@ -21,14 +21,12 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
             Key Outcomes of Exhibiting
           </p>
           <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#03193D] leading-tight uppercase tracking-tight mt-3">
-            DELIVERING MEASURABLE BUSINESS IMPACT
+            TURN PRECISION TECHNOLOGY INTO BUSINESS GROWTH
           </h2>
           <p className="mt-4 sm:mt-5 font-sans text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl">
-            At India Tyre Show, exhibitors don&apos;t just showcase, they achieve.
+            At INDIAMET, exhibitors don't just showcase technology — they create business opportunities.
             <br /><br />
-            Year after year, exhibitors report tangible returns through new partnerships,
-            strengthened brand presence, and increased sales opportunities across the tyre manufacturing
-            and rubber technology value chain.
+            Connect with qualified buyers, meet key decision-makers, demonstrate your latest metrology and inspection solutions, strengthen your brand presence, and build valuable relationships across India’s rapidly growing precision manufacturing and quality ecosystem.
           </p>
         </div>
 
