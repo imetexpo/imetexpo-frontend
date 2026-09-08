@@ -71,27 +71,7 @@ export default function AboutPage() {
   ];
 
   const keyEvents = [
-    {
-      title: "Conference Programme",
-      description: "Each year, ITS Tyre Expo hosts a comprehensive three-day conference programme featuring industry forums, analytical sessions, plenary discussions, and expert lectures. The agenda brings together leading professionals, government representatives, and technical experts to share insights, explore industry challenges, and discuss the latest trends shaping the tyre manufacturing sector.",
-      image: "https://cdn.itegroupnews.com/MW_24_2304_0005_G_i_1_0c28de356a.jpg",
-      buttonText: "Learn More",
-      buttonLink: "/conference-programme"
-    },
-    {
-      title: "LeadScanning",
-      description: "ITS Tyre Expo Connect is the exhibition's dedicated business networking platform, designed to facilitate meaningful connections between exhibitors, visitors, media, professional associations, and industry experts from across Asia and beyond.",
-      image: "https://cdn.itegroupnews.com/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.png",
-      buttonText: "Join Now",
-      buttonLink: "/leadscanning"
-    },
-    {
-      title: "Awards",
-      description: "The Tyre Innovation Awards, part of ITS Tyre Expo since 2021, recognize digital and sustainable projects that improve tyre manufacturing efficiency and sustainability. An independent jury selects the most innovative projects addressing key industry challenges.",
-      image: "https://cdn.itegroupnews.com/mw2022_gi_5d2b509b31.jpg",
-      buttonText: "",
-      buttonLink: ""
-    }
+    { title: "Conference Programme", description: "INDIAMET brings together industry leaders, metrology experts, manufacturing professionals, and technical specialists through a comprehensive conference programme featuring industry forums, expert presentations, panel discussions, and technical sessions. The programme explores emerging technologies, industry challenges, standards, and the latest trends shaping metrology, measurement, inspection, calibration, and precision manufacturing.", image: "https://cdn.itegroupnews.com/MW_24_2304_0005_G_i_1_0c28de356a.jpg", buttonText: "Learn More", buttonLink: "/conference-programme" }, { title: "INDIAMET Connect", description: "INDIAMET Connect is the exhibition's dedicated business networking platform, designed to connect exhibitors, visitors, manufacturers, quality professionals, metrology experts, media, professional associations, and industry leaders. The platform helps participants discover new technologies, build valuable business relationships, and explore new business opportunities.", image: "https://cdn.itegroupnews.com/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.png", buttonText: "Join Now", buttonLink: "/connect" }, { title: "Global Metrology Excellence Awards", description: "The Global Metrology Excellence Awards (GMEA) recognise outstanding achievements and innovation in metrology, measurement technology, inspection, calibration, quality engineering, and precision manufacturing. The awards celebrate organisations and professionals developing advanced solutions that improve accuracy, productivity, quality, and manufacturing performance.", image: "https://cdn.itegroupnews.com/mw2022_gi_5d2b509b31.jpg", buttonText: "Learn More", buttonLink: "/awards" }
   ];
 
   const quickLinks = [
@@ -360,7 +340,7 @@ export default function AboutPage() {
                     <div className="lg:basis-2/3">
                       <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">Key Events</h3>
                       <p className="mt-3 text-base sm:text-lg text-gray-600">
-                        Connect is a community platform designed for business networking between exhibitors, visitors from across Asia, media, professional associations, and industry experts.
+                        INDIAMET Connect is a professional networking platform designed to connect exhibitors, visitors, manufacturers, metrology professionals, industry experts, media, and professional associations. It helps the industry discover new technologies, build valuable business relationships, and stay connected throughout the year.
                       </p>
                     </div>
                   </div>
