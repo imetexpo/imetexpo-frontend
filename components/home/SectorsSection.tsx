@@ -8,44 +8,44 @@ import Container from '../ui/container';
 const sectorsData = [
   {
     id: 1,
-    title: 'Tyre Manufacturing Equipment',
-    slug: 'tyre-manufacturing-machinery',
-    shortText: 'State-of-the-art machinery for tyre production including mixing mills and curing presses.',
+    title: 'Coordinate Measuring Machines (CMM)',
+    slug: 'coordinate-measuring-machines-cmm',
+    shortText: 'Advanced CMMs and 3D coordinate measurement systems for high-precision inspection and quality control.',
     image: 'https://cdn.itegroupnews.com/Mining_World_Sectors_Images_7d57d82790.png',
   },
   {
     id: 2,
-    title: 'Raw Materials & Compounds',
-    slug: 'raw-materials-and-rubber-compounds',
-    shortText: 'Natural and synthetic rubber, carbon black, silica, oils, and chemicals.',
+    title: 'Dimensional Measurement',
+    slug: 'dimensional-measurement',
+    shortText: 'Precision instruments and systems for dimensional, form, surface, and geometric measurement.',
     image: 'https://cdn.itegroupnews.com/Mining_World_Sectors_Images_1_ce66f08346.png',
   },
   {
     id: 3,
-    title: 'Retreading & Repair',
-    slug: 'retreading-and-repair-materials',
-    shortText: 'Advanced retreading systems and repair tools for extending tyre life.',
+    title: 'Optical & Vision Metrology',
+    slug: 'optical-and-vision-metrology',
+    shortText: 'Optical measurement, machine vision, 3D scanning, and non-contact inspection technologies.',
     image: 'https://cdn.itegroupnews.com/Mining_World_Sectors_Images_2_5de8dcc6a6.png',
   },
   {
     id: 4,
-    title: 'Tyre Recycling & Sustainability',
-    slug: 'recycling-and-sustainability-solutions',
-    shortText: 'Eco-friendly recycling solutions and circular economy initiatives.',
+    title: 'Calibration & Testing',
+    slug: 'calibration-and-testing',
+    shortText: 'Calibration equipment, testing systems, reference standards, and laboratory measurement solutions.',
     image: 'https://cdn.itegroupnews.com/Mining_World_Sectors_Images_3_cabcb4d92e.png',
   },
   {
     id: 5,
-    title: 'Testing & Quality Control',
-    slug: 'tyre-testing-and-quality-control',
-    shortText: 'Inspection systems, testing machines, and QA solutions.',
+    title: 'Surface & Form Measurement',
+    slug: 'surface-and-form-measurement',
+    shortText: 'Advanced solutions for surface roughness, contour, roundness, cylindricity, and form measurement.',
     image: 'https://cdn.itegroupnews.com/Mining_World_Sectors_Images_4_eac11c7a2e.png',
   },
   {
     id: 6,
-    title: 'Tyre Management & IoT',
-    slug: 'automation-and-industry-40',
-    shortText: 'Smart tyre tech, RFID tracking, and fleet management systems.',
+    title: 'Metrology Software & Industry 4.0',
+    slug: 'metrology-software-and-industry-40',
+    shortText: 'Smart metrology software, automation, digital inspection, data analytics, and connected quality solutions.',
     image: 'https://cdn.itegroupnews.com/Mining_World_Sectors_Images_5_46733f0b8f.png',
   },
 ];
@@ -63,7 +63,7 @@ export default function SectorsSection() {
                 Event Sectors
               </p>
               <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#03193D] leading-tight uppercase tracking-tight mt-3">
-                Explore Key Sectors Driving the Tyre Industry
+                EXPLORE KEY SECTORS SHAPING THE FUTURE OF PRECISION
               </h2>
             </div>
           </Container>
