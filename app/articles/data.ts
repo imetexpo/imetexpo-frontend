@@ -13,276 +13,319 @@ export type Article = {
 export const ARTICLES: Article[] = [
   {
     id: 199,
-    title: "Why you should attend MiningWorld Russia 2026",
-    slug: "why-you-should-attend-mining-world-russia-2026",
-    excerpt: "Discover the top reasons to visit the premier mining exhibition in Russia.",
-    image: "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
-    publishedDate: "2026-02-27T08:45:00.000Z",
+    title: "The Future of Industrial Metrology in Smart Manufacturing",
+    slug: "future-of-industrial-metrology-smart-manufacturing",
+    excerpt:
+      "Explore how advanced metrology and digital technologies are transforming quality control and precision manufacturing.",
+    image:
+      "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
+    publishedDate: "2026-09-05T08:45:00.000Z",
     content: `
-      <h2><strong>Experience modern mining solutions in person – get a free exhibition ticket using the promo code in this news story.</strong></h2>
+      <h2><strong>The Future of Industrial Metrology in Smart Manufacturing</strong></h2>
       <p>&nbsp;</p>
-      <p><img src="https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp" alt="photo_1_main (1).webp"></p>
-      <p><br>MiningWorld Russia, the 30th anniversary international exhibition of machinery and equipment for mining, processing, and transportation of minerals, will take place from April 22–24, 2026, in Moscow, at Pavilion 1 of the Crocus Expo IEC. The exhibition covers the entire industry production cycle—from geological exploration to transportation—and brings together manufacturers, suppliers, and specialists in the mining industry.</p>
+      <p>Industrial manufacturing is entering a new era where precision, automation, connectivity, and data-driven quality control are becoming essential to remain competitive.</p>
       <p>&nbsp;</p>
-      <p>You can visit the exhibition completely free with the promo code <strong>NEWS</strong>.</p>
+      <p>Modern metrology plays a critical role in this transformation by enabling manufacturers to measure components accurately, identify deviations early, and maintain consistent product quality.</p>
       <p>&nbsp;</p>
-      <p><a href="https://miningworld.ru/ru/visit/visitor-registration/?promo=NEWS"><strong>GET A TICKET</strong></a></p>
-      <h2><br><strong>5 Reasons to Attend MiningWorld Russia 2026 in Person</strong></h2>
-      <p><br>MiningWorld Russia is more than just an industry event; it's a practical tool for addressing production, technological, and strategic challenges. Below are the key reasons why participating in the exhibition yields tangible results.</p>
+
+      <h3><strong>Why Metrology Matters in Modern Manufacturing</strong></h3>
+      <p>As manufacturing tolerances become increasingly demanding, traditional inspection methods are being complemented by advanced coordinate measuring machines, optical systems, 3D scanners, sensors, and automated inspection technologies.</p>
       <p>&nbsp;</p>
-      <h3><strong>1. Direct access to solutions across the entire production cycle</strong></h3>
-      <p><br>At the exhibition, more than 500 companies from 15 countries—Russia, Belarus, Belgium, Brazil, India, Italy, Kazakhstan, China, Kyrgyzstan, Mongolia, the UAE, Portugal, the Republic of Korea, Turkey, and South Africa—will present equipment and technologies for all stages of mining operations.</p>
+
+      <h3><strong>Connected Measurement Systems</strong></h3>
+      <p>Connected metrology systems allow measurement data to move directly into quality management and manufacturing systems. This creates greater visibility into production performance and helps engineers make faster decisions.</p>
       <p>&nbsp;</p>
-      <p>The exhibition will showcase:</p>
+
+      <h3><strong>Automation and Digital Quality</strong></h3>
+      <p>Automated inspection is helping manufacturers reduce inspection time, improve repeatability, and detect quality issues earlier in the production process.</p>
       <p>&nbsp;</p>
-      <p>// Machines and equipment for exploration<br>// Machinery and equipment for mining<br>// Machines and equipment for processing and beneficiation of minerals<br>// Machines and equipment for handling and transportation<br>// Machines and equipment for ensuring safety in mining operations<br>// Water, air purification and environmental monitoring systems<br>// IT technologies, automation and robotics in the mining industry<br>// Laboratory equipment and materials<br>// Spare parts, components and related materials<br>// Equipment for power supply of mining enterprises<br>// Construction technologies in mining<br>// Engineering, design and service</p>
-      <p><br>You'll be able to compare solutions in person, evaluate technical parameters and components, and discuss delivery and service terms directly with specialists—without months of back-and-forth correspondence and approvals.</p>
-      <p>&nbsp;</p>
-      <p><a href="https://miningworld.ru/ru/about/exhibition-sectors/"><strong>EXHIBITION SECTIONS</strong></a></p>
-      <h3><br><strong>2. Market scale and updated exhibition in 2026</strong></h3>
-      <p><br>The anniversary year not only marks a recap of the exhibition's 30-year history, but also a significant renewal of the exhibitor lineup.</p>
-      <p>&nbsp;</p>
-      <p>Over 100 companies will be participating for the first time. Debutants include Microtex Energy, SIDDHARTH ALLOYS, TAE SUNG, Anzhersky Machine-Building Plant, VibroSpetsTekhnika, GeoSibir, Excellence Mining Equipment, Omsk Grinding Ball Plant, Rustech, SIMEX, TEKHNOLINK, Forus, Electronmash, and others.</p>
-      <p>&nbsp;</p>
-      <p>At the same time, leading market players confirmed their participation: Sever Minerals, TEM Partner, V2 GROUP, Almazgeobur, BMH RUS, GC Tsifra, Gormash Global, Davtech, Evraz, IZTM-Engineering, KVINTMADI, NPO Akonit, NPO Passat, NTC Bakor, Tyazhmash, FINSAD Group, EVOBLAST, ELEMET and many others.</p>
-      <p>&nbsp;</p>
-      <p>This composition of participants provides an objective picture of the market: who is strengthening their positions, which technologies are coming to the fore, and which areas are developing most actively.</p>
-      <p>&nbsp;</p>
-      <figure class="image"><img style="aspect-ratio:1200/900;" src="https://cdn.itegroupnews.com/photo_2_84279059fe.webp" alt="photo_2.webp" width="1200" height="900"></figure>
-      <h2><br><strong>3. "Heavy Equipment Territory" - equipment in real scale</strong></h2>
-      <p><br>The special exhibition "Territory of Heavy Equipment" will once again bring together the largest Russian and foreign manufacturers.</p>
-      <p>&nbsp;</p>
-      <p>Visitors will see full-size samples of the equipment:</p>
-      <p>&nbsp;</p>
-      <p>// quarry dump trucks<br>// drilling rigs<br>// excavators<br>// crushers<br>// flotation machines<br>// loading and delivery equipment<br>// and other types of large-sized equipment</p>
-      <p><br>This is an opportunity not only to study the catalog, but also to see the equipment in real size, evaluate design features, and discuss operating practices with company representatives.</p>
-      <p>&nbsp;</p>
-      <h3><strong>4. Live professional communication and new partnerships</strong></h3>
-      <p><br>MiningWorld Russia brings together manufacturers, engineers, technical directors, facility managers, and procurement specialists. Outside of the office, it's easier to discuss real-world production challenges, constraints, equipment requirements, and collaboration terms.</p>
-      <p>&nbsp;</p>
-      <p>In three days, you can hold dozens of meetings, find suppliers, contractors, and technology partners, develop comprehensive solutions, and shorten the path from idea to implementation. Instead of months of online research, you can connect in person, network, and build working alliances.</p>
-      <p>&nbsp;</p>
-      <h3><strong>5. Concentrated analytics and practical experience in the business program</strong></h3>
-      <p><br><img src="https://cdn.itegroupnews.com/photo_3_30daf082db.webp" alt="photo_3.webp" width="1200" height="800"></p>
-      <p><br>From April 22 to 24, the exhibition will feature a large-scale business program. 18 events are planned, featuring over 100 industry experts.</p>
-      <p>&nbsp;</p>
-      <p>Among the key events:</p>
-      <p>&nbsp;</p>
-      <p>// Mining Industry Leaders Forum<br>// The main plenary discussion with the participation of mining executives<br>// Effective Digital Projects Award<br>// Mining Industry 4.0<br>// MINGEO Forum: Conference on Geological Exploration<br>// Roundtable on Critical Purchasing in the Mining Industry</p>
-      <p><br>For the first time, the following sessions will be held:</p>
-      <p>&nbsp;</p>
-      <p>// Robotic technologies and artificial intelligence: experience and real results<br>// Battle: Digital Quarry – What's Working Today and What Can Be Put Off<br>// MOUNTAIN MES: user dialogue, integration experience, and search for system development points<br>// MARKETING ROUND TABLE. How to Promote Complex Industrial Products?</p>
-      <p><br>The business program provides a comprehensive overview of digitalization, automation, robotics, geological exploration, and production management—firsthand, from experts and business leaders.</p>
-      <p>&nbsp;</p>
-      <p><a href="https://miningworld.ru/ru/agenda/bp26/"><strong>TENTATIVE SCHEDULE 2026</strong></a></p>
-      <h2><br><strong>Free ticket to MiningWorld Russia 2026</strong></h2>
-      <p><br>MiningWorld Russia is a platform where the market is explored not theoretically, but practically: through equipment, negotiations, real-life cases, and professional discussions.</p>
-      <p>&nbsp;</p>
-      <p>Use promo code <strong>NEWS</strong> when registering on the official website and receive a free ticket for all days of the exhibition and business program. An e-ticket will allow you to skip the line.</p>
-      <p>&nbsp;</p>
-      <p><a href="https://miningworld.ru/ru/visit/visitor-registration/?promo=NEWS"><strong>GET A TICKET</strong></a></p>
+
+      <h3><strong>The Road Ahead</strong></h3>
+      <p>The future of industrial metrology will increasingly combine high-precision measurement with automation, artificial intelligence, digital twins, advanced analytics, and connected manufacturing environments.</p>
     `,
   },
-  {
+
+   {
     id: 200,
-    title: "MiningWorld Russia 2026: Key Technologies to Watch",
-    slug: "mining-world-russia-2026-key-technologies",
-    excerpt: "Explore the cutting-edge technologies and innovations that will be showcased at this year's exhibition.",
-    image: "https://cdn.itegroupnews.com/photo_2_84279059fe.webp",
-    publishedDate: "2026-02-20T10:30:00.000Z",
+    title: "Latest Innovations in CMM and 3D Measurement",
+    slug: "latest-innovations-cmm-3d-measurement",
+    excerpt:
+      "Discover how next-generation CMMs and 3D measurement technologies are improving accuracy, productivity, and inspection capabilities.",
+    image:
+      "https://cdn.itegroupnews.com/photo_2_84279059fe.webp",
+    publishedDate: "2026-09-02T10:30:00.000Z",
     content: `
-      <h2><strong>Cutting-Edge Mining Technologies Debut at MiningWorld Russia 2026</strong></h2>
+      <h2><strong>Next-Generation CMM and 3D Measurement Technologies</strong></h2>
       <p>&nbsp;</p>
-      <p>The mining industry is undergoing a digital transformation, and MiningWorld Russia 2026 will be the premier platform to witness the latest technological advancements.</p>
+      <p>Coordinate Measuring Machines remain one of the most important technologies for high-precision dimensional inspection. New developments are making CMM systems faster, more flexible, automated, and easier to integrate into modern manufacturing environments.</p>
       <p>&nbsp;</p>
-      <h3><strong>AI and Machine Learning in Mining Operations</strong></h3>
-      <p>Artificial intelligence is revolutionizing how mining companies operate. From predictive maintenance to ore grade optimization, AI solutions are increasing efficiency and reducing costs.</p>
+
+      <h3><strong>High-Speed Measurement</strong></h3>
+      <p>Modern CMMs are designed to improve measurement speed while maintaining the accuracy required for demanding industrial applications.</p>
       <p>&nbsp;</p>
-      <h3><strong>Autonomous Vehicles and Drones</strong></h3>
-      <p>Self-driving trucks, autonomous drilling rigs, and surveying drones are becoming standard in modern mining operations. See these technologies in action at the exhibition.</p>
+
+      <h3><strong>3D Scanning and Point Clouds</strong></h3>
+      <p>3D scanning technologies capture large amounts of dimensional information quickly, making them valuable for complex components, reverse engineering, inspection, and process improvement.</p>
       <p>&nbsp;</p>
-      <h3><strong>Green Mining Technologies</strong></h3>
-      <p>Sustainable mining practices are no longer optional. Learn about water recycling systems, dust suppression technologies, and energy-efficient processing methods.</p>
+
+      <h3><strong>Automated Inspection</strong></h3>
+      <p>Automated measurement routines reduce manual intervention and help manufacturers achieve consistent inspection results across production batches.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Integration with Manufacturing</strong></h3>
+      <p>CMM and 3D measurement systems are increasingly connected with CAD, quality management, manufacturing execution, and production systems.</p>
     `,
   },
   {
     id: 201,
-    title: "30 Years of MiningWorld Russia: A Legacy of Innovation",
-    slug: "30-years-mining-world-russia-legacy",
-    excerpt: "Celebrating three decades of connecting the mining industry and driving technological progress in Russia.",
-    image: "https://cdn.itegroupnews.com/photo_3_30daf082db.webp",
-    publishedDate: "2026-02-15T14:20:00.000Z",
+    title: "Industry 4.0: The Evolution of Smart Metrology",
+    slug: "industry-4-smart-metrology",
+    excerpt:
+      "Discover how automation, connected measurement systems, data analytics, and AI are shaping the future of industrial quality.",
+    image:
+      "https://cdn.itegroupnews.com/photo_3_30daf082db.webp",
+    publishedDate: "2026-08-28T14:20:00.000Z",
     content: `
-      <h2><strong>Three Decades of Mining Excellence</strong></h2>
+      <h2><strong>How Industry 4.0 Is Transforming Metrology</strong></h2>
       <p>&nbsp;</p>
-      <p>MiningWorld Russia celebrates its 30th anniversary in 2026, marking three decades of bringing together the global mining community.</p>
+      <p>Industry 4.0 is changing the way manufacturers collect, analyse, and use measurement data. Smart metrology connects measurement systems with production processes to create a more responsive quality environment.</p>
       <p>&nbsp;</p>
-      <h3><strong>Evolution of the Exhibition</strong></h3>
-      <p>From humble beginnings to becoming Eastern Europe's largest mining event, MiningWorld Russia has grown alongside the industry itself.</p>
+
+      <h3><strong>Connected Measurement</strong></h3>
+      <p>Modern measurement equipment can communicate with manufacturing and quality systems, enabling real-time access to inspection information.</p>
       <p>&nbsp;</p>
-      <h3><strong>Milestones and Achievements</strong></h3>
-      <p>Over 30 years, the exhibition has facilitated countless business deals, technology transfers, and industry partnerships that have shaped Russian mining.</p>
+
+      <h3><strong>Data-Driven Quality Control</strong></h3>
+      <p>Measurement data can be analysed to identify trends, process variations, and potential quality issues before they become costly production problems.</p>
       <p>&nbsp;</p>
-      <h3><strong>Looking to the Future</strong></h3>
-      <p>As the industry faces new challenges and opportunities, MiningWorld Russia continues to evolve, introducing new sectors and technologies each year.</p>
+
+      <h3><strong>Artificial Intelligence in Inspection</strong></h3>
+      <p>AI and machine learning are creating new possibilities for automated visual inspection, defect detection, predictive quality, and intelligent analysis of measurement data.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Smart Factories</strong></h3>
+      <p>As factories become more connected, metrology is moving from a final inspection function towards an integrated part of the entire manufacturing process.</p>
     `,
   },
   {
     id: 202,
-    title: "Networking Strategies for Mining Professionals",
-    slug: "networking-strategies-mining-professionals",
-    excerpt: "Maximize your exhibition experience with proven networking techniques for the mining industry.",
-    image: "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
-    publishedDate: "2026-02-10T09:15:00.000Z",
+    title: "Why Precision Measurement Is Critical for Modern Manufacturing",
+    slug: "precision-measurement-modern-manufacturing",
+    excerpt:
+      "Understand why accurate measurement is essential for product quality, process control, productivity, and manufacturing excellence.",
+    image:
+      "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
+    publishedDate: "2026-08-22T09:15:00.000Z",
     content: `
-      <h2><strong>Make the Most of Your MiningWorld Russia Experience</strong></h2>
+      <h2><strong>The Role of Precision Measurement in Manufacturing</strong></h2>
       <p>&nbsp;</p>
-      <p>Attending an exhibition is about more than just seeing products—it's about building relationships that drive business forward.</p>
+      <p>Precision measurement is fundamental to modern manufacturing. From aerospace components and automotive parts to medical devices and precision engineering, manufacturers depend on accurate measurement to ensure components meet exact specifications.</p>
       <p>&nbsp;</p>
-      <h3><strong>Before the Event</strong></h3>
-      <p>Research exhibitors, schedule meetings in advance, and set clear objectives for what you want to achieve.</p>
+
+      <h3><strong>Maintaining Product Quality</strong></h3>
+      <p>Accurate measurement helps manufacturers verify dimensions, tolerances, geometry, surface characteristics, and other critical parameters.</p>
       <p>&nbsp;</p>
-      <h3><strong>During the Exhibition</strong></h3>
-      <p>Attend the business program events, participate in roundtable discussions, and don't forget to exchange contact information.</p>
+
+      <h3><strong>Reducing Manufacturing Errors</strong></h3>
+      <p>Early identification of dimensional deviations can reduce scrap, rework, production delays, and customer complaints.</p>
       <p>&nbsp;</p>
-      <h3><strong>After the Event</strong></h3>
-      <p>Follow up with new contacts promptly, reference your conversations, and explore potential collaborations.</p>
+
+      <h3><strong>Improving Process Control</strong></h3>
+      <p>Measurement data provides manufacturers with valuable information for monitoring production processes and maintaining consistent quality.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Supporting Advanced Manufacturing</strong></h3>
+      <p>As components become more complex and tolerances become tighter, advanced metrology systems are becoming increasingly important for manufacturing competitiveness.</p>
     `,
   },
-  {
+   {
     id: 203,
-    title: "Digital Transformation in Russian Mining Industry",
-    slug: "digital-transformation-russian-mining",
-    excerpt: "How Russian mining companies are embracing Industry 4.0 and digital technologies.",
-    image: "https://cdn.itegroupnews.com/photo_2_84279059fe.webp",
-    publishedDate: "2026-02-05T11:45:00.000Z",
+    title: "Optical and Vision Metrology: The Future of Non-Contact Inspection",
+    slug: "optical-vision-metrology-non-contact-inspection",
+    excerpt:
+      "Explore how optical measurement and machine vision technologies are transforming high-speed, non-contact inspection.",
+    image:
+      "https://cdn.itegroupnews.com/photo_2_84279059fe.webp",
+    publishedDate: "2026-08-18T11:45:00.000Z",
     content: `
-      <h2><strong>Industry 4.0 Comes to Russian Mining</strong></h2>
+      <h2><strong>Optical and Vision Metrology for Advanced Inspection</strong></h2>
       <p>&nbsp;</p>
-      <p>Digital transformation is reshaping the Russian mining landscape, with companies large and small adopting new technologies.</p>
+      <p>Optical measurement and machine vision technologies are becoming increasingly important for manufacturers that require fast, repeatable, and non-contact inspection.</p>
       <p>&nbsp;</p>
-      <h3><strong>IoT and Sensor Networks</strong></h3>
-      <p>Real-time monitoring of equipment, environmental conditions, and production metrics is becoming standard practice.</p>
+
+      <h3><strong>Non-Contact Measurement</strong></h3>
+      <p>Optical systems can measure delicate, small, complex, or difficult-to-access components without physically contacting the part.</p>
       <p>&nbsp;</p>
-      <h3><strong>Digital Twins</strong></h3>
-      <p>Leading mining companies are creating virtual replicas of their operations to simulate scenarios and optimize performance.</p>
+
+      <h3><strong>Machine Vision Inspection</strong></h3>
+      <p>Machine vision systems can automatically identify dimensional variations, surface defects, assembly issues, and other quality characteristics.</p>
       <p>&nbsp;</p>
-      <h3><strong>Data Analytics and Business Intelligence</strong></h3>
-      <p>Making sense of vast amounts of operational data to drive better decision-making and improve efficiency.</p>
+
+      <h3><strong>High-Speed Production Inspection</strong></h3>
+      <p>Automated optical inspection can support high-volume manufacturing environments where inspection speed and repeatability are critical.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Applications Across Industries</strong></h3>
+      <p>Optical and vision metrology is increasingly used across automotive, electronics, aerospace, medical devices, plastics, tooling, and precision engineering.</p>
     `,
   },
-  {
+   {
     id: 204,
-    title: "Sustainable Mining Practices: Environmental Focus",
-    slug: "sustainable-mining-practices-environment",
-    excerpt: "Discover how the mining industry is reducing its environmental footprint and embracing sustainability.",
-    image: "https://cdn.itegroupnews.com/photo_3_30daf082db.webp",
-    publishedDate: "2026-01-28T13:30:00.000Z",
+    title: "Calibration and Traceability: The Foundation of Accurate Measurement",
+    slug: "calibration-traceability-accurate-measurement",
+    excerpt:
+      "Learn why calibration, measurement standards, and traceability are essential for reliable industrial measurement.",
+    image:
+      "https://cdn.itegroupnews.com/photo_3_30daf082db.webp",
+    publishedDate: "2026-08-12T13:30:00.000Z",
     content: `
-      <h2><strong>Mining for a Sustainable Future</strong></h2>
+      <h2><strong>Why Calibration Matters in Industrial Metrology</strong></h2>
       <p>&nbsp;</p>
-      <p>Environmental responsibility is at the forefront of modern mining operations, with new technologies enabling greener practices.</p>
+      <p>Reliable measurement depends not only on sophisticated equipment but also on proper calibration, reference standards, environmental control, and measurement traceability.</p>
       <p>&nbsp;</p>
-      <h3><strong>Water Management and Treatment</strong></h3>
-      <p>Innovative water recycling and treatment systems are reducing water consumption and preventing contamination.</p>
+
+      <h3><strong>What Is Calibration?</strong></h3>
+      <p>Calibration establishes the relationship between the readings of a measuring instrument and known reference standards, helping ensure measurement reliability.</p>
       <p>&nbsp;</p>
-      <h3><strong>Land Reclamation</strong></h3>
-      <p>Modern reclamation techniques ensure that mined land can be restored to its natural state or repurposed for other uses.</p>
+
+      <h3><strong>Measurement Traceability</strong></h3>
+      <p>Traceability provides confidence that measurement results can be related to recognised standards through an unbroken chain of comparisons.</p>
       <p>&nbsp;</p>
-      <h3><strong>Reducing Carbon Emissions</strong></h3>
-      <p>Electric mining equipment, renewable energy integration, and process optimization are cutting carbon footprints.</p>
+
+      <h3><strong>Reducing Measurement Uncertainty</strong></h3>
+      <p>Proper calibration and controlled measurement environments help manufacturers understand and manage measurement uncertainty.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Supporting Quality Systems</strong></h3>
+      <p>Well-managed calibration programmes support quality assurance, regulatory requirements, process control, and customer confidence.</p>
     `,
   },
-  {
+     {
     id: 205,
-    title: "Heavy Equipment Trends for 2026",
-    slug: "heavy-equipment-trends-2026",
-    excerpt: "The latest innovations in mining machinery and heavy equipment to be featured at the exhibition.",
-    image: "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
-    publishedDate: "2026-01-20T10:00:00.000Z",
+    title: "3D Scanning and Reverse Engineering in Modern Manufacturing",
+    slug: "3d-scanning-reverse-engineering-manufacturing",
+    excerpt:
+      "Explore how 3D scanning is being used for inspection, reverse engineering, product development, and quality improvement.",
+    image:
+      "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
+    publishedDate: "2026-08-06T10:00:00.000Z",
     content: `
-      <h2><strong>Next-Generation Mining Equipment</strong></h2>
+      <h2><strong>3D Scanning: From Inspection to Product Development</strong></h2>
       <p>&nbsp;</p>
-      <p>The "Heavy Equipment Territory" at MiningWorld Russia 2026 will showcase the latest machinery innovations.</p>
+      <p>3D scanning has become an important technology for manufacturers looking to capture detailed information about physical components quickly and accurately.</p>
       <p>&nbsp;</p>
-      <h3><strong>Electric and Hybrid Equipment</strong></h3>
-      <p>Manufacturers are increasingly offering electric alternatives to traditional diesel-powered machinery, reducing emissions and operating costs.</p>
+
+      <h3><strong>Fast Dimensional Inspection</strong></h3>
+      <p>3D scanners can capture thousands or millions of measurement points, creating detailed digital representations of physical components.</p>
       <p>&nbsp;</p>
-      <h3><strong>Telematics and Remote Monitoring</strong></h3>
-      <p>Modern equipment comes equipped with sophisticated monitoring systems that provide real-time performance data and predictive maintenance alerts.</p>
+
+      <h3><strong>Reverse Engineering</strong></h3>
+      <p>Scanning technology can help engineers recreate digital models of existing components where original CAD data is unavailable.</p>
       <p>&nbsp;</p>
-      <h3><strong>Safety Innovations</strong></h3>
-      <p>New safety features including collision avoidance systems, operator fatigue monitoring, and enhanced visibility technologies.</p>
+
+      <h3><strong>Design Verification</strong></h3>
+      <p>Scanned data can be compared with CAD models to identify dimensional deviations and verify manufacturing accuracy.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Applications</strong></h3>
+      <p>3D scanning is increasingly used in automotive, aerospace, tooling, engineering, casting, additive manufacturing, and product development.</p>
     `,
   },
   // app/articles/data.ts - Add this to the ARTICLES array
 
-{
-  id: 206,
-  title: "Innovations in Tyre Manufacturing Technology",
-  slug: "innovations-in-tyre-manufacturing-technology",
-  excerpt: "Discover the latest innovations in tyre manufacturing technology for mining vehicles.",
-  image: "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
-  publishedDate: "2026-02-25T10:00:00.000Z",
-  content: `
-    <h2><strong>Revolutionary Tyre Technologies for Mining Operations</strong></h2>
-    <p>&nbsp;</p>
-    <p>The mining industry is witnessing groundbreaking innovations in tyre manufacturing that enhance durability, safety, and efficiency.</p>
-    <p>&nbsp;</p>
-    <h3><strong>Advanced Rubber Compounds</strong></h3>
-    <p>New rubber compounds offer superior resistance to cuts, punctures, and heat generation, extending tyre life significantly.</p>
-    <p>&nbsp;</p>
-    <h3><strong>Smart Tyre Monitoring Systems</strong></h3>
-    <p>Integrated sensors now provide real-time data on tyre pressure, temperature, and tread wear, enabling predictive maintenance.</p>
-    <p>&nbsp;</p>
-    <h3><strong>Eco-Friendly Manufacturing</strong></h3>
-    <p>Sustainable production methods and recyclable materials are reducing the environmental impact of mining tyres.</p>
-  `,
-},
-{
+ {
+    id: 206,
+    title: "The Growing Role of Metrology in Automotive Manufacturing",
+    slug: "role-of-metrology-automotive-manufacturing",
+    excerpt:
+      "Discover how advanced measurement and inspection technologies are supporting quality and precision across automotive manufacturing.",
+    image:
+      "https://cdn.itegroupnews.com/photo_2_84279059fe.webp",
+    publishedDate: "2026-07-30T10:00:00.000Z",
+    content: `
+      <h2><strong>Metrology in the Automotive Industry</strong></h2>
+      <p>&nbsp;</p>
+      <p>The automotive industry requires extremely high levels of dimensional accuracy and repeatability. Metrology therefore plays a critical role throughout product development and manufacturing.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Component Inspection</strong></h3>
+      <p>Measurement systems are used to inspect engine components, transmission parts, body panels, tooling, fixtures, and precision components.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Process Quality</strong></h3>
+      <p>Measurement data helps manufacturers monitor processes and identify variations before they affect large production volumes.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Electric Vehicle Manufacturing</strong></h3>
+      <p>The growth of electric vehicles is creating new measurement requirements for batteries, motors, lightweight components, electronics, and advanced materials.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Future of Automotive Metrology</strong></h3>
+      <p>Automation, robotics, 3D measurement, machine vision, and connected quality systems will continue to transform automotive inspection.</p>
+    `,
+  },
+
+ {
     id: 207,
-    title: "Future of Smart Tyres with IoT Integration",
-    slug: "future-of-smart-tyres-iot",
-     excerpt: "Discover the latest innovations in tyre manufacturing technology for mining vehicles.",
-  image: "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
-  publishedDate: "2026-02-25T10:00:00.000Z",
-  content: `
-    <h2><strong>Revolutionary Tyre Technologies for Mining Operations</strong></h2>
-    <p>&nbsp;</p>
-    <p>The mining industry is witnessing groundbreaking innovations in tyre manufacturing that enhance durability, safety, and efficiency.</p>
-    <p>&nbsp;</p>
-    <h3><strong>Advanced Rubber Compounds</strong></h3>
-    <p>New rubber compounds offer superior resistance to cuts, punctures, and heat generation, extending tyre life significantly.</p>
-    <p>&nbsp;</p>
-    <h3><strong>Smart Tyre Monitoring Systems</strong></h3>
-    <p>Integrated sensors now provide real-time data on tyre pressure, temperature, and tread wear, enabling predictive maintenance.</p>
-    <p>&nbsp;</p>
-    <h3><strong>Eco-Friendly Manufacturing</strong></h3>
-    <p>Sustainable production methods and recyclable materials are reducing the environmental impact of mining tyres.</p>
-  `,
+    title: "AI and Automation in Industrial Inspection",
+    slug: "ai-automation-industrial-inspection",
+    excerpt:
+      "Explore how artificial intelligence, robotics, and automation are creating smarter and faster inspection processes.",
+    image:
+      "https://cdn.itegroupnews.com/photo_3_30daf082db.webp",
+    publishedDate: "2026-07-24T10:00:00.000Z",
+    content: `
+      <h2><strong>AI-Powered Inspection Is Changing Quality Control</strong></h2>
+      <p>&nbsp;</p>
+      <p>Artificial intelligence and automation are opening new possibilities for industrial inspection by enabling machines to analyse measurement and visual data at high speed.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Automated Visual Inspection</strong></h3>
+      <p>AI-based vision systems can identify surface defects, dimensional variations, assembly errors, and other quality characteristics.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Predictive Quality</strong></h3>
+      <p>Data analytics can help identify process trends and potential quality problems before they result in defective products.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Robotic Inspection</strong></h3>
+      <p>Robotic systems can perform repeatable inspection tasks and bring measurement capabilities directly into production environments.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>The Smart Factory</strong></h3>
+      <p>The combination of AI, robotics, sensors, metrology, and manufacturing data is creating increasingly connected quality ecosystems.</p>
+    `,
   },
     {
     id: 208,
-    title: "Sustainable Materials in Tyre Production",
-    slug: "sustainable-materials-tyre-production",
-    excerpt: "Discover the latest innovations in tyre manufacturing technology for mining vehicles.",
-  image: "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
-  publishedDate: "2026-02-25T10:00:00.000Z",
-  content: `
-    <h2><strong>Revolutionary Tyre Technologies for Mining Operations</strong></h2>
-    <p>&nbsp;</p>
-    <p>The mining industry is witnessing groundbreaking innovations in tyre manufacturing that enhance durability, safety, and efficiency.</p>
-    <p>&nbsp;</p>
-    <h3><strong>Advanced Rubber Compounds</strong></h3>
-    <p>New rubber compounds offer superior resistance to cuts, punctures, and heat generation, extending tyre life significantly.</p>
-    <p>&nbsp;</p>
-    <h3><strong>Smart Tyre Monitoring Systems</strong></h3>
-    <p>Integrated sensors now provide real-time data on tyre pressure, temperature, and tread wear, enabling predictive maintenance.</p>
-    <p>&nbsp;</p>
-    <h3><strong>Eco-Friendly Manufacturing</strong></h3>
-    <p>Sustainable production methods and recyclable materials are reducing the environmental impact of mining tyres.</p>
-  `,
-   
+    title: "Building a Strong Quality Culture Through Metrology",
+    slug: "building-quality-culture-through-metrology",
+    excerpt:
+      "Understand how measurement, inspection, calibration, and data-driven quality practices contribute to manufacturing excellence.",
+    image:
+      "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
+    publishedDate: "2026-07-18T10:00:00.000Z",
+    content: `
+      <h2><strong>Metrology as a Strategic Quality Tool</strong></h2>
+      <p>&nbsp;</p>
+      <p>Metrology is more than a final inspection activity. When integrated into manufacturing processes, measurement can become a strategic tool for improving productivity, consistency, and customer satisfaction.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Measurement Throughout the Production Cycle</strong></h3>
+      <p>Applying measurement at different stages of manufacturing allows organisations to identify problems earlier and reduce the cost of poor quality.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Reliable Data for Better Decisions</strong></h3>
+      <p>Accurate measurement data gives engineers and quality teams the information needed to understand processes and make informed decisions.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Training and Skills</strong></h3>
+      <p>Modern metrology requires skilled professionals who understand measurement principles, equipment, software, standards, uncertainty, and quality requirements.</p>
+      <p>&nbsp;</p>
+
+      <h3><strong>Creating Manufacturing Excellence</strong></h3>
+      <p>A strong measurement culture helps organisations move from reactive inspection towards proactive quality improvement and continuous manufacturing excellence.</p>
+    `,
   },
   
 ];

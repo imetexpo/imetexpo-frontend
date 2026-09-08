@@ -48,13 +48,13 @@ export default function BrochureSection() {
           {/* RIGHT CONTENT */}
           <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 text-center lg:text-left">
             <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-white leading-tight uppercase tracking-tight">
-              UNLOCK OPPORTUNITIES IN THE TYRE INDUSTRY
+              UNLOCK NEW OPPORTUNITIES IN METROLOGY
             </h2>
             <p className="text-base sm:text-lg text-white/80 font-sans font-semibold">
-              Discover howIndiaMethelps your business grow.
+              Discover how INDIAMET can help your business grow
             </p>
             <p className="text-sm sm:text-base text-white/70 max-w-[650px] leading-relaxed mx-auto lg:mx-0 font-sans">
-              Download the Event Brochure to explore participation options, audience insights, and industry sectors and learn how exhibiting can connect you with key buyers, strengthen your market presence, and accelerate your growth across the global market.
+             Download the Event Brochure to explore participation opportunities, industry sectors, visitor profiles, and key benefits of exhibiting. Discover how INDIAMET can help you connect with qualified buyers, showcase your latest technologies, strengthen your market presence, and accelerate business growth.arket.
             </p>
             <Button
               href="/event-brochure/"
