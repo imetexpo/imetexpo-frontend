@@ -192,11 +192,11 @@ export default function AboutPage() {
             <div className="animated-block ">
               <div className="animated-block-target">
                 <div className="w-full max-w-[1600px] 2xl:max-w-[1800px] ">
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">ITS Tyre Expo: A Year-Round Industry Ecosystem</h3>
+                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">INDIAMET: A Year-Round Metrology & Manufacturing Ecosystem</h3>
                   <p className="mt-4 sm:mt-5 text-base sm:text-lg text-gray-700">
-                    ITS Tyre Expo is the region's leading international exhibition for tyre manufacturing technologies. With 10 years of reputation and trust, it plays a pivotal role in connecting equipment manufacturers, technology providers, tyre companies, and procurement leaders from across Asia and abroad.
+                    INDIAMET is a premier international platform for metrology, measurement technology, inspection, calibration, and quality engineering. It brings together technology providers, manufacturers, quality professionals, engineers, and decision-makers from across India and global markets.
                     <br /><br />
-                    But ITS Tyre Expo is more than just a three-day exhibition – it's part of the broader ITE Tyre Ecosystem, delivering ongoing value to industry professionals through multiple touchpoints across the year:
+                    But INDIAMET is more than a three-day exhibition — it is a year-round industry ecosystem designed to connect the metrology and precision manufacturing community through exhibitions, knowledge-sharing, industry insights, networking, and business opportunities.
                   </p>
 
                   <div className="mt-8 sm:mt-10 grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
