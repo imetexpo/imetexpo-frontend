@@ -27,12 +27,12 @@ export default function AboutITEPage() {
   }
 
   const stats = [
-    { value: "4 Mil+", label: "Database" },
-    { value: "500,000+", label: "Visitors Per Year" },
-    { value: "10,000+", label: "Exhibitors Per Year" },
+    { value: "1 Mil+", label: "Database" },
+    { value: "10,000+", label: "Visitors Per Year" },
+    { value: "500+", label: "Exhibitors Per Year" },
     { value: "1,700+", label: "Media in Attendance" },
-    { value: "30", label: "Events" },
-    { value: "12+", label: "Industry Sectors" }
+    { value: "10", label: "Events" },
+    { value: "20+", label: "Industry Sectors" }
   ];
 
   const missionVisionValues = [
@@ -276,13 +276,13 @@ export default function AboutITEPage() {
                   <div className="flex flex-col gap-4 sm:gap-5">
                     <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]"><br />About Us</h2>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700">
-                      ITE Group is a business events organiser that has been operating in the Asian market since 1991. Every year, we host more than 30 of the largest industry events, including exhibitions, summits, and conferences. Powered by the Connect digital platform, the ITE ecosystem offers unique hybrid solutions for industry communities across Asia, the ASEAN countries, and beyond.
+                      Maxx Business Media Pvt. Ltd. is a leading B2B business events and media company based in India, dedicated to creating powerful platforms that connect industries, innovators, and decision-makers. Since its inception, Maxx Business Media has been organizing high-impact trade exhibitions, conferences, and industry-focused initiatives across key manufacturing and emerging sectors.
                       <br /><br />
-                      With over 100 agents and hundreds of associations and partners spanning 150 countries and 5 continents, our global network seamlessly connects clients to opportunities around the world.
+                      Every year, we deliver multiple flagship exhibitions, summits, and industry forums that serve as catalysts for business growth, technology exchange, and market expansion. Supported by our integrated digital and media ecosystem, we offer year-round visibility and engagement opportunities for exhibitors, advertisers, and industry partners.
+                     <br /><br />
+                       With a strong network of international agents, industry associations, government bodies, and strategic partners, Maxx Business Media facilitates meaningful global–local connections, enabling companies to access new markets, buyers, and collaborations across India and overseas.
                       <br /><br />
-                      ITE events contribute to business success and development, unlock the export potential of countries and regions, provide access to a broad target audience, and offer effective, innovative solutions for networking, growth, and professional development. They ensure dialogue between the business community and government.
-                      <br /><br />
-                      ITE offices are located in Bangkok, Dubai, Beijing, and New Delhi.
+                      Our events drive industrial development, support export growth, and provide unmatched access to targeted business audiences. By combining exhibitions, conferences, awards, digital platforms, and trade publications, we create comprehensive solutions for networking, branding, and professional advancement—while fostering constructive dialogue between industry stakeholders and policymakers. Maxx Business Media operates with a pan-India presence and an expanding international footprint, serving as a trusted partner to industries seeking sustainable growth and global relevance.
                     </p>
                   </div>
 
@@ -314,7 +314,7 @@ export default function AboutITEPage() {
                   <div className="lg:basis-2/3">
                     <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">Working for Your Success</h3>
                     <p className="mt-3 text-sm sm:text-base md:text-lg text-gray-700">
-                      At ITE Group, our goal is to empower businesses by creating impactful events that drive industry growth and foster valuable connections. We are dedicated to supporting our clients' success and facilitating meaningful opportunities for professionals worldwide.
+                      At Maxx Business Media Pvt Ltd, we create impactful exhibitions, conferences, trade publications, and digital platforms that connect industries, businesses, technology providers, and professionals. Our industry-focused platforms help businesses showcase innovation, build valuable relationships, discover new opportunities, and drive sustainable business growth.
                     </p>
                   </div>
                 </div>
@@ -345,7 +345,7 @@ export default function AboutITEPage() {
           </div>
 
           {/* Exhibitions at a Glance Section */}
-          <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
+          {/* <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
               <Container>
                 <div className="flex w-full items-end justify-between gap-6 sm:gap-10 max-lg:flex-wrap lg:gap-20 2xl:gap-40">
@@ -392,7 +392,7 @@ export default function AboutITEPage() {
                 </div>
               </Container>
             </div>
-          </div>
+          </div> */}
 
           {/* Partners Section */}
           <div className="mt-12 sm:mt-16 lg:mt-20">
