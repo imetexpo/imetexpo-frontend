@@ -105,10 +105,10 @@ export default function AboutPage() {
             <Container>
               <div className="flex flex-col gap-2.5 max-w-4xl">
                 <h1 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase leading-none tracking-tight">
-                  ABOUT <span className="text-[#CC9808]">INDIA TYRE SHOW</span>
+                  ABOUT <span className="text-[#CC9808]">INDIAMET EXPO</span>
                 </h1>
                 <p className="font-sans text-sm sm:text-base md:text-lg text-neutral-450 mt-1 max-w-3xl leading-relaxed">
-                  From Material to Mobility: Powering the Future of the Rubber & Tyre Industry
+                  From Measurement to Manufacturing: Powering the Future of Precision & Quality
                 </p>
               </div>
             </Container>
@@ -130,17 +130,18 @@ export default function AboutPage() {
               {/* RIGHT CONTENT */}
               <div className="flex flex-col justify-center">
                 <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#03193D]">
-                  Transforming Tyre Operations <br className="hidden sm:block" /> for Over 10 Years
+                  Transforming Precision Manufacturing <br className="hidden sm:block" /> Through Metrology
                 </h2>
   
                 <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
-                  ITS Tyre Expo is the premier international exhibition for tyre
-                  manufacturing machinery, equipment, and technologies, covering the full
-                  cycle of rubber processing, tyre production, and quality testing.
+                INDIAMET is India’s international exhibition for metrology, measurement technology, 
+                inspection, calibration, and quality engineering, bringing together the technologies 
+                and solutions driving the future of precision manufacturing.
                   <br /><br />
-                  Each year, leading Asian and global companies in tyre manufacturing,
-                  rubber processing, equipment manufacturing, and logistics gather to
-                  present the latest innovations shaping the industry's future.
+                  The exhibition connects leading Indian and global companies with manufacturers, 
+                  engineers, quality professionals, procurement leaders, and decision-makers to 
+                  discover advanced measurement technologies, build business partnerships, and 
+                  explore new opportunities across the manufacturing ecosystem.
                 </p>
   
                 {/* STATS SECTION */}
