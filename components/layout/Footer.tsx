@@ -19,7 +19,7 @@ export default function Footer() {
               className="object-contain"
             />
             <p className="text-xs text-gray-100 font-sans mt-2">
-              The Premier Exhibition for Metrology, Measurement & Quality Technology.
+              International Metrology Exhibiton & Summit.
             </p>
           </div>
 
@@ -41,8 +41,8 @@ export default function Footer() {
               <h5 className="text-sm font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Hotline
               </h5>
-              <a href="tel:+74957995585" className="hover:text-[#CC9808] transition-colors text-sm">
-                +91 91483 19993
+              <a href="tel:+91 9148319993" className="hover:text-[#CC9808] transition-colors text-sm">
+                +91- 91483 19993
               </a>
             </div>
 
@@ -50,8 +50,8 @@ export default function Footer() {
               <h5 className="text-sm font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Visitor Support
               </h5>
-              <a href="tel:+74957995585" className="hover:text-[#CC9808] transition-colors text-sm">
-                +7-(495)-799-55-85
+              <a href="tel:++91- 63649 36468" className="hover:text-[#CC9808] transition-colors text-sm">
+                +91- 63649 36468
               </a>
             </div>
           </div>
