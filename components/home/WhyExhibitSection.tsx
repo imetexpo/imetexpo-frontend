@@ -4,11 +4,11 @@ import Link from 'next/link';
 import Container from '../ui/container';
 
 const reasons = [
-  'ENTER A USD 75 BILLION TYRE MARKET',
-  'MEET HIGH-VALUE BUYERS AND DECISION-MAKERS FROM ACROSS THE GLOBE',
-  'SHOWCASE TECHNOLOGIES THAT IMPROVE EFFICIENCY AND REDUCE COSTS',
-  'ALIGN WITH REGIONAL SUSTAINABILITY AND INNOVATION GOALS',
-  'SECURE LONG-TERM PARTNERSHIPS AND MARKET PRESENCE',
+  'ACCESS INDIA’S GROWING PRECISION MANUFACTURING MARKET',
+  'MEET KEY BUYERS AND QUALITY DECISION-MAKERS',
+  'SHOWCASE ADVANCED METROLOGY & INSPECTION TECHNOLOGIES',
+  'DRIVE QUALITY, ACCURACY & MANUFACTURING EFFICIENCY',
+  'BUILD LONG-TERM PARTNERSHIPS & MARKET PRESENCE',
 ];
 
 export default function WhyExhibitSection() {
@@ -25,15 +25,16 @@ export default function WhyExhibitSection() {
                   WHY EXHIBIT
                 </h2>
                 <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-white uppercase">
-                  AT TYRE SHOW?
+                  AT INDIAMET?
                 </h2>
               </div>
 
               <p className="font-sans text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mt-2">
-                In a market defined by rapid modernisation, localisation, and sustainability demands,
-               IndiaMetprovides direct access to decision-makers shaping the future of tyre
-                manufacturing and rubber technology across the globe. It&apos;s where global suppliers connect
-                with real projects, demonstrate ROI-driven technologies, and secure long-term growth opportunities.
+                As manufacturing moves towards greater precision, automation, and quality excellence, 
+                INDIAMET provides direct access to the decision-makers driving this transformation. 
+                Connect with manufacturers, engineers, quality professionals, and procurement leaders, 
+                showcase your latest metrology and inspection technologies, and unlock new business 
+                opportunities across India’s growing precision manufacturing ecosystem.
               </p>
             </div>
 
