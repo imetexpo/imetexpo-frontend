@@ -44,7 +44,7 @@ const outcomesData = [
     image: 'https://cdn.itegroupnews.com/2_edefccdfd0.png',
   },
   {
-    title: 'BUILD LASTING BUSINESS RELATIONSHIPS',
+    title: 'BUILD STRONG RELATIONSHIPS',
     content: 'Engage directly with existing customers, develop new partnerships, explore emerging markets, and create opportunities for long-term business growth.',
     image: 'https://cdn.itegroupnews.com/3_5ab1f32ff9.png',
   },
