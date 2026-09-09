@@ -51,7 +51,7 @@ export default function PartnersSponsorsPage() {
 
   return (
     <div className="page-spacing-wrapper">
-      <div className="pt-[120px] lg:pt-0">
+      <div className="lg:pt-0">
 
         {/* Event Partners Section */}
         <section className="py-16 lg:py-20">

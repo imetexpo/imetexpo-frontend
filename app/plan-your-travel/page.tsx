@@ -263,7 +263,7 @@ export default function PlanYourTravelPage() {
 
   return (
     <div className="intro-animation">
-      <div className="page-spacing-wrapper pt-[120px] lg:pt-[140px]">
+      <div className="page-spacing-wrapper lg:pt-0">
         {/* Main Heading */}
         <div className="animated-block">
           <div className="animated-block-target">

@@ -130,7 +130,7 @@ const hideHeaderFooter = pathname.startsWith("/dashboard") || pathname.startsWit
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans overflow-x-hidden">
         {!hideHeaderFooter && (
           <Suspense fallback={null}>
             <Header />

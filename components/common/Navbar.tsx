@@ -195,10 +195,10 @@ export default function Navbar() {
                   <img
                     src="/ITS_logo_white.png"
                     alt="IndiaMet Expo"
-                    className="h-20 sm:h-22 w-auto cursor-pointer object-contain"
+                    className="-mt-4 h-20 w-auto cursor-pointer object-contain sm:h-22"
                   />
                 </UTMLink>
-                <div className="hidden sm:block border-l border-white/20 pl-4">
+                <div className="mt-5 hidden border-l border-white/20 pl-4 sm:block">
                   <h1 className="font-[var(--font-montserrat)] text-[18px] tracking-tight text-white leading-none">
                    22 - 24 APRIL 2027
                   </h1>

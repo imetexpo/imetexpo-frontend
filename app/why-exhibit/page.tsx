@@ -96,7 +96,7 @@ export default function WhyExhibitPage() {
   return (
     <div className="intro-animation">
       <div className="page-spacing-wrapper">
-        <div className="pt-[120px] lg:pt-0">
+        <div className="lg:pt-0">
 
           {/* Powering Progress Section */}
           <div className="animated-block">

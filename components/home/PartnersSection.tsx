@@ -101,7 +101,7 @@ export default function PartnersSection() {
   };
 
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24 border-t border-gray-100">
+    <section className="overflow-x-hidden border-t border-gray-100 bg-white py-16 sm:py-20 lg:py-24">
       <div className="w-full mx-auto ">
         {/* Header - Same as SectorsSection */}
         <Container>
@@ -119,7 +119,7 @@ export default function PartnersSection() {
         </Container>
         
         {/* Scrolling Container */}
-        <div className="relative w-full mt-8">
+        <div className="relative mt-8 w-full max-w-full overflow-hidden">
           <div 
             ref={scrollContainerRef}
             className="overflow-x-auto scrollbar-hide cursor-grab"

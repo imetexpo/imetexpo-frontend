@@ -84,14 +84,14 @@ export default function Footer() {
         <div className="border-t border-white/10 py-8 text-xs font-sans">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             {/* Organised By */}
-            <div className="flex items-center gap-3">
+            <div className="flex min-w-0 flex-wrap items-center gap-3">
               <span className="text-[20px] uppercase tracking-wider text-neutral-100 font-bold">Organised By</span>
               <Image
                 src="/maxx_logo (1).png"
                 alt="ITE"
                 width={270}
                 height={75}
-                className="object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                className="h-auto w-auto max-w-[140px] object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:max-w-[200px]"
               />
             </div>
 

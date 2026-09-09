@@ -139,7 +139,7 @@ export default function Header() {
       </div>
 
       {/* Mobile spacer to prevent page content underlap */}
-      <div className="lg:hidden h-[160px]" />
+      <div className="lg:hidden h-[140px]" />
 
       {/* Mobile Menu */}
       <MobileMenu

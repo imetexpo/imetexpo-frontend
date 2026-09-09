@@ -54,7 +54,7 @@ export default function SectorsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="overflow-x-hidden bg-white py-16 sm:py-20 lg:py-24">
       
         <div>
           <Container>
@@ -82,7 +82,7 @@ export default function SectorsSection() {
             }
           `}</style>
           
-          <div className="relative mt-8 sm:mt-10 lg:mt-12 overflow-hidden">
+          <div className="relative mt-8 max-w-full overflow-hidden sm:mt-10 lg:mt-12">
             <div className="marquee-track flex gap-4 sm:gap-5 lg:gap-6 w-max">
               
               {/* Render list TWICE for seamless loop */}

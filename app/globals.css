@@ -137,6 +137,11 @@ body {
   html {
     @apply font-sans;
   }
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
 }
 @layer utilities {
   .font-heading {

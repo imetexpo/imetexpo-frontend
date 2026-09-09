@@ -99,7 +99,7 @@ export default function InsightsPage() {
 
   return (
     <div className="intro-animation font-sans">
-      <section className="bg-white pt-[120px] lg:pt-8 pb-16">
+      <section className="bg-white pt-0 lg:pt-8 pb-16">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-12 items-start">
             

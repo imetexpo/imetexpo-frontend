@@ -83,9 +83,9 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="intro-animation min-h-screen bg-white">
+    <div className="intro-animation min-h-screen overflow-x-hidden bg-white">
       <div className="page-spacing-wrapper">
-        <div className="pt-[120px] lg:pt-[140px]">
+        <div className="lg:pt-0">
 
           {/* PAGE HEADER BANNER (Black section matching screenshot 4) */}
           <div className="bg-[#03193D] text-white py-12 sm:py-16 md:py-20 border-b border-neutral-900">
@@ -344,9 +344,9 @@ export default function AboutPage() {
                       </p>
                     </div>
                   </div>
-                  <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid min-w-0 gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {keyEvents.map((event, idx) => (
-                      <div key={idx} className="group flex flex-col overflow-hidden bg-[#FCF8F3] border border-gray-100 rounded-sm transition-shadow duration-300 ease-in-out hover:shadow-lg">
+                      <div key={idx} className="group flex min-w-0 flex-col overflow-hidden bg-[#FCF8F3] border border-gray-100 rounded-sm transition-shadow duration-300 ease-in-out hover:shadow-lg">
                         <div className="relative h-48 sm:h-56 w-full overflow-hidden">
                           <Image
                             src={event.image}

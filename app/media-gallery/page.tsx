@@ -115,7 +115,7 @@ const galleryCategories = [
 export default function MediaGalleryPage() {
   return (
     <div className="intro-animation font-sans">
-      <div className="page-spacing-wrapper pt-[120px] lg:pt-0 pb-16">
+      <div className="page-spacing-wrapper lg:pt-0 pb-16">
         
         {/* Gallery Header */}
         <Container>

@@ -266,7 +266,7 @@ export default function AboutITEPage() {
   return (
     <div className="intro-animation">
       <div className="page-spacing-wrapper">
-        <div className="pt-[100px] sm:pt-[120px] lg:pt-0">
+        <div className="lg:pt-0">
 
           {/* About Us Section */}
           <div className="animated-block">

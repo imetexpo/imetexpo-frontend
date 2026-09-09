@@ -143,7 +143,7 @@ export default function ExhibitorDetailPage() {
   return (
     <div className="intro-animation bg-white min-h-screen font-sans">
       <div className="page-spacing-wrapper">
-        <div className="pt-[120px] lg:pt-0">
+        <div className="lg:pt-0">
           {/* TOP NAV */}
           <div className="bg-white border-b border-gray-200 sticky top-[160px] lg:top-[140px] z-40">
         <Container>
