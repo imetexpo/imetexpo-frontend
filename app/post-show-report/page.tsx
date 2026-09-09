@@ -116,7 +116,8 @@ function CheckboxGroup({ label, options, required, selectedValues = [], onChange
 }
 
 const productSectors = [
-  "Raw Materials & Rubber Compounds",
+  "Coordinate Measuring Machines (CMM),
+  <p className="text-sm sm:text-base md:text-lg text-gray-700"> Advanced CMMs, portable CMMs, bridge-type systems, gantry CMMs, articulating arms, and 3D coordinate measurement solutions for high-precision inspection. </P>
   "Tyre Manufacturing Machinery",
   "Rubber Processing Equipment",
   "Tyre Testing & Quality Control",

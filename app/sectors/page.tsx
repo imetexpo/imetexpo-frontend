@@ -28,103 +28,102 @@ export default function SectorsPage() {
 
   const sectors = [
     {
-      title: "Raw Materials & Rubber Compounds",
-      slug: "raw-materials-and-rubber-compounds",
-      description: "Natural rubber, synthetic rubber, carbon black, silica, processing oils, and specialty chemicals for tyre manufacturing.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Tyre Manufacturing Machinery",
-      slug: "tyre-manufacturing-machinery",
-      description: "Banbury mixers, calenders, extruders, tyre building machines, curing presses, and finishing equipment.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Rubber Processing Equipment",
-      slug: "rubber-processing-equipment",
-      description: "Two-roll mills, internal mixers, strainers, pelletizers, and rubber bale cutters for efficient processing.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Tyre Testing & Quality Control",
-      slug: "tyre-testing-and-quality-control",
-      description: "Durability testers, uniformity machines, balance testers, X-ray inspection, and laboratory testing equipment.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Retreading & Repair Materials",
-      slug: "retreading-and-repair-materials",
-      description: "Pre-cure and mold cure tread rubber, cushion gum, repair patches, and retreading machinery and accessories.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Recycling & Sustainability Solutions",
-      slug: "recycling-and-sustainability-solutions",
-      description: "Tyre recycling machinery, crumb rubber production, pyrolysis systems, and sustainable material innovations.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Mold & Tooling Solutions",
-      slug: "mold-and-tooling-solutions",
-      description: "Tyre molds, bladder molds, engraving services, and precision tooling for tyre manufacturing.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Tyre Reinforcement Materials",
-      slug: "tyre-reinforcement-materials",
-      description: "Steel cord, textile cord (nylon, polyester, rayon), bead wire, and fabric for tyre reinforcement.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Additives & Performance Chemicals",
-      slug: "additives-and-performance-chemicals",
-      description: "Antioxidants, antiozonants, accelerators, activators, adhesion promoters, and specialty additives.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Automation & Industry 4.0",
-      slug: "automation-and-industry-40",
-      description: "MES systems, AI quality inspection, predictive maintenance, and smart factory solutions for tyre plants.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Material Handling & Logistics",
-      slug: "material-handling-and-logistics",
-      description: "Conveyor systems, automated guided vehicles (AGVs), warehouse solutions, and tyre handling equipment.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    },
-    {
-      title: "Curing & Vulcanization Systems",
-      slug: "curing-and-vulcanization-systems",
-      description: "Curing presses, bladder systems, hot water circulation units, and vulcanization control systems.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-    }
+  title: "Coordinate Measuring Machines (CMM)",
+  slug: "coordinate-measuring-machines-cmm",
+  description: "Bridge, gantry, portable, and articulating CMMs for high-precision dimensional inspection, geometric measurement, and quality control.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Dimensional Measurement & Gauging",
+  slug: "dimensional-measurement-and-gauging",
+  description: "Precision measuring instruments, gauges, comparators, height gauges, micrometers, and advanced solutions for dimensional and tolerance measurement.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Optical & Vision Metrology",
+  slug: "optical-and-vision-metrology",
+  description: "Video measuring machines, optical systems, machine vision, microscopes, non-contact measurement, and automated visual inspection technologies.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "3D Scanning & Digital Measurement",
+  slug: "3d-scanning-and-digital-measurement",
+  description: "Laser scanners, structured-light scanners, handheld 3D scanners, point-cloud systems, reverse engineering, and digital inspection solutions.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Surface & Form Measurement",
+  slug: "surface-and-form-measurement",
+  description: "Advanced systems for surface roughness, contour, roundness, cylindricity, waviness, profile, and precision form measurement.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Calibration & Reference Standards",
+  slug: "calibration-and-reference-standards",
+  description: "Calibration equipment, reference standards, master instruments, calibration software, traceability solutions, and laboratory measurement systems.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Testing & Quality Inspection",
+  slug: "testing-and-quality-inspection",
+  description: "Material testing, mechanical testing, dimensional inspection, non-destructive testing, laboratory equipment, and advanced quality inspection solutions.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Sensors, Probes & Measurement Systems",
+  slug: "sensors-probes-and-measurement-systems",
+  description: "Precision sensors, probes, encoders, laser measurement systems, displacement sensors, force measurement, and advanced data acquisition technologies.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Metrology Software & Digital Quality",
+  slug: "metrology-software-and-digital-quality",
+  description: "Inspection software, SPC, QMS, measurement data management, digital reporting, analytics, and connected quality management solutions.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Automation & Industry 4.0",
+  slug: "automation-and-industry-40",
+  description: "Automated inspection, robotic measurement, inline metrology, smart manufacturing, AI-powered inspection, and connected Industry 4.0 solutions.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Precision Instruments & Gauges",
+  slug: "precision-instruments-and-gauges",
+  description: "Micrometers, vernier instruments, dial indicators, thread gauges, gear measurement systems, precision gauges, and specialised inspection equipment.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+},
+{
+  title: "Metrology Services & Laboratories",
+  slug: "metrology-services-and-laboratories",
+  description: "Calibration laboratories, testing services, dimensional measurement, inspection services, certification, consultancy, training, and metrology support.",
+  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+}
   ];
 
   const quickGuideItems = [
-    {
-      title: "Become an Exhibitor",
-      description: "Connect with 8,000+ mining professionals across 3 days for unparalleled networking opportunities.",
-      buttonText: "Book A Stand",
-      buttonLink: "/exhibiting-enquiry",
-      image: "https://cdn.itegroupnews.com/mw24_1062_min_91b90d653f.jpg"
-    },
-    {
-      title: "Download Your Event Brochure",
-      description: "Not ready to become an exhibitor? Visit the exhibition for free and find out what to expect for the following edition.",
-      buttonText: "Download Now",
-      buttonLink: "/event-brochure",
-      image: "https://cdn.itegroupnews.com/Untitled_500_x_500_px_cd8f081eec.png"
-    },
-    {
-      title: "Become a Visitor",
-      description: "Find out who we are, what we do, and how best we can help you achieve your strategic business goals all wrapped up in our concise event brochure.",
-      buttonText: "Register Now",
-      buttonLink: "/visitor-registration",
-      image: "https://cdn.itegroupnews.com/mw24_1077_min_75a8122d24.jpg"
-    }
-  ];
-
+  {
+    title: "Become an Exhibitor",
+    description: "Showcase your metrology, measurement, inspection, calibration, and quality technologies to manufacturers, engineers, quality professionals, and key industry decision-makers.",
+    buttonText: "Book A Stand",
+    buttonLink: "/exhibiting-enquiry",
+    image: "https://cdn.itegroupnews.com/mw24_1062_min_91b90d653f.jpg"
+  },
+  {
+    title: "Download Your Event Brochure",
+    description: "Explore INDIAMET 2027, discover the exhibition sectors, visitor profile, exhibiting opportunities, and everything you need to plan your participation.",
+    buttonText: "Download Now",
+    buttonLink: "/event-brochure",
+    image: "https://cdn.itegroupnews.com/Untitled_500_x_500_px_cd8f081eec.png"
+  },
+  {
+    title: "Become a Visitor",
+    description: "Discover the latest metrology and measurement technologies, connect with leading solution providers, meet industry professionals, and explore innovations shaping precision manufacturing.",
+    buttonText: "Register Now",
+    buttonLink: "/visitor-registration",
+    image: "https://cdn.itegroupnews.com/mw24_1077_min_75a8122d24.jpg"
+  }
+];
   return (
     <div className="intro-animation">
       {/* Mobile Header */}
@@ -160,14 +159,14 @@ export default function SectorsPage() {
               <div className="text-center lg:text-left">
                 <h2 className="font-bebas text-5xl text-[#03193D] md:text-6xl lg:text-7xl">
                   <br />
-                  Sectors Showcased at <span className="text-[#CC9808]">ITS Tyre Expo</span>
+                  Sectors Showcased at <span className="text-[#CC9808]">INDIAMET Expo</span>
                 </h2>
                 <p className="mx-auto mt-5 max-w-9xl text-lg text-gray-700 lg:mx-0">
-                  The event highlights key sectors including raw materials, tyre manufacturing machinery,
-                  testing equipment, and automation technologies tailored for the tyre industry. Whether
-                  you're seeking innovative solutions for rubber processing, cutting-edge machinery, or
-                  tools for optimizing tyre production, ITS Tyre Expo offers a platform for every professional
-                  in the tyre manufacturing and rubber processing sectors.
+                  INDIAMET brings together the complete spectrum of metrology, measurement, inspection, 
+                  calibration, testing, and quality technologies. From advanced CMMs and optical measurement 
+                  systems to calibration equipment, 3D scanning, machine vision, and smart metrology software, 
+                  the exhibition connects technology providers with manufacturers and quality professionals across 
+                  India's precision manufacturing ecosystem.
                 </p>
               </div>
 

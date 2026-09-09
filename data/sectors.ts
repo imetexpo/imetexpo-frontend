@@ -23,470 +23,470 @@ export interface SubSector {
 export const sectorsData: Sector[] = [
   {
     id: 1,
-    title: "Raw Materials & Rubber Compounds",
-    slug: "raw-materials-and-rubber-compounds",
-    shortText: "Natural rubber, synthetic rubber, carbon black, silica, processing oils, and specialty chemicals.",
-    description: "Natural rubber, synthetic rubber, carbon black, silica, processing oils, and specialty chemicals for tyre manufacturing.",
+    title: "Coordinate Measuring Machines (CMM)",
+    slug: "coordinate-measuring-machines-cmm",
+    shortText: "Bridge, gantry, portable, and articulating CMMs for high-precision dimensional inspection.",
+    description: "Advanced coordinate measuring machines and 3D measurement systems for precision inspection and quality control.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Raw Materials",
+    buttonText: "Explore CMM",
     buttonLink: "/exhibiting-enquiry",
-    content: "The Raw Materials & Rubber Compounds sector at ITS Tyre Expo brings together leading suppliers of essential materials for tyre production. From natural and synthetic rubbers to carbon black, silica, processing oils, and advanced specialty chemicals, this sector showcases the building blocks of modern tyre manufacturing. Discover innovations in sustainable materials, enhanced durability compounds, and performance-enhancing additives that are shaping the future of the tyre industry.",
+    content: "The Coordinate Measuring Machines (CMM) sector at INDIAMET showcases advanced technologies for high-precision dimensional measurement and inspection. From bridge and gantry CMMs to portable and articulating arm systems, this sector brings together solutions that help manufacturers achieve dimensional accuracy, improve quality control, and meet demanding production requirements.",
     subSectors: [
       {
-        title: "Natural & Synthetic Rubber",
-        description: "Premium quality natural rubber grades and synthetic rubber variants including SBR, BR, and IIR for various tyre applications."
+        title: "Bridge & Gantry CMMs",
+        description: "High-accuracy bridge and gantry CMM systems for precision dimensional inspection of components and assemblies."
       },
       {
-        title: "Reinforcing Fillers",
-        description: "Carbon black and silica solutions for improved tread wear, rolling resistance, and wet grip performance."
+        title: "Portable CMMs",
+        description: "Portable coordinate measurement systems and articulating arms for flexible inspection directly on the shop floor."
       },
       {
-        title: "Processing Oils & Plasticizers",
-        description: "Specialty oils and plasticizers that enhance processability and influence final product properties."
+        title: "CMM Probes & Accessories",
+        description: "Touch-trigger probes, scanning probes, probe heads, styli, fixtures, and accessories for advanced CMM applications."
       },
       {
-        title: "Specialty Chemicals",
-        description: "Antioxidants, antiozonants, accelerators, and other performance chemicals for rubber compounding."
+        title: "CMM Software",
+        description: "Measurement, inspection, programming, reporting, and analysis software for automated and complex CMM operations."
       }
     ],
     keyProducts: [
-      "Natural Rubber (RSS, SMR, SIR grades)",
-      "Synthetic Rubber (SBR, BR, IIR, EPDM)",
-      "Carbon Black (all grades)",
-      "Precipitated Silica",
-      "Processing Oils (aromatic, naphthenic, paraffinic)",
-      "Zinc Oxide & Stearic Acid",
-      "Sulfur & Accelerators",
-      "Antioxidants & Antiozonants"
+      "Bridge CMMs",
+      "Gantry CMMs",
+      "Portable CMMs",
+      "Articulating Arm CMMs",
+      "Scanning Probes",
+      "Touch Trigger Probes",
+      "CMM Fixtures",
+      "CMM Measurement Software"
     ]
   },
   {
     id: 2,
-    title: "Tyre Manufacturing Machinery",
-    slug: "tyre-manufacturing-machinery",
-    shortText: "Banbury mixers, calenders, extruders, tyre building machines, curing presses, and finishing equipment.",
-    description: "Banbury mixers, calenders, extruders, tyre building machines, curing presses, and finishing equipment.",
+    title: "Dimensional Measurement & Gauging",
+    slug: "dimensional-measurement-and-gauging",
+    shortText: "Precision instruments, gauges, comparators, and systems for dimensional and geometric measurement.",
+    description: "Precision measurement instruments and gauging solutions for dimensional, tolerance, and geometric inspection.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Machinery",
+    buttonText: "Explore Measurement",
     buttonLink: "/exhibiting-enquiry",
-    content: "The Tyre Manufacturing Machinery sector showcases state-of-the-art equipment for every stage of tyre production. From Banbury internal mixers and calenders to advanced tyre building machines, curing presses, and finishing equipment, discover the latest innovations in tyre manufacturing technology. Leading machinery manufacturers present solutions that enhance productivity, precision, and energy efficiency.",
+    content: "The Dimensional Measurement & Gauging sector brings together precision instruments and inspection technologies used to verify dimensions, tolerances, geometry, and manufacturing accuracy. From traditional precision instruments to advanced digital measurement systems, exhibitors showcase solutions for quality inspection across a wide range of manufacturing applications.",
     subSectors: [
       {
-        title: "Mixing & Compounding",
-        description: "Internal mixers, two-roll mills, and batch-off systems for rubber compounding."
+        title: "Precision Measuring Instruments",
+        description: "Micrometers, vernier instruments, height gauges, dial indicators, and other precision measurement tools."
       },
       {
-        title: "Calendering & Extrusion",
-        description: "Calenders for fabric and steel cord coating, extruders for tread and sidewall profiles."
+        title: "Gauges & Comparators",
+        description: "Plug gauges, ring gauges, snap gauges, air gauges, electronic gauges, and comparator systems."
       },
       {
-        title: "Tyre Building",
-        description: "First and second stage tyre building machines for passenger, truck, and OTR tyres."
+        title: "Geometric Measurement",
+        description: "Solutions for measuring straightness, flatness, perpendicularity, parallelism, concentricity, and other geometric characteristics."
       },
       {
-        title: "Curing & Vulcanization",
-        description: "Mechanical and hydraulic curing presses with advanced control systems."
+        title: "Automated Gauging",
+        description: "In-process and post-process automated gauging systems for high-volume and precision manufacturing."
       }
     ],
     keyProducts: [
-      "Banbury Internal Mixers",
-      "Two-Roll Mixing Mills",
-      "Calenders (fabric & steel cord)",
-      "Pin Barrel Extruders",
-      "Cold Feed Extruders",
-      "Tyre Building Machines (TBM)",
-      "Curing Presses",
-      "Tyre Finishing & Inspection Lines"
+      "Digital Micrometers",
+      "Vernier Calipers",
+      "Height Gauges",
+      "Dial Indicators",
+      "Plug & Ring Gauges",
+      "Snap Gauges",
+      "Air Gauges",
+      "Electronic Comparators"
     ]
   },
   {
     id: 3,
-    title: "Rubber Processing Equipment",
-    slug: "rubber-processing-equipment",
-    shortText: "Two-roll mills, internal mixers, strainers, pelletizers, and rubber bale cutters.",
-    description: "Two-roll mills, internal mixers, strainers, pelletizers, and rubber bale cutters for efficient processing.",
+    title: "Optical & Vision Metrology",
+    slug: "optical-and-vision-metrology",
+    shortText: "Video measuring machines, optical systems, machine vision, and non-contact inspection technologies.",
+    description: "Advanced optical measurement, machine vision, video inspection, microscopy, and non-contact metrology systems.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Processing",
+    buttonText: "Explore Vision Metrology",
     buttonLink: "/exhibiting-enquiry",
-    content: "Rubber Processing Equipment forms the backbone of efficient tyre production. This sector features cutting-edge machinery for mixing, milling, straining, and pelletizing rubber compounds. Discover solutions that optimize material handling, reduce waste, and improve overall processing efficiency.",
+    content: "Optical & Vision Metrology at INDIAMET showcases advanced non-contact measurement and inspection technologies. These solutions combine optics, imaging, sensors, and software to inspect complex components, detect defects, verify dimensions, and automate quality inspection processes across modern manufacturing environments.",
     subSectors: [
       {
-        title: "Mixing & Milling",
-        description: "Internal mixers and two-roll mills for compound preparation and blending."
+        title: "Video Measuring Machines",
+        description: "High-precision video measurement systems for dimensional and geometric inspection of components."
       },
       {
-        title: "Straining & Filtering",
-        description: "Rubber strainers and screen changers for contaminant removal."
+        title: "Machine Vision",
+        description: "Camera-based inspection systems for automated measurement, defect detection, identification, and quality control."
       },
       {
-        title: "Pelletizing",
-        description: "Underwater and dry pelletizing systems for rubber compound processing."
+        title: "Optical Measurement",
+        description: "Optical comparators, profile projectors, microscopes, and non-contact measurement systems."
       },
       {
-        title: "Material Preparation",
-        description: "Rubber bale cutters, guillotines, and weigh systems for material handling."
+        title: "Automated Vision Inspection",
+        description: "Integrated vision systems for inline inspection, defect detection, sorting, and production quality control."
       }
     ],
     keyProducts: [
-      "Hydraulic Two-Roll Mills",
-      "Gear Pump Extruders",
-      "Rubber Strainers",
-      "Underwater Pelletizers",
-      "Rubber Bale Cutters",
-      "Batch-Off Systems",
-      "Cooling Conveyors",
-      "Rubber Slab Cutters"
+      "Video Measuring Machines",
+      "Optical Comparators",
+      "Profile Projectors",
+      "Machine Vision Systems",
+      "Industrial Cameras",
+      "Digital Microscopes",
+      "Vision Inspection Software",
+      "Automated Optical Inspection Systems"
     ]
   },
   {
     id: 4,
-    title: "Tyre Testing & Quality Control",
-    slug: "tyre-testing-and-quality-control",
-    shortText: "Durability testers, uniformity machines, balance testers, X-ray inspection, and laboratory equipment.",
-    description: "Durability testers, uniformity machines, balance testers, X-ray inspection, and laboratory testing equipment.",
+    title: "3D Scanning & Digital Measurement",
+    slug: "3d-scanning-and-digital-measurement",
+    shortText: "3D laser scanners, structured-light systems, handheld scanners, and digital inspection technologies.",
+    description: "3D scanning, laser measurement, structured-light systems, reverse engineering, and digital inspection solutions.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Testing",
+    buttonText: "Explore 3D Measurement",
     buttonLink: "/exhibiting-enquiry",
-    content: "Quality control is paramount in tyre manufacturing. The Tyre Testing & Quality Control sector presents advanced inspection systems and testing equipment that ensure product safety, performance, and consistency. From laboratory rheometers to high-speed uniformity testers and X-ray inspection systems, discover technologies that maintain the highest quality standards.",
+    content: "The 3D Scanning & Digital Measurement sector presents advanced technologies for capturing accurate three-dimensional data from physical objects. These solutions support dimensional inspection, reverse engineering, product development, surface analysis, and digital quality workflows across precision manufacturing industries.",
     subSectors: [
       {
-        title: "Laboratory Testing",
-        description: "Rheometers, Mooney viscometers, and tensile testers for compound characterization."
+        title: "Laser Scanning",
+        description: "Laser-based 3D scanners for accurate surface capture, dimensional inspection, and digital measurement."
       },
       {
-        title: "Tyre Uniformity",
-        description: "High-speed uniformity machines for radial force variation measurement."
+        title: "Structured Light Scanning",
+        description: "High-resolution structured-light systems for capturing detailed three-dimensional geometry."
       },
       {
-        title: "Dynamic Balancing",
-        description: "Automatic balancing machines for static and dynamic imbalance correction."
+        title: "Portable 3D Scanning",
+        description: "Handheld and portable scanners for flexible inspection of large, complex, and hard-to-reach components."
       },
       {
-        title: "Non-Destructive Testing",
-        description: "X-ray and shearography inspection systems for internal defect detection."
+        title: "Reverse Engineering",
+        description: "3D measurement and modelling solutions for recreating, analysing, and improving existing components."
       }
     ],
     keyProducts: [
-      "Moving Die Rheometers (MDR)",
-      "Mooney Viscometers",
-      "Tensile Testers",
-      "Tyre Uniformity Machines",
-      "Dynamic Balancers",
-      "X-Ray Inspection Systems",
-      "Shearography Testers",
-      "Durability & Endurance Testers"
+      "3D Laser Scanners",
+      "Structured-Light Scanners",
+      "Handheld 3D Scanners",
+      "Portable Scanning Systems",
+      "Point Cloud Software",
+      "Reverse Engineering Software",
+      "3D Inspection Software",
+      "Digital Measurement Systems"
     ]
   },
   {
     id: 5,
-    title: "Retreading & Repair Materials",
-    slug: "retreading-and-repair-materials",
-    shortText: "Pre-cure and mold cure tread rubber, cushion gum, repair patches, and retreading machinery.",
-    description: "Pre-cure and mold cure tread rubber, cushion gum, repair patches, and retreading machinery and accessories.",
+    title: "Surface & Form Measurement",
+    slug: "surface-and-form-measurement",
+    shortText: "Advanced systems for surface roughness, contour, roundness, cylindricity, waviness, and form measurement.",
+    description: "Precision technologies for surface texture, contour, roundness, cylindricity, profile, and form measurement.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Retreading",
+    buttonText: "Explore Surface Measurement",
     buttonLink: "/exhibiting-enquiry",
-    content: "Sustainable tyre management through retreading and repair is a growing focus in the industry. This sector showcases advanced retreading systems, high-quality tread rubber, repair materials, and specialized machinery that extend tyre life and reduce environmental impact.",
+    content: "Surface & Form Measurement is essential for controlling the functional performance and quality of precision components. This sector showcases advanced instruments for analysing surface texture, roughness, contour, roundness, cylindricity, profile, and other geometric characteristics required in demanding manufacturing applications.",
     subSectors: [
       {
-        title: "Pre-Cure Retreading",
-        description: "Pre-cure tread rubber, cushion gum, and envelope systems for cold retreading."
+        title: "Surface Roughness",
+        description: "Contact and non-contact systems for measuring surface roughness, waviness, and surface texture."
       },
       {
-        title: "Mold Cure Retreading",
-        description: "Matrix systems and mold cure tread rubber for hot retreading processes."
+        title: "Roundness & Cylindricity",
+        description: "Precision form measurement systems for roundness, cylindricity, concentricity, and related characteristics."
       },
       {
-        title: "Repair Materials",
-        description: "Repair patches, plugs, and filling compounds for tyre damage repair."
+        title: "Contour & Profile",
+        description: "Advanced contour and profile measurement systems for complex precision components."
       },
       {
-        title: "Retreading Machinery",
-        description: "Buffers, builders, extruders, and curing chambers for retreading operations."
+        title: "Surface Analysis",
+        description: "Surface analysis technologies for evaluating texture, finish, defects, and functional surface characteristics."
       }
     ],
     keyProducts: [
-      "Pre-Cure Tread Rubber",
-      "Mold Cure Tread Rubber",
-      "Cushion Gum",
-      "Repair Patches & Plugs",
-      "Tyre Buffers",
-      "Retreading Builders",
-      "Curing Envelopes & Chambers",
-      "Tread Strip Extruders"
+      "Surface Roughness Testers",
+      "Roundness Measuring Machines",
+      "Cylindricity Measuring Systems",
+      "Contour Measuring Machines",
+      "Profile Measurement Systems",
+      "Surface Texture Analysers",
+      "Form Measurement Systems",
+      "Non-Contact Surface Profilers"
     ]
   },
   {
     id: 6,
-    title: "Recycling & Sustainability Solutions",
-    slug: "recycling-and-sustainability-solutions",
-    shortText: "Tyre recycling machinery, crumb rubber production, pyrolysis systems, and sustainable innovations.",
-    description: "Tyre recycling machinery, crumb rubber production, pyrolysis systems, and sustainable material innovations.",
+    title: "Calibration & Reference Standards",
+    slug: "calibration-and-reference-standards",
+    shortText: "Calibration equipment, reference standards, master instruments, and traceability solutions.",
+    description: "Calibration technologies, reference standards, master instruments, laboratory systems, and measurement traceability solutions.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Recycling",
+    buttonText: "Explore Calibration",
     buttonLink: "/exhibiting-enquiry",
-    content: "Environmental responsibility is driving innovation in tyre recycling and sustainability. This sector features advanced recycling technologies, crumb rubber production systems, pyrolysis solutions, and sustainable material alternatives that support circular economy principles in the tyre industry.",
+    content: "The Calibration & Reference Standards sector focuses on technologies that ensure measurement accuracy, reliability, and traceability. It brings together calibration equipment, master instruments, reference standards, calibration software, and laboratory solutions supporting quality systems across manufacturing and testing environments.",
     subSectors: [
       {
-        title: "Mechanical Recycling",
-        description: "Shredders, granulators, and cryogenic systems for crumb rubber production."
+        title: "Dimensional Calibration",
+        description: "Calibration systems for dimensional instruments, gauges, measuring machines, and precision equipment."
       },
       {
-        title: "Pyrolysis",
-        description: "Advanced pyrolysis systems for recovering oil, carbon black, and steel from end-of-life tyres."
+        title: "Electrical & Electronic Calibration",
+        description: "Calibration solutions for electrical, electronic, signal, and instrumentation measurement equipment."
       },
       {
-        title: "Sustainable Materials",
-        description: "Bio-based rubbers, recycled carbon black, and eco-friendly compounding solutions."
+        title: "Temperature & Pressure Calibration",
+        description: "Reference equipment and calibration systems for temperature, pressure, and process measurement instruments."
       },
       {
-        title: "Waste Management",
-        description: "Collection systems, sorting technology, and tyre derived fuel (TDF) processing."
+        title: "Reference Standards & Traceability",
+        description: "Certified reference standards, master instruments, calibration software, and traceability solutions."
       }
     ],
     keyProducts: [
-      "Tyre Shredders & Granulators",
-      "Cryogenic Grinding Systems",
-      "Pyrolysis Reactors",
-      "Crumb Rubber Separators",
-      "Steel & Fiber Separators",
-      "Devulcanization Equipment",
-      "Recycled Carbon Black",
-      "Tyre Derived Fuel (TDF) Systems"
+      "Calibration Benches",
+      "Gauge Calibration Systems",
+      "Reference Standards",
+      "Master Gauges",
+      "Temperature Calibrators",
+      "Pressure Calibrators",
+      "Electrical Calibrators",
+      "Calibration Management Software"
     ]
   },
   {
     id: 7,
-    title: "Mold & Tooling Solutions",
-    slug: "mold-and-tooling-solutions",
-    shortText: "Tyre molds, bladder molds, engraving services, and precision tooling for tyre manufacturing.",
-    description: "Tyre molds, bladder molds, engraving services, and precision tooling for tyre manufacturing.",
+    title: "Testing & Quality Inspection",
+    slug: "testing-and-quality-inspection",
+    shortText: "Material testing, mechanical testing, dimensional inspection, NDT, and laboratory quality systems.",
+    description: "Testing and inspection technologies for materials, components, products, and manufacturing quality assurance.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Tooling",
+    buttonText: "Explore Testing",
     buttonLink: "/exhibiting-enquiry",
-    content: "Precision molds and tooling are critical for tyre quality and performance. This sector showcases advanced mold manufacturing technologies, engraving services, bladder molds, and precision tooling solutions that deliver exceptional tread patterns and sidewall aesthetics.",
+    content: "The Testing & Quality Inspection sector brings together technologies used to verify material properties, component performance, product integrity, and manufacturing quality. From mechanical and material testing to non-destructive inspection and laboratory systems, this sector supports manufacturers in maintaining consistent quality and meeting industry standards.",
     subSectors: [
       {
-        title: "Tyre Molds",
-        description: "Segment molds, two-piece molds, and container molds for all tyre types."
+        title: "Material Testing",
+        description: "Testing systems for evaluating strength, hardness, elasticity, fatigue, and other material characteristics."
       },
       {
-        title: "Engraving Services",
-        description: "Precision engraving for tread patterns, sidewall markings, and tire identification."
+        title: "Mechanical Testing",
+        description: "Universal testing machines, hardness testers, impact testers, fatigue systems, and related equipment."
       },
       {
-        title: "Bladder Molds",
-        description: "Curing bladder molds for passenger, truck, and OTR tyre applications."
+        title: "Non-Destructive Testing",
+        description: "Ultrasonic, radiographic, magnetic particle, dye penetrant, and other NDT technologies."
       },
       {
-        title: "Precision Tooling",
-        description: "Tooling for bead rings, tread rings, and sidewall plates."
+        title: "Laboratory Inspection",
+        description: "Laboratory instruments and inspection systems for product verification, analysis, and quality assurance."
       }
     ],
     keyProducts: [
-      "Segment Molds",
-      "Two-Piece Molds",
-      "Container Molds",
-      "Engraving Machines & Services",
-      "Bladder Molds",
-      "Bead Rings",
-      "Tread Rings",
-      "Sidewall Plates"
+      "Universal Testing Machines",
+      "Hardness Testers",
+      "Impact Testers",
+      "Fatigue Testing Machines",
+      "Ultrasonic Testing Systems",
+      "X-Ray Inspection Systems",
+      "Magnetic Particle Testing Equipment",
+      "Dye Penetrant Testing Systems"
     ]
   },
   {
     id: 8,
-    title: "Tyre Reinforcement Materials",
-    slug: "tyre-reinforcement-materials",
-    shortText: "Steel cord, textile cord (nylon, polyester, rayon), bead wire, and fabric for tyre reinforcement.",
-    description: "Steel cord, textile cord (nylon, polyester, rayon), bead wire, and fabric for tyre reinforcement.",
+    title: "Sensors, Probes & Measurement Systems",
+    slug: "sensors-probes-and-measurement-systems",
+    shortText: "Precision sensors, probes, encoders, laser systems, displacement sensors, and data acquisition technologies.",
+    description: "Advanced sensors, probes, encoders, transducers, laser measurement systems, and precision data acquisition technologies.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Reinforcement",
+    buttonText: "Explore Sensors",
     buttonLink: "/exhibiting-enquiry",
-    content: "Reinforcement materials provide the structural integrity essential for tyre performance and safety. This sector features steel cord, textile cord, bead wire, and reinforcement fabrics that deliver strength, durability, and dimensional stability to modern tyres.",
+    content: "Sensors, probes, and measurement systems form the foundation of modern automated and digital metrology. This sector showcases technologies that capture accurate measurement data from manufacturing processes, machines, and components, enabling real-time inspection, process control, automation, and data-driven quality management.",
     subSectors: [
       {
-        title: "Steel Cord",
-        description: "High-tensile steel cord for belts and carcass reinforcement in radial tyres."
+        title: "Measurement Probes",
+        description: "Touch probes, scanning probes, optical probes, and specialised sensors for dimensional measurement."
       },
       {
-        title: "Textile Cord",
-        description: "Nylon, polyester, rayon, and aramid cord for carcass and cap ply applications."
+        title: "Laser Measurement",
+        description: "Laser displacement, distance, thickness, profile, and dimensional measurement technologies."
       },
       {
-        title: "Bead Wire",
-        description: "High-carbon steel bead wire for tyre bead reinforcement."
+        title: "Encoders & Position Measurement",
+        description: "Linear and rotary encoders for precision positioning and machine measurement applications."
       },
       {
-        title: "Reinforcement Fabrics",
-        description: "Dipped fabrics and woven materials for tyre construction."
+        title: "Data Acquisition",
+        description: "Measurement interfaces, data acquisition systems, signal conditioning, and real-time monitoring technologies."
       }
     ],
     keyProducts: [
-      "Steel Cord (various constructions)",
-      "Bead Wire",
-      "Nylon Cord & Fabric",
-      "Polyester Cord",
-      "Rayon Cord",
-      "Aramid (Kevlar) Cord",
-      "Dipping & Adhesion Systems",
-      "Calendered Fabric"
+      "Touch Probes",
+      "Scanning Probes",
+      "Laser Sensors",
+      "Displacement Sensors",
+      "Linear Encoders",
+      "Rotary Encoders",
+      "Measurement Transducers",
+      "Data Acquisition Systems"
     ]
   },
   {
     id: 9,
-    title: "Additives & Performance Chemicals",
-    slug: "additives-and-performance-chemicals",
-    shortText: "Antioxidants, antiozonants, accelerators, activators, adhesion promoters, and specialty additives.",
-    description: "Antioxidants, antiozonants, accelerators, activators, adhesion promoters, and specialty additives.",
+    title: "Metrology Software & Digital Quality",
+    slug: "metrology-software-and-digital-quality",
+    shortText: "Inspection software, SPC, QMS, measurement data management, digital reporting, and analytics.",
+    description: "Metrology software, inspection planning, SPC, QMS, data management, reporting, analytics, and digital quality solutions.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Additives",
+    buttonText: "Explore Software",
     buttonLink: "/exhibiting-enquiry",
-    content: "Performance chemicals and additives are the key to achieving desired tyre properties. This sector showcases a comprehensive range of additives that enhance durability, reduce rolling resistance, improve wet grip, and extend tyre life. Discover innovations in vulcanization chemistry, anti-degradants, and adhesion promoters.",
+    content: "Digital transformation is changing how manufacturers collect, analyse, and manage quality data. The Metrology Software & Digital Quality sector showcases software platforms that connect measurement equipment with quality processes, enabling automated reporting, statistical analysis, traceability, inspection planning, and data-driven decision-making.",
     subSectors: [
       {
-        title: "Anti-Degradants",
-        description: "Antioxidants and antiozonants for protection against aging and ozone cracking."
+        title: "Metrology Software",
+        description: "Software platforms for CMM programming, measurement analysis, inspection planning, and automated reporting."
       },
       {
-        title: "Vulcanization Chemistry",
-        description: "Accelerators, activators, and retarders for controlled crosslinking."
+        title: "SPC & Statistical Quality",
+        description: "Statistical process control tools for monitoring manufacturing processes and identifying quality trends."
       },
       {
-        title: "Adhesion Systems",
-        description: "Adhesion promoters and bonding agents for rubber-to-metal and rubber-to-textile."
+        title: "Quality Management Systems",
+        description: "Digital QMS platforms for managing inspections, non-conformities, corrective actions, and quality processes."
       },
       {
-        title: "Specialty Additives",
-        description: "Processing aids, dispersing agents, and performance modifiers."
+        title: "Measurement Data Management",
+        description: "Systems for collecting, storing, analysing, visualising, and sharing measurement data across production environments."
       }
     ],
     keyProducts: [
-      "PPD Antioxidants",
-      "Waxes (Antiozonants)",
-      "Sulfenamide Accelerators",
-      "Thiazole Accelerators",
-      "Zinc Oxide",
-      "Stearic Acid",
-      "Cobalt Adhesion Promoters",
-      "Resorcinol & HMMM Systems"
+      "CMM Software",
+      "Inspection Planning Software",
+      "SPC Software",
+      "QMS Platforms",
+      "Measurement Data Management",
+      "Digital Inspection Systems",
+      "Quality Analytics",
+      "Digital Reporting Solutions"
     ]
   },
   {
     id: 10,
     title: "Automation & Industry 4.0",
     slug: "automation-and-industry-40",
-    shortText: "MES systems, AI quality inspection, predictive maintenance, and smart factory solutions.",
-    description: "MES systems, AI quality inspection, predictive maintenance, and smart factory solutions for tyre plants.",
+    shortText: "Automated inspection, robotic measurement, inline metrology, AI inspection, and smart manufacturing solutions.",
+    description: "Automation, robotics, inline metrology, AI-powered inspection, connected measurement, and Industry 4.0 quality technologies.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
     buttonText: "Explore Automation",
     buttonLink: "/exhibiting-enquiry",
-    content: "The digital transformation of tyre manufacturing is here. This sector presents cutting-edge automation solutions including Manufacturing Execution Systems (MES), AI-powered quality inspection, predictive maintenance platforms, and comprehensive smart factory technologies that optimize production efficiency and quality.",
+    content: "Automation & Industry 4.0 technologies are transforming inspection and quality control by connecting measurement systems directly with manufacturing processes. This sector showcases robotic inspection, inline metrology, automated gauging, machine vision, artificial intelligence, connected sensors, and smart quality solutions for next-generation manufacturing.",
     subSectors: [
       {
-        title: "Manufacturing Execution Systems",
-        description: "MES platforms for production tracking, scheduling, and quality management."
+        title: "Automated Inspection",
+        description: "Automated measurement and inspection systems designed for high-speed and high-volume manufacturing."
       },
       {
-        title: "AI Quality Inspection",
-        description: "Machine vision and deep learning systems for defect detection."
+        title: "Robotic Metrology",
+        description: "Robotic measurement and inspection systems for flexible and automated quality control."
       },
       {
-        title: "Predictive Maintenance",
-        description: "IoT sensors and analytics for equipment health monitoring."
+        title: "Inline Metrology",
+        description: "Measurement technologies integrated directly into production lines for real-time process monitoring."
       },
       {
-        title: "Smart Factory Solutions",
-        description: "Integrated Industry 4.0 platforms for connected tyre manufacturing."
+        title: "AI & Smart Inspection",
+        description: "Artificial intelligence, machine learning, computer vision, and connected technologies for intelligent inspection."
       }
     ],
     keyProducts: [
-      "MES Software",
-      "AI Vision Inspection Systems",
-      "IoT Sensors & Gateways",
-      "Predictive Analytics Platforms",
-      "SCADA Systems",
-      "Digital Twin Solutions",
-      "Traceability Systems",
-      "Robotic Automation"
+      "Automated Gauging Systems",
+      "Robotic Inspection Systems",
+      "Inline Metrology Systems",
+      "AI Vision Inspection",
+      "Smart Sensors",
+      "Industrial IoT Platforms",
+      "Automated Measurement Cells",
+      "Connected Quality Systems"
     ]
   },
   {
     id: 11,
-    title: "Material Handling & Logistics",
-    slug: "material-handling-and-logistics",
-    shortText: "Conveyor systems, automated guided vehicles (AGVs), warehouse solutions, and tyre handling equipment.",
-    description: "Conveyor systems, automated guided vehicles (AGVs), warehouse solutions, and tyre handling equipment.",
+    title: "Precision Instruments & Gauges",
+    slug: "precision-instruments-and-gauges",
+    shortText: "Micrometers, calipers, indicators, gauges, thread measurement, gear inspection, and precision instruments.",
+    description: "Precision hand instruments, gauges, indicators, thread and gear measurement systems, and specialised inspection equipment.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Logistics",
+    buttonText: "Explore Instruments",
     buttonLink: "/exhibiting-enquiry",
-    content: "Efficient material handling is essential for tyre plant productivity. This sector showcases conveyor systems, automated guided vehicles (AGVs), warehouse automation, and specialized tyre handling equipment that streamline material flow from raw material receiving to finished tyre storage and shipping.",
+    content: "The Precision Instruments & Gauges sector brings together essential measurement tools used throughout manufacturing and quality inspection. From precision hand instruments and gauges to specialised thread, gear, and component measurement systems, this sector supports accurate and reliable inspection across diverse industrial applications.",
     subSectors: [
       {
-        title: "Conveyor Systems",
-        description: "Belt conveyors, screw conveyors, and bucket elevators for material transport."
+        title: "Hand Measuring Instruments",
+        description: "Precision calipers, micrometers, depth gauges, height gauges, and indicators for shop-floor measurement."
       },
       {
-        title: "Automated Guided Vehicles",
-        description: "AGVs and autonomous mobile robots for internal logistics."
+        title: "Thread & Gear Measurement",
+        description: "Specialised systems and gauges for measuring threads, gears, splines, and precision transmission components."
       },
       {
-        title: "Warehouse Solutions",
-        description: "Automated storage and retrieval systems (ASRS) for green tyres and finished goods."
+        title: "Gauge Systems",
+        description: "Plug, ring, snap, thread, taper, and customised gauges for production inspection."
       },
       {
-        title: "Tyre Handling",
-        description: "Specialized equipment for tyre stacking, palletizing, and transport."
+        title: "Precision Inspection Tools",
+        description: "Specialised instruments and accessories for accurate dimensional and geometric verification."
       }
     ],
     keyProducts: [
-      "Belt Conveyors",
-      "Screw Conveyors",
-      "Bucket Elevators",
-      "Automated Guided Vehicles (AGVs)",
-      "ASRS Systems",
-      "Tyre Stackers",
-      "Tyre Palletizers",
-      "Green Tyre Transport Systems"
+      "Digital Calipers",
+      "Outside Micrometers",
+      "Inside Micrometers",
+      "Dial Indicators",
+      "Thread Gauges",
+      "Gear Measuring Systems",
+      "Plug & Ring Gauges",
+      "Precision Inspection Tools"
     ]
   },
   {
     id: 12,
-    title: "Curing & Vulcanization Systems",
-    slug: "curing-and-vulcanization-systems",
-    shortText: "Curing presses, bladder systems, hot water circulation units, and vulcanization control systems.",
-    description: "Curing presses, bladder systems, hot water circulation units, and vulcanization control systems.",
+    title: "Metrology Services & Laboratories",
+    slug: "metrology-services-and-laboratories",
+    shortText: "Calibration laboratories, testing services, dimensional inspection, certification, consultancy, and training.",
+    description: "Professional metrology services, calibration laboratories, testing, inspection, certification, consultancy, and training solutions.",
     image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png",
-    buttonText: "Explore Curing",
+    buttonText: "Explore Services",
     buttonLink: "/exhibiting-enquiry",
-    content: "The curing process determines final tyre properties and performance. This sector features advanced curing presses, bladder systems, hot water circulation units, and precise vulcanization control systems that ensure consistent quality and optimal cure parameters for all tyre types.",
+    content: "The Metrology Services & Laboratories sector connects manufacturers with specialist organisations providing calibration, testing, inspection, certification, consultancy, and technical training. These services play a critical role in maintaining measurement accuracy, traceability, regulatory compliance, and continuous quality improvement across the manufacturing ecosystem.",
     subSectors: [
       {
-        title: "Curing Presses",
-        description: "Mechanical, hydraulic, and hybrid curing presses for various tyre sizes."
+        title: "Calibration Laboratories",
+        description: "Accredited and specialist laboratories providing calibration services for dimensional, electrical, temperature, pressure, and other instruments."
       },
       {
-        title: "Bladder Systems",
-        description: "Curing bladders, bladder changers, and bladder storage solutions."
+        title: "Measurement & Inspection Services",
+        description: "Contract measurement, dimensional inspection, CMM inspection, 3D scanning, and specialised metrology services."
       },
       {
-        title: "Heating Systems",
-        description: "Hot water circulation units, steam systems, and electric heating solutions."
+        title: "Testing & Certification",
+        description: "Testing, certification, verification, and compliance services for products, components, instruments, and manufacturing processes."
       },
       {
-        title: "Process Control",
-        description: "PLC-based vulcanization control systems with data logging and recipe management."
+        title: "Consultancy & Training",
+        description: "Metrology consultancy, quality system support, measurement training, GD&T training, and technical competency development."
       }
     ],
     keyProducts: [
-      "Mechanical Curing Presses",
-      "Hydraulic Curing Presses",
-      "Hybrid Curing Presses",
-      "Curing Bladders",
-      "Bladder Changers",
-      "Hot Water Circulation Units",
-      "Steam Systems",
-      "Vulcanization Control Systems"
+      "Calibration Services",
+      "Dimensional Inspection Services",
+      "CMM Inspection Services",
+      "3D Scanning Services",
+      "Testing Laboratories",
+      "Certification Services",
+      "Metrology Consultancy",
+      "Metrology Training"
     ]
   }
 ];

@@ -7,18 +7,29 @@ import { useUTMData } from "@/hooks/useUTMTracker";
 import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
 
 const productSectors = [
-  "Raw Materials & Rubber Compounds",
-  "Tyre Manufacturing Machinery",
-  "Rubber Processing Equipment",
-  "Tyre Testing & Quality Control",
-  "Retreading & Repair Materials",
-  "Recycling & Sustainability Solutions",
-  "Mold & Tooling Solutions",
-  "Tyre Reinforcement Materials",
-  "Additives & Performance Chemicals",
+  "Coordinate Measuring Machines (CMM)",
+
+  "Dimensional Measurement & Gauging",
+
+  "Optical & Vision Metrology",
+
+  "3D Scanning & Digital Measurement",
+
+  "Surface & Form Measurement",
+
+  "Calibration & Reference Standards",
+
+  "Testing & Quality Inspection",
+
+  "Sensors, Probes & Measurement Systems",
+
+  "Metrology Software & Digital Quality",
+
   "Automation & Industry 4.0",
-  "Material Handling & Logistics",
-  "Curing & Vulcanization Systems",
+
+  "Precision Instruments & Gauges",
+
+  "Metrology Services & Laboratories",
 ];
 
 export default function ExhibitorForm() {

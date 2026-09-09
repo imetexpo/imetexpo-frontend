@@ -62,9 +62,9 @@ export default function Footer() {
               Opening Hours
             </h5>
             <div className="space-y-1.5 text-sm">
-              <p>22 April 2026: 10:00 - 18:00</p>
-              <p>23 April 2026: 10:00 - 18:00</p>
-              <p>24 April 2026: 10:00 - 16:00</p>
+              <p>22 April 2027: 10:00 - 18:00</p>
+              <p>23 April 2027: 10:00 - 18:00</p>
+              <p>24 April 2027: 10:00 - 16:00</p>
             </div>
           </div>
 
