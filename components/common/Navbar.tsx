@@ -38,11 +38,11 @@ const navItems = [
     links: [
       { text: 'Articles and Latest News', href: '/articles/' },
       { text: 'Event Brochure', href: '/event-brochure/' },
-      { text: 'Conference Programme', href: '/conference-programme/' },
+      { text: 'SummitProgramme', href: '/summit-programme/' },
     ],
   },
-  { title: 'Conference', href: '/conference/', links: [] },
-  { title: 'Awards', href: '/conference/', links: [] },
+  { title: 'Summit', href: '/summit/', links: [] },
+  { title: 'Awards', href: '/summit/', links: [] },
   { title: 'Contact us', href: '/contact-us/', links: [] },
   
 ];
