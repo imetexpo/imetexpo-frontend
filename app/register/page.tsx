@@ -74,7 +74,7 @@ function RegisterPageContent() {
     <>
       <Toaster position="top-right" />
 
-      <section className="bg-white pt-[120px] lg:pt-[140px] pb-20">
+      <section className="bg-white pt-[120px] lg:pt-0 pb-20">
         <Container>
           {/* Header */}
           <div className="text-center mb-10">

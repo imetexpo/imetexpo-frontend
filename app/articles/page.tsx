@@ -42,7 +42,7 @@ export default function ArticlesPage() {
 
   return (
     <div className="intro-animation font-sans">
-      <div className="page-spacing-wrapper pt-[120px] lg:pt-[140px]">
+      <div className="page-spacing-wrapper pt-[120px] lg:pt-0">
         <Container>
           <div className="border-b border-gray-250 pb-6 mb-8 mt-10">
             <h1 className="font-bebas text-5xl sm:text-6xl text-[#03193D] uppercase tracking-wide">

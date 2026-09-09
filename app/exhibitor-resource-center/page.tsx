@@ -145,7 +145,7 @@ export default function ExhibitorResourceCenterPage() {
 
   return (
     <div className="intro-animation font-sans">
-      <div className="page-spacing-wrapper pt-[120px] lg:pt-[140px]">
+      <div className="page-spacing-wrapper pt-[120px] lg:pt-0">
 
         {/* Explore Opportunities Section */}
         <Container className="py-10">

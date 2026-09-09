@@ -99,12 +99,12 @@ export default function InsightsPage() {
 
   return (
     <div className="intro-animation font-sans">
-      <section className="bg-white pt-[120px] lg:pt-[140px] pb-16">
+      <section className="bg-white pt-[120px] lg:pt-8 pb-16">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] gap-12 items-start">
             
             {/* LEFT SECTION */}
-            <div className="flex flex-col gap-6 lg:sticky lg:top-44 h-fit">
+            <div className="flex flex-col gap-6 lg:sticky h-fit lg:top-[calc(var(--site-header-height,13.75rem)+1rem)]">
               <div className="space-y-3">
                 <p className="text-[#CC9808] text-xs font-bold uppercase tracking-wider">
                   Explore Insights
