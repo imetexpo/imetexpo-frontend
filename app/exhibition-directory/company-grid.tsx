@@ -62,14 +62,14 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
 
   // List view
   return (
-    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div className="overflow-hidden rounded-sm border border-gray-100 bg-white">
       <table className="w-full">
-        <thead className="bg-slate-50">
+        <thead className="bg-[#03193D]">
           <tr>
-            <th className="p-4 text-left text-slate-700 font-semibold">Company</th>
-            <th className="p-4 text-left text-slate-700 font-semibold hidden md:table-cell">Location</th>
-            <th className="p-4 text-left text-slate-700 font-semibold hidden lg:table-cell">Stand</th>
-            <th className="p-4 text-left text-slate-700 font-semibold">Sector</th>
+            <th className="p-4 text-left text-xs font-bold uppercase tracking-wider text-white">Company</th>
+            <th className="hidden p-4 text-left text-xs font-bold uppercase tracking-wider text-white md:table-cell">Location</th>
+            <th className="hidden p-4 text-left text-xs font-bold uppercase tracking-wider text-white lg:table-cell">Stand</th>
+            <th className="p-4 text-left text-xs font-bold uppercase tracking-wider text-white">Sector</th>
           </tr>
         </thead>
         <tbody>
@@ -77,7 +77,7 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
             <tr
               key={company.id}
               onClick={() => onProductBrochureClick(company.id, company.name)}
-              className="border-t hover:bg-slate-50 cursor-pointer transition-colors"
+              className="cursor-pointer border-t border-gray-100 transition-colors hover:bg-[#FCF8F3]"
             >
               <td className="p-4">
                 <div className="flex items-center gap-3">
@@ -85,40 +85,40 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
                     <img
                       src={company.logo}
                       alt={company.name}
-                      className="w-10 h-10 rounded-lg object-cover"
+                      className="h-10 w-10 rounded-sm object-cover"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                       }}
                     />
                   )}
                   <div>
-                    <div className="font-medium text-slate-900">{company.name}</div>
-                    <div className="text-sm text-slate-600 md:hidden">
+                    <div className="font-medium text-[#03193D]">{company.name}</div>
+                    <div className="text-sm text-gray-600 md:hidden">
                       {company.pavilion} • Stand {company.standNumber}
                     </div>
                   </div>
                 </div>
               </td>
-              <td className="p-4 hidden md:table-cell text-slate-600">
+              <td className="hidden p-4 text-gray-600 md:table-cell">
                 <div className="flex items-center gap-2">
-                  <Building size={14} className="text-slate-400" />
+                  <Building size={14} className="text-[#CC9808]" />
                   <span>{company.pavilion}</span>
-                  <MapPin size={14} className="text-slate-400 ml-2" />
+                  <MapPin size={14} className="ml-2 text-[#CC9808]" />
                   <span>{company.country}</span>
                 </div>
               </td>
-              <td className="p-4 hidden lg:table-cell font-medium text-slate-900">
+              <td className="hidden p-4 font-medium text-[#03193D] lg:table-cell">
                 {company.standNumber}
               </td>
               <td className="p-4">
                 <div className="flex flex-wrap gap-1">
                   {company.sector.slice(0, 2).map((s, i) => (
-                    <span key={i} className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-full">
+                    <span key={i} className="rounded-sm bg-[#FCF8F3] px-2 py-1 text-xs text-[#03193D]">
                       {s}
                     </span>
                   ))}
                   {company.sector.length > 2 && (
-                    <span className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-full">
+                    <span className="rounded-sm bg-[#CC9808]/10 px-2 py-1 text-xs text-[#CC9808]">
                       +{company.sector.length - 2}
                     </span>
                   )}

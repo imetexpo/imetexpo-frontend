@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Container from "@/components/ui/container";
 import BackToTop from "@/components/layout/BackToTop";
 import PartnersSection from "@/components/home/PartnersSection";
@@ -12,7 +12,7 @@ import {
   RegistrationTab,
   TAB_QUERY_PARAM,
   REGISTRATION_HERO,
-  isValidRegistrationTab,
+  normalizeRegistrationTab,
 } from "./registrationRoutes";
 
 import EnquiryForm from "./forms/EnquiryForm";
@@ -26,17 +26,9 @@ import SponsorContent from "./content/SponsorContent";
 import BrochureContent from "./content/BrochureContent";
 
 function RegisterPageContent() {
-  const router = useRouter();
   const searchParams = useSearchParams();
-
-  const rawTab = searchParams.get(TAB_QUERY_PARAM);
-  const activeTab: RegistrationTab = isValidRegistrationTab(rawTab) ? rawTab : "enquiry";
-
-  const handleTabChange = (tab: RegistrationTab) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set(TAB_QUERY_PARAM, tab);
-    router.push(`/register?${params.toString()}`, { scroll: false });
-  };
+  const activeTab: RegistrationTab =
+    normalizeRegistrationTab(searchParams.get(TAB_QUERY_PARAM)) ?? "enquiry";
 
   const hero = REGISTRATION_HERO[activeTab];
 
@@ -90,7 +82,7 @@ function RegisterPageContent() {
 
           {/* Tab Navigation */}
           <div className="max-w-3xl mx-auto mb-12">
-            <RegistrationTabs activeTab={activeTab} onTabChange={handleTabChange} />
+            <RegistrationTabs activeTab={activeTab} />
           </div>
 
           {/* Content + Form pair for active tab */}

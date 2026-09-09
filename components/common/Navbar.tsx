@@ -30,8 +30,13 @@ const navItems = [
     title: 'Visit',
     links: [
       { text: 'Why Visit', href: '/why-visit/' },
+      { text: 'Visitor Pass', href: '/passes/' },
       { text: 'Event Sectors', href: '/sectors/' },
-          ],
+      { text: 'Summit', href: '/summit/' },
+      { text: 'Become a Delegate', href: '/became-delegate/' },
+            { text: 'Exhibitor List', href: '/exhibition-directory/' },
+      {text: 'Download Brochure', href: '/register?t=brochure'}
+    ],
   },
   {
     title: 'Insights',
@@ -40,8 +45,30 @@ const navItems = [
       { text: 'Event Brochure', href: '/event-brochure/' },
          ],
   },
-  { title: 'Summit', href: '/summit/', links: [] },
-  { title: 'Awards', href: '/summit/', links: [] },
+  {
+    title: 'Summit',
+    links: [
+      { text: 'Summit Agenda', href: '/summit/' },
+     
+      { text: 'Deligate', href: '/became-delegate' },
+      { text: 'Sponsor', href: '/register?t=sponsor' },
+      
+    ],
+  },
+
+
+
+
+  {
+    title: 'GMEA Awards',
+    links: [
+      { text: 'Award Category', href: '/awards/' },
+     
+      { text: 'Nominate', href: '/became-delegate' },
+      { text: 'Sponsor', href: '/register?t=sponsor' },
+      
+    ],
+  },
   { title: 'Contact us', href: '/contact-us/', links: [] },
   
 ];
@@ -73,10 +100,30 @@ function useUTMQueryString() {
 function UTMLink({ href, className, children, ...props }: { href: string; className?: string; children: React.ReactNode; [key: string]: any }) {
   const utmQuery = useUTMQueryString();
   
-  // Don't append UTMs to external links or anchors
   const isExternal = href.startsWith('http') || href.startsWith('#');
-  const finalHref = isExternal ? href : `${href.replace(/\/?$/, '/')}${utmQuery}`;
-  
+  if (isExternal) {
+    return (
+      <Link href={href} className={className} {...props}>
+        {children}
+      </Link>
+    );
+  }
+
+  const [withoutHash, hash] = href.split('#');
+  const [rawPath, rawQuery] = withoutHash.split('?');
+  const path = rawPath.endsWith('/') ? rawPath : `${rawPath}/`;
+  const params = new URLSearchParams(rawQuery || '');
+
+  if (utmQuery) {
+    const utmParams = new URLSearchParams(utmQuery.replace(/^\?/, ''));
+    utmParams.forEach((value, key) => {
+      if (!params.has(key)) params.set(key, value);
+    });
+  }
+
+  const query = params.toString();
+  const finalHref = `${path}${query ? `?${query}` : ''}${hash ? `#${hash}` : ''}`;
+
   return (
     <Link href={finalHref} className={className} {...props}>
       {children}
@@ -182,7 +229,7 @@ export default function Navbar() {
         {/* NAV ROW */}
         <div className="border-t border-white/10 bg-[#021533]/90 backdrop-blur-md">
           <Container className="flex items-center py-1 min-h-[44px]">
-            <div className="hidden lg:flex items-center gap-4 xl:gap-8 flex-1">
+            <div className="hidden lg:flex flex-1 items-center justify-end gap-4 pr-56 xl:gap-8 xl:pr-80">
               {navItems.map((item) => (
                 <div
                   key={item.title}

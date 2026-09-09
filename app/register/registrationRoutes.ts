@@ -49,7 +49,15 @@ export const REGISTRATION_HERO: Record<
 };
 
 export function isValidRegistrationTab(value: string | null): value is RegistrationTab {
-    return !!value && REGISTRATION_TABS.includes(value as RegistrationTab);
+    return normalizeRegistrationTab(value) !== null;
+}
+
+export function normalizeRegistrationTab(value: string | null): RegistrationTab | null {
+    if (!value) return null;
+    const normalized = value.replace(/\/+$/, '').toLowerCase();
+    return REGISTRATION_TABS.includes(normalized as RegistrationTab)
+        ? (normalized as RegistrationTab)
+        : null;
 }
 
 export function buildRegisterUrl(

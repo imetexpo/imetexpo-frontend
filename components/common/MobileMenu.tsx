@@ -33,7 +33,10 @@ const navItems = [
     title: 'Attend',
     links: [
       { text: 'Why Visit', href: '/why-visit/' },
+      { text: 'Visitor Pass', href: '/passes/' },
       { text: 'Event Sectors', href: '/sectors/' },
+      { text: 'Summit', href: '/summit/' },
+      { text: 'Become a Delegate', href: '/became-delegate/' },
       { text: 'Conference Programme', href: '/conference-programme/' },
       { text: 'Partners and Sponsors', href: '/partners-and-sponsors/' },
     ],
@@ -49,8 +52,8 @@ const navItems = [
     ],
   },
   
-  { title: 'Conference', href: '/conference/', links: [] },
-  { title: 'Awards', href: '/conference/', links: [] },
+  { title: 'Conference', href: '/summit/', links: [] },
+  { title: 'Awards', href: '/awards/', links: [] },
   { title: 'Contact us', href: '/contact-us/', links: [] },
 ];
 

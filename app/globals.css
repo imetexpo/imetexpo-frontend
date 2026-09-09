@@ -150,4 +150,17 @@ body {
   .font-bebas {
     font-family: var(--font-heading);
   }
+
+  @keyframes awards-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .awards-marquee {
+    animation: awards-marquee 18s linear infinite;
+  }
 }
