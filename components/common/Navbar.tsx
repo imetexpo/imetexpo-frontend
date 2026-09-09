@@ -38,8 +38,7 @@ const navItems = [
     links: [
       { text: 'Articles and Latest News', href: '/articles/' },
       { text: 'Event Brochure', href: '/event-brochure/' },
-      { text: 'SummitProgramme', href: '/summit-programme/' },
-    ],
+         ],
   },
   { title: 'Summit', href: '/summit/', links: [] },
   { title: 'Awards', href: '/summit/', links: [] },
