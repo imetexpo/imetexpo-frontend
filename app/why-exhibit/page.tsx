@@ -105,11 +105,15 @@ export default function WhyExhibitPage() {
                 <div className="grid items-center gap-10 overflow-hidden lg:grid-cols-5 lg:gap-20">
                   <div className="lg:col-span-5">
                     <div className="flex flex-col gap-5">
-                      <p className="font-bold text-[#CC9808]"><br /><br /> Your Gateway to Tyre Manufacturing Growth in ASEAN</p>
-                      <h2 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Powering Progress in the Global Rubber & Tyre Industry</h2>
+                      <p className="font-bold text-[#CC9808]"><br /><br /> Your Gateway to Precision Manufacturing Growth in India</p>
+                      <h2 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Powering the Future of Metrology, Measurement & Quality</h2>
                       <p className="text-lg text-gray-700">
-                        As the global tyre industry shifts toward sustainability, automation, and high-performance materials, Southeast Asia's tyre manufacturing sector is experiencing unprecedented growth. ITS Tyre Expo connects you directly with the region's leading tyre manufacturers, rubber processors, OEMs, and government agencies driving this transformation.
-                      </p>
+                       As manufacturing moves toward greater precision, automation, digitalisation, and quality excellence, 
+                       India’s metrology and measurement industry is entering a new era of growth. INDIAMET connects you with 
+                       leading manufacturers, technology providers, quality professionals, engineers, OEMs, and decision-makers 
+                       shaping the future of precision manufacturing.
+                        </p>
+                        <p className="text-lg text-gray-700"> Discover advanced metrology and inspection technologies, build valuable business connections, and unlock new opportunities across India’s rapidly evolving manufacturing ecosystem.           </p>
                     </div>
                     <div className="mt-10 flex flex-wrap gap-8 2xl:gap-16">
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
@@ -156,22 +160,22 @@ export default function WhyExhibitPage() {
                   {[
                     {
                       title: "Struggling to find qualified buyers?",
-                      desc: "Meet a verified audience where 68% of visitors hold purchasing power including tyre manufacturers, rubber processors, and industrial buyers actively sourcing new suppliers.",
+                      desc: "Meet a focused audience of manufacturers, OEMs, engineers, quality professionals, procurement teams, and decision-makers actively looking for metrology, measurement, inspection, calibration, and quality solutions.",
                       icon: "https://cdn.itegroupnews.com/recruitment_12105214_9abca4ba0e.png"
                     },
                     {
-                      title: "Facing challenges entering the ASEAN market?",
-                      desc: "Gain direct access to the companies driving demand across passenger, truck, OTR, and specialty tyre segments throughout the region.",
+                      title: "Looking to expand your market presence?",
+                      desc: "Gain direct access to India’s growing precision manufacturing ecosystem, including automotive, aerospace, defence, engineering, electronics, medical devices, and other high-precision industries.",
                       icon: "https://cdn.itegroupnews.com/goal_2974630_407b28db91.png"
                     },
                     {
                       title: "Worried about standing out in a competitive market?",
-                      desc: "Stand out by showcasing your innovative, sustainable, and high-performance solutions to buyers looking for trusted technologies.",
+                      desc: "Showcase your latest metrology and measurement technologies through live demonstrations and direct engagement with industry professionals looking for advanced solutions to improve accuracy, quality, and productivity.",
                       icon: "https://cdn.itegroupnews.com/marketing_14125861_0aab65a0a8.png"
                     },
                     {
                       title: "Looking for buyers ready to invest?",
-                      desc: "Tap into ASEAN's USD 12 billion tyre manufacturing equipment market, where demand for automation, raw materials, and testing equipment is rapidly growing.",
+                      desc: "Connect with companies investing in advanced measurement, inspection, automation, digital quality, and Industry 4.0 technologies — and turn technology demonstrations into qualified business opportunities.ng.",
                       icon: "https://cdn.itegroupnews.com/contract_10861184_2c90043b14.png"
                     }
                   ].map((benefit, idx) => (
@@ -201,27 +205,27 @@ export default function WhyExhibitPage() {
                   <div className="lg:col-span-3">
                     <div className="flex flex-col gap-5">
                       <p className="font-bold text-orange-600">Visitor Breakdown</p>
-                      <h3 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Connecting You to Global Tyre Industry Decision-Makers</h3>
+                      <h3 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Connecting You to Precision Manufacturing Decision-Makers</h3>
                       <p className="text-lg text-gray-700">
-                        From tyre manufacturing executives and procurement specialists to R&D engineers and distributors, our visitors are key players driving growth, innovation, and modernization across the ASEAN rubber industry.
+                        From manufacturing leaders and procurement specialists to quality managers, metrology engineers, R&D professionals, and inspection experts, INDIAMET brings together the decision-makers shaping India’s precision manufacturing and quality ecosystem.
                       </p>
                     </div>
                     <div className="mt-10 grid grid-cols-2 gap-6 bg-[#FCF8F3] border border-gray-100 p-8 rounded-sm font-sans">
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">48%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#03193D]">First Time Exhibitors</p>
+                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">68%</h3>
+                        <p className="text-sm font-semibold uppercase text-[#03193D]">Industry Decision-Makers</p>
                       </div>
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">52%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#03193D]">First Time Visitors</p>
+                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">72%</h3>
+                        <p className="text-sm font-semibold uppercase text-[#03193D]">Manufacturing & Engineering Professionals</p>
                       </div>
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">35%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#03193D]">With Budgets Over $5 Million</p>
+                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">45%</h3>
+                        <p className="text-sm font-semibold uppercase text-[#03193D]">Procurement & Purchase Influencers</p>
                       </div>
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">28%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#03193D]">C-Level Decision Makers</p>
+                        <h3 className="mb-3 text-5xl font-bold text-[#CC9808] font-bebas">30%</h3>
+                        <p className="text-sm font-semibold uppercase text-[#03193D]">Senior Management & C-Level Executives</p>
                       </div>
                     </div>
                     <div className="mt-10">
@@ -292,22 +296,22 @@ export default function WhyExhibitPage() {
           <div className="animated-block mt-20">
             <div className="animated-block-target">
               <Container>
-                <h2 className="mb-10 font-bebas text-6xl text-[#03193D] md:text-7xl">Why Southeast Asia?</h2>
+                <h2 className="mb-10 font-bebas text-6xl text-[#03193D] md:text-7xl">Why India?</h2>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
-                      title: "Rapid Tyre Manufacturing Expansion",
-                      desc: "The CIS mining sector is undergoing rapid modernisation. Imports of earthmoving, crushing, and processing equipment have surged, driven by the need to upgrade ageing infrastructure and improve operational efficiency across mines and processing plants.",
+                      title: "Rapid Growth in Precision Manufacturing",
+                      desc: "India’s automotive, aerospace, defence, electronics, engineering, and industrial manufacturing sectors are rapidly adopting advanced technologies to achieve higher precision, productivity, and quality. This is driving strong demand for modern metrology, inspection, and measurement solutions..",
                       image: "https://cdn.itegroupnews.com/wide_angle_shot_excavation_machines_lookout_jackerath_garzweiler_skywalk_germany_58dec187f5.jpg"
                     },
                     {
-                      title: "Government Support for EV & Automotive",
-                      desc: "Flagship projects such as Baimskaya (copper), Udokan (copper), and Sukhoi Log (gold) are driving multi-billion-dollar investments in extraction and processing capacity creating sustained demand for advanced machinery, automation, and logistics solutions.",
+                      title: "Rise of Smart & Automated Manufacturing",
+                      desc: "The shift toward Industry 4.0, automation, digital manufacturing, and data-driven quality management is transforming how manufacturers measure and control production. Advanced CMMs, 3D scanning, machine vision, sensors, and connected metrology systems are becoming increasingly important.",
                       image: "https://cdn.itegroupnews.com/business_team_global_business_planning_working_concept_4d7db7d78d.jpg"
                     },
                     {
-                      title: "Growing Demand for Sustainable Solutions",
-                      desc: "Russia and CIS governments are increasing exploration spending to boost reserves of strategic minerals such as copper, lithium, and rare earths. The federal programme Geology: Revival of a Legend is being extended to 2030, supporting new deposits and advanced exploration technologies.",
+                      title: "Growing Focus on Quality & Global Standards",
+                      desc: "Indian manufacturers are increasingly focused on achieving global quality standards, improving dimensional accuracy, reducing production errors, and strengthening traceability. This is creating new opportunities for calibration, testing, inspection, measurement software, and quality technologies.",
                       image: "https://cdn.itegroupnews.com/view_heavy_machinery_used_construction_industry_a179c698c8.jpg"
                     }
                   ].map((item, idx) => (
@@ -328,7 +332,7 @@ export default function WhyExhibitPage() {
           </div>
 
           {/* Testimonials Section */}
-          <div className="animated-block mt-20">
+          {/* <div className="animated-block mt-20">
             <div className="animated-block-target">
               <Container>
                 <div className="mb-10 flex justify-between max-lg:flex-col lg:items-end">
@@ -360,7 +364,7 @@ export default function WhyExhibitPage() {
                 </div>
               </Container>
             </div>
-          </div>
+          </div> */}
 
           {/* When and Where Section */}
           <div className="animated-block mt-20">
@@ -375,7 +379,7 @@ export default function WhyExhibitPage() {
                   </div>
                   <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 font-sans">
                     <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#03193D]">Venue</p>
-                    <h4 className="text-lg font-bold text-gray-800">Pavilion 1 & 2, Crocus Expo IEC, Moscow, Russia</h4>
+                    <h4 className="text-lg font-bold text-gray-800">Auto Cluster Exhibition Center, Pune, India</h4>
                   </div>
                 </div>
                 <div className="mt-8 overflow-hidden rounded-sm border border-gray-200">
