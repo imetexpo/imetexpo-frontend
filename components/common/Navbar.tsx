@@ -31,9 +31,7 @@ const navItems = [
     links: [
       { text: 'Why Visit', href: '/why-visit/' },
       { text: 'Event Sectors', href: '/sectors/' },
-      { text: 'Conference Programme', href: '/conference-programme/' },
-      { text: 'Partners and Sponsors', href: '/partners-and-sponsors/' },
-    ],
+          ],
   },
   {
     title: 'Insights',
