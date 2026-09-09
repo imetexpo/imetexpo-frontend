@@ -8,27 +8,16 @@ import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
 
 const productSectors = [
   "Coordinate Measuring Machines (CMM)",
-
   "Dimensional Measurement & Gauging",
-
   "Optical & Vision Metrology",
-
   "3D Scanning & Digital Measurement",
-
   "Surface & Form Measurement",
-
   "Calibration & Reference Standards",
-
   "Testing & Quality Inspection",
-
   "Sensors, Probes & Measurement Systems",
-
   "Metrology Software & Digital Quality",
-
   "Automation & Industry 4.0",
-
   "Precision Instruments & Gauges",
-
   "Metrology Services & Laboratories",
 ];
 

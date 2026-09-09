@@ -116,17 +116,18 @@ function CheckboxGroup({ label, options, required, selectedValues = [], onChange
 }
 
 const productSectors = [
-  "Coordinate Measuring Machines (CMM),
-  <p className="text-sm sm:text-base md:text-lg text-gray-700"> Advanced CMMs, portable CMMs, bridge-type systems, gantry CMMs, articulating arms, and 3D coordinate measurement solutions for high-precision inspection. </P>
-  "Tyre Manufacturing Machinery",
-  "Rubber Processing Equipment",
-  "Tyre Testing & Quality Control",
-  "Retreading & Repair Materials",
-  "Recycling & Sustainability Solutions",
-  "Mold & Tooling Solutions",
-  "Tyre Reinforcement Materials",
-  "Additives & Performance Chemicals",
+  "Coordinate Measuring Machines (CMM)",
+  "Dimensional Measurement & Gauging",
+  "Optical & Vision Metrology",
+  "3D Scanning & Digital Measurement",
+  "Surface & Form Measurement",
+  "Calibration & Reference Standards",
+  "Testing & Quality Inspection",
+  "Sensors, Probes & Measurement Systems",
+  "Metrology Software & Digital Quality",
   "Automation & Industry 4.0",
+  "Precision Instruments & Gauges",
+  "Metrology Services & Laboratories",
 ];
 
 const countries = [
