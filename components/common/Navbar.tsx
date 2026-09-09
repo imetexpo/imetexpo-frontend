@@ -64,7 +64,7 @@ const navItems = [
     links: [
       { text: 'Award Category', href: '/awards/' },
      
-      { text: 'Nominate', href: '/became-delegate' },
+      { text: 'Nominate', href: '/nominate/' },
       { text: 'Sponsor', href: '/register?t=sponsor' },
       
     ],
