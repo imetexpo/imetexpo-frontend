@@ -18,7 +18,7 @@ export default function ExhibitorContent() {
         <p className="text-sm text-gray-800 font-bold">INDIAMET Expo is the leading platform to:</p>
         <ul className="space-y-3">
           {[
-            "Connect with decision-makers from 50+ countries",
+            "Connect with decision-makers from 20+ countries",
             "Launch new products to buyers actively sourcing equipment",
             "Build relationships with procurement heads and engineers",
             "Grow your presence in one of the world's fastest-growing tyre markets",

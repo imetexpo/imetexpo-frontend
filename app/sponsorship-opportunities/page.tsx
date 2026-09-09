@@ -1,4 +1,4 @@
-// app/advertising-details/page.tsx
+// app/sponsorship-opportunities/page.tsx
 "use client";
 
 import { useState, useEffect } from "react";

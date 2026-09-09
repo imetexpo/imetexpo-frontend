@@ -167,7 +167,7 @@ export default function ExhibitorForm() {
           Your level of interest <span className="text-red-500">*</span>
         </label>
         <div className="space-y-2">
-          {["Ready to book my stand", "Looking for more information", "Looking for sponsorship opportunities"].map(
+          {["Ready to book my stand",  "Looking for sponsorship opportunities"].map(
             (option) => (
               <label key={option} className="flex items-center gap-2 cursor-pointer">
                 <input
