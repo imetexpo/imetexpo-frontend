@@ -31,83 +31,96 @@ export default function ExhibitorResourceCenterPage() {
   };
 
   const benefits = [
-    {
-      title: "Find New Prospects",
-      description: "It should be easy to read the company's direction and name. Important details that you want to communicate to potential clients should be obvious and easy to remember.",
-      icon: "https://cdn.itegroupnews.com/staff_management_1_e3b60c1db6.png",
-      fallbackIcon: "🎯"
-    },
-    {
-      title: "Improve Existing Relationships",
-      description: "You need a spacious recreational area, negotiation tables, an enclosed utility room where you will display your products, and interactive demo areas to engage visitors effectively.",
-      icon: "https://cdn.itegroupnews.com/partnership_41fd66a951.png",
-      fallbackIcon: "🤝"
-    },
-    {
-      title: "Conduct Meetings",
-      description: "Your stand should have an ideal meeting area. You can separate one 'meeting room' from another or plan a couple of closed rooms where the exhibition atmosphere will not distract from the business conversation.",
-      icon: "https://cdn.itegroupnews.com/meeting_3e0de9e870.png",
-      fallbackIcon: "📊"
-    },
-    {
-      title: "Increase Brand Identity",
-      description: "In this case, an interesting stand design solution, supported by a high-quality demonstration of the best products will help.",
-      icon: "https://cdn.itegroupnews.com/branding_c56168b0cb.png",
-      fallbackIcon: "🏷️"
-    },
-    {
-      title: "Competitor Research",
-      description: "A small stand is enough, but it is worth placing it next to the business program sites to be in the thick of industry events.",
-      icon: "https://cdn.itegroupnews.com/research_5ebaa8133d.png",
-      fallbackIcon: "🔍"
-    },
-    {
-      title: "Showcase New Launches",
-      description: "An interesting and bright design solution, perhaps navigation in the hall, will help. The invitation and presentation schedule should be large, informative, and located in the most visible place.",
-      icon: "https://cdn.itegroupnews.com/product_release_d7b5bbb99c.png",
-      fallbackIcon: "🚀"
-    }
-  ];
+  {
+    title: "Generate New Business Leads",
+    description:
+      "Connect with qualified buyers, OEMs, engineers, quality professionals, and decision-makers actively looking for metrology, measurement, inspection, calibration, and quality solutions.",
+    icon: "https://cdn.itegroupnews.com/staff_management_1_e3b60c1db6.png",
+    fallbackIcon: "🎯",
+  },
+  {
+    title: "Strengthen Customer Relationships",
+    description:
+      "Meet existing customers face-to-face, understand their evolving requirements, demonstrate new solutions, and strengthen long-term business relationships.",
+    icon: "https://cdn.itegroupnews.com/partnership_41fd66a951.png",
+    fallbackIcon: "🤝",
+  },
+  {
+    title: "Conduct Business Meetings",
+    description:
+      "Create dedicated meeting areas for technical discussions, product consultations, negotiations, project requirements, and focused business conversations with key decision-makers.",
+    icon: "https://cdn.itegroupnews.com/meeting_3e0de9e870.png",
+    fallbackIcon: "📊",
+  },
+  {
+    title: "Build Brand Visibility",
+    description:
+      "Stand out at INDIAMET with a strong exhibition presence, impactful branding, live demonstrations, and professional product displays that strengthen your position in the precision manufacturing market.",
+    icon: "https://cdn.itegroupnews.com/branding_c56168b0cb.png",
+    fallbackIcon: "🏷️",
+  },
+  {
+    title: "Study Market & Competitors",
+    description:
+      "Gain valuable insights into market trends, competing technologies, customer expectations, and emerging opportunities across India's metrology, measurement, inspection, and quality ecosystem.",
+    icon: "https://cdn.itegroupnews.com/research_5ebaa8133d.png",
+    fallbackIcon: "🔍",
+  },
+  {
+    title: "Launch New Technologies",
+    description:
+      "Use INDIAMET as a powerful platform to introduce new products, technologies, equipment, and solutions through live demonstrations and direct engagement with prospective customers.",
+    icon: "https://cdn.itegroupnews.com/product_release_d7b5bbb99c.png",
+    fallbackIcon: "🚀",
+  },
+];
 
-  const standOptions = [
-    {
-      title: "Individual Construction",
-      description: "Choosing an individual project stand is highly recommended as it allows for an effective presentation of your company, highlights your high status, emphasizes your unique style, and attracts more clients.",
-      image: "https://cdn.itegroupnews.com/1_b17f63c840.png",
-      fallbackIcon: "🏗️"
-    },
-    {
-      title: "Standard Shell Scheme",
-      description: "Standard Shell Scheme is suitable for the construction of the exhibition area from 11 to 60 sq. m. The stand kit depends on the construction area. Standard Shell Scheme may be amended with standard decorative elements.",
-      image: "https://cdn.itegroupnews.com/2_f175606c2f.png",
-      fallbackIcon: "📦"
-    },
-    {
-      title: "Premium Shell Scheme",
-      description: "Premium Shell Scheme is suitable for the construction of the exhibition area from 12 to 60 sq. m. You can choose the color of decorative elements, and order additional equipment and furniture. The height of structures from 3.5 m to 5 m will make the stands look more voluminous and spacious.",
-      image: "https://cdn.itegroupnews.com/3_7b7bc3dca6.png",
-      fallbackIcon: "⭐"
-    }
-  ];
+const standOptions = [
+  {
+    title: "Custom-Built Exhibition Stand",
+    description:
+      "Create a distinctive exhibition presence tailored to your brand and business objectives. Custom-built stands allow you to integrate product displays, live demonstrations, meeting areas, branding, and interactive experiences to attract and engage high-value visitors.",
+    image: "https://cdn.itegroupnews.com/1_b17f63c840.png",
+    fallbackIcon: "🏗️",
+  },
+  {
+    title: "Standard Shell Scheme",
+    description:
+      "A professional and cost-effective stand solution for companies looking for a ready-to-use exhibition space. Enhance your stand with company branding, graphics, product displays, furniture, lighting, and other essential exhibition accessories.",
+    image: "https://cdn.itegroupnews.com/2_f175606c2f.png",
+    fallbackIcon: "📦",
+  },
+  {
+    title: "Premium Exhibition Stand",
+    description:
+      "Make a stronger impact with a premium exhibition stand designed for enhanced visibility and visitor engagement. Combine upgraded branding, professional interiors, product showcases, meeting spaces, lighting, and display features to create a high-quality brand experience.",
+    image: "https://cdn.itegroupnews.com/3_7b7bc3dca6.png",
+    fallbackIcon: "⭐",
+  },
+];
 
-  const faqItems = [
-    {
-      question: "How to get your products/equipments to Bangkok on time?",
-      answer: "ITS Tyre Expo partners with DMW EXPO to handle all freight handling requests from exhibitors. We recommend DMW EXPO for shipment of any products, stand equipment, marketing materials, machinery, and/or displays you plan to send for your stand.\n\nFor any enquiries, contact:\nMarina Filippova\nHead of Exhibition Department\nP: +66-2-123-4567\nE: marina.filippova@dmw-expo.com"
-    },
-    {
-      question: "How can you spread the word about your ITS Tyre Expo participation?",
-      answer: "Make the most of your time at the exhibition by leveraging ITS Tyre Expo's partnership and exclusive advertising opportunities to boost your impact and visibility."
-    },
-    {
-      question: "How can exhibitors order technical services?",
-      answer: "Exhibitors can conveniently order construction and technical services via the Technical Services Order Forms. Simply download the form, select the required services, sign, and send the scanned document to your technical manager. For any questions or assistance, please contact your technical manager using the details provided below."
-    },
-    {
-      question: "How can you order suspended structures for ceiling installations?",
-      answer: "For any enquiries regarding the ordering of suspended structures, please reach out to your technical manager using the contact details provided below."
-    }
-  ];
+const faqItems = [
+  {
+    question: "How can I transport my products and equipment to INDIAMET 2027?",
+    answer:
+      "Exhibitors can arrange transportation and logistics for machinery, equipment, displays, stand materials, marketing materials, and other exhibition cargo through the appointed exhibition logistics and freight-handling service providers. Detailed shipping, handling, delivery, and move-in instructions will be provided to registered exhibitors before the exhibition.",
+  },
+  {
+    question: "How can I promote my participation at INDIAMET 2027?",
+    answer:
+      "Exhibitors can maximise their participation through INDIAMET's promotional and branding opportunities. Use your exhibitor profile, digital promotions, product announcements, social media campaigns, invitations, and exhibition marketing opportunities to increase visibility before and during the show.",
+  },
+  {
+    question: "How can exhibitors order technical services?",
+    answer:
+      "Exhibitors can order additional technical and exhibition services through the official exhibitor service process. Services may include additional electrical requirements, furniture, lighting, internet connectivity, branding, rigging, water, compressed air, machinery handling, and other requirements. Detailed service information and order forms will be shared with exhibitors before the exhibition.",
+  },
+  {
+    question: "Can exhibitors arrange live demonstrations of machinery and equipment?",
+    answer:
+      "Yes. Live demonstrations are encouraged where technically and safely feasible. Exhibitors planning machinery demonstrations, heavy equipment displays, electrical installations, compressed air, special power requirements, or other technical installations should coordinate their requirements with the exhibition technical team in advance.",
+  },
+];
 
   const ImageWithFallback = ({
     src,
@@ -156,7 +169,7 @@ export default function ExhibitorResourceCenterPage() {
                 <div className="order-1 lg:order-2 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3]">
                   <ImageWithFallback
                     src="https://cdn.itegroupnews.com/exhibition_2020_20_9dec3a8c6e.webp"
-                    alt="ITS Tyre Expo"
+                    alt="INDIAMET Expo"
                     fallbackIcon="🏢"
                     className="h-full w-full"
                   />
@@ -167,7 +180,7 @@ export default function ExhibitorResourceCenterPage() {
                     Explore <span className="text-[#CC9808]">Opportunities</span>
                   </h1>
                   <p className="text-base sm:text-lg leading-relaxed text-gray-700 font-sans">
-                    As a participant at ITS Tyre Expo, our team is dedicated to providing you with a variety of participation opportunities to make the most of your exhibition experience. From pre-event to post, we have created guides to help with the decision-making process and onboarding in a seamless manner.
+                    As a participant at INDIAMET Expo, our team is dedicated to providing you with a variety of participation opportunities to make the most of your exhibition experience. From pre-event to post, we have created guides to help with the decision-making process and onboarding in a seamless manner.
                   </p>
                   <div className="pt-2">
                     <Link href="https://cdn-ite.prismetic.com/02_Manual_Forms_Mining_World_Russia_2026_EUR_0ddf1ecf29.pdf" target="_blank">

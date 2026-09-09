@@ -245,7 +245,7 @@ export default function PostShowReportPage() {
                 </p>
                 
                 <h1 className="font-bebas text-5xl sm:text-6xl leading-[1.05] tracking-tight uppercase text-[#03193D]">
-                  ITS Tyre Expo <span className="text-[#CC9808]">Post-Show Report</span>
+                  INDIAMET Expo <span className="text-[#CC9808]">Post-Show Report</span>
                 </h1>
               </div>
 

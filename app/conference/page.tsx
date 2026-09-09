@@ -96,7 +96,7 @@ function HeroSection() {
                                     </span>
                                 </div>
                                 <h1 className="font-bebas text-5xl sm:text-7xl md:text-8xl text-white leading-[1.05] tracking-tight uppercase">
-                                    ITS TYRE EXPO <span className="text-[#CC9808]">CONFERENCE 2026</span>
+                                    INDIAMET Expo <span className="text-[#CC9808]">CONFERENCE 2026</span>
                                 </h1>
                                 <p className="text-base sm:text-lg md:text-xl text-gray-250 leading-relaxed font-sans max-w-2xl">
                                     International Conference on Tyre Manufacturing Technology, Rubber Compounds, Automation, and Sustainable Solutions
@@ -144,7 +144,7 @@ function AboutSection() {
                             </h2>
                           </div>
                           <p className="text-base sm:text-lg leading-relaxed text-gray-705 font-sans">
-                              ITS Tyre Expo 2026 is the premier international conference dedicated to tyre manufacturing technology,
+                              INDIAMET Expo 2026 is the premier international conference dedicated to tyre manufacturing technology,
                               innovation, and sustainability. Join industry leaders, rubber compounding technology experts, and decision-makers
                               from across the globe to dissect upcoming market shifts and manufacturing advancements.
                           </p>
@@ -352,7 +352,7 @@ function WhyAttendSection() {
                     <div className="text-center mb-10 space-y-3">
                         <p className="text-xs font-bold text-[#CC9808] uppercase tracking-wider">Why Attend</p>
                         <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase">
-                            Why Attend <span className="text-[#CC9808]">ITS Tyre Expo 2026</span>
+                            Why Attend <span className="text-[#CC9808]">INDIAMET Expo 2026</span>
                         </h2>
                     </div>
 

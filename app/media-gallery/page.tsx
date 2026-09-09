@@ -121,10 +121,10 @@ export default function MediaGalleryPage() {
         <Container>
           <div className="border-b border-gray-250 pb-6 mb-8 mt-10">
             <h1 className="font-bebas text-5xl sm:text-6xl text-[#03193D] uppercase tracking-wide">
-              A Visual Journey Through <span className="text-[#CC9808]">ITS Tyre Expo</span>
+              A Visual Journey Through <span className="text-[#CC9808]">INDIAMET Expo</span>
             </h1>
             <p className="mt-2 text-sm text-gray-650 font-sans">
-              Discover the stories behind the images that have shaped ITS Tyre Expo's legacy as a key event in the tyre manufacturing and rubber processing sector.
+              Discover the stories behind the images that have shaped INDIAMET Expo's legacy as a key event in the tyre manufacturing and rubber processing sector.
             </p>
           </div>
 

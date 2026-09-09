@@ -324,7 +324,7 @@ export default function SponsorForm() {
           />
           <label htmlFor="marketing" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
             I want to stay informed about exhibitions organized by
-            <strong> ITS Tyre Expo Organizing Committee</strong>, and be the first to
+            <strong> INDIAMET Expo Organizing Committee</strong>, and be the first to
             receive information about exhibition stand sales, business program
             events, advertising and sponsorship opportunities.
           </label>
@@ -341,7 +341,7 @@ export default function SponsorForm() {
             className="mt-1 h-5 w-5 border-gray-300 rounded focus:ring-[#CC9808] text-[#CC9808]"
           />
           <label htmlFor="consent" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
-            I hereby give consent to <strong>ITS Tyre Expo Organizing Committee</strong>
+            I hereby give consent to <strong>INDIAMET Expo Organizing Committee</strong>
             for automated and mixed processing of my personal data in accordance
             with the{" "}
             <a href="/privacy-policy" className="text-[#CC9808] hover:text-[#d97000] underline font-medium">

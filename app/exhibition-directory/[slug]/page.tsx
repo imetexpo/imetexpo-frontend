@@ -94,7 +94,7 @@ export default function ExhibitorDetailPage() {
     if (navigator.share) {
       navigator.share({
         title: company?.name,
-        text: `Check out ${company?.name} at ITS Tyre Expo 2026`,
+        text: `Check out ${company?.name} at INDIAMET Expo 2026`,
         url: window.location.href,
       });
     } else {

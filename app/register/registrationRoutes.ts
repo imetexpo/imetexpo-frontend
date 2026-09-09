@@ -35,12 +35,12 @@ export const REGISTRATION_HERO: Record<
     exhibitor: {
         title: 'Enquiry to Exhibit',
         subtitle:
-            'Please complete the form below and our team will contact you regarding ITS Tyre Expo 2026 exhibiting opportunities.',
+            'Please complete the form below and our team will contact you regarding INDIAMET Expo 2026 exhibiting opportunities.',
     },
     sponsor: {
         title: 'Become a Partner',
         subtitle:
-            'Partner with ITS Tyre Expo 2026 and put your brand in front of 8,500+ professionals.',
+            'Partner with INDIAMET Expo 2026 and put your brand in front of 8,500+ professionals.',
     },
     brochure: {
         title: 'Browse Through Your Event Brochure',

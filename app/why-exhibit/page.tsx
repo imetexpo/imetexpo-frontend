@@ -338,12 +338,12 @@ export default function WhyExhibitPage() {
                 <div className="mb-10 flex justify-between max-lg:flex-col lg:items-end">
                   <div className="lg:basis-2/3">
                     <p className="font-bold text-[#CC9808]">Testimonials</p>
-                    <h3 className="my-3 font-bebas text-6xl text-[#03193D] md:text-7xl">Why the Industry Chooses ITS Tyre Expo</h3>
+                    <h3 className="my-3 font-bebas text-6xl text-[#03193D] md:text-7xl">Why the Industry Chooses INDIAMET Expo</h3>
                   </div>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {[
-                    { name: "Somchai Wongsuwan", title: "VP of Manufacturing", company: "Bridgestone Thailand", quote: "ITS Tyre Expo provides unparalleled access to the ASEAN tyre manufacturing ecosystem. Over three days, we connected with key suppliers and signed three major contracts." },
+                    { name: "Somchai Wongsuwan", title: "VP of Manufacturing", company: "Bridgestone Thailand", quote: "INDIAMET Expo provides unparalleled access to the ASEAN tyre manufacturing ecosystem. Over three days, we connected with key suppliers and signed three major contracts." },
                     { name: "Lisa Tan", title: "Regional Director", company: "Continental Tyres", quote: "We've exhibited for 5 consecutive years, and ITS remains our most valuable platform for launching new products and networking with industry leaders across Southeast Asia." },
                     { name: "Nguyen Van Hieu", title: "Procurement Manager", company: "Casumina", quote: "The quality of visitors and exhibitors is exceptional. We found new raw material suppliers and advanced testing equipment that significantly improved our production efficiency." }
                   ].map((testimonial, idx) => (

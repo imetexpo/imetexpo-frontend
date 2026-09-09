@@ -3,11 +3,11 @@ export default function SponsorContent() {
     <div className="flex flex-col gap-6">
       <div>
         <h2 className="text-3xl font-bold text-[#CC9808] mb-4 font-bebas">
-          ITS Tyre Expo 2026 Conference
+          INDIAMET Expo 2026 Conference
         </h2>
         <div className="space-y-4 text-gray-700">
           <p className="text-base leading-relaxed">
-            <strong>ITS Tyre Expo 2026 Conference</strong> is a premier annual business platform
+            <strong>INDIAMET Expo 2026 Conference</strong> is a premier annual business platform
             bringing together professionals from tyre manufacturing companies, raw material
             suppliers, machinery manufacturers, automation specialists, and OEMs across the
             tyre and rubber ecosystem.

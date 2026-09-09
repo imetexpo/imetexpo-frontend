@@ -100,8 +100,8 @@ export default function WhyVisitPage() {
       buttonLink: "/conference-programme"
     },
     {
-      title: "ITS Tyre Expo Connect",
-      description: "Connect with peers, explore opportunities, and access event schedules, exhibitor deals, and floor plans with the official ITS Tyre Expo app – your year-round networking tool.",
+      title: "INDIAMET Expo Connect",
+      description: "Connect with peers, explore opportunities, and access event schedules, exhibitor deals, and floor plans with the official INDIAMET Expo app – your year-round networking tool.",
       image: "https://cdn.itegroupnews.com/QR_MW_eng_web_site_e73baacf2e.svg",
       buttonText: "Learn More",
       buttonLink: "/connect"
@@ -138,7 +138,7 @@ export default function WhyVisitPage() {
                     The Heart of the Tyre Manufacturing Industry
                   </h2>
                   <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
-                    Experience the complete tyre manufacturing value chain in one place. ITS Tyre Expo brings together technology leaders, equipment manufacturers, and industry professionals to exchange ideas, discover innovations, and drive the next phase of growth in global tyre manufacturing.
+                    Experience the complete tyre manufacturing value chain in one place. INDIAMET Expo brings together technology leaders, equipment manufacturers, and industry professionals to exchange ideas, discover innovations, and drive the next phase of growth in global tyre manufacturing.
                   </p>
                   <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-between bg-[#FCF8F3] border border-gray-100 px-4 sm:px-6 py-6 sm:py-8 rounded-sm gap-4 sm:gap-0 font-sans">
                     {stats.map((stat, idx) => (
@@ -189,7 +189,7 @@ export default function WhyVisitPage() {
               <Container>
                 <div className="relative z-10 flex flex-col gap-4 sm:gap-5">
                   <p className="text-sm sm:text-base font-bold text-[#CC9808]">
-                    Connect with the Global Tyre Network at ITS Tyre Expo
+                    Connect with the Global Tyre Network at INDIAMET Expo
                   </p>
                   <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-white max-w-[1000px]">
                     Where Tyre Manufacturing's Key Players Meet and Opportunities Take Shape
@@ -287,7 +287,7 @@ export default function WhyVisitPage() {
                     Discover the Key Business Areas of Our Attendees
                   </h3>
                   <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
-                    ITS Tyre Expo attracts a diverse audience from industries such as manufacturing, distribution, technology, and services. Understanding their business focus allows you to identify potential partners, customise your offerings, and engage directly with decision-makers driving innovation.
+                    INDIAMET Expo attracts a diverse audience from industries such as manufacturing, distribution, technology, and services. Understanding their business focus allows you to identify potential partners, customise your offerings, and engage directly with decision-makers driving innovation.
                   </p>
                   <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-between bg-[#FCF8F3] border border-gray-100 px-4 sm:px-6 py-6 sm:py-8 rounded-sm gap-4 sm:gap-0 font-sans">
                     {businessAreas.map((area, idx) => (
@@ -328,7 +328,7 @@ export default function WhyVisitPage() {
           <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
               <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">
-                Who is ITS Tyre Expo for?
+                Who is INDIAMET Expo for?
               </h3>
               <div className="mt-8 sm:mt-10 grid gap-5 sm:gap-6 md:grid-cols-2">
                 <div className="relative min-h-[350px] sm:min-h-[400px] overflow-hidden rounded-sm border border-white/10">

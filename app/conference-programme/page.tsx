@@ -218,7 +218,7 @@ export default function ConferenceProgrammePage() {
                   Key Events
                 </h3>
                 <p className="text-sm text-gray-650 leading-relaxed">
-                  The ITS Tyre Expo 2026 conference programme unites top experts and industry leaders for three days of in-depth discussions. Participants share valuable insights and explore sustainability in tyre manufacturing, with a focus on innovations, business processes, and management strategies vital for the sector's future.
+                  The INDIAMET Expo 2026 conference programme unites top experts and industry leaders for three days of in-depth discussions. Participants share valuable insights and explore sustainability in tyre manufacturing, with a focus on innovations, business processes, and management strategies vital for the sector's future.
                 </p>
               </div>
               <div className="relative mt-8 w-full">

@@ -178,7 +178,7 @@ export default function EnquiryForm() {
         </div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank You, {submittedName}!</h2>
         <p className="text-gray-600 mb-6">
-          Your visitor registration for ITS Tyre Expo 2026 has been submitted successfully.
+          Your visitor registration for INDIAMET Expo 2026 has been submitted successfully.
           A confirmation email has been sent to your registered email address.
         </p>
         <Link href="/" className="inline-block bg-[#CC9808] text-white px-6 py-2 rounded-lg hover:bg-[#03193D] transition">
@@ -405,7 +405,7 @@ export default function EnquiryForm() {
           className="mt-1 w-4 h-4 text-[#CC9808] rounded border-gray-300 focus:ring-[#CC9808]"
         />
         <label htmlFor="terms-enquiry" className="text-sm text-gray-600 cursor-pointer">
-          I agree to receive marketing communications, updates, and promotional materials from ITS Tyre Expo.
+          I agree to receive marketing communications, updates, and promotional materials from INDIAMET Expo.
           I can unsubscribe anytime. For more information, please refer to our{" "}
           <Link href="/privacy-policy" className="text-[#CC9808] hover:underline">
             Privacy Policy

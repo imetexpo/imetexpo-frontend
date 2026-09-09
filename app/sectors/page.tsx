@@ -130,7 +130,7 @@ export default function SectorsPage() {
       <div className="fixed left-0 top-0 z-50 w-full bg-[#03193D] px-5 py-2 lg:hidden">
         <div className="flex justify-between">
           <Link href="/">
-            <Image src="/imgs/logo-its.png" alt="ITS Tyre Expo" width={140} height={40} className="h-auto w-auto object-contain" />
+            <Image src="/imgs/logo-its.png" alt="INDIAMET Expo" width={140} height={40} className="h-auto w-auto object-contain" />
           </Link>
           <button className="z-10" aria-label="Menu">
             <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">

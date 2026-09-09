@@ -5,11 +5,11 @@ export default function BrochureContent() {
     <div className="flex flex-col gap-6">
       <div className="space-y-3">
         <h2 className="font-bebas text-3xl leading-[1.05] tracking-tight uppercase text-[#03193D]">
-          ITS TYRE EXPO <span className="text-[#CC9808]">2026</span>
+          INDIAMET Expo <span className="text-[#CC9808]">2026</span>
         </h2>
         <p className="text-sm text-gray-700 leading-relaxed">
           Step into Asia's most influential tyre manufacturing & rubber processing exhibition.
-          ITS Tyre Expo connects global suppliers of raw materials, manufacturing machinery,
+          INDIAMET Expo connects global suppliers of raw materials, manufacturing machinery,
           testing tools, and automated systems with thousands of qualified buyers from 50+ countries.
         </p>
       </div>

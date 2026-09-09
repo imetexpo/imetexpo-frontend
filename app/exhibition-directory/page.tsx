@@ -121,7 +121,7 @@ export default function CompanyDirectory() {
               Exhibitor <span className="text-[#CC9808]">Directory</span>
             </h1>
             <p className="mt-2 text-sm text-gray-600 font-sans">
-              Find and connect with key tyre and rubber industry suppliers at ITS Tyre Expo.
+              Find and connect with key tyre and rubber industry suppliers at INDIAMET Expo.
             </p>
           </div>
 

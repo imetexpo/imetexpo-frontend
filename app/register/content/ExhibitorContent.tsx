@@ -15,7 +15,7 @@ export default function ExhibitorContent() {
         <p className="text-sm text-gray-700 leading-relaxed">
           Showcase your solutions to senior buyers across the full tyre manufacturing value chain.
         </p>
-        <p className="text-sm text-gray-800 font-bold">ITS Tyre Expo is the leading platform to:</p>
+        <p className="text-sm text-gray-800 font-bold">INDIAMET Expo is the leading platform to:</p>
         <ul className="space-y-3">
           {[
             "Connect with decision-makers from 50+ countries",

@@ -83,7 +83,7 @@ export default function AdvertisingDetailsPage() {
     },
     {
       title: "Advertising Surfaces at BITEC",
-      description: "Secure prime advertising locations both indoors and outdoors at the ITS Tyre Expo exhibition site to ensure maximum exposure for your brand.",
+      description: "Secure prime advertising locations both indoors and outdoors at the INDIAMET Expo exhibition site to ensure maximum exposure for your brand.",
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
       image: "https://cdn.itegroupnews.com/3_065bb10e11.png",
@@ -147,7 +147,7 @@ export default function AdvertisingDetailsPage() {
                 </h1>
                 <p className="text-base sm:text-lg leading-relaxed text-gray-700 max-w-3xl font-sans">
                   Maximize your brand exposure and reach key decision-makers through our comprehensive 
-                  advertising and sponsorship opportunities at ITS Tyre Expo 2026.
+                  advertising and sponsorship opportunities at INDIAMET Expo 2026.
                 </p>
               </div>
             </div>
