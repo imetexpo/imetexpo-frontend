@@ -9,8 +9,8 @@ const navItems = [
   {
     title: 'About',
     links: [
-      { text: 'About India Tyre Show', href: '/about/' },
-      { text: 'About ITE', href: '/about-ite/' },
+      { text: 'About IndiaMet Expo', href: '/about/' },
+      { text: 'About The Organizer', href: '/about-organizer/' },
       { text: 'Partners & Sponsors', href: '/partners-and-sponsors/' },
     ],
   },
@@ -153,7 +153,7 @@ export default function Navbar() {
                 <UTMLink href="/">
                   <img
                     src="/ITS_logo_white.png"
-                    alt="India Tyre Show"
+                    alt="IndiaMet Expo"
                     className="h-20 sm:h-22 w-auto cursor-pointer object-contain"
                   />
                 </UTMLink>

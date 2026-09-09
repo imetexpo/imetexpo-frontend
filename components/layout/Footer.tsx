@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Image
               src="/ITS_logo_white.png"
-              alt="India Tyre Show"
+              alt="IndiaMet Expo"
               width={180}
               height={50}
               className="object-contain"

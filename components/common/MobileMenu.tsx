@@ -12,7 +12,7 @@ const navItems = [
   {
     title: 'About',
     links: [
-      { text: 'About India Tyre Show', href: '/about/' },
+      { text: 'About IndiaMet Expo', href: '/about/' },
       { text: 'About ITE', href: '/about-ite/' },
       { text: 'Partners & Sponsors', href: '/partners-and-sponsors/' },
     ],

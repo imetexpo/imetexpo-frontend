@@ -85,7 +85,7 @@ export default function AboutPage() {
   return (
     <div className="intro-animation min-h-screen bg-white">
       <div className="page-spacing-wrapper">
-        <div className="pt-[120px] lg:pt-0">
+        <div className="pt-[120px] lg:pt-[140px]">
 
           {/* PAGE HEADER BANNER (Black section matching screenshot 4) */}
           <div className="bg-[#03193D] text-white py-12 sm:py-16 md:py-20 border-b border-neutral-900">
@@ -320,7 +320,7 @@ export default function AboutPage() {
                   </div>
                   <div className="mt-6 sm:mt-8 overflow-hidden rounded-lg">
                     <iframe
-                      src="https://www.google.com/maps?q=Crocus%20Expo%20IEC%20Moscow&output=embed"
+                      src="https://www.google.com/maps?q=Auto%20Cluster%20Exhibition%20Center%2C%20Pune&output=embed"
                       className="w-full h-[300px] sm:h-[350px] md:h-[400px] border-0"
                       allowFullScreen
                       loading="lazy"

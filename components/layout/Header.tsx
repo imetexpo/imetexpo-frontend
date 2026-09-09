@@ -96,7 +96,7 @@ export default function Header() {
           <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
             <Image
               src="/ITS_logo_white.png"
-              alt="India Tyre Show"
+              alt="IndiaMet Expo"
               width={270}
               height={100}
               className="object-contain w-[100px] sm:w-[120px] h-auto"

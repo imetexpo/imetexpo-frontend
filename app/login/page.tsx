@@ -89,7 +89,7 @@ export default function ExhibitorLoginPage() {
             <div className="inline-flex items-center justify-center w-100 h-20 mb-4">
               <Image src="/ITS_logo_white.png" alt="Tyre Expo Logo" width={100} height={80} />
             </div>
-            <h2 className="text-3xl font-bold text-white">INDIA TYRE SHOW 2027</h2>
+            <h2 className="text-3xl font-bold text-white">IndiaMet Expo 2027</h2>
             <p className="text-gray-300 mt-2">Exhibitor Portal Login</p>
           </div>
 

@@ -20,7 +20,7 @@ export default function AboutSection() {
           <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] rounded-lg overflow-hidden">
             <Image
               src="https://cdn.itegroupnews.com/33_1_f4d3f3d85d.jpg"
-              alt="India Tyre Show"
+              alt="IndiaMet Expo"
               width={200}
               height={500}
               className="w-full h-full object-cover"

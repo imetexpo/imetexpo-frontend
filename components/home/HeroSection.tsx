@@ -42,7 +42,7 @@ export default function HeroSection() {
               {!imageErrors[slide.id] ? (
                 <Image
                   src={slide.image}
-                  alt="India Tyre Show"
+                  alt="IndiaMet Expo"
                   fill
                   className="object-cover"
                   priority={index === 0}
