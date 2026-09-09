@@ -191,7 +191,7 @@ export default function AdvertisingDetailsPage() {
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
               <h2 className="font-bebas text-4xl sm:text-5xl text-[#03193D] uppercase">
-                Advertising & <span className="text-[#CC9808]">Sponsorship Options</span>
+                Sponsorship <span className="text-[#CC9808]"> Options</span>
               </h2>
               <div className="mt-8 space-y-4">
                 {sponsorshipTabs.map((item, idx) => (
