@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,7 +9,11 @@ import MobileMenu from '../common/MobileMenu';
 import Navbar from '../common/Navbar';
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const desktopNavRef = useRef<HTMLDivElement>(null);
+  const [desktopNavHeight, setDesktopNavHeight] = useState(220);
 
   // Dynamic countdown timer calculation for Mobile header
   const calculateTimeLeft = () => {
@@ -28,12 +33,37 @@ export default function Header() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const el = desktopNavRef.current;
+    if (!el) return;
+
+    const updateHeight = () => {
+      const height = el.offsetHeight;
+      if (height > 0) {
+        setDesktopNavHeight(height);
+        document.documentElement.style.setProperty('--site-header-height', `${height}px`);
+      }
+    };
+
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       {/* Desktop — full navbar stays at the top while scrolling */}
-      <div className="hidden lg:block fixed top-0 left-0 w-full z-100">
+      <div ref={desktopNavRef} className="hidden lg:block fixed top-0 left-0 w-full z-100">
         <Navbar />
       </div>
+      {!isHomePage && (
+        <div
+          className="hidden lg:block shrink-0"
+          style={{ height: desktopNavHeight }}
+          aria-hidden="true"
+        />
+      )}
 
       {/* ✅ Mobile Countdown Banner (Brown bar at top-0 - 2 rows matching reference) */}
       <div className="lg:hidden fixed top-0 left-0 w-full bg-[#03193D] z-50 py-2 px-4 shadow-sm border-b border-black/10">

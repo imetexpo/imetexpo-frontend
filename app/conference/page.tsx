@@ -616,7 +616,7 @@ function FAQ() {
 export default function ConferencePage() {
     return (
         <div className="intro-animation">
-            <div className="page-spacing-wrapper pt-[120px] lg:pt-[140px]">
+            <div className="page-spacing-wrapper pt-[120px] lg:pt-0">
                 <HeroSection />
                 <AboutSection />
                 <SpeakersSection />

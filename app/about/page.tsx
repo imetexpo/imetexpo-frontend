@@ -85,7 +85,7 @@ export default function AboutPage() {
   return (
     <div className="intro-animation min-h-screen bg-white">
       <div className="page-spacing-wrapper">
-        <div className="pt-[120px] lg:pt-[140px]">
+        <div className="pt-[120px] lg:pt-0">
 
           {/* PAGE HEADER BANNER (Black section matching screenshot 4) */}
           <div className="bg-[#03193D] text-white py-12 sm:py-16 md:py-20 border-b border-neutral-900">

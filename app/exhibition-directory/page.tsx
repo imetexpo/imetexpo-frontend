@@ -103,7 +103,7 @@ export default function CompanyDirectory() {
   return (
     <div className="intro-animation min-h-screen bg-white font-sans">
       <div className="page-spacing-wrapper">
-        <div className="pt-[120px] lg:pt-[140px]">
+        <div className="pt-[120px] lg:pt-0">
           {/* Error display */}
           {error && (
             <div className="fixed top-36 left-0 right-0 z-40 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">

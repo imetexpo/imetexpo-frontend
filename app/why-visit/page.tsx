@@ -125,7 +125,7 @@ export default function WhyVisitPage() {
   return  (
   <div className="intro-animation">
     <div className="page-spacing-wrapper">
-      <div className="pt-[100px] sm:pt-[120px] lg:pt-[140px]">
+      <div className="pt-[100px] sm:pt-[120px] lg:pt-0">
 
         {/* Heart of Industry Section */}
         <Container>

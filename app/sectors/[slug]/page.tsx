@@ -36,7 +36,7 @@ export default function SectorPage() {
 
   if (!sector) {
     return (
-      <div className="page-spacing-wrapper pt-[120px] lg:pt-[140px]">
+      <div className="page-spacing-wrapper pt-[120px] lg:pt-0">
         <Container className="py-20 text-center">
           <h1 className="font-bebas text-5xl text-[#03193D] md:text-6xl lg:text-7xl">
             Sector Not Found
@@ -81,7 +81,7 @@ export default function SectorPage() {
   return (
     <div className="intro-animation">
       {/* Main Content */}
-      <div className="page-spacing-wrapper pt-[120px] lg:pt-[140px]">
+      <div className="page-spacing-wrapper pt-[120px] lg:pt-0">
         {/* Hero Section */}
         <div className="animated-block">
           <div className="animated-block-target">

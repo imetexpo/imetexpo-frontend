@@ -217,7 +217,7 @@ export default function PlanYourTravelPage() {
   return (
     <div className="intro-animation">
       {/* Main Content */}
-      <div className="page-spacing-wrapper pt-[120px] lg:pt-[140px]">
+      <div className="page-spacing-wrapper pt-[120px] lg:pt-0">
 
         {/* Culture Section */}
         <div className="animated-block">

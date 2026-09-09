@@ -41,7 +41,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <div className="intro-animation font-sans">
-      <div className="page-spacing-wrapper pt-[120px] lg:pt-[140px]">
+      <div className="page-spacing-wrapper pt-[120px] lg:pt-0">
         <Container className="py-12 sm:py-16 md:py-20">
           <article className="max-w-4xl mx-auto">
             {/* Date */}
