@@ -73,34 +73,6 @@ function useUTMQueryString() {
   return utmPairs.length > 0 ? `?${utmPairs.join('&')}` : '';
 }
 
-export function useScrollDirection() {
-  const [scrollDirection, setScrollDirection] = useState('none');
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      setScrollY(currentY);
-
-      if (currentY > lastScrollY && currentY > 50) {
-        setScrollDirection('down');
-      } else if (currentY < lastScrollY) {
-        setScrollDirection('up');
-      }
-
-      lastScrollY = currentY;
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return { scrollDirection, scrollY };
-}
-
 // ═══════════════════════════════════════════════════════════════
 // NEW: UTM-preserving Link component
 // ═══════════════════════════════════════════════════════════════
@@ -121,12 +93,6 @@ function UTMLink({ href, className, children, ...props }: { href: string; classN
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const { scrollDirection, scrollY } = useScrollDirection();
-
-  const isScrolled = scrollY > 80;
-  const showTopBar = !isScrolled || scrollDirection === 'up';
-  const showLogo = isScrolled && scrollDirection === 'down';
 
   const calculateTimeLeft = () => {
     const targetDate = new Date('2027-04-22T09:00:00').getTime();
@@ -155,18 +121,9 @@ export default function Navbar() {
   };
 
   return (
-    <>
-      <div className="fixed top-0 w-full left-0 right-0 z-50 bg-[#03193D] text-white">
-
+    <div className="w-full bg-[#03193D] text-white">
         {/* TOP BAR */}
-        <div
-          style={{
-            maxHeight: showTopBar ? '140px' : '0px',
-            opacity: showTopBar ? 1 : 0,
-            overflow: 'hidden',
-            transition: 'max-height 0.45s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.3s ease',
-          }}
-        >
+        <div>
           {/* Ticker strip */}
           <div className="bg-[#03193D] w-full">
             <Container className="flex items-center justify-end py-1.5">
@@ -231,25 +188,6 @@ export default function Navbar() {
         {/* NAV ROW */}
         <div className="border-t border-white/10 bg-[#021533]/90 backdrop-blur-md">
           <Container className="flex items-center py-1 min-h-[44px]">
-            <div
-              style={{
-                width: showLogo ? '44px' : '0px',
-                opacity: showLogo ? 1 : 0,
-                marginRight: showLogo ? '14px' : '0px',
-                flexShrink: 0,
-                overflow: 'hidden',
-                transition: 'width 0.45s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.3s ease, margin-right 0.45s ease',
-              }}
-            >
-              <UTMLink href="/">
-                <img
-                  src="/ITS_logo_white.png"
-                  alt="India Tyre Show"
-                  style={{ height: '30px', width: 'auto', display: 'block', minWidth: '32px' }}
-                />
-              </UTMLink>
-            </div>
-
             <div className="hidden lg:flex items-center gap-4 xl:gap-8 flex-1">
               {navItems.map((item) => (
                 <div
@@ -299,29 +237,8 @@ export default function Navbar() {
                 </div>
               ))}
             </div>
-
-            <div
-              style={{
-                maxWidth: isScrolled ? '100px' : '0px',
-                opacity: showLogo ? 1 : 0,
-                overflow: 'hidden',
-                marginLeft: 'auto',
-                transition: 'max-width 0.45s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.3s ease',
-              }}
-            >
-              <UTMLink
-                href="/login/"
-                className="bg-[#CC9808] font-bold uppercase tracking-wider text-white px-4 py-2 text-xs 
-                  hover:bg-white hover:text-[#03193D] transition-all duration-300 whitespace-nowrap inline-block rounded-sm"
-              >
-                Login
-              </UTMLink>
-            </div>
           </Container>
         </div>
-      </div>
-
-      <div className="h-[125px] lg:h-[135px]" />
-    </>
+    </div>
   );
 }

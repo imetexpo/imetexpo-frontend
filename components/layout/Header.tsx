@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <>
-      {/* ✅ Desktop — Navbar handles ALL scroll logic internally */}
+      {/* Desktop — full navbar stays at the top while scrolling */}
       <div className="hidden lg:block fixed top-0 left-0 w-full z-100">
         <Navbar />
       </div>
