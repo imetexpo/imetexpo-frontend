@@ -35,9 +35,7 @@ export default function WhyExhibitPage() {
     },
     {
       title: "Tyre Testing & Quality Control",
-      slug: "tyre-testing-and-quality-control",
-      description: "Durability testers, uniformity machines, balance testers, X-ray inspection, and lab equipment.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+ 
     },
     {
       title: "Retreading & Repair Materials",
