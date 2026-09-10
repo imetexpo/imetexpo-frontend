@@ -10,7 +10,7 @@ type PageHeroProps = {
 
 export default function PageHero({ title, accent, subtitle, children }: PageHeroProps) {
   return (
-    <div className="border-neutral-900 bg-gradient-to-r from-[#03193D] to-[#CC9808]/80 py-12 text-white sm:py-16 md:py-20">
+    <div className="border-neutral-900 bg-gradient-to-r from-[#0B1F4D] via-[#4B477A] to-[#D4A72C] py-12 text-white sm:py-16 md:py-20">
       <Container>
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-2.5 text-center">
           <h1 className="font-bebas text-4xl uppercase leading-none tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
