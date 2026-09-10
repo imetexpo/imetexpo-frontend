@@ -6,6 +6,7 @@ import Link from 'next/link';
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  topOffset?: number;
 }
 
 const navItems = [
@@ -57,7 +58,7 @@ const navItems = [
   { title: 'Contact us', href: '/contact-us/', links: [] },
 ];
 
-export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMenuProps) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   useEffect(() => {
@@ -90,7 +91,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       />
       
       {/* Floating Rounded Menu Card */}
-      <div className="fixed top-[160px] left-4 right-4 bottom-4 bg-[#03193D] border border-neutral-900 z-45 shadow-2xl overflow-y-auto rounded-[28px] p-6 text-white lg:hidden flex flex-col justify-between font-sans transition-all duration-300 animate-slide-up no-scrollbar">
+      <div
+        className="fixed left-4 right-4 bottom-4 bg-[#03193D] border border-neutral-900 z-45 shadow-2xl overflow-y-auto rounded-[28px] p-6 text-white lg:hidden flex flex-col justify-between font-sans transition-all duration-300 animate-slide-up no-scrollbar"
+        style={{ top: topOffset }}
+      >
         
         {/* Main Content Area */}
         <div className="flex-1">
@@ -153,13 +157,20 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         </div>
 
         {/* Action Button at the Bottom */}
-        <div className="mt-8 pt-4">
+        <div className="mt-8 flex flex-col gap-3 pt-4">
           <Link
             href="/exhibiting-enquiry/"
             onClick={onClose}
-            className="block w-full text-center bg-[#CC9808] border border-[#CC9808] hover:bg-[#03193D] text-white py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-300 rounded-sm font-bebas"
+            className="block w-full rounded-sm border border-[#CC9808] bg-[#CC9808] py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#03193D]"
           >
             Exhibit
+          </Link>
+          <Link
+            href="/visitor-registration/"
+            onClick={onClose}
+            className="block w-full rounded-sm border border-white bg-transparent py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-[#03193D]"
+          >
+            Register
           </Link>
         </div>
       </div>

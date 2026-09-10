@@ -25,7 +25,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative flex h-screen items-end justify-center overflow-hidden text-white w-full">
+    <section className="relative flex h-[calc(100svh-var(--mobile-header-height,110px))] w-full items-end justify-center overflow-hidden text-white lg:h-screen">
       {/* Gradient overlay */}
       <div className="absolute inset-0 z-[-1] bg-gradient-to-t from-black via-black/50 to-transparent" />
 
