@@ -39,7 +39,10 @@ export default function RootLayout({
 }) {
   const pathname = usePathname();
 
-const hideHeaderFooter = pathname.startsWith("/dashboard") || pathname.startsWith("/admin");
+  const normalizedPath = pathname.replace(/\/$/, "") || "/";
+  const hideHeaderFooter =
+    normalizedPath.startsWith("/dashboard") || normalizedPath.startsWith("/admin");
+  const hideFooter = hideHeaderFooter || normalizedPath === "/login";
   // Track page views on route change with UTM data
   useEffect(() => {
     if (typeof window !== 'undefined' && (window as any).gtag && !hideHeaderFooter) {
@@ -137,17 +140,19 @@ const hideHeaderFooter = pathname.startsWith("/dashboard") || pathname.startsWit
           </Suspense>
         )}
 
-        <Suspense fallback={null}>
-          <UTMProvider>
-            <Providers>
-              {children}
-              <Toaster position="top-right" />
-            </Providers>
-            <UTMDebugger />
-          </UTMProvider>
-        </Suspense>
+        <div className="flex min-h-0 flex-1 flex-col">
+          <Suspense fallback={null}>
+            <UTMProvider>
+              <Providers>
+                {children}
+                <Toaster position="top-right" />
+              </Providers>
+              <UTMDebugger />
+            </UTMProvider>
+          </Suspense>
+        </div>
 
-        {!hideHeaderFooter && <Footer />}
+        {!hideFooter && <Footer />}
       </body>
     </html>
   );

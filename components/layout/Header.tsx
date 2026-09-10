@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileMenu from '../common/MobileMenu';
@@ -69,7 +69,7 @@ export default function Header() {
 
       <div
         ref={mobileHeaderRef}
-        className="lg:hidden fixed top-0 left-0 w-full z-50 bg-[#03193D] shadow-lg"
+        className="lg:hidden fixed top-0 left-0 w-full z-[60] bg-[#03193D] shadow-lg"
       >
         <div className="px-4 py-1.5 text-center text-[10px] font-semibold uppercase tracking-wider text-gray-300">
           22–24 April 2027 • Auto Cluster Exhibition Center, Pune, India
@@ -95,10 +95,17 @@ export default function Header() {
                 Login
               </Link>
               <button
+                type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="p-1 hover:bg-white/10 rounded-sm transition cursor-pointer"
+                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMobileMenuOpen}
               >
-                <Menu size={32} className="text-[#CC9808]" />
+                {isMobileMenuOpen ? (
+                  <X size={32} className="text-[#CC9808]" />
+                ) : (
+                  <Menu size={32} className="text-[#CC9808]" />
+                )}
               </button>
             </div>
           </div>

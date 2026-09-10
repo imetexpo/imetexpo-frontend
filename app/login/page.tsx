@@ -74,48 +74,51 @@ export default function ExhibitorLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-4">
-      {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
+    <div className="relative isolate flex w-full flex-1 items-start justify-center overflow-x-hidden bg-[#03193D] px-4 py-5 sm:items-center sm:py-10">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[#CC9808] opacity-20 blur-3xl sm:h-64 sm:w-64" />
+        <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-[#CC9808] opacity-10 blur-3xl sm:h-64 sm:w-64" />
       </div>
 
-      {/* Login Card */}
       <div className="relative w-full max-w-md">
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/20">
-          {/* Logo & Brand */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-100 h-20 mb-4">
-              <Image src="/ITS_logo_white.png" alt="Tyre Expo Logo" width={100} height={80} />
-            </div>
-            <h2 className="text-3xl font-bold text-white">IndiaMet Expo 2027</h2>
-            <p className="text-gray-300 mt-2">Exhibitor Portal Login</p>
+        <div className="rounded-sm border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur-xl sm:rounded-2xl sm:p-8">
+          <div className="mb-5 text-center sm:mb-8">
+            <Image
+              src="/ITS_logo_white.png"
+              alt="IndiaMet Expo"
+              width={270}
+              height={100}
+              className="mx-auto mb-3 h-auto w-[150px] object-contain sm:mb-4 sm:w-[180px]"
+            />
+            <h2 className="font-bebas text-2xl tracking-wide text-white sm:text-3xl">
+              IndiaMet Expo 2027
+            </h2>
+            <p className="mt-1 text-sm text-gray-300">Exhibitor Portal Login</p>
           </div>
 
           {error && (
-            <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg">
-              <p className="text-red-200 text-sm text-center">{error}</p>
+            <div className="mb-4 rounded-sm border border-red-500/50 bg-red-500/20 p-3">
+              <p className="text-center text-sm text-red-200">{error}</p>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-200 mb-2">
+              <label className="mb-2 block text-sm font-medium text-gray-200">
                 Email Address
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition"
-                placeholder="gopinath2322002@gmail.com"
+                className="w-full rounded-sm border border-white/20 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 transition focus:border-[#CC9808] focus:outline-none focus:ring-2 focus:ring-[#CC9808]"
+                placeholder="Enter your email"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-200 mb-2">
+              <label className="mb-2 block text-sm font-medium text-gray-200">
                 Password
               </label>
               <div className="relative">
@@ -123,31 +126,35 @@ export default function ExhibitorLoginPage() {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition pr-12"
+                  className="w-full rounded-sm border border-white/20 bg-white px-4 py-3 pr-12 text-gray-900 placeholder-gray-400 transition focus:border-[#CC9808] focus:outline-none focus:ring-2 focus:ring-[#CC9808]"
                   placeholder="Enter your password"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   {showPassword ? <EyeSlashIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
                 </button>
               </div>
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
-                  className="w-4 h-4 rounded border-white/20 bg-white/10 text-amber-500 focus:ring-amber-500"
+                  className="h-4 w-4 rounded-sm border-white/20 bg-white text-[#CC9808] focus:ring-[#CC9808]"
                 />
                 <span className="text-sm text-gray-300">Remember me</span>
               </label>
-              <Link href="/exhibitor/forgot-password" className="text-sm text-amber-400 hover:text-amber-300 transition">
+              <Link
+                href="/exhibitor/forgot-password"
+                className="text-sm text-[#CC9808] transition hover:text-[#FFD154]"
+              >
                 Forgot password?
               </Link>
             </div>
@@ -155,7 +162,7 @@ export default function ExhibitorLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+              className="w-full rounded-sm bg-[#CC9808] py-3 font-semibold uppercase tracking-wider text-white shadow-lg transition hover:bg-[#FFD154] hover:text-[#03193D] disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">
@@ -168,32 +175,31 @@ export default function ExhibitorLoginPage() {
             </button>
           </form>
 
-          {/* Demo Credentials */}
-          <div className="mt-6 pt-6 border-t border-white/10">
-            <p className="text-center text-xs text-gray-400 mb-3">Demo Credentials</p>
+          <div className="mt-5 border-t border-white/10 pt-5 sm:mt-6 sm:pt-6">
+            <p className="mb-3 text-center text-xs text-gray-400">Demo Credentials</p>
             <button
+              type="button"
               onClick={handleDemoLogin}
-              className="w-full text-sm text-gray-300 hover:text-white transition flex items-center justify-center gap-2"
+              className="flex w-full flex-col items-center gap-1 text-sm text-gray-300 transition hover:text-white sm:flex-row sm:justify-center sm:gap-2"
             >
-              <span className="opacity-70">📧</span> gopinath2322002@gmail.com
-              <span className="mx-2">•</span>
-              <span className="opacity-70">🔒</span> exe123
+              <span className="break-all">gopinath2322002@gmail.com</span>
+              <span className="hidden text-white/30 sm:inline">•</span>
+              <span>exe123</span>
             </button>
           </div>
 
-          {/* Register Link */}
           <div className="mt-4 text-center">
             <p className="text-xs text-gray-400">
-              Don't have an account?{' '}
-              <Link href="/exhibitor/register" className="text-amber-400 hover:text-amber-300 transition">
+              Don&apos;t have an account?{' '}
+              <Link href="/exhibitor/register" className="text-[#CC9808] transition hover:text-[#FFD154]">
                 Register as Exhibitor
               </Link>
             </p>
           </div>
         </div>
 
-        <p className="text-center text-gray-500 text-xs mt-8">
-          © 2024 India Tyre Expo. All rights reserved.
+        <p className="mt-5 text-center text-xs text-gray-500 sm:mt-8">
+          © 2026 IndiaMet Expo. All rights reserved.
         </p>
       </div>
     </div>
