@@ -7,9 +7,7 @@ import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
 import SideCard, { CheckItem, DateItem } from '@/components/sponsor/SideCard';
 import { Field, TextInput, TextArea, Select, RadioCard } from '@/components/nominate/FormFields';
-
-const HERO_IMAGE =
-  'https://rubber-tyre.com.vn/wp-content/uploads/2025/07/CTHE0129-min-scaled.webp';
+import PageHero from '@/components/layout/PageHero';
 
 type SponsorPackage = {
   title: string;
@@ -150,29 +148,11 @@ export default function SponsorPage() {
 
   return (
     <div className="intro-animation overflow-hidden bg-white font-sans">
-      <section className="relative min-h-[50vh] w-full overflow-hidden sm:min-h-[60vh] lg:min-h-[70vh]">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#03193D]/95 via-[#03193D]/80 to-[#03193D]/40" />
-        <Container className="relative z-10 flex min-h-[50vh] items-center py-12 sm:min-h-[60vh] lg:min-h-[70vh]">
-          <div className="max-w-4xl text-white">
-            <span className="mb-4 inline-block rounded-sm border border-[#CC9808]/40 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#CC9808]">
-              India Tyre Show Excellence Awards 2027
-            </span>
-            <h1 className="font-bebas text-4xl uppercase leading-none tracking-tight sm:text-5xl lg:text-6xl">
-              Award Sponsor
-              <br />
-              <span className="text-[#CC9808]">Partnership Form</span>
-            </h1>
-            <p className="mt-4 max-w-3xl text-sm text-white/90 sm:text-base lg:text-lg">
-              Partner with the premier recognition platform in the tyre industry and showcase your brand
-              to global leaders, innovators and decision makers.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        title="AWARDS"
+        accent="SPONSOR"
+        subtitle="Partner with INDIAMET Expo and put your brand in front of industry leaders, innovators, and decision-makers."
+      />
 
       <section className="border-b border-gray-100 bg-[#FCF8F3] py-4">
         <Container>

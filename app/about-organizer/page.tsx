@@ -7,6 +7,7 @@ import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
+import PageHero from "@/components/layout/PageHero";
 
 export default function AboutITEPage() {
   const [loading, setLoading] = useState(true);
@@ -267,14 +268,19 @@ export default function AboutITEPage() {
     <div className="intro-animation">
       <div className="page-spacing-wrapper">
         <div className="lg:pt-0">
+          <PageHero
+            title="ABOUT THE"
+            accent="ORGANIZER"
+            subtitle="Maxx Business Media creates high-impact exhibitions, conferences, and industry platforms that connect manufacturers, innovators, and decision-makers."
+          />
 
           {/* About Us Section */}
           <div className="animated-block">
             <div className="animated-block-target">
-              <Container>
+              <Container className="py-12 sm:py-16">
                 <div className="lg:col-span-3">
                   <div className="flex flex-col gap-4 sm:gap-5">
-                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]"><br />About Us</h2>
+                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">About Us</h2>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700">
                       Maxx Business Media Pvt. Ltd. is a leading B2B business events and media company based in India, dedicated to creating powerful platforms that connect industries, innovators, and decision-makers. Since its inception, Maxx Business Media has been organizing high-impact trade exhibitions, conferences, and industry-focused initiatives across key manufacturing and emerging sectors.
                       <br /><br />

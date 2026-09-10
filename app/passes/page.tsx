@@ -20,6 +20,7 @@ import { getBackendUrl } from '@/lib/api/backendUrl';
 import VisitorPassCard from '@/components/passes/VisitorPassCard';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
+import PageHero from '@/components/layout/PageHero';
 
 const API = getBackendUrl();
 const COUNTRIES = [
@@ -209,6 +210,11 @@ export default function PassesPage() {
 
   return (
     <div className="intro-animation bg-white font-sans">
+      <PageHero
+        title="VISITOR"
+        accent="PASS"
+        subtitle="Register for INDIAMET Expo, receive your QR-coded visitor pass instantly, and walk into the exhibition hassle-free."
+      />
       {step === 'phone' && (
         <>
           <section className="relative overflow-hidden bg-[#FCF8F3]">

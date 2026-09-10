@@ -9,6 +9,7 @@ import PartnersSection from "@/components/home/PartnersSection";
 import SectorsSection from "@/components/home/SectorsSection";
 import BackToTop from "@/components/layout/BackToTop";
 import React from "react";
+import PageHero from "@/components/layout/PageHero";
 
 export default function WhyVisitPage() {
   const [loading, setLoading] = useState(true);
@@ -177,19 +178,22 @@ export default function WhyVisitPage() {
     <div className="intro-animation">
       <div className="page-spacing-wrapper">
         <div className="lg:pt-0">
+          <PageHero
+            title="WHY"
+            accent="VISIT"
+            subtitle="Discover advanced metrology technologies, meet India's precision manufacturing decision-makers, and explore the complete measurement and quality ecosystem."
+          />
 
           {/* =========================================================
               HERO / HEART OF PRECISION MANUFACTURING
           ========================================================== */}
 
-          <Container>
+          <Container className="py-12 sm:py-16">
             <div className="animated-block">
               <div className="animated-block-target">
                 <div className="w-full grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
 
                   <div className="order-2 lg:order-1">
-                    <br />
-                    <br />
 
                     <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#03193D]">
                       The Heart of Precision Manufacturing

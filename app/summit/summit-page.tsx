@@ -15,8 +15,8 @@ import {
 } from 'lucide-react';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
+import PageHero from '@/components/layout/PageHero';
 import {
-  HERO_IMAGE,
   aboutStats,
   speakersData,
   programData,
@@ -31,47 +31,26 @@ const whyIcons = [Lightbulb, TrendingUp, Handshake, BadgePercent];
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[50vh] w-full overflow-hidden text-white sm:min-h-[60vh] lg:min-h-[70vh]">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
-      />
-      <div className="absolute inset-0 bg-[#03193D]/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#03193D]/90 via-[#03193D]/50 to-transparent" />
-
-      <Container className="relative z-10 flex min-h-[50vh] items-end pb-8 pt-12 sm:min-h-[60vh] sm:pb-12 lg:min-h-[70vh] lg:pb-16">
-        <div className="w-full">
-          <span className="mb-4 inline-block rounded-sm border border-[#CC9808]/40 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#CC9808]">
-            April 22–23, 2027 · Pune, India
-          </span>
-          <h1 className="font-bebas text-4xl uppercase leading-none tracking-tight sm:text-5xl lg:text-7xl xl:text-8xl">
-            India Tyre Show
-            <br />
-            <span className="text-[#CC9808]">Summit 2027</span>
-          </h1>
-          <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-end">
-            <p className="max-w-3xl text-sm text-white/90 sm:text-base lg:text-xl">
-              Global summit on tyre manufacturing, rubber technology, automation and sustainable
-              mobility.
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row lg:ml-auto">
-              <Link
-                href="/became-delegate/"
-                className="rounded-sm bg-[#CC9808] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154] hover:text-[#03193D]"
-              >
-                Become a Delegate
-              </Link>
-              <Link
-                href="/become-partner/"
-                className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#03193D]"
-              >
-                Become a Partner
-              </Link>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
+    <PageHero
+      title="SUMMIT"
+      accent="AGENDA"
+      subtitle="India Tyre Show Summit 2027 · April 22–23, Pune. Global summit on tyre manufacturing, rubber technology, automation and sustainable mobility."
+    >
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <Link
+          href="/became-delegate/"
+          className="rounded-sm bg-[#CC9808] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154] hover:text-[#03193D]"
+        >
+          Become a Delegate
+        </Link>
+        <Link
+          href="/become-partner/"
+          className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#03193D]"
+        >
+          Become a Partner
+        </Link>
+      </div>
+    </PageHero>
   );
 }
 

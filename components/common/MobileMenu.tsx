@@ -2,61 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { navItems } from './navItems';
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
   topOffset?: number;
 }
-
-const navItems = [
-  {
-    title: 'About',
-    links: [
-      { text: 'About IndiaMet Expo', href: '/about/' },
-      { text: 'About ITE', href: '/about-ite/' },
-      { text: 'Partners & Sponsors', href: '/partners-and-sponsors/' },
-    ],
-  },
-  {
-    title: 'Exhibit',
-    links: [
-      { text: 'Why Exhibit', href: '/why-exhibit/' },
-      { text: 'Event Sectors', href: '/sectors/' },
-      { text: 'Plan Your Travel', href: '/plan-your-travel/' },
-      { text: 'Exhibitor Resource Center', href: '/exhibitor-resource-center/' },
-      { text: 'Become an Exhibitor', href: '/exhibiting-enquiry/' },
-      { text: 'Advertising Opportunities', href: '/sponsorship-opportunities/' },
-      { text: 'View Exhibitor List 2026', href: '/exhibition-directory/' },
-    ],
-  },
-  {
-    title: 'Attend',
-    links: [
-      { text: 'Why Visit', href: '/why-visit/' },
-      { text: 'Visitor Pass', href: '/passes/' },
-      { text: 'Event Sectors', href: '/sectors/' },
-      { text: 'Summit', href: '/summit/' },
-      { text: 'Become a Delegate', href: '/became-delegate/' },
-      { text: 'Conference Programme', href: '/conference-programme/' },
-      { text: 'Partners and Sponsors', href: '/partners-and-sponsors/' },
-    ],
-  },
-  {
-    title: 'Insights',
-    links: [
-      { text: 'Articles and Latest News', href: '/articles/' },
-      { text: 'Why India Report', href: '/insights/' },
-      { text: 'Event Brochure', href: '/event-brochure/' },
-      { text: 'Post-Show Report', href: '/post-show-report/' },
-      { text: 'Media Gallery', href: '/media-gallery/' },
-    ],
-  },
-  
-  { title: 'Conference', href: '/summit/', links: [] },
-  { title: 'Awards', href: '/awards/', links: [] },
-  { title: 'Contact us', href: '/contact-us/', links: [] },
-];
 
 export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMenuProps) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);

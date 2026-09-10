@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
 import DelegateForm from '@/app/delegates/DelegateForm';
+import PageHero from '@/components/layout/PageHero';
 
 const delegatePackages = [
   {
@@ -62,19 +63,11 @@ export default function BecameDelegatePage() {
 
   return (
     <main className="intro-animation overflow-hidden bg-white font-sans">
-      <div className="border-b border-gray-100 bg-[#FCF8F3] py-10 lg:py-14">
-        <Container>
-          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#CC9808]">
-            India Tyre Show Summit 2027
-          </p>
-          <h1 className="font-bebas text-5xl uppercase tracking-tight text-[#03193D] sm:text-6xl lg:text-7xl">
-            Become a Delegate
-          </h1>
-          <p className="mt-4 max-w-3xl text-base text-gray-600 sm:text-lg">
-            Prices are inclusive of GST
-          </p>
-        </Container>
-      </div>
+      <PageHero
+        title="BECOME A"
+        accent="DELEGATE"
+        subtitle="Prices are inclusive of GST. Join industry leaders at the India Tyre Show Summit 2027."
+      />
 
       <section className="py-12 lg:py-16">
         <Container>

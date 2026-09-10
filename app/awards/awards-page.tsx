@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
+import PageHero from '@/components/layout/PageHero';
 
-const HERO_VIDEO = '/awards-vote-banner.mp4';
 const HERO_IMAGE = '/award3.jpg';
 
 const stats = [
@@ -120,48 +120,26 @@ function SectionEyebrow({ children }: { children: string }) {
 export default function AwardsPage() {
   return (
     <div className="intro-animation overflow-hidden bg-white font-sans">
-      <section className="relative min-h-[50vh] w-full overflow-hidden sm:min-h-[60vh] lg:min-h-[70vh]">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        >
-          <source src={HERO_VIDEO} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent" />
-
-        <Container className="relative z-10 flex min-h-[50vh] items-center py-12 sm:min-h-[60vh] sm:py-16 lg:min-h-[70vh] lg:py-20">
-          <div className="max-w-4xl text-white">
-            <h1 className="font-bebas text-4xl uppercase leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-              India Tyre Show
-              <br />
-              <span className="text-[#CC9808]">Excellence Awards 2027</span>
-            </h1>
-            <p className="mt-4 max-w-2xl text-sm text-white/90 sm:text-base lg:text-lg">
-              Recognizing excellence in tyre manufacturing, rubber technology, quality assurance, and
-              sustainable innovation.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/sponsor/"
-                className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#03193D]"
-              >
-                Sponsor Now
-              </Link>
-              <Link
-                href="/nominate/"
-                className="rounded-sm bg-[#CC9808] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
-              >
-                Nominate Now →
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        title="AWARD"
+        accent="CATEGORY"
+        subtitle="Recognizing excellence in metrology, measurement technology, quality assurance, and sustainable innovation."
+      >
+        <div className="flex flex-wrap gap-4">
+          <Link
+            href="/sponsor/"
+            className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#03193D]"
+          >
+            Sponsor Now
+          </Link>
+          <Link
+            href="/nominate/"
+            className="rounded-sm bg-[#CC9808] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
+          >
+            Nominate Now →
+          </Link>
+        </div>
+      </PageHero>
 
       <section className="py-16 lg:py-24">
         <Container>

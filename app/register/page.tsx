@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Container from "@/components/ui/container";
 import BackToTop from "@/components/layout/BackToTop";
+import PageHero from "@/components/layout/PageHero";
 import PartnersSection from "@/components/home/PartnersSection";
 import { Toaster } from "react-hot-toast";
 
@@ -66,22 +67,12 @@ function RegisterPageContent() {
     <>
       <Toaster position="top-right" />
 
+      <PageHero title={hero.title} accent={hero.accent} subtitle={hero.subtitle} />
+
       <section className="bg-white pt-0 lg:pt-0 pb-20">
         <Container>
-          {/* Header */}
-          <div className="text-center mb-10">
-            <br /><br />
-            <p className="text-[#CC9808] font-sans text-[14px] font-semibold uppercase tracking-[1.5px]">
-              INDIAMET Expo 2026
-            </p>
-            <h1 className="font-bebas font-bold text-[38px] lg:text-[48px] leading-[1.15] tracking-[1px] uppercase text-[#03193D] mt-2">
-              {hero.title}
-            </h1>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto mt-4">{hero.subtitle}</p>
-          </div>
-
           {/* Tab Navigation */}
-          <div className="max-w-3xl mx-auto mb-12">
+          <div className="max-w-3xl mx-auto mb-12 mt-10">
             <RegistrationTabs activeTab={activeTab} />
           </div>
 

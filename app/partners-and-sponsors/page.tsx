@@ -2,6 +2,7 @@
 'use client';
 
 import BackToTop from '@/components/layout/BackToTop';
+import PageHero from '@/components/layout/PageHero';
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/container';
@@ -52,6 +53,11 @@ export default function PartnersSponsorsPage() {
   return (
     <div className="page-spacing-wrapper">
       <div className="lg:pt-0">
+        <PageHero
+          title="PARTNERS &"
+          accent="SPONSORS"
+          subtitle="Meet the organisations supporting INDIAMET Expo and helping connect India's precision manufacturing community."
+        />
 
         {/* Event Partners Section */}
         <section className="py-16 lg:py-20">

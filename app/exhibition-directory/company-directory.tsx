@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Search, Loader2, X, Check } from 'lucide-react';
+import { Search, Loader2, X } from 'lucide-react';
 import BackToTop from '@/components/layout/BackToTop';
 import Container from '@/components/ui/container';
 import CompanyGrid from './company-grid';
 import { fetchExhibitionCompanies, ExhibitionCompany, generateSlug } from '@/lib/api/exhibitorClient';
+import PageHero from '@/components/layout/PageHero';
 
 export default function CompanyDirectory() {
   const router = useRouter();
@@ -94,48 +95,18 @@ export default function CompanyDirectory() {
 
   return (
     <div className="intro-animation min-h-screen bg-white font-sans">
-      <section className="relative min-h-[50vh] overflow-hidden sm:min-h-[60vh] lg:min-h-[70vh]">
-        <div
-          className="absolute inset-0 scale-110 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://rubber-tyre.com.vn/wp-content/uploads/2025/07/CTHE0129-min-scaled.webp')",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-
-        <Container className="relative z-10 flex min-h-[50vh] items-center py-12 sm:min-h-[60vh] sm:py-16 lg:min-h-[70vh] lg:py-20">
-          <div className="max-w-4xl text-white">
-            <h1 className="font-bebas text-4xl uppercase leading-none tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-              Exhibition <span className="text-[#CC9808]">Directory</span>
-            </h1>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/90 sm:text-base lg:text-lg">
-              Explore the leading companies and innovators in tyre manufacturing, rubber compounds,
-              machinery, testing, and sustainable solutions exhibiting at India Tyre Show 2027.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-5 text-sm text-white/90 sm:text-base">
-              <span className="flex items-center gap-2">
-                <Check className="h-5 w-5 shrink-0 text-[#CC9808]" />
-                150+ Exhibitors
-              </span>
-              <span className="flex items-center gap-2">
-                <Check className="h-5 w-5 shrink-0 text-[#CC9808]" />
-                12+ Countries
-              </span>
-            </div>
-
-            <div className="mt-8">
-              <Link
-                href="/exhibiting-enquiry/"
-                className="inline-block rounded-sm bg-[#CC9808] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
-              >
-                Exhibit at India Tyre Show 2027 →
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        title="EXHIBITOR"
+        accent="LIST"
+        subtitle="Explore participating companies and innovators exhibiting at INDIAMET Expo."
+      >
+        <Link
+          href="/exhibiting-enquiry/"
+          className="inline-block rounded-sm bg-[#CC9808] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
+        >
+          Exhibit at INDIAMET Expo →
+        </Link>
+      </PageHero>
 
       {error && (
         <div className="mx-auto max-w-7xl px-4 pt-6">

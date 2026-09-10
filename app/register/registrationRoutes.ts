@@ -25,26 +25,30 @@ export const TAB_TO_LEGACY_PATH: Record<RegistrationTab, string> = {
 
 export const REGISTRATION_HERO: Record<
     RegistrationTab,
-    { title: string; subtitle: string }
+    { title: string; accent?: string; subtitle: string }
 > = {
     enquiry: {
-        title: 'Register to Visit',
+        title: 'REGISTER TO',
+        accent: 'VISIT',
         subtitle:
-            "Register now to access Southeast Asia's premier tyre manufacturing exhibition.",
+            "Register now to access India's premier metrology and precision manufacturing exhibition.",
     },
     exhibitor: {
-        title: 'Enquiry to Exhibit',
+        title: 'BECOME AN',
+        accent: 'EXHIBITOR',
         subtitle:
-            'Please complete the form below and our team will contact you regarding INDIAMET Expo 2026 exhibiting opportunities.',
+            'Please complete the form below and our team will contact you regarding INDIAMET Expo exhibiting opportunities.',
     },
     sponsor: {
-        title: 'Become a Partner',
+        title: 'BECOME A',
+        accent: 'SPONSOR',
         subtitle:
-            'Partner with INDIAMET Expo 2026 and put your brand in front of 8,500+ professionals.',
+            'Partner with INDIAMET Expo and put your brand in front of industry professionals.',
     },
     brochure: {
-        title: 'Browse Through Your Event Brochure',
-        subtitle: 'Almost there, your brochure is waiting for you to download',
+        title: 'DOWNLOAD',
+        accent: 'BROCHURE',
+        subtitle: 'Almost there — your event brochure is waiting for you to download.',
     },
 };
 

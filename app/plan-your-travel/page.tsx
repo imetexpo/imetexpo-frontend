@@ -7,6 +7,7 @@ import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
+import PageHero from "@/components/layout/PageHero";
 
 export default function PlanYourTravelPage() {
   const [loading, setLoading] = useState(true);
@@ -264,31 +265,11 @@ export default function PlanYourTravelPage() {
   return (
     <div className="intro-animation">
       <div className="page-spacing-wrapper lg:pt-0">
-        {/* Main Heading */}
-        <div className="animated-block">
-          <div className="animated-block-target">
-            <Container className="py-10">
-              <div className="mb-5 flex flex-col justify-between gap-6 lg:flex-row lg:items-start">
-                <div className="lg:w-3/4">
-                  <h1 className="font-bebas text-5xl uppercase text-[#03193D] md:text-6xl lg:text-7xl">
-                    Plan Your Visit to Pune{" "}
-                    <span className="text-[#CC9808]">
-                      INDIAMET 2027
-                    </span>
-                  </h1>
-
-                  <p className="mt-5 font-sans text-lg leading-relaxed text-gray-700">
-                    Whether you are exhibiting, visiting, speaking, or
-                    networking, make the most of your INDIAMET 2027 experience
-                    in Pune. Explore travel information, exhibitor resources,
-                    visitor guidelines, venue details, and accommodation
-                    options to plan your visit with ease.
-                  </p>
-                </div>
-              </div>
-            </Container>
-          </div>
-        </div>
+        <PageHero
+          title="PLAN YOUR"
+          accent="TRAVEL"
+          subtitle="Whether you are exhibiting, visiting, speaking, or networking, make the most of your INDIAMET 2027 experience in Pune."
+        />
 
         {/* Travel Information Tabs */}
         <div className="animated-block mt-8">

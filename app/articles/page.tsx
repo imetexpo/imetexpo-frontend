@@ -7,6 +7,7 @@ import Link from "next/link";
 import { getAllArticles } from "./data";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
+import PageHero from "@/components/layout/PageHero";
 
 const articlesData = getAllArticles();
 const ITEMS_PER_PAGE = 9;
@@ -43,18 +44,14 @@ export default function ArticlesPage() {
   return (
     <div className="intro-animation font-sans">
       <div className="page-spacing-wrapper lg:pt-0">
+        <PageHero
+          title="ARTICLES AND"
+          accent="LATEST NEWS"
+          subtitle="Industry insights, exhibition updates, and the latest news from INDIAMET Expo."
+        />
         <Container>
-          <div className="border-b border-gray-250 pb-6 mb-8 mt-10">
-            <h1 className="font-bebas text-5xl sm:text-6xl text-[#03193D] uppercase tracking-wide">
-              Industry <span className="text-[#CC9808]">Insights & News</span>
-            </h1>
-            <p className="mt-2 text-sm text-gray-650 font-sans">
-              Stay up-to-date with technical breakthroughs, market trends, and updates from the tyre expo team.
-            </p>
-          </div>
-
           {/* Search Bar */}
-          <div className="mb-10 max-w-md mx-auto">
+          <div className="mb-10 mt-10 max-w-md mx-auto">
             <input
               type="text"
               placeholder="Search articles..."

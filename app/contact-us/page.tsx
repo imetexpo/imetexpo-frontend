@@ -6,6 +6,7 @@ import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import Link from "next/link";
+import PageHero from "@/components/layout/PageHero";
 
 export default function ContactUsPage() {
   const [loading, setLoading] = useState(true);
@@ -28,22 +29,17 @@ export default function ContactUsPage() {
   return (
     <div className="intro-animation font-sans">
       <div className="page-spacing-wrapper lg:pt-0 pb-16">
+        <PageHero
+          title="CONTACT"
+          accent="US"
+          subtitle="Have questions or need help with booth registration or visitor passes? Reach out to us."
+        />
 
         {/* Main Contact Section */}
         <Container>
           <div className="animated-block">
             <div className="animated-block-target">
-              
-              <div className="border-b border-gray-250 pb-6 mb-8 mt-10">
-                <h1 className="font-bebas text-5xl sm:text-6xl text-black uppercase tracking-wide">
-                  Contact <span className="text-[#CC9808]">Us</span>
-                </h1>
-                <p className="mt-2 text-sm text-gray-650 font-sans">
-                  Have questions or need help with booth registration or visitor passes? Reach out to us.
-                </p>
-              </div>
-
-              <div className="grid gap-6 lg:grid-cols-3">
+              <div className="mt-10 grid gap-6 lg:grid-cols-3">
                 {/* Organised By Card */}
                 <div className="lg:col-span-1">
                   <div className="relative flex flex-col justify-between overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 shadow-sm hover:shadow-md transition-all duration-300 h-full">

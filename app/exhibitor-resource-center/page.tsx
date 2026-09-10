@@ -6,6 +6,7 @@ import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
+import PageHero from "@/components/layout/PageHero";
 
 export default function ExhibitorResourceCenterPage() {
   const [loading, setLoading] = useState(true);
@@ -159,6 +160,11 @@ const faqItems = [
   return (
     <div className="intro-animation font-sans">
       <div className="page-spacing-wrapper lg:pt-0">
+        <PageHero
+          title="EXHIBITOR"
+          accent="RESOURCE CENTER"
+          subtitle="Guides and participation opportunities to help you get the most from INDIAMET Expo — from pre-event planning to on-site success."
+        />
 
         {/* Explore Opportunities Section */}
         <Container className="py-10">

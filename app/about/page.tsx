@@ -8,6 +8,7 @@ import PartnersSection from "@/components/home/PartnersSection";
 import SectorsSection from "@/components/home/SectorsSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
+import PageHero from "@/components/layout/PageHero";
 
 export default function AboutPage() {
   const [loading, setLoading] = useState(true);
@@ -87,19 +88,11 @@ export default function AboutPage() {
       <div className="page-spacing-wrapper">
         <div className="lg:pt-0">
 
-          {/* PAGE HEADER BANNER (Black section matching screenshot 4) */}
-          <div className="bg-[#03193D] text-white py-12 sm:py-16 md:py-20 border-b border-neutral-900">
-            <Container>
-              <div className="flex flex-col gap-2.5 max-w-4xl">
-                <h1 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase leading-none tracking-tight">
-                  ABOUT <span className="text-[#CC9808]">INDIAMET EXPO</span>
-                </h1>
-                <p className="font-sans text-sm sm:text-base md:text-lg text-neutral-450 mt-1 max-w-3xl leading-relaxed">
-                  From Measurement to Manufacturing: Powering the Future of Precision & Quality
-                </p>
-              </div>
-            </Container>
-          </div>
+          <PageHero
+            title="ABOUT"
+            accent="INDIAMET EXPO"
+            subtitle="From Measurement to Manufacturing: Powering the Future of Precision & Quality"
+          />
 
           {/* Transforming Tyre Operations Section */}
           <Container className="py-12 sm:py-16 lg:py-20">

@@ -6,6 +6,7 @@ import Link from "next/link";
 import Container from "@/components/ui/container";
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
+import PageHero from "@/components/layout/PageHero";
 
 export default function AdvertisingDetailsPage() {
   const [loading, setLoading] = useState(true);
@@ -136,23 +137,11 @@ export default function AdvertisingDetailsPage() {
   return (
     <div className="intro-animation font-sans">
       <div className="page-spacing-wrapper lg:pt-0">
-
-        {/* Header Section */}
-        <Container className="py-10">
-          <div className="animated-block">
-            <div className="animated-block-target">
-              <div className="text-center lg:text-left space-y-4">
-                <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl leading-tight text-[#03193D] uppercase">
-                  Advertising & <span className="text-[#CC9808]">Sponsorship</span>
-                </h1>
-                <p className="text-base sm:text-lg leading-relaxed text-gray-700 max-w-3xl font-sans">
-                  Maximize your brand exposure and reach key decision-makers through our comprehensive 
-                  advertising and sponsorship opportunities at INDIAMET Expo 2026.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
+        <PageHero
+          title="SPONSORSHIP"
+          accent="OPPORTUNITIES"
+          subtitle="Maximize your brand exposure and reach key decision-makers through advertising and sponsorship at INDIAMET Expo."
+        />
 
         {/* Benefits Section */}
         <Container className="py-10">

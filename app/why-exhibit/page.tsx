@@ -7,6 +7,7 @@ import PartnersSection from "@/components/home/PartnersSection";
 import SectorsSection from "@/components/home/SectorsSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
+import PageHero from "@/components/layout/PageHero";
 
 export default function WhyExhibitPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -97,15 +98,20 @@ export default function WhyExhibitPage() {
     <div className="intro-animation">
       <div className="page-spacing-wrapper">
         <div className="lg:pt-0">
+          <PageHero
+            title="WHY"
+            accent="EXHIBIT"
+            subtitle="Your gateway to precision manufacturing growth in India. Connect with manufacturers, quality professionals, and decision-makers at INDIAMET Expo."
+          />
 
           {/* Powering Progress Section */}
           <div className="animated-block">
             <div className="animated-block-target">
-              <Container>
+              <Container className="py-12 sm:py-16">
                 <div className="grid items-center gap-10 overflow-hidden lg:grid-cols-5 lg:gap-20">
                   <div className="lg:col-span-5">
                     <div className="flex flex-col gap-5">
-                      <p className="font-bold text-[#CC9808]"><br /><br /> Your Gateway to Precision Manufacturing Growth in India</p>
+                      <p className="font-bold text-[#CC9808]">Your Gateway to Precision Manufacturing Growth in India</p>
                       <h2 className="font-bebas text-6xl text-[#03193D] md:text-7xl">Powering the Future of Metrology, Measurement & Quality</h2>
                       <p className="text-lg text-gray-700">
                        As manufacturing moves toward greater precision, automation, digitalisation, and quality excellence, 

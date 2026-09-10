@@ -7,6 +7,7 @@ import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
+import PageHero from "@/components/layout/PageHero";
 
 export default function SectorsPage() {
   const [loading, setLoading] = useState(true);
@@ -151,14 +152,18 @@ export default function SectorsPage() {
 
       {/* Main Content */}
       <div className="page-spacing-wrapper lg:pt-0">
+        <PageHero
+          title="EVENT"
+          accent="SECTORS"
+          subtitle="From CMMs and optical measurement to calibration, 3D scanning, and digital quality — explore the technologies showcased at INDIAMET Expo."
+        />
 
         {/* Sectors Grid Section */}
         <div className="animated-block">
           <div className="animated-block-target">
             <Container>
               <div className="text-center lg:text-left">
-                <h2 className="font-bebas text-5xl text-[#03193D] md:text-6xl lg:text-7xl">
-                  <br />
+                <h2 className="mt-10 font-bebas text-5xl text-[#03193D] md:text-6xl lg:text-7xl">
                   Sectors Showcased at <span className="text-[#CC9808]">INDIAMET Expo</span>
                 </h2>
                 <p className="mx-auto mt-5 max-w-9xl text-lg text-gray-700 lg:mx-0">

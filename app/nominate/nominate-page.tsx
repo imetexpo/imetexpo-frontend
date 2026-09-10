@@ -5,10 +5,8 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
+import PageHero from '@/components/layout/PageHero';
 import { Field, TextInput, TextArea, Select } from '@/components/nominate/FormFields';
-
-const HERO_IMAGE =
-  'https://rubber-tyre.com.vn/wp-content/uploads/2025/07/CTHE0129-min-scaled.webp';
 
 const steps = [
   'Nominator Details',
@@ -157,24 +155,11 @@ export default function NominatePage() {
 
   return (
     <div className="intro-animation overflow-hidden bg-white font-sans">
-      <section className="relative min-h-[50vh] w-full overflow-hidden sm:min-h-[60vh] lg:min-h-[70vh]">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#03193D]/95 via-[#03193D]/80 to-[#03193D]/40" />
-        <Container className="relative z-10 flex min-h-[50vh] items-center py-12 sm:min-h-[60vh] lg:min-h-[70vh]">
-          <div className="max-w-4xl text-white">
-            <h1 className="font-bebas text-4xl uppercase leading-none tracking-tight sm:text-5xl lg:text-6xl">
-              Awards Nomination Form
-            </h1>
-            <p className="mt-4 max-w-3xl text-sm text-white/90 sm:text-base lg:text-lg">
-              Recognize. Celebrate. Inspire excellence. Nominate the best organizations and individuals
-              shaping the future of tyre manufacturing, rubber technology, and quality.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        title="AWARDS"
+        accent="NOMINATE"
+        subtitle="Recognize. Celebrate. Inspire excellence. Nominate the best organisations and individuals shaping the future of metrology and precision manufacturing."
+      />
 
       <section className="border-b border-gray-100 bg-[#FCF8F3] py-4">
         <Container>
