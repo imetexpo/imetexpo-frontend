@@ -16,7 +16,7 @@ export default function PageHero({ title, accent, subtitle, children }: PageHero
           <h1 className="font-bebas text-4xl uppercase leading-none tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             {title}
             {title && accent ? ' ' : null}
-            {accent ? <span className="text-[#CC9808]">{accent}</span> : null}
+            {accent ? <span className="text-[#ffffff]">{accent}</span> : null}
           </h1>
           {subtitle ? (
             <p className="mt-1 max-w-3xl font-sans text-sm leading-relaxed text-neutral-400 sm:text-base md:text-lg">

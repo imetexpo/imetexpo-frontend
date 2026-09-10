@@ -94,7 +94,7 @@ export default function AboutPage() {
             subtitle="From Measurement to Manufacturing: Powering the Future of Precision & Quality"
           />
 
-          {/* Transforming Tyre Operations Section */}
+          {/* Transforming Metrology Operations Section */}
           <Container className="py-12 sm:py-16 lg:py-20">
             <div className="w-full grid items-start gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
   
