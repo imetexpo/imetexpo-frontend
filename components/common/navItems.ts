@@ -65,5 +65,5 @@ export const navItems: NavItem[] = [
       { text: 'Sponsor', href: '/register?t=sponsor' },
     ],
   },
-  { title: 'Contact us', href: '/contact-us/', links: [] },
+  { title: 'Contact Us', href: '/contact-us/', links: [] },
 ];
