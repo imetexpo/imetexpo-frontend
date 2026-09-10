@@ -131,7 +131,7 @@ export default function Navbar() {
                     className="-mt-4 h-20 w-auto cursor-pointer object-contain sm:h-22"
                   />
                 </UTMLink>
-                <div className="mt-5 hidden border-l border-white/20 pl-4 sm:block">
+                <div className="mt-5 hidden pl-4 sm:block">
                   <h1 className="font-[var(--font-montserrat)] text-[18px] tracking-tight text-white leading-none">
                    22 - 24 APRIL 2027
                   </h1>
@@ -160,7 +160,7 @@ export default function Navbar() {
         </div>
 
         {/* NAV ROW */}
-        <div className="border-t border-white/10 bg-[#021533]/90 backdrop-blur-md">
+        <div className="bg-[#021533]/90 backdrop-blur-md">
           <Container className="flex items-center py-1 min-h-[44px]">
             <div className="hidden lg:flex flex-1 items-center justify-end gap-4 pr-56 xl:gap-8 xl:pr-80">
               {navItems.map((item) => (
