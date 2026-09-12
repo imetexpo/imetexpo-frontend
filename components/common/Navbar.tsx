@@ -132,7 +132,7 @@ export default function Navbar() {
     <img
       src="/ITS_logo_white.png"
       alt="IndiaMet Expo"
-      className="-mt-3 h-30 w-auto cursor-pointer object-contain sm:h-22"
+      className="-mt-7 h-30 w-auto cursor-pointer object-contain sm:h-22"
     />
   </UTMLink>
 
