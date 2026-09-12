@@ -164,8 +164,8 @@ export default function Navbar() {
 
         {/* NAV ROW */}
         <div className="bg-[#021533]/90 backdrop-blur-md">
-          <Container className="flex items-center py-1 min-h-[44px]">
-            <div className="hidden lg:flex flex-1 items-center justify-end gap-4 pr-56 xl:gap-8 xl:pr-80">
+          <Container className="flex items-right py-1 min-h-[44px]">
+            <div className="hidden lg:flex flex-1 items-center justify-end gap-4 pr-56 xl:gap-8 xl:pr-60">
               {navItems.map((item) => (
                 <div
                   key={item.title}
