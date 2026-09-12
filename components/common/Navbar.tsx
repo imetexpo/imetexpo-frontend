@@ -127,20 +127,20 @@ export default function Navbar() {
     <div className="flex items-center gap-4">
 
       {/* Logo + Subtitle */}
-      <div className="flex flex-col items-center">
-        <UTMLink href="/">
-          <img
-            src="/ITS_logo_white.png"
-            alt="IndiaMet Expo"
-            className="-mt-3 h-20 w-auto cursor-pointer object-contain sm:h-22"
-          />
-        </UTMLink>
+<div className="flex flex-col items-center">
+  <UTMLink href="/">
+    <img
+      src="/ITS_logo_white.png"
+      alt="IndiaMet Expo"
+      className="-mt-3 h-30 w-auto cursor-pointer object-contain sm:h-22"
+    />
+  </UTMLink>
 
-        METROLOGY EXHIBITION & SUMMIT
-        {/* <p className="-mt-1 whitespace-nowrap text-center font-[var(--font-montserrat)] text-[11px] font-medium leading-tight text-white sm:text-[13px]">
-          International Metrology Exhibition & Summit
-        </p> */}
-      </div>
+  {/* Subtitle below logo */}
+  <p className="mt-3 whitespace-nowrap text-center font-[var(--font-montserrat)] text-[18px] font-medium leading-none tracking-wide text-white sm:text-[18px]">
+    International Metrology Exhibition &amp; Summit
+  </p>
+</div>
 
       {/* Date + Venue */}
       <div className="mt-5 hidden pl-4 sm:block">
