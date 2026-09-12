@@ -428,7 +428,7 @@ export default function PlanYourTravelPage() {
         </div>
 
         {/* Quick Navigation */}
-        <div className="animated-block mt-20">
+        {/* <div className="animated-block mt-20">
           <div className="animated-block-target">
             <div className="border-t border-[#CC9808] bg-[#03193D] py-16 text-white">
               <Container>
@@ -460,7 +460,7 @@ export default function PlanYourTravelPage() {
               </Container>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <BackToTop />
       </div>

@@ -136,26 +136,26 @@ export default function PartnersSponsorsPage() {
         </section>
 
         {/* Quick Navigation Section */}
-        <div className="animated-block mt-20">
+        {/* <div className="animated-block mt-20">
           <div className="animated-block-target">
             <div className="border-t-8 border-[#CC9808] bg-[#03193D] py-20 text-white">
-              <Container>
+              <Container> */}
                 {/* HEADING */}
-                <h2 className="font-bebas text-6xl md:text-7xl">
+                {/* <h2 className="font-bebas text-6xl md:text-7xl">
                   Quick Navigation
-                </h2>
+                </h2> */}
 
                 {/* NAV ITEMS */}
-                <div className="mt-16 grid grid-cols-2 gap-y-10 md:grid-cols-5">
+                {/* <div className="mt-16 grid grid-cols-2 gap-y-10 md:grid-cols-5">
                   {quickLinks.map((item, idx) => (
-                    <div key={idx} className="relative flex flex-col items-center justify-center text-center">
+                    <div key={idx} className="relative flex flex-col items-center justify-center text-center"> */}
                       {/* VERTICAL DIVIDER */}
-                      {idx !== 0 && (
+                      {/* {idx !== 0 && (
                         <div className="absolute left-0 top-1/2 hidden h-16 w-px -translate-y-1/2 bg-gray-700 md:block"></div>
                       )}
-                      <Link href={item.link} className="flex flex-col items-center">
+                      <Link href={item.link} className="flex flex-col items-center"> */}
                         {/* ICON CIRCLE */}
-                        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-800 overflow-hidden">
+                        {/* <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-800 overflow-hidden">
                           <Image
                             src={item.icon}
                             alt={item.label}
@@ -163,21 +163,21 @@ export default function PartnersSponsorsPage() {
                             height={32}
                             className="object-contain"
                           />
-                        </div>
+                        </div> */}
                         {/* LABEL */}
-                        <p className="mt-4 text-sm font-semibold text-gray-300">
+                        {/* <p className="mt-4 text-sm font-semibold text-gray-300">
                           {item.label}
-                        </p>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </Container>
-            </div>
-          </div>
-        </div>
+                        </p> */}
+                      {/* </Link>
+                    </div> */}
+                  {/* ))} */}
+                {/* </div>
+              </Container> */}
+            {/* </div>
+          </div> */}
+        {/* </div> */}
 
-        <hr className="border-t-6 border-[#CC9808]" />
+        {/* <hr className="border-t-6 border-[#CC9808]" /> */}
       </div>
       <BackToTop />
     </div>

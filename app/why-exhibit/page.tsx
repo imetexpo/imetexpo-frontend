@@ -432,7 +432,7 @@ export default function WhyExhibitPage() {
             </div>
           </div> */}
 
-          <hr className="border-t-6 border-[#CC9808]" />
+          {/* <hr className="border-t-6 border-[#CC9808]" /> */}
         </div>
         <BackToTop />
       </div>

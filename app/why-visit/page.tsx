@@ -803,7 +803,7 @@ export default function WhyVisitPage() {
               QUICK NAVIGATION
           ========================================================== */}
 
-          <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
+          {/* <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
 
             <div className="animated-block-target">
 
@@ -866,7 +866,7 @@ export default function WhyVisitPage() {
 
             </div>
 
-          </div>
+          </div> */}
 
 
           {/* =========================================================

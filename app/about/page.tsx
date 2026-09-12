@@ -372,7 +372,7 @@ export default function AboutPage() {
           <PartnersSection />
 
           {/* Quick Navigation */}
-          <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
+          {/* <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
               <div className="border-t-8 border-[#CC9808] bg-[#03193D] py-12 sm:py-16 lg:py-20 text-white">
                 <Container>
@@ -403,9 +403,9 @@ export default function AboutPage() {
                 </Container>
               </div>
             </div>
-          </div>
+          </div> */}
           
-          <hr className="border-t-6 border-[#CC9808]" />
+          {/* <hr className="border-t-6 border-[#CC9808]" /> */}
         </div>
         <BackToTop/>
       </div>

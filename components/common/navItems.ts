@@ -36,8 +36,6 @@ export const navItems: NavItem[] = [
       { text: 'Why Visit', href: '/why-visit/' },
       { text: 'Visitor Pass', href: '/passes/' },
       { text: 'Event Sectors', href: '/sectors/' },
-      { text: 'Summit', href: '/summit/' },
-      { text: 'Become a Delegate', href: '/became-delegate/' },
       { text: 'Exhibitor List', href: '/exhibition-directory/' },
       { text: 'Download Brochure', href: '/register?t=brochure' },
     ],
