@@ -137,8 +137,8 @@ export default function Navbar() {
   </UTMLink>
 
   {/* Subtitle below logo */}
-  <p className="mt-3 whitespace-nowrap text-center font-[var(--font-montserrat)] text-[18px] font-medium leading-none tracking-wide text-white sm:text-[18px]">
-    International Metrology Exhibition &amp; Summit
+  <p className="mt-3 whitespace-nowrap text-center font-[var(--font-montserrat)] text-[13px] font-medium leading-none tracking-wide text-white sm:text-[14px]">
+    INTERNATIONAL METROLOGY EXHIBITION
   </p>
 </div>
 
