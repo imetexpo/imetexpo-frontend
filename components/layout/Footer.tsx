@@ -74,7 +74,11 @@ export default function Footer() {
               Exhibition Venue
             </h5>
             <p className="text-x leading-relaxed">
-              Auto Cluster Exhibition Center, Pune, India            </p>
+              <p>Auto Cluster Exhibition Centre</p>
+Plot No. C-181, Chinchwad East<p>
+Mumbai Pune Road,
+<p>Pune - 411 019 Maharashtra,
+India </p></p></p>
           </div>
         </div>
       </Container>
