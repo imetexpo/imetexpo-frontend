@@ -18,39 +18,39 @@ export default function Footer() {
               height={50}
               className="object-contain"
             />
-            <p className="text-xs text-gray-100 font-sans mt-2">
-              International Metrology Exhibiton & Summit.
+            <p className="text-x text-gray-100 font-sans mt-2">
+              Metrology Exhibiton & Summit.
             </p>
           </div>
 
           {/* Contacts */}
           <div className="space-y-6 font-sans">
             <div>
-              <h5 className="text-sm font-bold uppercase tracking-wider text-white mb-2 font-bebas">
+              <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Contacts and Support
               </h5>
               <a
                 href="mailto:pad@maxxmedia.in"
-                className="hover:text-[#CC9808] transition-colors text-sm"
+                className="hover:text-[#CC9808] transition-colors text-x"
               >
                 pad@maxxmedia.in
               </a>
             </div>
 
             <div>
-              <h5 className="text-sm font-bold uppercase tracking-wider text-white mb-2 font-bebas">
+              <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Hotline
               </h5>
-              <a href="tel:+91 9148319993" className="hover:text-[#CC9808] transition-colors text-sm">
+              <a href="tel:+91 9148319993" className="hover:text-[#CC9808] transition-colors text-x">
                 +91- 91483 19993
               </a>
             </div>
 
             <div>
-              <h5 className="text-sm font-bold uppercase tracking-wider text-white mb-2 font-bebas">
+              <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Visitor Support
               </h5>
-              <a href="tel:++91- 63649 36468" className="hover:text-[#CC9808] transition-colors text-sm">
+              <a href="tel:++91- 63649 36468" className="hover:text-[#CC9808] transition-colors text-x">
                 +91- 63649 36468
               </a>
             </div>
@@ -58,10 +58,10 @@ export default function Footer() {
 
           {/* Opening Hours */}
           <div className="font-sans">
-            <h5 className="text-sm font-bold uppercase tracking-wider text-white mb-3 font-bebas">
+            <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-3 font-bebas">
               Opening Hours
             </h5>
-            <div className="space-y-1.5 text-sm">
+            <div className="space-y-1.5 text-x">
               <p>22 April 2027: 10:00 - 18:00</p>
               <p>23 April 2027: 10:00 - 18:00</p>
               <p>24 April 2027: 10:00 - 16:00</p>
@@ -70,10 +70,10 @@ export default function Footer() {
 
           {/* Venue */}
           <div className="font-sans">
-            <h5 className="text-sm font-bold uppercase tracking-wider text-white mb-3 font-bebas">
+            <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-3 font-bebas">
               Exhibition Venue
             </h5>
-            <p className="text-sm leading-relaxed">
+            <p className="text-x leading-relaxed">
               Auto Cluster Exhibition Center, Pune, India            </p>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             {/* Organised By */}
             <div className="flex min-w-0 flex-wrap items-center gap-3">
-              <span className="text-[20px] uppercase tracking-wider text-neutral-100 font-bold">Organised By</span>
+              <span className="text-[16px] uppercase tracking-wider text-neutral-100 font-bold">Organised By</span>
               <Image
                 src="/maxx_logo (1).png"
                 alt="ITE"
@@ -99,7 +99,7 @@ export default function Footer() {
         
           </div>
 
-          <div className="mt-6 flex flex-col gap-4 border-t border-neutral-900 pt-6 text-[18px] text-neutral-500 md:flex-row md:justify-between md:items-center">
+          <div className="mt-6 flex flex-col gap-4 border-t border-neutral-900 pt-6 text-[16px] text-neutral-500 md:flex-row md:justify-between md:items-center">
             <p>© IndiaMet 2027. All Rights Reserved.</p>
             <div className="flex items-center gap-3 flex-wrap">
               <Link href="#" className="hover:text-white transition-colors">Terms of Use</Link>
