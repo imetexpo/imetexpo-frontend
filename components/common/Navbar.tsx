@@ -132,11 +132,11 @@ export default function Navbar() {
                   />
                 </UTMLink>
                 <div className="mt-5 hidden pl-4 sm:block">
-                  <h1 className="font-[var(--font-montserrat)] text-[18px] tracking-tight text-white leading-none">
+                                   <h1 className="font-[var(--font-montserrat)] font-bold text-[22px] tracking-tight text-white leading-none">
                    22 - 24 APRIL 2027
                   </h1>
                   <p className="font-[var(--font-montserrat)] text-[18px] text-white-300 mt-1">
-                    Auto Cluster Exhibition Center • Pune, India
+                    Auto Cluster Exhibition Center <p>Pune, India</p>
                   </p>
                 </div>
               </div>
