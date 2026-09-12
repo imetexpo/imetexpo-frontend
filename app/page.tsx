@@ -20,14 +20,14 @@ import { getLatestArticles } from '@/app/articles/data'; // Import from your dat
 
 // Sample data - replace with actual data from API
 const countriesData = [
-  { name: 'India', flag: 'https://flags.restcountries.com/v5/w320/in.png' },
-  { name: 'Germany', flag: 'https://flags.restcountries.com/v5/w320/de.png' },
-  { name: 'China', flag: 'https://flags.restcountries.com/v5/w320/cn.png' },
-  { name: 'Japan', flag: 'https://flags.restcountries.com/v5/w320/jp.png' },
-  { name: 'USA', flag: 'https://flags.restcountries.com/v5/w320/us.png' },
-  { name: 'South Korea', flag: 'https://flags.restcountries.com/v5/w320/kr.png' },
-  { name: 'Thailand', flag: 'https://flags.restcountries.com/v5/w320/th.png' },
-  { name: 'Vietnam', flag: 'https://flags.restcountries.com/v5/w320/vn.png' },
+  { name: 'India', flag: '/images/in.png' },
+  { name: 'Germany', flag: '/images/de.png' },
+  { name: 'China', flag: '/images/cn.png' },
+  { name: 'Japan', flag: '/images/jp.png' },
+  { name: 'USA', flag: '/images/us.png' },
+  { name: 'South Korea', flag: '/images/kr.png' },
+  { name: 'Thailand', flag: '/images/th.png' },
+  { name: 'Vietnam', flag: '/images/vn.png' },
 ];
 
 
