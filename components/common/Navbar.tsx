@@ -120,43 +120,46 @@ export default function Navbar() {
             </Container>
           </div>
 
-          {/* Logo + buttons */}
-          <div className="w-full bg-[#03193D]">
-            <Container className="flex items-center justify-between py-3.5">
-              <div className="flex items-center gap-4">
-                <UTMLink href="/">
-                  <img
-                    src="/ITS_logo_white.png"
-                    alt="IndiaMet Expo"
-                    className="-mt-4 h-20 w-auto cursor-pointer object-contain sm:h-22"
-                  />
-                </UTMLink>
-                <div className="mt-5 hidden pl-4 sm:block">
-                                   <h1 className="font-[var(--font-montserrat)] font-bold text-[22px] tracking-tight text-white leading-none">
-                   22 - 24 APRIL 2027
-                  </h1>
-                  <p className="font-[var(--font-montserrat)] text-[18px] text-white-300 mt-1">
-                    Auto Cluster Exhibition Center <p>Pune, India</p>
-                  </p>
-                </div>
-              </div>
+         {/* Logo + buttons */}
+<div className="w-full bg-[#03193D]">
+  <Container className="flex items-center justify-between py-3.5">
+    
+    <div className="flex items-center gap-4">
 
-              <div className="hidden sm:flex gap-3">
-                <UTMLink
-                  href="/exhibiting-enquiry/"
-                  className="bg-[#CC9808] hover:bg-[#FFD154] text-white text-center px-6 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm"
-                >
-                  Exhibit
-                </UTMLink>
-                <UTMLink
-                  href="/visitor-registration/"
-                  className="bg-[#CC9808] hover:bg-[#FFD154] text-white text-center px-6 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm"
-                >
-                  Register
-                </UTMLink>
-              </div>
-            </Container>
-          </div>
+      {/* Logo + Subtitle */}
+      <div className="flex flex-col items-center">
+        <UTMLink href="/">
+          <img
+            src="/ITS_logo_white.png"
+            alt="IndiaMet Expo"
+            className="-mt-3 h-20 w-auto cursor-pointer object-contain sm:h-22"
+          />
+        </UTMLink>
+
+        METROLOGY EXHIBITION & SUMMIT
+        {/* <p className="-mt-1 whitespace-nowrap text-center font-[var(--font-montserrat)] text-[11px] font-medium leading-tight text-white sm:text-[13px]">
+          International Metrology Exhibition & Summit
+        </p> */}
+      </div>
+
+      {/* Date + Venue */}
+      <div className="mt-5 hidden pl-4 sm:block">
+        <h1 className="font-[var(--font-montserrat)] text-[22px] font-bold leading-none tracking-tight text-white">
+          22 - 24 APRIL 2027
+        </h1>
+
+        <p className="mt-1 font-[var(--font-montserrat)] text-[18px] text-white">
+          Auto Cluster Exhibition Center
+        </p>
+
+        <p className="font-[var(--font-montserrat)] text-[18px] text-white">
+          Pune, India
+        </p>
+      </div>
+
+    </div>
+  </Container>
+</div>
         </div>
 
         {/* NAV ROW */}
