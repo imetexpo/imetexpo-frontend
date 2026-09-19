@@ -18,7 +18,7 @@ export default function AdvertisingDetailsPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#03193D]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#0E2044]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -147,10 +147,10 @@ export default function AdvertisingDetailsPage() {
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl text-[#03193D] uppercase">
+              <h2 className="font-bebas text-4xl sm:text-5xl text-[#0E2044] uppercase">
                 By leveraging these promotional options, you can:
               </h2>
-              <p className="mt-2 text-sm font-bold text-[#CC9808] uppercase tracking-wider">
+              <p className="mt-2 text-sm font-bold text-[#B89646] uppercase tracking-wider">
                 Please review the requirements carefully to ensure timely submission.
               </p>
               
@@ -166,7 +166,7 @@ export default function AdvertisingDetailsPage() {
                         className="h-full w-full"
                       />
                     </div>
-                    <h3 className="mt-5 font-bebas text-2xl text-[#CC9808] uppercase font-bold">{benefit.title}</h3>
+                    <h3 className="mt-5 font-bebas text-2xl text-[#B89646] uppercase font-bold">{benefit.title}</h3>
                     <p className="mt-3 text-sm text-gray-650 leading-relaxed">{benefit.description}</p>
                   </div>
                 ))}
@@ -179,8 +179,8 @@ export default function AdvertisingDetailsPage() {
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl text-[#03193D] uppercase">
-                Sponsorship <span className="text-[#CC9808]"> Options</span>
+              <h2 className="font-bebas text-4xl sm:text-5xl text-[#0E2044] uppercase">
+                Sponsorship <span className="text-[#B89646]"> Options</span>
               </h2>
               <div className="mt-8 space-y-4">
                 {sponsorshipTabs.map((item, idx) => (
@@ -201,7 +201,7 @@ export default function AdvertisingDetailsPage() {
                     
                     {/* Title & Description */}
                     <div className="flex-1 text-center lg:text-left space-y-2">
-                      <h4 className="font-bebas text-2xl font-bold text-[#03193D] uppercase tracking-wide">
+                      <h4 className="font-bebas text-2xl font-bold text-[#0E2044] uppercase tracking-wide">
                         {item.title}
                       </h4>
                       <p className="text-sm text-gray-600 leading-relaxed">
@@ -212,7 +212,7 @@ export default function AdvertisingDetailsPage() {
                     {/* Button */}
                     <div className="shrink-0 mt-4 lg:mt-0">
                       <Link href={item.buttonLink}>
-                        <button className="bg-[#CC9808] hover:bg-[#03193D] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#B89646] hover:bg-[#0E2044] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           {item.buttonText}
                         </button>
                       </Link>

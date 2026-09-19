@@ -4,7 +4,7 @@ import Container from '../ui/container';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#03193D] text-gray-400 border-t border-white/10">
+    <footer className="bg-[#0E2044] text-gray-400 border-t border-white/10">
       {/* Top Section */}
       <Container className="py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 xl:gap-20">
@@ -31,7 +31,7 @@ export default function Footer() {
               </h5>
               <a
                 href="mailto:pad@maxxmedia.in"
-                className="hover:text-[#CC9808] transition-colors text-x"
+                className="hover:text-[#B89646] transition-colors text-x"
               >
                 pad@maxxmedia.in
               </a>
@@ -41,7 +41,7 @@ export default function Footer() {
               <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Hotline
               </h5>
-              <a href="tel:+91 9148319993" className="hover:text-[#CC9808] transition-colors text-x">
+              <a href="tel:+91 9148319993" className="hover:text-[#B89646] transition-colors text-x">
                 +91- 91483 19993
               </a>
             </div>
@@ -50,7 +50,7 @@ export default function Footer() {
               <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Visitor Support
               </h5>
-              <a href="tel:++91- 63649 36468" className="hover:text-[#CC9808] transition-colors text-x">
+              <a href="tel:++91- 63649 36468" className="hover:text-[#B89646] transition-colors text-x">
                 +91- 63649 36468
               </a>
             </div>

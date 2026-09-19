@@ -39,13 +39,13 @@ function HeroSection() {
       <div className="flex flex-col gap-3 sm:flex-row">
         <Link
           href="/became-delegate/"
-          className="rounded-sm bg-[#CC9808] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154] hover:text-[#03193D]"
+          className="rounded-sm bg-[#B89646] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154] hover:text-[#0E2044]"
         >
           Become a Delegate
         </Link>
         <Link
           href="/become-partner/"
-          className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#03193D]"
+          className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#0E2044]"
         >
           Become a Partner
         </Link>
@@ -57,8 +57,8 @@ function HeroSection() {
 function AboutSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#03193D] sm:text-5xl lg:text-6xl">
-        About the <span className="text-[#CC9808]">Summit</span>
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+        About the <span className="text-[#B89646]">Summit</span>
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
         {aboutStats.map((item, index) => {
@@ -68,11 +68,11 @@ function AboutSection() {
               key={item.title}
               className="flex gap-4 rounded-sm border border-gray-100 bg-[#FCF8F3] p-5 shadow-sm"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-white text-[#CC9808]">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-white text-[#B89646]">
                 <Icon className="h-6 w-6" />
               </div>
               <p className="text-sm leading-relaxed text-gray-700">
-                <strong className="text-[#03193D]">{item.title}</strong> {item.body}
+                <strong className="text-[#0E2044]">{item.title}</strong> {item.body}
               </p>
             </div>
           );
@@ -107,8 +107,8 @@ function SpeakersSection() {
   return (
     <section>
       <div className="mb-8 max-w-3xl">
-        <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#03193D] sm:text-5xl lg:text-6xl">
-          Top Speakers <span className="text-[#CC9808]">India Tyre Show Summit 2027</span>
+        <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+          Top Speakers <span className="text-[#B89646]">India Tyre Show Summit 2027</span>
         </h2>
         <p className="mt-3 text-sm text-gray-600 sm:text-base">
           The leading voices in tyre manufacturing, rubber technology and quality engineering
@@ -137,16 +137,16 @@ function SpeakersSection() {
                 alt={speaker.name}
                 className="h-full w-full object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#03193D] to-transparent p-4 text-white">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-[#CC9808]">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0E2044] to-transparent p-4 text-white">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-[#B89646]">
                   {speaker.session}
                 </p>
                 <p className="text-[10px] text-white/80">{speaker.time}</p>
               </div>
             </div>
             <div className="p-4">
-              <h3 className="font-bebas text-2xl uppercase text-[#03193D]">{speaker.name}</h3>
-              <p className="text-xs font-bold uppercase tracking-wide text-[#CC9808]">
+              <h3 className="font-bebas text-2xl uppercase text-[#0E2044]">{speaker.name}</h3>
+              <p className="text-xs font-bold uppercase tracking-wide text-[#B89646]">
                 {speaker.title}
               </p>
               <p className="mt-1 text-xs text-gray-600">{speaker.company}</p>
@@ -164,7 +164,7 @@ function ProgrammeSection() {
 
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#03193D] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
         Driving Precision, Quality &amp; Smart Manufacturing
       </h2>
       <div className="mb-10 flex flex-wrap gap-3">
@@ -175,8 +175,8 @@ function ProgrammeSection() {
             onClick={() => setActiveDay(index)}
             className={`rounded-sm px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
               activeDay === index
-                ? 'bg-[#CC9808] text-white'
-                : 'bg-[#03193D] text-white hover:bg-[#CC9808]'
+                ? 'bg-[#B89646] text-white'
+                : 'bg-[#0E2044] text-white hover:bg-[#B89646]'
             }`}
           >
             {day.date}
@@ -184,20 +184,20 @@ function ProgrammeSection() {
         ))}
       </div>
       <div className="border-t border-gray-200 pt-8">
-        <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#CC9808]">
+        <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#B89646]">
           {selectedDay.description}
         </p>
-        <p className="mb-10 text-lg font-semibold text-[#03193D] sm:text-xl">
+        <p className="mb-10 text-lg font-semibold text-[#0E2044] sm:text-xl">
           {selectedDay.day} · {selectedDay.date}
         </p>
         <div className="space-y-10">
           {selectedDay.sessions.map((session) => (
             <div key={`${session.time}-${session.title}`} className="grid gap-4 md:grid-cols-[160px_1fr]">
-              <div className="text-sm font-bold uppercase tracking-wider text-[#CC9808]">
+              <div className="text-sm font-bold uppercase tracking-wider text-[#B89646]">
                 {session.time}
               </div>
               <div>
-                <h3 className="text-lg font-bold text-[#03193D] sm:text-xl">{session.title}</h3>
+                <h3 className="text-lg font-bold text-[#0E2044] sm:text-xl">{session.title}</h3>
                 {session.description && (
                   <p className="mt-2 text-sm text-gray-500">{session.description}</p>
                 )}
@@ -214,7 +214,7 @@ function ProgrammeSection() {
                       .filter((s) => s.name)
                       .map((speaker) => (
                         <p key={speaker.name} className="text-sm text-gray-600">
-                          <span className="font-semibold text-[#CC9808]">{speaker.name}</span>
+                          <span className="font-semibold text-[#B89646]">{speaker.name}</span>
                           {speaker.position ? ` · ${speaker.position}` : ''}
                         </p>
                       ))}
@@ -232,19 +232,19 @@ function ProgrammeSection() {
 function WhyAttendSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#03193D] sm:text-5xl lg:text-6xl">
-        Why Attend <span className="text-[#CC9808]">India Tyre Show Summit 2027</span>
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+        Why Attend <span className="text-[#B89646]">India Tyre Show Summit 2027</span>
       </h2>
       <div className="space-y-6">
         {whyAttend.map((item, index) => {
           const Icon = whyIcons[index];
           return (
             <div key={item.title} className="flex gap-4 border-b border-gray-100 pb-6 last:border-0">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-[#FCF8F3] text-[#CC9808]">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-[#FCF8F3] text-[#B89646]">
                 <Icon className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-[#03193D] sm:text-lg">{item.title}</h3>
+                <h3 className="text-base font-bold text-[#0E2044] sm:text-lg">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.description}</p>
               </div>
             </div>
@@ -258,8 +258,8 @@ function WhyAttendSection() {
 function BecomeDelegateSection() {
   return (
     <section>
-      <h2 className="mb-2 font-bebas text-4xl uppercase tracking-tight text-[#03193D] sm:text-5xl lg:text-6xl">
-        Become a <span className="text-[#CC9808]">Delegate</span>
+      <h2 className="mb-2 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+        Become a <span className="text-[#B89646]">Delegate</span>
       </h2>
       <p className="mb-10 text-sm font-semibold text-gray-600">Prices include GST</p>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -268,19 +268,19 @@ function BecomeDelegateSection() {
             key={pkg.id}
             className="flex min-h-[420px] flex-col rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 md:p-8"
           >
-            <h3 className="font-bebas text-3xl uppercase text-[#03193D]">{pkg.title}</h3>
+            <h3 className="font-bebas text-3xl uppercase text-[#0E2044]">{pkg.title}</h3>
             <ul className="mt-5 flex-1 space-y-2">
               {pkg.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2 text-sm text-gray-700">
-                  <span className="mt-0.5 text-[#CC9808]">✓</span>
+                  <span className="mt-0.5 text-[#B89646]">✓</span>
                   <span>{feature}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-6 font-bebas text-4xl text-[#CC9808]">{pkg.price}</p>
+            <p className="mt-6 font-bebas text-4xl text-[#B89646]">{pkg.price}</p>
             <Link
               href="/became-delegate/"
-              className="mt-4 inline-flex items-center justify-center rounded-sm bg-[#CC9808] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#03193D]"
+              className="mt-4 inline-flex items-center justify-center rounded-sm bg-[#B89646] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#0E2044]"
             >
               Register
             </Link>
@@ -294,15 +294,15 @@ function BecomeDelegateSection() {
 function VenueSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#03193D] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
         Venue
       </h2>
       <div className="mb-8 flex items-start gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-[#FCF8F3] text-[#CC9808]">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-[#FCF8F3] text-[#B89646]">
           <MapPin className="h-6 w-6" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-[#03193D] sm:text-2xl">
+          <h3 className="text-xl font-bold text-[#0E2044] sm:text-2xl">
             Auto Cluster Exhibition Centre
           </h3>
           <p className="mt-1 text-sm text-gray-600 sm:text-base">
@@ -329,7 +329,7 @@ function VenueSection() {
 function OrganizerSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#03193D] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
         Organizer
       </h2>
       <div className="space-y-6 text-sm leading-relaxed text-gray-700 sm:text-base lg:text-lg">
@@ -353,20 +353,20 @@ function OrganizerSection() {
 function ContactsSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#03193D] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
         Contacts
       </h2>
       <div className="max-w-xl rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 md:p-8">
-        <p className="text-sm font-bold text-[#03193D] sm:text-base">
+        <p className="text-sm font-bold text-[#0E2044] sm:text-base">
           For participation and partnership inquiries:
         </p>
-        <h3 className="mt-6 font-bebas text-3xl uppercase text-[#03193D]">Padmanabham R</h3>
-        <p className="text-sm text-[#CC9808]">Summit Director</p>
-        <div className="mt-4 space-y-1 text-sm font-semibold text-[#03193D]">
-          <a href="mailto:pad@maxxmedia.in" className="block hover:text-[#CC9808]">
+        <h3 className="mt-6 font-bebas text-3xl uppercase text-[#0E2044]">Padmanabham R</h3>
+        <p className="text-sm text-[#B89646]">Summit Director</p>
+        <div className="mt-4 space-y-1 text-sm font-semibold text-[#0E2044]">
+          <a href="mailto:pad@maxxmedia.in" className="block hover:text-[#B89646]">
             pad@maxxmedia.in
           </a>
-          <a href="tel:+919148319993" className="block hover:text-[#CC9808]">
+          <a href="tel:+919148319993" className="block hover:text-[#B89646]">
             +91 91483 19993
           </a>
         </div>
@@ -380,7 +380,7 @@ function FAQSection() {
 
   return (
     <section>
-      <h2 className="mb-8 border-b border-gray-200 pb-6 font-bebas text-4xl uppercase tracking-tight text-[#03193D] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 border-b border-gray-200 pb-6 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
         FAQ
       </h2>
       <div className="space-y-2">
@@ -394,10 +394,10 @@ function FAQSection() {
                 className="flex w-full items-center justify-between py-5 text-left"
                 aria-expanded={isOpen}
               >
-                <h3 className="pr-4 text-base font-semibold text-[#03193D] sm:text-lg">
+                <h3 className="pr-4 text-base font-semibold text-[#0E2044] sm:text-lg">
                   {item.question}
                 </h3>
-                <span className={`shrink-0 text-[#CC9808] transition-transform ${isOpen ? 'rotate-180' : ''}`}>
+                <span className={`shrink-0 text-[#B89646] transition-transform ${isOpen ? 'rotate-180' : ''}`}>
                   ▼
                 </span>
               </button>

@@ -30,7 +30,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-[-1] bg-gradient-to-t from-black via-black/50 to-transparent" />
 
       {/* Slideshow background */}
-      <div className="absolute inset-0 z-[-2] size-full bg-[#03193D]">
+      <div className="absolute inset-0 z-[-2] size-full bg-[#0E2044]">
         <div className="relative h-full w-full overflow-hidden">
           {slides.map((slide, index) => (
             <div
@@ -67,7 +67,7 @@ export default function HeroSection() {
           >
             <br />
             <span className="text-white">INDIAMET </span>
-            <span className="text-[#CC9808]">2027</span>
+            <span className="text-[#B89646]">2027</span>
           </h1>
 
           {/* BOTTOM ROW — stacks on mobile, side-by-side on lg+ */}
@@ -84,7 +84,7 @@ export default function HeroSection() {
             <div className="flex-shrink-0 w-full lg:w-auto">
               <Link
                 href="/exhibiting-enquiry/"
-                className="inline-block w-full lg:w-auto text-center bg-[#CC9808] hover:bg-[#FFD154] text-white px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm shadow-lg hover:scale-105"
+                className="inline-block w-full lg:w-auto text-center bg-[#B89646] hover:bg-[#FFD154] text-white px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm shadow-lg hover:scale-105"
               >
                 Exhibit
               </Link>

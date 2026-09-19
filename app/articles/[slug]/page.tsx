@@ -46,13 +46,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <article className="max-w-4xl mx-auto">
             {/* Date */}
             <div className="mb-4 text-center">
-              <time className="text-xs text-[#CC9808] font-bold tracking-wider uppercase">
+              <time className="text-xs text-[#B89646] font-bold tracking-wider uppercase">
                 {formatDate(article.publishedDate)}
               </time>
             </div>
 
             {/* Title */}
-            <h1 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#03193D] uppercase text-center leading-tight mb-8">
+            <h1 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#0E2044] uppercase text-center leading-tight mb-8">
               {article.title}
             </h1>
 
@@ -70,11 +70,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
             {/* Article Content */}
             <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none mx-auto
-              prose-headings:font-bebas prose-headings:text-[#03193D] prose-headings:uppercase
-              prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:text-[#CC9808]
+              prose-headings:font-bebas prose-headings:text-[#0E2044] prose-headings:uppercase
+              prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:text-[#B89646]
               prose-p:text-sm sm:prose-p:text-base prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-5
-              prose-strong:text-[#03193D] prose-strong:font-bold
-              prose-a:text-[#CC9808] prose-a:no-underline hover:prose-a:underline
+              prose-strong:text-[#0E2044] prose-strong:font-bold
+              prose-a:text-[#B89646] prose-a:no-underline hover:prose-a:underline
               prose-img:rounded-sm prose-img:shadow-sm prose-img:my-6
               prose-ul:list-disc prose-ul:pl-5 prose-ul:my-4
               prose-li:text-sm sm:prose-li:text-base prose-li:mb-1
@@ -96,7 +96,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <div className="text-center">
               <Link
                 href="/articles"
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#CC9808] hover:bg-[#03193D] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm shadow-sm"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#B89646] hover:bg-[#0E2044] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm shadow-sm"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -108,7 +108,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             {/* Related Articles */}
             {relatedArticles.length > 0 && (
               <div className="mt-16 pt-8 border-t border-gray-200">
-                <h3 className="font-bebas text-3xl text-[#03193D] uppercase mb-8 text-center font-bold">
+                <h3 className="font-bebas text-3xl text-[#0E2044] uppercase mb-8 text-center font-bold">
                   You Might Also Like
                 </h3>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -128,10 +128,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                         />
                       </div>
                       <div className="p-5 font-sans space-y-2">
-                        <time className="text-[10px] text-[#CC9808] font-bold uppercase tracking-wider">
+                        <time className="text-[10px] text-[#B89646] font-bold uppercase tracking-wider">
                           {formatDate(relatedArticle.publishedDate)}
                         </time>
-                        <h4 className="font-bebas text-xl text-[#03193D] uppercase line-clamp-2 group-hover:text-[#CC9808] transition-colors duration-300 font-bold">
+                        <h4 className="font-bebas text-xl text-[#0E2044] uppercase line-clamp-2 group-hover:text-[#B89646] transition-colors duration-300 font-bold">
                           {relatedArticle.title}
                         </h4>
                       </div>

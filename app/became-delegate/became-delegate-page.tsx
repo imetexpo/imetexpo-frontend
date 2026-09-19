@@ -73,7 +73,7 @@ export default function BecameDelegatePage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
             <div>
-              <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#03193D] lg:text-5xl">
+              <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
                 Choose Your Delegate Package
               </h2>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-700">
@@ -95,23 +95,23 @@ export default function BecameDelegatePage() {
                       onClick={() => setSelectedPackage(packageKey)}
                       className={`flex flex-col rounded-sm border p-4 text-left transition-all ${
                         isSelected
-                          ? 'border-[#CC9808] bg-[#CC9808]/5 ring-1 ring-[#CC9808]'
-                          : 'border-gray-100 bg-[#FCF8F3] hover:border-[#CC9808]/50'
+                          ? 'border-[#B89646] bg-[#B89646]/5 ring-1 ring-[#B89646]'
+                          : 'border-gray-100 bg-[#FCF8F3] hover:border-[#B89646]/50'
                       }`}
                     >
-                      <h3 className="mb-2 font-bebas text-2xl uppercase text-[#03193D]">
+                      <h3 className="mb-2 font-bebas text-2xl uppercase text-[#0E2044]">
                         {pkg.title}
                       </h3>
                       <ul className="mb-4 flex-1 space-y-2">
                         {pkg.features.map((feature) => (
                           <li key={feature} className="flex items-start text-sm text-gray-700">
-                            <span className="mt-0.5 mr-2 text-[#CC9808]">✓</span>
+                            <span className="mt-0.5 mr-2 text-[#B89646]">✓</span>
                             <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
                       <div className="mt-auto border-t border-gray-200 pt-3">
-                        <div className="font-bebas text-2xl text-[#CC9808]">{pkg.price}</div>
+                        <div className="font-bebas text-2xl text-[#B89646]">{pkg.price}</div>
                       </div>
                     </button>
                   );
@@ -120,7 +120,7 @@ export default function BecameDelegatePage() {
 
               <hr className="my-10 border-gray-200" />
 
-              <h3 className="mb-8 font-bebas text-3xl uppercase tracking-tight text-[#03193D]">
+              <h3 className="mb-8 font-bebas text-3xl uppercase tracking-tight text-[#0E2044]">
                 Why Attend?
               </h3>
               <div className="grid grid-cols-2 gap-x-10 gap-y-10">
@@ -131,7 +131,7 @@ export default function BecameDelegatePage() {
                   ['20+', 'Hours of Content'],
                 ].map(([stat, label]) => (
                   <div key={label}>
-                    <p className="font-bebas text-5xl text-[#CC9808]">{stat}</p>
+                    <p className="font-bebas text-5xl text-[#B89646]">{stat}</p>
                     <p className="mt-2 text-base text-gray-700">{label}</p>
                   </div>
                 ))}

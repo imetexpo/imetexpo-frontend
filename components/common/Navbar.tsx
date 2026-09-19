@@ -95,25 +95,25 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full bg-[#03193D] text-white">
+    <div className="w-full bg-[#0E2044] text-white">
         {/* TOP BAR */}
         <div>
           {/* Ticker strip */}
-          <div className="bg-[#03193D] w-full">
+          <div className="bg-[#0E2044] w-full">
             <Container className="flex items-center justify-end py-1.5">
               <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-white">
                 <span>
-                  <strong className="text-sm font-bold text-[#CC9808]">{String(timeLeft.days).padStart(2, '0')}</strong>{' '}
+                  <strong className="text-sm font-bold text-[#B89646]">{String(timeLeft.days).padStart(2, '0')}</strong>{' '}
                   <span className="text-gray-300">Days</span>
                 </span>
                 <span className="text-white/30">|</span>
                 <span>
-                  <strong className="text-sm font-bold text-[#CC9808]">{String(timeLeft.hours).padStart(2, '0')}</strong>{' '}
+                  <strong className="text-sm font-bold text-[#B89646]">{String(timeLeft.hours).padStart(2, '0')}</strong>{' '}
                   <span className="text-gray-300">Hours</span>
                 </span>
                 <span className="text-white/30">|</span>
                 <span>
-                  <strong className="text-sm font-bold text-[#CC9808]">{String(timeLeft.minutes).padStart(2, '0')}</strong>{' '}
+                  <strong className="text-sm font-bold text-[#B89646]">{String(timeLeft.minutes).padStart(2, '0')}</strong>{' '}
                   <span className="text-gray-300">Mins</span>
                 </span>
               </div>
@@ -121,7 +121,7 @@ export default function Navbar() {
           </div>
 
          {/* Logo + buttons */}
-<div className="w-full bg-[#03193D]">
+<div className="w-full bg-[#0E2044]">
   <Container className="flex items-center justify-between py-3.5">
     
     <div className="flex items-center gap-4">
@@ -163,7 +163,7 @@ export default function Navbar() {
         </div>
 
         {/* NAV ROW */}
-        <div className="bg-[#021533]/90 backdrop-blur-md">
+        <div className="bg-[#0C1C3B]/90 backdrop-blur-md">
           <Container className="flex items-center py-1 min-h-[44px]">
             <div className="hidden lg:flex flex-1 items-center justify-end gap-4 pr-56 xl:gap-8 xl:pr-40">
               {navItems.map((item) => (
@@ -175,7 +175,7 @@ export default function Navbar() {
                 >
                   {item.links && item.links.length > 0 ? (
                     <>
-                      <button className="flex items-center gap-1 text-sm xl:text-base hover:text-[#CC9808] transition-colors whitespace-nowrap py-2">
+                      <button className="flex items-center gap-1 text-sm xl:text-base hover:text-[#B89646] transition-colors whitespace-nowrap py-2">
                         {item.title}
                         <ChevronDown
                           className={`h-3 w-3 transition-transform duration-200 ${
@@ -194,7 +194,7 @@ export default function Navbar() {
                               <UTMLink
                                 key={link.text}
                                 href={link.href}
-                                className="block px-4 py-2 text-sm hover:bg-[#CC9808] hover:text-white transition-colors"
+                                className="block px-4 py-2 text-sm hover:bg-[#B89646] hover:text-white transition-colors"
                               >
                                 {link.text}
                               </UTMLink>
@@ -206,7 +206,7 @@ export default function Navbar() {
                   ) : (
                     <UTMLink
                       href={item.href || '#'}
-                      className="text-sm xl:text-base hover:text-[#CC9808] transition-colors whitespace-nowrap block py-2"
+                      className="text-sm xl:text-base hover:text-[#B89646] transition-colors whitespace-nowrap block py-2"
                     >
                       {item.title}
                     </UTMLink>

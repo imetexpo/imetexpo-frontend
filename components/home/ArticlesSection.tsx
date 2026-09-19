@@ -19,10 +19,10 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
         {/* HEADER */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-6 mb-8 sm:mb-10 lg:mb-12 flex-wrap">
           <div className="max-w-[900px]">
-            <p className="text-[#CC9808] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
+            <p className="text-[#B89646] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
               Articles
             </p>
-            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#03193D] leading-tight uppercase tracking-tight mt-3">
+            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#0E2044] leading-tight uppercase tracking-tight mt-3">
               EVENT INSIGHTS & INDUSTRY TRENDS
             </h2>
             <p className="text-gray-600 mt-2 text-sm sm:text-base font-sans">
@@ -32,7 +32,7 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
 
           <Button
             href="/articles/"
-            className="border border-[#CC9808] text-[#CC9808] bg-[#CC9808] hover:bg-[#ff8c00] hover:text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-full sm:w-auto text-center"
+            className="border border-[#B89646] text-[#B89646] bg-[#B89646] hover:bg-[#ff8c00] hover:text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-full sm:w-auto text-center"
           >
             VIEW ALL ARTICLES
           </Button>
@@ -52,11 +52,11 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
                 />
               </div>
               <div className="mt-4">
-                <p className="text-[#CC9808] text-xs font-semibold font-sans">
+                <p className="text-[#B89646] text-xs font-semibold font-sans">
                   {formatDate(featuredArticle.publishedDate)}
                 </p>
                 <Link href={`/articles/${featuredArticle.slug}`}>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#03193D] mt-2 leading-snug hover:text-[#CC9808] transition">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0E2044] mt-2 leading-snug hover:text-[#B89646] transition">
                     {featuredArticle.title}
                   </h3>
                 </Link>
@@ -80,11 +80,11 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
                   />
                 </div>
                 <div>
-                  <p className="text-[#CC9808] text-[10px] sm:text-xs font-semibold font-sans">
+                  <p className="text-[#B89646] text-[10px] sm:text-xs font-semibold font-sans">
                     {formatDate(article.publishedDate)}
                   </p>
                   <Link href={`/articles/${article.slug}`}>
-                    <h4 className="text-xs sm:text-sm md:text-base font-bold text-[#03193D] mt-1 leading-snug hover:text-[#CC9808] transition line-clamp-2">
+                    <h4 className="text-xs sm:text-sm md:text-base font-bold text-[#0E2044] mt-1 leading-snug hover:text-[#B89646] transition line-clamp-2">
                       {article.title}
                     </h4>
                   </Link>

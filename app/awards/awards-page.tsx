@@ -92,7 +92,7 @@ function Ring({ percent, label }: { percent: number; label: string }) {
           cx="60"
           cy="60"
           r={r}
-          stroke="#CC9808"
+          stroke="#B89646"
           strokeWidth="10"
           fill="none"
           strokeDasharray={c}
@@ -100,11 +100,11 @@ function Ring({ percent, label }: { percent: number; label: string }) {
           strokeLinecap="round"
           transform="rotate(-90 60 60)"
         />
-        <text x="60" y="68" textAnchor="middle" className="fill-[#03193D] text-lg font-bold md:text-xl">
+        <text x="60" y="68" textAnchor="middle" className="fill-[#0E2044] text-lg font-bold md:text-xl">
           {percent}%
         </text>
       </svg>
-      <p className="text-center text-sm font-semibold uppercase leading-snug tracking-wide text-[#03193D] md:text-base">
+      <p className="text-center text-sm font-semibold uppercase leading-snug tracking-wide text-[#0E2044] md:text-base">
         {label}
       </p>
     </div>
@@ -113,7 +113,7 @@ function Ring({ percent, label }: { percent: number; label: string }) {
 
 function SectionEyebrow({ children }: { children: string }) {
   return (
-    <p className="mb-2 text-xs font-bold uppercase tracking-[1.5px] text-[#CC9808]">{children}</p>
+    <p className="mb-2 text-xs font-bold uppercase tracking-[1.5px] text-[#B89646]">{children}</p>
   );
 }
 
@@ -128,13 +128,13 @@ export default function AwardsPage() {
         <div className="flex flex-wrap gap-4">
           <Link
             href="/sponsor/"
-            className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#03193D]"
+            className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#0E2044]"
           >
             Sponsor Now
           </Link>
           <Link
             href="/nominate/"
-            className="rounded-sm bg-[#CC9808] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
+            className="rounded-sm bg-[#B89646] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
           >
             Nominate Now →
           </Link>
@@ -146,7 +146,7 @@ export default function AwardsPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <SectionEyebrow>About the Awards</SectionEyebrow>
-              <h2 className="mb-6 font-bebas text-4xl uppercase tracking-tight text-[#03193D] lg:text-5xl">
+              <h2 className="mb-6 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
                 India Tyre Show Excellence Awards
               </h2>
               <p className="mb-6 text-base leading-relaxed text-gray-600 lg:text-lg">
@@ -160,14 +160,14 @@ export default function AwardsPage() {
               </p>
               <div className="grid max-w-xl grid-cols-2 gap-6 sm:grid-cols-4">
                 {stats.map(([n, l]) => (
-                  <div key={l} className="border-l-2 border-[#CC9808] pl-4">
-                    <p className="text-2xl font-bold text-[#CC9808]">{n}</p>
+                  <div key={l} className="border-l-2 border-[#B89646] pl-4">
+                    <p className="text-2xl font-bold text-[#B89646]">{n}</p>
                     <p className="mt-1 text-xs text-gray-500">{l}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="relative h-80 overflow-hidden rounded-sm border border-[#CC9808]/20 bg-[#FCF8F3] lg:h-96">
+            <div className="relative h-80 overflow-hidden rounded-sm border border-[#B89646]/20 bg-[#FCF8F3] lg:h-96">
               <img src={HERO_IMAGE} alt="India Tyre Show Awards" className="h-full w-full object-cover" />
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Benefits</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#03193D] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
               Why Participate?
             </h2>
           </div>
@@ -189,7 +189,7 @@ export default function AwardsPage() {
                 className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <span className="mb-3 block text-3xl">{icon}</span>
-                <h3 className="mb-2 font-bebas text-xl uppercase tracking-wide text-[#03193D]">{title}</h3>
+                <h3 className="mb-2 font-bebas text-xl uppercase tracking-wide text-[#0E2044]">{title}</h3>
                 <p className="text-sm text-gray-600">{desc}</p>
               </div>
             ))}
@@ -201,7 +201,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Categories</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#03193D] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
               Award Categories
             </h2>
           </div>
@@ -209,10 +209,10 @@ export default function AwardsPage() {
             {categories.map(([icon, title]) => (
               <div
                 key={title}
-                className="flex min-h-[150px] flex-col items-center justify-center gap-4 rounded-sm border border-gray-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#CC9808] hover:shadow-md"
+                className="flex min-h-[150px] flex-col items-center justify-center gap-4 rounded-sm border border-gray-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#B89646] hover:shadow-md"
               >
                 <span className="text-4xl leading-none md:text-5xl">{icon}</span>
-                <p className="text-sm font-semibold leading-snug text-[#03193D] md:text-base">{title}</p>
+                <p className="text-sm font-semibold leading-snug text-[#0E2044] md:text-base">{title}</p>
               </div>
             ))}
           </div>
@@ -223,7 +223,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Process</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#03193D] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
               Awards Process
             </h2>
           </div>
@@ -231,18 +231,18 @@ export default function AwardsPage() {
             {process.map(([icon, title, desc], i) => (
               <div key={title} className="flex w-full items-start md:w-auto md:flex-1">
                 <div className="flex flex-1 flex-col items-center gap-4 text-center">
-                  <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#CC9808] bg-white text-4xl shadow-sm md:h-28 md:w-28 md:text-5xl">
+                  <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#B89646] bg-white text-4xl shadow-sm md:h-28 md:w-28 md:text-5xl">
                     {icon}
                   </div>
-                  <p className="text-sm font-bold uppercase leading-snug tracking-wide text-[#CC9808] md:text-base">
+                  <p className="text-sm font-bold uppercase leading-snug tracking-wide text-[#B89646] md:text-base">
                     {title}
                   </p>
-                  <p className="max-w-[13rem] text-sm font-medium leading-relaxed text-[#03193D] md:text-base">
+                  <p className="max-w-[13rem] text-sm font-medium leading-relaxed text-[#0E2044] md:text-base">
                     {desc}
                   </p>
                 </div>
                 {i < process.length - 1 && (
-                  <span className="mx-2 hidden h-28 items-center justify-center text-3xl font-bold text-[#CC9808] md:flex">
+                  <span className="mx-2 hidden h-28 items-center justify-center text-3xl font-bold text-[#B89646] md:flex">
                     →
                   </span>
                 )}
@@ -256,7 +256,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Jury</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#03193D] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
               Meet the Jury
             </h2>
           </div>
@@ -268,10 +268,10 @@ export default function AwardsPage() {
               >
                 <div className="flex h-48 items-center justify-center bg-[#FCF8F3] text-6xl">👤</div>
                 <div className="p-4">
-                  <span className="mb-2 inline-block rounded-sm border border-[#CC9808]/40 px-2 py-0.5 text-[10px] uppercase tracking-wide text-[#CC9808]">
+                  <span className="mb-2 inline-block rounded-sm border border-[#B89646]/40 px-2 py-0.5 text-[10px] uppercase tracking-wide text-[#B89646]">
                     {member.role}
                   </span>
-                  <h3 className="text-sm font-semibold text-[#03193D]">{member.name}</h3>
+                  <h3 className="text-sm font-semibold text-[#0E2044]">{member.name}</h3>
                   <p className="mt-1 text-xs text-gray-600">{member.company}</p>
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default function AwardsPage() {
             </p>
             <Link
               href="#jury"
-              className="inline-block rounded-sm border border-[#CC9808] px-6 py-2 text-xs font-bold uppercase tracking-wider text-[#CC9808] transition-all duration-300 hover:bg-[#CC9808] hover:text-white"
+              className="inline-block rounded-sm border border-[#B89646] px-6 py-2 text-xs font-bold uppercase tracking-wider text-[#B89646] transition-all duration-300 hover:bg-[#B89646] hover:text-white"
             >
               View All Jury
             </Link>
@@ -295,7 +295,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Criteria</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#03193D] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
               Evaluation Criteria
             </h2>
           </div>
@@ -311,7 +311,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Sponsors</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#03193D] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
               Our Sponsors
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 md:text-lg">
@@ -326,7 +326,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Supporters</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#03193D] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
               Our Supporters
             </h2>
           </div>
@@ -349,14 +349,14 @@ function PartnerTrack({ items }: { items: { name: string; role: string }[] }) {
         {loop.map((item, index) => (
           <div
             key={`${item.role}-${index}`}
-            className="flex w-[220px] min-h-[180px] flex-shrink-0 flex-col items-center justify-center gap-4 rounded-sm border border-gray-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#CC9808] hover:shadow-md md:w-[260px]"
+            className="flex w-[220px] min-h-[180px] flex-shrink-0 flex-col items-center justify-center gap-4 rounded-sm border border-gray-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#B89646] hover:shadow-md md:w-[260px]"
           >
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#CC9808]/10">
-              <span className="text-2xl font-bold text-[#CC9808]">{item.role.charAt(0)}</span>
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#B89646]/10">
+              <span className="text-2xl font-bold text-[#B89646]">{item.role.charAt(0)}</span>
             </div>
             <div className="text-center">
-              <p className="text-lg font-bold text-[#03193D]">{item.name}</p>
-              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-[#CC9808]">{item.role}</p>
+              <p className="text-lg font-bold text-[#0E2044]">{item.name}</p>
+              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-[#B89646]">{item.role}</p>
             </div>
           </div>
         ))}

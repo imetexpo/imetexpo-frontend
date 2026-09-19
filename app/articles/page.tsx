@@ -60,7 +60,7 @@ export default function ArticlesPage() {
                 setSearchTerm(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#CC9808] focus:border-[#CC9808] text-sm bg-white"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#B89646] focus:border-[#B89646] text-sm bg-white"
             />
           </div>
 
@@ -81,13 +81,13 @@ export default function ArticlesPage() {
                       className="w-full h-full object-cover transition-transform duration-550 group-hover:scale-105"
                       src={article.image}
                     />
-                    <div className="absolute inset-0 bg-[#03193D]/10 group-hover:bg-[#03193D]/25 transition duration-300"></div>
+                    <div className="absolute inset-0 bg-[#0E2044]/10 group-hover:bg-[#0E2044]/25 transition duration-300"></div>
                   </div>
                   <div className="p-5 space-y-3 font-sans">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
                       {formatDate(article.publishedDate)}
                     </p>
-                    <h2 className="font-bebas text-2xl text-[#03193D] line-clamp-2 group-hover:text-[#CC9808] transition-colors duration-300 uppercase font-bold">
+                    <h2 className="font-bebas text-2xl text-[#0E2044] line-clamp-2 group-hover:text-[#B89646] transition-colors duration-300 uppercase font-bold">
                       {article.title}
                     </h2>
                     {article.excerpt && (
@@ -98,7 +98,7 @@ export default function ArticlesPage() {
                   </div>
                 </div>
                 <div className="p-5 pt-0 mt-auto">
-                  <span className="text-xs font-bold text-[#CC9808] group-hover:text-[#03193D] transition-colors uppercase tracking-wider flex items-center gap-1">
+                  <span className="text-xs font-bold text-[#B89646] group-hover:text-[#0E2044] transition-colors uppercase tracking-wider flex items-center gap-1">
                     Read Article →
                   </span>
                 </div>
@@ -132,7 +132,7 @@ export default function ArticlesPage() {
                     onClick={() => handlePageChange(page)}
                     className={`w-8 h-8 rounded-sm text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                       currentPage === page
-                        ? "bg-[#CC9808] text-white border border-[#CC9808]"
+                        ? "bg-[#B89646] text-white border border-[#B89646]"
                         : "bg-white border border-gray-300 text-slate-700 hover:bg-slate-50"
                     }`}
                   >

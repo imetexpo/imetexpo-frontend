@@ -21,9 +21,9 @@ export default function WhyVisitPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#03193D]">
-        <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-[#CC9808] text-4xl">
-          <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-[#CC9808] text-2xl"></div>
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#0E2044]">
+        <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-[#B89646] text-4xl">
+          <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-[#B89646] text-2xl"></div>
         </div>
       </div>
     );
@@ -195,7 +195,7 @@ export default function WhyVisitPage() {
 
                   <div className="order-2 lg:order-1">
 
-                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#03193D]">
+                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#0E2044]">
                       The Heart of Precision Manufacturing
                     </h2>
 
@@ -214,11 +214,11 @@ export default function WhyVisitPage() {
                         <React.Fragment key={idx}>
 
                           <div className="text-center flex-1 min-w-[80px]">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#B89646] font-bold">
                               {stat.value}
                             </h3>
 
-                            <p className="text-[10px] sm:text-xs tracking-wider text-[#03193D] font-semibold mt-1 uppercase">
+                            <p className="text-[10px] sm:text-xs tracking-wider text-[#0E2044] font-semibold mt-1 uppercase">
                               {stat.label}
                             </p>
                           </div>
@@ -235,7 +235,7 @@ export default function WhyVisitPage() {
                     <div className="mt-8 sm:mt-10">
                       <Link
                         href="/visitor-registration"
-                        className="inline-flex bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
+                        className="inline-flex bg-[#B89646] hover:bg-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
                       >
                         Register as a Visitor
                       </Link>
@@ -276,12 +276,12 @@ export default function WhyVisitPage() {
                   />
                 </div>
 
-                <div className="absolute inset-0 bg-[#03193D]/80"></div>
+                <div className="absolute inset-0 bg-[#0E2044]/80"></div>
 
                 <Container>
                   <div className="relative z-10 flex flex-col gap-4 sm:gap-5">
 
-                    <p className="text-sm sm:text-base font-bold text-[#CC9808]">
+                    <p className="text-sm sm:text-base font-bold text-[#B89646]">
                       Connect with the Metrology & Quality Community
                     </p>
 
@@ -292,7 +292,7 @@ export default function WhyVisitPage() {
 
                     <Link
                       href="/exhibitor-list"
-                      className="inline-flex w-fit bg-[#CC9808] hover:bg-white hover:text-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
+                      className="inline-flex w-fit bg-[#B89646] hover:bg-white hover:text-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
                     >
                       Explore Exhibitors
                     </Link>
@@ -333,7 +333,7 @@ export default function WhyVisitPage() {
                           }`}
                         >
 
-                          <h4 className="font-bebas text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#03193D] leading-tight">
+                          <h4 className="font-bebas text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0E2044] leading-tight">
                             {item.title}
                           </h4>
 
@@ -392,7 +392,7 @@ export default function WhyVisitPage() {
 
                 </div>
 
-                <div className="absolute inset-0 bg-[#03193D]/75"></div>
+                <div className="absolute inset-0 bg-[#0E2044]/75"></div>
 
                 <Container>
 
@@ -423,7 +423,7 @@ export default function WhyVisitPage() {
 
                       <Link
                         href="/event-brochure"
-                        className="inline-flex w-fit bg-[#CC9808] hover:bg-white hover:text-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
+                        className="inline-flex w-fit bg-[#B89646] hover:bg-white hover:text-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
                       >
                         Download Brochure
                       </Link>
@@ -455,7 +455,7 @@ export default function WhyVisitPage() {
 
                   <div className="order-2 lg:order-1">
 
-                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#03193D]">
+                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#0E2044]">
                       Meet Professionals Across India's Precision Manufacturing Ecosystem
                     </h3>
 
@@ -475,11 +475,11 @@ export default function WhyVisitPage() {
 
                           <div className="text-center flex-1 min-w-[80px]">
 
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#CC9808] font-bold">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#B89646] font-bold">
                               {area.percentage}
                             </h3>
 
-                            <p className="text-[10px] sm:text-xs tracking-wider text-[#03193D] font-semibold mt-1 uppercase">
+                            <p className="text-[10px] sm:text-xs tracking-wider text-[#0E2044] font-semibold mt-1 uppercase">
                               {area.label}
                             </p>
 
@@ -499,7 +499,7 @@ export default function WhyVisitPage() {
 
                       <Link
                         href="/post-show-report"
-                        className="inline-flex bg-[#CC9808] hover:bg-[#03193D] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
+                        className="inline-flex bg-[#B89646] hover:bg-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
                       >
                         View Industry Insights
                       </Link>
@@ -538,7 +538,7 @@ export default function WhyVisitPage() {
 
               <div className="animated-block-target">
 
-                <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">
+                <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">
                   Who Should Visit INDIAMET 2027?
                 </h3>
 
@@ -554,7 +554,7 @@ export default function WhyVisitPage() {
                       className="absolute inset-0 h-full w-full object-cover"
                     />
 
-                    <div className="absolute inset-0 bg-[#03193D]/80"></div>
+                    <div className="absolute inset-0 bg-[#0E2044]/80"></div>
 
                     <div className="relative z-10 p-6 sm:p-8">
 
@@ -570,7 +570,7 @@ export default function WhyVisitPage() {
                             key={idx}
                             className="flex items-start gap-3"
                           >
-                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#CC9808]"></span>
+                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#B89646]"></span>
 
                             <span>{industry}</span>
                           </li>
@@ -594,7 +594,7 @@ export default function WhyVisitPage() {
                       className="absolute inset-0 h-full w-full object-cover"
                     />
 
-                    <div className="absolute inset-0 bg-[#03193D]/80"></div>
+                    <div className="absolute inset-0 bg-[#0E2044]/80"></div>
 
                     <div className="relative z-10 p-6 sm:p-8">
 
@@ -611,7 +611,7 @@ export default function WhyVisitPage() {
                             className="flex items-start gap-3"
                           >
 
-                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#CC9808]"></span>
+                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#B89646]"></span>
 
                             <span>{industry}</span>
 
@@ -655,7 +655,7 @@ export default function WhyVisitPage() {
 
                   <div className="lg:basis-2/3">
 
-                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">
+                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">
                       More Than an Exhibition
                     </h3>
 
@@ -689,13 +689,13 @@ export default function WhyVisitPage() {
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
 
-                        <div className="absolute inset-0 bg-[#03193D]/30 group-hover:bg-[#03193D]/50 transition"></div>
+                        <div className="absolute inset-0 bg-[#0E2044]/30 group-hover:bg-[#0E2044]/50 transition"></div>
 
                       </div>
 
                       <div className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
 
-                        <h4 className="text-lg sm:text-xl font-bold text-[#03193D]">
+                        <h4 className="text-lg sm:text-xl font-bold text-[#0E2044]">
                           {item.title}
                         </h4>
 
@@ -705,7 +705,7 @@ export default function WhyVisitPage() {
 
                         <Link
                           href={item.buttonLink}
-                          className="inline-flex w-fit bg-[#CC9808] hover:bg-[#03193D] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
+                          className="inline-flex w-fit bg-[#B89646] hover:bg-[#0E2044] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
                         >
                           {item.buttonText}
                         </Link>
@@ -735,9 +735,9 @@ export default function WhyVisitPage() {
 
               <div className="animated-block-target">
 
-                <div className="w-full flex flex-col text-[#03193D]">
+                <div className="w-full flex flex-col text-[#0E2044]">
 
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">
+                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">
                     When and Where
                   </h3>
 
@@ -745,7 +745,7 @@ export default function WhyVisitPage() {
 
                     <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 shadow-sm">
 
-                      <p className="mb-2 font-bold text-sm sm:text-base text-[#03193D]">
+                      <p className="mb-2 font-bold text-sm sm:text-base text-[#0E2044]">
                         Venue
                       </p>
 
@@ -762,7 +762,7 @@ export default function WhyVisitPage() {
 
                     <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 shadow-sm">
 
-                      <p className="mb-2 font-bold text-sm sm:text-base text-[#03193D]">
+                      <p className="mb-2 font-bold text-sm sm:text-base text-[#0E2044]">
                         Exhibition Dates
                       </p>
 
@@ -807,7 +807,7 @@ export default function WhyVisitPage() {
 
             <div className="animated-block-target">
 
-              <div className="border-t-8 border-[#CC9808] bg-[#03193D] py-12 sm:py-16 lg:py-20 text-white">
+              <div className="border-t-8 border-[#B89646] bg-[#0E2044] py-12 sm:py-16 lg:py-20 text-white">
 
                 <Container>
 

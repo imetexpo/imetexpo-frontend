@@ -272,7 +272,7 @@ export default function VisitorRegistrationForm({
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#03193D]/40 px-4 py-6 md:py-0">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0E2044]/40 px-4 py-6 md:py-0">
       <div className="bg-white rounded-lg w-full max-w-lg md:max-w-2xl max-h-[90vh] md:max-h-[85vh] overflow-hidden flex flex-col">
         
         <div className="flex items-center justify-between p-4 md:p-6 border-b border-slate-200 bg-white gap-2 sticky top-0 z-10">
@@ -486,7 +486,7 @@ export default function VisitorRegistrationForm({
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-4 py-3 bg-#CC9808-500 text-white font-medium rounded hover:bg-#CC9808-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm md:text-base flex items-center justify-center gap-2"
+                className="w-full px-4 py-3 bg-#B89646-500 text-white font-medium rounded hover:bg-#B89646-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm md:text-base flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>
@@ -545,7 +545,7 @@ export default function VisitorRegistrationForm({
               <button
                 type="submit"
                 disabled={loading || otp.length !== 6}
-                className="w-full px-4 py-3 bg-#CC9808-500 text-white font-medium rounded hover:bg-#CC9808-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm md:text-base flex items-center justify-center gap-2"
+                className="w-full px-4 py-3 bg-#B89646-500 text-white font-medium rounded hover:bg-#B89646-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm md:text-base flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>

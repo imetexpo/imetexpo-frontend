@@ -19,7 +19,7 @@ export default function AboutITEPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#03193D]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#0E2044]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -280,7 +280,7 @@ export default function AboutITEPage() {
               <Container className="py-12 sm:py-16">
                 <div className="lg:col-span-3">
                   <div className="flex flex-col gap-4 sm:gap-5">
-                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">About Us</h2>
+                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">About Us</h2>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700">
                       Maxx Business Media Pvt. Ltd. is a leading B2B business events and media company based in India, dedicated to creating powerful platforms that connect industries, innovators, and decision-makers. Since its inception, Maxx Business Media has been organizing high-impact trade exhibitions, conferences, and industry-focused initiatives across key manufacturing and emerging sectors.
                       <br /><br />
@@ -297,10 +297,10 @@ export default function AboutITEPage() {
                     {stats.map((stat, idx) => (
                       <div key={idx} className="flex w-1/2 sm:w-1/3 md:w-1/4 items-start justify-start">
                         <div className="px-4 sm:px-6 md:px-8 text-start">
-                          <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#CC9808]">
+                          <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#B89646]">
                             {stat.value}
                           </h3>
-                          <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold uppercase text-[#03193D]">
+                          <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold uppercase text-[#0E2044]">
                             {stat.label}
                           </p>
                         </div>
@@ -318,7 +318,7 @@ export default function AboutITEPage() {
               <Container>
                 <div className="mb-6 sm:mb-8 flex flex-col lg:flex-row justify-between lg:items-end gap-4">
                   <div className="lg:basis-2/3">
-                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">Working for Your Success</h3>
+                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">Working for Your Success</h3>
                     <p className="mt-3 text-sm sm:text-base md:text-lg text-gray-700">
                       At Maxx Business Media Pvt Ltd, we create impactful exhibitions, conferences, trade publications, and digital platforms that connect industries, businesses, technology providers, and professionals. Our industry-focused platforms help businesses showcase innovation, build valuable relationships, discover new opportunities, and drive sustainable business growth.
                     </p>
@@ -340,7 +340,7 @@ export default function AboutITEPage() {
                         />
                       </div>
                       <div className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
-                        <h4 className="text-lg sm:text-xl font-bold text-[#03193D]">{item.title}</h4>
+                        <h4 className="text-lg sm:text-xl font-bold text-[#0E2044]">{item.title}</h4>
                         <p className="text-sm text-gray-600 leading-relaxed">{item.content}</p>
                       </div>
                     </div>
@@ -356,7 +356,7 @@ export default function AboutITEPage() {
               <Container>
                 <div className="flex w-full items-end justify-between gap-6 sm:gap-10 max-lg:flex-wrap lg:gap-20 2xl:gap-40">
                   <div>
-                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#03193D]">Our Exhibitions at a Glance</h3>
+                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">Our Exhibitions at a Glance</h3>
                     <p className="mt-3 text-sm sm:text-base text-gray-700">
                       Each year, we organise and host over 30 leading industry events across key sectors, including exhibitions, summits, and conferences.
                       <br /><br />
@@ -380,13 +380,13 @@ export default function AboutITEPage() {
                           }}
                         />
                       </div>
-                      <h4 className="text-lg sm:text-xl font-bold text-[#03193D]">{exhibition.title}</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-[#0E2044]">{exhibition.title}</h4>
                       <p className="text-sm sm:text-base text-gray-600 line-clamp-2">{exhibition.description}</p>
                       <p className="text-xs sm:text-sm">Start Date: <span className="font-bold">{exhibition.startDate}</span></p>
                       <p className="text-xs sm:text-sm">End Date: <span className="font-bold">{exhibition.endDate}</span></p>
                       <p className="text-xs sm:text-sm">Venue: <span className="font-bold line-clamp-2">{exhibition.venue}</span></p>
                       <Link href={exhibition.siteLink} target="_blank" className="mt-auto block">
-                        <button className="flex-center group gap-2 font-bebas text-xl sm:text-2xl text-[#CC9808] transition-all hover:text-[#03193D]">
+                        <button className="flex-center group gap-2 font-bebas text-xl sm:text-2xl text-[#B89646] transition-all hover:text-[#0E2044]">
                           Visit Website
                           <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
                             <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>

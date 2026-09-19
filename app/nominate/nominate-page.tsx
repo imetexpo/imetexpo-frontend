@@ -164,15 +164,15 @@ export default function NominatePage() {
       <section className="border-b border-gray-100 bg-[#FCF8F3] py-4">
         <Container>
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/" className="transition-colors hover:text-[#CC9808]">
+            <Link href="/" className="transition-colors hover:text-[#B89646]">
               Home
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/awards/" className="transition-colors hover:text-[#CC9808]">
+            <Link href="/awards/" className="transition-colors hover:text-[#B89646]">
               Awards
             </Link>
             <span className="text-gray-400">/</span>
-            <span className="font-medium text-[#CC9808]">Nomination Form</span>
+            <span className="font-medium text-[#B89646]">Nomination Form</span>
           </div>
         </Container>
       </section>
@@ -191,7 +191,7 @@ export default function NominatePage() {
                       disabled={i > active}
                       className={`flex h-9 w-9 items-center justify-center rounded-full border-2 text-sm font-bold transition-colors duration-300 ${
                         isReached
-                          ? 'cursor-pointer border-[#CC9808] bg-[#CC9808] text-white'
+                          ? 'cursor-pointer border-[#B89646] bg-[#B89646] text-white'
                           : 'cursor-not-allowed border-gray-300 bg-white text-gray-700'
                       }`}
                     >
@@ -199,7 +199,7 @@ export default function NominatePage() {
                     </button>
                     <span
                       className={`hidden text-center text-[10px] uppercase tracking-wide sm:block ${
-                        i === active ? 'font-bold text-[#CC9808]' : 'text-gray-600'
+                        i === active ? 'font-bold text-[#B89646]' : 'text-gray-600'
                       }`}
                     >
                       {label}
@@ -208,7 +208,7 @@ export default function NominatePage() {
                   {i < steps.length - 1 && (
                     <span
                       className={`mx-2 mb-5 h-px flex-1 transition-colors duration-300 ${
-                        i < active ? 'bg-[#CC9808]' : 'bg-gray-300'
+                        i < active ? 'bg-[#B89646]' : 'bg-gray-300'
                       }`}
                     />
                   )}
@@ -229,17 +229,17 @@ export default function NominatePage() {
               <button
                 type="button"
                 onClick={() => router.push('/awards/')}
-                className="mb-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-600 transition-colors hover:text-[#CC9808]"
+                className="mb-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-600 transition-colors hover:text-[#B89646]"
               >
                 ← Back to Awards
               </button>
 
               {submitted ? (
                 <div className="py-10 text-center">
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#CC9808]/10 text-2xl text-[#CC9808]">
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#B89646]/10 text-2xl text-[#B89646]">
                     ✓
                   </div>
-                  <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#03193D]">
+                  <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#0E2044]">
                     Nomination Submitted
                   </h2>
                   <p className="mx-auto max-w-sm text-sm text-gray-600">
@@ -251,7 +251,7 @@ export default function NominatePage() {
                 <>
                   {active === 0 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#CC9808]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#B89646]">
                         1. Nominator Details
                       </h2>
                       <div className="grid gap-5 md:grid-cols-2">
@@ -312,7 +312,7 @@ export default function NominatePage() {
 
                   {active === 1 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#CC9808]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#B89646]">
                         2. Nominee Details
                       </h2>
                       <div className="grid gap-5 md:grid-cols-2">
@@ -331,7 +331,7 @@ export default function NominatePage() {
 
                         <div className="flex items-center gap-6 text-sm text-gray-700 md:col-span-2">
                           <span className="font-medium">
-                            Type of Nominee <span className="text-[#CC9808]">*</span>
+                            Type of Nominee <span className="text-[#B89646]">*</span>
                           </span>
                           <label className="flex items-center gap-2">
                             <input
@@ -340,7 +340,7 @@ export default function NominatePage() {
                               value="Organization"
                               checked={formData.nomineeType === 'Organization'}
                               onChange={handleChange}
-                              className="accent-[#CC9808]"
+                              className="accent-[#B89646]"
                             />
                             Organization
                           </label>
@@ -351,7 +351,7 @@ export default function NominatePage() {
                               value="Individual"
                               checked={formData.nomineeType === 'Individual'}
                               onChange={handleChange}
-                              className="accent-[#CC9808]"
+                              className="accent-[#B89646]"
                             />
                             Individual
                           </label>
@@ -431,7 +431,7 @@ export default function NominatePage() {
 
                   {active === 2 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#CC9808]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#B89646]">
                         3. Category Selection
                       </h2>
                       <Field label="Select Award Category" required>
@@ -450,7 +450,7 @@ export default function NominatePage() {
                         </div>
                         <Link
                           href="/awards/"
-                          className="whitespace-nowrap rounded-sm border border-[#CC9808] px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#CC9808] transition-colors hover:bg-[#CC9808] hover:text-white"
+                          className="whitespace-nowrap rounded-sm border border-[#B89646] px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#B89646] transition-colors hover:bg-[#B89646] hover:text-white"
                         >
                           View Categories →
                         </Link>
@@ -460,7 +460,7 @@ export default function NominatePage() {
 
                   {active === 3 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#CC9808]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#B89646]">
                         4. Supporting Details
                       </h2>
                       <div className="grid gap-5">
@@ -496,7 +496,7 @@ export default function NominatePage() {
 
                   {active === 4 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#CC9808]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#B89646]">
                         5. Review & Submit
                       </h2>
                       <p className="mb-6 text-sm text-gray-500">
@@ -545,15 +545,15 @@ export default function NominatePage() {
                           type="checkbox"
                           checked={consent}
                           onChange={(e) => setConsent(e.target.checked)}
-                          className="mt-1 accent-[#CC9808]"
+                          className="mt-1 accent-[#B89646]"
                         />
                         <span>
                           I confirm the above details are accurate and I agree to the{' '}
-                          <Link href="/privacy-policy" className="text-[#CC9808] underline">
+                          <Link href="/privacy-policy" className="text-[#B89646] underline">
                             terms & conditions
                           </Link>{' '}
                           and{' '}
-                          <Link href="/privacy-policy" className="text-[#CC9808] underline">
+                          <Link href="/privacy-policy" className="text-[#B89646] underline">
                             privacy policy
                           </Link>
                           .
@@ -581,7 +581,7 @@ export default function NominatePage() {
                     {active === steps.length - 1 ? (
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#CC9808] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#03193D]"
+                        className="inline-flex items-center gap-2 rounded-sm bg-[#B89646] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#0E2044]"
                       >
                         Submit
                       </button>
@@ -589,7 +589,7 @@ export default function NominatePage() {
                       <button
                         type="button"
                         onClick={handleNext}
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#CC9808] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#03193D]"
+                        className="inline-flex items-center gap-2 rounded-sm bg-[#B89646] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#0E2044]"
                       >
                         Save & Continue →
                       </button>
@@ -601,7 +601,7 @@ export default function NominatePage() {
 
             <aside className="flex flex-col gap-6">
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#CC9808]">
+                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#B89646]">
                   About the Awards
                 </h3>
                 <p className="mb-3 text-sm text-gray-700">
@@ -610,14 +610,14 @@ export default function NominatePage() {
                 </p>
                 <Link
                   href="/awards/"
-                  className="text-xs font-bold uppercase tracking-wider text-[#CC9808] hover:underline"
+                  className="text-xs font-bold uppercase tracking-wider text-[#B89646] hover:underline"
                 >
                   Know more about →
                 </Link>
               </div>
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#CC9808]">Why Nominate?</h3>
+                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#B89646]">Why Nominate?</h3>
                 <ul className="space-y-2 text-sm text-gray-700">
                   {[
                     'Gain global recognition',
@@ -627,7 +627,7 @@ export default function NominatePage() {
                     'Expand business opportunities',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="text-[#CC9808]">✓</span>
+                      <span className="text-[#B89646]">✓</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -635,34 +635,34 @@ export default function NominatePage() {
               </div>
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#CC9808]">
+                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#B89646]">
                   Important Dates
                 </h3>
                 <div className="space-y-3">
                   <div>
                     <p className="text-xs text-gray-500">Nominations Open</p>
-                    <p className="text-sm font-semibold text-[#03193D]">01 November 2026</p>
+                    <p className="text-sm font-semibold text-[#0E2044]">01 November 2026</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-xs text-gray-500">Last Date to Nominate</p>
-                    <p className="text-sm font-semibold text-[#03193D]">31 January 2027</p>
+                    <p className="text-sm font-semibold text-[#0E2044]">31 January 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-xs text-gray-500">Finalists Announcement</p>
-                    <p className="text-sm font-semibold text-[#03193D]">15 March 2027</p>
+                    <p className="text-sm font-semibold text-[#0E2044]">15 March 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-xs text-gray-500">Awards Ceremony</p>
-                    <p className="text-sm font-bold text-[#CC9808]">23 April 2027</p>
+                    <p className="text-sm font-bold text-[#B89646]">23 April 2027</p>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#CC9808]">Need Help?</h3>
+                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#B89646]">Need Help?</h3>
                 <p className="mb-3 text-sm text-gray-700">Our team is here to assist you with your nomination.</p>
-                <p className="text-sm text-[#03193D]">📞 +91 91483 19993</p>
-                <p className="text-sm text-[#03193D]">✉️ support@tyre-expo.com</p>
+                <p className="text-sm text-[#0E2044]">📞 +91 91483 19993</p>
+                <p className="text-sm text-[#0E2044]">✉️ support@tyre-expo.com</p>
               </div>
             </aside>
           </div>
@@ -703,7 +703,7 @@ function ReviewSection({ title, rows }: { title: string; rows: [string, string][
   const filled = rows.filter(([, value]) => value && value.trim() !== '');
   return (
     <div className="rounded-sm border border-gray-200 p-4">
-      <h4 className="mb-3 text-sm font-semibold text-[#03193D]">{title}</h4>
+      <h4 className="mb-3 text-sm font-semibold text-[#0E2044]">{title}</h4>
       {filled.length === 0 ? (
         <p className="text-xs italic text-gray-400">Nothing entered</p>
       ) : (
