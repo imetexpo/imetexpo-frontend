@@ -95,11 +95,11 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full bg-[#0E2044] text-white">
+    <div className="w-full bg-[#031A34] text-white">
         {/* TOP BAR */}
         <div>
           {/* Ticker strip */}
-          <div className="bg-[#0E2044] w-full">
+          <div className="bg-[#031A34] w-full">
             <Container className="flex items-center justify-end py-1.5">
               <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-white">
                 <span>
@@ -121,7 +121,7 @@ export default function Navbar() {
           </div>
 
          {/* Logo + buttons */}
-<div className="w-full bg-[#0E2044]">
+<div className="w-full bg-[#031A34]">
   <Container className="flex items-center justify-between py-3.5">
     
     <div className="flex items-center gap-4">

@@ -34,7 +34,7 @@ export function DateItem({ label, date, last }: { label: string; date: string; l
     <div className={`relative pb-4 pl-5 ${last ? 'pb-0' : ''}`}>
       {!last && <span className="absolute bottom-0 left-[3px] top-3 w-px bg-[#D4A72C]/30" />}
       <span className="absolute left-0 top-1 h-2 w-2 rounded-full bg-[#D4A72C]" />
-      <p className="text-sm font-medium text-[#0E2044]">{label}</p>
+      <p className="text-sm font-medium text-[#031A34]">{label}</p>
       <p className="text-xs font-semibold text-[#D4A72C]">{date}</p>
     </div>
   );

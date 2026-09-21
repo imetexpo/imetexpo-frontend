@@ -39,13 +39,13 @@ function HeroSection() {
       <div className="flex flex-col gap-3 sm:flex-row">
         <Link
           href="/became-delegate/"
-          className="rounded-sm bg-[#D4A72C] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154] hover:text-[#0E2044]"
+          className="rounded-sm bg-[#D4A72C] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154] hover:text-[#031A34]"
         >
           Become a Delegate
         </Link>
         <Link
           href="/become-partner/"
-          className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#0E2044]"
+          className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#031A34]"
         >
           Become a Partner
         </Link>
@@ -57,7 +57,7 @@ function HeroSection() {
 function AboutSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
         About the <span className="text-[#D4A72C]">Summit</span>
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
@@ -72,7 +72,7 @@ function AboutSection() {
                 <Icon className="h-6 w-6" />
               </div>
               <p className="text-sm leading-relaxed text-gray-700">
-                <strong className="text-[#0E2044]">{item.title}</strong> {item.body}
+                <strong className="text-[#031A34]">{item.title}</strong> {item.body}
               </p>
             </div>
           );
@@ -107,7 +107,7 @@ function SpeakersSection() {
   return (
     <section>
       <div className="mb-8 max-w-3xl">
-        <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+        <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
           Top Speakers <span className="text-[#D4A72C]">India Tyre Show Summit 2027</span>
         </h2>
         <p className="mt-3 text-sm text-gray-600 sm:text-base">
@@ -137,7 +137,7 @@ function SpeakersSection() {
                 alt={speaker.name}
                 className="h-full w-full object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0E2044] to-transparent p-4 text-white">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#031A34] to-transparent p-4 text-white">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-[#D4A72C]">
                   {speaker.session}
                 </p>
@@ -145,7 +145,7 @@ function SpeakersSection() {
               </div>
             </div>
             <div className="p-4">
-              <h3 className="font-bebas text-2xl uppercase text-[#0E2044]">{speaker.name}</h3>
+              <h3 className="font-bebas text-2xl uppercase text-[#031A34]">{speaker.name}</h3>
               <p className="text-xs font-bold uppercase tracking-wide text-[#D4A72C]">
                 {speaker.title}
               </p>
@@ -164,7 +164,7 @@ function ProgrammeSection() {
 
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
         Driving Precision, Quality &amp; Smart Manufacturing
       </h2>
       <div className="mb-10 flex flex-wrap gap-3">
@@ -176,7 +176,7 @@ function ProgrammeSection() {
             className={`rounded-sm px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
               activeDay === index
                 ? 'bg-[#D4A72C] text-white'
-                : 'bg-[#0E2044] text-white hover:bg-[#D4A72C]'
+                : 'bg-[#031A34] text-white hover:bg-[#D4A72C]'
             }`}
           >
             {day.date}
@@ -187,7 +187,7 @@ function ProgrammeSection() {
         <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#D4A72C]">
           {selectedDay.description}
         </p>
-        <p className="mb-10 text-lg font-semibold text-[#0E2044] sm:text-xl">
+        <p className="mb-10 text-lg font-semibold text-[#031A34] sm:text-xl">
           {selectedDay.day} · {selectedDay.date}
         </p>
         <div className="space-y-10">
@@ -197,7 +197,7 @@ function ProgrammeSection() {
                 {session.time}
               </div>
               <div>
-                <h3 className="text-lg font-bold text-[#0E2044] sm:text-xl">{session.title}</h3>
+                <h3 className="text-lg font-bold text-[#031A34] sm:text-xl">{session.title}</h3>
                 {session.description && (
                   <p className="mt-2 text-sm text-gray-500">{session.description}</p>
                 )}
@@ -232,7 +232,7 @@ function ProgrammeSection() {
 function WhyAttendSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
         Why Attend <span className="text-[#D4A72C]">India Tyre Show Summit 2027</span>
       </h2>
       <div className="space-y-6">
@@ -244,7 +244,7 @@ function WhyAttendSection() {
                 <Icon className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-[#0E2044] sm:text-lg">{item.title}</h3>
+                <h3 className="text-base font-bold text-[#031A34] sm:text-lg">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.description}</p>
               </div>
             </div>
@@ -258,7 +258,7 @@ function WhyAttendSection() {
 function BecomeDelegateSection() {
   return (
     <section>
-      <h2 className="mb-2 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-2 font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
         Become a <span className="text-[#D4A72C]">Delegate</span>
       </h2>
       <p className="mb-10 text-sm font-semibold text-gray-600">Prices include GST</p>
@@ -268,7 +268,7 @@ function BecomeDelegateSection() {
             key={pkg.id}
             className="flex min-h-[420px] flex-col rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 md:p-8"
           >
-            <h3 className="font-bebas text-3xl uppercase text-[#0E2044]">{pkg.title}</h3>
+            <h3 className="font-bebas text-3xl uppercase text-[#031A34]">{pkg.title}</h3>
             <ul className="mt-5 flex-1 space-y-2">
               {pkg.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2 text-sm text-gray-700">
@@ -280,7 +280,7 @@ function BecomeDelegateSection() {
             <p className="mt-6 font-bebas text-4xl text-[#D4A72C]">{pkg.price}</p>
             <Link
               href="/became-delegate/"
-              className="mt-4 inline-flex items-center justify-center rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#0E2044]"
+              className="mt-4 inline-flex items-center justify-center rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
             >
               Register
             </Link>
@@ -294,7 +294,7 @@ function BecomeDelegateSection() {
 function VenueSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
         Venue
       </h2>
       <div className="mb-8 flex items-start gap-4">
@@ -302,7 +302,7 @@ function VenueSection() {
           <MapPin className="h-6 w-6" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-[#0E2044] sm:text-2xl">
+          <h3 className="text-xl font-bold text-[#031A34] sm:text-2xl">
             Auto Cluster Exhibition Centre
           </h3>
           <p className="mt-1 text-sm text-gray-600 sm:text-base">
@@ -329,7 +329,7 @@ function VenueSection() {
 function OrganizerSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
         Organizer
       </h2>
       <div className="space-y-6 text-sm leading-relaxed text-gray-700 sm:text-base lg:text-lg">
@@ -353,16 +353,16 @@ function OrganizerSection() {
 function ContactsSection() {
   return (
     <section>
-      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
         Contacts
       </h2>
       <div className="max-w-xl rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 md:p-8">
-        <p className="text-sm font-bold text-[#0E2044] sm:text-base">
+        <p className="text-sm font-bold text-[#031A34] sm:text-base">
           For participation and partnership inquiries:
         </p>
-        <h3 className="mt-6 font-bebas text-3xl uppercase text-[#0E2044]">Padmanabham R</h3>
+        <h3 className="mt-6 font-bebas text-3xl uppercase text-[#031A34]">Padmanabham R</h3>
         <p className="text-sm text-[#D4A72C]">Summit Director</p>
-        <div className="mt-4 space-y-1 text-sm font-semibold text-[#0E2044]">
+        <div className="mt-4 space-y-1 text-sm font-semibold text-[#031A34]">
           <a href="mailto:pad@maxxmedia.in" className="block hover:text-[#D4A72C]">
             pad@maxxmedia.in
           </a>
@@ -380,7 +380,7 @@ function FAQSection() {
 
   return (
     <section>
-      <h2 className="mb-8 border-b border-gray-200 pb-6 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] sm:text-5xl lg:text-6xl">
+      <h2 className="mb-8 border-b border-gray-200 pb-6 font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
         FAQ
       </h2>
       <div className="space-y-2">
@@ -394,7 +394,7 @@ function FAQSection() {
                 className="flex w-full items-center justify-between py-5 text-left"
                 aria-expanded={isOpen}
               >
-                <h3 className="pr-4 text-base font-semibold text-[#0E2044] sm:text-lg">
+                <h3 className="pr-4 text-base font-semibold text-[#031A34] sm:text-lg">
                   {item.question}
                 </h3>
                 <span className={`shrink-0 text-[#D4A72C] transition-transform ${isOpen ? 'rotate-180' : ''}`}>

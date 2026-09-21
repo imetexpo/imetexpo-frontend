@@ -291,7 +291,7 @@ export default function CompanyDirectory() {
               <div className="mb-4 text-gray-400">
                 <Search size={48} className="mx-auto" />
               </div>
-              <h3 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#0E2044]">No companies found</h3>
+              <h3 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#031A34]">No companies found</h3>
               <p className="mx-auto max-w-xs text-sm leading-relaxed text-gray-600">
                 Try adjusting your search or filter to find what you&apos;re looking for.
               </p>
@@ -301,7 +301,7 @@ export default function CompanyDirectory() {
                   setSelectedLetter(null);
                   setCurrentPage(1);
                 }}
-                className="mt-6 cursor-pointer rounded-sm bg-[#D4A72C] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#0E2044]"
+                className="mt-6 cursor-pointer rounded-sm bg-[#D4A72C] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
               >
                 Clear all filters
               </button>

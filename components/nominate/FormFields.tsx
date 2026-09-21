@@ -144,7 +144,7 @@ export function RadioCard({ title, price, note, name, checked = false, onChange 
         className="absolute top-2 right-2 accent-[#D4A72C]"
       />
       <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4A72C] sm:text-xs">{title}</span>
-      <span className="mt-1 text-xs font-semibold text-[#0E2044] sm:text-sm">{price}</span>
+      <span className="mt-1 text-xs font-semibold text-[#031A34] sm:text-sm">{price}</span>
       <span className="mt-1 text-[10px] text-gray-500">{note}</span>
     </label>
   );

@@ -13,7 +13,7 @@ const reasons = [
 
 export default function WhyExhibitSection() {
   return (
-    <section className="bg-[#0E2044] text-white py-16 sm:py-20 lg:py-28">
+    <section className="bg-[#031A34] text-white py-16 sm:py-20 lg:py-28">
       <Container>
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-stretch">
           
@@ -40,7 +40,7 @@ export default function WhyExhibitSection() {
 
             <Link
               href="/why-exhibit/"
-              className="inline-block bg-[#D4A72C] hover:bg-white hover:text-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 w-fit text-center"
+              className="inline-block bg-[#D4A72C] hover:bg-white hover:text-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 w-fit text-center"
             >
               Explore Benefits of Participating
             </Link>

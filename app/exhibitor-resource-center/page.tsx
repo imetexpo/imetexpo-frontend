@@ -19,7 +19,7 @@ export default function ExhibitorResourceCenterPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#0E2044]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#031A34]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -182,7 +182,7 @@ const faqItems = [
                 </div>
                 {/* LEFT CONTENT */}
                 <div className="order-2 lg:order-1 space-y-6">
-                  <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl leading-tight text-[#0E2044] uppercase">
+                  <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl leading-tight text-[#031A34] uppercase">
                     Explore <span className="text-[#D4A72C]">Opportunities</span>
                   </h1>
                   <p className="text-base sm:text-lg leading-relaxed text-gray-700 font-sans">
@@ -190,7 +190,7 @@ const faqItems = [
                   </p>
                   <div className="pt-2">
                     <Link href="https://cdn-ite.prismetic.com/02_Manual_Forms_Mining_World_Russia_2026_EUR_0ddf1ecf29.pdf" target="_blank">
-                      <button className="bg-[#D4A72C] hover:bg-[#0E2044] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         Download Guide
                       </button>
                     </Link>
@@ -205,7 +205,7 @@ const faqItems = [
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12 lg:mt-16">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#0E2044] uppercase">
+              <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#031A34] uppercase">
                 Stands for your <span className="text-[#D4A72C]">Business Objectives</span>
               </h2>
               <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -233,7 +233,7 @@ const faqItems = [
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12 lg:mt-16">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#0E2044] uppercase">
+              <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#031A34] uppercase">
                 Explore Our <span className="text-[#D4A72C]">Stand Options</span>
               </h2>
               <p className="mt-2 text-sm font-bold text-[#D4A72C] uppercase tracking-wider">Selection Made Simple</p>
@@ -251,13 +251,13 @@ const faqItems = [
                         />
                       </div>
                       <div className="flex flex-col gap-3 p-5">
-                        <h4 className="font-bebas text-2xl sm:text-3xl text-[#0E2044] uppercase font-bold">{option.title}</h4>
+                        <h4 className="font-bebas text-2xl sm:text-3xl text-[#031A34] uppercase font-bold">{option.title}</h4>
                         <p className="text-sm text-gray-650 leading-relaxed line-clamp-4">{option.description}</p>
                       </div>
                     </div>
                     <div className="p-5 pt-0 mt-auto">
                       <Link href="/exhibiting-enquiry">
-                        <button className="bg-[#D4A72C] hover:bg-[#0E2044] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Enquire Now
                         </button>
                       </Link>
@@ -274,7 +274,7 @@ const faqItems = [
           <div className="animated-block-target">
             <div className="bg-[#FCF8F3] py-16 border-t border-b border-gray-150">
               <Container>
-                <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#0E2044] uppercase">
+                <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#031A34] uppercase">
                   Exhibition <span className="text-[#D4A72C]">Guide</span>
                 </h2>
                 <div className="mt-8 space-y-4">
@@ -284,7 +284,7 @@ const faqItems = [
                         onClick={() => toggleFaq(idx)}
                         className="flex w-full items-center justify-between p-4 sm:p-5 text-left transition-all hover:bg-gray-50 cursor-pointer"
                       >
-                        <h4 className="text-base sm:text-lg md:text-xl font-bold text-[#0E2044] pr-4 uppercase font-sans">
+                        <h4 className="text-base sm:text-lg md:text-xl font-bold text-[#031A34] pr-4 uppercase font-sans">
                           {item.question}
                         </h4>
                         <div className="relative shrink-0">

@@ -64,7 +64,7 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
   return (
     <div className="overflow-hidden rounded-sm border border-gray-100 bg-white">
       <table className="w-full">
-        <thead className="bg-[#0E2044]">
+        <thead className="bg-[#031A34]">
           <tr>
             <th className="p-4 text-left text-xs font-bold uppercase tracking-wider text-white">Company</th>
             <th className="hidden p-4 text-left text-xs font-bold uppercase tracking-wider text-white md:table-cell">Location</th>
@@ -92,7 +92,7 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
                     />
                   )}
                   <div>
-                    <div className="font-medium text-[#0E2044]">{company.name}</div>
+                    <div className="font-medium text-[#031A34]">{company.name}</div>
                     <div className="text-sm text-gray-600 md:hidden">
                       {company.pavilion} • Stand {company.standNumber}
                     </div>
@@ -107,13 +107,13 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
                   <span>{company.country}</span>
                 </div>
               </td>
-              <td className="hidden p-4 font-medium text-[#0E2044] lg:table-cell">
+              <td className="hidden p-4 font-medium text-[#031A34] lg:table-cell">
                 {company.standNumber}
               </td>
               <td className="p-4">
                 <div className="flex flex-wrap gap-1">
                   {company.sector.slice(0, 2).map((s, i) => (
-                    <span key={i} className="rounded-sm bg-[#FCF8F3] px-2 py-1 text-xs text-[#0E2044]">
+                    <span key={i} className="rounded-sm bg-[#FCF8F3] px-2 py-1 text-xs text-[#031A34]">
                       {s}
                     </span>
                   ))}

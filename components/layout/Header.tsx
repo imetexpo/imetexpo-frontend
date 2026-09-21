@@ -69,7 +69,7 @@ export default function Header() {
 
       <div
         ref={mobileHeaderRef}
-        className="lg:hidden fixed top-0 left-0 w-full z-[60] bg-[#0E2044] shadow-lg"
+        className="lg:hidden fixed top-0 left-0 w-full z-[60] bg-[#031A34] shadow-lg"
       >
         <div className="px-4 py-1.5 text-center text-[10px] font-semibold uppercase tracking-wider text-gray-300">
           22–24 April 2027 • Auto Cluster Exhibition Center, Pune, India
@@ -90,7 +90,7 @@ export default function Header() {
               <Link
                 href="/login/"
                 className="bg-[#D4A72C] text-white px-4 py-1.5 text-sm border border-white/20
-                hover:bg-[#D4A72C] hover:text-[#0E2044] transition-all duration-300 rounded-sm"
+                hover:bg-[#D4A72C] hover:text-[#031A34] transition-all duration-300 rounded-sm"
               >
                 Login
               </Link>

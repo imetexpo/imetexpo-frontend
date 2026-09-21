@@ -110,7 +110,7 @@ export default function WhyExhibitPage() {
                   <div className="lg:col-span-5">
                     <div className="flex flex-col gap-5">
                       <p className="font-bold text-[#D4A72C]">Your Gateway to Precision Manufacturing Growth in India</p>
-                      <h2 className="font-bebas text-6xl text-[#0E2044] md:text-7xl">Powering the Future of Metrology, Measurement & Quality</h2>
+                      <h2 className="font-bebas text-6xl text-[#031A34] md:text-7xl">Powering the Future of Metrology, Measurement & Quality</h2>
                       <p className="text-lg text-gray-700">
                        As manufacturing moves toward greater precision, automation, digitalisation, and quality excellence, 
                        India’s metrology and measurement industry is entering a new era of growth. INDIAMET connects you with 
@@ -122,24 +122,24 @@ export default function WhyExhibitPage() {
                     <div className="mt-10 flex flex-wrap gap-8 2xl:gap-16">
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
                         <h3 className="mb-3 text-5xl font-bold text-[#D4A72C] md:text-6xl">1st</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-[#0E2044] font-sans">Edition</p>
+                        <p className="text-sm font-semibold tracking-wider uppercase text-[#031A34] font-sans">Edition</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
                         <h3 className="mb-3 text-5xl font-bold text-[#D4A72C] md:text-6xl">10,000+</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-[#0E2044] font-sans">Trade Visitors</p>
+                        <p className="text-sm font-semibold tracking-wider uppercase text-[#031A34] font-sans">Trade Visitors</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
                         <h3 className="mb-3 text-5xl font-bold text-[#D4A72C] md:text-6xl">150+</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-[#0E2044] font-sans">Exhibitors</p>
+                        <p className="text-sm font-semibold tracking-wider uppercase text-[#031A34] font-sans">Exhibitors</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center font-bebas last-of-type:border-none lg:border-r lg:pr-8 2xl:pr-16">
                         <h3 className="mb-3 text-5xl font-bold text-[#D4A72C] md:text-6xl">50+</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-[#0E2044] font-sans">Conference Speakers</p>
+                        <p className="text-sm font-semibold tracking-wider uppercase text-[#031A34] font-sans">Conference Speakers</p>
                       </div>
                     </div>
                     <div className="mt-10">
                       <Link href="/about-its-tyre-expo">
-                        <button className="bg-[#D4A72C] hover:bg-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           About INDIAMET Expo
                         </button>
                       </Link>
@@ -155,7 +155,7 @@ export default function WhyExhibitPage() {
             <div className="animated-block-target">
               <Container>
                 <div className="grid gap-5">
-                  <h2 className="font-bebas text-6xl text-[#0E2044] md:text-7xl">Why Exhibit at INDIAMET Expo</h2>
+                  <h2 className="font-bebas text-6xl text-[#031A34] md:text-7xl">Why Exhibit at INDIAMET Expo</h2>
                   <p className="text-lg text-gray-700">
                     Exhibiting at INDIAMET Expo puts you at the center of India's fastest-growing metrology and measurement technology hub. Connect directly with over 10,000 professionals with real purchasing power, showcase your solutions to a USD 45 billion industry, and expand your network across 50+ countries. This is your chance to generate high-quality leads, forge valuable partnerships, and position your brand as a leader in the region's rapidly modernizing rubber and tyre sector.
                   </p>
@@ -187,13 +187,13 @@ export default function WhyExhibitPage() {
                       <div className="flex items-center justify-center h-16 w-16 rounded-sm bg-[#FCF8F3] border border-gray-100 shadow-sm">
                         <img src={benefit.icon} alt={benefit.title} className="h-8 w-8 object-contain" />
                       </div>
-                      <h3 className="font-bebas text-2xl text-[#0E2044] mt-2 font-bold">{benefit.title}</h3>
+                      <h3 className="font-bebas text-2xl text-[#031A34] mt-2 font-bold">{benefit.title}</h3>
                       <p className="text-sm text-gray-600 leading-relaxed">{benefit.desc}</p>
                     </div>
                   ))}
                 </div>
                 <Link href="/exhibiting-enquiry">
-                  <button className="bg-[#D4A72C] hover:bg-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Book A Stand</button>
+                  <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Book A Stand</button>
                 </Link>
               </Container>
             </div>
@@ -209,7 +209,7 @@ export default function WhyExhibitPage() {
                   <div className="lg:col-span-3">
                     <div className="flex flex-col gap-5">
                       <p className="font-bold text-orange-600">Visitor Breakdown</p>
-                      <h3 className="font-bebas text-6xl text-[#0E2044] md:text-7xl">Connecting You to Precision Manufacturing Decision-Makers</h3>
+                      <h3 className="font-bebas text-6xl text-[#031A34] md:text-7xl">Connecting You to Precision Manufacturing Decision-Makers</h3>
                       <p className="text-lg text-gray-700">
                         From manufacturing leaders and procurement specialists to quality managers, metrology engineers, R&D professionals, and inspection experts, INDIAMET brings together the decision-makers shaping India’s precision manufacturing and quality ecosystem.
                       </p>
@@ -217,24 +217,24 @@ export default function WhyExhibitPage() {
                     <div className="mt-10 grid grid-cols-2 gap-6 bg-[#FCF8F3] border border-gray-100 p-8 rounded-sm font-sans">
                       <div className="flex w-fit flex-col">
                         <h3 className="mb-3 text-5xl font-bold text-[#D4A72C] font-bebas">68%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#0E2044]">Industry Decision-Makers</p>
+                        <p className="text-sm font-semibold uppercase text-[#031A34]">Industry Decision-Makers</p>
                       </div>
                       <div className="flex w-fit flex-col">
                         <h3 className="mb-3 text-5xl font-bold text-[#D4A72C] font-bebas">72%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#0E2044]">Manufacturing & Engineering Professionals</p>
+                        <p className="text-sm font-semibold uppercase text-[#031A34]">Manufacturing & Engineering Professionals</p>
                       </div>
                       <div className="flex w-fit flex-col">
                         <h3 className="mb-3 text-5xl font-bold text-[#D4A72C] font-bebas">45%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#0E2044]">Procurement & Purchase Influencers</p>
+                        <p className="text-sm font-semibold uppercase text-[#031A34]">Procurement & Purchase Influencers</p>
                       </div>
                       <div className="flex w-fit flex-col">
                         <h3 className="mb-3 text-5xl font-bold text-[#D4A72C] font-bebas">30%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#0E2044]">Senior Management & C-Level Executives</p>
+                        <p className="text-sm font-semibold uppercase text-[#031A34]">Senior Management & C-Level Executives</p>
                       </div>
                     </div>
                     <div className="mt-10">
                       <Link href="/exhibiting-enquiry">
-                        <button className="bg-[#D4A72C] hover:bg-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Enquire to Exhibit</button>
+                        <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Enquire to Exhibit</button>
                       </Link>
                     </div>
                   </div>
@@ -265,7 +265,7 @@ export default function WhyExhibitPage() {
                   />
                 </div>
                 {/* DARK OVERLAY */}
-                <div className="absolute inset-0 bg-[#0E2044]/60"></div>
+                <div className="absolute inset-0 bg-[#031A34]/60"></div>
                 {/* CONTENT */}
                 <Container className="relative z-10">
                   <div className="grid items-center gap-10 md:grid-cols-12">
@@ -285,7 +285,7 @@ export default function WhyExhibitPage() {
                         about the show and explore your participation opportunities.
                       </p>
                       <Link href="/event-brochure">
-                        <button className="bg-[#D4A72C] hover:bg-white hover:text-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#D4A72C] hover:bg-white hover:text-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Download Now
                         </button>
                       </Link>
@@ -300,7 +300,7 @@ export default function WhyExhibitPage() {
           <div className="animated-block mt-20">
             <div className="animated-block-target">
               <Container>
-                <h2 className="mb-10 font-bebas text-6xl text-[#0E2044] md:text-7xl">Why India?</h2>
+                <h2 className="mb-10 font-bebas text-6xl text-[#031A34] md:text-7xl">Why India?</h2>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
@@ -323,7 +323,7 @@ export default function WhyExhibitPage() {
                       <div className="absolute inset-0">
                         <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
                       </div>
-                      <div className="absolute inset-0 bg-[#0E2044]/60"></div>
+                      <div className="absolute inset-0 bg-[#031A34]/60"></div>
                       <div className="relative z-10 flex h-full flex-col justify-end gap-4 p-6 font-sans">
                         <h3 className="text-xl font-bold leading-tight">{item.title}</h3>
                         <p className="text-sm text-gray-300 leading-relaxed">{item.desc}</p>
@@ -342,7 +342,7 @@ export default function WhyExhibitPage() {
                 <div className="mb-10 flex justify-between max-lg:flex-col lg:items-end">
                   <div className="lg:basis-2/3">
                     <p className="font-bold text-[#D4A72C]">Testimonials</p>
-                    <h3 className="my-3 font-bebas text-6xl text-[#0E2044] md:text-7xl">Why the Industry Chooses INDIAMET Expo</h3>
+                    <h3 className="my-3 font-bebas text-6xl text-[#031A34] md:text-7xl">Why the Industry Chooses INDIAMET Expo</h3>
                   </div>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -359,7 +359,7 @@ export default function WhyExhibitPage() {
                           {testimonial.name.charAt(0)}
                         </div>
                         <div>
-                          <h5 className="text-sm font-bold text-[#0E2044]">{testimonial.name}</h5>
+                          <h5 className="text-sm font-bold text-[#031A34]">{testimonial.name}</h5>
                           <p className="text-xs text-gray-500 leading-tight mt-1">{testimonial.title}<br />{testimonial.company}</p>
                         </div>
                       </div>
@@ -373,16 +373,16 @@ export default function WhyExhibitPage() {
           {/* When and Where Section */}
           <div className="animated-block mt-20">
             <div className="animated-block-target">
-              <Container className="text-[#0E2044]">
+              <Container className="text-[#031A34]">
                 <h2 className="mb-10 font-bebas text-6xl md:text-7xl">When and Where</h2>
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 font-sans">
-                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#0E2044]">Opening Hours</p>
+                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#031A34]">Opening Hours</p>
                     <h4 className="text-lg font-bold text-gray-800">22, 23 April 2027: 10:00 - 18:00</h4>
                     <h4 className="mt-2 text-lg font-bold text-gray-800">24 April 2027: 10:00 - 16:00</h4>
                   </div>
                   <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 font-sans">
-                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#0E2044]">Venue</p>
+                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#031A34]">Venue</p>
                     <h4 className="text-lg font-bold text-gray-800">Auto Cluster Exhibition Center, Pune, India</h4>
                   </div>
                 </div>
@@ -403,7 +403,7 @@ export default function WhyExhibitPage() {
           {/* Quick Navigation Footer */}
           {/* <div className="animated-block mt-20">
             <div className="animated-block-target">
-              <div className="border-t-8 border-[#D4A72C] bg-[#0E2044] py-20 text-white">
+              <div className="border-t-8 border-[#D4A72C] bg-[#031A34] py-20 text-white">
                 <Container>
                   <h2 className="font-bebas text-6xl md:text-7xl">Quick Navigation</h2>
                   <div className="mt-16 grid grid-cols-2 gap-y-10 md:grid-cols-5">

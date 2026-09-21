@@ -23,7 +23,7 @@ export default function StatsGrid({ stats }: StatsGridProps) {
             <span className="font-bebas text-3xl sm:text-4xl lg:text-5xl font-bold text-[#D4A72C] leading-none tracking-wide">
               {stat.number}
             </span>
-            <span className="mt-1.5 sm:mt-3 text-[10px] sm:text-xs font-semibold text-[#0E2044] uppercase tracking-wider leading-tight font-sans">
+            <span className="mt-1.5 sm:mt-3 text-[10px] sm:text-xs font-semibold text-[#031A34] uppercase tracking-wider leading-tight font-sans">
               {stat.label}
             </span>
           </div>

@@ -2,7 +2,7 @@ export default function EnquiryContent() {
   return (
     <div className="flex flex-col gap-6">
       <div className="bg-[#f5f5f5] rounded-2xl p-6">
-        <h3 className="font-bebas text-2xl text-[#0E2044] mb-4">Event Details</h3>
+        <h3 className="font-bebas text-2xl text-[#031A34] mb-4">Event Details</h3>
         <div className="space-y-4">
           <div>
             <p className="text-[#D4A72C] font-semibold text-sm">Dates</p>
@@ -20,7 +20,7 @@ export default function EnquiryContent() {
       </div>
 
       <div className="bg-[#f5f5f5] rounded-2xl p-6">
-        <h3 className="font-bebas text-2xl text-[#0E2044] mb-4">Why Visit?</h3>
+        <h3 className="font-bebas text-2xl text-[#031A34] mb-4">Why Visit?</h3>
         <ul className="space-y-3">
           {[
             "Meet 350+ leading tyre manufacturers and suppliers",
@@ -37,7 +37,7 @@ export default function EnquiryContent() {
         </ul>
       </div>
 
-      <div className="bg-gradient-to-r from-[#D4A72C] to-[#0E2044] rounded-2xl p-6 text-white">
+      <div className="bg-gradient-to-r from-[#D4A72C] to-[#031A34] rounded-2xl p-6 text-white">
         <h3 className="font-bebas text-2xl mb-2">Free Registration</h3>
         <p className="text-sm text-white/90 mb-4">
           Register now to get free entry to the exhibition and conference sessions.

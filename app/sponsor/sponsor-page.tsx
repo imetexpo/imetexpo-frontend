@@ -190,7 +190,7 @@ export default function SponsorPage() {
                   <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#D4A72C]/10 text-2xl text-[#D4A72C]">
                     ✓
                   </div>
-                  <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#0E2044]">
+                  <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#031A34]">
                     Enquiry Submitted
                   </h2>
                   <p className="mx-auto max-w-sm text-sm text-gray-600">
@@ -337,7 +337,7 @@ export default function SponsorPage() {
                   <h2 className="mb-4 mt-8 font-bebas text-2xl uppercase tracking-wide text-[#D4A72C]">
                     Sponsorship Interest
                   </h2>
-                  <p className="mb-3 text-sm font-medium text-[#0E2044]">
+                  <p className="mb-3 text-sm font-medium text-[#031A34]">
                     Sponsorship Package Interested In <span className="text-[#D4A72C]">*</span>
                   </p>
                   <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
@@ -392,7 +392,7 @@ export default function SponsorPage() {
 
                   <button
                     type="submit"
-                    className="mt-6 inline-flex items-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#0E2044]"
+                    className="mt-6 inline-flex items-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
                   >
                     Submit Enquiry →
                   </button>
@@ -435,8 +435,8 @@ export default function SponsorPage() {
                 <p className="mb-3 text-sm text-gray-700">
                   Our team is here to help you create the perfect partnership.
                 </p>
-                <p className="text-sm text-[#0E2044]">📞 +91 91483 19993</p>
-                <p className="text-sm text-[#0E2044]">✉️ awards@maxxmedia.in</p>
+                <p className="text-sm text-[#031A34]">📞 +91 91483 19993</p>
+                <p className="text-sm text-[#031A34]">✉️ awards@maxxmedia.in</p>
               </SideCard>
             </aside>
           </div>
@@ -454,7 +454,7 @@ export default function SponsorPage() {
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-3">
                 <span className="shrink-0 text-2xl">{item.icon}</span>
-                <span className="text-sm font-semibold leading-tight text-[#0E2044] md:text-base">
+                <span className="text-sm font-semibold leading-tight text-[#031A34] md:text-base">
                   {item.label}
                 </span>
               </div>
@@ -465,7 +465,7 @@ export default function SponsorPage() {
 
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-[#0E2044]/60 p-4"
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-[#031A34]/60 p-4"
           onClick={() => setIsModalOpen(false)}
         >
           <div
@@ -484,14 +484,14 @@ export default function SponsorPage() {
               <span className="mb-3 inline-block rounded-sm border border-[#D4A72C]/40 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#D4A72C]">
                 {selectedPackage.title}
               </span>
-              <h3 className="font-bebas text-3xl uppercase tracking-wide text-[#0E2044]">
+              <h3 className="font-bebas text-3xl uppercase tracking-wide text-[#031A34]">
                 {selectedPackage.price}
               </h3>
               <p className="mb-5 mt-1 text-sm text-gray-600">{selectedPackage.note}</p>
               <h4 className="mb-3 text-xs font-bold uppercase tracking-wider text-[#D4A72C]">What You Get</h4>
               <ul className="mb-6 space-y-2">
                 {selectedPackage.benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-2 text-sm text-[#0E2044]">
+                  <li key={benefit} className="flex items-start gap-2 text-sm text-[#031A34]">
                     <span className="mt-0.5 text-[#D4A72C]">✓</span>
                     <span>{benefit}</span>
                   </li>
@@ -500,7 +500,7 @@ export default function SponsorPage() {
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#0E2044]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
               >
                 Continue with {selectedPackage.title}
               </button>

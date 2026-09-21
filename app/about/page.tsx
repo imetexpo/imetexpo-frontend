@@ -20,7 +20,7 @@ export default function AboutPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#0E2044]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#031A34]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
   
               {/* RIGHT CONTENT */}
               <div className="flex flex-col justify-center">
-                <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#0E2044]">
+                <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#031A34]">
                   Transforming Precision Manufacturing <br className="hidden sm:block" /> Through Metrology
                 </h2>
   
@@ -128,28 +128,28 @@ export default function AboutPage() {
                 <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-between bg-[#FCF8F3] border border-gray-100 px-4 sm:px-6 py-6 sm:py-8 rounded-sm gap-4 sm:gap-0">
                   <div className="text-center flex-1 min-w-[80px]">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#D4A72C] font-bold">1st</h3>
-                    <p className="text-[10px] sm:text-xs tracking-wider text-[#0E2044] font-semibold mt-1 font-sans">EDITION</p>
+                    <p className="text-[10px] sm:text-xs tracking-wider text-[#031A34] font-semibold mt-1 font-sans">EDITION</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#D4A72C] font-bold">10,000+</h3>
-                    <p className="text-[10px] sm:text-xs tracking-wider text-[#0E2044] font-semibold mt-1 font-sans">VISITORS</p>
+                    <p className="text-[10px] sm:text-xs tracking-wider text-[#031A34] font-semibold mt-1 font-sans">VISITORS</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#D4A72C] font-bold">150+</h3>
-                    <p className="text-[10px] sm:text-xs tracking-wider text-[#0E2044] font-semibold mt-1 font-sans">EXHIBITORS</p>
+                    <p className="text-[10px] sm:text-xs tracking-wider text-[#031A34] font-semibold mt-1 font-sans">EXHIBITORS</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#D4A72C] font-bold">50+</h3>
-                    <p className="text-[10px] sm:text-xs tracking-wider text-[#0E2044] font-semibold mt-1 font-sans">SPEAKERS</p>
+                    <p className="text-[10px] sm:text-xs tracking-wider text-[#031A34] font-semibold mt-1 font-sans">SPEAKERS</p>
                   </div>
                 </div>
   
@@ -172,7 +172,7 @@ export default function AboutPage() {
             <div className="animated-block ">
               <div className="animated-block-target">
                 <div className="w-full max-w-[1600px] 2xl:max-w-[1800px] ">
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">INDIAMET: A Year-Round Metrology & Manufacturing Ecosystem</h3>
+                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">INDIAMET: A Year-Round Metrology & Manufacturing Ecosystem</h3>
                   <p className="mt-4 sm:mt-5 text-base sm:text-lg text-gray-700">
                     INDIAMET is a premier international platform for metrology, measurement technology, inspection, calibration, and quality engineering. It brings together technology providers, manufacturers, quality professionals, engineers, and decision-makers from across India and global markets.
                     <br /><br />
@@ -186,7 +186,7 @@ export default function AboutPage() {
                         className="relative flex flex-col overflow-hidden rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
                       >
                         <div className="flex flex-col flex-1 gap-3 sm:gap-4 font-sans">
-                          <h4 className="text-lg sm:text-xl font-bold text-[#0E2044]">{item.title}</h4>
+                          <h4 className="text-lg sm:text-xl font-bold text-[#031A34]">{item.title}</h4>
                           <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
                           <ul className="list-disc space-y-1.5 pl-5 text-sm text-gray-600 flex-1 leading-relaxed">
                             {item.points.map((point, pIdx) => (
@@ -197,7 +197,7 @@ export default function AboutPage() {
                           
                         <div className="mt-5">
                           <Link href={item.buttonLink}>
-                            <button className="bg-[#D4A72C] hover:bg-[#0E2044] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                            <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                               {item.buttonText}
                             </button>
                           </Link>
@@ -222,7 +222,7 @@ export default function AboutPage() {
                   />
                 </div>
 
-                <div className="absolute inset-0 bg-[#0E2044]/60"></div>
+                <div className="absolute inset-0 bg-[#031A34]/60"></div>
 
                 <Container className="relative z-10">
                   <div className="max-w-[1600px] 2xl:max-w-[1800px] mx-auto">
@@ -246,7 +246,7 @@ export default function AboutPage() {
                         </p>
                   
                         <Link href="/event-brochure">
-                          <button className="bg-[#D4A72C] hover:bg-white hover:text-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit">
+                          <button className="bg-[#D4A72C] hover:bg-white hover:text-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit">
                             Download Now
                           </button>
                         </Link>
@@ -263,13 +263,13 @@ export default function AboutPage() {
             <div className="animated-block-target">
               <div className="w-full max-w-[1600px] 2xl:max-w-[1800px] mx-auto">
                 <Container>
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">
+                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">
                     Meet the Leading Exhibitors of 2027
                   </h3>
                 </Container>
                           
                 <div className="mt-6 sm:mt-8 lg:mt-10 mx-4 bg-[#FCF8F3] border border-gray-100 p-6 sm:p-8 flex flex-col rounded-sm shadow-sm">
-                  <h4 className="font-bebas text-3xl sm:text-4xl lg:text-5xl text-[#0E2044]">
+                  <h4 className="font-bebas text-3xl sm:text-4xl lg:text-5xl text-[#031A34]">
                     Exhibiting at INDIAMET Elevates Your Brand and Expands Your Business Network
                   </h4>
                           
@@ -283,7 +283,7 @@ export default function AboutPage() {
                           
                   <div className="mt-6 sm:mt-8">
                     <Link href="/exhibition-directory" target="_blank">
-                      <button className="bg-[#D4A72C] hover:bg-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         View Full Exhibitor List
                       </button>
                     </Link>
@@ -297,17 +297,17 @@ export default function AboutPage() {
           <Container className="py-12 sm:py-16 lg:py-20">
             <div className="animated-block">
               <div className="animated-block-target">
-                <div className="w-full flex flex-col text-[#0E2044]">
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">Here's Where You Can Find Us!</h3>
+                <div className="w-full flex flex-col text-[#031A34]">
+                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">Here's Where You Can Find Us!</h3>
                   <div className="mt-1 sm:mt-1 lg:mt-2 grid gap-5 sm:gap-6 lg:grid-cols-2">
                     <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 font-sans">
-                      <p className="mb-2 font-bold text-sm sm:text-base text-[#0E2044]">Opening Hours</p>
+                      <p className="mb-2 font-bold text-sm sm:text-base text-[#031A34]">Opening Hours</p>
                       <h4 className="text-lg sm:text-xl font-bold text-gray-800">22 April 2027: 10:00 - 18:00</h4>
                       <h4 className="text-lg sm:text-xl font-bold text-gray-800">23 April 2027: 10:00 - 18:00</h4>
                       <h4 className="text-lg sm:text-xl font-bold text-gray-800">24 April 2027: 10:00 - 16:00</h4>
                     </div>
                     <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 font-sans">
-                      <p className="mb-2 font-bold text-sm sm:text-base text-[#0E2044]">Venue</p>
+                      <p className="mb-2 font-bold text-sm sm:text-base text-[#031A34]">Venue</p>
                       <h4 className="text-lg sm:text-xl font-bold text-gray-800">Auto Cluster Exhibition Center, Pune, India</h4>
                     </div>
                   </div>
@@ -331,7 +331,7 @@ export default function AboutPage() {
                 <div className="w-full">
                   <div className="mb-6 sm:mb-8 flex flex-col lg:flex-row justify-between lg:items-end gap-4">
                     <div className="lg:basis-2/3">
-                      <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0E2044]">Key Events</h3>
+                      <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">Key Events</h3>
                       <p className="mt-3 text-base sm:text-lg text-gray-600">
                         INDIAMET Connect is a professional networking platform designed to connect exhibitors, visitors, manufacturers, metrology professionals, industry experts, media, and professional associations. It helps the industry discover new technologies, build valuable business relationships, and stay connected throughout the year.
                       </p>
@@ -347,14 +347,14 @@ export default function AboutPage() {
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-[#0E2044]/20 group-hover:bg-[#0E2044]/40 transition"></div>
+                          <div className="absolute inset-0 bg-[#031A34]/20 group-hover:bg-[#031A34]/40 transition"></div>
                         </div>
                         <div className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
-                          <h4 className="text-lg sm:text-xl font-bold text-[#0E2044]">{event.title}</h4>
+                          <h4 className="text-lg sm:text-xl font-bold text-[#031A34]">{event.title}</h4>
                           <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">{event.description}</p>
                           {event.buttonText && (
                             <Link href={event.buttonLink}>
-                              <button className="bg-[#D4A72C] hover:bg-[#0E2044] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mt-2">
+                              <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mt-2">
                                 {event.buttonText}
                               </button>
                             </Link>
@@ -374,7 +374,7 @@ export default function AboutPage() {
           {/* Quick Navigation */}
           {/* <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
-              <div className="border-t-8 border-[#D4A72C] bg-[#0E2044] py-12 sm:py-16 lg:py-20 text-white">
+              <div className="border-t-8 border-[#D4A72C] bg-[#031A34] py-12 sm:py-16 lg:py-20 text-white">
                 <Container>
                   <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                     Quick Navigation

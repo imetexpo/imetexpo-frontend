@@ -4,7 +4,7 @@ export default function BrochureContent() {
   return (
     <div className="flex flex-col gap-6">
       <div className="space-y-3">
-        <h2 className="font-bebas text-3xl leading-[1.05] tracking-tight uppercase text-[#0E2044]">
+        <h2 className="font-bebas text-3xl leading-[1.05] tracking-tight uppercase text-[#031A34]">
           INDIAMET Expo <span className="text-[#D4A72C]">2026</span>
         </h2>
         <p className="text-sm text-gray-700 leading-relaxed">
@@ -29,7 +29,7 @@ export default function BrochureContent() {
       </div>
 
       <div className="space-y-4 pt-4 border-t border-gray-200">
-        <h3 className="font-bebas text-2xl text-[#0E2044] uppercase font-bold">Why Download the Brochure?</h3>
+        <h3 className="font-bebas text-2xl text-[#031A34] uppercase font-bold">Why Download the Brochure?</h3>
         <ul className="text-xs text-gray-650 space-y-2.5">
           <li className="flex items-start gap-2">
             <span className="text-[#D4A72C]">•</span>

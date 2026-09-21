@@ -178,7 +178,7 @@ export default function SponsorshipEnquiryPage() {
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h2>
           <p className="text-gray-600 mb-6">Your sponsorship enquiry has been submitted successfully. Our team will contact you shortly.</p>
-          <Link href="/" className="inline-block bg-[#D4A72C] text-white px-6 py-2 rounded-lg hover:bg-[#0E2044] transition">
+          <Link href="/" className="inline-block bg-[#D4A72C] text-white px-6 py-2 rounded-lg hover:bg-[#031A34] transition">
             Back to Home
           </Link>
         </div>
@@ -197,7 +197,7 @@ export default function SponsorshipEnquiryPage() {
               <p className="text-[#D4A72C] font-sans text-[14px] font-semibold uppercase tracking-[1.5px]">
                 Partner With Us
               </p>
-              <h1 className="font-bebas font-bold text-[38px] lg:text-[48px] leading-[1.15] tracking-[1px] uppercase text-[#0E2044]">
+              <h1 className="font-bebas font-bold text-[38px] lg:text-[48px] leading-[1.15] tracking-[1px] uppercase text-[#031A34]">
                 Sponsorship Enquiry
               </h1>
               <div className="font-sans text-[16px] sm:text-[18px] text-gray-700 leading-[1.6] space-y-4">
@@ -214,7 +214,7 @@ export default function SponsorshipEnquiryPage() {
               <div className="mt-4">
                 {/* <Button
                href="/contact-us/"
-                  className="bg-[#D4A72C] text-white px-8 py-3 text-sm font-extrabold uppercase tracking-[1.5px] hover:bg-[#0E2044] transition-all duration-300"
+                  className="bg-[#D4A72C] text-white px-8 py-3 text-sm font-extrabold uppercase tracking-[1.5px] hover:bg-[#031A34] transition-all duration-300"
                 >
                   Download Sponsorship Brochure
                 </Button> */}
@@ -372,7 +372,7 @@ export default function SponsorshipEnquiryPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#D4A72C] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-[#0E2044] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#D4A72C] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-[#031A34] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
                 </button>

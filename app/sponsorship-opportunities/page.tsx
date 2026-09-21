@@ -18,7 +18,7 @@ export default function AdvertisingDetailsPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#0E2044]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#031A34]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -147,7 +147,7 @@ export default function AdvertisingDetailsPage() {
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl text-[#0E2044] uppercase">
+              <h2 className="font-bebas text-4xl sm:text-5xl text-[#031A34] uppercase">
                 By leveraging these promotional options, you can:
               </h2>
               <p className="mt-2 text-sm font-bold text-[#D4A72C] uppercase tracking-wider">
@@ -179,7 +179,7 @@ export default function AdvertisingDetailsPage() {
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl text-[#0E2044] uppercase">
+              <h2 className="font-bebas text-4xl sm:text-5xl text-[#031A34] uppercase">
                 Sponsorship <span className="text-[#D4A72C]"> Options</span>
               </h2>
               <div className="mt-8 space-y-4">
@@ -201,7 +201,7 @@ export default function AdvertisingDetailsPage() {
                     
                     {/* Title & Description */}
                     <div className="flex-1 text-center lg:text-left space-y-2">
-                      <h4 className="font-bebas text-2xl font-bold text-[#0E2044] uppercase tracking-wide">
+                      <h4 className="font-bebas text-2xl font-bold text-[#031A34] uppercase tracking-wide">
                         {item.title}
                       </h4>
                       <p className="text-sm text-gray-600 leading-relaxed">
@@ -212,7 +212,7 @@ export default function AdvertisingDetailsPage() {
                     {/* Button */}
                     <div className="shrink-0 mt-4 lg:mt-0">
                       <Link href={item.buttonLink}>
-                        <button className="bg-[#D4A72C] hover:bg-[#0E2044] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           {item.buttonText}
                         </button>
                       </Link>

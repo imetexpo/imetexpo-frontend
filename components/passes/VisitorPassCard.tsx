@@ -32,14 +32,14 @@ export default function VisitorPassCard({
         compact ? 'w-full max-w-sm' : 'w-full max-w-md'
       }`}
     >
-      <div className="bg-[#0E2044] px-6 py-3 text-center">
+      <div className="bg-[#031A34] px-6 py-3 text-center">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#D4A72C]">Visitor Pass</p>
       </div>
       <div className="px-6 py-6 text-center">
         <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-sm bg-[#D4A72C] text-2xl font-bold text-white">
           {initial}
         </div>
-        <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#0E2044]">{pass.name || 'Visitor'}</h3>
+        <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#031A34]">{pass.name || 'Visitor'}</h3>
         <p className="text-sm text-gray-600">{pass.company || 'India Tyre Show 2027'}</p>
         {location && <p className="mt-1 text-xs text-gray-500">{location}</p>}
 

@@ -100,11 +100,11 @@ function Ring({ percent, label }: { percent: number; label: string }) {
           strokeLinecap="round"
           transform="rotate(-90 60 60)"
         />
-        <text x="60" y="68" textAnchor="middle" className="fill-[#0E2044] text-lg font-bold md:text-xl">
+        <text x="60" y="68" textAnchor="middle" className="fill-[#031A34] text-lg font-bold md:text-xl">
           {percent}%
         </text>
       </svg>
-      <p className="text-center text-sm font-semibold uppercase leading-snug tracking-wide text-[#0E2044] md:text-base">
+      <p className="text-center text-sm font-semibold uppercase leading-snug tracking-wide text-[#031A34] md:text-base">
         {label}
       </p>
     </div>
@@ -128,7 +128,7 @@ export default function AwardsPage() {
         <div className="flex flex-wrap gap-4">
           <Link
             href="/sponsor/"
-            className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#0E2044]"
+            className="rounded-sm border border-white px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#031A34]"
           >
             Sponsor Now
           </Link>
@@ -146,7 +146,7 @@ export default function AwardsPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <SectionEyebrow>About the Awards</SectionEyebrow>
-              <h2 className="mb-6 font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
+              <h2 className="mb-6 font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
                 India Tyre Show Excellence Awards
               </h2>
               <p className="mb-6 text-base leading-relaxed text-gray-600 lg:text-lg">
@@ -178,7 +178,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Benefits</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
               Why Participate?
             </h2>
           </div>
@@ -189,7 +189,7 @@ export default function AwardsPage() {
                 className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <span className="mb-3 block text-3xl">{icon}</span>
-                <h3 className="mb-2 font-bebas text-xl uppercase tracking-wide text-[#0E2044]">{title}</h3>
+                <h3 className="mb-2 font-bebas text-xl uppercase tracking-wide text-[#031A34]">{title}</h3>
                 <p className="text-sm text-gray-600">{desc}</p>
               </div>
             ))}
@@ -201,7 +201,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Categories</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
               Award Categories
             </h2>
           </div>
@@ -212,7 +212,7 @@ export default function AwardsPage() {
                 className="flex min-h-[150px] flex-col items-center justify-center gap-4 rounded-sm border border-gray-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A72C] hover:shadow-md"
               >
                 <span className="text-4xl leading-none md:text-5xl">{icon}</span>
-                <p className="text-sm font-semibold leading-snug text-[#0E2044] md:text-base">{title}</p>
+                <p className="text-sm font-semibold leading-snug text-[#031A34] md:text-base">{title}</p>
               </div>
             ))}
           </div>
@@ -223,7 +223,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Process</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
               Awards Process
             </h2>
           </div>
@@ -237,7 +237,7 @@ export default function AwardsPage() {
                   <p className="text-sm font-bold uppercase leading-snug tracking-wide text-[#D4A72C] md:text-base">
                     {title}
                   </p>
-                  <p className="max-w-[13rem] text-sm font-medium leading-relaxed text-[#0E2044] md:text-base">
+                  <p className="max-w-[13rem] text-sm font-medium leading-relaxed text-[#031A34] md:text-base">
                     {desc}
                   </p>
                 </div>
@@ -256,7 +256,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Jury</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
               Meet the Jury
             </h2>
           </div>
@@ -271,7 +271,7 @@ export default function AwardsPage() {
                   <span className="mb-2 inline-block rounded-sm border border-[#D4A72C]/40 px-2 py-0.5 text-[10px] uppercase tracking-wide text-[#D4A72C]">
                     {member.role}
                   </span>
-                  <h3 className="text-sm font-semibold text-[#0E2044]">{member.name}</h3>
+                  <h3 className="text-sm font-semibold text-[#031A34]">{member.name}</h3>
                   <p className="mt-1 text-xs text-gray-600">{member.company}</p>
                 </div>
               </div>
@@ -295,7 +295,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Criteria</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
               Evaluation Criteria
             </h2>
           </div>
@@ -311,7 +311,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Sponsors</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
               Our Sponsors
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 md:text-lg">
@@ -326,7 +326,7 @@ export default function AwardsPage() {
         <Container>
           <div className="mb-12 text-center">
             <SectionEyebrow>Supporters</SectionEyebrow>
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
               Our Supporters
             </h2>
           </div>
@@ -355,7 +355,7 @@ function PartnerTrack({ items }: { items: { name: string; role: string }[] }) {
               <span className="text-2xl font-bold text-[#D4A72C]">{item.role.charAt(0)}</span>
             </div>
             <div className="text-center">
-              <p className="text-lg font-bold text-[#0E2044]">{item.name}</p>
+              <p className="text-lg font-bold text-[#031A34]">{item.name}</p>
               <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-[#D4A72C]">{item.role}</p>
             </div>
           </div>

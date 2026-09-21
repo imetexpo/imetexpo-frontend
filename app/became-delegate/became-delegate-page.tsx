@@ -73,7 +73,7 @@ export default function BecameDelegatePage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
             <div>
-              <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#0E2044] lg:text-5xl">
+              <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
                 Choose Your Delegate Package
               </h2>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-700">
@@ -99,7 +99,7 @@ export default function BecameDelegatePage() {
                           : 'border-gray-100 bg-[#FCF8F3] hover:border-[#D4A72C]/50'
                       }`}
                     >
-                      <h3 className="mb-2 font-bebas text-2xl uppercase text-[#0E2044]">
+                      <h3 className="mb-2 font-bebas text-2xl uppercase text-[#031A34]">
                         {pkg.title}
                       </h3>
                       <ul className="mb-4 flex-1 space-y-2">
@@ -120,7 +120,7 @@ export default function BecameDelegatePage() {
 
               <hr className="my-10 border-gray-200" />
 
-              <h3 className="mb-8 font-bebas text-3xl uppercase tracking-tight text-[#0E2044]">
+              <h3 className="mb-8 font-bebas text-3xl uppercase tracking-tight text-[#031A34]">
                 Why Attend?
               </h3>
               <div className="grid grid-cols-2 gap-x-10 gap-y-10">

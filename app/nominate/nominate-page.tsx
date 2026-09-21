@@ -239,7 +239,7 @@ export default function NominatePage() {
                   <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#D4A72C]/10 text-2xl text-[#D4A72C]">
                     ✓
                   </div>
-                  <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#0E2044]">
+                  <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#031A34]">
                     Nomination Submitted
                   </h2>
                   <p className="mx-auto max-w-sm text-sm text-gray-600">
@@ -581,7 +581,7 @@ export default function NominatePage() {
                     {active === steps.length - 1 ? (
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#0E2044]"
+                        className="inline-flex items-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
                       >
                         Submit
                       </button>
@@ -589,7 +589,7 @@ export default function NominatePage() {
                       <button
                         type="button"
                         onClick={handleNext}
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#0E2044]"
+                        className="inline-flex items-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
                       >
                         Save & Continue →
                       </button>
@@ -641,15 +641,15 @@ export default function NominatePage() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-xs text-gray-500">Nominations Open</p>
-                    <p className="text-sm font-semibold text-[#0E2044]">01 November 2026</p>
+                    <p className="text-sm font-semibold text-[#031A34]">01 November 2026</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-xs text-gray-500">Last Date to Nominate</p>
-                    <p className="text-sm font-semibold text-[#0E2044]">31 January 2027</p>
+                    <p className="text-sm font-semibold text-[#031A34]">31 January 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-xs text-gray-500">Finalists Announcement</p>
-                    <p className="text-sm font-semibold text-[#0E2044]">15 March 2027</p>
+                    <p className="text-sm font-semibold text-[#031A34]">15 March 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-xs text-gray-500">Awards Ceremony</p>
@@ -661,8 +661,8 @@ export default function NominatePage() {
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#D4A72C]">Need Help?</h3>
                 <p className="mb-3 text-sm text-gray-700">Our team is here to assist you with your nomination.</p>
-                <p className="text-sm text-[#0E2044]">📞 +91 91483 19993</p>
-                <p className="text-sm text-[#0E2044]">✉️ support@tyre-expo.com</p>
+                <p className="text-sm text-[#031A34]">📞 +91 91483 19993</p>
+                <p className="text-sm text-[#031A34]">✉️ support@tyre-expo.com</p>
               </div>
             </aside>
           </div>
@@ -703,7 +703,7 @@ function ReviewSection({ title, rows }: { title: string; rows: [string, string][
   const filled = rows.filter(([, value]) => value && value.trim() !== '');
   return (
     <div className="rounded-sm border border-gray-200 p-4">
-      <h4 className="mb-3 text-sm font-semibold text-[#0E2044]">{title}</h4>
+      <h4 className="mb-3 text-sm font-semibold text-[#031A34]">{title}</h4>
       {filled.length === 0 ? (
         <p className="text-xs italic text-gray-400">Nothing entered</p>
       ) : (

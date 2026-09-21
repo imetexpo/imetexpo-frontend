@@ -22,7 +22,7 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-[#0E2044]" />
+      <div className="absolute inset-0 bg-[#031A34]" />
       
       {/* Orange polygon overlay — inline style for clip-path */}
       <div 
@@ -47,7 +47,7 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
           Explore the 2027 Exhibitor List
         </Link>
 
-        <div className="mt-8 sm:mt-10 lg:mt-12 bg-[#0E2044]/75 backdrop-blur-md border border-white/10 rounded-sm px-6 py-6 flex flex-wrap gap-6 sm:gap-8 items-center justify-center md:justify-start">
+        <div className="mt-8 sm:mt-10 lg:mt-12 bg-[#031A34]/75 backdrop-blur-md border border-white/10 rounded-sm px-6 py-6 flex flex-wrap gap-6 sm:gap-8 items-center justify-center md:justify-start">
           {countries.map((country) => (
             <div key={country.name} className="flex items-center gap-3">
               <Image

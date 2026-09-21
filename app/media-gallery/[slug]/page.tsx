@@ -84,7 +84,7 @@ export default function GalleryDetailPage() {
         </p>
         <Link
           href="/media-gallery"
-          className="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-[#0E2044] transition-colors"
+          className="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-[#031A34] transition-colors"
         >
           Back to Media Gallery
         </Link>
@@ -99,11 +99,11 @@ export default function GalleryDetailPage() {
         <div className="mb-10">
           <Link
             href="/media-gallery"
-            className="inline-flex items-center gap-2 text-orange-500 hover:text-[#0E2044] transition-colors mb-4"
+            className="inline-flex items-center gap-2 text-orange-500 hover:text-[#031A34] transition-colors mb-4"
           >
             ← Back to Media Gallery
           </Link>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0E2044]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#031A34]">
             {gallery.title}
           </h1>
         </div>
@@ -123,7 +123,7 @@ export default function GalleryDetailPage() {
                 className="w-full h-64 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                 src={image}
               />
-              <div className="absolute inset-0 bg-[#0E2044]/0 group-hover:bg-[#0E2044]/30 transition-colors duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-[#031A34]/0 group-hover:bg-[#031A34]/30 transition-colors duration-300 flex items-center justify-center">
                 <svg
                   className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   fill="none"
@@ -145,7 +145,7 @@ export default function GalleryDetailPage() {
         {/* Lightbox Modal */}
         {selectedImage && (
           <div
-            className="fixed inset-0 z-50 bg-[#0E2044]/90 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-[#031A34]/90 flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
             <button

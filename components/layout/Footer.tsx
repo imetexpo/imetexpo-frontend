@@ -4,7 +4,7 @@ import Container from '../ui/container';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0E2044] text-gray-400 border-t border-white/10">
+    <footer className="bg-[#031A34] text-gray-400 border-t border-white/10">
       {/* Top Section */}
       <Container className="py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 xl:gap-20">
