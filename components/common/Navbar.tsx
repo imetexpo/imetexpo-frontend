@@ -103,17 +103,17 @@ export default function Navbar() {
             <Container className="flex items-center justify-end py-1.5">
               <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-white">
                 <span>
-                  <strong className="text-sm font-bold text-[#B89646]">{String(timeLeft.days).padStart(2, '0')}</strong>{' '}
+                  <strong className="text-sm font-bold text-[#D4A72C]">{String(timeLeft.days).padStart(2, '0')}</strong>{' '}
                   <span className="text-gray-300">Days</span>
                 </span>
                 <span className="text-white/30">|</span>
                 <span>
-                  <strong className="text-sm font-bold text-[#B89646]">{String(timeLeft.hours).padStart(2, '0')}</strong>{' '}
+                  <strong className="text-sm font-bold text-[#D4A72C]">{String(timeLeft.hours).padStart(2, '0')}</strong>{' '}
                   <span className="text-gray-300">Hours</span>
                 </span>
                 <span className="text-white/30">|</span>
                 <span>
-                  <strong className="text-sm font-bold text-[#B89646]">{String(timeLeft.minutes).padStart(2, '0')}</strong>{' '}
+                  <strong className="text-sm font-bold text-[#D4A72C]">{String(timeLeft.minutes).padStart(2, '0')}</strong>{' '}
                   <span className="text-gray-300">Mins</span>
                 </span>
               </div>
@@ -175,7 +175,7 @@ export default function Navbar() {
                 >
                   {item.links && item.links.length > 0 ? (
                     <>
-                      <button className="flex items-center gap-1 text-sm xl:text-base hover:text-[#B89646] transition-colors whitespace-nowrap py-2">
+                      <button className="flex items-center gap-1 text-sm xl:text-base hover:text-[#D4A72C] transition-colors whitespace-nowrap py-2">
                         {item.title}
                         <ChevronDown
                           className={`h-3 w-3 transition-transform duration-200 ${
@@ -194,7 +194,7 @@ export default function Navbar() {
                               <UTMLink
                                 key={link.text}
                                 href={link.href}
-                                className="block px-4 py-2 text-sm hover:bg-[#B89646] hover:text-white transition-colors"
+                                className="block px-4 py-2 text-sm hover:bg-[#D4A72C] hover:text-white transition-colors"
                               >
                                 {link.text}
                               </UTMLink>
@@ -206,7 +206,7 @@ export default function Navbar() {
                   ) : (
                     <UTMLink
                       href={item.href || '#'}
-                      className="text-sm xl:text-base hover:text-[#B89646] transition-colors whitespace-nowrap block py-2"
+                      className="text-sm xl:text-base hover:text-[#D4A72C] transition-colors whitespace-nowrap block py-2"
                     >
                       {item.title}
                     </UTMLink>

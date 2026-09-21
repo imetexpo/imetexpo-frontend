@@ -31,7 +31,7 @@ export default function Footer() {
               </h5>
               <a
                 href="mailto:pad@maxxmedia.in"
-                className="hover:text-[#B89646] transition-colors text-x"
+                className="hover:text-[#D4A72C] transition-colors text-x"
               >
                 pad@maxxmedia.in
               </a>
@@ -41,7 +41,7 @@ export default function Footer() {
               <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Hotline
               </h5>
-              <a href="tel:+91 9148319993" className="hover:text-[#B89646] transition-colors text-x">
+              <a href="tel:+91 9148319993" className="hover:text-[#D4A72C] transition-colors text-x">
                 +91- 91483 19993
               </a>
             </div>
@@ -50,7 +50,7 @@ export default function Footer() {
               <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Visitor Support
               </h5>
-              <a href="tel:++91- 63649 36468" className="hover:text-[#B89646] transition-colors text-x">
+              <a href="tel:++91- 63649 36468" className="hover:text-[#D4A72C] transition-colors text-x">
                 +91- 63649 36468
               </a>
             </div>

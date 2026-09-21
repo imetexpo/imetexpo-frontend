@@ -42,7 +42,7 @@ export default function RegistrationTabs({ activeTab }: RegistrationTabsProps) {
             scroll={false}
             className={`flex items-center justify-center gap-2 py-4 px-3 text-sm font-bold uppercase tracking-wide transition-colors ${
               isActive
-                ? "bg-[#B89646] text-white"
+                ? "bg-[#D4A72C] text-white"
                 : "bg-white text-gray-700 hover:bg-gray-50"
             }`}
           >

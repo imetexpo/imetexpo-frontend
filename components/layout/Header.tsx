@@ -89,8 +89,8 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <Link
                 href="/login/"
-                className="bg-[#B89646] text-white px-4 py-1.5 text-sm border border-white/20
-                hover:bg-[#B89646] hover:text-[#0E2044] transition-all duration-300 rounded-sm"
+                className="bg-[#D4A72C] text-white px-4 py-1.5 text-sm border border-white/20
+                hover:bg-[#D4A72C] hover:text-[#0E2044] transition-all duration-300 rounded-sm"
               >
                 Login
               </Link>
@@ -102,9 +102,9 @@ export default function Header() {
                 aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? (
-                  <X size={32} className="text-[#B89646]" />
+                  <X size={32} className="text-[#D4A72C]" />
                 ) : (
-                  <Menu size={32} className="text-[#B89646]" />
+                  <Menu size={32} className="text-[#D4A72C]" />
                 )}
               </button>
             </div>

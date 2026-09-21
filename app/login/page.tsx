@@ -76,8 +76,8 @@ export default function ExhibitorLoginPage() {
   return (
     <div className="relative isolate flex w-full flex-1 items-start justify-center overflow-x-hidden bg-[#0E2044] px-4 py-5 sm:items-center sm:py-10">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[#B89646] opacity-20 blur-3xl sm:h-64 sm:w-64" />
-        <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-[#B89646] opacity-10 blur-3xl sm:h-64 sm:w-64" />
+        <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[#D4A72C] opacity-20 blur-3xl sm:h-64 sm:w-64" />
+        <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-[#D4A72C] opacity-10 blur-3xl sm:h-64 sm:w-64" />
       </div>
 
       <div className="relative w-full max-w-md">
@@ -111,7 +111,7 @@ export default function ExhibitorLoginPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-sm border border-white/20 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 transition focus:border-[#B89646] focus:outline-none focus:ring-2 focus:ring-[#B89646]"
+                className="w-full rounded-sm border border-white/20 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 transition focus:border-[#D4A72C] focus:outline-none focus:ring-2 focus:ring-[#D4A72C]"
                 placeholder="Enter your email"
                 required
               />
@@ -126,7 +126,7 @@ export default function ExhibitorLoginPage() {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full rounded-sm border border-white/20 bg-white px-4 py-3 pr-12 text-gray-900 placeholder-gray-400 transition focus:border-[#B89646] focus:outline-none focus:ring-2 focus:ring-[#B89646]"
+                  className="w-full rounded-sm border border-white/20 bg-white px-4 py-3 pr-12 text-gray-900 placeholder-gray-400 transition focus:border-[#D4A72C] focus:outline-none focus:ring-2 focus:ring-[#D4A72C]"
                   placeholder="Enter your password"
                   required
                 />
@@ -147,13 +147,13 @@ export default function ExhibitorLoginPage() {
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
-                  className="h-4 w-4 rounded-sm border-white/20 bg-white text-[#B89646] focus:ring-[#B89646]"
+                  className="h-4 w-4 rounded-sm border-white/20 bg-white text-[#D4A72C] focus:ring-[#D4A72C]"
                 />
                 <span className="text-sm text-gray-300">Remember me</span>
               </label>
               <Link
                 href="/exhibitor/forgot-password"
-                className="text-sm text-[#B89646] transition hover:text-[#FFD154]"
+                className="text-sm text-[#D4A72C] transition hover:text-[#FFD154]"
               >
                 Forgot password?
               </Link>
@@ -162,7 +162,7 @@ export default function ExhibitorLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-sm bg-[#B89646] py-3 font-semibold uppercase tracking-wider text-white shadow-lg transition hover:bg-[#FFD154] hover:text-[#0E2044] disabled:cursor-not-allowed disabled:opacity-50"
+              className="w-full rounded-sm bg-[#D4A72C] py-3 font-semibold uppercase tracking-wider text-white shadow-lg transition hover:bg-[#FFD154] hover:text-[#0E2044] disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">
@@ -191,7 +191,7 @@ export default function ExhibitorLoginPage() {
           <div className="mt-4 text-center">
             <p className="text-xs text-gray-400">
               Don&apos;t have an account?{' '}
-              <Link href="/exhibitor/register" className="text-[#B89646] transition hover:text-[#FFD154]">
+              <Link href="/exhibitor/register" className="text-[#D4A72C] transition hover:text-[#FFD154]">
                 Register as Exhibitor
               </Link>
             </p>

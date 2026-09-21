@@ -33,10 +33,10 @@ export default function VisitorPassCard({
       }`}
     >
       <div className="bg-[#0E2044] px-6 py-3 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#B89646]">Visitor Pass</p>
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#D4A72C]">Visitor Pass</p>
       </div>
       <div className="px-6 py-6 text-center">
-        <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-sm bg-[#B89646] text-2xl font-bold text-white">
+        <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-sm bg-[#D4A72C] text-2xl font-bold text-white">
           {initial}
         </div>
         <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#0E2044]">{pass.name || 'Visitor'}</h3>
@@ -45,15 +45,15 @@ export default function VisitorPassCard({
 
         <div className="relative mx-auto mt-5 w-fit rounded-sm bg-[#FCF8F3] p-3">
           <img src={qrSrc} alt="Visitor pass QR code" className="h-48 w-48" />
-          <span className="pointer-events-none absolute inset-x-6 top-1/2 h-0.5 -translate-y-1/2 bg-[#B89646]/80" />
+          <span className="pointer-events-none absolute inset-x-6 top-1/2 h-0.5 -translate-y-1/2 bg-[#D4A72C]/80" />
         </div>
         <p className="mt-3 text-xs font-medium text-gray-600">Scan at entry for instant check-in</p>
-        <p className="mt-2 font-mono text-sm font-semibold text-[#B89646]">{pass.registrationNumber}</p>
+        <p className="mt-2 font-mono text-sm font-semibold text-[#D4A72C]">{pass.registrationNumber}</p>
         <p className="mt-3 text-xs text-gray-600">
           {pass.event?.name || 'India Tyre Show 2027'} · {pass.event?.dates || '22–24 April 2027'}
         </p>
         <p className="text-xs text-gray-500">{pass.event?.venue || 'Auto Cluster Exhibition Center, Pune'}</p>
-        <div className="mt-4 inline-flex rounded-sm bg-[#B89646]/10 px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#B89646]">
+        <div className="mt-4 inline-flex rounded-sm bg-[#D4A72C]/10 px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#D4A72C]">
           Visitor
         </div>
       </div>

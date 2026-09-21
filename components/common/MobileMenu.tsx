@@ -68,7 +68,7 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
                         onClick={() => toggleDropdown(item.title)}
                         className="w-full flex items-center justify-between py-2 text-white transition-colors cursor-pointer group"
                       >
-                        <span className="font-bold text-white text-lg sm:text-xl font-sans tracking-tight group-hover:text-[#B89646] transition-colors">
+                        <span className="font-bold text-white text-lg sm:text-xl font-sans tracking-tight group-hover:text-[#D4A72C] transition-colors">
                           {item.title}
                         </span>
                         <span className="text-2xl text-neutral-400 font-light pr-1 select-none leading-none">
@@ -83,7 +83,7 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
                               key={link.text}
                               href={link.href}
                               onClick={onClose}
-                              className="block text-[15px] text-gray-300 hover:text-[#B89646] font-sans font-medium transition-colors"
+                              className="block text-[15px] text-gray-300 hover:text-[#D4A72C] font-sans font-medium transition-colors"
                             >
                               {link.text}
                             </Link>
@@ -96,7 +96,7 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
                       <Link
                         href={item.href || '#'}
                         onClick={onClose}
-                        className="block py-2 font-bold text-white text-lg sm:text-xl font-sans tracking-tight hover:text-[#B89646] transition-colors"
+                        className="block py-2 font-bold text-white text-lg sm:text-xl font-sans tracking-tight hover:text-[#D4A72C] transition-colors"
                       >
                         {item.title}
                       </Link>
@@ -113,7 +113,7 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
           <Link
             href="/exhibiting-enquiry/"
             onClick={onClose}
-            className="block w-full rounded-sm border border-[#B89646] bg-[#B89646] py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#0E2044]"
+            className="block w-full rounded-sm border border-[#D4A72C] bg-[#D4A72C] py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#0E2044]"
           >
             Exhibit
           </Link>

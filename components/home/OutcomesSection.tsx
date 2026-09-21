@@ -17,7 +17,7 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <Container>
         <div className="mb-8 sm:mb-10 lg:mb-12">
-          <p className="text-[#B89646] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
+          <p className="text-[#D4A72C] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
             Key Outcomes of Exhibiting
           </p>
           <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#0E2044] leading-tight uppercase tracking-tight mt-3">
@@ -42,7 +42,7 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
                 />
               </div>
               <div className="mt-4 flex flex-col">
-                <h3 className="font-bebas text-4xl sm:text-5xl text-[#B89646] leading-none font-bold">
+                <h3 className="font-bebas text-4xl sm:text-5xl text-[#D4A72C] leading-none font-bold">
                   {outcome.title}
                 </h3>
                 <p className="mt-2 font-sans text-gray-700 text-sm sm:text-base leading-relaxed">
@@ -56,7 +56,7 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
         <div className="mt-8 sm:mt-10 lg:mt-12">
           <Link
             href="/post-show-report/"
-            className="inline-block bg-[#B89646] hover:bg-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
+            className="inline-block bg-[#D4A72C] hover:bg-[#0E2044] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
           >
             Download Expo Brochure
           </Link>
