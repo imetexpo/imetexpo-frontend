@@ -127,35 +127,35 @@ export default function AboutPage() {
                 {/* STATS SECTION */}
                 <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-between bg-[#FCF8F3] border border-gray-100 px-4 sm:px-6 py-6 sm:py-8 rounded-sm gap-4 sm:gap-0">
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#D4A72C] font-bold">1st</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F9B122] font-bold">1st</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#031A34] font-semibold mt-1 font-sans">EDITION</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#D4A72C] font-bold">10,000+</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F9B122] font-bold">10,000+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#031A34] font-semibold mt-1 font-sans">VISITORS</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#D4A72C] font-bold">150+</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F9B122] font-bold">150+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#031A34] font-semibold mt-1 font-sans">EXHIBITORS</p>
                   </div>
   
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
   
                   <div className="text-center flex-1 min-w-[80px]">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#D4A72C] font-bold">50+</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#F9B122] font-bold">50+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#031A34] font-semibold mt-1 font-sans">SPEAKERS</p>
                   </div>
                 </div>
   
                 <div className="mt-8 sm:mt-10">
                   <Link href="/why-exhibit">
-                    <button className="bg-[#D4A72C] hover: text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                    <button className="bg-[#F9B122] hover: text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                       Why Exhibit
                     </button>
                   </Link>
@@ -197,7 +197,7 @@ export default function AboutPage() {
                           
                         <div className="mt-5">
                           <Link href={item.buttonLink}>
-                            <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                            <button className="bg-[#F9B122] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                               {item.buttonText}
                             </button>
                           </Link>
@@ -246,7 +246,7 @@ export default function AboutPage() {
                         </p>
                   
                         <Link href="/event-brochure">
-                          <button className="bg-[#D4A72C] hover:bg-white hover:text-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit">
+                          <button className="bg-[#F9B122] hover:bg-white hover:text-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit">
                             Download Now
                           </button>
                         </Link>
@@ -283,7 +283,7 @@ export default function AboutPage() {
                           
                   <div className="mt-6 sm:mt-8">
                     <Link href="/exhibition-directory" target="_blank">
-                      <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#F9B122] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         View Full Exhibitor List
                       </button>
                     </Link>
@@ -354,7 +354,7 @@ export default function AboutPage() {
                           <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">{event.description}</p>
                           {event.buttonText && (
                             <Link href={event.buttonLink}>
-                              <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mt-2">
+                              <button className="bg-[#F9B122] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mt-2">
                                 {event.buttonText}
                               </button>
                             </Link>
@@ -374,7 +374,7 @@ export default function AboutPage() {
           {/* Quick Navigation */}
           {/* <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
-              <div className="border-t-8 border-[#D4A72C] bg-[#031A34] py-12 sm:py-16 lg:py-20 text-white">
+              <div className="border-t-8 border-[#F9B122] bg-[#031A34] py-12 sm:py-16 lg:py-20 text-white">
                 <Container>
                   <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                     Quick Navigation
@@ -405,7 +405,7 @@ export default function AboutPage() {
             </div>
           </div> */}
           
-          {/* <hr className="border-t-6 border-[#D4A72C]" /> */}
+          {/* <hr className="border-t-6 border-[#F9B122]" /> */}
         </div>
         <BackToTop/>
       </div>

@@ -106,7 +106,7 @@ export default function PartnersSection() {
         {/* Header - Same as SectorsSection */}
         <Container>
           <div className="mb-8 sm:mb-10 lg:mb-12">
-            <p className="text-[#D4A72C] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
+            <p className="text-[#F9B122] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
               Our Ecosystem
             </p>
             <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#031A34] leading-tight uppercase tracking-tight mt-3">
@@ -152,7 +152,7 @@ export default function PartnersSection() {
                     />
                   </div>
                   <small className="mt-3 text-xs sm:text-sm text-center text-gray-700 font-sans font-semibold line-clamp-1">{partner.name}</small>
-                  <span className="text-[11px] font-sans uppercase font-bold tracking-wider text-[#D4A72C] mt-1">{partner.type}</span>
+                  <span className="text-[11px] font-sans uppercase font-bold tracking-wider text-[#F9B122] mt-1">{partner.type}</span>
                 </div>
               ))}
             </div>

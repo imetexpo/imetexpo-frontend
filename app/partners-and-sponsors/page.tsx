@@ -86,7 +86,7 @@ export default function PartnersSponsorsPage() {
                   <Link
                     href={partner.website}
                     target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#D4A72C] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#031A34] transition-colors"
+                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#F9B122] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#031A34] transition-colors"
                   >
                     Visit Website
                   </Link>
@@ -125,7 +125,7 @@ export default function PartnersSponsorsPage() {
                   <Link
                     href={partner.website}
                     target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#D4A72C] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#031A34] transition-colors"
+                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#F9B122] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#031A34] transition-colors"
                   >
                     Visit Website
                   </Link>
@@ -138,7 +138,7 @@ export default function PartnersSponsorsPage() {
         {/* Quick Navigation Section */}
         {/* <div className="animated-block mt-20">
           <div className="animated-block-target">
-            <div className="border-t-8 border-[#D4A72C] bg-[#031A34] py-20 text-white">
+            <div className="border-t-8 border-[#F9B122] bg-[#031A34] py-20 text-white">
               <Container> */}
                 {/* HEADING */}
                 {/* <h2 className="font-bebas text-6xl md:text-7xl">
@@ -177,7 +177,7 @@ export default function PartnersSponsorsPage() {
           </div> */}
         {/* </div> */}
 
-        {/* <hr className="border-t-6 border-[#D4A72C]" /> */}
+        {/* <hr className="border-t-6 border-[#F9B122]" /> */}
       </div>
       <BackToTop />
     </div>

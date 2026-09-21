@@ -26,12 +26,12 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
       
       {/* Orange polygon overlay — inline style for clip-path */}
       <div 
-        className="absolute right-0 top-0 h-full w-1/2 bg-[#D4A72C]/20 hidden lg:block"
+        className="absolute right-0 top-0 h-full w-1/2 bg-[#F9B122]/20 hidden lg:block"
         style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
       />
 
       <Container className="relative z-10 ">
-        <p className="text-[#D4A72C] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
+        <p className="text-[#F9B122] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
           Countries Represented
         </p>
         <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-white uppercase tracking-tight mt-3">
@@ -42,7 +42,7 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
         
         <Link
           href="/exhibitor-list/"
-          className="inline-block bg-[#D4A72C] hover:bg-[#d67300] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 whitespace-nowrap"
+          className="inline-block bg-[#F9B122] hover:bg-[#d67300] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 whitespace-nowrap"
         >
           Explore the 2027 Exhibitor List
         </Link>

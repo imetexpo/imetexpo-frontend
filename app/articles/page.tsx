@@ -60,7 +60,7 @@ export default function ArticlesPage() {
                 setSearchTerm(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#D4A72C] focus:border-[#D4A72C] text-sm bg-white"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#F9B122] focus:border-[#F9B122] text-sm bg-white"
             />
           </div>
 
@@ -87,7 +87,7 @@ export default function ArticlesPage() {
                     <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
                       {formatDate(article.publishedDate)}
                     </p>
-                    <h2 className="font-bebas text-2xl text-[#031A34] line-clamp-2 group-hover:text-[#D4A72C] transition-colors duration-300 uppercase font-bold">
+                    <h2 className="font-bebas text-2xl text-[#031A34] line-clamp-2 group-hover:text-[#F9B122] transition-colors duration-300 uppercase font-bold">
                       {article.title}
                     </h2>
                     {article.excerpt && (
@@ -98,7 +98,7 @@ export default function ArticlesPage() {
                   </div>
                 </div>
                 <div className="p-5 pt-0 mt-auto">
-                  <span className="text-xs font-bold text-[#D4A72C] group-hover:text-[#031A34] transition-colors uppercase tracking-wider flex items-center gap-1">
+                  <span className="text-xs font-bold text-[#F9B122] group-hover:text-[#031A34] transition-colors uppercase tracking-wider flex items-center gap-1">
                     Read Article →
                   </span>
                 </div>
@@ -132,7 +132,7 @@ export default function ArticlesPage() {
                     onClick={() => handlePageChange(page)}
                     className={`w-8 h-8 rounded-sm text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                       currentPage === page
-                        ? "bg-[#D4A72C] text-white border border-[#D4A72C]"
+                        ? "bg-[#F9B122] text-white border border-[#F9B122]"
                         : "bg-white border border-gray-300 text-slate-700 hover:bg-slate-50"
                     }`}
                   >

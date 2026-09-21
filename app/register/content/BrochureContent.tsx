@@ -5,7 +5,7 @@ export default function BrochureContent() {
     <div className="flex flex-col gap-6">
       <div className="space-y-3">
         <h2 className="font-bebas text-3xl leading-[1.05] tracking-tight uppercase text-[#031A34]">
-          INDIAMET Expo <span className="text-[#D4A72C]">2026</span>
+          INDIAMET Expo <span className="text-[#F9B122]">2026</span>
         </h2>
         <p className="text-sm text-gray-700 leading-relaxed">
           Step into Asia's most influential tyre manufacturing & rubber processing exhibition.
@@ -22,7 +22,7 @@ export default function BrochureContent() {
           { value: "1st", label: "Edition" },
         ].map((item, i) => (
           <div key={i} className="text-center">
-            <h3 className="text-3xl font-bebas text-[#D4A72C] uppercase font-bold">{item.value}</h3>
+            <h3 className="text-3xl font-bebas text-[#F9B122] uppercase font-bold">{item.value}</h3>
             <p className="text-[10px] uppercase font-bold text-gray-600 mt-1 tracking-wider">{item.label}</p>
           </div>
         ))}
@@ -32,15 +32,15 @@ export default function BrochureContent() {
         <h3 className="font-bebas text-2xl text-[#031A34] uppercase font-bold">Why Download the Brochure?</h3>
         <ul className="text-xs text-gray-650 space-y-2.5">
           <li className="flex items-start gap-2">
-            <span className="text-[#D4A72C]">•</span>
+            <span className="text-[#F9B122]">•</span>
             <span>Engage directly with decision-makers – 85% influence or approve purchasing.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-[#D4A72C]">•</span>
+            <span className="text-[#F9B122]">•</span>
             <span>Showcase solutions to buyers seeking machinery and processing technology.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-[#D4A72C]">•</span>
+            <span className="text-[#F9B122]">•</span>
             <span>Build year-round visibility through our digital platform.</span>
           </li>
         </ul>

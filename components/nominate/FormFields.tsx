@@ -11,7 +11,7 @@ export function Field({ label, required = false, children, className = '' }: Fie
   return (
     <div className={`flex flex-col gap-1.5 ${className}`}>
       <label className="text-xs font-bold uppercase tracking-wider text-gray-700">
-        {label} {required && <span className="text-[#D4A72C]">*</span>}
+        {label} {required && <span className="text-[#F9B122]">*</span>}
       </label>
       {children}
     </div>
@@ -51,7 +51,7 @@ export function TextInput({
         onChange={onChange}
         required={required}
         placeholder={placeholder}
-        className={`w-full ${prefix ? 'pl-12' : 'px-3'} rounded-sm border border-gray-300 bg-white py-2.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-[#D4A72C] focus:ring-1 focus:ring-[#D4A72C]`}
+        className={`w-full ${prefix ? 'pl-12' : 'px-3'} rounded-sm border border-gray-300 bg-white py-2.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-[#F9B122] focus:ring-1 focus:ring-[#F9B122]`}
       />
     </div>
   );
@@ -82,7 +82,7 @@ export function TextArea({
       required={required}
       placeholder={placeholder}
       rows={rows}
-      className="w-full resize-vertical rounded-sm border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-[#D4A72C] focus:ring-1 focus:ring-[#D4A72C]"
+      className="w-full resize-vertical rounded-sm border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-[#F9B122] focus:ring-1 focus:ring-[#F9B122]"
     />
   );
 }
@@ -110,7 +110,7 @@ export function Select({
       value={value}
       onChange={onChange}
       required={required}
-      className="w-full appearance-none rounded-sm border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none transition focus:border-[#D4A72C] focus:ring-1 focus:ring-[#D4A72C]"
+      className="w-full appearance-none rounded-sm border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none transition focus:border-[#F9B122] focus:ring-1 focus:ring-[#F9B122]"
     >
       <option value="" disabled>
         {placeholder}
@@ -135,15 +135,15 @@ interface RadioCardProps {
 
 export function RadioCard({ title, price, note, name, checked = false, onChange }: RadioCardProps) {
   return (
-    <label className="relative flex min-h-[100px] cursor-pointer flex-col items-center justify-center rounded-sm border border-gray-300 bg-white p-3 text-center transition-colors hover:border-[#D4A72C] has-[:checked]:border-[#D4A72C] has-[:checked]:bg-[#D4A72C]/5 has-[:checked]:ring-1 has-[:checked]:ring-[#D4A72C]">
+    <label className="relative flex min-h-[100px] cursor-pointer flex-col items-center justify-center rounded-sm border border-gray-300 bg-white p-3 text-center transition-colors hover:border-[#F9B122] has-[:checked]:border-[#F9B122] has-[:checked]:bg-[#F9B122]/5 has-[:checked]:ring-1 has-[:checked]:ring-[#F9B122]">
       <input
         type="radio"
         name={name}
         checked={checked}
         onChange={onChange}
-        className="absolute top-2 right-2 accent-[#D4A72C]"
+        className="absolute top-2 right-2 accent-[#F9B122]"
       />
-      <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4A72C] sm:text-xs">{title}</span>
+      <span className="text-[10px] font-bold uppercase tracking-wider text-[#F9B122] sm:text-xs">{title}</span>
       <span className="mt-1 text-xs font-semibold text-[#031A34] sm:text-sm">{price}</span>
       <span className="mt-1 text-[10px] text-gray-500">{note}</span>
     </label>

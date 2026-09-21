@@ -164,15 +164,15 @@ export default function NominatePage() {
       <section className="border-b border-gray-100 bg-[#FCF8F3] py-4">
         <Container>
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/" className="transition-colors hover:text-[#D4A72C]">
+            <Link href="/" className="transition-colors hover:text-[#F9B122]">
               Home
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/awards/" className="transition-colors hover:text-[#D4A72C]">
+            <Link href="/awards/" className="transition-colors hover:text-[#F9B122]">
               Awards
             </Link>
             <span className="text-gray-400">/</span>
-            <span className="font-medium text-[#D4A72C]">Nomination Form</span>
+            <span className="font-medium text-[#F9B122]">Nomination Form</span>
           </div>
         </Container>
       </section>
@@ -191,7 +191,7 @@ export default function NominatePage() {
                       disabled={i > active}
                       className={`flex h-9 w-9 items-center justify-center rounded-full border-2 text-sm font-bold transition-colors duration-300 ${
                         isReached
-                          ? 'cursor-pointer border-[#D4A72C] bg-[#D4A72C] text-white'
+                          ? 'cursor-pointer border-[#F9B122] bg-[#F9B122] text-white'
                           : 'cursor-not-allowed border-gray-300 bg-white text-gray-700'
                       }`}
                     >
@@ -199,7 +199,7 @@ export default function NominatePage() {
                     </button>
                     <span
                       className={`hidden text-center text-[10px] uppercase tracking-wide sm:block ${
-                        i === active ? 'font-bold text-[#D4A72C]' : 'text-gray-600'
+                        i === active ? 'font-bold text-[#F9B122]' : 'text-gray-600'
                       }`}
                     >
                       {label}
@@ -208,7 +208,7 @@ export default function NominatePage() {
                   {i < steps.length - 1 && (
                     <span
                       className={`mx-2 mb-5 h-px flex-1 transition-colors duration-300 ${
-                        i < active ? 'bg-[#D4A72C]' : 'bg-gray-300'
+                        i < active ? 'bg-[#F9B122]' : 'bg-gray-300'
                       }`}
                     />
                   )}
@@ -229,14 +229,14 @@ export default function NominatePage() {
               <button
                 type="button"
                 onClick={() => router.push('/awards/')}
-                className="mb-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-600 transition-colors hover:text-[#D4A72C]"
+                className="mb-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-600 transition-colors hover:text-[#F9B122]"
               >
                 ← Back to Awards
               </button>
 
               {submitted ? (
                 <div className="py-10 text-center">
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#D4A72C]/10 text-2xl text-[#D4A72C]">
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#F9B122]/10 text-2xl text-[#F9B122]">
                     ✓
                   </div>
                   <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#031A34]">
@@ -251,7 +251,7 @@ export default function NominatePage() {
                 <>
                   {active === 0 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#D4A72C]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#F9B122]">
                         1. Nominator Details
                       </h2>
                       <div className="grid gap-5 md:grid-cols-2">
@@ -312,7 +312,7 @@ export default function NominatePage() {
 
                   {active === 1 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#D4A72C]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#F9B122]">
                         2. Nominee Details
                       </h2>
                       <div className="grid gap-5 md:grid-cols-2">
@@ -331,7 +331,7 @@ export default function NominatePage() {
 
                         <div className="flex items-center gap-6 text-sm text-gray-700 md:col-span-2">
                           <span className="font-medium">
-                            Type of Nominee <span className="text-[#D4A72C]">*</span>
+                            Type of Nominee <span className="text-[#F9B122]">*</span>
                           </span>
                           <label className="flex items-center gap-2">
                             <input
@@ -340,7 +340,7 @@ export default function NominatePage() {
                               value="Organization"
                               checked={formData.nomineeType === 'Organization'}
                               onChange={handleChange}
-                              className="accent-[#D4A72C]"
+                              className="accent-[#F9B122]"
                             />
                             Organization
                           </label>
@@ -351,7 +351,7 @@ export default function NominatePage() {
                               value="Individual"
                               checked={formData.nomineeType === 'Individual'}
                               onChange={handleChange}
-                              className="accent-[#D4A72C]"
+                              className="accent-[#F9B122]"
                             />
                             Individual
                           </label>
@@ -431,7 +431,7 @@ export default function NominatePage() {
 
                   {active === 2 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#D4A72C]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#F9B122]">
                         3. Category Selection
                       </h2>
                       <Field label="Select Award Category" required>
@@ -450,7 +450,7 @@ export default function NominatePage() {
                         </div>
                         <Link
                           href="/awards/"
-                          className="whitespace-nowrap rounded-sm border border-[#D4A72C] px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#D4A72C] transition-colors hover:bg-[#D4A72C] hover:text-white"
+                          className="whitespace-nowrap rounded-sm border border-[#F9B122] px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#F9B122] transition-colors hover:bg-[#F9B122] hover:text-white"
                         >
                           View Categories →
                         </Link>
@@ -460,7 +460,7 @@ export default function NominatePage() {
 
                   {active === 3 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#D4A72C]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#F9B122]">
                         4. Supporting Details
                       </h2>
                       <div className="grid gap-5">
@@ -496,7 +496,7 @@ export default function NominatePage() {
 
                   {active === 4 && (
                     <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#D4A72C]">
+                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#F9B122]">
                         5. Review & Submit
                       </h2>
                       <p className="mb-6 text-sm text-gray-500">
@@ -545,15 +545,15 @@ export default function NominatePage() {
                           type="checkbox"
                           checked={consent}
                           onChange={(e) => setConsent(e.target.checked)}
-                          className="mt-1 accent-[#D4A72C]"
+                          className="mt-1 accent-[#F9B122]"
                         />
                         <span>
                           I confirm the above details are accurate and I agree to the{' '}
-                          <Link href="/privacy-policy" className="text-[#D4A72C] underline">
+                          <Link href="/privacy-policy" className="text-[#F9B122] underline">
                             terms & conditions
                           </Link>{' '}
                           and{' '}
-                          <Link href="/privacy-policy" className="text-[#D4A72C] underline">
+                          <Link href="/privacy-policy" className="text-[#F9B122] underline">
                             privacy policy
                           </Link>
                           .
@@ -581,7 +581,7 @@ export default function NominatePage() {
                     {active === steps.length - 1 ? (
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
+                        className="inline-flex items-center gap-2 rounded-sm bg-[#F9B122] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
                       >
                         Submit
                       </button>
@@ -589,7 +589,7 @@ export default function NominatePage() {
                       <button
                         type="button"
                         onClick={handleNext}
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#D4A72C] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
+                        className="inline-flex items-center gap-2 rounded-sm bg-[#F9B122] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
                       >
                         Save & Continue →
                       </button>
@@ -601,7 +601,7 @@ export default function NominatePage() {
 
             <aside className="flex flex-col gap-6">
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#D4A72C]">
+                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">
                   About the Awards
                 </h3>
                 <p className="mb-3 text-sm text-gray-700">
@@ -610,14 +610,14 @@ export default function NominatePage() {
                 </p>
                 <Link
                   href="/awards/"
-                  className="text-xs font-bold uppercase tracking-wider text-[#D4A72C] hover:underline"
+                  className="text-xs font-bold uppercase tracking-wider text-[#F9B122] hover:underline"
                 >
                   Know more about →
                 </Link>
               </div>
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#D4A72C]">Why Nominate?</h3>
+                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">Why Nominate?</h3>
                 <ul className="space-y-2 text-sm text-gray-700">
                   {[
                     'Gain global recognition',
@@ -627,7 +627,7 @@ export default function NominatePage() {
                     'Expand business opportunities',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="text-[#D4A72C]">✓</span>
+                      <span className="text-[#F9B122]">✓</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -635,7 +635,7 @@ export default function NominatePage() {
               </div>
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#D4A72C]">
+                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">
                   Important Dates
                 </h3>
                 <div className="space-y-3">
@@ -653,13 +653,13 @@ export default function NominatePage() {
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-xs text-gray-500">Awards Ceremony</p>
-                    <p className="text-sm font-bold text-[#D4A72C]">23 April 2027</p>
+                    <p className="text-sm font-bold text-[#F9B122]">23 April 2027</p>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#D4A72C]">Need Help?</h3>
+                <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">Need Help?</h3>
                 <p className="mb-3 text-sm text-gray-700">Our team is here to assist you with your nomination.</p>
                 <p className="text-sm text-[#031A34]">📞 +91 91483 19993</p>
                 <p className="text-sm text-[#031A34]">✉️ support@tyre-expo.com</p>

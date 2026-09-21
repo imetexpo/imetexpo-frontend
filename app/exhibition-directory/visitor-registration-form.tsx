@@ -486,7 +486,7 @@ export default function VisitorRegistrationForm({
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-4 py-3 bg-#D4A72C-500 text-white font-medium rounded hover:bg-#D4A72C-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm md:text-base flex items-center justify-center gap-2"
+                className="w-full px-4 py-3 bg-#F9B122-500 text-white font-medium rounded hover:bg-#F9B122-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm md:text-base flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>
@@ -545,7 +545,7 @@ export default function VisitorRegistrationForm({
               <button
                 type="submit"
                 disabled={loading || otp.length !== 6}
-                className="w-full px-4 py-3 bg-#D4A72C-500 text-white font-medium rounded hover:bg-#D4A72C-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm md:text-base flex items-center justify-center gap-2"
+                className="w-full px-4 py-3 bg-#F9B122-500 text-white font-medium rounded hover:bg-#F9B122-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm md:text-base flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>

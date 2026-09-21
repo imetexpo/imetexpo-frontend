@@ -174,7 +174,7 @@ export default function BrochureForm() {
     return (
       <div className="bg-white border border-gray-100 rounded-sm p-8 max-w-md mx-auto text-center shadow-sm">
         <div className="w-16 h-16 bg-[#FCF8F3] border border-gray-150 rounded-sm flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-[#D4A72C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8 text-[#F9B122]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -183,7 +183,7 @@ export default function BrochureForm() {
           Your brochure request has been submitted successfully. Download link will be sent to your email.
         </p>
         <Link href="/">
-          <button className="bg-[#D4A72C] hover:bg-[#031A34] text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+          <button className="bg-[#F9B122] hover:bg-[#031A34] text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
             Back to Home
           </button>
         </Link>
@@ -203,7 +203,7 @@ export default function BrochureForm() {
             value={formData.firstName}
             onChange={handleChange}
             placeholder="First Name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#D4A72C] focus:border-[#D4A72C] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F9B122] focus:border-[#F9B122] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -216,7 +216,7 @@ export default function BrochureForm() {
             value={formData.lastName}
             onChange={handleChange}
             placeholder="Last Name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#D4A72C] focus:border-[#D4A72C] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F9B122] focus:border-[#F9B122] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -231,7 +231,7 @@ export default function BrochureForm() {
           value={formData.company}
           onChange={handleChange}
           placeholder="Company Name"
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#D4A72C] focus:border-[#D4A72C] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F9B122] focus:border-[#F9B122] outline-none transition bg-white text-sm"
           required
         />
       </div>
@@ -243,7 +243,7 @@ export default function BrochureForm() {
           value={formData.website}
           onChange={handleChange}
           placeholder="https://www.company.com"
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#D4A72C] focus:border-[#D4A72C] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F9B122] focus:border-[#F9B122] outline-none transition bg-white text-sm"
         />
       </div>
 
@@ -256,7 +256,7 @@ export default function BrochureForm() {
           value={formData.jobTitle}
           onChange={handleChange}
           placeholder="Job Title"
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#D4A72C] focus:border-[#D4A72C] outline-none transition bg-white text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F9B122] focus:border-[#F9B122] outline-none transition bg-white text-sm"
           required
         />
       </div>
@@ -269,7 +269,7 @@ export default function BrochureForm() {
           name="country"
           value={formData.country}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#D4A72C] focus:border-[#D4A72C] outline-none transition bg-white text-sm cursor-pointer"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F9B122] focus:border-[#F9B122] outline-none transition bg-white text-sm cursor-pointer"
           required
         >
           <option value="">Select Country</option>
@@ -291,7 +291,7 @@ export default function BrochureForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="Phone Number"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#D4A72C] focus:border-[#D4A72C] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F9B122] focus:border-[#F9B122] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -305,7 +305,7 @@ export default function BrochureForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="Email Address"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#D4A72C] focus:border-[#D4A72C] outline-none transition bg-white text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#F9B122] focus:border-[#F9B122] outline-none transition bg-white text-sm"
             required
           />
         </div>
@@ -323,7 +323,7 @@ export default function BrochureForm() {
                   type="checkbox"
                   checked={formData.productSectors.includes(sector)}
                   onChange={() => handleSectorToggle(sector)}
-                  className="mt-0.5 w-4 h-4 text-[#D4A72C] rounded-sm border-gray-300 focus:ring-[#D4A72C]"
+                  className="mt-0.5 w-4 h-4 text-[#F9B122] rounded-sm border-gray-300 focus:ring-[#F9B122]"
                 />
                 <span className="text-xs text-gray-650 font-medium">{sector}</span>
               </label>
@@ -338,7 +338,7 @@ export default function BrochureForm() {
           name="confirm"
           checked={formData.confirm}
           onChange={handleChange}
-          className="w-4 h-4 text-[#D4A72C] rounded-sm border-gray-300 focus:ring-[#D4A72C] cursor-pointer"
+          className="w-4 h-4 text-[#F9B122] rounded-sm border-gray-300 focus:ring-[#F9B122] cursor-pointer"
           required
         />
         <span className="text-sm text-gray-650">I'm not a robot</span>
@@ -354,7 +354,7 @@ export default function BrochureForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-[#D4A72C] hover:bg-[#031A34] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+          className="w-full bg-[#F9B122] hover:bg-[#031A34] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
           {isSubmitting ? "Submitting..." : "DOWNLOAD BROCHURE"}
         </button>
@@ -364,7 +364,7 @@ export default function BrochureForm() {
         T&C: By submitting this form, you agree to receive marketing communications, updates,
         and promotional materials from us. You can unsubscribe anytime. For more information,
         please refer to our
-        <Link href="/privacy-policy" className="text-[#D4A72C] hover:underline ml-1 font-semibold">
+        <Link href="/privacy-policy" className="text-[#F9B122] hover:underline ml-1 font-semibold">
           Privacy Policy
         </Link>
         .

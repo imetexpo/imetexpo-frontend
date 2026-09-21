@@ -67,7 +67,7 @@ export default function HeroSection() {
           >
             <br />
             <span className="text-white">INDIAMET </span>
-            <span className="text-[#D4A72C]">2027</span>
+            <span className="text-[#F9B122]">2027</span>
           </h1>
 
           {/* BOTTOM ROW — stacks on mobile, side-by-side on lg+ */}
@@ -84,7 +84,7 @@ export default function HeroSection() {
             <div className="flex-shrink-0 w-full lg:w-auto">
               <Link
                 href="/exhibiting-enquiry/"
-                className="inline-block w-full lg:w-auto text-center bg-[#D4A72C] hover:bg-[#FFD154] text-white px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm shadow-lg hover:scale-105"
+                className="inline-block w-full lg:w-auto text-center bg-[#F9B122] hover:bg-[#FFD154] text-white px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm shadow-lg hover:scale-105"
               >
                 Exhibit
               </Link>
