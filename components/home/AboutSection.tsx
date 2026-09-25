@@ -19,7 +19,7 @@ export default function AboutSection() {
           {/* LEFT IMAGE */}
           <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] rounded-lg overflow-hidden">
             <Image
-              src="/images/"
+              src="/images/pic1.jpg"
               alt="IndiaMet Expo"
               width={200}
               height={500}
