@@ -18,7 +18,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Explore how advanced metrology and digital technologies are transforming quality control and precision manufacturing.",
     image:
-      "/images/future.png",
+      "/images/future.jpg",
     publishedDate: "2026-09-05T08:45:00.000Z",
     content: `
       <h2><strong>The Future of Industrial Metrology in Smart Manufacturing</strong></h2>
