@@ -5,8 +5,8 @@ import Container from '../ui/container';
 import Link from 'next/link';
 
 const slides = [
-  { id: 1, image: 'https://rubber-tyre.com.vn/wp-content/uploads/2025/07/CTHE0129-min-scaled.webp' },
-  { id: 2, image: 'https://global.divhunt.com/3ed74ea1f32f6d8d53c3acfec927b4bc_113152.webp' },
+  { id: 1, image: '/images/picx1.png' },
+  { id: 2, image: '/images/picx2.png' },
 ];
 
 export default function HeroSection() {
