@@ -66,7 +66,7 @@ export default function BecameDelegatePage() {
       <PageHero
         title="BECOME A"
         accent="DELEGATE"
-        subtitle="Prices are inclusive of GST. Join industry leaders at the India Tyre Show Summit 2027."
+        subtitle="Prices are inclusive of GST. Join industry leaders at the IndiaMET Summit 2027."
       />
 
       <section className="py-12 lg:py-16">

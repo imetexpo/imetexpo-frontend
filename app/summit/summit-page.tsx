@@ -108,10 +108,10 @@ function SpeakersSection() {
     <section>
       <div className="mb-8 max-w-3xl">
         <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
-          Top Speakers <span className="text-[#F9B122]">India Tyre Show Summit 2027</span>
+          Top Speakers <span className="text-[#F9B122]">IndiaMET Summit 2027</span>
         </h2>
         <p className="mt-3 text-sm text-gray-600 sm:text-base">
-          The leading voices in tyre manufacturing, rubber technology and quality engineering
+          The leading voices in metrology, precision engineering, and quality assurance
         </p>
       </div>
       <div
@@ -233,7 +233,7 @@ function WhyAttendSection() {
   return (
     <section>
       <h2 className="mb-8 font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
-        Why Attend <span className="text-[#F9B122]">India Tyre Show Summit 2027</span>
+        Why Attend <span className="text-[#F9B122]">IndiaMET Summit 2027</span>
       </h2>
       <div className="space-y-6">
         {whyAttend.map((item, index) => {
@@ -334,17 +334,17 @@ function OrganizerSection() {
       </h2>
       <div className="space-y-6 text-sm leading-relaxed text-gray-700 sm:text-base lg:text-lg">
         <p>
-          The India Tyre Show Summit 2027 is held alongside India Tyre Show 2027 – India’s dedicated
-          exhibition for tyre manufacturing, rubber compounding, testing, retreading, recycling, and
-          advanced mobility technologies.
+          The INDIAMET Summit 2027 is held alongside INDIAMET 2027 – a dedicated platform bringing together the latest innovations in metrology, precision measurement, inspection, calibration, testing, quality assurance, automation, and digital measurement technologies.
         </p>
-        <p>
-          India Tyre Show is organised by <strong>Maxx Business Media</strong>, a leading organizer
-          of industrial exhibitions, conferences, and B2B business forums dedicated to the
-          manufacturing sector. Backed by extensive industry expertise and a strong network across
-          automotive, tyre, rubber, and advanced manufacturing industries, Maxx Business Media
-          delivers high-impact platforms that connect technology providers with key decision-makers.
-        </p>
+       <p>
+  INDIAMET is organised by <strong>Maxx Business Media</strong>, a leading organiser
+  of industrial exhibitions, conferences, and B2B business forums focused on
+  manufacturing and technology. With strong industry networks across metrology,
+  precision engineering, automotive, aerospace, quality, inspection, calibration,
+  testing, and advanced manufacturing, Maxx Business Media creates high-impact
+  platforms that connect technology providers with engineers, quality professionals,
+  procurement teams, manufacturers, and key industry decision-makers.
+</p>
       </div>
     </section>
   );

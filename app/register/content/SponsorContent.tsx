@@ -3,15 +3,18 @@ export default function SponsorContent() {
     <div className="flex flex-col gap-6">
       <div>
         <h2 className="text-3xl font-bold text-[#F9B122] mb-4 font-bebas">
-          INDIAMET Expo 2026 Conference
+          INDIAMET Expo 2027 Conference
         </h2>
         <div className="space-y-4 text-gray-700">
-          <p className="text-base leading-relaxed">
-            <strong>INDIAMET Expo 2026 Conference</strong> is a premier annual business platform
-            bringing together professionals from tyre manufacturing companies, raw material
-            suppliers, machinery manufacturers, automation specialists, and OEMs across the
-            tyre and rubber ecosystem.
-          </p>
+         <p className="text-base leading-relaxed">
+  <strong>INDIAMET Expo 2027 Conference</strong> is a premier industry platform
+  bringing together professionals from metrology, precision engineering,
+  manufacturing, quality, inspection, calibration, testing, automation, and
+  advanced measurement technology sectors. The conference connects industry
+  leaders, technology providers, engineers, quality professionals, researchers,
+  and decision-makers to explore the latest innovations shaping the future of
+  industrial metrology and manufacturing.
+</p>
           <p className="text-base leading-relaxed">
             If you'd like to become a summit partner, present your solutions, or advertise at
             the event, please fill out the form — our team will contact you as soon as possible.

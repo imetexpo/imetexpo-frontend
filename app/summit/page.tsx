@@ -1,7 +1,7 @@
 import SummitPage from './summit-page';
 
 export const metadata = {
-  title: 'India Tyre Show Summit 2027 | April 22–23, Pune',
+  title: 'IndiaMET Summit 2027 | May 13–14, Pune',
   description:
     'Annual summit for professionals in tyre manufacturing, rubber technology, automation, and sustainable mobility.',
   openGraph: {
