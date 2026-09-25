@@ -36,17 +36,17 @@ const outcomesData = [
   {
     title: 'GENERATE NEW LEADS',
     content: 'Meet manufacturers, quality professionals, engineers, procurement teams, and decision-makers actively looking for advanced measurement, inspection, calibration, and quality solutions.',
-    image: 'https://cdn.itegroupnews.com/M_Wr_106471c763.png',
+    image: '/images/generate.png',
   },
   {
     title: 'STRENGTHEN YOUR BRAND',
     content: 'Position your company alongside leading global and Indian metrology brands and increase visibility among key players across automotive, aerospace, engineering, defence, electronics, medical devices, and other precision industries.',
-    image: 'https://cdn.itegroupnews.com/2_edefccdfd0.png',
+    image: '/images/strength.png',
   },
   {
     title: 'BUILD STRONG RELATIONSHIPS',
     content: 'Engage directly with existing customers, develop new partnerships, explore emerging markets, and create opportunities for long-term business growth.',
-    image: 'https://cdn.itegroupnews.com/3_5ab1f32ff9.png',
+    image: '/images/build.png',
   },
 ];
 
