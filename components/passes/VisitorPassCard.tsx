@@ -50,7 +50,7 @@ export default function VisitorPassCard({
         <p className="mt-3 text-xs font-medium text-gray-600">Scan at entry for instant check-in</p>
         <p className="mt-2 font-mono text-sm font-semibold text-[#F9B122]">{pass.registrationNumber}</p>
         <p className="mt-3 text-xs text-gray-600">
-          {pass.event?.name || 'India Tyre Show 2027'} · {pass.event?.dates || '22–24 April 2027'}
+          {pass.event?.name || 'India Tyre Show 2027'} · {pass.event?.dates || '22–14 May  2027'}
         </p>
         <p className="text-xs text-gray-500">{pass.event?.venue || 'Auto Cluster Exhibition Center, Pune'}</p>
         <div className="mt-4 inline-flex rounded-sm bg-[#F9B122]/10 px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#F9B122]">

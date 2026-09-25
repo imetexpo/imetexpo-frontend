@@ -96,7 +96,7 @@ export type DayProgram = {
 export const programData: DayProgram[] = [
   {
     day: 'Day 1 Theme : The Future of Tyre Manufacturing – Innovation, Automation & Manufacturing Excellence',
-    date: 'April 22, 2027',
+    date: 'May 13, 2027',
     description: '*For delegates',
     sessions: [
       { time: '09:00 – 09:35', title: 'Registration & Hi Tea' },
@@ -215,7 +215,7 @@ export const programData: DayProgram[] = [
   },
   {
     day: 'Day 2 Theme : Innovation, Sustainability & Next-Generation Tyre Technologies',
-    date: 'April 23, 2027',
+    date: 'May 14, 2027',
     description: '*For delegates of all categories',
     sessions: [
       { time: '09:30 – 10:00', title: 'Registration & Hi Tea' },
@@ -423,8 +423,8 @@ export const delegatePackages = [
 export const faqItems = [
   {
     id: 1,
-    question: 'When will the India Tyre Show Summit take place?',
-    answer: 'April 22–23, 2027, alongside India Tyre Show 2027 (22–24 April).',
+    question: 'When will the IndiaMET Show & Summit take place?',
+    answer: 'May 13–15, 2027, at the Auto Cluster Exhibition Centre, Pune, India.',
   },
   {
     id: 2,

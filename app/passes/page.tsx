@@ -273,7 +273,7 @@ export default function PassesPage() {
                   company: 'Company / Organization',
                   event: {
                     name: 'India Tyre Show 2027',
-                    dates: '22–24 April 2027',
+                    dates: '22–14 May  2027',
                     venue: 'Auto Cluster Exhibition Center, Pune',
                   },
                 }}
@@ -297,7 +297,7 @@ export default function PassesPage() {
                 <p className="font-semibold text-white">About This Event</p>
                 <p className="mt-2">
                   India&apos;s dedicated exhibition for tyre manufacturing, rubber compounds, machinery,
-                  testing, retreading, and sustainable solutions. 22–24 April 2027 at Auto Cluster
+                  testing, retreading, and sustainable solutions. 22–14 May  2027 at Auto Cluster
                   Exhibition Center, Pune.
                 </p>
               </div>
@@ -313,7 +313,7 @@ export default function PassesPage() {
                     <Calendar className="mt-0.5 h-5 w-5 text-[#F9B122]" />
                     <div>
                       <p className="font-medium text-[#031A34]">Event Dates</p>
-                      <p>22–24 April 2027</p>
+                      <p>22–14 May  2027</p>
                     </div>
                   </div>
                   <div className="flex gap-3 text-sm text-gray-600">
@@ -406,7 +406,7 @@ export default function PassesPage() {
               <div className="h-fit space-y-5 rounded-sm border border-gray-100 bg-white p-5 shadow-sm">
                 <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#031A34]">Event Details</h3>
                 <p className="flex gap-2 text-sm text-gray-600">
-                  <Calendar className="h-4 w-4 text-[#F9B122]" /> 22–24 April 2027
+                  <Calendar className="h-4 w-4 text-[#F9B122]" /> 22–14 May  2027
                 </p>
                 <p className="flex gap-2 text-sm text-gray-600">
                   <MapPin className="h-4 w-4 text-[#F9B122]" /> Auto Cluster Exhibition Center, Pune

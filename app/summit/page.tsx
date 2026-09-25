@@ -5,7 +5,7 @@ export const metadata = {
   description:
     'Annual summit for professionals in tyre manufacturing, rubber technology, automation, and sustainable mobility.',
   openGraph: {
-    title: 'India Tyre Show Summit 2027 | April 22–23, Pune',
+    title: 'IndiaMET Show & Summit 2027 | May 13–15, Pune',
     description:
       'Annual summit for professionals in tyre manufacturing, rubber technology, and quality engineering.',
   },

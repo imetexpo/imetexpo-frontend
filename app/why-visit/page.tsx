@@ -767,7 +767,7 @@ export default function WhyVisitPage() {
                       </p>
 
                       <h4 className="text-lg sm:text-xl font-bold text-gray-800">
-                        22–24 April 2027
+                        22–14 May  2027
                       </h4>
 
                       <p className="mt-2 text-sm text-gray-600">

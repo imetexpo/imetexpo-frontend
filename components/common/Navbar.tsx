@@ -145,7 +145,7 @@ export default function Navbar() {
       {/* Date + Venue */}
       <div className="mt-7 hidden pl-4 sm:block">
         <h1 className="font-[var(--font-montserrat)] text-[22px] font-bold leading-none tracking-tight text-white">
-          22 - 24 APRIL 2027
+          22 - 14 May  2027
         </h1>
 
         <p className="mt-1 font-[var(--font-montserrat)] text-[18px] text-white">

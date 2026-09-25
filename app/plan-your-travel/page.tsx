@@ -116,7 +116,7 @@ export default function PlanYourTravelPage() {
     {
       title: "When & Where",
       description:
-        "INDIAMET 2027 takes place from 22–24 April 2027 at the Auto Cluster Exhibition Center, Pune. Plan your visit and join leading metrology, measurement, inspection, calibration, and quality professionals.",
+        "INDIAMET 2027 takes place from 22–14 May  2027 at the Auto Cluster Exhibition Center, Pune. Plan your visit and join leading metrology, measurement, inspection, calibration, and quality professionals.",
       buttonText: "More Info",
       buttonLink: "/about-indiamet-expo",
       image:

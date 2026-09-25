@@ -7,14 +7,14 @@ import SectionHeader from '../ui/sectionHeader';
 import Container from '../ui/container';
 
 const partnersData = [
-  { name: 'ProfiMiner', logo: 'https://cdn.itegroupnews.com/Profi_Miner_5d476ae93b.webp', type: 'Media Partner' },
-  { name: 'Times International', logo: 'https://cdn.itegroupnews.com/1_c80a02899c.png', type: 'Media Partner' },
-  { name: 'TotalExpo.ru', logo: 'https://cdn.itegroupnews.com/Total_Expo_ru_26b429a05b.webp', type: 'Media Partner' },
-  { name: 'Vedomosti', logo: 'https://cdn.itegroupnews.com/Vedomosti_7814bd5d9d.webp', type: 'Media Partner' },
-  { name: 'Industry of Eurasia', logo: 'https://cdn.itegroupnews.com/Industry_of_Eurasia_Mining_158b39f188.webp', type: 'Media Partner' },
-  { name: 'Miners of Russia', logo: 'https://cdn.itegroupnews.com/miners_of_russia_78f659f949.webp', type: 'Media Partner' },
-  { name: 'Zyfra', logo: 'https://cdn.itegroupnews.com/2_48e8e636ac.png', type: 'Co-organiser' },
-  { name: 'Market and Business Analysis', logo: 'https://cdn.itegroupnews.com/2_8449eb4f62.png', type: 'Media Partner' },
+  // { name: 'ProfiMiner', logo: 'https://cdn.itegroupnews.com/Profi_Miner_5d476ae93b.webp', type: 'Media Partner' },
+  // { name: 'Times International', logo: 'https://cdn.itegroupnews.com/1_c80a02899c.png', type: 'Media Partner' },
+  // { name: 'TotalExpo.ru', logo: 'https://cdn.itegroupnews.com/Total_Expo_ru_26b429a05b.webp', type: 'Media Partner' },
+  // { name: 'Vedomosti', logo: 'https://cdn.itegroupnews.com/Vedomosti_7814bd5d9d.webp', type: 'Media Partner' },
+  // { name: 'Industry of Eurasia', logo: 'https://cdn.itegroupnews.com/Industry_of_Eurasia_Mining_158b39f188.webp', type: 'Media Partner' },
+  // { name: 'Miners of Russia', logo: 'https://cdn.itegroupnews.com/miners_of_russia_78f659f949.webp', type: 'Media Partner' },
+  // { name: 'Zyfra', logo: 'https://cdn.itegroupnews.com/2_48e8e636ac.png', type: 'Co-organiser' },
+  // { name: 'Market and Business Analysis', logo: 'https://cdn.itegroupnews.com/2_8449eb4f62.png', type: 'Media Partner' },
 ];
 
 export default function PartnersSection() {

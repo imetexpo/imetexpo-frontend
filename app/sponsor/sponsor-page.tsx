@@ -428,7 +428,7 @@ export default function SponsorPage() {
                 <DateItem label="Sponsorship Bookings Open" date="01 November 2026" />
                 <DateItem label="Last Date to Confirm Sponsorship" date="28 February 2027" />
                 <DateItem label="Marketing Collateral Deadline" date="15 March 2027" />
-                <DateItem label="Awards Ceremony" date="23 April 2027" last />
+                <DateItem label="Awards Ceremony" date="14 My 2027" last />
               </SideCard>
 
               <SideCard title="Need Help?" icon="🎧">

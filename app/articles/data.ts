@@ -18,7 +18,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Explore how advanced metrology and digital technologies are transforming quality control and precision manufacturing.",
     image:
-      "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
+      "/images/future.png",
     publishedDate: "2026-09-05T08:45:00.000Z",
     content: `
       <h2><strong>The Future of Industrial Metrology in Smart Manufacturing</strong></h2>
@@ -52,7 +52,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Discover how next-generation CMMs and 3D measurement technologies are improving accuracy, productivity, and inspection capabilities.",
     image:
-      "https://cdn.itegroupnews.com/photo_2_84279059fe.webp",
+      "/images/innovation.png",
     publishedDate: "2026-09-02T10:30:00.000Z",
     content: `
       <h2><strong>Next-Generation CMM and 3D Measurement Technologies</strong></h2>
@@ -83,7 +83,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Discover how automation, connected measurement systems, data analytics, and AI are shaping the future of industrial quality.",
     image:
-      "https://cdn.itegroupnews.com/photo_3_30daf082db.webp",
+      "/images/industry4.jpg",
     publishedDate: "2026-08-28T14:20:00.000Z",
     content: `
       <h2><strong>How Industry 4.0 Is Transforming Metrology</strong></h2>
@@ -114,7 +114,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Understand why accurate measurement is essential for product quality, process control, productivity, and manufacturing excellence.",
     image:
-      "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
+      "/images/measure.jpg",
     publishedDate: "2026-08-22T09:15:00.000Z",
     content: `
       <h2><strong>The Role of Precision Measurement in Manufacturing</strong></h2>
@@ -145,7 +145,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Explore how optical measurement and machine vision technologies are transforming high-speed, non-contact inspection.",
     image:
-      "https://cdn.itegroupnews.com/photo_2_84279059fe.webp",
+      "/images/vision2.jpg",
     publishedDate: "2026-08-18T11:45:00.000Z",
     content: `
       <h2><strong>Optical and Vision Metrology for Advanced Inspection</strong></h2>
@@ -176,7 +176,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Learn why calibration, measurement standards, and traceability are essential for reliable industrial measurement.",
     image:
-      "https://cdn.itegroupnews.com/photo_3_30daf082db.webp",
+      "images/calibration.jpg",
     publishedDate: "2026-08-12T13:30:00.000Z",
     content: `
       <h2><strong>Why Calibration Matters in Industrial Metrology</strong></h2>
@@ -207,7 +207,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Explore how 3D scanning is being used for inspection, reverse engineering, product development, and quality improvement.",
     image:
-      "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
+      "/images/3dscan2.jpg",
     publishedDate: "2026-08-06T10:00:00.000Z",
     content: `
       <h2><strong>3D Scanning: From Inspection to Product Development</strong></h2>
@@ -240,7 +240,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Discover how advanced measurement and inspection technologies are supporting quality and precision across automotive manufacturing.",
     image:
-      "https://cdn.itegroupnews.com/photo_2_84279059fe.webp",
+      "/images/automotive.png",
     publishedDate: "2026-07-30T10:00:00.000Z",
     content: `
       <h2><strong>Metrology in the Automotive Industry</strong></h2>
@@ -272,7 +272,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Explore how artificial intelligence, robotics, and automation are creating smarter and faster inspection processes.",
     image:
-      "https://cdn.itegroupnews.com/photo_3_30daf082db.webp",
+      "/images/ai.jpg",
     publishedDate: "2026-07-24T10:00:00.000Z",
     content: `
       <h2><strong>AI-Powered Inspection Is Changing Quality Control</strong></h2>
@@ -303,7 +303,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Understand how measurement, inspection, calibration, and data-driven quality practices contribute to manufacturing excellence.",
     image:
-      "https://cdn.itegroupnews.com/photo_1_main_1_f5b42c6a16.webp",
+      "/images/quality.webp",
     publishedDate: "2026-07-18T10:00:00.000Z",
     content: `
       <h2><strong>Metrology as a Strategic Quality Tool</strong></h2>

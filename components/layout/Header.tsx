@@ -72,7 +72,7 @@ export default function Header() {
         className="lg:hidden fixed top-0 left-0 w-full z-[60] bg-[#031A34] shadow-lg"
       >
         <div className="px-4 py-1.5 text-center text-[10px] font-semibold uppercase tracking-wider text-gray-300">
-          22–24 April 2027 • Auto Cluster Exhibition Center, Pune, India
+          22–14 May  2027 • Auto Cluster Exhibition Center, Pune, India
         </div>
         <div className="border-t border-white/10 px-4 py-4">
           <div className="flex items-center justify-between">

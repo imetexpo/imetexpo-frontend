@@ -34,7 +34,7 @@ function HeroSection() {
     <PageHero
       title="SUMMIT"
       accent="AGENDA"
-      subtitle="India Tyre Show Summit 2027 · April 22–23, Pune. Global summit on tyre manufacturing, rubber technology, automation and sustainable mobility."
+      subtitle="INDIAMET 2027 · May 13–15, Pune. International exhibition showcasing advanced metrology, precision measurement, inspection, calibration, testing and quality solutions."
     >
       <div className="flex flex-col gap-3 sm:flex-row">
         <Link

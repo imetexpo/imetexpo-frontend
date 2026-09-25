@@ -378,8 +378,8 @@ export default function WhyExhibitPage() {
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 font-sans">
                     <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#031A34]">Opening Hours</p>
-                    <h4 className="text-lg font-bold text-gray-800">22, 23 April 2027: 10:00 - 18:00</h4>
-                    <h4 className="mt-2 text-lg font-bold text-gray-800">24 April 2027: 10:00 - 16:00</h4>
+                    <h4 className="text-lg font-bold text-gray-800">22, 14 My 2027: 10:00 - 18:00</h4>
+                    <h4 className="mt-2 text-lg font-bold text-gray-800">14 May  2027: 10:00 - 16:00</h4>
                   </div>
                   <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 font-sans">
                     <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#031A34]">Venue</p>

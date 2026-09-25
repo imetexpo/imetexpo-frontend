@@ -653,7 +653,7 @@ export default function NominatePage() {
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-xs text-gray-500">Awards Ceremony</p>
-                    <p className="text-sm font-bold text-[#F9B122]">23 April 2027</p>
+                    <p className="text-sm font-bold text-[#F9B122]">14 My 2027</p>
                   </div>
                 </div>
               </div>
