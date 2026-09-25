@@ -7,7 +7,7 @@ import SectionHeader from '../ui/sectionHeader';
 import Container from '../ui/container';
 
 const partnersData = [
-  { name: 'ProfiMiner', logo: 'https://cdn.itegroupnews.com/Profi_Miner_5d476ae93b.webp', type: 'Media Partner' },
+  { name: 'ProfiMiner', logo: '#', type: 'Media Partner' },
   { name: 'Times International', logo: 'https://cdn.itegroupnews.com/1_c80a02899c.png', type: 'Media Partner' },
   { name: 'TotalExpo.ru', logo: 'https://cdn.itegroupnews.com/Total_Expo_ru_26b429a05b.webp', type: 'Media Partner' },
   { name: 'Vedomosti', logo: 'https://cdn.itegroupnews.com/Vedomosti_7814bd5d9d.webp', type: 'Media Partner' },
