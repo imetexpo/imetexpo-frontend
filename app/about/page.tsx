@@ -303,8 +303,8 @@ export default function AboutPage() {
                     <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 font-sans">
                       <p className="mb-2 font-bold text-sm sm:text-base text-[#031A34]">Opening Hours</p>
                       <h4 className="text-lg sm:text-xl font-bold text-gray-800">13 May 2027: 10:00 - 18:00</h4>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">14 My 2027: 10:00 - 18:00</h4>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">14 May  2027: 10:00 - 16:00</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">14 May 2027: 10:00 - 18:00</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">15 May  2027: 10:00 - 16:00</h4>
                     </div>
                     <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 font-sans">
                       <p className="mb-2 font-bold text-sm sm:text-base text-[#031A34]">Venue</p>

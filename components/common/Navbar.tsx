@@ -69,7 +69,7 @@ export default function Navbar() {
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2027-04-22T09:00:00').getTime();
+    const targetDate = new Date('2027-05-13T09:00:00').getTime();
     const diff = targetDate - Date.now();
     if (diff <= 0) return { days: 0, hours: 0, minutes: 0 };
     return {
@@ -145,7 +145,7 @@ export default function Navbar() {
       {/* Date + Venue */}
       <div className="mt-7 hidden pl-4 sm:block">
         <h1 className="font-[var(--font-montserrat)] text-[22px] font-bold leading-none tracking-tight text-white">
-          22 - 14 May  2027
+          13 - 15 May  2027
         </h1>
 
         <p className="mt-1 font-[var(--font-montserrat)] text-[18px] text-white">
