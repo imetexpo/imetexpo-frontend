@@ -19,35 +19,37 @@ export default function WhyExhibitPage() {
       title: "Raw Materials & Compounds",
       slug: "raw-materials-and-compounds",
       description: "Natural rubber, synthetic rubber, carbon black, silica, processing oils, and specialty chemicals.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+      image: "/images/raw-materials-and-compounds.jpg"
     },
     {
       title: "Tyre Manufacturing Machinery",
       slug: "tyre-manufacturing-machinery",
       description: "Banbury mixers, calenders, extruders, tyre building machines, curing presses, and finishing equipment.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+      image: "/images/tyre-manufacturing-machinery.jpg"
     },
     {
       title: "Rubber Processing Equipment",
       slug: "rubber-processing-equipment",
       description: "Two-roll mills, internal mixers, strainers, pelletizers, and rubber bale cutters.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+      image: "/images/rubber-processing-equipment.jpg"
     },
     {
       title: "Tyre Testing & Quality Control",
- 
+      slug: "tyre-testing-and-quality-control",
+      description: "Testing equipment, quality control systems, and inspection technologies for tyres.",
+      image: "/images/tyre-testing-and-quality-control.jpg"
     },
     {
       title: "Retreading & Repair Materials",
       slug: "retreading-and-repair-materials",
       description: "Retreading equipment, tread rubber, repair patches, and vulcanizing materials.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+      image: "/images/retreading-and-repair-materials.jpg"
     },
     {
       title: "Recycling & Sustainability Solutions",
       slug: "recycling-and-sustainability-solutions",
       description: "Tyre recycling machinery, crumb rubber processing, and sustainable manufacturing solutions.",
-      image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+      image: "/images/recycling-and-sustainability-solutions.jpg"
     }
   ];
 

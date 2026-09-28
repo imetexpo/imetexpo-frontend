@@ -32,73 +32,72 @@ export default function SectorsPage() {
   title: "Coordinate Measuring Machines (CMM)",
   slug: "coordinate-measuring-machines-cmm",
   description: "Bridge, gantry, portable, and articulating CMMs for high-precision dimensional inspection, geometric measurement, and quality control.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/coordinate-measuring-machines-cmm.jpg"
 },
 {
   title: "Dimensional Measurement & Gauging",
   slug: "dimensional-measurement-and-gauging",
   description: "Precision measuring instruments, gauges, comparators, height gauges, micrometers, and advanced solutions for dimensional and tolerance measurement.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/dimensional-measurement.jpg"
 },
 {
   title: "Optical & Vision Metrology",
   slug: "optical-and-vision-metrology",
   description: "Video measuring machines, optical systems, machine vision, microscopes, non-contact measurement, and automated visual inspection technologies.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
-},
+  image: "/images/optical.jpg"
 {
   title: "3D Scanning & Digital Measurement",
   slug: "3d-scanning-and-digital-measurement",
   description: "Laser scanners, structured-light scanners, handheld 3D scanners, point-cloud systems, reverse engineering, and digital inspection solutions.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/3d-scanning-and-digital-measurement.jpg"
 },
 {
   title: "Surface & Form Measurement",
   slug: "surface-and-form-measurement",
   description: "Advanced systems for surface roughness, contour, roundness, cylindricity, waviness, profile, and precision form measurement.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/surface-and-form-measurement.jpg"
 },
 {
   title: "Calibration & Reference Standards",
   slug: "calibration-and-reference-standards",
   description: "Calibration equipment, reference standards, master instruments, calibration software, traceability solutions, and laboratory measurement systems.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/calibration-and-testing.jpg"
 },
 {
   title: "Testing & Quality Inspection",
   slug: "testing-and-quality-inspection",
   description: "Material testing, mechanical testing, dimensional inspection, non-destructive testing, laboratory equipment, and advanced quality inspection solutions.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/testing-and-quality-inspection.jpg"
 },
 {
   title: "Sensors, Probes & Measurement Systems",
   slug: "sensors-probes-and-measurement-systems",
   description: "Precision sensors, probes, encoders, laser measurement systems, displacement sensors, force measurement, and advanced data acquisition technologies.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/sensors-probes-and-measurement-systems.jpg"
 },
 {
   title: "Metrology Software & Digital Quality",
   slug: "metrology-software-and-digital-quality",
   description: "Inspection software, SPC, QMS, measurement data management, digital reporting, analytics, and connected quality management solutions.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/metrology-software-and-industry-40.jpg"
 },
 {
   title: "Automation & Industry 4.0",
   slug: "automation-and-industry-40",
   description: "Automated inspection, robotic measurement, inline metrology, smart manufacturing, AI-powered inspection, and connected Industry 4.0 solutions.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/automation-and-industry-40.jpg"
 },
 {
   title: "Precision Instruments & Gauges",
   slug: "precision-instruments-and-gauges",
   description: "Micrometers, vernier instruments, dial indicators, thread gauges, gear measurement systems, precision gauges, and specialised inspection equipment.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/precision-instruments-and-gauges.jpg"
 },
 {
   title: "Metrology Services & Laboratories",
   slug: "metrology-services-and-laboratories",
   description: "Calibration laboratories, testing services, dimensional measurement, inspection services, certification, consultancy, training, and metrology support.",
-  image: "https://cdn.itegroupnews.com/Mining_World_Sectors_Images_6_196fe9e60d.png"
+  image: "/images/metrology-services-and-laboratories.jpg"
 }
   ];
 
