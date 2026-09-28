@@ -114,7 +114,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Understand why accurate measurement is essential for product quality, process control, productivity, and manufacturing excellence.",
     image:
-      "/images/measure.jpg",
+      "/images/cmm.png",
     publishedDate: "2026-08-22T09:15:00.000Z",
     content: `
       <h2><strong>The Role of Precision Measurement in Manufacturing</strong></h2>

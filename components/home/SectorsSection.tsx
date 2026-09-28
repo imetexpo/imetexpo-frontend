@@ -11,14 +11,14 @@ const sectorsData = [
     title: 'Coordinate Measuring Machines (CMM)',
     slug: 'coordinate-measuring-machines-cmm',
     shortText: 'Advanced CMMs and 3D coordinate measurement systems for high-precision inspection and quality control.',
-    image: '/images/coordinate-measuring-machines-cmm.jpg',
+    image: '/images/cmm.png',
   },
   {
     id: 2,
     title: 'Dimensional Measurement',
     slug: 'dimensional-measurement',
     shortText: 'Precision instruments and systems for dimensional, form, surface, and geometric measurement.',
-    image: '/images/dimensional-measurement.jpg',
+    image: '/images/measure.jpg',
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const sectorsData = [
     title: 'Surface & Form Measurement',
     slug: 'surface-and-form-measurement',
     shortText: 'Advanced solutions for surface roughness, contour, roundness, cylindricity, and form measurement.',
-    image: '/images/surface-and-form-measurement.jpg',
+    image: '/images/surface.jpg',
   },
   {
     id: 6,

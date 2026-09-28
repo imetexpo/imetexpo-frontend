@@ -32,13 +32,13 @@ export default function SectorsPage() {
   title: "Coordinate Measuring Machines (CMM)",
   slug: "coordinate-measuring-machines-cmm",
   description: "Bridge, gantry, portable, and articulating CMMs for high-precision dimensional inspection, geometric measurement, and quality control.",
-  image: "/images/coordinate-measuring-machines-cmm.jpg"
+  image: "/images/cmm.png"
 },
 {
   title: "Dimensional Measurement & Gauging",
   slug: "dimensional-measurement-and-gauging",
   description: "Precision measuring instruments, gauges, comparators, height gauges, micrometers, and advanced solutions for dimensional and tolerance measurement.",
-  image: "/images/dimensional-measurement.jpg"
+  image: "/images/measure.jpg"
 },
 {
   title: "Optical & Vision Metrology",
@@ -50,13 +50,13 @@ export default function SectorsPage() {
   title: "3D Scanning & Digital Measurement",
   slug: "3d-scanning-and-digital-measurement",
   description: "Laser scanners, structured-light scanners, handheld 3D scanners, point-cloud systems, reverse engineering, and digital inspection solutions.",
-  image: "/images/3d-scanning-and-digital-measurement.jpg"
+  image: "/images/3dscan2.jpg"
 },
 {
   title: "Surface & Form Measurement",
   slug: "surface-and-form-measurement",
   description: "Advanced systems for surface roughness, contour, roundness, cylindricity, waviness, profile, and precision form measurement.",
-  image: "/images/surface-and-form-measurement.jpg"
+  image: "/images/surface.jpg"
 },
 {
   title: "Calibration & Reference Standards",
