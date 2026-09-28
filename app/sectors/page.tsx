@@ -45,6 +45,7 @@ export default function SectorsPage() {
   slug: "optical-and-vision-metrology",
   description: "Video measuring machines, optical systems, machine vision, microscopes, non-contact measurement, and automated visual inspection technologies.",
   image: "/images/optical.jpg"
+},
 {
   title: "3D Scanning & Digital Measurement",
   slug: "3d-scanning-and-digital-measurement",
