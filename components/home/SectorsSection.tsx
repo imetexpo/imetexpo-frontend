@@ -32,21 +32,21 @@ const sectorsData = [
     title: 'Calibration & Testing',
     slug: 'calibration-and-testing',
     shortText: 'Calibration equipment, testing systems, reference standards, and laboratory measurement solutions.',
-    image: '/images/calibration-and-testing.jpg',
+    image: '/images/calibration.webp',
   },
   {
     id: 5,
     title: 'Surface & Form Measurement',
     slug: 'surface-and-form-measurement',
     shortText: 'Advanced solutions for surface roughness, contour, roundness, cylindricity, and form measurement.',
-    image: '/images/surface.jpg',
+    image: '/images/surface.jpeg',
   },
   {
     id: 6,
     title: 'Metrology Software & Industry 4.0',
     slug: 'metrology-software-and-industry-40',
     shortText: 'Smart metrology software, automation, digital inspection, data analytics, and connected quality solutions.',
-    image: '/images/metrology-software-and-industry-40.jpg',
+    image: '/images/software.png',
   },
 ];
 

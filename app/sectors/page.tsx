@@ -56,49 +56,49 @@ export default function SectorsPage() {
   title: "Surface & Form Measurement",
   slug: "surface-and-form-measurement",
   description: "Advanced systems for surface roughness, contour, roundness, cylindricity, waviness, profile, and precision form measurement.",
-  image: "/images/surface.jpg"
+  image: "/images/surface.jpeg"
 },
 {
   title: "Calibration & Reference Standards",
   slug: "calibration-and-reference-standards",
   description: "Calibration equipment, reference standards, master instruments, calibration software, traceability solutions, and laboratory measurement systems.",
-  image: "/images/calibration-and-testing.jpg"
+  image: "/images/calibration.webp"
 },
 {
   title: "Testing & Quality Inspection",
   slug: "testing-and-quality-inspection",
   description: "Material testing, mechanical testing, dimensional inspection, non-destructive testing, laboratory equipment, and advanced quality inspection solutions.",
-  image: "/images/testing-and-quality-inspection.jpg"
+  image: "/images/quality.webp"
 },
 {
   title: "Sensors, Probes & Measurement Systems",
   slug: "sensors-probes-and-measurement-systems",
   description: "Precision sensors, probes, encoders, laser measurement systems, displacement sensors, force measurement, and advanced data acquisition technologies.",
-  image: "/images/sensors-probes-and-measurement-systems.jpg"
+  image: "/images/sensors.webp"
 },
 {
   title: "Metrology Software & Digital Quality",
   slug: "metrology-software-and-digital-quality",
   description: "Inspection software, SPC, QMS, measurement data management, digital reporting, analytics, and connected quality management solutions.",
-  image: "/images/metrology-software-and-industry-40.jpg"
+  image: "/images/software.png"
 },
 {
   title: "Automation & Industry 4.0",
   slug: "automation-and-industry-40",
   description: "Automated inspection, robotic measurement, inline metrology, smart manufacturing, AI-powered inspection, and connected Industry 4.0 solutions.",
-  image: "/images/automation-and-industry-40.jpg"
+  image: "/images/ind4.0.jpg"
 },
 {
   title: "Precision Instruments & Gauges",
   slug: "precision-instruments-and-gauges",
   description: "Micrometers, vernier instruments, dial indicators, thread gauges, gear measurement systems, precision gauges, and specialised inspection equipment.",
-  image: "/images/precision-instruments-and-gauges.jpg"
+  image: "/images/Precision.webp"
 },
 {
   title: "Metrology Services & Laboratories",
   slug: "metrology-services-and-laboratories",
   description: "Calibration laboratories, testing services, dimensional measurement, inspection services, certification, consultancy, training, and metrology support.",
-  image: "/images/metrology-services-and-laboratories.jpg"
+  image: "/images/Laboratory.jpg"
 }
   ];
 
