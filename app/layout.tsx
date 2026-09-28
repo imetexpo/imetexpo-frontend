@@ -1,6 +1,6 @@
 "use client";
 
-import { Bebas_Neue, Roboto, Montserrat } from "next/font/google";
+import { Bebas_Neue,Montserrat } from "next/font/google";
 import "./globals.css";
 import { usePathname } from "next/navigation";
 import { Suspense, useEffect } from "react";
@@ -13,6 +13,9 @@ import { Toaster } from "react-hot-toast";
 import { UTMProvider } from "@/components/UTMProvider";
 import { UTMDebugger } from "@/components/UTMDebugger";
 import { getUTMParams } from "@/lib/utmTracker";
+
+import { Roboto } from "next/font/google";
+
 
 const bebas = Bebas_Neue({
   subsets: ["latin"],
