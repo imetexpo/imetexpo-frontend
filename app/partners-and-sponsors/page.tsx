@@ -61,9 +61,45 @@ export default function PartnersSponsorsPage() {
 
         {/* Event Partners Section */}
         <section className="py-16 lg:py-20">
+            <Container>
+            <h2 className="font-bebas text-5xl text-[#031A34] md:text-6xl text-center mb-10 lg:mb-16">
+              Sponsors
+            </h2>
+            <div className="flex flex-wrap gap-8 justify-center">
+              {eventPartners.map((partner, index) => (
+                <div
+                  key={index}
+                  className="flex w-full max-w-[320px] flex-col items-center gap-5 border border-gray-200 p-6 text-center rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="h-32 flex items-center justify-center">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={140}
+                      height={100}
+                      className="object-contain max-h-28"
+                      unoptimized
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#031A34] text-center">{partner.name}</h3>
+                  <p className="text-orange-600 text-sm font-medium">{partner.type}</p>
+                  <Link
+                    href={partner.website}
+                    target="_blank"
+                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#F9B122] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#031A34] transition-colors"
+                  >
+                    Visit Website
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </Container>
+          <br></br>
+          <br></br>
+          <br></br>
           <Container>
             <h2 className="font-bebas text-5xl text-[#031A34] md:text-6xl text-center mb-10 lg:mb-16">
-              Event Partners
+              Supporting Partners
             </h2>
             <div className="flex flex-wrap gap-8 justify-center">
               {eventPartners.map((partner, index) => (

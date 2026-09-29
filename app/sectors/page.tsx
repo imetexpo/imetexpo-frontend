@@ -108,7 +108,7 @@ export default function SectorsPage() {
     description: "Showcase your metrology, measurement, inspection, calibration, and quality technologies to manufacturers, engineers, quality professionals, and key industry decision-makers.",
     buttonText: "Book A Stand",
     buttonLink: "/exhibiting-enquiry",
-    image: "https://cdn.itegroupnews.com/mw24_1062_min_91b90d653f.jpg"
+    image: "/images/become_exhibitor.jpg"
   },
   {
     title: "Download Your Event Brochure",
@@ -122,7 +122,7 @@ export default function SectorsPage() {
     description: "Discover the latest metrology and measurement technologies, connect with leading solution providers, meet industry professionals, and explore innovations shaping precision manufacturing.",
     buttonText: "Register Now",
     buttonLink: "/visitor-registration",
-    image: "https://cdn.itegroupnews.com/mw24_1077_min_75a8122d24.jpg"
+    image: "/images/become_visitor.jpg"
   }
 ];
   return (

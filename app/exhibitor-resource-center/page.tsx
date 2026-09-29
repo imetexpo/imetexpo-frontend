@@ -174,7 +174,7 @@ const faqItems = [
                 {/* RIGHT IMAGE */}
                 <div className="order-1 lg:order-2 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3]">
                   <ImageWithFallback
-                    src="https://cdn.itegroupnews.com/exhibition_2020_20_9dec3a8c6e.webp"
+                    src="/images/Explore_Opportunities.jpg"
                     alt="INDIAMET Expo"
                     fallbackIcon="🏢"
                     className="h-full w-full"
