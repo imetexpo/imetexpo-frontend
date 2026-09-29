@@ -40,17 +40,17 @@ export default function AboutITEPage() {
     {
       title: "The Mission",
       content: "To create unique and valuable events for the success of your business and the development of industries and economies.",
-      image: "/images/image3.png"
+      image: "/images/mission.jpg"
     },
     {
       title: "The Vision",
       content: "Connecting businesses year-round, both online and in person, allowing professionals to establish long-term business partnerships.",
-      image: "/images/image4.png"
+      image: "/images/vision.jpg"
     },
     {
       title: "Our Values",
       content: "Entrepreneurship, Integrity, Excellence, Positive Thinking, Commitment to Result",
-      image: "/images/image5.png"
+      image: "/images/values.jpg"
     }
   ];
 
