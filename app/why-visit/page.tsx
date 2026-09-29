@@ -47,7 +47,7 @@ export default function WhyVisitPage() {
       description:
         "Explore advanced Coordinate Measuring Machines, optical and vision systems, 3D scanning, precision instruments, surface and form measurement, calibration equipment, sensors, probes, testing systems, and digital metrology solutions.",
       image:
-        "/images/latest_technology.jpg",
+        "/images/latest_technology.png",
     },
     {
       title: "Meet India's Precision Manufacturing Decision-Makers",
