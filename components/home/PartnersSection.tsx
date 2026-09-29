@@ -112,7 +112,7 @@ export default function PartnersSection() {
             <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#031A34] leading-tight uppercase tracking-tight mt-3">
               Partners & Sponsors
             </h2>
-            <p className="text-gray-600 mt-2 text-sm sm:text-base font-sans">
+            <p className="text-gray-600 mt-2 text-lg sm:text-xl font-sans">
               Meet our valued partners and sponsors who make IndiaMet possible
             </p>
           </div>

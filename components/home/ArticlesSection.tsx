@@ -25,7 +25,7 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
             <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#031A34] leading-tight uppercase tracking-tight mt-3">
               EVENT INSIGHTS & INDUSTRY TRENDS
             </h2>
-            <p className="text-gray-600 mt-2 text-sm sm:text-base font-sans">
+            <p className="text-gray-600 mt-2 text-lg sm:text-xl font-sans">
               Stay up to date with the latest updates in the industry and the show
             </p>
           </div>

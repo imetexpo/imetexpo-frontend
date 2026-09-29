@@ -50,10 +50,10 @@ export default function BrochureSection() {
             <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-white leading-tight uppercase tracking-tight">
               UNLOCK NEW OPPORTUNITIES IN METROLOGY
             </h2>
-            <p className="text-base sm:text-lg text-white/80 font-sans font-semibold">
+            <p className="text-lg sm:text-xl text-white/80 font-sans font-semibold">
               Discover how INDIAMET can help your business grow
             </p>
-            <p className="text-base sm:text-lg text-white/70 max-w-[650px] leading-relaxed mx-auto lg:mx-0 font-sans">
+            <p className="text-lg sm:text-xl text-white/70 max-w-[650px] leading-relaxed mx-auto lg:mx-0 font-sans">
              Download the Event Brochure to explore participation opportunities, industry sectors, visitor profiles, and key benefits of exhibiting. Discover how INDIAMET can help you connect with qualified buyers, showcase your latest technologies, strengthen your market presence, and accelerate business growth.
             </p>
             <Button

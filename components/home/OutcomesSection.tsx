@@ -23,7 +23,7 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
           <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#031A34] leading-tight uppercase tracking-tight mt-3">
             TURN PRECISION TECHNOLOGY INTO BUSINESS GROWTH
           </h2>
-          <p className="mt-4 sm:mt-5 font-sans text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl">
+          <p className="mt-4 sm:mt-5 font-sans text-lg sm:text-xl text-gray-700 leading-relaxed max-w-3xl">
             At INDIAMET, exhibitors don't just showcase technology — they create business opportunities.
             <br /><br />
             Connect with qualified buyers, meet key decision-makers, demonstrate your latest metrology and inspection solutions, strengthen your brand presence, and build valuable relationships across India’s rapidly growing precision manufacturing and quality ecosystem.

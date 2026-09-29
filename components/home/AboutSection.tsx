@@ -37,7 +37,7 @@ export default function AboutSection() {
               POWERING THE FUTURE OF PRECISION & QUALITY
             </h2>
 
-            <div className="font-sans text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed space-y-4">
+            <div className="font-sans text-lg sm:text-xl text-gray-700 leading-relaxed space-y-4">
               <p className="text-justify font-normal">
                 INDIAMET is India’s international exhibition for metrology, measurement technology, inspection, calibration, and quality engineering. The exhibition brings together leading technology providers, manufacturers, quality professionals, engineers, decision-makers, and industry experts to connect, collaborate, and explore the technologies shaping the future of precision manufacturing.
               </p>

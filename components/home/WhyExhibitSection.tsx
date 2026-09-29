@@ -29,7 +29,7 @@ export default function WhyExhibitSection() {
                 </h2>
               </div>
 
-              <p className="font-sans text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mt-2">
+              <p className="font-sans text-lg sm:text-xl text-gray-400 leading-relaxed mt-2">
                 As manufacturing moves towards greater precision, automation, and quality excellence, 
                 INDIAMET provides direct access to the decision-makers driving this transformation. 
                 Connect with manufacturers, engineers, quality professionals, and procurement leaders, 
