@@ -68,7 +68,7 @@ export default function WhyVisitPage() {
       description:
         "Understand how digital metrology, automation, Industry 4.0, artificial intelligence, 3D measurement, connected quality systems, and data-driven inspection are transforming modern manufacturing.",
       image:
-        "https://cdn.itegroupnews.com/4_2e07c29daf.png",
+        "/images/precision_manufacuring_trends.jepg",
     },
   ];
 
