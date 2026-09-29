@@ -129,7 +129,7 @@ export default function AboutITEPage() {
                 <div className="lg:col-span-3">
                   <div className="flex flex-col gap-4 sm:gap-5">
                     <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">About Us</h2>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-700">
+                    <p className="text-lg sm:text-xl text-gray-700">
                       Maxx Business Media Pvt. Ltd. is a leading B2B business events and media company based in India, dedicated to creating powerful platforms that connect industries, innovators, and decision-makers. Since its inception, Maxx Business Media has been organizing high-impact trade exhibitions, conferences, and industry-focused initiatives across key manufacturing and emerging sectors.
                       <br /><br />
                       Every year, we deliver multiple flagship exhibitions, summits, and industry forums that serve as catalysts for business growth, technology exchange, and market expansion. Supported by our integrated digital and media ecosystem, we offer year-round visibility and engagement opportunities for exhibitors, advertisers, and industry partners.
@@ -167,7 +167,7 @@ export default function AboutITEPage() {
                 <div className="mb-6 sm:mb-8 flex flex-col lg:flex-row justify-between lg:items-end gap-4">
                   <div className="lg:basis-2/3">
                     <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">Working for Your Success</h3>
-                    <p className="mt-3 text-sm sm:text-base md:text-lg text-gray-700">
+                    <p className="mt-3 text-lg sm:text-xl text-gray-700">
                       At Maxx Business Media Pvt Ltd, we create impactful exhibitions, conferences, trade publications, and digital platforms that connect industries, businesses, technology providers, and professionals. Our industry-focused platforms help businesses showcase innovation, build valuable relationships, discover new opportunities, and drive sustainable business growth.
                     </p>
                   </div>
@@ -189,7 +189,7 @@ export default function AboutITEPage() {
                       </div>
                       <div className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
                         <h4 className="text-lg sm:text-xl font-bold text-[#031A34]">{item.title}</h4>
-                        <p className="text-sm text-gray-600 leading-relaxed">{item.content}</p>
+                        <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">{item.content}</p>
                       </div>
                     </div>
                   ))}
@@ -205,7 +205,7 @@ export default function AboutITEPage() {
                 <div className="flex w-full items-end justify-between gap-6 sm:gap-10 max-lg:flex-wrap lg:gap-20 2xl:gap-40">
                   <div>
                     <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">Our Exhibitions at a Glance</h3>
-                    <p className="mt-3 text-sm sm:text-base text-gray-700">
+                    <p className="mt-3 text-lg sm:text-xl text-gray-700">
                       Each year, we organise and host over 30 leading industry events across key sectors, including exhibitions, summits, and conferences.
                       <br /><br />
                       Supported by the Connect digital platform, the ITE ecosystem offers innovative hybrid solutions for industry communities across Asia and beyond.
@@ -229,7 +229,7 @@ export default function AboutITEPage() {
                         />
                       </div>
                       <h4 className="text-lg sm:text-xl font-bold text-[#031A34]">{exhibition.title}</h4>
-                      <p className="text-sm sm:text-base text-gray-600 line-clamp-2">{exhibition.description}</p>
+                      <p className="text-lg sm:text-xl text-gray-600 line-clamp-2">{exhibition.description}</p>
                       <p className="text-xs sm:text-sm">Start Date: <span className="font-bold">{exhibition.startDate}</span></p>
                       <p className="text-xs sm:text-sm">End Date: <span className="font-bold">{exhibition.endDate}</span></p>
                       <p className="text-xs sm:text-sm">Venue: <span className="font-bold line-clamp-2">{exhibition.venue}</span></p>

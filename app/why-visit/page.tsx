@@ -199,7 +199,7 @@ export default function WhyVisitPage() {
                       The Heart of Precision Manufacturing
                     </h2>
 
-                    <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
+                    <p className="mt-4 sm:mt-6 text-lg sm:text-xl leading-relaxed text-gray-700">
                       INDIAMET 2027 brings together the complete metrology,
                       measurement, inspection, calibration, and quality
                       ecosystem under one roof. Discover advanced technologies,
@@ -337,7 +337,7 @@ export default function WhyVisitPage() {
                             {item.title}
                           </h4>
 
-                          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-gray-700 leading-relaxed font-sans max-w-[600px]">
+                          <p className="mt-4 sm:mt-5 text-lg sm:text-xl text-gray-700 leading-relaxed font-sans max-w-[600px]">
                             {item.description}
                           </p>
 
@@ -414,7 +414,7 @@ export default function WhyVisitPage() {
                         Discover INDIAMET 2027
                       </h3>
 
-                      <p className="max-w-[700px] text-base sm:text-lg text-gray-200 leading-relaxed">
+                      <p className="max-w-[700px] text-lg sm:text-xl text-gray-200 leading-relaxed">
                         Download the INDIAMET 2027 event brochure to explore
                         the exhibition profile, technology sectors, visitor
                         profile, exhibiting opportunities, summit programme,
@@ -459,7 +459,7 @@ export default function WhyVisitPage() {
                       Meet Professionals Across India's Precision Manufacturing Ecosystem
                     </h3>
 
-                    <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
+                    <p className="mt-4 sm:mt-6 text-lg sm:text-xl leading-relaxed text-gray-700">
                       INDIAMET attracts professionals from across India's
                       manufacturing and engineering ecosystem. Meet
                       decision-makers and technical specialists looking for
@@ -659,7 +659,7 @@ export default function WhyVisitPage() {
                       More Than an Exhibition
                     </h3>
 
-                    <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+                    <p className="mt-3 sm:mt-4 text-lg sm:text-xl text-gray-600 leading-relaxed">
                       INDIAMET 2027 combines technology discovery, knowledge
                       exchange, professional networking, and industry
                       recognition to create a complete platform for the
@@ -699,7 +699,7 @@ export default function WhyVisitPage() {
                           {item.title}
                         </h4>
 
-                        <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">
+                        <p className="text-lg sm:text-xl text-gray-600 line-clamp-4 leading-relaxed">
                           {item.description}
                         </p>
 
@@ -753,7 +753,7 @@ export default function WhyVisitPage() {
                         Auto Cluster Exhibition Center, Pune
                       </h4>
 
-                      <p className="mt-2 text-sm text-gray-600">
+                      <p className="mt-2 text-lg sm:text-xl text-gray-600">
                         Chinchwad, Pune, Maharashtra, India
                       </p>
 
@@ -770,7 +770,7 @@ export default function WhyVisitPage() {
                         22–14 May  2027
                       </h4>
 
-                      <p className="mt-2 text-sm text-gray-600">
+                      <p className="mt-2 text-lg sm:text-xl text-gray-600">
                         10:00 AM – 6:00 PM
                       </p>
 
@@ -815,7 +815,7 @@ export default function WhyVisitPage() {
                     Plan Your INDIAMET Visit
                   </h2>
 
-                  <p className="mt-3 max-w-2xl text-sm sm:text-base text-gray-300 font-sans">
+                  <p className="mt-3 max-w-2xl text-lg sm:text-xl text-gray-300 font-sans">
                     Everything you need to discover INDIAMET 2027, connect
                     with exhibitors, register for the exhibition, and plan
                     your visit to Pune.

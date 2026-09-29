@@ -73,7 +73,7 @@ export default function HeroSection() {
           {/* BOTTOM ROW — stacks on mobile, side-by-side on lg+ */}
           <div className="mt-4 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-5 lg:gap-8">
             {/* Description — fixed readable font size, no vw */}
-            <p className="font-sans text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl">
+            <p className="font-sans text-lg sm:text-xl text-gray-200 leading-relaxed max-w-3xl">
               INDIAMET Expo connects global technology leaders, metrology experts, 
               manufacturers, and quality professionals to discover advanced measurement, 
               inspection, calibration, and quality solutions driving the next generation of 

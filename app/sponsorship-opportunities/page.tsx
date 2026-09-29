@@ -150,7 +150,7 @@ export default function AdvertisingDetailsPage() {
               <h2 className="font-bebas text-4xl sm:text-5xl text-[#031A34] uppercase">
                 By leveraging these promotional options, you can:
               </h2>
-              <p className="mt-2 text-sm font-bold text-[#F9B122] uppercase tracking-wider">
+              <p className="mt-2 text-base sm:text-lg font-bold text-[#F9B122] uppercase tracking-wider">
                 Please review the requirements carefully to ensure timely submission.
               </p>
               
@@ -167,7 +167,7 @@ export default function AdvertisingDetailsPage() {
                       />
                     </div>
                     <h3 className="mt-5 font-bebas text-2xl text-[#F9B122] uppercase font-bold">{benefit.title}</h3>
-                    <p className="mt-3 text-sm text-gray-650 leading-relaxed">{benefit.description}</p>
+                    <p className="mt-3 text-lg sm:text-xl text-gray-650 leading-relaxed">{benefit.description}</p>
                   </div>
                 ))}
               </div>
@@ -204,7 +204,7 @@ export default function AdvertisingDetailsPage() {
                       <h4 className="font-bebas text-2xl font-bold text-[#031A34] uppercase tracking-wide">
                         {item.title}
                       </h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
                         {item.description}
                       </p>
                     </div>

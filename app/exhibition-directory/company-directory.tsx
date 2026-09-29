@@ -292,7 +292,7 @@ export default function CompanyDirectory() {
                 <Search size={48} className="mx-auto" />
               </div>
               <h3 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#031A34]">No companies found</h3>
-              <p className="mx-auto max-w-xs text-sm leading-relaxed text-gray-600">
+              <p className="mx-auto max-w-xs text-lg sm:text-xl leading-relaxed text-gray-600">
                 Try adjusting your search or filter to find what you&apos;re looking for.
               </p>
               <button

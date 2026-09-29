@@ -52,7 +52,7 @@ export default function ContactUsPage() {
                         <h3 className="text-lg font-bold text-black uppercase leading-snug">
                           Maxx Business Media Pvt. Ltd.
                         </h3>
-                        <div className="text-xs text-gray-650 space-y-1.5 leading-relaxed">
+                        <div className="text-lg sm:text-xl text-gray-650 space-y-1.5 leading-relaxed">
                           <p>T9, 3rd Floor, Swastik Manandi Arcade,</p>
                           <p>Seshadripuram, Bangalore 560020</p>
                         </div>
@@ -92,7 +92,7 @@ export default function ContactUsPage() {
                         <h3 className="text-lg font-bold text-black uppercase leading-snug">
                           Auto Cluster Exhibition Centre
                         </h3>
-                        <div className="text-xs text-gray-655 space-y-1 leading-relaxed">
+                        <div className="text-lg sm:text-xl text-gray-655 space-y-1 leading-relaxed">
                           <p>MIDC, Chinchwad, Pimpri-Chinchwad, Pune, Maharashtra 411019.</p>
                         </div>
                       </div>
@@ -138,7 +138,7 @@ export default function ContactUsPage() {
                   </svg>
                   <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">Business Hours: Mon-Sat, 10AM-6PM IST</span>
                 </div>
-                <p className="text-xs text-gray-650 max-w-xl mx-auto leading-relaxed">
+                <p className="text-lg sm:text-xl text-gray-650 max-w-xl mx-auto leading-relaxed">
                   For exhibition bookings, stand options, partnership opportunities, or general visitor enquiries,
                   please reach out to us during business hours.
                 </p>

@@ -71,7 +71,7 @@ function AboutSection() {
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-white text-[#F9B122]">
                 <Icon className="h-6 w-6" />
               </div>
-              <p className="text-sm leading-relaxed text-gray-700">
+              <p className="text-lg leading-relaxed text-gray-700 sm:text-xl">
                 <strong className="text-[#031A34]">{item.title}</strong> {item.body}
               </p>
             </div>
@@ -110,7 +110,7 @@ function SpeakersSection() {
         <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] sm:text-5xl lg:text-6xl">
           Top Speakers <span className="text-[#F9B122]">IndiaMET Summit 2027</span>
         </h2>
-        <p className="mt-3 text-sm text-gray-600 sm:text-base">
+        <p className="mt-3 text-lg text-gray-600 sm:text-xl">
           The leading voices in metrology, precision engineering, and quality assurance
         </p>
       </div>
@@ -199,7 +199,7 @@ function ProgrammeSection() {
               <div>
                 <h3 className="text-lg font-bold text-[#031A34] sm:text-xl">{session.title}</h3>
                 {session.description && (
-                  <p className="mt-2 text-sm text-gray-500">{session.description}</p>
+                  <p className="mt-2 text-lg sm:text-xl text-gray-500">{session.description}</p>
                 )}
                 {session.topics && (
                   <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-600">
@@ -245,7 +245,7 @@ function WhyAttendSection() {
               </div>
               <div>
                 <h3 className="text-base font-bold text-[#031A34] sm:text-lg">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.description}</p>
+                <p className="mt-2 text-lg sm:text-xl leading-relaxed text-gray-600">{item.description}</p>
               </div>
             </div>
           );
@@ -406,7 +406,7 @@ function FAQSection() {
                   isOpen ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <p className="text-sm leading-relaxed text-gray-600">{item.answer}</p>
+                <p className="text-lg sm:text-xl leading-relaxed text-gray-600">{item.answer}</p>
               </div>
             </div>
           );

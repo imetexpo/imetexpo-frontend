@@ -149,12 +149,12 @@ export default function AwardsPage() {
               <h2 className="mb-6 font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
                 India Tyre Show Excellence Awards
               </h2>
-              <p className="mb-6 text-base leading-relaxed text-gray-600 lg:text-lg">
+              <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-600 lg:text-xl">
                 The India Tyre Show Excellence Awards honour individuals, teams and organizations that
                 demonstrate outstanding achievement, innovation and leadership in tyre manufacturing,
                 rubber compounds, testing, machinery, quality and allied technologies.
               </p>
-              <p className="mb-8 text-base leading-relaxed text-gray-600 lg:text-lg">
+              <p className="mb-8 text-lg sm:text-xl leading-relaxed text-gray-600">
                 Celebrating pioneers across the tyre and rubber ecosystem, the awards recognize the
                 leaders shaping the future of mobility, manufacturing and sustainability.
               </p>
@@ -190,7 +190,7 @@ export default function AwardsPage() {
               >
                 <span className="mb-3 block text-3xl">{icon}</span>
                 <h3 className="mb-2 font-bebas text-xl uppercase tracking-wide text-[#031A34]">{title}</h3>
-                <p className="text-sm text-gray-600">{desc}</p>
+                <p className="text-lg sm:text-xl text-gray-600">{desc}</p>
               </div>
             ))}
           </div>
@@ -278,7 +278,7 @@ export default function AwardsPage() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <p className="mx-auto mb-4 max-w-xl text-sm text-gray-600">
+            <p className="mx-auto mb-4 max-w-xl text-lg sm:text-xl text-gray-600">
               Our jury comprises global experts from industry, academia and research institutions.
             </p>
             <Link
@@ -314,7 +314,7 @@ export default function AwardsPage() {
             <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
               Our Sponsors
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 md:text-lg">
+            <p className="mx-auto mt-4 max-w-2xl text-lg sm:text-xl text-gray-600">
               Proudly supported by leading organizations sponsoring the India Tyre Show Excellence Awards.
             </p>
           </div>

@@ -227,7 +227,7 @@ export default function PassesPage() {
                 <h1 className="mt-5 font-bebas text-5xl uppercase leading-none tracking-tight text-[#031A34] md:text-6xl lg:text-7xl">
                   Your <span className="text-[#F9B122]">Digital Visitor Badge</span> In Seconds
                 </h1>
-                <p className="mt-4 max-w-xl text-sm leading-relaxed text-gray-600 md:text-base">
+                <p className="mt-4 max-w-xl text-lg sm:text-xl leading-relaxed text-gray-600">
                   Register for India Tyre Show, receive your <strong>QR-coded visitor pass</strong> instantly
                   via WhatsApp or SMS, and walk into the exhibition hassle-free.
                 </p>

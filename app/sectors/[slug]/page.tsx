@@ -130,7 +130,7 @@ export default function SectorPage() {
                       <h3 className="mb-3 font-bebas text-2xl text-[#F9B122] uppercase font-bold">
                         {sub.title}
                       </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
                         {sub.description}
                       </p>
                     </div>
@@ -199,7 +199,7 @@ export default function SectorPage() {
                       <h4 className="font-bebas text-2xl text-[#031A34] md:text-3xl font-bold uppercase">
                         {item.title}
                       </h4>
-                      <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
+                      <p className="text-lg sm:text-xl text-gray-600 leading-relaxed line-clamp-3">
                         {item.description}
                       </p>
                     </div>

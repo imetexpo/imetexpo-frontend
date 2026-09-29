@@ -148,7 +148,7 @@ export default function ExhibitorForm() {
           </svg>
         </div>
         <h2 className="font-bebas text-4xl text-[#031A34] mb-3 uppercase tracking-wide">Thank You!</h2>
-        <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+        <p className="text-lg sm:text-xl text-gray-600 mb-6 leading-relaxed">
           Your enquiry has been submitted successfully. Our team will contact you shortly.
         </p>
         <Link href="/">

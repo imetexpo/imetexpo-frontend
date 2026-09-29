@@ -7,7 +7,7 @@ export default function BrochureContent() {
         <h2 className="font-bebas text-3xl leading-[1.05] tracking-tight uppercase text-[#031A34]">
           INDIAMET Expo <span className="text-[#F9B122]">2026</span>
         </h2>
-        <p className="text-sm text-gray-700 leading-relaxed">
+        <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
           Step into Asia's most influential tyre manufacturing & rubber processing exhibition.
           INDIAMET Expo connects global suppliers of raw materials, manufacturing machinery,
           testing tools, and automated systems with thousands of qualified buyers from 50+ countries.

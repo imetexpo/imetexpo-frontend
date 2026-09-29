@@ -113,7 +113,7 @@ export default function AboutPage() {
                   Transforming Precision Manufacturing <br className="hidden sm:block" /> Through Metrology
                 </h2>
   
-                <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
+                <p className="mt-4 sm:mt-6 text-lg sm:text-xl leading-relaxed text-gray-700">
                 INDIAMET is India’s international exhibition for metrology, measurement technology, 
                 inspection, calibration, and quality engineering, bringing together the technologies 
                 and solutions driving the future of precision manufacturing.
@@ -173,7 +173,7 @@ export default function AboutPage() {
               <div className="animated-block-target">
                 <div className="w-full max-w-[1600px] 2xl:max-w-[1800px] ">
                   <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">INDIAMET: A Year-Round Metrology & Manufacturing Ecosystem</h3>
-                  <p className="mt-4 sm:mt-5 text-base sm:text-lg text-gray-700">
+                  <p className="mt-4 sm:mt-5 text-lg sm:text-xl text-gray-700">
                     INDIAMET is a premier international platform for metrology, measurement technology, inspection, calibration, and quality engineering. It brings together technology providers, manufacturers, quality professionals, engineers, and decision-makers from across India and global markets.
                     <br /><br />
                     But INDIAMET is more than a three-day exhibition — it is a year-round industry ecosystem designed to connect the metrology and precision manufacturing community through exhibitions, knowledge-sharing, industry insights, networking, and business opportunities.
@@ -187,8 +187,8 @@ export default function AboutPage() {
                       >
                         <div className="flex flex-col flex-1 gap-3 sm:gap-4 font-sans">
                           <h4 className="text-lg sm:text-xl font-bold text-[#031A34]">{item.title}</h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
-                          <ul className="list-disc space-y-1.5 pl-5 text-sm text-gray-600 flex-1 leading-relaxed">
+                          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">{item.description}</p>
+                          <ul className="list-disc space-y-1.5 pl-5 text-lg sm:text-xl text-gray-600 flex-1 leading-relaxed">
                             {item.points.map((point, pIdx) => (
                               <li key={pIdx}>{point}</li>
                             ))}
@@ -240,7 +240,7 @@ export default function AboutPage() {
                           Download Your Event Brochure
                         </h3>
                   
-                        <p className="max-w-[700px] text-base sm:text-lg text-gray-200">
+                        <p className="max-w-[700px] text-lg sm:text-xl text-gray-200">
                           Make sure you grab your copy of the event brochure to learn more
                           about the show and explore your participation opportunities.
                         </p>
@@ -332,7 +332,7 @@ export default function AboutPage() {
                   <div className="mb-6 sm:mb-8 flex flex-col lg:flex-row justify-between lg:items-end gap-4">
                     <div className="lg:basis-2/3">
                       <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">Key Events</h3>
-                      <p className="mt-3 text-base sm:text-lg text-gray-600">
+                      <p className="mt-3 text-lg sm:text-xl text-gray-600">
                         INDIAMET Connect is a professional networking platform designed to connect exhibitors, visitors, manufacturers, metrology professionals, industry experts, media, and professional associations. It helps the industry discover new technologies, build valuable business relationships, and stay connected throughout the year.
                       </p>
                     </div>
@@ -351,7 +351,7 @@ export default function AboutPage() {
                         </div>
                         <div className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
                           <h4 className="text-lg sm:text-xl font-bold text-[#031A34]">{event.title}</h4>
-                          <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">{event.description}</p>
+                          <p className="text-lg sm:text-xl text-gray-600 line-clamp-4 leading-relaxed">{event.description}</p>
                           {event.buttonText && (
                             <Link href={event.buttonLink}>
                               <button className="bg-[#F9B122] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mt-2">

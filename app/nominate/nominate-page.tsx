@@ -242,7 +242,7 @@ export default function NominatePage() {
                   <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#031A34]">
                     Nomination Submitted
                   </h2>
-                  <p className="mx-auto max-w-sm text-sm text-gray-600">
+                  <p className="mx-auto max-w-sm text-lg sm:text-xl text-gray-600">
                     Thank you — your nomination has been received. Our team will review it and get in
                     touch if any further details are needed.
                   </p>
@@ -660,7 +660,7 @@ export default function NominatePage() {
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">Need Help?</h3>
-                <p className="mb-3 text-sm text-gray-700">Our team is here to assist you with your nomination.</p>
+                <p className="mb-3 text-lg sm:text-xl text-gray-700">Our team is here to assist you with your nomination.</p>
                 <p className="text-sm text-[#031A34]">📞 +91 91483 19993</p>
                 <p className="text-sm text-[#031A34]">✉️ support@tyre-expo.com</p>
               </div>
@@ -674,19 +674,19 @@ export default function NominatePage() {
           <div className="grid grid-cols-1 gap-6 border-t border-gray-200 pt-6 md:grid-cols-3 lg:gap-10 sm:pt-8">
             <div className="flex items-start gap-4">
               <span className="shrink-0 text-2xl leading-none sm:text-3xl">🔒</span>
-              <p className="text-sm font-medium leading-snug text-gray-700 sm:text-base">
+              <p className="text-lg font-medium leading-snug text-gray-700 sm:text-xl">
                 Secure & Confidential — All nominations are treated with the utmost confidentiality
               </p>
             </div>
             <div className="flex items-start gap-4">
               <span className="shrink-0 text-2xl leading-none sm:text-3xl">📄</span>
-              <p className="text-sm font-medium leading-snug text-gray-700 sm:text-base">
+              <p className="text-lg font-medium leading-snug text-gray-700 sm:text-xl">
                 Easy Nomination Process — Simple 5-step process to submit securely online
               </p>
             </div>
             <div className="flex items-start gap-4">
               <span className="shrink-0 text-2xl leading-none sm:text-3xl">🏅</span>
-              <p className="text-sm font-medium leading-snug text-gray-700 sm:text-base">
+              <p className="text-lg font-medium leading-snug text-gray-700 sm:text-xl">
                 Celebrate Excellence — Join us at the India Tyre Show Awards Night
               </p>
             </div>

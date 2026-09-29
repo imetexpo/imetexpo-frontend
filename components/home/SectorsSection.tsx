@@ -105,7 +105,7 @@ export default function SectorsSection() {
                     <h3 className="font-bebas text-xl sm:text-2xl lg:text-3xl tracking-wide uppercase leading-tight line-clamp-2">
                       {sector.title}
                     </h3>
-                    <p className="font-sans text-[11px] sm:text-xs lg:text-sm text-gray-300 mt-1 sm:mt-2 leading-relaxed line-clamp-2">
+                    <p className="font-sans text-base sm:text-lg text-gray-300 mt-1 sm:mt-2 leading-relaxed line-clamp-2">
                       {sector.shortText}
                     </p>
                     <span className="inline-block mt-3 font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#F9B122] group-hover:underline">

@@ -45,7 +45,7 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
                 <h3 className="font-bebas text-4xl sm:text-5xl text-[#F9B122] leading-none font-bold">
                   {outcome.title}
                 </h3>
-                <p className="mt-2 font-sans text-gray-700 text-sm sm:text-base leading-relaxed">
+                <p className="mt-2 font-sans text-gray-700 text-lg sm:text-xl leading-relaxed">
                   {outcome.content}
                 </p>
               </div>

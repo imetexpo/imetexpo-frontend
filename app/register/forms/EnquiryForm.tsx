@@ -177,7 +177,7 @@ export default function EnquiryForm() {
           </svg>
         </div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank You, {submittedName}!</h2>
-        <p className="text-gray-600 mb-6">
+        <p className="text-lg sm:text-xl text-gray-600 mb-6">
           Your visitor registration for INDIAMET Expo 2026 has been submitted successfully.
           A confirmation email has been sent to your registered email address.
         </p>

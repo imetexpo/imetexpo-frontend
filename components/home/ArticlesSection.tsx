@@ -60,7 +60,7 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
                     {featuredArticle.title}
                   </h3>
                 </Link>
-                <p className="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed line-clamp-3 font-sans">
+                <p className="text-gray-600 mt-2 text-lg sm:text-xl leading-relaxed line-clamp-3 font-sans">
                   {featuredArticle.excerpt}
                 </p>
               </div>
@@ -84,11 +84,11 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
                     {formatDate(article.publishedDate)}
                   </p>
                   <Link href={`/articles/${article.slug}`}>
-                    <h4 className="text-xs sm:text-sm md:text-base font-bold text-[#031A34] mt-1 leading-snug hover:text-[#F9B122] transition line-clamp-2">
+                    <h4 className="text-base sm:text-lg font-bold text-[#031A34] mt-1 leading-snug hover:text-[#F9B122] transition line-clamp-2">
                       {article.title}
                     </h4>
                   </Link>
-                  <p className="text-gray-600 text-xs sm:text-sm mt-1 leading-relaxed line-clamp-3 font-sans">
+                  <p className="text-gray-600 text-lg sm:text-xl mt-1 leading-relaxed line-clamp-3 font-sans">
                     {article.excerpt}
                   </p>
                 </div>

@@ -185,7 +185,7 @@ const faqItems = [
                   <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl leading-tight text-[#031A34] uppercase">
                     Explore <span className="text-[#F9B122]">Opportunities</span>
                   </h1>
-                  <p className="text-base sm:text-lg leading-relaxed text-gray-700 font-sans">
+                  <p className="text-lg sm:text-xl leading-relaxed text-gray-700 font-sans">
                     As a participant at INDIAMET Expo, our team is dedicated to providing you with a variety of participation opportunities to make the most of your exhibition experience. From pre-event to post, we have created guides to help with the decision-making process and onboarding in a seamless manner.
                   </p>
                   <div className="pt-2">
@@ -221,7 +221,7 @@ const faqItems = [
                       />
                     </div>
                     <h3 className="mt-5 font-bebas text-2xl text-[#F9B122] uppercase font-bold">{benefit.title}</h3>
-                    <p className="mt-3 text-sm text-gray-650 leading-relaxed">{benefit.description}</p>
+                    <p className="mt-3 text-lg sm:text-xl text-gray-650 leading-relaxed">{benefit.description}</p>
                   </div>
                 ))}
               </div>
@@ -252,7 +252,7 @@ const faqItems = [
                       </div>
                       <div className="flex flex-col gap-3 p-5">
                         <h4 className="font-bebas text-2xl sm:text-3xl text-[#031A34] uppercase font-bold">{option.title}</h4>
-                        <p className="text-sm text-gray-650 leading-relaxed line-clamp-4">{option.description}</p>
+                        <p className="text-lg sm:text-xl text-gray-650 leading-relaxed line-clamp-4">{option.description}</p>
                       </div>
                     </div>
                     <div className="p-5 pt-0 mt-auto">
@@ -301,7 +301,7 @@ const faqItems = [
                         </div>
                       </button>
                       {openFaqIndex === idx && (
-                        <div className="px-4 sm:px-5 pb-5 pt-2 text-sm text-gray-750 leading-relaxed whitespace-pre-line border-t border-gray-100 font-sans">
+                        <div className="px-4 sm:px-5 pb-5 pt-2 text-lg sm:text-xl text-gray-750 leading-relaxed whitespace-pre-line border-t border-gray-100 font-sans">
                           {item.answer}
                         </div>
                       )}

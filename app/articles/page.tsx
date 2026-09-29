@@ -91,7 +91,7 @@ export default function ArticlesPage() {
                       {article.title}
                     </h2>
                     {article.excerpt && (
-                      <p className="text-xs text-gray-650 leading-relaxed line-clamp-3">
+                      <p className="text-lg sm:text-xl text-gray-650 leading-relaxed line-clamp-3">
                         {article.excerpt}
                       </p>
                     )}

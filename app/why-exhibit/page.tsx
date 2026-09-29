@@ -113,13 +113,13 @@ export default function WhyExhibitPage() {
                     <div className="flex flex-col gap-5">
                       <p className="font-bold text-[#F9B122]">Your Gateway to Precision Manufacturing Growth in India</p>
                       <h2 className="font-bebas text-6xl text-[#031A34] md:text-7xl">Powering the Future of Metrology, Measurement & Quality</h2>
-                      <p className="text-lg text-gray-700">
+                      <p className="text-lg sm:text-xl text-gray-700">
                        As manufacturing moves toward greater precision, automation, digitalisation, and quality excellence, 
                        India’s metrology and measurement industry is entering a new era of growth. INDIAMET connects you with 
                        leading manufacturers, technology providers, quality professionals, engineers, OEMs, and decision-makers 
                        shaping the future of precision manufacturing.
                         </p>
-                        <p className="text-lg text-gray-700"> Discover advanced metrology and inspection technologies, build valuable business connections, and unlock new opportunities across India’s rapidly evolving manufacturing ecosystem.           </p>
+                        <p className="text-lg sm:text-xl text-gray-700"> Discover advanced metrology and inspection technologies, build valuable business connections, and unlock new opportunities across India’s rapidly evolving manufacturing ecosystem.           </p>
                     </div>
                     <div className="mt-10 flex flex-wrap gap-8 2xl:gap-16">
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
@@ -158,7 +158,7 @@ export default function WhyExhibitPage() {
               <Container>
                 <div className="grid gap-5">
                   <h2 className="font-bebas text-6xl text-[#031A34] md:text-7xl">Why Exhibit at INDIAMET Expo</h2>
-                  <p className="text-lg text-gray-700">
+                  <p className="text-lg sm:text-xl text-gray-700">
                     Exhibiting at INDIAMET Expo puts you at the center of India's fastest-growing metrology and measurement technology hub. Connect directly with over 10,000 professionals with real purchasing power, showcase your solutions to a USD 45 billion industry, and expand your network across 50+ countries. This is your chance to generate high-quality leads, forge valuable partnerships, and position your brand as a leader in the region's rapidly modernizing rubber and tyre sector.
                   </p>
                 </div>
@@ -190,7 +190,7 @@ export default function WhyExhibitPage() {
                         <img src={benefit.icon} alt={benefit.title} className="h-8 w-8 object-contain" />
                       </div>
                       <h3 className="font-bebas text-2xl text-[#031A34] mt-2 font-bold">{benefit.title}</h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">{benefit.desc}</p>
+                      <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">{benefit.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -212,7 +212,7 @@ export default function WhyExhibitPage() {
                     <div className="flex flex-col gap-5">
                       <p className="font-bold text-orange-600">Visitor Breakdown</p>
                       <h3 className="font-bebas text-6xl text-[#031A34] md:text-7xl">Connecting You to Precision Manufacturing Decision-Makers</h3>
-                      <p className="text-lg text-gray-700">
+                      <p className="text-lg sm:text-xl text-gray-700">
                         From manufacturing leaders and procurement specialists to quality managers, metrology engineers, R&D professionals, and inspection experts, INDIAMET brings together the decision-makers shaping India’s precision manufacturing and quality ecosystem.
                       </p>
                     </div>
@@ -282,7 +282,7 @@ export default function WhyExhibitPage() {
                       <h3 className="font-bebas text-6xl md:text-7xl leading-tight">
                         Download Your Event Brochure
                       </h3>
-                      <p className="max-w-[700px] text-lg text-gray-200">
+                      <p className="max-w-[700px] text-lg sm:text-xl text-gray-200">
                         Make sure you grab your copy of the event brochure to learn more
                         about the show and explore your participation opportunities.
                       </p>
@@ -328,7 +328,7 @@ export default function WhyExhibitPage() {
                       <div className="absolute inset-0 bg-[#031A34]/60"></div>
                       <div className="relative z-10 flex h-full flex-col justify-end gap-4 p-6 font-sans">
                         <h3 className="text-xl font-bold leading-tight">{item.title}</h3>
-                        <p className="text-sm text-gray-300 leading-relaxed">{item.desc}</p>
+                        <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -355,7 +355,7 @@ export default function WhyExhibitPage() {
                   ].map((testimonial, idx) => (
                     <div key={idx} className="relative flex h-full flex-col overflow-hidden rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300 font-sans">
                       <div className="text-4xl mb-4 text-[#F9B122] font-serif">&ldquo;</div>
-                      <p className="mb-auto text-sm italic text-gray-700 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
+                      <p className="mb-auto text-lg sm:text-xl italic text-gray-700 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
                       <div className="mt-6 flex items-center gap-4 border-t border-gray-200 pt-5">
                         <div className="h-12 w-12 rounded-sm bg-gradient-to-br from-[#F9B122] to-orange-600 flex items-center justify-center text-white font-bold text-lg">
                           {testimonial.name.charAt(0)}

@@ -166,7 +166,7 @@ export default function SectorsPage() {
                 <h2 className="mt-10 font-bebas text-5xl text-[#031A34] md:text-6xl lg:text-7xl">
                   Sectors Showcased at <span className="text-[#F9B122]">INDIAMET Expo</span>
                 </h2>
-                <p className="mx-auto mt-5 max-w-9xl text-lg text-gray-700 lg:mx-0">
+                <p className="mx-auto mt-5 max-w-9xl text-lg sm:text-xl text-gray-700 lg:mx-0">
                   INDIAMET brings together the complete spectrum of metrology, measurement, inspection, 
                   calibration, testing, and quality technologies. From advanced CMMs and optical measurement 
                   systems to calibration equipment, 3D scanning, machine vision, and smart metrology software, 
@@ -250,7 +250,7 @@ export default function SectorsPage() {
                     </div>
                     <div className="flex flex-1 flex-col gap-3 p-5 font-sans">
                       <h4 className="font-bebas text-2xl text-[#031A34] md:text-3xl font-bold">{item.title}</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{item.description}</p>
+                      <p className="text-lg sm:text-xl text-gray-600 leading-relaxed line-clamp-3">{item.description}</p>
                     </div>
                   </div>
                 ))}

@@ -6,7 +6,7 @@ export default function SponsorContent() {
           INDIAMET Expo 2027 Conference
         </h2>
         <div className="space-y-4 text-gray-700">
-         <p className="text-base leading-relaxed">
+         <p className="text-lg sm:text-xl leading-relaxed">
   <strong>INDIAMET Expo 2027 Conference</strong> is a premier industry platform
   bringing together professionals from metrology, precision engineering,
   manufacturing, quality, inspection, calibration, testing, automation, and
@@ -15,7 +15,7 @@ export default function SponsorContent() {
   and decision-makers to explore the latest innovations shaping the future of
   industrial metrology and manufacturing.
 </p>
-          <p className="text-base leading-relaxed">
+          <p className="text-lg sm:text-xl leading-relaxed">
             If you'd like to become a summit partner, present your solutions, or advertise at
             the event, please fill out the form — our team will contact you as soon as possible.
           </p>

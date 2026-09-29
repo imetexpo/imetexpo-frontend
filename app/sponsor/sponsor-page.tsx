@@ -193,7 +193,7 @@ export default function SponsorPage() {
                   <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#031A34]">
                     Enquiry Submitted
                   </h2>
-                  <p className="mx-auto max-w-sm text-sm text-gray-600">
+                  <p className="mx-auto max-w-sm text-lg sm:text-xl text-gray-600">
                     Thank you — our partnerships team will contact you about the {selectedPackage.title}{' '}
                     package.
                   </p>
@@ -203,7 +203,7 @@ export default function SponsorPage() {
                   <h2 className="mb-1 font-bebas text-2xl uppercase tracking-wide text-[#F9B122]">
                     Sponsor Information
                   </h2>
-                  <p className="mb-6 text-sm text-gray-600">
+                  <p className="mb-6 text-lg sm:text-xl text-gray-600">
                     Please complete the form below and our team will get in touch with you.
                   </p>
 
@@ -412,7 +412,7 @@ export default function SponsorPage() {
               </SideCard>
 
               <SideCard title="Sponsorship Packages">
-                <p className="mb-4 text-sm text-gray-700">
+                <p className="mb-4 text-lg sm:text-xl text-gray-700">
                   Choose a package that aligns with your marketing and branding goals. Click a package on
                   the form to view full benefits.
                 </p>
@@ -432,7 +432,7 @@ export default function SponsorPage() {
               </SideCard>
 
               <SideCard title="Need Help?" icon="🎧">
-                <p className="mb-3 text-sm text-gray-700">
+                <p className="mb-3 text-lg sm:text-xl text-gray-700">
                   Our team is here to help you create the perfect partnership.
                 </p>
                 <p className="text-sm text-[#031A34]">📞 +91 91483 19993</p>

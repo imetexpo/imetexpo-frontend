@@ -332,7 +332,7 @@ export default function PlanYourTravelPage() {
                           {item.title}
                         </h4>
 
-                        <p className="text-sm leading-relaxed text-gray-600">
+                        <p className="text-lg sm:text-xl leading-relaxed text-gray-600">
                           {item.description}
                         </p>
                       </div>
@@ -390,7 +390,7 @@ export default function PlanYourTravelPage() {
                           {hotel.name}
                         </h4>
 
-                        <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-gray-600">
+                        <p className="mt-3 line-clamp-3 text-lg sm:text-xl leading-relaxed text-gray-600">
                           {hotel.description}
                         </p>
                       </div>

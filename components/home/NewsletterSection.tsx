@@ -12,7 +12,7 @@ export default function NewsletterSection() {
             <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-white leading-tight uppercase tracking-tight">
               JOIN OUR NEWSLETTER
             </h2>
-            <p className="text-gray-400 mt-4 text-sm sm:text-base md:text-lg leading-relaxed font-sans">
+            <p className="text-gray-400 mt-4 text-lg sm:text-xl leading-relaxed font-sans">
               Don&apos;t miss out on the latest with our weekly newsletter, bringing you not only 
               the latest updates from the event but also cutting-edge insights from the entire industry.
             </p>

@@ -12,10 +12,10 @@ export default function ExhibitorContent() {
         <h2 className="font-bebas text-3xl text-[#031A34] uppercase">
           Why <span className="text-[#F9B122]">Exhibit?</span>
         </h2>
-        <p className="text-sm text-gray-700 leading-relaxed">
+        <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
           Showcase your solutions to senior buyers across the full tyre manufacturing value chain.
         </p>
-        <p className="text-sm text-gray-800 font-bold">INDIAMET Expo is the leading platform to:</p>
+        <p className="text-lg sm:text-xl text-gray-800 font-bold">INDIAMET Expo is the leading platform to:</p>
         <ul className="space-y-3">
           {[
             "Connect with decision-makers from 20+ countries",
@@ -25,7 +25,7 @@ export default function ExhibitorContent() {
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-2.5">
               <span className="text-[#F9B122] mt-0.5">✓</span>
-              <span className="text-sm text-gray-650 leading-relaxed">{item}</span>
+              <span className="text-lg sm:text-xl text-gray-650 leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
@@ -55,7 +55,7 @@ export default function ExhibitorContent() {
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-2.5">
               <span className="text-[#F9B122]">•</span>
-              <span className="text-sm text-gray-650 leading-relaxed">{item}</span>
+              <span className="text-lg sm:text-xl text-gray-650 leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>

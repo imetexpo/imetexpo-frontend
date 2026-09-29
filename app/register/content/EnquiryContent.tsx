@@ -6,15 +6,15 @@ export default function EnquiryContent() {
         <div className="space-y-4">
           <div>
             <p className="text-[#F9B122] font-semibold text-sm">Dates</p>
-            <p className="text-gray-700">15-17 October 2026</p>
+            <p className="text-gray-700 text-lg sm:text-xl">15-17 October 2026</p>
           </div>
           <div>
             <p className="text-[#F9B122] font-semibold text-sm">Venue</p>
-            <p className="text-gray-700">Auto Cluster Exhibition Centre, Pune</p>
+            <p className="text-gray-700 text-lg sm:text-xl">Auto Cluster Exhibition Centre, Pune</p>
           </div>
           <div>
             <p className="text-[#F9B122] font-semibold text-sm">Timings</p>
-            <p className="text-gray-700">10:00 AM - 6:00 PM</p>
+            <p className="text-gray-700 text-lg sm:text-xl">10:00 AM - 6:00 PM</p>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function EnquiryContent() {
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-2">
               <span className="text-[#F9B122] text-sm">✓</span>
-              <span className="text-gray-600 text-sm">{item}</span>
+              <span className="text-gray-600 text-lg sm:text-xl">{item}</span>
             </li>
           ))}
         </ul>
@@ -39,7 +39,7 @@ export default function EnquiryContent() {
 
       <div className="bg-gradient-to-r from-[#F9B122] to-[#031A34] rounded-2xl p-6 text-white">
         <h3 className="font-bebas text-2xl mb-2">Free Registration</h3>
-        <p className="text-sm text-white/90 mb-4">
+        <p className="text-lg sm:text-xl text-white/90 mb-4">
           Register now to get free entry to the exhibition and conference sessions.
         </p>
         <div className="flex items-center gap-2 text-sm">

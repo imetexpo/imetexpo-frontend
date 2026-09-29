@@ -422,7 +422,7 @@ export default function ExhibitorDetailPage() {
             <div className="space-y-6">
               <div className="bg-[#FCF8F3] border border-gray-100 rounded-sm p-6 sm:p-8 shadow-sm">
                 <h2 className="font-bebas text-3xl text-[#031A34] mb-4 uppercase">Company Overview</h2>
-                <p className="text-gray-700 leading-relaxed text-sm">
+                <p className="text-gray-700 leading-relaxed text-lg sm:text-xl">
                   {company.description || `${company.name} is a leading company in the ${company.sector.join(' and ')} sector, 
                   headquartered in ${company.country}. With a strong presence at ${company.pavilion}, 
                   Stand ${company.standNumber}, the company provides comprehensive 
