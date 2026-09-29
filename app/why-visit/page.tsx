@@ -507,7 +507,7 @@ export default function WhyVisitPage() {
                   <div className="order-1 lg:order-2 relative h-[400px] sm:h-[500px] lg:h-[600px] w-full overflow-hidden rounded-lg">
 
                     <Image
-                      src="https://cdn.itegroupnews.com/Untitled_design_11_c8dee1a839.png"
+                      src="/images/india_precision_manufcturing.webp"
                       alt="Precision Manufacturing Business Areas"
                       fill
                       className="object-cover"
