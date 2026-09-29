@@ -5,7 +5,7 @@ import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
 import PageHero from '@/components/layout/PageHero';
 
-const HERO_IMAGE = '/award3.jpg';
+const HERO_IMAGE = 'images/gmea_awards.png';
 
 const stats = [
   ['15+', 'Award Categories'],
