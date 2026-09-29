@@ -222,13 +222,13 @@ export default function PassesPage() {
             <Container className="relative grid items-center gap-12 py-12 lg:grid-cols-2 lg:py-16">
               <div>
                 <span className="inline-flex items-center rounded-sm bg-[#F9B122]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#F9B122]">
-                  India Tyre Show 2027 · Registration Open
+                  IndiaMET 2027 · Registration Open
                 </span>
                 <h1 className="mt-5 font-bebas text-5xl uppercase leading-none tracking-tight text-[#031A34] md:text-6xl lg:text-7xl">
                   Your <span className="text-[#F9B122]">Digital Visitor Badge</span> In Seconds
                 </h1>
                 <p className="mt-4 max-w-xl text-lg sm:text-xl leading-relaxed text-gray-600">
-                  Register for India Tyre Show, receive your <strong>QR-coded visitor pass</strong> instantly
+                  Register for IndiaMET 2027, receive your <strong>QR-coded visitor pass</strong> instantly
                   via WhatsApp or SMS, and walk into the exhibition hassle-free.
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider">
@@ -272,8 +272,8 @@ export default function PassesPage() {
                   name: 'Your Name',
                   company: 'Company / Organization',
                   event: {
-                    name: 'India Tyre Show 2027',
-                    dates: '22–14 May  2027',
+                    name: 'IndiaMET 2027',
+                    dates: '13–15 May  2027',
                     venue: 'Auto Cluster Exhibition Center, Pune',
                   },
                 }}
@@ -292,7 +292,7 @@ export default function PassesPage() {
               <span className="ml-3 inline-flex rounded-sm bg-[#F9B122] px-3 py-1 text-xs font-bold uppercase tracking-wider">
                 Registration Open
               </span>
-              <h2 className="mt-6 font-bebas text-4xl uppercase tracking-wide md:text-5xl">India Tyre Show 2027</h2>
+              <h2 className="mt-6 font-bebas text-4xl uppercase tracking-wide md:text-5xl">IndiaMET 2027</h2>
               <div className="mt-4 max-w-3xl rounded-sm border border-white/15 p-4 text-sm text-white/80">
                 <p className="font-semibold text-white">About This Event</p>
                 <p className="mt-2">
@@ -326,7 +326,7 @@ export default function PassesPage() {
                 </div>
 
                 <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#F9B122]">India Tyre Show 2027</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#F9B122]">IndiaMET 2027</p>
                   <h3 className="mt-2 font-bebas text-3xl uppercase tracking-wide text-[#031A34]">
                     Choose Verification Method
                   </h3>
@@ -387,7 +387,7 @@ export default function PassesPage() {
                     {loading ? 'Sending OTP...' : `Send OTP via ${channel === 'sms' ? 'SMS' : 'WhatsApp'}`}
                   </button>
                   <p className="mt-3 text-center text-xs text-gray-400">
-                    {channel === 'sms' ? 'SMS' : 'WhatsApp'} OTP from India Tyre Show · Expires in 10 minutes
+                    {channel === 'sms' ? 'SMS' : 'WhatsApp'} OTP from IndiaMET 2027 · Expires in 10 minutes
                   </p>
                 </div>
               </div>
@@ -573,7 +573,7 @@ export default function PassesPage() {
         <div className="fixed inset-0 z-[200] flex items-center justify-center bg-[#031A34]/60 p-4">
           <div className="w-full max-w-md rounded-sm bg-white p-6 shadow-2xl">
             <div className="flex items-center justify-between">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#F9B122]">India Tyre Show</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#F9B122]">IndiaMET 2027</p>
               <button type="button" onClick={() => setOtpOpen(false)} className="text-gray-400">
                 ✕
               </button>

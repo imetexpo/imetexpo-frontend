@@ -40,7 +40,7 @@ export default function PassBadgePage({ params }: { params: Promise<{ token: str
     <div className="min-h-screen bg-[#FCF8F3] px-4 py-10">
       <VisitorPassCard pass={pass} />
       <p className="mt-6 text-center text-xs text-gray-500">
-        Show this screen at the India Tyre Show 2027 entrance.
+        Show this screen at the IndiaMET 2027 entrance.
       </p>
     </div>
   );

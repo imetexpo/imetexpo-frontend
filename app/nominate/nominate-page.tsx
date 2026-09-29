@@ -602,11 +602,13 @@ export default function NominatePage() {
             <aside className="flex flex-col gap-6">
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">
-                  About the Awards
+                  ABOUT GMEA AWARDS
+
                 </h3>
                 <p className="mb-3 text-lg sm:text-xl text-gray-700">
-                  The India Tyre Show Excellence Awards honour outstanding achievement, innovation, and
-                  leadership in tyre manufacturing, rubber technology, testing, and quality.
+                  The Global Metrology Excellence Awards (GMEA) honor outstanding achievements, innovation, and leadership in the field of metrology, measurement, inspection and quality assurance.
+
+
                 </p>
                 <Link
                   href="/awards/"
@@ -687,7 +689,7 @@ export default function NominatePage() {
             <div className="flex items-start gap-4">
               <span className="shrink-0 text-2xl leading-none sm:text-3xl">🏅</span>
               <p className="text-lg font-medium leading-snug text-gray-700 sm:text-xl">
-                Celebrate Excellence — Join us at the India Tyre Show Awards Night
+                Celebrate Excellence — Join us at the Global Metrology Excellence Awards Night
               </p>
             </div>
           </div>

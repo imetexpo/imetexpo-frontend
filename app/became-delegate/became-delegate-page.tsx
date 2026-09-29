@@ -77,9 +77,11 @@ export default function BecameDelegatePage() {
                 Choose Your Delegate Package
               </h2>
               <p className="mt-4 max-w-3xl text-lg sm:text-xl leading-relaxed text-gray-700">
-                Join industry leaders at the India Tyre Show Summit. Select the package that best
-                suits your needs and gain access to exclusive networking, technical sessions, and
-                valuable industry connections.
+                Join industry leaders and experts at our premier summit. Select the package that 
+                best suits your needs and gain access to exclusive networking opportunities, 
+                insightful sessions, and valuable industry connections.
+
+
               </p>
 
               <hr className="my-10 border-gray-200" />

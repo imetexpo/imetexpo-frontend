@@ -317,7 +317,7 @@ function VenueSection() {
           <img
             key={src}
             src={src}
-            alt="India Tyre Show venue"
+            alt="IndiaMET 2027 venue"
             className="h-56 w-full rounded-sm object-cover"
           />
         ))}

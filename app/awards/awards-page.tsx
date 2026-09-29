@@ -174,7 +174,7 @@ export default function AwardsPage() {
               </div>
             </div>
             <div className="relative h-80 overflow-hidden rounded-sm border border-[#F9B122]/20 bg-[#FCF8F3] lg:h-96">
-              <img src={HERO_IMAGE} alt="India Tyre Show Awards" className="h-full w-full object-cover" />
+              <img src={HERO_IMAGE} alt="Global Metrology Excellence Awards" className="h-full w-full object-cover" />
             </div>
           </div>
         </Container>
@@ -321,7 +321,7 @@ export default function AwardsPage() {
               Our Sponsors
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg sm:text-xl text-gray-600">
-              Proudly supported by leading organizations sponsoring the India Tyre Show Excellence Awards.
+              Proudly supported by leading organizations sponsoring the Global Metrology Excellence Awards.
             </p>
           </div>
           <PartnerTrack items={sponsors} />

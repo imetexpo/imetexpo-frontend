@@ -29,7 +29,7 @@ const packages: SponsorPackage[] = [
       'Dedicated speaking slot at the main stage',
       'Full-page ad in the event brochure',
       'Prominent logo placement on award trophies',
-      'Social media promotion across India Tyre Show channels',
+      'Social media promotion across IndiaMET 2027 channels',
     ],
   },
   {
