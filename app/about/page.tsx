@@ -101,7 +101,7 @@ export default function AboutPage() {
               {/* LEFT IMAGE - Responsive cover-fit matching screenshot 4 */}
               <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
                 <img
-                  src="/images/image1.png"
+                  src="/images/about_indiamet.jpg"
                   alt="expo excavator"
                   className="w-full h-full object-cover"
                 />

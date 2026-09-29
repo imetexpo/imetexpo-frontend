@@ -243,7 +243,7 @@ export default function WhyExhibitPage() {
                   <div className="order-first h-full lg:col-span-2">
                     <div className="h-[300px] sm:h-[400px] lg:h-full w-full overflow-hidden rounded-sm">
                       <img
-                        src="https://cdn.itegroupnews.com/mw24_1095_min_aaba01f5dd.jpg"
+                        src="/images/why_exhibit.png"
                         alt="Visitors"
                         className="h-full w-full object-cover"
                       />
