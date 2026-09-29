@@ -120,9 +120,9 @@ export default function Navbar() {
             </Container>
           </div>
 
-         {/* Logo + buttons */}
+         {/* Logo + date + nav items */}
 <div className="w-full bg-[#031A34]">
-  <Container className="flex items-center justify-between py-3.5">
+  <Container className="flex items-center justify-between gap-6 py-3.5">
     
     <div className="flex items-center gap-4">
 
@@ -158,63 +158,58 @@ export default function Navbar() {
       </div>
 
     </div>
-  </Container>
-</div>
-        </div>
 
-        {/* NAV ROW */}
-        <div className="bg-[#0C1C3B]/90 backdrop-blur-md">
-          <Container className="flex items-center py-1 min-h-[44px]">
-            <div className="hidden lg:flex flex-1 items-center justify-end gap-4 pr-56 xl:gap-8 xl:pr-40">
-              {navItems.map((item) => (
+    <div className="hidden lg:flex flex-1 items-center justify-end gap-4 xl:gap-8">
+      {navItems.map((item) => (
+        <div
+          key={item.title}
+          className="relative"
+          onMouseEnter={() => item.links && item.links.length > 0 && handleMouseEnter(item.title)}
+          onMouseLeave={handleMouseLeave}
+        >
+          {item.links && item.links.length > 0 ? (
+            <>
+              <button className="flex items-center gap-1 text-sm xl:text-base hover:text-[#F9B122] transition-colors whitespace-nowrap py-2">
+                {item.title}
+                <ChevronDown
+                  className={`h-3 w-3 transition-transform duration-200 ${
+                    openDropdown === item.title ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              {openDropdown === item.title && (
                 <div
-                  key={item.title}
-                  className="relative"
-                  onMouseEnter={() => item.links && item.links.length > 0 && handleMouseEnter(item.title)}
+                  className="absolute right-0 top-full z-50 w-56 rounded-md bg-[#021533] shadow-lg border border-gray-700"
+                  onMouseEnter={() => handleMouseEnter(item.title)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  {item.links && item.links.length > 0 ? (
-                    <>
-                      <button className="flex items-center gap-1 text-sm xl:text-base hover:text-[#F9B122] transition-colors whitespace-nowrap py-2">
-                        {item.title}
-                        <ChevronDown
-                          className={`h-3 w-3 transition-transform duration-200 ${
-                            openDropdown === item.title ? 'rotate-180' : ''
-                          }`}
-                        />
-                      </button>
-                      {openDropdown === item.title && (
-                        <div
-                          className="absolute left-0 top-full z-50 w-56 rounded-md bg-[#021533] shadow-lg border border-gray-700"
-                          onMouseEnter={() => handleMouseEnter(item.title)}
-                          onMouseLeave={handleMouseLeave}
-                        >
-                          <div className="py-2">
-                            {item.links.map((link) => (
-                              <UTMLink
-                                key={link.text}
-                                href={link.href}
-                                className="block px-4 py-2 text-sm hover:bg-[#F9B122] hover:text-white transition-colors"
-                              >
-                                {link.text}
-                              </UTMLink>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <UTMLink
-                      href={item.href || '#'}
-                      className="text-sm xl:text-base hover:text-[#F9B122] transition-colors whitespace-nowrap block py-2"
-                    >
-                      {item.title}
-                    </UTMLink>
-                  )}
+                  <div className="py-2">
+                    {item.links.map((link) => (
+                      <UTMLink
+                        key={link.text}
+                        href={link.href}
+                        className="block px-4 py-2 text-sm hover:bg-[#F9B122] hover:text-white transition-colors"
+                      >
+                        {link.text}
+                      </UTMLink>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-          </Container>
+              )}
+            </>
+          ) : (
+            <UTMLink
+              href={item.href || '#'}
+              className="text-sm xl:text-base hover:text-[#F9B122] transition-colors whitespace-nowrap block py-2"
+            >
+              {item.title}
+            </UTMLink>
+          )}
+        </div>
+      ))}
+    </div>
+  </Container>
+</div>
         </div>
     </div>
   );
