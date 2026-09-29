@@ -390,7 +390,7 @@ export default function WhyExhibitPage() {
                 </div>
                 <div className="mt-8 overflow-hidden rounded-sm border border-gray-200">
                   <iframe
-                    src="https://www.google.com/maps?q=Crocus%20Expo%20IEC%20Moscow&output=embed"
+                    src="https://www.google.com/maps?q=Auto%20Cluster%20Exhibition%20Center%2C%20Pune&output=embed"
                     className="w-full h-[400px] border-0"
                     allowFullScreen
                     loading="lazy"
