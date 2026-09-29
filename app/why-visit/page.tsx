@@ -245,20 +245,16 @@ export default function WhyVisitPage() {
                   <div className="order-1 lg:order-2 relative h-[400px] sm:h-[500px] lg:h-[600px] w-full overflow-hidden rounded-lg">
 
                     <Image
-                      src="https://cdn.itegroupnews.com/1_1f3ae141f5.png"
+                      src="/images/precision_manufacturing.jpg"                     
                       alt="Precision Metrology and Measurement Technology"
                       fill
                       className="object-cover"
                     />
-
                   </div>
-
                 </div>
               </div>
             </div>
           </Container>
-
-
           {/* =========================================================
               METROLOGY NETWORK SECTION
           ========================================================== */}
