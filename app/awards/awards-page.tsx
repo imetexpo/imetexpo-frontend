@@ -15,7 +15,7 @@ const stats = [
 ];
 
 const whyParticipate = [
-  ['🏆', 'Industry Recognition', 'Gain recognition among global leaders in tyre manufacturing and rubber technology.'],
+  ['🏆', 'Industry Recognition', 'Gain recognition among global leaders in metrology and precision engineering.'],
   ['🌐', 'Global Visibility', 'Showcase your achievements on an international industry platform.'],
   ['🤝', 'Business Networking', 'Connect with key decision makers and expand your business network.'],
   ['📈', 'Brand Credibility', 'Strengthen your brand image and build trust with customers.'],
@@ -24,16 +24,16 @@ const whyParticipate = [
 ];
 
 const categories = [
-  ['⚙️', 'Outstanding Tyre Manufacturing'],
-  ['🧪', 'Best Rubber Compound Innovation'],
-  ['🏅', 'Quality Excellence Award'],
-  ['📋', 'Tyre Testing & QC Award'],
-  ['🖥️', 'Machinery & Automation Award'],
+  ['⚙️', 'Outstanding Metrology Solution'],
+  ['🧪', 'Best Measurement Innovation'],
+  ['🏅', 'Calibration Excellence'],
+  ['📋', 'Quality Excellence Award'],
+  ['🖥️', 'CMM Technology Award'],
   ['🔍', 'Inspection Technology Award'],
-  ['♻️', 'Recycling & Sustainability Award'],
+  ['♻️', 'Machine Vision Award'],
   ['🏭', 'Smart Manufacturing Award'],
   ['🌟', 'Young Professional Award'],
-  ['🌍', 'Green Manufacturing Award'],
+  ['🌍', 'Sustainability Award'],
   ['⚛️', 'Excellence in R&D'],
   ['🏆', 'Lifetime Achievement Award'],
 ];
@@ -147,16 +147,22 @@ export default function AwardsPage() {
             <div>
               <SectionEyebrow>About the Awards</SectionEyebrow>
               <h2 className="mb-6 font-bebas text-4xl uppercase tracking-tight text-[#031A34] lg:text-5xl">
-                India Tyre Show Excellence Awards
+                Global Metrology Excellence Awards
+
               </h2>
               <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-600 lg:text-xl">
-                The India Tyre Show Excellence Awards honour individuals, teams and organizations that
-                demonstrate outstanding achievement, innovation and leadership in tyre manufacturing,
-                rubber compounds, testing, machinery, quality and allied technologies.
+                The Global Metrology Excellence Awards (GMEA) honour individuals, teams and 
+                organizations that demonstrate outstanding achievement, innovation and leadership 
+                in metrology, measurement, inspection, calibration, quality assurance and allied technologies.
+
+
               </p>
               <p className="mb-8 text-lg sm:text-xl leading-relaxed text-gray-600">
-                Celebrating pioneers across the tyre and rubber ecosystem, the awards recognize the
-                leaders shaping the future of mobility, manufacturing and sustainability.
+                Recognizing excellence across the entire metrology and quality engineering 
+                ecosystem, GMEA celebrates the pioneers, innovators, and leaders who are shaping 
+                the future of precision manufacturing and quality assurance.
+
+
               </p>
               <div className="grid max-w-xl grid-cols-2 gap-6 sm:grid-cols-4">
                 {stats.map(([n, l]) => (
