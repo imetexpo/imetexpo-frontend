@@ -446,7 +446,7 @@ export default function NominatePage() {
                       <div className="mt-5 flex flex-col items-start justify-between gap-4 rounded-sm border border-gray-200 bg-[#FCF8F3] p-4 sm:flex-row sm:items-center">
                         <div className="flex items-center gap-3">
                           <span className="text-xl">🏆</span>
-                          <p className="text-sm text-gray-700">Not sure which category to choose?</p>
+                          <p className="text-lg sm:text-xl text-gray-700">Not sure which category to choose?</p>
                         </div>
                         <Link
                           href="/awards/"
@@ -499,7 +499,7 @@ export default function NominatePage() {
                       <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#F9B122]">
                         5. Review & Submit
                       </h2>
-                      <p className="mb-6 text-sm text-gray-500">
+                      <p className="mb-6 text-lg sm:text-xl text-gray-500">
                         Please check everything below before submitting. You can jump back to any earlier
                         step using the numbers above.
                       </p>
@@ -540,7 +540,7 @@ export default function NominatePage() {
                           ]}
                         />
                       </div>
-                      <label className="mt-6 flex items-start gap-2 text-sm text-gray-700">
+                      <label className="mt-6 flex items-start gap-2 text-lg sm:text-xl text-gray-700">
                         <input
                           type="checkbox"
                           checked={consent}
@@ -604,7 +604,7 @@ export default function NominatePage() {
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">
                   About the Awards
                 </h3>
-                <p className="mb-3 text-sm text-gray-700">
+                <p className="mb-3 text-lg sm:text-xl text-gray-700">
                   The India Tyre Show Excellence Awards honour outstanding achievement, innovation, and
                   leadership in tyre manufacturing, rubber technology, testing, and quality.
                 </p>
@@ -618,7 +618,7 @@ export default function NominatePage() {
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">Why Nominate?</h3>
-                <ul className="space-y-2 text-sm text-gray-700">
+                <ul className="space-y-2 text-lg sm:text-xl text-gray-700">
                   {[
                     'Gain global recognition',
                     'Enhance brand reputation',
@@ -640,20 +640,20 @@ export default function NominatePage() {
                 </h3>
                 <div className="space-y-3">
                   <div>
-                    <p className="text-xs text-gray-500">Nominations Open</p>
-                    <p className="text-sm font-semibold text-[#031A34]">01 November 2026</p>
+                    <p className="text-base text-gray-500">Nominations Open</p>
+                    <p className="text-lg sm:text-xl font-semibold text-[#031A34]">01 November 2026</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
-                    <p className="text-xs text-gray-500">Last Date to Nominate</p>
-                    <p className="text-sm font-semibold text-[#031A34]">31 January 2027</p>
+                    <p className="text-base text-gray-500">Last Date to Nominate</p>
+                    <p className="text-lg sm:text-xl font-semibold text-[#031A34]">31 January 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
-                    <p className="text-xs text-gray-500">Finalists Announcement</p>
-                    <p className="text-sm font-semibold text-[#031A34]">15 March 2027</p>
+                    <p className="text-base text-gray-500">Finalists Announcement</p>
+                    <p className="text-lg sm:text-xl font-semibold text-[#031A34]">15 March 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
-                    <p className="text-xs text-gray-500">Awards Ceremony</p>
-                    <p className="text-sm font-bold text-[#F9B122]">14 My 2027</p>
+                    <p className="text-base text-gray-500">Awards Ceremony</p>
+                    <p className="text-lg sm:text-xl font-bold text-[#F9B122]">14 My 2027</p>
                   </div>
                 </div>
               </div>
@@ -661,8 +661,8 @@ export default function NominatePage() {
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">Need Help?</h3>
                 <p className="mb-3 text-lg sm:text-xl text-gray-700">Our team is here to assist you with your nomination.</p>
-                <p className="text-sm text-[#031A34]">📞 +91 91483 19993</p>
-                <p className="text-sm text-[#031A34]">✉️ support@tyre-expo.com</p>
+                <p className="text-lg sm:text-xl text-[#031A34]">📞 +91 91483 19993</p>
+                <p className="text-lg sm:text-xl text-[#031A34]">✉️ support@tyre-expo.com</p>
               </div>
             </aside>
           </div>
@@ -711,7 +711,7 @@ function ReviewSection({ title, rows }: { title: string; rows: [string, string][
           {filled.map(([label, value]) => (
             <div key={label}>
               <dt className="text-[11px] uppercase tracking-wide text-gray-400">{label}</dt>
-              <dd className="break-words text-sm text-gray-800">{value}</dd>
+              <dd className="break-words text-lg sm:text-xl text-gray-800">{value}</dd>
             </div>
           ))}
         </dl>

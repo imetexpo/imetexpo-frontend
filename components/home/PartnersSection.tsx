@@ -1,21 +1,9 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import Image from 'next/image';
-import Section from '../ui/section';
-import SectionHeader from '../ui/sectionHeader';
 import Container from '../ui/container';
 
-const partnersData = [
-  { name: 'ProfiMiner', logo: '#', type: 'Media Partner' },
-  { name: 'Times International', logo: '#', type: 'Media Partner' },
-  { name: 'TotalExpo.ru', logo: '#', type: 'Media Partner' },
-  { name: 'Vedomosti', logo: '#', type: 'Media Partner' },
-  { name: 'Industry of Eurasia', logo: '#', type: 'Media Partner' },
-  { name: 'Miners of Russia', logo: '#', type: 'Media Partner' },
-  { name: 'Zyfra', logo: '#', type: 'Organiser' },
-  { name: 'Market and Business Analysis', logo: '#', type: 'Media Partner' },
-];
+const EMPTY_CARD_COUNT = 8;
 
 export default function PartnersSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -27,14 +15,18 @@ export default function PartnersSection() {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
-    // Auto-scrolling functionality
     let scrollAmount = 0;
-    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
     let animationId: number;
-    
+
     const autoScroll = () => {
       if (!scrollContainer) return;
-      
+
+      const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      if (maxScroll <= 0) {
+        animationId = requestAnimationFrame(autoScroll);
+        return;
+      }
+
       scrollAmount += 0.5;
       if (scrollAmount >= maxScroll) {
         scrollAmount = 0;
@@ -42,19 +34,18 @@ export default function PartnersSection() {
       scrollContainer.scrollLeft = scrollAmount;
       animationId = requestAnimationFrame(autoScroll);
     };
-    
+
     animationId = requestAnimationFrame(autoScroll);
-    
+
     return () => {
       cancelAnimationFrame(animationId);
     };
   }, []);
 
-  // Mouse/touch drag scrolling functionality
   const handleMouseDown = (e: React.MouseEvent) => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
-    
+
     isDown = true;
     startX = e.pageX - scrollContainer.offsetLeft;
     scrollLeft = scrollContainer.scrollLeft;
@@ -65,7 +56,7 @@ export default function PartnersSection() {
   const handleMouseLeave = () => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
-    
+
     isDown = false;
     scrollContainer.style.cursor = 'grab';
     scrollContainer.style.userSelect = 'auto';
@@ -74,7 +65,7 @@ export default function PartnersSection() {
   const handleMouseUp = () => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
-    
+
     isDown = false;
     scrollContainer.style.cursor = 'grab';
     scrollContainer.style.userSelect = 'auto';
@@ -84,14 +75,13 @@ export default function PartnersSection() {
     if (!isDown) return;
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
-    
+
     e.preventDefault();
     const x = e.pageX - scrollContainer.offsetLeft;
     const walk = (x - startX) * 2;
     scrollContainer.scrollLeft = scrollLeft - walk;
   };
 
-  // Wheel scrolling
   const handleWheel = (e: React.WheelEvent) => {
     const scrollContainer = scrollContainerRef.current;
     if (scrollContainer) {
@@ -100,10 +90,11 @@ export default function PartnersSection() {
     }
   };
 
+  const emptyCards = Array.from({ length: EMPTY_CARD_COUNT * 2 }, (_, index) => index);
+
   return (
     <section className="overflow-x-hidden border-t border-gray-100 bg-white py-16 sm:py-20 lg:py-24">
-      <div className="w-full mx-auto ">
-        {/* Header - Same as SectorsSection */}
+      <div className="mx-auto w-full">
         <Container>
           <div className="mb-8 sm:mb-10 lg:mb-12">
             <p className="text-[#F9B122] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
@@ -117,16 +108,15 @@ export default function PartnersSection() {
             </p>
           </div>
         </Container>
-        
-        {/* Scrolling Container */}
+
         <div className="relative mt-8 w-full max-w-full overflow-hidden">
-          <div 
+          <div
             ref={scrollContainerRef}
-            className="overflow-x-auto scrollbar-hide cursor-grab"
+            className="cursor-grab overflow-x-auto scrollbar-hide"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
-              WebkitOverflowScrolling: 'touch'
+              WebkitOverflowScrolling: 'touch',
             }}
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
@@ -135,24 +125,13 @@ export default function PartnersSection() {
             onWheel={handleWheel}
           >
             <div className="flex gap-6 pb-4" style={{ minWidth: 'max-content' }}>
-              {[...partnersData, ...partnersData].map((partner, index) => (
-                <div 
-                  key={index} 
-                  className="flex flex-col items-center flex-shrink-0"
+              {emptyCards.map((index) => (
+                <div
+                  key={index}
+                  className="flex flex-shrink-0 flex-col items-center"
                   style={{ minWidth: '180px', maxWidth: '180px' }}
                 >
-                  <div className="overflow-hidden rounded-sm bg-white border border-gray-100 px-4 py-4 shadow-sm w-full flex items-center justify-center min-h-[100px] hover:shadow-md transition-shadow duration-300">
-                    <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      width={100}
-                      height={70}
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                  <small className="mt-3 text-xs sm:text-sm text-center text-gray-700 font-sans font-semibold line-clamp-1">{partner.name}</small>
-                  <span className="text-[11px] font-sans uppercase font-bold tracking-wider text-[#F9B122] mt-1">{partner.type}</span>
+                  <div className="flex min-h-[100px] w-full items-center justify-center rounded-sm border border-gray-200 bg-[#FCF8F3] px-4 py-4 shadow-sm" />
                 </div>
               ))}
             </div>
@@ -163,12 +142,6 @@ export default function PartnersSection() {
       <style jsx>{`
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
-        }
-        .line-clamp-1 {
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
         }
       `}</style>
     </section>
