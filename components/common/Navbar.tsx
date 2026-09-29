@@ -159,7 +159,7 @@ export default function Navbar() {
 
     </div>
 
-    <div className="hidden lg:flex flex-1 items-center justify-end gap-4 xl:gap-8">
+    <div className="mt-14 hidden lg:flex flex-1 items-center justify-end gap-4 xl:gap-8">
       {navItems.map((item) => (
         <div
           key={item.title}
