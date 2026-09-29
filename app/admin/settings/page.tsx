@@ -73,7 +73,7 @@ export default function SettingsPage() {
                                     </label>
                                     <input
                                         type="text"
-                                        defaultValue="TyreExpo 2024"
+                                        defaultValue="IndiaMET 2024"
                                         className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
                                     />
                                 </div>
@@ -113,7 +113,7 @@ export default function SettingsPage() {
                                     </label>
                                     <input
                                         type="email"
-                                        defaultValue="info@tyreexpo.com"
+                                        defaultValue="info@IndiaMET.com"
                                         className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
                                     />
                                 </div>

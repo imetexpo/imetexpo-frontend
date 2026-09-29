@@ -56,7 +56,7 @@ export default function DashboardPage() {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h1 className="text-2xl font-bold text-white">Dashboard</h1>
-                    <p className="text-gray-400 mt-1">Welcome to TyreExpo Admin Dashboard</p>
+                    <p className="text-gray-400 mt-1">Welcome to IndiaMET Admin Dashboard</p>
                 </div>
                 <div className="flex gap-2">
                     <button className="px-4 py-2 bg-gray-800 rounded-lg text-gray-300 hover:bg-gray-700 transition flex items-center gap-2">

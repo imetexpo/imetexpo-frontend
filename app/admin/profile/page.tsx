@@ -10,7 +10,7 @@ export default function AdminProfilePage() {
     const [saving, setSaving] = useState(false);
     const [formData, setFormData] = useState({
         name: "Admin User",
-        email: "admin@tyreexpo.com",
+        email: "admin@IndiaMET.com",
         phone: "+91 98765 43210",
         role: "Super Admin",
         department: "Exhibition Management",

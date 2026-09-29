@@ -174,7 +174,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
                             <Truck className="h-5 w-5 text-white" />
                         </div>
                         <div>
-                            <span className="font-bold text-lg text-white">TyreExpo</span>
+                            <span className="font-bold text-lg text-white">IndiaMET</span>
                             <p className="text-xs text-gray-400">Admin Panel</p>
                         </div>
                     </div>
@@ -211,7 +211,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
                         <Truck className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                        <h1 className="font-bold text-xl text-white">TyreExpo</h1>
+                        <h1 className="font-bold text-xl text-white">IndiaMET</h1>
                         <p className="text-xs text-gray-400">Management System</p>
                     </div>
                 </div>
@@ -236,7 +236,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
                         Sign Out
                     </button>
                     <div className="mt-4 px-3 pt-4 border-t border-gray-700/50">
-                        <p className="text-xs text-gray-500 text-center">© 2024 TyreExpo</p>
+                        <p className="text-xs text-gray-500 text-center">© 2024 IndiaMET</p>
                     </div>
                 </div>
             </div>
