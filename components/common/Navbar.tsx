@@ -122,12 +122,12 @@ export default function Navbar() {
 
          {/* Logo + date + nav items */}
 <div className="w-full bg-[#031A34]">
-  <Container className="flex items-center justify-between gap-6 py-3.5">
+  <Container className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3 py-3.5">
     
-    <div className="flex items-center gap-4">
+    <div className="flex min-w-0 items-center gap-3 xl:gap-4">
 
       {/* Logo + Subtitle */}
-<div className="flex flex-col items-center">
+<div className="flex shrink-0 flex-col items-center">
   <UTMLink href="/">
     <img
       src="/ITS_logo_white.png"
@@ -137,49 +137,65 @@ export default function Navbar() {
   </UTMLink>
 
   {/* Subtitle below logo */}
-  <p className="mt-3 whitespace-nowrap text-center font-[var(--font-montserrat)] text-[13px] font-medium leading-none tracking-wide text-white sm:text-[14px]">
+  <p className="mt-3 max-w-[220px] text-center font-[var(--font-montserrat)] text-[11px] font-medium leading-tight tracking-wide text-white sm:max-w-none sm:whitespace-nowrap sm:text-[13px] xl:text-[14px]">
     INTERNATIONAL METROLOGY EXHIBITION
   </p>
 </div>
 
       {/* Date + Venue */}
-      <div className="mt-7 hidden pl-4 sm:block">
-        <h1 className="font-[var(--font-montserrat)] text-[22px] font-bold leading-none tracking-tight text-white">
+      <div className="mt-7 hidden shrink-0 pl-2 sm:block xl:pl-4">
+        <h1 className="font-[var(--font-montserrat)] text-lg font-bold leading-none tracking-tight text-white xl:text-[22px]">
           13 - 15 May  2027
         </h1>
 
-        <p className="mt-1 font-[var(--font-montserrat)] text-[18px] text-white">
+        <p className="mt-1 font-[var(--font-montserrat)] text-sm text-white xl:text-[18px]">
           Auto Cluster Exhibition Center
         </p>
 
-        <p className="font-[var(--font-montserrat)] text-[18px] text-white">
+        <p className="font-[var(--font-montserrat)] text-sm text-white xl:text-[18px]">
           Pune, India
         </p>
       </div>
 
     </div>
 
-    <div className="mt-14 hidden lg:flex flex-1 items-center justify-end gap-4 xl:gap-8">
-      {navItems.map((item) => (
+    <nav
+      aria-label="Primary"
+      className="mt-6 flex min-w-0 flex-[1_1_20rem] flex-wrap items-center justify-end gap-x-2 gap-y-1 sm:mt-8 lg:mt-10 xl:mt-14 xl:gap-x-4 2xl:mt-14 2xl:flex-[1_1_auto] 2xl:flex-nowrap 2xl:gap-x-8"
+    >
+      {navItems.map((item, index) => {
+        const hasLinks = Boolean(item.links && item.links.length > 0);
+        const alignRight = index >= navItems.length - 3;
+        return (
         <div
           key={item.title}
           className="relative"
-          onMouseEnter={() => item.links && item.links.length > 0 && handleMouseEnter(item.title)}
+          onMouseEnter={() => hasLinks && handleMouseEnter(item.title)}
           onMouseLeave={handleMouseLeave}
         >
-          {item.links && item.links.length > 0 ? (
+          {hasLinks ? (
             <>
-              <button className="flex items-center gap-1 text-sm xl:text-base hover:text-[#F9B122] transition-colors whitespace-nowrap py-2">
+              <button
+                type="button"
+                aria-expanded={openDropdown === item.title}
+                aria-haspopup="true"
+                onClick={() =>
+                  setOpenDropdown((current) => (current === item.title ? null : item.title))
+                }
+                className="flex items-center gap-0.5 whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#F9B122] lg:text-xs xl:gap-1 xl:py-2 xl:text-sm 2xl:text-base"
+              >
                 {item.title}
                 <ChevronDown
-                  className={`h-3 w-3 transition-transform duration-200 ${
+                  className={`h-3 w-3 shrink-0 transition-transform duration-200 ${
                     openDropdown === item.title ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               {openDropdown === item.title && (
                 <div
-                  className="absolute right-0 top-full z-50 w-56 rounded-md bg-[#021533] shadow-lg border border-gray-700"
+                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#021533] shadow-lg ${
+                    alignRight ? 'right-0' : 'left-0'
+                  }`}
                   onMouseEnter={() => handleMouseEnter(item.title)}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -200,14 +216,15 @@ export default function Navbar() {
           ) : (
             <UTMLink
               href={item.href || '#'}
-              className="text-sm xl:text-base hover:text-[#F9B122] transition-colors whitespace-nowrap block py-2"
+              className="block whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#F9B122] lg:text-xs xl:py-2 xl:text-sm 2xl:text-base"
             >
               {item.title}
             </UTMLink>
           )}
         </div>
-      ))}
-    </div>
+        );
+      })}
+    </nav>
   </Container>
 </div>
         </div>
