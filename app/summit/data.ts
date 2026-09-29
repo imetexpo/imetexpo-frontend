@@ -518,7 +518,7 @@ export const faqItems = [
 ];
 
 export const venueImages = [
-  'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80',
-  'https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=1600&q=80',
-  'https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1600&q=80',
+  '/images/auto_cluster1.png',
+  '/images/auto_cluster2.jpg',
+  '/images/auto_cluster3.jpg',
 ];
