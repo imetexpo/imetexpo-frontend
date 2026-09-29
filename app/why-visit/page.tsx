@@ -47,21 +47,21 @@ export default function WhyVisitPage() {
       description:
         "Explore advanced Coordinate Measuring Machines, optical and vision systems, 3D scanning, precision instruments, surface and form measurement, calibration equipment, sensors, probes, testing systems, and digital metrology solutions.",
       image:
-        "https://cdn.itegroupnews.com/1_1f3ae141f5.png",
+        "/images/latest_technology.jpg",
     },
     {
       title: "Meet India's Precision Manufacturing Decision-Makers",
       description:
         "Connect with quality heads, metrology professionals, inspection engineers, manufacturing leaders, plant managers, procurement teams, OEMs, Tier 1 and Tier 2 suppliers, and technical decision-makers responsible for measurement and quality solutions.",
       image:
-        "https://cdn.itegroupnews.com/2_6ab692408b.png",
+        "/images/decision_makers.jpg",
     },
     {
       title: "Compare Measurement & Inspection Solutions",
       description:
         "Evaluate technologies from leading solution providers, compare capabilities and specifications, discuss applications with experts, and identify the right metrology and inspection solutions for your manufacturing requirements.",
       image:
-        "https://cdn.itegroupnews.com/3_3310ab1131.png",
+        "/images/inspection_solutions.jpg",
     },
     {
       title: "Stay Ahead of Precision Manufacturing Trends",
