@@ -65,7 +65,7 @@ export default function PlanYourTravelPage() {
       description:
         "Plan your journey to Pune for INDIAMET 2027. Find useful information about Pune Airport, railway stations, local transportation, and convenient routes to the Auto Cluster Exhibition Center.",
       buttonText: "More Info",
-      buttonLink: "/visa",
+      buttonLink: "/travel-to-pune",
       image:
         "https://images.unsplash.com/photo-1595658658481-d53d3f999875?w=400&h=300&fit=crop",
       fallbackIcon: "✈️",
@@ -75,7 +75,7 @@ export default function PlanYourTravelPage() {
       description:
         "Plan the safe and efficient movement of your machinery, equipment, displays, stand materials, and exhibition products. Ensure timely delivery, handling, installation, and removal of your exhibition materials.",
       buttonText: "More Info",
-      buttonLink: "/exhibitor-resource-center",
+      buttonLink: "/freight-handling-logistics",
       image:
         "https://images.unsplash.com/photo-1586528116493-da8b6f4c9c3d?w=400&h=300&fit=crop",
       fallbackIcon: "📦",
@@ -85,7 +85,7 @@ export default function PlanYourTravelPage() {
       description:
         "Prepare for INDIAMET 2027 with our exhibitor checklist covering stand preparation, branding, logistics, documentation, equipment movement, installation, and other important requirements.",
       buttonText: "More Info",
-      buttonLink: "/exhibitor-resource-center",
+      buttonLink: "/exhibitor-preparation-checklist",
       image:
         "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop",
       fallbackIcon: "✅",
@@ -98,7 +98,7 @@ export default function PlanYourTravelPage() {
       description:
         "Planning to visit INDIAMET 2027? Find useful travel information to help you reach Pune and the Auto Cluster Exhibition Center, including airport, railway, local transport, and accommodation information.",
       buttonText: "More Info",
-      buttonLink: "/plan-your-travel",
+      buttonLink: "/plan-your-journey",
       image:
         "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=400&h=300&fit=crop",
       fallbackIcon: "✈️",
@@ -108,7 +108,7 @@ export default function PlanYourTravelPage() {
       description:
         "Make the most of your visit to INDIAMET 2027 by reviewing important visitor guidelines, registration requirements, entry information, and exhibition policies before arriving at the venue.",
       buttonText: "More Info",
-      buttonLink: "/terms-of-visiting",
+      buttonLink: "/visitor-guidelines",
       image:
         "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
       fallbackIcon: "📋",
@@ -116,9 +116,9 @@ export default function PlanYourTravelPage() {
     {
       title: "When & Where",
       description:
-        "INDIAMET 2027 takes place from 22–14 May  2027 at the Auto Cluster Exhibition Center, Pune. Plan your visit and join leading metrology, measurement, inspection, calibration, and quality professionals.",
+        "INDIAMET 2027 takes place from 13–15 May  2027 at the Auto Cluster Exhibition Center, Pune. Plan your visit and join leading metrology, measurement, inspection, calibration, and quality professionals.",
       buttonText: "More Info",
-      buttonLink: "/about-indiamet-expo",
+      buttonLink: "/when-and-where",
       image:
         "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&h=300&fit=crop",
       fallbackIcon: "📍",

@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
 import SectorsSection from "@/components/home/SectorsSection";
-import OurExhibitionsSection from "@/components/about/OurExhibitionsSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
@@ -100,13 +99,13 @@ export default function AboutPage() {
             <div className="w-full grid items-start gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
   
               {/* LEFT IMAGE - Responsive cover-fit matching screenshot 4 */}
-              <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
+              {/* <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
                 <img
                   src="/images/about_indiamet.jpg"
                   alt="expo excavator"
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </div> */}
   
               {/* RIGHT CONTENT */}
               <div className="flex flex-col justify-center">
@@ -369,8 +368,6 @@ export default function AboutPage() {
             </div>
           </Container>
 
-          <OurExhibitionsSection />
-          
           {/* Partners Section */}
           <PartnersSection />
 

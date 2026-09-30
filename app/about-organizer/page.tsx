@@ -3,8 +3,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
+import OurExhibitionsSection from "@/components/about/OurExhibitionsSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
@@ -54,64 +54,6 @@ export default function AboutITEPage() {
     }
   ];
 
-  const exhibitions = [
-    {
-      title: "MITT",
-      venue: "Crocus Expo, Moscow",
-      description: "The international travel & hospitality show.",
-      siteLink: "https://expomitt.com",
-      startDate: "Mar 11th, 2026",
-      endDate: "Mar 13th, 2026",
-      image: "https://cdn.itegroupnews.com/mitt_2eb1a572e1.webp"
-    },
-    {
-      title: "TranRussia",
-      venue: "Crocus Expo, Moscow",
-      description: "The international event for transportation and logistics market experts.",
-      siteLink: "https://trstexpo.com/",
-      startDate: "Mar 17th, 2026",
-      endDate: "Mar 19th, 2026",
-      image: "https://cdn.itegroupnews.com/transrussia_5ab92d93fe.webp"
-    },
-    {
-      title: "SkladTech",
-      venue: "Crocus Expo, Moscow",
-      description: "The special exposition for warehouse and handling equipment, automation systems and solutions.",
-      siteLink: "https://trstexpo.com/",
-      startDate: "Mar 17th, 2026",
-      endDate: "Mar 19th, 2026",
-      image: "https://cdn.itegroupnews.com/skladtech_92b3cc7f1b.webp"
-    },
-    {
-      title: "MosHome",
-      venue: "Crocus Expo, Moscow",
-      description: "The International exhibition of consumer goods for house, garden, sports and leisure MosHome.",
-      siteLink: "https://moshomeexpo.com",
-      startDate: "Mar 31st, 2026",
-      endDate: "Apr 3rd, 2026",
-      image: "https://cdn.itegroupnews.com/moshome_47a4df90fa.webp"
-    },
-    {
-      title: "MosBuild",
-      venue: "Crocus Expo, Moscow",
-      description: "The international building and interiors trade show.",
-      siteLink: "https://mosbuildexpo.com/",
-      startDate: "Mar 31st, 2026",
-      endDate: "Apr 3rd, 2026",
-      image: "https://cdn.itegroupnews.com/mosbuild_6ef11a4b77.webp"
-    },
-    {
-      title: "ExpoElectronica",
-      venue: "Pavilion 3, Halls 13, 14, 15, Crocus Expo",
-      description: "The international exhibition of electronica, components and technologies, materials and equipment, embedded systems and turnkey solutions.",
-      siteLink: "https://electronicaexpo.com/",
-      startDate: "Apr 14th, 2026",
-      endDate: "Apr 16th, 2026",
-      image: "https://cdn.itegroupnews.com/mosbuild_6ef11a4b77.webp"
-    },
-    
-  ];
-
   return (
     <div className="intro-animation">
       <div className="page-spacing-wrapper">
@@ -126,20 +68,18 @@ export default function AboutITEPage() {
           <div className="animated-block">
             <div className="animated-block-target">
               <Container className="py-12 sm:py-16">
-                <div className="grid items-start gap-8 sm:gap-12 lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] xl:gap-16">
-                  <div className="flex justify-center lg:justify-start">
+                <div className="flex flex-col gap-4 sm:gap-5">
+                  <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">About </h2>
                     <Image
                       src="/images/maxx-logo.png"
                       alt="Maxx Business Media"
-                      width={320}
-                      height={160}
-                      className="h-auto w-full max-w-[260px] object-contain sm:max-w-[300px] lg:max-w-none"
+                      width={480}
+                      height={180}
+                      className="h-24 w-auto object-contain sm:h-32 md:h-40 lg:h-48"
                     />
                   </div>
-
-                  <div className="flex flex-col gap-4 sm:gap-5">
-                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">About Us</h2>
-                    <p className="text-lg sm:text-xl text-gray-700">
+                  <p className="text-lg sm:text-xl text-gray-700">
                       Maxx Business Media Pvt. Ltd. is a leading B2B business events and media company based in India, dedicated to creating powerful platforms that connect industries, innovators, and decision-makers. Since its inception, Maxx Business Media has been organizing high-impact trade exhibitions, conferences, and industry-focused initiatives across key manufacturing and emerging sectors.
                       <br /><br />
                       Every year, we deliver multiple flagship exhibitions, summits, and industry forums that serve as catalysts for business growth, technology exchange, and market expansion. Supported by our integrated digital and media ecosystem, we offer year-round visibility and engagement opportunities for exhibitors, advertisers, and industry partners.
@@ -148,7 +88,6 @@ export default function AboutITEPage() {
                       <br /><br />
                       Our events drive industrial development, support export growth, and provide unmatched access to targeted business audiences. By combining exhibitions, conferences, awards, digital platforms, and trade publications, we create comprehensive solutions for networking, branding, and professional advancement—while fostering constructive dialogue between industry stakeholders and policymakers. Maxx Business Media operates with a pan-India presence and an expanding international footprint, serving as a trusted partner to industries seeking sustainable growth and global relevance.
                     </p>
-                  </div>
                 </div>
 
                   {/* Stats Section */}
@@ -208,55 +147,7 @@ export default function AboutITEPage() {
             </div>
           </div>
 
-          {/* Exhibitions at a Glance Section */}
-          {/* <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
-            <div className="animated-block-target">
-              <Container>
-                <div className="flex w-full items-end justify-between gap-6 sm:gap-10 max-lg:flex-wrap lg:gap-20 2xl:gap-40">
-                  <div>
-                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">Our Exhibitions at a Glance</h3>
-                    <p className="mt-3 text-lg sm:text-xl text-gray-700">
-                      Each year, we organise and host over 30 leading industry events across key sectors, including exhibitions, summits, and conferences.
-                      <br /><br />
-                      Supported by the Connect digital platform, the ITE ecosystem offers innovative hybrid solutions for industry communities across Asia and beyond.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-8 sm:mt-10 grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
-                  {exhibitions.map((exhibition, idx) => (
-                    <div key={idx} className="group flex flex-col gap-3 sm:gap-4 rounded-sm border border-black/10 bg-white p-4 sm:p-5 shadow-sm transition-all hover:shadow-md xl:p-6">
-                      <div className="relative h-28 sm:h-32 w-full overflow-hidden rounded-sm">
-                        <Image
-                          src={exhibition.image}
-                          alt={exhibition.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                          }}
-                        />
-                      </div>
-                      <h4 className="text-lg sm:text-xl font-bold text-[#031A34]">{exhibition.title}</h4>
-                      <p className="text-lg sm:text-xl text-gray-600 line-clamp-2">{exhibition.description}</p>
-                      <p className="text-xs sm:text-sm">Start Date: <span className="font-bold">{exhibition.startDate}</span></p>
-                      <p className="text-xs sm:text-sm">End Date: <span className="font-bold">{exhibition.endDate}</span></p>
-                      <p className="text-xs sm:text-sm">Venue: <span className="font-bold line-clamp-2">{exhibition.venue}</span></p>
-                      <Link href={exhibition.siteLink} target="_blank" className="mt-auto block">
-                        <button className="flex-center group gap-2 font-bebas text-xl sm:text-2xl text-[#F9B122] transition-all hover:text-[#031A34]">
-                          Visit Website
-                          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>
-                          </svg>
-                        </button>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </Container>
-            </div>
-          </div> */}
+          <OurExhibitionsSection />
 
           {/* Partners Section */}
           <div className="mt-12 sm:mt-16 lg:mt-20">
