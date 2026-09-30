@@ -50,7 +50,7 @@ export default function ContactUsPage() {
                         <div className="mt-1 h-0.5 w-16 bg-[#F9B122]"></div>
                       </div>
                       <Image
-                        src="/images/maxx-logo.png"
+                        src="/images/maxx_logo.png"
                         alt="Maxx Business Media"
                         width={360}
                         height={140}

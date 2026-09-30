@@ -72,7 +72,7 @@ export default function AboutITEPage() {
                   <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                     <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">About </h2>
                     <Image
-                      src="/images/maxx-logo.png"
+                      src="/images/maxx_logo.png"
                       alt="Maxx Business Media"
                       width={480}
                       height={180}
