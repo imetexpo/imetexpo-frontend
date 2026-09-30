@@ -13,7 +13,7 @@ export default function VisitorGuidelinesPage() {
       introBody="Review these visitor guidelines before you arrive at the Auto Cluster Exhibition Center. Pre-register for your pass, carry a valid photo ID, and check opening hours, badge rules, and on-site policies so your visit is smooth from the entrance to the exhibition floor."
       introCtaText="Get Visitor Pass"
       introCtaHref="/passes"
-      introImage="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=800&fit=crop"
+      introImage="/images/visitor.jpg"
       introImageAlt="Visitor guidelines for INDIAMET"
       benefitsHeading="Visitor"
       benefitsAccent="Essentials"

@@ -13,7 +13,7 @@ export default function FreightHandlingLogisticsPage() {
       introBody="Coordinate freight, on-site handling, delivery windows, installation, and removal with appointed logistics partners. Share crate lists, weights, and special requirements early so machinery, displays, and stand materials arrive on time at the Auto Cluster Exhibition Center."
       introCtaText="Enquire Now"
       introCtaHref="/exhibiting-enquiry"
-      introImage="https://images.unsplash.com/photo-1586528116493-da8b6f4c9c3d?w=1200&h=800&fit=crop"
+      introImage="/images/cargo.jpg"
       introImageAlt="Freight handling and exhibition logistics"
       benefitsHeading="Logistics"
       benefitsAccent="Support"

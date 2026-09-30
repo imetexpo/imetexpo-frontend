@@ -87,7 +87,7 @@ export default function PlanYourJourneyPage() {
           title: 'By Road',
           description:
             'Drive or take a coach via the Mumbai–Pune Expressway. Follow Mumbai–Pune Road toward Chinchwad East, Plot C-181, Auto Cluster Exhibition Center.',
-          image: 'https://images.unsplash.com/photo-1449965404013-cebea7fb30dd?w=800&h=500&fit=crop',
+          image: '/images/car.jpg',
           fallbackIcon: '🚗',
           buttonText: 'Open Map',
           buttonLink: '/when-and-where',

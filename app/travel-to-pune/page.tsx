@@ -13,7 +13,7 @@ export default function TravelToPunePage() {
       introBody="Plan your journey to Pune for INDIAMET 2027. Pune International Airport, city railway stations, and the Mumbai–Pune Expressway all connect you to the Auto Cluster Exhibition Center in Chinchwad. Book flights and hotels early, and allow extra time on move-in and opening mornings."
       introCtaText="View Hotels"
       introCtaHref="/plan-your-travel"
-      introImage="https://images.unsplash.com/photo-1595658658481-d53d3f999875?w=1200&h=800&fit=crop"
+      introImage="/images/pune_city.jpg"
       introImageAlt="Travel to Pune for INDIAMET 2027"
       benefitsHeading="Getting to"
       benefitsAccent="Pune"
@@ -87,7 +87,7 @@ export default function TravelToPunePage() {
           title: 'By Road',
           description:
             'Use the Mumbai–Pune Expressway and Mumbai–Pune Road toward Chinchwad East. Freight vehicles should follow the official logistics move-in windows, not visitor drop-off lanes.',
-          image: 'https://images.unsplash.com/photo-1449965404013-cebea7fb30dd?w=800&h=500&fit=crop',
+          image: '/images/car.jpg',
           fallbackIcon: '🚗',
           buttonText: 'Freight Guide',
           buttonLink: '/freight-handling-logistics',

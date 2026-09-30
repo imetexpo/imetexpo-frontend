@@ -67,12 +67,12 @@ export default function AboutPage() {
   ],
 
   buttonText: "Explore Connect",
-  buttonLink: "/http://www.metrologytoday.com"
+  buttonLink: "/http://www.metrologytrends.com"
 }
   ];
 
   const keyEvents = [
-    { title: "Conference Programme", description: "INDIAMET brings together industry leaders, metrology experts, manufacturing professionals, and technical specialists through a comprehensive conference programme featuring industry forums, expert presentations, panel discussions, and technical sessions. The programme explores emerging technologies, industry challenges, standards, and the latest trends shaping metrology, measurement, inspection, calibration, and precision manufacturing.", image: "/images/confe.jpg", buttonText: "Learn More", buttonLink: "/summit" }, { title: "INDIAMET Connect", description: "INDIAMET Connect is the exhibition's dedicated business networking platform, designed to connect exhibitors, visitors, manufacturers, quality professionals, metrology experts, media, professional associations, and industry leaders. The platform helps participants discover new technologies, build valuable business relationships, and explore new business opportunities.", image: "https://cdn.itegroupnews.com/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.png", buttonText: "Join Now", buttonLink: "/http://www.metrologytoday.com" }, { title: "Global Metrology Excellence Awards", description: "The Global Metrology Excellence Awards (GMEA) recognise outstanding achievements and innovation in metrology, measurement technology, inspection, calibration, quality engineering, and precision manufacturing. The awards celebrate organisations and professionals developing advanced solutions that improve accuracy, productivity, quality, and manufacturing performance.", image: "/images/awards2.png", buttonText: "Learn More", buttonLink: "/awards" }
+    { title: "Conference Programme", description: "INDIAMET brings together industry leaders, metrology experts, manufacturing professionals, and technical specialists through a comprehensive conference programme featuring industry forums, expert presentations, panel discussions, and technical sessions. The programme explores emerging technologies, industry challenges, standards, and the latest trends shaping metrology, measurement, inspection, calibration, and precision manufacturing.", image: "/images/confe.jpg", buttonText: "Learn More", buttonLink: "/summit" }, { title: "INDIAMET Connect", description: "INDIAMET Connect is the exhibition's dedicated business networking platform, designed to connect exhibitors, visitors, manufacturers, quality professionals, metrology experts, media, professional associations, and industry leaders. The platform helps participants discover new technologies, build valuable business relationships, and explore new business opportunities.", image: "https://cdn.itegroupnews.com/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.png", buttonText: "Join Now", buttonLink: "/http://www.metrologytrends.com" }, { title: "Global Metrology Excellence Awards", description: "The Global Metrology Excellence Awards (GMEA) recognise outstanding achievements and innovation in metrology, measurement technology, inspection, calibration, quality engineering, and precision manufacturing. The awards celebrate organisations and professionals developing advanced solutions that improve accuracy, productivity, quality, and manufacturing performance.", image: "/images/awards2.png", buttonText: "Learn More", buttonLink: "/awards" }
   ];
 
   const quickLinks = [
@@ -98,14 +98,14 @@ export default function AboutPage() {
           <Container className="py-12 sm:py-16 lg:py-20">
             <div className="w-full grid items-start gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
   
-              {/* LEFT IMAGE - Responsive cover-fit matching screenshot 4 */}
-              {/* <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
+             {/* LEFT IMAGE - Responsive cover-fit matching screenshot 4*/}
+             <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
                 <img
                   src="/images/about_indiamet.jpg"
                   alt="expo excavator"
                   className="w-full h-full object-cover"
                 />
-              </div> */}
+              </div> 
   
               {/* RIGHT CONTENT */}
               <div className="flex flex-col justify-center">

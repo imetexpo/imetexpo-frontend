@@ -124,7 +124,7 @@ export default function PlanYourTravelPage() {
       buttonText: "More Info",
       buttonLink: "/visitor-guidelines",
       image:
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
+        "/images/visitor.jpg",
       fallbackIcon: "📋",
     },
     {

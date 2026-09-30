@@ -76,7 +76,7 @@ export default function AboutITEPage() {
                       alt="Maxx Business Media"
                       width={280}
                       height={80}
-                      className="h-24 w-auto object-contain sm:h-32 md:h-40 lg:h-48"
+                      className="h-14 w-auto object-contain sm:h-10 md:h-10 lg:h-18"
                     />
                   </div>
                   <p className="text-lg sm:text-xl text-gray-700">
