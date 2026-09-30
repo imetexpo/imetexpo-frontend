@@ -65,7 +65,7 @@ export default function PlanYourTravelPage() {
       description:
         "Plan your journey to Pune for INDIAMET 2027. Find useful information about Pune Airport, railway stations, local transportation, and convenient routes to the Auto Cluster Exhibition Center.",
       buttonText: "More Info",
-      buttonLink: "/plan-your-travel",
+      buttonLink: "/visa",
       image:
         "https://images.unsplash.com/photo-1595658658481-d53d3f999875?w=400&h=300&fit=crop",
       fallbackIcon: "✈️",
