@@ -34,7 +34,7 @@ export const navItems: NavItem[] = [
     title: 'Visit',
     links: [
       { text: 'Why Visit', href: '/why-visit/' },
-      { text: 'Plan Your Journey', href: '/plan-your-travel/?tab=visitor' },
+      { text: 'Plan Your Travel', href: '/plan-your-travel/?tab=visitor' },
     
       { text: 'Visitor Pass', href: '/passes/' },
       { text: 'Event Sectors', href: '/sectors/' },
