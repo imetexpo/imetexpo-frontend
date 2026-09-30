@@ -52,7 +52,7 @@ export default function AboutPage() {
   ],
 
   buttonText: "Explore Summit",
-  buttonLink: "/conference-programme"
+  buttonLink: "/summit"
 },
 
 {
@@ -67,12 +67,12 @@ export default function AboutPage() {
   ],
 
   buttonText: "Explore Connect",
-  buttonLink: "/connect"
+  buttonLink: "/http://www.metrologytoday.com"
 }
   ];
 
   const keyEvents = [
-    { title: "Conference Programme", description: "INDIAMET brings together industry leaders, metrology experts, manufacturing professionals, and technical specialists through a comprehensive conference programme featuring industry forums, expert presentations, panel discussions, and technical sessions. The programme explores emerging technologies, industry challenges, standards, and the latest trends shaping metrology, measurement, inspection, calibration, and precision manufacturing.", image: "/images/confe.jpg", buttonText: "Learn More", buttonLink: "/conference-programme" }, { title: "INDIAMET Connect", description: "INDIAMET Connect is the exhibition's dedicated business networking platform, designed to connect exhibitors, visitors, manufacturers, quality professionals, metrology experts, media, professional associations, and industry leaders. The platform helps participants discover new technologies, build valuable business relationships, and explore new business opportunities.", image: "https://cdn.itegroupnews.com/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.png", buttonText: "Join Now", buttonLink: "/connect" }, { title: "Global Metrology Excellence Awards", description: "The Global Metrology Excellence Awards (GMEA) recognise outstanding achievements and innovation in metrology, measurement technology, inspection, calibration, quality engineering, and precision manufacturing. The awards celebrate organisations and professionals developing advanced solutions that improve accuracy, productivity, quality, and manufacturing performance.", image: "/images/awards2.png", buttonText: "Learn More", buttonLink: "/awards" }
+    { title: "Conference Programme", description: "INDIAMET brings together industry leaders, metrology experts, manufacturing professionals, and technical specialists through a comprehensive conference programme featuring industry forums, expert presentations, panel discussions, and technical sessions. The programme explores emerging technologies, industry challenges, standards, and the latest trends shaping metrology, measurement, inspection, calibration, and precision manufacturing.", image: "/images/confe.jpg", buttonText: "Learn More", buttonLink: "/summit" }, { title: "INDIAMET Connect", description: "INDIAMET Connect is the exhibition's dedicated business networking platform, designed to connect exhibitors, visitors, manufacturers, quality professionals, metrology experts, media, professional associations, and industry leaders. The platform helps participants discover new technologies, build valuable business relationships, and explore new business opportunities.", image: "https://cdn.itegroupnews.com/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.png", buttonText: "Join Now", buttonLink: "/http://www.metrologytoday.com" }, { title: "Global Metrology Excellence Awards", description: "The Global Metrology Excellence Awards (GMEA) recognise outstanding achievements and innovation in metrology, measurement technology, inspection, calibration, quality engineering, and precision manufacturing. The awards celebrate organisations and professionals developing advanced solutions that improve accuracy, productivity, quality, and manufacturing performance.", image: "/images/awards2.png", buttonText: "Learn More", buttonLink: "/awards" }
   ];
 
   const quickLinks = [

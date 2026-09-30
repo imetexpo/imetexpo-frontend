@@ -125,7 +125,7 @@ export default function WhyVisitPage() {
       image:
         "https://cdn.itegroupnews.com/MW_24_2304_0004_FORUM_i_c9f88bc608.jpg",
       buttonText: "Explore Summit",
-      buttonLink: "/indiamet-summit",
+      buttonLink: "/summit",
     },
     {
       title: "Global Metrology Excellence Awards",
@@ -143,7 +143,7 @@ export default function WhyVisitPage() {
       image:
         "https://cdn.itegroupnews.com/QR_MW_eng_web_site_e73baacf2e.svg",
       buttonText: "Connect",
-      buttonLink: "/connect",
+      buttonLink: "/http://wwww.metrologytoday.com",
     },
   ];
 
@@ -287,7 +287,7 @@ export default function WhyVisitPage() {
                     </h3>
 
                     <Link
-                      href="/exhibitor-list"
+                      href="/exhibition-directory"
                       className="inline-flex w-fit bg-[#F9B122] hover:bg-white hover:text-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
                     >
                       Explore Exhibitors
@@ -494,7 +494,7 @@ export default function WhyVisitPage() {
                     <div className="mt-8 sm:mt-10">
 
                       <Link
-                        href="/post-show-report"
+                        href="/articles"
                         className="inline-flex bg-[#F9B122] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
                       >
                         View Industry Insights

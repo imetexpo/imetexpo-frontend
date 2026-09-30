@@ -140,7 +140,7 @@ export default function WhyExhibitPage() {
                       </div>
                     </div>
                     <div className="mt-10">
-                      <Link href="/about-its-tyre-expo">
+                      <Link href="/about">
                         <button className="bg-[#F9B122] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           About INDIAMET Expo
                         </button>
