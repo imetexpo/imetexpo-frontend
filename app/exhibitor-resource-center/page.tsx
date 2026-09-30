@@ -78,26 +78,20 @@ export default function ExhibitorResourceCenterPage() {
 
 const standOptions = [
   {
-    title: "Custom-Built Exhibition Stand",
+    title: "Individual Construction",
     description:
-      "Create a distinctive exhibition presence tailored to your brand and business objectives. Custom-built stands allow you to integrate product displays, live demonstrations, meeting areas, branding, and interactive experiences to attract and engage high-value visitors.",
-    image: "https://cdn.itegroupnews.com/1_b17f63c840.png",
+      "Choosing an individual project stand is highly recommended as it allows for an effective presentation of your company, highlights your high status, emphasizes your unique style, and attracts more clients.",
+    image: "/images/raw.jpg",
     fallbackIcon: "🏗️",
   },
   {
     title: "Standard Shell Scheme",
     description:
       "A professional and cost-effective stand solution for companies looking for a ready-to-use exhibition space. Enhance your stand with company branding, graphics, product displays, furniture, lighting, and other essential exhibition accessories.",
-    image: "https://cdn.itegroupnews.com/2_f175606c2f.png",
+    image: "/images/standard-shell.jpg",
     fallbackIcon: "📦",
   },
-  {
-    title: "Premium Exhibition Stand",
-    description:
-      "Make a stronger impact with a premium exhibition stand designed for enhanced visibility and visitor engagement. Combine upgraded branding, professional interiors, product showcases, meeting spaces, lighting, and display features to create a high-quality brand experience.",
-    image: "https://cdn.itegroupnews.com/3_7b7bc3dca6.png",
-    fallbackIcon: "⭐",
-  },
+  
 ];
 
 const faqItems = [
