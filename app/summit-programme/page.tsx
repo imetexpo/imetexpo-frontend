@@ -75,11 +75,11 @@ const mainEventsData = [
 const keyEventsData = [
   {
     title: "The Tyre Manufacturing Leaders' Forum",
-    image: "https://cdn.itegroupnews.com/MW_24_2304_0005_G_i_1_0c28de356a.jpg",
+    image: "/images/confe.jpg",
   },
   {
     title: "Industry 4.0 in Tyre Manufacturing",
-    image: "https://cdn.itegroupnews.com/mw2022_gi_31_fe2e3e372e.jpg",
+    image: "/images/industry4.jpg",
   },
   {
     title: "Sustainability Forum",
@@ -166,7 +166,7 @@ export default function ConferenceProgrammePage() {
                 {/* Image */}
                 <div className="order-1 lg:order-2 relative h-[300px] sm:h-[400px] lg:h-[500px] w-full overflow-hidden rounded-sm border border-gray-150 bg-gray-100">
                   <Image
-                    src="https://cdn.itegroupnews.com/MW_24_2304_0005_G_i_1_0c28de356a.jpg"
+                    src="/images/confe.jpg"
                     alt="Conference"
                     fill
                     className="object-cover"
