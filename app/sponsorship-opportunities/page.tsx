@@ -67,36 +67,92 @@ export default function AdvertisingDetailsPage() {
 
   const sponsorshipTabs = [
     {
-      title: "Advertising Options",
-      description: "Enhance brand awareness and maximize visitor engagement by leveraging a range of advertising services designed to increase your company's visibility and commercial success.",
-      buttonText: "Download Manual",
+      title: "Presenting Sponsor",
+      description: "Position your brand at the forefront of INDIAMET Expo with premium visibility across the exhibition website, visitor communications, venue branding, registration promotions, social media and selected official marketing materials.",
+      buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
       image: "https://cdn.itegroupnews.com/1_9622597897.png",
-      fallbackIcon: "📢"
+      fallbackIcon: "🏆"
     },
     {
-      title: "Affiliate Sponsorship Packages",
-      description: "Choose from a variety of sponsorship packages tailored to meet your marketing objectives, or request a customized package that aligns with your brand strategy.",
+      title: "Platinum Sponsor",
+      description: "Achieve high-impact visibility among manufacturing, metrology, quality, inspection and engineering professionals through premium venue branding, digital promotion, technical presentation opportunities and product showcase support.",
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
       image: "https://cdn.itegroupnews.com/2_af03062734.png",
-      fallbackIcon: "🤝"
+      fallbackIcon: "🥇"
     },
     {
-      title: "Advertising Surfaces at BITEC",
-      description: "Secure prime advertising locations both indoors and outdoors at the INDIAMET Expo exhibition site to ensure maximum exposure for your brand.",
+      title: "Gold Sponsor",
+      description: "Strengthen your brand presence with targeted exposure through exhibition signage, website visibility, brochure branding, social media promotion, product features and opportunities to engage relevant industry decision-makers.",
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
       image: "https://cdn.itegroupnews.com/3_065bb10e11.png",
-      fallbackIcon: "📍"
+      fallbackIcon: "🥈"
     },
     {
-      title: "New Product Announcements",
-      description: "Take advantage of free marketing support and exclusive promotional packages to introduce and highlight your latest products effectively.",
+      title: "Silver Sponsor",
+      description: "A focused sponsorship option for specialist technology and solution providers seeking visibility among professionals involved in metrology, precision measurement, inspection, testing and quality management.",
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
       image: "https://cdn.itegroupnews.com/4_b530561fa3.png",
-      fallbackIcon: "🎉"
+      fallbackIcon: "🥉"
+    },
+    {
+      title: "Visitor Registration Sponsor",
+      description: "Associate your brand with the visitor registration experience through registration-area branding, visitor communication visibility, website promotion and selected on-site branding opportunities.",
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "https://cdn.itegroupnews.com/1_9622597897.png",
+      fallbackIcon: "🎟️"
+    },
+    {
+      title: "Visitor Badge Sponsor",
+      description: "Put your brand directly in the hands of exhibition visitors with branding opportunities on visitor badges and selected registration-area communication materials.",
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "https://cdn.itegroupnews.com/2_af03062734.png",
+      fallbackIcon: "🎫"
+    },
+    {
+      title: "Entrance & Welcome Sponsor",
+      description: "Create a strong first impression with prominent branding at the exhibition entrance, welcome area, selected directional signage and visitor arrival points.",
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "https://cdn.itegroupnews.com/3_065bb10e11.png",
+      fallbackIcon: "🚪"
+    },
+    {
+      title: "Knowledge Session Sponsor",
+      description: "Associate your company with technical knowledge and industry learning through session branding, stage visibility, speaker introduction, presentation opportunities and digital promotion.",
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "https://cdn.itegroupnews.com/4_b530561fa3.png",
+      fallbackIcon: "🎤"
+    },
+    {
+      title: "Technology Showcase Sponsor",
+      description: "Highlight your latest metrology, inspection, measurement and quality technologies through dedicated showcase branding, product demonstrations and digital promotion.",
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "https://cdn.itegroupnews.com/1_9622597897.png",
+      fallbackIcon: "🔬"
+    },
+    {
+      title: "Digital Promotion Partner",
+      description: "Extend your INDIAMET Expo presence beyond the exhibition floor with website visibility, social media promotion, product features, email campaigns and digital brochure opportunities.",
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "https://cdn.itegroupnews.com/2_af03062734.png",
+      fallbackIcon: "📱"
+    },
+    {
+      title: "Official Brochure Sponsor",
+      description: "Showcase your brand and products through premium advertising and branding opportunities within the official INDIAMET Expo brochure and its digital version.",
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "https://cdn.itegroupnews.com/3_065bb10e11.png",
+      fallbackIcon: "📰"
     }
   ];
 
@@ -138,9 +194,9 @@ export default function AdvertisingDetailsPage() {
     <div className="intro-animation font-sans">
       <div className="page-spacing-wrapper lg:pt-0">
         <PageHero
-          title="SPONSORSHIP"
-          accent="OPPORTUNITIES"
-          subtitle="Maximize your brand exposure and reach key decision-makers through advertising and sponsorship at INDIAMET Expo."
+          title="SPONSOR"
+          accent="INDIAMET EXPO"
+          subtitle="Put your brand in front of the people who drive precision manufacturing through high-impact sponsorship and promotional opportunities."
         />
 
         {/* Benefits Section */}
