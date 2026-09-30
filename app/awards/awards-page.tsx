@@ -24,17 +24,20 @@ const whyParticipate = [
 ];
 
 const categories = [
-  ['⚙️', 'Outstanding Metrology Solution'],
-  ['🧪', 'Best Measurement Innovation'],
-  ['🏅', 'Calibration Excellence'],
-  ['📋', 'Quality Excellence Award'],
-  ['🖥️', 'CMM Technology Award'],
-  ['🔍', 'Inspection Technology Award'],
-  ['♻️', 'Machine Vision Award'],
-  ['🏭', 'Smart Manufacturing Award'],
-  ['🌟', 'Young Professional Award'],
-  ['🌍', 'Sustainability Award'],
-  ['⚛️', 'Excellence in R&D'],
+  ['⚙️', 'Global Metrology Excellence Award'],
+  ['🔬', 'Advanced Measurement Technology Award'],
+  ['📏', 'Precision Measurement Innovation Award'],
+  ['🖥️', 'CMM & 3D Metrology Excellence Award'],
+  ['👁️', 'Machine Vision & Smart Inspection Award'],
+  ['🧪', 'Calibration Excellence Award'],
+  ['🏅', 'Quality & Measurement Leadership Award'],
+  ['🏭', 'Best Industrial Metrology Application Award'],
+  ['🤖', 'Digital & Smart Metrology Award'],
+  ['♻️', 'Sustainable Metrology Award'],
+  ['🚀', 'Emerging Metrology Company Award'],
+  ['🌍', 'Metrology Startup of the Year'],
+  ['🎓', 'Metrology Education & Skill Development Award'],
+  ['🧑‍🔬', 'Metrology Professional of the Year'],
   ['🏆', 'Lifetime Achievement Award'],
 ];
 
