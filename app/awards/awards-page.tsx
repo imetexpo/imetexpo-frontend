@@ -24,21 +24,81 @@ const whyParticipate = [
 ];
 
 const categories = [
-  ['⚙️', 'Global Metrology Excellence Award'],
-  ['🔬', 'Advanced Measurement Technology Award'],
-  ['📏', 'Precision Measurement Innovation Award'],
-  ['🖥️', 'CMM & 3D Metrology Excellence Award'],
-  ['👁️', 'Machine Vision & Smart Inspection Award'],
-  ['🧪', 'Calibration Excellence Award'],
-  ['🏅', 'Quality & Measurement Leadership Award'],
-  ['🏭', 'Best Industrial Metrology Application Award'],
-  ['🤖', 'Digital & Smart Metrology Award'],
-  ['♻️', 'Sustainable Metrology Award'],
-  ['🚀', 'Emerging Metrology Company Award'],
-  ['🌍', 'Metrology Startup of the Year'],
-  ['🎓', 'Metrology Education & Skill Development Award'],
-  ['🧑‍🔬', 'Metrology Professional of the Year'],
-  ['🏆', 'Lifetime Achievement Award'],
+  [
+    '⚙️',
+    'Global Metrology Excellence Award',
+    'Honours outstanding overall achievement in metrology, measurement science, and quality excellence at a national or international level.',
+  ],
+  [
+    '🔬',
+    'Advanced Measurement Technology Award',
+    'Recognises breakthrough instruments, sensors, and measurement systems that raise accuracy, speed, or capability in industrial applications.',
+  ],
+  [
+    '📏',
+    'Precision Measurement Innovation Award',
+    'Celebrates original methods, software, or processes that improve dimensional accuracy, repeatability, and process control.',
+  ],
+  [
+    '🖥️',
+    'CMM & 3D Metrology Excellence Award',
+    'Awards leadership in coordinate measuring machines, 3D scanning, and spatial measurement used in manufacturing and quality labs.',
+  ],
+  [
+    '👁️',
+    'Machine Vision & Smart Inspection Award',
+    'Recognises vision systems, AI-enabled inspection, and automated optical solutions that detect defects and ensure product quality.',
+  ],
+  [
+    '🧪',
+    'Calibration Excellence Award',
+    'Honours laboratories, service providers, and in-house teams delivering traceable, reliable calibration that underpins measurement confidence.',
+  ],
+  [
+    '🏅',
+    'Quality & Measurement Leadership Award',
+    'Celebrates organisations that embed metrology into quality systems, audits, and continuous improvement across the plant.',
+  ],
+  [
+    '🏭',
+    'Best Industrial Metrology Application Award',
+    'Awards a standout shop-floor or production-line application where measurement technology has delivered clear operational impact.',
+  ],
+  [
+    '🤖',
+    'Digital & Smart Metrology Award',
+    'Recognises connected, data-driven, and Industry 4.0 metrology — including digital twins, IoT gauges, and smart factory quality data.',
+  ],
+  [
+    '♻️',
+    'Sustainable Metrology Award',
+    'Honours measurement practices that reduce waste, energy use, or environmental impact while maintaining quality and compliance.',
+  ],
+  [
+    '🚀',
+    'Emerging Metrology Company Award',
+    'Celebrates a growing company that has rapidly expanded its metrology offering, market reach, or technology portfolio.',
+  ],
+  [
+    '🌍',
+    'Metrology Startup of the Year',
+    'Awards an early-stage venture introducing a distinctive product, service, or business model to the measurement and quality market.',
+  ],
+  [
+    '🎓',
+    'Metrology Education & Skill Development Award',
+    'Recognises institutions, programmes, or companies that build metrology skills through training, certification, or knowledge transfer.',
+  ],
+  [
+    '🧑‍🔬',
+    'Metrology Professional of the Year',
+    'Honours an individual whose technical expertise, leadership, or contribution has advanced the profession of measurement science.',
+  ],
+  [
+    '🏆',
+    'Lifetime Achievement Award',
+    'Celebrates a distinguished career of sustained contribution to metrology, quality engineering, and the wider precision-manufacturing community.',
+  ],
 ];
 
 const process = [
@@ -214,14 +274,15 @@ export default function AwardsPage() {
               Award Categories
             </h2>
           </div>
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {categories.map(([icon, title]) => (
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map(([icon, title, desc]) => (
               <div
                 key={title}
-                className="flex min-h-[150px] flex-col items-center justify-center gap-4 rounded-sm border border-gray-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#F9B122] hover:shadow-md"
+                className="flex flex-col gap-3 rounded-sm border border-gray-200 bg-white p-6 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#F9B122] hover:shadow-md"
               >
-                <span className="text-4xl leading-none md:text-5xl">{icon}</span>
-                <p className="text-sm font-semibold leading-snug text-[#031A34] md:text-base">{title}</p>
+                <span className="text-4xl leading-none">{icon}</span>
+                <h3 className="font-bebas text-xl uppercase tracking-wide text-[#031A34] md:text-2xl">{title}</h3>
+                <p className="text-lg leading-relaxed text-gray-600 sm:text-xl">{desc}</p>
               </div>
             ))}
           </div>

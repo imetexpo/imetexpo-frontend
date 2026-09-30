@@ -126,7 +126,17 @@ export default function AboutITEPage() {
           <div className="animated-block">
             <div className="animated-block-target">
               <Container className="py-12 sm:py-16">
-                <div className="lg:col-span-3">
+                <div className="grid items-start gap-8 sm:gap-12 lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] xl:gap-16">
+                  <div className="flex justify-center lg:justify-start">
+                    <Image
+                      src="/images/maxx-logo.png"
+                      alt="Maxx Business Media"
+                      width={320}
+                      height={160}
+                      className="h-auto w-full max-w-[260px] object-contain sm:max-w-[300px] lg:max-w-none"
+                    />
+                  </div>
+
                   <div className="flex flex-col gap-4 sm:gap-5">
                     <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">About Us</h2>
                     <p className="text-lg sm:text-xl text-gray-700">
@@ -139,6 +149,7 @@ export default function AboutITEPage() {
                       Our events drive industrial development, support export growth, and provide unmatched access to targeted business audiences. By combining exhibitions, conferences, awards, digital platforms, and trade publications, we create comprehensive solutions for networking, branding, and professional advancement—while fostering constructive dialogue between industry stakeholders and policymakers. Maxx Business Media operates with a pan-India presence and an expanding international footprint, serving as a trusted partner to industries seeking sustainable growth and global relevance.
                     </p>
                   </div>
+                </div>
 
                   {/* Stats Section */}
                   <div className="mt-10 sm:mt-12 lg:mt-16 flex flex-wrap justify-start gap-y-8 sm:gap-y-12 border-t border-gray-200 pt-8 sm:pt-10">
@@ -155,7 +166,6 @@ export default function AboutITEPage() {
                       </div>
                     ))}
                   </div>
-                </div>
               </Container>
             </div>
           </div>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
 import SectorsSection from "@/components/home/SectorsSection";
+import OurExhibitionsSection from "@/components/about/OurExhibitionsSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
@@ -367,6 +368,8 @@ export default function AboutPage() {
               </div>
             </div>
           </Container>
+
+          <OurExhibitionsSection />
           
           {/* Partners Section */}
           <PartnersSection />

@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
@@ -48,6 +49,13 @@ export default function ContactUsPage() {
                         <h2 className="font-bebas text-2xl text-[#F9B122] uppercase font-bold">ORGANISED BY</h2>
                         <div className="mt-1 h-0.5 w-16 bg-[#F9B122]"></div>
                       </div>
+                      <Image
+                        src="/images/maxx-logo.png"
+                        alt="Maxx Business Media"
+                        width={360}
+                        height={140}
+                        className="h-auto w-[220px] object-contain sm:w-[260px]"
+                      />
                       <div className="space-y-3 font-sans">
                         <h3 className="text-lg font-bold text-black uppercase leading-snug">
                           Maxx Business Media Pvt. Ltd.
