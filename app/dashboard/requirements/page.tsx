@@ -282,7 +282,7 @@ export default function RequirementsPage() {
             <p className="text-xs sm:text-sm text-amber-700 mt-1 break-words">
               • All requirements must be submitted at least 15 days before the exhibition start date.<br />
               • Rush orders may incur additional charges.<br />
-              • For any queries, contact support at <strong className="break-all">support@tyre-expo.com</strong>
+              • For any queries, contact support at <strong className="break-all">support@indiametexpo.com</strong>
             </p>
           </div>
         </div>

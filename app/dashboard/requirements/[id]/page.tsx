@@ -250,7 +250,7 @@ export default function RequirementDetailPage() {
               Contact our exhibition support team for assistance with this requirement.
             </p>
             <button
-              onClick={() => window.location.href = 'mailto:support@tyre-expo.com'}
+              onClick={() => window.location.href = 'mailto:support@indiametexpo.com'}
               className="w-full py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-100 transition"
             >
               Contact Support

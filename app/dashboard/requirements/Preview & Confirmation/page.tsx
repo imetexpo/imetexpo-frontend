@@ -744,7 +744,7 @@ export default function PreviewAndPaymentPage() {
                         </p>
                         <div className="text-xs text-gray-500">
                             <p>📞 +91-XXXXXXXXXX</p>
-                            <p>✉️ support@tyre-expo.com</p>
+                            <p>✉️ support@indiametexpo.com</p>
                         </div>
                     </div>
                 </div>

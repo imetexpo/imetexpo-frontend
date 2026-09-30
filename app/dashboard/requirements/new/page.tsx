@@ -74,7 +74,7 @@ export default function NewRequirementPage() {
         <h3 className="font-semibold text-gray-800 mb-2">Need Help Choosing?</h3>
         <p className="text-sm text-gray-600">
           If you're unsure about which requirement to select or need assistance with your setup,
-          please contact our exhibition support team at <strong className="text-amber-600">support@tyre-expo.com</strong> or call <strong className="text-amber-600">+91 22 1234 5678</strong>
+          please contact our exhibition support team at <strong className="text-amber-600">support@indiametexpo.com</strong> or call <strong className="text-amber-600">+91 22 1234 5678</strong>
         </p>
       </div>
     </div>

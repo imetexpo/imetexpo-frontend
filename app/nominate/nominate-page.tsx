@@ -643,19 +643,19 @@ export default function NominatePage() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-base text-gray-500">Nominations Open</p>
-                    <p className="text-lg sm:text-xl font-semibold text-[#031A34]">01 November 2026</p>
+                    <p className="text-lg sm:text-xl font-semibold text-[#031A34]">01 January 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-base text-gray-500">Last Date to Nominate</p>
-                    <p className="text-lg sm:text-xl font-semibold text-[#031A34]">31 January 2027</p>
+                    <p className="text-lg sm:text-xl font-semibold text-[#031A34]">31 March 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-base text-gray-500">Finalists Announcement</p>
-                    <p className="text-lg sm:text-xl font-semibold text-[#031A34]">15 March 2027</p>
+                    <p className="text-lg sm:text-xl font-semibold text-[#031A34]">15 April 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-base text-gray-500">Awards Ceremony</p>
-                    <p className="text-lg sm:text-xl font-bold text-[#F9B122]">14 My 2027</p>
+                    <p className="text-lg sm:text-xl font-bold text-[#F9B122]">14 May 2027</p>
                   </div>
                 </div>
               </div>
@@ -664,7 +664,7 @@ export default function NominatePage() {
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#F9B122]">Need Help?</h3>
                 <p className="mb-3 text-lg sm:text-xl text-gray-700">Our team is here to assist you with your nomination.</p>
                 <p className="text-lg sm:text-xl text-[#031A34]">📞 +91 91483 19993</p>
-                <p className="text-lg sm:text-xl text-[#031A34]">✉️ support@tyre-expo.com</p>
+                <p className="text-lg sm:text-xl text-[#031A34]">✉️ support@indiametexpo.com</p>
               </div>
             </aside>
           </div>

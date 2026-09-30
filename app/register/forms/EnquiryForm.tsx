@@ -433,8 +433,8 @@ export default function EnquiryForm() {
 
       <p className="text-xs text-gray-500 text-center mt-4">
         Need assistance? Contact us at{" "}
-        <a href="mailto:support@tyre-expo.com" className="text-[#F9B122] hover:underline">
-          support@tyre-expo.com
+        <a href="mailto:support@indiametexpo.com" className="text-[#F9B122] hover:underline">
+          support@indiametexpo.com
         </a>
       </p>
     </form>
