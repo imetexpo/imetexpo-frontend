@@ -24,7 +24,7 @@ export default function SponsorContent() {
 
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-[#f5f5f5] p-4 rounded-xl text-center">
-          <p className="text-3xl font-bold text-[#F9B122] font-bebas">50+</p>
+          <p className="text-3xl font-bold text-[#F9B122] font-bebas">150+</p>
           <p className="text-sm text-gray-600">Exhibitors</p>
         </div>
         <div className="bg-[#f5f5f5] p-4 rounded-xl text-center">
