@@ -88,7 +88,7 @@ const standOptions = [
     title: "Standard Shell Scheme",
     description:
       "A professional and cost-effective stand solution for companies looking for a ready-to-use exhibition space. Enhance your stand with company branding, graphics, product displays, furniture, lighting, and other essential exhibition accessories.",
-    image: "/images/standard-shell.jpg",
+    image: "/images/shell.jpg",
     fallbackIcon: "📦",
   },
   
