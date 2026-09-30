@@ -15,90 +15,129 @@ const stats = [
 ];
 
 const whyParticipate = [
-  ['🏆', 'Industry Recognition', 'Gain recognition among global leaders in metrology and precision engineering.'],
-  ['🌐', 'Global Visibility', 'Showcase your achievements on an international industry platform.'],
-  ['🤝', 'Business Networking', 'Connect with key decision makers and expand your business network.'],
-  ['📈', 'Brand Credibility', 'Strengthen your brand image and build trust with customers.'],
-  ['🚀', 'Innovation Leadership', 'Position your organization as an innovator and industry trailblazer.'],
-  ['⭐', 'Benchmark Against Industry', 'Measure your performance and stand out from the competition.'],
+  {
+    image: 'https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=800&h=500&fit=crop',
+    title: 'Industry Recognition',
+    description: 'Gain recognition among global leaders in metrology and precision engineering.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=500&fit=crop',
+    title: 'Global Visibility',
+    description: 'Showcase your achievements on an international industry platform.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=500&fit=crop',
+    title: 'Business Networking',
+    description: 'Connect with key decision makers and expand your business network.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=500&fit=crop',
+    title: 'Brand Credibility',
+    description: 'Strengthen your brand image and build trust with customers.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=500&fit=crop',
+    title: 'Innovation Leadership',
+    description: 'Position your organization as an innovator and industry trailblazer.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
+    title: 'Benchmark Against Industry',
+    description: 'Measure your performance and stand out from the competition.',
+  },
 ];
 
 const categories = [
-  [
-    '⚙️',
-    'Global Metrology Excellence Award',
-    'Honours outstanding overall achievement in metrology, measurement science, and quality excellence at a national or international level.',
-  ],
-  [
-    '🔬',
-    'Advanced Measurement Technology Award',
-    'Recognises breakthrough instruments, sensors, and measurement systems that raise accuracy, speed, or capability in industrial applications.',
-  ],
-  [
-    '📏',
-    'Precision Measurement Innovation Award',
-    'Celebrates original methods, software, or processes that improve dimensional accuracy, repeatability, and process control.',
-  ],
-  [
-    '🖥️',
-    'CMM & 3D Metrology Excellence Award',
-    'Awards leadership in coordinate measuring machines, 3D scanning, and spatial measurement used in manufacturing and quality labs.',
-  ],
-  [
-    '👁️',
-    'Machine Vision & Smart Inspection Award',
-    'Recognises vision systems, AI-enabled inspection, and automated optical solutions that detect defects and ensure product quality.',
-  ],
-  [
-    '🧪',
-    'Calibration Excellence Award',
-    'Honours laboratories, service providers, and in-house teams delivering traceable, reliable calibration that underpins measurement confidence.',
-  ],
-  [
-    '🏅',
-    'Quality & Measurement Leadership Award',
-    'Celebrates organisations that embed metrology into quality systems, audits, and continuous improvement across the plant.',
-  ],
-  [
-    '🏭',
-    'Best Industrial Metrology Application Award',
-    'Awards a standout shop-floor or production-line application where measurement technology has delivered clear operational impact.',
-  ],
-  [
-    '🤖',
-    'Digital & Smart Metrology Award',
-    'Recognises connected, data-driven, and Industry 4.0 metrology — including digital twins, IoT gauges, and smart factory quality data.',
-  ],
-  [
-    '♻️',
-    'Sustainable Metrology Award',
-    'Honours measurement practices that reduce waste, energy use, or environmental impact while maintaining quality and compliance.',
-  ],
-  [
-    '🚀',
-    'Emerging Metrology Company Award',
-    'Celebrates a growing company that has rapidly expanded its metrology offering, market reach, or technology portfolio.',
-  ],
-  [
-    '🌍',
-    'Metrology Startup of the Year',
-    'Awards an early-stage venture introducing a distinctive product, service, or business model to the measurement and quality market.',
-  ],
-  [
-    '🎓',
-    'Metrology Education & Skill Development Award',
-    'Recognises institutions, programmes, or companies that build metrology skills through training, certification, or knowledge transfer.',
-  ],
-  [
-    '🧑‍🔬',
-    'Metrology Professional of the Year',
-    'Honours an individual whose technical expertise, leadership, or contribution has advanced the profession of measurement science.',
-  ],
-  [
-    '🏆',
-    'Lifetime Achievement Award',
-    'Celebrates a distinguished career of sustained contribution to metrology, quality engineering, and the wider precision-manufacturing community.',
-  ],
+  {
+    image: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&h=500&fit=crop',
+    title: 'Global Metrology Excellence Award',
+    description:
+      'Honours outstanding overall achievement in metrology, measurement science, and quality excellence at a national or international level.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=500&fit=crop',
+    title: 'Advanced Measurement Technology Award',
+    description:
+      'Recognises breakthrough instruments, sensors, and measurement systems that raise accuracy, speed, or capability in industrial applications.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop',
+    title: 'Precision Measurement Innovation Award',
+    description:
+      'Celebrates original methods, software, or processes that improve dimensional accuracy, repeatability, and process control.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&h=500&fit=crop',
+    title: 'CMM & 3D Metrology Excellence Award',
+    description:
+      'Awards leadership in coordinate measuring machines, 3D scanning, and spatial measurement used in manufacturing and quality labs.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop',
+    title: 'Machine Vision & Smart Inspection Award',
+    description:
+      'Recognises vision systems, AI-enabled inspection, and automated optical solutions that detect defects and ensure product quality.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&h=500&fit=crop',
+    title: 'Calibration Excellence Award',
+    description:
+      'Honours laboratories, service providers, and in-house teams delivering traceable, reliable calibration that underpins measurement confidence.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=500&fit=crop',
+    title: 'Quality & Measurement Leadership Award',
+    description:
+      'Celebrates organisations that embed metrology into quality systems, audits, and continuous improvement across the plant.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=500&fit=crop',
+    title: 'Best Industrial Metrology Application Award',
+    description:
+      'Awards a standout shop-floor or production-line application where measurement technology has delivered clear operational impact.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop',
+    title: 'Digital & Smart Metrology Award',
+    description:
+      'Recognises connected, data-driven, and Industry 4.0 metrology — including digital twins, IoT gauges, and smart factory quality data.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1473341304170-bd7d52b37bef?w=800&h=500&fit=crop',
+    title: 'Sustainable Metrology Award',
+    description:
+      'Honours measurement practices that reduce waste, energy use, or environmental impact while maintaining quality and compliance.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=500&fit=crop',
+    title: 'Emerging Metrology Company Award',
+    description:
+      'Celebrates a growing company that has rapidly expanded its metrology offering, market reach, or technology portfolio.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=500&fit=crop',
+    title: 'Metrology Startup of the Year',
+    description:
+      'Awards an early-stage venture introducing a distinctive product, service, or business model to the measurement and quality market.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b955?w=800&h=500&fit=crop',
+    title: 'Metrology Education & Skill Development Award',
+    description:
+      'Recognises institutions, programmes, or companies that build metrology skills through training, certification, or knowledge transfer.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=500&fit=crop',
+    title: 'Metrology Professional of the Year',
+    description:
+      'Honours an individual whose technical expertise, leadership, or contribution has advanced the profession of measurement science.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=500&fit=crop',
+    title: 'Lifetime Achievement Award',
+    description:
+      'Celebrates a distinguished career of sustained contribution to metrology, quality engineering, and the wider precision-manufacturing community.',
+  },
 ];
 
 const process = [
@@ -252,14 +291,18 @@ export default function AwardsPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {whyParticipate.map(([icon, title, desc]) => (
+            {whyParticipate.map((item) => (
               <div
-                key={title}
-                className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                key={item.title}
+                className="overflow-hidden rounded-sm border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                <span className="mb-3 block text-3xl">{icon}</span>
-                <h3 className="mb-2 font-bebas text-xl uppercase tracking-wide text-[#031A34]">{title}</h3>
-                <p className="text-lg sm:text-xl text-gray-600">{desc}</p>
+                <div className="relative h-44 w-full overflow-hidden bg-[#FCF8F3] sm:h-48">
+                  <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-2 font-bebas text-xl uppercase tracking-wide text-[#031A34]">{item.title}</h3>
+                  <p className="text-lg sm:text-xl text-gray-600">{item.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -275,14 +318,24 @@ export default function AwardsPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map(([icon, title, desc]) => (
+            {categories.map((category) => (
               <div
-                key={title}
-                className="flex flex-col gap-3 rounded-sm border border-gray-200 bg-white p-6 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#F9B122] hover:shadow-md"
+                key={category.title}
+                className="flex flex-col overflow-hidden rounded-sm border border-gray-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#F9B122] hover:shadow-md"
               >
-                <span className="text-4xl leading-none">{icon}</span>
-                <h3 className="font-bebas text-xl uppercase tracking-wide text-[#031A34] md:text-2xl">{title}</h3>
-                <p className="text-lg leading-relaxed text-gray-600 sm:text-xl">{desc}</p>
+                <div className="relative h-44 w-full overflow-hidden bg-[#FCF8F3] sm:h-48">
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="flex flex-col gap-3 p-6">
+                  <h3 className="font-bebas text-xl uppercase tracking-wide text-[#031A34] md:text-2xl">
+                    {category.title}
+                  </h3>
+                  <p className="text-lg leading-relaxed text-gray-600 sm:text-xl">{category.description}</p>
+                </div>
               </div>
             ))}
           </div>
