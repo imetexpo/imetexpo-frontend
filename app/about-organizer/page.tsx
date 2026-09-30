@@ -74,8 +74,8 @@ export default function AboutITEPage() {
                     <Image
                       src="/images/maxx_logo.png"
                       alt="Maxx Business Media"
-                      width={480}
-                      height={180}
+                      width={280}
+                      height={80}
                       className="h-24 w-auto object-contain sm:h-32 md:h-40 lg:h-48"
                     />
                   </div>
