@@ -23,11 +23,8 @@ export const navItems: NavItem[] = [
     links: [
       { text: 'Why Exhibit', href: '/why-exhibit/' },
       { text: 'Event Sectors', href: '/sectors/' },
-      { text: 'Plan Your Travel', href: '/plan-your-travel/' },
-      { text: 'Travel to Pune', href: '/travel-to-pune/' },
-      { text: 'Exhibitor Resource Center', href: '/exhibitor-resource-center/' },
-      { text: 'Freight, Handling & Logistics', href: '/freight-handling-logistics/' },
-      { text: 'Exhibitor Preparation Checklist', href: '/exhibitor-preparation-checklist/' },
+      { text: 'Plan Your Travel', href: '/plan-your-travel/?tab=exhibitor' },
+     
       { text: 'Become an Exhibitor', href: '/exhibiting-enquiry/' },
       { text: 'Sponsorship Opportunities', href: '/sponsorship-opportunities/' },
       { text: 'View Exhibitor List 2026', href: '/exhibition-directory/' },
@@ -37,9 +34,8 @@ export const navItems: NavItem[] = [
     title: 'Visit',
     links: [
       { text: 'Why Visit', href: '/why-visit/' },
-      { text: 'Plan Your Journey', href: '/plan-your-journey/' },
-      { text: 'Visitor Guidelines', href: '/visitor-guidelines/' },
-      { text: 'When & Where', href: '/when-and-where/' },
+      { text: 'Plan Your Journey', href: '/plan-your-travel/?tab=visitor' },
+    
       { text: 'Visitor Pass', href: '/passes/' },
       { text: 'Event Sectors', href: '/sectors/' },
       { text: 'Exhibitor List', href: '/exhibition-directory/' },

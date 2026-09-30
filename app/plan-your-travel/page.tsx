@@ -4,16 +4,30 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
 
 export default function PlanYourTravelPage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"exhibitor" | "visitor">(
-    "exhibitor"
+    searchParams.get("tab") === "visitor" ? "visitor" : "exhibitor"
   );
+
+  useEffect(() => {
+    setActiveTab(searchParams.get("tab") === "visitor" ? "visitor" : "exhibitor");
+  }, [searchParams]);
+
+  const selectTab = (tab: "exhibitor" | "visitor") => {
+    setActiveTab(tab);
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("tab", tab);
+    router.replace(`/plan-your-travel/?${params.toString()}`, { scroll: false });
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 800);
@@ -287,7 +301,7 @@ export default function PlanYourTravelPage() {
                 <div className="inline-flex gap-2 rounded-sm border border-gray-200 bg-[#FCF8F3] p-1">
                   <button
                     type="button"
-                    onClick={() => setActiveTab("exhibitor")}
+                    onClick={() => selectTab("exhibitor")}
                     className={`cursor-pointer rounded-sm px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                       activeTab === "exhibitor"
                         ? "bg-[#F9B122] text-white"
@@ -299,7 +313,7 @@ export default function PlanYourTravelPage() {
 
                   <button
                     type="button"
-                    onClick={() => setActiveTab("visitor")}
+                    onClick={() => selectTab("visitor")}
                     className={`cursor-pointer rounded-sm px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                       activeTab === "visitor"
                         ? "bg-[#F9B122] text-white"
