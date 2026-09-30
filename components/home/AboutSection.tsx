@@ -57,7 +57,7 @@ export default function AboutSection() {
 
             <div className="mt-4 sm:mt-5 lg:mt-6">
               <Button
-                href="/about-indiametexpo"
+                href="/about"
                 className="bg-[#F9B122] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 inline-block rounded-sm"
               >
                 Learn More

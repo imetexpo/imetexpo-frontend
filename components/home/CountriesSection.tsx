@@ -41,7 +41,7 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
 
         
         <Link
-          href="/exhibitor-list/"
+          href="/exhibition-directory"
           className="inline-block bg-[#F9B122] hover:bg-[#d67300] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 whitespace-nowrap"
         >
           Explore the 2027 Exhibitor List
