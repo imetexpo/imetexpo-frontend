@@ -856,13 +856,13 @@ export const manualAPI = {
                         {
                             id: '1',
                             title: 'Exhibitor Manual',
-                            content: 'Welcome to the India Tyre Expo 2027. This manual contains important information for exhibitors.',
+                            content: 'Welcome to the IndiaMET 2027. This manual contains important information for exhibitors.',
                             order: 1
                         },
                         {
                             id: '2',
                             title: 'Important Dates',
-                            content: '• Setup: March 15-17, 2027\n• Exhibition: March 18-21, 2027\n• Dismantle: March 22, 2027',
+                            content: '• Setup: March 11-12, 2027\n• Exhibition: March 13-15, 2027\n• Dismantle: March 15, 2027',
                             order: 2
                         },
                         {

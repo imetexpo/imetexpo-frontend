@@ -34,7 +34,7 @@ function HeroSection() {
     <PageHero
       title="SUMMIT"
       accent="AGENDA"
-      subtitle="INDIAMET 2027 · May 13–15, Pune. International exhibition showcasing advanced metrology, precision measurement, inspection, calibration, testing and quality solutions."
+      subtitle="INDIAMET 2027 SUMMIT · May 13–14, Pune. International exhibition showcasing advanced metrology, precision measurement, inspection, calibration, testing and quality solutions."
     >
       <div className="flex flex-col gap-3 sm:flex-row">
         <Link
