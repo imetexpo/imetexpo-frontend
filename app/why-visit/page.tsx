@@ -35,8 +35,8 @@ export default function WhyVisitPage() {
    */
 
   const stats = [
-    { value: "5,000+", label: "Expected Visitors" },
-    { value: "200+", label: "Expected Exhibitors" },
+    { value: "10,000+", label: "Expected Visitors" },
+    { value: "150+", label: "Expected Exhibitors" },
     { value: "15+", label: "Industry Segments" },
     { value: "25+", label: "Technology Categories" },
   ];

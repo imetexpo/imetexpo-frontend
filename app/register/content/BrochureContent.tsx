@@ -8,10 +8,12 @@ export default function BrochureContent() {
           INDIAMET Expo <span className="text-[#F9B122]">2026</span>
         </h2>
         <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
-          Step into Asia's most influential tyre manufacturing & rubber processing exhibition.
-          INDIAMET Expo connects global suppliers of raw materials, manufacturing machinery,
-          testing tools, and automated systems with thousands of qualified buyers from 50+ countries.
-        </p>
+  Step into India’s premier exhibition for metrology, precision measurement, 
+  inspection and quality technologies. INDIAMET Expo brings together leading 
+  global and Indian suppliers of measurement systems, CMMs, 3D scanning, 
+  machine vision, calibration, testing and inspection solutions with thousands 
+  of qualified professionals and buyers from across the manufacturing industry.
+</p>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-[#f5f5f5] border border-gray-100 p-6 rounded-sm shadow-sm">
@@ -29,22 +31,36 @@ export default function BrochureContent() {
       </div>
 
       <div className="space-y-4 pt-4 border-t border-gray-200">
-        <h3 className="font-bebas text-2xl text-[#031A34] uppercase font-bold">Why Download the Brochure?</h3>
-        <ul className="text-xs text-gray-650 space-y-2.5">
-          <li className="flex items-start gap-2">
-            <span className="text-[#F9B122]">•</span>
-            <span>Engage directly with decision-makers – 85% influence or approve purchasing.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F9B122]">•</span>
-            <span>Showcase solutions to buyers seeking machinery and processing technology.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F9B122]">•</span>
-            <span>Build year-round visibility through our digital platform.</span>
-          </li>
-        </ul>
-      </div>
+  <h3 className="font-bebas text-2xl text-[#031A34] uppercase font-bold">
+    Why Download the Brochure?
+  </h3>
+
+  <ul className="text-xs text-gray-650 space-y-2.5">
+    <li className="flex items-start gap-2">
+      <span className="text-[#F9B122]">•</span>
+      <span>
+        Connect with key decision-makers from manufacturing, quality, metrology,
+        inspection and engineering departments.
+      </span>
+    </li>
+
+    <li className="flex items-start gap-2">
+      <span className="text-[#F9B122]">•</span>
+      <span>
+        Discover the latest CMMs, 3D scanning, machine vision, calibration,
+        testing and precision measurement technologies.
+      </span>
+    </li>
+
+    <li className="flex items-start gap-2">
+      <span className="text-[#F9B122]">•</span>
+      <span>
+        Explore business opportunities with manufacturers and buyers looking
+        for advanced metrology, inspection and quality solutions.
+      </span>
+    </li>
+  </ul>
+</div>
 
       <div className="pt-4 border-t border-gray-200 flex justify-center lg:justify-start">
         <div className="relative w-40 h-52 rotate-[-4deg] shadow-md rounded-sm overflow-hidden border border-gray-150">

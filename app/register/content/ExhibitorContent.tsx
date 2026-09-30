@@ -46,12 +46,16 @@ export default function ExhibitorContent() {
         </h2>
         <ul className="space-y-2">
           {[
-            "Owners, CEOs, and Senior Executives",
-            "Plant Directors, Division Managers, and Procurement Heads",
-            "Tyre Manufacturing and Rubber Processing Engineers",
-            "Operations and Maintenance Specialists",
-            "IT and Automation Experts",
-            "Buyers sourcing machinery, spare parts, and digital solutions",
+            "Owners, CEOs, Directors & Senior Management",
+            "Plant Heads, Production & Operations Managers",
+            "Quality Control & Quality Assurance Professionals",
+            "Metrology, Inspection & Measurement Engineers",
+            "Design, Manufacturing & Process Engineers",
+            "Purchase, Procurement & Sourcing Heads",
+ "Automation, Digital Manufacturing & Industry 4.0 Experts",
+ "R&D, Product Development & Tool Room Professionals",
+ "CMM, 3D Scanning, Vision & Calibration Specialists",
+  "Buyers & Decision-Makers Sourcing Metrology, Inspection & Quality Solutions",
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-2.5">
               <span className="text-[#F9B122]">•</span>
