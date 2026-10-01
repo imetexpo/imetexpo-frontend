@@ -138,7 +138,7 @@ export default function Navbar() {
 
   {/* Subtitle below logo */}
   <p className="mt-3 max-w-[220px] text-center font-[var(--font-montserrat)] text-[11px] font-medium leading-tight tracking-wide text-white sm:max-w-none sm:whitespace-nowrap sm:text-[13px] xl:text-[14px]">
-    INTERNATIONAL METROLOGY EXHIBITION
+    International Metrology Exhibition & Summit
   </p>
 </div>
 
