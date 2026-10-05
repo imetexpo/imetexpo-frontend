@@ -167,7 +167,7 @@ export default function Footer() {
             <div className="flex shrink-0 items-center gap-3">
               <span className="text-xs uppercase tracking-wider text-neutral-100 font-bold sm:text-[16px]">Organised By</span>
               <Image
-                src="/maxx_logo (1).png"
+                src="/maxx_logo.png"
                 alt="ITE"
                 width={270}
                 height={75}
