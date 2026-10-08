@@ -95,13 +95,13 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full bg-[#020B43] text-white">
+    <div className="w-full bg-[#ffffff] text-[#020B43]">
         {/* TOP BAR */}
         <div>
           {/* Ticker strip */}
-          <div className="bg-[#020B43] w-full">
+          <div className="bg-[#ffffff] w-full">
             <Container className="flex items-center justify-end py-1.5">
-              <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-white">
+              <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-[#020B43]">
                 <span>
                   <strong className="text-sm font-bold text-[#008738]">{String(timeLeft.days).padStart(2, '0')}</strong>{' '}
                   <span className="text-gray-300">Days</span>
@@ -121,7 +121,7 @@ export default function Navbar() {
           </div>
 
          {/* Logo + date + nav items */}
-<div className="w-full bg-[#020B43]">
+<div className="w-full bg-[#ffffff]">
   <Container className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3 py-3.5">
     
     <div className="flex min-w-0 items-center gap-3 xl:gap-4">
@@ -137,22 +137,22 @@ export default function Navbar() {
   </UTMLink>
 
   {/* Subtitle below logo */}
-  <p className="mt-3 max-w-[220px] text-center font-[var(--font-montserrat)] text-[11px] font-medium leading-tight tracking-wide text-white sm:max-w-none sm:whitespace-nowrap sm:text-[13px] xl:text-[13px]">
+  {/* <p className="mt-3 max-w-[220px] text-center font-[var(--font-montserrat)] text-[11px] font-medium leading-tight tracking-wide text-white sm:max-w-none sm:whitespace-nowrap sm:text-[13px] xl:text-[13px]">
     International Metrology Exhibition & Summit
-  </p>
+  </p> */}
 </div>
 
       {/* Date + Venue */}
       <div className="mt-7 hidden shrink-0 pl-2 sm:block xl:pl-4">
-        <h1 className="font-[var(--font-montserrat)] text-lg font-bold leading-none tracking-tight text-white xl:text-[22px]">
+        <h1 className="font-[var(--font-montserrat)] text-lg font-bold leading-none tracking-tight text-[#020B43] xl:text-[22px]">
           13 - 15 May  2027
         </h1>
 
-        <p className="mt-1 font-[var(--font-montserrat)] text-sm text-white xl:text-[18px]">
+        <p className="mt-1 font-[var(--font-montserrat)] text-sm text-[#020B43] xl:text-[18px]">
           Auto Cluster Exhibition Center
         </p>
 
-        <p className="font-[var(--font-montserrat)] text-sm text-white xl:text-[18px]">
+        <p className="font-[var(--font-montserrat)] text-sm text-[#020B43] xl:text-[18px]">
           Pune, India
         </p>
       </div>
