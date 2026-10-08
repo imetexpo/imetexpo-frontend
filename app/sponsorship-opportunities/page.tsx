@@ -18,7 +18,7 @@ export default function AdvertisingDetailsPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#031A34]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#020B43]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -302,10 +302,10 @@ export default function AdvertisingDetailsPage() {
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl text-[#031A34] uppercase">
+              <h2 className="font-bebas text-4xl sm:text-5xl text-[#020B43] uppercase">
                 By leveraging these promotional options, you can:
               </h2>
-              <p className="mt-2 text-base sm:text-lg font-bold text-[#F9B122] uppercase tracking-wider">
+              <p className="mt-2 text-base sm:text-lg font-bold text-[#008738] uppercase tracking-wider">
                 Please review the requirements carefully to ensure timely submission.
               </p>
               
@@ -321,7 +321,7 @@ export default function AdvertisingDetailsPage() {
                         className="h-full w-full"
                       />
                     </div>
-                    <h3 className="mt-5 font-bebas text-2xl text-[#F9B122] uppercase font-bold">{benefit.title}</h3>
+                    <h3 className="mt-5 font-bebas text-2xl text-[#008738] uppercase font-bold">{benefit.title}</h3>
                     <p className="mt-3 text-lg sm:text-xl text-gray-650 leading-relaxed">{benefit.description}</p>
                   </div>
                 ))}
@@ -334,8 +334,8 @@ export default function AdvertisingDetailsPage() {
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl text-[#031A34] uppercase">
-                Sponsorship <span className="text-[#F9B122]"> Options</span>
+              <h2 className="font-bebas text-4xl sm:text-5xl text-[#020B43] uppercase">
+                Sponsorship <span className="text-[#008738]"> Options</span>
               </h2>
               <div className="mt-8 space-y-6">
                 {sponsorshipTabs.map((item, idx) => (
@@ -344,8 +344,8 @@ export default function AdvertisingDetailsPage() {
                     className="group overflow-hidden rounded-sm border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-lg"
                   >
                     <div className="grid lg:grid-cols-[280px_1fr]">
-                      <div className="relative flex min-h-[220px] items-center justify-center bg-[#031A34] p-8 lg:min-h-full">
-                        <div className="absolute inset-y-0 left-0 w-1.5 bg-[#F9B122]" />
+                      <div className="relative flex min-h-[220px] items-center justify-center bg-[#020B43] p-8 lg:min-h-full">
+                        <div className="absolute inset-y-0 left-0 w-1.5 bg-[#008738]" />
                         <div className="flex h-40 w-40 items-center justify-center overflow-hidden rounded-sm bg-white p-5 sm:h-44 sm:w-44">
                           <ImageWithFallback
                             src={item.image}
@@ -359,11 +359,11 @@ export default function AdvertisingDetailsPage() {
 
                       <div className="flex flex-col gap-4 p-6 sm:p-8">
                         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                          <h4 className="font-bebas text-3xl font-bold tracking-wide text-[#031A34] uppercase sm:text-4xl">
+                          <h4 className="font-bebas text-3xl font-bold tracking-wide text-[#020B43] uppercase sm:text-4xl">
                             {item.title}
                           </h4>
                           <Link href={item.buttonLink} className="shrink-0">
-                            <button className="bg-[#F9B122] hover:bg-[#031A34] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                            <button className="bg-[#008738] hover:bg-[#020B43] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                               {item.buttonText}
                             </button>
                           </Link>
@@ -376,7 +376,7 @@ export default function AdvertisingDetailsPage() {
                         <ul className="grid gap-2.5 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-3">
                           {item.points.map((point) => (
                             <li key={point} className="flex gap-3 text-left text-lg leading-relaxed text-gray-700 sm:text-xl">
-                              <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[#F9B122]" />
+                              <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[#008738]" />
                               <span>{point}</span>
                             </li>
                           ))}

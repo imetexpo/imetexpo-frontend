@@ -19,14 +19,14 @@ export default function SectionHeader({
     <div className={`mb-12 ${isCenter ? 'text-center' : 'text-left'}`}>
       {/* TOP TEXT */}
       {topText && (
-        <p className="text-[#F9B122] font-sans text-[14px] uppercase tracking-[1.5px]">
+        <p className="text-[#008738] font-sans text-[14px] uppercase tracking-[1.5px]">
           {topText}
         </p>
       )}
 
       {/* TITLE */}
       <h2 
-        className={`font-bebas font-bold text-[46px] md:text-[70px] uppercase tracking-[2px] text-[#031A34] leading-[1.05] ${
+        className={`font-bebas font-bold text-[46px] md:text-[70px] uppercase tracking-[2px] text-[#020B43] leading-[1.05] ${
           topText ? 'mt-3' : ''
         }`}
       >

@@ -119,7 +119,7 @@ export default function ResourceGuidePage({
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#031A34]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#020B43]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl" />
         </div>
@@ -145,13 +145,13 @@ export default function ResourceGuidePage({
                   />
                 </div>
                 <div className="order-2 space-y-6 lg:order-1">
-                  <h1 className="font-bebas text-5xl uppercase leading-tight text-[#031A34] sm:text-6xl md:text-7xl">
-                    {introTitle} <span className="text-[#F9B122]">{introAccent}</span>
+                  <h1 className="font-bebas text-5xl uppercase leading-tight text-[#020B43] sm:text-6xl md:text-7xl">
+                    {introTitle} <span className="text-[#008738]">{introAccent}</span>
                   </h1>
                   <p className="font-sans text-lg leading-relaxed text-gray-700 sm:text-xl">{introBody}</p>
                   <div className="pt-2">
                     <Link href={introCtaHref} target={introCtaHref.startsWith('http') ? '_blank' : undefined}>
-                      <button className="rounded-sm bg-[#F9B122] px-8 py-3 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]">
+                      <button className="rounded-sm bg-[#008738] px-8 py-3 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#020B43]">
                         {introCtaText}
                       </button>
                     </Link>
@@ -165,8 +165,8 @@ export default function ResourceGuidePage({
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12 lg:mt-16">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl uppercase text-[#031A34] sm:text-5xl md:text-6xl">
-                {benefitsHeading} <span className="text-[#F9B122]">{benefitsAccent}</span>
+              <h2 className="font-bebas text-4xl uppercase text-[#020B43] sm:text-5xl md:text-6xl">
+                {benefitsHeading} <span className="text-[#008738]">{benefitsAccent}</span>
               </h2>
               <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {benefits.map((benefit) => (
@@ -183,7 +183,7 @@ export default function ResourceGuidePage({
                         className="h-full w-full"
                       />
                     </div>
-                    <h3 className="mt-5 font-bebas text-2xl font-bold uppercase text-[#F9B122]">{benefit.title}</h3>
+                    <h3 className="mt-5 font-bebas text-2xl font-bold uppercase text-[#008738]">{benefit.title}</h3>
                     <p className="mt-3 text-lg leading-relaxed text-gray-650 sm:text-xl">{benefit.description}</p>
                   </div>
                 ))}
@@ -195,10 +195,10 @@ export default function ResourceGuidePage({
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12 lg:mt-16">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl uppercase text-[#031A34] sm:text-5xl md:text-6xl">
-                {optionsHeading} <span className="text-[#F9B122]">{optionsAccent}</span>
+              <h2 className="font-bebas text-4xl uppercase text-[#020B43] sm:text-5xl md:text-6xl">
+                {optionsHeading} <span className="text-[#008738]">{optionsAccent}</span>
               </h2>
-              <p className="mt-2 text-sm font-bold uppercase tracking-wider text-[#F9B122]">{optionsSubheading}</p>
+              <p className="mt-2 text-sm font-bold uppercase tracking-wider text-[#008738]">{optionsSubheading}</p>
               <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {options.map((option) => (
                   <div
@@ -216,7 +216,7 @@ export default function ResourceGuidePage({
                         />
                       </div>
                       <div className="flex flex-col gap-3 p-5">
-                        <h4 className="font-bebas text-2xl font-bold uppercase text-[#031A34] sm:text-3xl">
+                        <h4 className="font-bebas text-2xl font-bold uppercase text-[#020B43] sm:text-3xl">
                           {option.title}
                         </h4>
                         <p className="line-clamp-4 text-lg leading-relaxed text-gray-650 sm:text-xl">
@@ -226,7 +226,7 @@ export default function ResourceGuidePage({
                     </div>
                     <div className="mt-auto p-5 pt-0">
                       <Link href={option.buttonLink || '/contact-us'}>
-                        <button className="rounded-sm bg-[#F9B122] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]">
+                        <button className="rounded-sm bg-[#008738] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#020B43]">
                           {option.buttonText || 'Enquire Now'}
                         </button>
                       </Link>
@@ -242,8 +242,8 @@ export default function ResourceGuidePage({
           <div className="animated-block-target">
             <div className="border-t border-b border-gray-150 bg-[#FCF8F3] py-16">
               <Container>
-                <h2 className="font-bebas text-4xl uppercase text-[#031A34] sm:text-5xl md:text-6xl">
-                  {faqHeading} <span className="text-[#F9B122]">{faqAccent}</span>
+                <h2 className="font-bebas text-4xl uppercase text-[#020B43] sm:text-5xl md:text-6xl">
+                  {faqHeading} <span className="text-[#008738]">{faqAccent}</span>
                 </h2>
                 <div className="mt-8 space-y-4">
                   {faqs.map((item, idx) => (
@@ -253,7 +253,7 @@ export default function ResourceGuidePage({
                         onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
                         className="flex w-full cursor-pointer items-center justify-between p-4 text-left transition-all hover:bg-gray-50 sm:p-5"
                       >
-                        <h4 className="pr-4 font-sans text-base font-bold uppercase text-[#031A34] sm:text-lg md:text-xl">
+                        <h4 className="pr-4 font-sans text-base font-bold uppercase text-[#020B43] sm:text-lg md:text-xl">
                           {item.question}
                         </h4>
                         <div className="relative shrink-0">
@@ -267,7 +267,7 @@ export default function ResourceGuidePage({
                           >
                             <path
                               d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z"
-                              fill="#F9B122"
+                              fill="#008738"
                               fillRule="evenodd"
                               clipRule="evenodd"
                             />

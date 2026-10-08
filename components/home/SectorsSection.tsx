@@ -59,10 +59,10 @@ export default function SectorsSection() {
         <div>
           <Container>
             <div className="mb-8 sm:mb-10 lg:mb-12">
-              <p className="text-[#F9B122] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
+              <p className="text-[#008738] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
                 Event Sectors
               </p>
-              <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#031A34] leading-tight uppercase tracking-tight mt-3">
+              <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#020B43] leading-tight uppercase tracking-tight mt-3">
                 EXPLORE KEY SECTORS SHAPING THE FUTURE OF PRECISION
               </h2>
             </div>
@@ -108,7 +108,7 @@ export default function SectorsSection() {
                     <p className="font-sans text-lg sm:text-xl text-gray-300 mt-1 sm:mt-2 leading-relaxed line-clamp-2">
                       {sector.shortText}
                     </p>
-                    <span className="inline-block mt-3 font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#F9B122] group-hover:underline">
+                    <span className="inline-block mt-3 font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#008738] group-hover:underline">
                       Read More →
                     </span>
                   </div>
@@ -121,7 +121,7 @@ export default function SectorsSection() {
           <Container> 
             <div className="mt-8 sm:mt-10 lg:mt-12">
               <Link href="/sectors/">
-                <button className="bg-[#F9B122] hover:bg-[#031A34] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                <button className="bg-[#008738] hover:bg-[#020B43] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                   Explore All The Sectors
                 </button>
               </Link>

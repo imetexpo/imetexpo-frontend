@@ -31,7 +31,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#031A34] text-gray-400 border-t border-white/10">
+    <footer className="bg-[#020B43] text-gray-400 border-t border-white/10">
       {/* Top Section */}
       <Container className="py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 xl:gap-20">
@@ -58,7 +58,7 @@ export default function Footer() {
               </h5>
               <a
                 href="mailto:pad@maxxmedia.in"
-                className="hover:text-[#F9B122] transition-colors text-x"
+                className="hover:text-[#008738] transition-colors text-x"
               >
                 pad@maxxmedia.in
               </a>
@@ -68,7 +68,7 @@ export default function Footer() {
               <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Hotline
               </h5>
-              <a href="tel:+91 9148319993" className="hover:text-[#F9B122] transition-colors text-x">
+              <a href="tel:+91 9148319993" className="hover:text-[#008738] transition-colors text-x">
                 +91- 91483 19993
               </a>
             </div>
@@ -77,7 +77,7 @@ export default function Footer() {
               <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Visitor Support
               </h5>
-              <a href="tel:++91- 63649 36468" className="hover:text-[#F9B122] transition-colors text-x">
+              <a href="tel:++91- 63649 36468" className="hover:text-[#008738] transition-colors text-x">
                 +91- 63649 36468
               </a>
             </div>
@@ -136,14 +136,14 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="group flex h-10 w-10 items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-110 hover:bg-[#F9B122]"
+                    className="group flex h-10 w-10 items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-110 hover:bg-[#008738]"
                   >
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
                       strokeWidth="0"
                       viewBox={viewBox}
-                      className="h-5 w-5 text-[#031A34] group-hover:text-white"
+                      className="h-5 w-5 text-[#020B43] group-hover:text-white"
                       height="1em"
                       width="1em"
                       xmlns="http://www.w3.org/2000/svg"

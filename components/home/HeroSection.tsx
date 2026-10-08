@@ -27,10 +27,10 @@ export default function HeroSection() {
   return (
     <section className="relative flex h-[calc(100svh-var(--mobile-header-height,110px))] w-full items-end justify-center overflow-hidden text-white lg:h-screen">
       {/* Gradient overlay */}
-      <div className="absolute inset-0 z-[-1] bg-gradient-to-t from-[#031A34] via-[#031A34]/50 to-transparent" />
+      <div className="absolute inset-0 z-[-1] bg-gradient-to-t from-[#020B43] via-[#020B43]/50 to-transparent" />
 
       {/* Slideshow background */}
-      <div className="absolute inset-0 z-[-2] size-full bg-[#031A34]">
+      <div className="absolute inset-0 z-[-2] size-full bg-[#020B43]">
         <div className="relative h-full w-full overflow-hidden">
           {slides.map((slide, index) => (
             <div
@@ -67,7 +67,7 @@ export default function HeroSection() {
           >
             <br />
             <span className="text-white">INDIAMET </span>
-            <span className="text-[#F9B122]">2027</span>
+            <span className="text-[#008738]">2027</span>
           </h1>
 
           {/* BOTTOM ROW — stacks on mobile, side-by-side on lg+ */}
@@ -84,7 +84,7 @@ export default function HeroSection() {
             <div className="flex-shrink-0 w-full lg:w-auto">
               <Link
                 href="/exhibiting-enquiry/"
-                className="inline-block w-full lg:w-auto text-center bg-[#F9B122] hover:bg-[#FFD154] text-white px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm shadow-lg hover:scale-105"
+                className="inline-block w-full lg:w-auto text-center bg-[#008738] hover:bg-[#FFD154] text-white px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm shadow-lg hover:scale-105"
               >
                 Exhibit
               </Link>

@@ -62,7 +62,7 @@ export default function PartnersSponsorsPage() {
         {/* Event Partners Section */}
         <section className="py-16 lg:py-20">
             <Container>
-            <h2 className="font-bebas text-5xl text-[#031A34] md:text-6xl text-center mb-10 lg:mb-16">
+            <h2 className="font-bebas text-5xl text-[#020B43] md:text-6xl text-center mb-10 lg:mb-16">
               Sponsors
             </h2>
             <div className="flex flex-wrap gap-8 justify-center">
@@ -81,12 +81,12 @@ export default function PartnersSponsorsPage() {
                       unoptimized
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#031A34] text-center">{partner.name}</h3>
+                  <h3 className="text-xl font-semibold text-[#020B43] text-center">{partner.name}</h3>
                   <p className="text-orange-600 text-sm font-medium">{partner.type}</p>
                   <Link
                     href={partner.website}
                     target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#F9B122] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#031A34] transition-colors"
+                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#008738] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#020B43] transition-colors"
                   >
                     Visit Website
                   </Link>
@@ -98,7 +98,7 @@ export default function PartnersSponsorsPage() {
           <br></br>
           <br></br>
           <Container>
-            <h2 className="font-bebas text-5xl text-[#031A34] md:text-6xl text-center mb-10 lg:mb-16">
+            <h2 className="font-bebas text-5xl text-[#020B43] md:text-6xl text-center mb-10 lg:mb-16">
               Supporting Partners
             </h2>
             <div className="flex flex-wrap gap-8 justify-center">
@@ -117,12 +117,12 @@ export default function PartnersSponsorsPage() {
                       unoptimized
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#031A34] text-center">{partner.name}</h3>
+                  <h3 className="text-xl font-semibold text-[#020B43] text-center">{partner.name}</h3>
                   <p className="text-orange-600 text-sm font-medium">{partner.type}</p>
                   <Link
                     href={partner.website}
                     target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#F9B122] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#031A34] transition-colors"
+                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#008738] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#020B43] transition-colors"
                   >
                     Visit Website
                   </Link>
@@ -135,7 +135,7 @@ export default function PartnersSponsorsPage() {
         {/* Media Partners Section */}
         <section className="py-16 lg:py-20 bg-orange-50">
           <Container>
-            <h2 className="font-bebas text-5xl text-[#031A34] md:text-6xl text-center mb-10 lg:mb-16">
+            <h2 className="font-bebas text-5xl text-[#020B43] md:text-6xl text-center mb-10 lg:mb-16">
               Media Partners
             </h2>
             <div className="flex flex-wrap gap-6 justify-center">
@@ -154,14 +154,14 @@ export default function PartnersSponsorsPage() {
                       unoptimized
                     />
                   </div>
-                  <h3 className="text-base font-semibold text-[#031A34] text-center line-clamp-2 min-h-[48px]">
+                  <h3 className="text-base font-semibold text-[#020B43] text-center line-clamp-2 min-h-[48px]">
                     {partner.name}
                   </h3>
                   <p className="text-orange-600 text-xs font-medium">{partner.type}</p>
                   <Link
                     href={partner.website}
                     target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#F9B122] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#031A34] transition-colors"
+                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#008738] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#020B43] transition-colors"
                   >
                     Visit Website
                   </Link>
@@ -174,7 +174,7 @@ export default function PartnersSponsorsPage() {
         {/* Quick Navigation Section */}
         {/* <div className="animated-block mt-20">
           <div className="animated-block-target">
-            <div className="border-t-8 border-[#F9B122] bg-[#031A34] py-20 text-white">
+            <div className="border-t-8 border-[#008738] bg-[#020B43] py-20 text-white">
               <Container> */}
                 {/* HEADING */}
                 {/* <h2 className="font-bebas text-6xl md:text-7xl">
@@ -213,7 +213,7 @@ export default function PartnersSponsorsPage() {
           </div> */}
         {/* </div> */}
 
-        {/* <hr className="border-t-6 border-[#F9B122]" /> */}
+        {/* <hr className="border-t-6 border-[#008738]" /> */}
       </div>
       <BackToTop />
     </div>

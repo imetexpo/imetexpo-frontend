@@ -38,13 +38,13 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
     <>
       {/* Overlay */}
       <div 
-        className="fixed inset-0 bg-[#031A34]/60 z-40 lg:hidden transition-opacity duration-300" 
+        className="fixed inset-0 bg-[#020B43]/60 z-40 lg:hidden transition-opacity duration-300" 
         onClick={onClose} 
       />
       
       {/* Floating Rounded Menu Card */}
       <div
-        className="fixed left-4 right-4 bottom-4 bg-[#031A34] border border-neutral-900 z-45 shadow-2xl overflow-y-auto rounded-[28px] p-6 text-white lg:hidden flex flex-col justify-between font-sans transition-all duration-300 animate-slide-up no-scrollbar"
+        className="fixed left-4 right-4 bottom-4 bg-[#020B43] border border-neutral-900 z-45 shadow-2xl overflow-y-auto rounded-[28px] p-6 text-white lg:hidden flex flex-col justify-between font-sans transition-all duration-300 animate-slide-up no-scrollbar"
         style={{ top: topOffset }}
       >
         
@@ -68,7 +68,7 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
                         onClick={() => toggleDropdown(item.title)}
                         className="w-full flex items-center justify-between py-2 text-white transition-colors cursor-pointer group"
                       >
-                        <span className="font-bold text-white text-lg sm:text-xl font-sans tracking-tight group-hover:text-[#F9B122] transition-colors">
+                        <span className="font-bold text-white text-lg sm:text-xl font-sans tracking-tight group-hover:text-[#008738] transition-colors">
                           {item.title}
                         </span>
                         <span className="text-2xl text-neutral-400 font-light pr-1 select-none leading-none">
@@ -83,7 +83,7 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
                               key={link.text}
                               href={link.href}
                               onClick={onClose}
-                              className="block text-[15px] text-gray-300 hover:text-[#F9B122] font-sans font-medium transition-colors"
+                              className="block text-[15px] text-gray-300 hover:text-[#008738] font-sans font-medium transition-colors"
                             >
                               {link.text}
                             </Link>
@@ -96,7 +96,7 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
                       <Link
                         href={item.href || '#'}
                         onClick={onClose}
-                        className="block py-2 font-bold text-white text-lg sm:text-xl font-sans tracking-tight hover:text-[#F9B122] transition-colors"
+                        className="block py-2 font-bold text-white text-lg sm:text-xl font-sans tracking-tight hover:text-[#008738] transition-colors"
                       >
                         {item.title}
                       </Link>
@@ -113,14 +113,14 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
           <Link
             href="/exhibiting-enquiry/"
             onClick={onClose}
-            className="block w-full rounded-sm border border-[#F9B122] bg-[#F9B122] py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#031A34]"
+            className="block w-full rounded-sm border border-[#008738] bg-[#008738] py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#020B43]"
           >
             Exhibit
           </Link>
           <Link
             href="/visitor-registration/"
             onClick={onClose}
-            className="block w-full rounded-sm border border-white bg-transparent py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-[#031A34]"
+            className="block w-full rounded-sm border border-white bg-transparent py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-[#020B43]"
           >
             Register
           </Link>

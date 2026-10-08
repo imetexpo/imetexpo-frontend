@@ -8,7 +8,7 @@ type State = { name: string };
 type City = { name: string };
 
 const inputClass =
-  'w-full rounded-sm border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-[#F9B122] focus:ring-1 focus:ring-[#F9B122] disabled:cursor-not-allowed disabled:bg-gray-100';
+  'w-full rounded-sm border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-[#008738] focus:ring-1 focus:ring-[#008738] disabled:cursor-not-allowed disabled:bg-gray-100';
 
 const emptyForm = {
   firstName: '',
@@ -189,10 +189,10 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
   if (showThankYou) {
     return (
       <div className="rounded-sm border border-gray-100 bg-white p-8 text-center shadow-sm">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#F9B122]/10 text-2xl text-[#F9B122]">
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#008738]/10 text-2xl text-[#008738]">
           ✓
         </div>
-        <h3 className="font-bebas text-3xl uppercase tracking-wide text-[#031A34]">
+        <h3 className="font-bebas text-3xl uppercase tracking-wide text-[#020B43]">
           Thank You{submittedName ? `, ${submittedName}` : ''}
         </h3>
         <p className="mt-2 text-sm text-gray-600">
@@ -201,7 +201,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         <button
           type="button"
           onClick={() => setShowThankYou(false)}
-          className="mt-6 rounded-sm bg-[#F9B122] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34]"
+          className="mt-6 rounded-sm bg-[#008738] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#020B43]"
         >
           Register another delegate
         </button>
@@ -216,14 +216,14 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         onSubmit={handleSubmit}
         className="space-y-4 rounded-sm border border-gray-100 bg-white p-6 shadow-sm"
       >
-        <h3 className="border-b border-gray-100 pb-3 font-bebas text-2xl uppercase tracking-wide text-[#F9B122]">
+        <h3 className="border-b border-gray-100 pb-3 font-bebas text-2xl uppercase tracking-wide text-[#008738]">
           Register as Delegate
         </h3>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
             <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-              First Name <span className="text-[#F9B122]">*</span>
+              First Name <span className="text-[#008738]">*</span>
             </label>
             <input
               type="text"
@@ -237,7 +237,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
           </div>
           <div>
             <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-              Last Name <span className="text-[#F9B122]">*</span>
+              Last Name <span className="text-[#008738]">*</span>
             </label>
             <input
               type="text"
@@ -253,7 +253,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
 
         <div>
           <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Company Name <span className="text-[#F9B122]">*</span>
+            Company Name <span className="text-[#008738]">*</span>
           </label>
           <input
             type="text"
@@ -268,7 +268,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
 
         <div>
           <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Job Title <span className="text-[#F9B122]">*</span>
+            Job Title <span className="text-[#008738]">*</span>
           </label>
           <input
             type="text"
@@ -283,7 +283,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
 
         <div>
           <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Work Email <span className="text-[#F9B122]">*</span>
+            Work Email <span className="text-[#008738]">*</span>
           </label>
           <input
             type="email"
@@ -298,7 +298,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
 
         <div>
           <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Phone <span className="text-[#F9B122]">*</span>
+            Phone <span className="text-[#008738]">*</span>
           </label>
           <input
             type="tel"
@@ -313,7 +313,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
 
         <div>
           <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Country <span className="text-[#F9B122]">*</span>
+            Country <span className="text-[#008738]">*</span>
           </label>
           <select
             name="country"
@@ -334,7 +334,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
             <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-              State <span className="text-[#F9B122]">*</span>
+              State <span className="text-[#008738]">*</span>
             </label>
             <select
               name="state"
@@ -360,7 +360,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
           </div>
           <div>
             <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-              City <span className="text-[#F9B122]">*</span>
+              City <span className="text-[#008738]">*</span>
             </label>
             <select
               name="city"
@@ -390,7 +390,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
 
         <div>
           <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Select Package <span className="text-[#F9B122]">*</span>
+            Select Package <span className="text-[#008738]">*</span>
           </label>
           <select
             name="package"
@@ -413,17 +413,17 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
             checked={formData.notRobot}
             onChange={(e) => setFormData((prev) => ({ ...prev, notRobot: e.target.checked }))}
             required
-            className="mt-1 accent-[#F9B122]"
+            className="mt-1 accent-[#008738]"
           />
           <span>
-            I confirm that I am not a robot <span className="text-[#F9B122]">*</span>
+            I confirm that I am not a robot <span className="text-[#008738]">*</span>
           </span>
         </label>
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`rounded-sm bg-[#F9B122] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#031A34] ${
+          className={`rounded-sm bg-[#008738] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#020B43] ${
             isSubmitting ? 'cursor-not-allowed opacity-70' : ''
           }`}
         >
@@ -433,7 +433,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         <p className="text-[11px] leading-relaxed text-gray-500">
           By submitting this form, you agree to receive marketing communications. You can
           unsubscribe anytime. Read our{' '}
-          <a href="/privacy-policy" className="text-[#F9B122] underline" target="_blank" rel="noopener noreferrer">
+          <a href="/privacy-policy" className="text-[#008738] underline" target="_blank" rel="noopener noreferrer">
             Privacy Policy
           </a>
           .

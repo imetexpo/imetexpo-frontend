@@ -116,7 +116,7 @@ export default function ConferenceProgrammePage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#031A34]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#020B43]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -135,9 +135,9 @@ export default function ConferenceProgrammePage() {
               <div className="w-full grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
                 <div className="order-2 lg:order-1 space-y-6">
                   <div className="space-y-3">
-                    <p className="text-[#F9B122] text-xs font-bold uppercase tracking-wider">Business Programme</p>
-                    <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl leading-tight text-[#031A34] uppercase">
-                      Innovate Through <span className="text-[#F9B122]">Knowledge</span>
+                    <p className="text-[#008738] text-xs font-bold uppercase tracking-wider">Business Programme</p>
+                    <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl leading-tight text-[#020B43] uppercase">
+                      Innovate Through <span className="text-[#008738]">Knowledge</span>
                     </h1>
                   </div>
                   <p className="text-base sm:text-lg leading-relaxed text-gray-705">
@@ -148,7 +148,7 @@ export default function ConferenceProgrammePage() {
                   <div className="grid grid-cols-3 gap-4 bg-[#FCF8F3] border border-gray-100 p-6 rounded-sm shadow-sm">
                     {statsData.map((stat, idx) => (
                       <div key={idx} className="text-center">
-                        <h3 className="text-3xl font-bebas text-[#F9B122] uppercase font-bold">{stat.value}</h3>
+                        <h3 className="text-3xl font-bebas text-[#008738] uppercase font-bold">{stat.value}</h3>
                         <p className="text-[10px] uppercase font-bold text-gray-600 mt-1 tracking-wider">{stat.label}</p>
                       </div>
                     ))}
@@ -156,7 +156,7 @@ export default function ConferenceProgrammePage() {
 
                   <div className="pt-2">
                     <Link href="https://cdn-ite.prismetic.com/CP_Agenda_ITS_Tyre_Expo_2026.pdf" target="_blank" rel="noopener noreferrer">
-                      <button className="bg-[#F9B122] hover:bg-[#031A34] text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#008738] hover:bg-[#020B43] text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         View Agenda
                       </button>
                     </Link>
@@ -183,10 +183,10 @@ export default function ConferenceProgrammePage() {
             <div className="bg-[#FCF8F3] py-16 border-t border-b border-gray-150">
               <Container>
                 <div className="mb-8 space-y-2">
-                  <h2 className="font-bebas text-4xl sm:text-5xl text-[#031A34] uppercase font-bold">
+                  <h2 className="font-bebas text-4xl sm:text-5xl text-[#020B43] uppercase font-bold">
                     Main Events of the Business Programme
                   </h2>
-                  <p className="text-sm font-bold text-[#F9B122] uppercase tracking-wider">
+                  <p className="text-sm font-bold text-[#008738] uppercase tracking-wider">
                     08 – 09 October 2026
                   </p>
                 </div>
@@ -194,7 +194,7 @@ export default function ConferenceProgrammePage() {
                   {mainEventsData.map((event, idx) => (
                     <div key={idx} className="relative flex flex-col overflow-hidden rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                       <div className="flex flex-col flex-1 gap-4">
-                        <h3 className="font-bebas text-2xl text-[#F9B122] leading-tight uppercase font-bold">
+                        <h3 className="font-bebas text-2xl text-[#008738] leading-tight uppercase font-bold">
                           {event.title}
                         </h3>
                         <div className="text-gray-650 flex-1">
@@ -214,7 +214,7 @@ export default function ConferenceProgrammePage() {
           <div className="animated-block">
             <div className="animated-block-target">
               <div className="mb-8 space-y-3 max-w-3xl">
-                <h3 className="font-bebas text-4xl sm:text-5xl text-[#031A34] uppercase font-bold">
+                <h3 className="font-bebas text-4xl sm:text-5xl text-[#020B43] uppercase font-bold">
                   Key Events
                 </h3>
                 <p className="text-sm text-gray-650 leading-relaxed">
@@ -237,10 +237,10 @@ export default function ConferenceProgrammePage() {
                               fill
                               className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-[#031A34]/20 group-hover:bg-[#031A34]/40 transition duration-300"></div>
+                            <div className="absolute inset-0 bg-[#020B43]/20 group-hover:bg-[#020B43]/40 transition duration-300"></div>
                           </div>
                           <div className="p-5 font-sans">
-                            <h5 className="font-bebas text-xl text-[#031A34] uppercase font-bold">
+                            <h5 className="font-bebas text-xl text-[#020B43] uppercase font-bold">
                               {event.title}
                             </h5>
                           </div>
@@ -258,7 +258,7 @@ export default function ConferenceProgrammePage() {
         <Container className="py-10">
           <div className="animated-block">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl text-[#031A34] uppercase font-bold mb-8">
+              <h2 className="font-bebas text-4xl sm:text-5xl text-[#020B43] uppercase font-bold mb-8">
                 Conference Partners
               </h2>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -276,14 +276,14 @@ export default function ConferenceProgrammePage() {
                           className="object-contain p-1"
                         />
                       </div>
-                      <h3 className="mt-5 font-bebas text-2xl text-[#031A34] uppercase font-bold">
+                      <h3 className="mt-5 font-bebas text-2xl text-[#020B43] uppercase font-bold">
                         {partner.name}
                       </h3>
                       <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1">{partner.type}</p>
                     </div>
                     <div className="pt-6">
                       <Link href={partner.url} target="_blank" rel="noopener noreferrer">
-                        <button className="w-full bg-[#F9B122] hover:bg-[#031A34] text-white py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
+                        <button className="w-full bg-[#008738] hover:bg-[#020B43] text-white py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer">
                           Visit Website
                         </button>
                       </Link>

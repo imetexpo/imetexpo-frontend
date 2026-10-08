@@ -19,7 +19,7 @@ export default function AboutITEPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#031A34]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#020B43]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -70,7 +70,7 @@ export default function AboutITEPage() {
               <Container className="py-12 sm:py-16">
                 <div className="flex flex-col gap-4 sm:gap-5">
                   <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">About </h2>
+                    <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#020B43]">About </h2>
                     <Image
                       src="/images/maxx_logo.png"
                       alt="Maxx Business Media"
@@ -95,10 +95,10 @@ export default function AboutITEPage() {
                     {stats.map((stat, idx) => (
                       <div key={idx} className="flex w-1/2 sm:w-1/3 md:w-1/4 items-start justify-start">
                         <div className="px-4 sm:px-6 md:px-8 text-start">
-                          <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#F9B122]">
+                          <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#008738]">
                             {stat.value}
                           </h3>
-                          <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold uppercase text-[#031A34]">
+                          <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold uppercase text-[#020B43]">
                             {stat.label}
                           </p>
                         </div>
@@ -115,7 +115,7 @@ export default function AboutITEPage() {
               <Container>
                 <div className="mb-6 sm:mb-8 flex flex-col lg:flex-row justify-between lg:items-end gap-4">
                   <div className="lg:basis-2/3">
-                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#031A34]">Working for Your Success</h3>
+                    <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#020B43]">Working for Your Success</h3>
                     <p className="mt-3 text-lg sm:text-xl text-gray-700">
                       At Maxx Business Media Pvt Ltd, we create impactful exhibitions, conferences, trade publications, and digital platforms that connect industries, businesses, technology providers, and professionals. Our industry-focused platforms help businesses showcase innovation, build valuable relationships, discover new opportunities, and drive sustainable business growth.
                     </p>
@@ -137,7 +137,7 @@ export default function AboutITEPage() {
                         />
                       </div>
                       <div className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
-                        <h4 className="text-lg sm:text-xl font-bold text-[#031A34]">{item.title}</h4>
+                        <h4 className="text-lg sm:text-xl font-bold text-[#020B43]">{item.title}</h4>
                         <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">{item.content}</p>
                       </div>
                     </div>

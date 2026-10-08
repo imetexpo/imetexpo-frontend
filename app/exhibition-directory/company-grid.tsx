@@ -64,7 +64,7 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
   return (
     <div className="overflow-hidden rounded-sm border border-gray-100 bg-white">
       <table className="w-full">
-        <thead className="bg-[#031A34]">
+        <thead className="bg-[#020B43]">
           <tr>
             <th className="p-4 text-left text-xs font-bold uppercase tracking-wider text-white">Company</th>
             <th className="hidden p-4 text-left text-xs font-bold uppercase tracking-wider text-white md:table-cell">Location</th>
@@ -92,7 +92,7 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
                     />
                   )}
                   <div>
-                    <div className="font-medium text-[#031A34]">{company.name}</div>
+                    <div className="font-medium text-[#020B43]">{company.name}</div>
                     <div className="text-sm text-gray-600 md:hidden">
                       {company.pavilion} • Stand {company.standNumber}
                     </div>
@@ -101,24 +101,24 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
               </td>
               <td className="hidden p-4 text-gray-600 md:table-cell">
                 <div className="flex items-center gap-2">
-                  <Building size={14} className="text-[#F9B122]" />
+                  <Building size={14} className="text-[#008738]" />
                   <span>{company.pavilion}</span>
-                  <MapPin size={14} className="ml-2 text-[#F9B122]" />
+                  <MapPin size={14} className="ml-2 text-[#008738]" />
                   <span>{company.country}</span>
                 </div>
               </td>
-              <td className="hidden p-4 font-medium text-[#031A34] lg:table-cell">
+              <td className="hidden p-4 font-medium text-[#020B43] lg:table-cell">
                 {company.standNumber}
               </td>
               <td className="p-4">
                 <div className="flex flex-wrap gap-1">
                   {company.sector.slice(0, 2).map((s, i) => (
-                    <span key={i} className="rounded-sm bg-[#FCF8F3] px-2 py-1 text-xs text-[#031A34]">
+                    <span key={i} className="rounded-sm bg-[#FCF8F3] px-2 py-1 text-xs text-[#020B43]">
                       {s}
                     </span>
                   ))}
                   {company.sector.length > 2 && (
-                    <span className="rounded-sm bg-[#F9B122]/10 px-2 py-1 text-xs text-[#F9B122]">
+                    <span className="rounded-sm bg-[#008738]/10 px-2 py-1 text-xs text-[#008738]">
                       +{company.sector.length - 2}
                     </span>
                   )}

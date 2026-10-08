@@ -69,7 +69,7 @@ export default function Header() {
 
       <div
         ref={mobileHeaderRef}
-        className="lg:hidden fixed top-0 left-0 w-full z-[60] bg-[#031A34] shadow-lg"
+        className="lg:hidden fixed top-0 left-0 w-full z-[60] bg-[#020B43] shadow-lg"
       >
         <div className="px-4 py-1.5 text-center text-[10px] font-semibold uppercase tracking-wider text-gray-300">
           13–15 May  2027 • Auto Cluster Exhibition Center, Pune, India
@@ -89,8 +89,8 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <Link
                 href="/login/"
-                className="bg-[#F9B122] text-white px-4 py-1.5 text-sm border border-white/20
-                hover:bg-[#F9B122] hover:text-[#031A34] transition-all duration-300 rounded-sm"
+                className="bg-[#008738] text-white px-4 py-1.5 text-sm border border-white/20
+                hover:bg-[#008738] hover:text-[#020B43] transition-all duration-300 rounded-sm"
               >
                 Login
               </Link>
@@ -102,9 +102,9 @@ export default function Header() {
                 aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? (
-                  <X size={32} className="text-[#F9B122]" />
+                  <X size={32} className="text-[#008738]" />
                 ) : (
-                  <Menu size={32} className="text-[#F9B122]" />
+                  <Menu size={32} className="text-[#008738]" />
                 )}
               </button>
             </div>

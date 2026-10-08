@@ -97,10 +97,10 @@ export default function PartnersSection() {
       <div className="mx-auto w-full">
         <Container>
           <div className="mb-8 sm:mb-10 lg:mb-12">
-            <p className="text-[#F9B122] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
+            <p className="text-[#008738] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
               Our Ecosystem
             </p>
-            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#031A34] leading-tight uppercase tracking-tight mt-3">
+            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#020B43] leading-tight uppercase tracking-tight mt-3">
               Partners & Sponsors
             </h2>
             <p className="text-gray-600 mt-2 text-lg sm:text-xl font-sans">
