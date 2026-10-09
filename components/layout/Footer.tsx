@@ -39,15 +39,15 @@ export default function Footer() {
           {/* Logo */}
           <div className="space-y-4">
             <Image
-              src="/ITS_logo_white.png"
+              src="/footer_logo.png"
               alt="IndiaMet Expo"
-              width={180}
-              height={50}
+              width={280}
+              height={100}
               className="object-contain"
             />
-            <p className="text-x text-gray-100 font-sans mt-2">
+            {/* <p className="text-x text-gray-100 font-sans mt-2">
               Metrology Exhibiton & Summit.
-            </p>
+            </p> */}
           </div>
 
           {/* Contacts */}
