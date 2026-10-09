@@ -82,7 +82,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
               <Image
-                src="/ITS_logo_white.png"
+                src="/footer_logo.png"
                 alt="IndiaMet Expo"
                 width={270}
                 height={100}

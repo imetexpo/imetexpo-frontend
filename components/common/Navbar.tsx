@@ -110,16 +110,16 @@ export default function Navbar() {
 
       {/* Date + Venue */}
       <div className="hidden shrink-0 lg:block">
-        <h1 className="font-[var(--font-montserrat)] whitespace-nowrap text-sm font-bold leading-tight tracking-tight text-[#020B43] xl:text-base">
-          13 - 15 May  2027
+        <h1 className="font-[var(--font-montserrat)] whitespace-nowrap text-xl font-bold leading-tight tracking-tight text-[#020B43] xxl:text-base">
+          13 - 15 MAY  2027
         </h1>
 
-        <p className="mt-0.5 whitespace-nowrap font-[var(--font-montserrat)] text-[11px] leading-tight text-[#020B43] xl:text-xs">
-          Auto Cluster Exhibition Center
+        <p className="mt-0.5 whitespace-nowrap font-[var(--font-montserrat)] text-[18px] leading-tight text-[#020B43] xl:text-x">
+          AUTO CLUSTER EXHIBITION CENTER
         </p>
 
-        <p className="font-[var(--font-montserrat)] text-[11px] leading-tight text-[#020B43] xl:text-xs">
-          Pune, India
+        <p className="font-[var(--font-montserrat)] text-[18px] leading-tight text-[#020B43] xxl:text-xs">
+          PUNE, INDIA
         </p>
       </div>
 

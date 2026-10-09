@@ -77,7 +77,7 @@ export default function ExhibitorLoginPage() {
     <div className="relative isolate flex w-full flex-1 items-start justify-center overflow-x-hidden bg-[#020B43] px-4 py-5 sm:items-center sm:py-10">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[#008738] opacity-20 blur-3xl sm:h-64 sm:w-64" />
-        <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-[#008738] opacity-10 blur-3xl sm:h-64 sm:w-64" />
+        <div className="absolute -bottom-16 -left-16 h-80 w-40 rounded-full bg-[#008738] opacity-10 blur-3xl sm:h-64 sm:w-64" />
       </div>
 
       <div className="relative w-full max-w-md">
