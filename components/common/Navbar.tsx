@@ -124,7 +124,7 @@ export default function Navbar() {
 <div className="w-full bg-[#ffffff]">
   <Container className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3 py-3.5">
     
-    <div className="flex min-w-0 items-center gap-3 xl:gap-4">
+    <div className="flex min-w-0 items-center gap-5 xl:gap-5">
 
       {/* Logo + Subtitle */}
 <div className="flex shrink-0 flex-col items-center">
@@ -132,7 +132,7 @@ export default function Navbar() {
     <img
       src="/ITS_logo_white.png"
       alt="IndiaMet Expo"
-      className="-mt-7 h-30 w-auto cursor-pointer object-contain sm:h-22"
+      className="-mt-0 h-30 w-auto cursor-pointer object-contain sm:h-20"
     />
   </UTMLink>
 
