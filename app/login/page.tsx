@@ -86,8 +86,8 @@ export default function ExhibitorLoginPage() {
             <Image
               src="/footer_logo.png"
               alt="IndiaMet Expo"
-              width={270}
-              height={100}
+              width={370}
+              height={150}
               className="mx-auto mb-3 h-auto w-[150px] object-contain sm:mb-4 sm:w-[180px]"
             />
             <h2 className="font-bebas text-2xl tracking-wide text-white sm:text-3xl">
