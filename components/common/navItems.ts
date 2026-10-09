@@ -11,7 +11,7 @@ export type NavItem = {
 
 export const navItems: NavItem[] = [
   {
-    title: 'About',
+    title: 'ABOUT',
     links: [
       { text: 'About IndiaMet Expo', href: '/about/' },
       { text: 'About The Organizer', href: '/about-organizer/' },
@@ -19,7 +19,7 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    title: 'Exhibit',
+    title: 'EXHIBIT',
     links: [
       { text: 'Why Exhibit', href: '/why-exhibit/' },
       { text: 'Event Sectors', href: '/sectors/' },
@@ -31,7 +31,7 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    title: 'Visit',
+    title: 'VISIT',
     links: [
       { text: 'Why Visit', href: '/why-visit/' },
       { text: 'Plan Your Travel', href: '/plan-your-travel/?tab=visitor' },
@@ -43,14 +43,14 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    title: 'Insights',
+    title: 'INSIGHTS',
     links: [
       { text: 'Articles and Latest News', href: '/articles/' },
       { text: 'Event Brochure', href: '/event-brochure/' },
     ],
   },
   {
-    title: 'Summit',
+    title: 'SUMMIT',
     links: [
       { text: 'Summit Agenda', href: '/summit/' },
       { text: 'Delegate', href: '/became-delegate/' },
@@ -58,12 +58,12 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    title: 'GMEA Awards',
+    title: 'GMEA AWARDS',
     links: [
       { text: 'Award Category', href: '/awards/' },
       { text: 'Nominate', href: '/nominate/' },
       { text: 'Sponsor', href: '/register?t=sponsor' },
     ],
   },
-  { title: 'Contact Us', href: '/contact-us/', links: [] },
+  { title: 'CONTACT US', href: '/contact-us/', links: [] },
 ];

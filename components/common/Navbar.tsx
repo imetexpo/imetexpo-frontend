@@ -1,12 +1,11 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { ChevronDown } from 'lucide-react';
-import Container from '../ui/container';
 import { navItems } from './navItems';
 
-const innerPadding = 'px-[calc(1rem+1cm)] sm:px-[calc(1.5rem+1cm)] lg:px-[calc(2rem+1cm)] xl:px-[calc(3rem+1cm)]';
 
 // ═══════════════════════════════════════════════════════════════
 // NEW: Hook to preserve UTM params in navigation
@@ -30,7 +29,7 @@ function useUTMQueryString() {
 // ═══════════════════════════════════════════════════════════════
 // NEW: UTM-preserving Link component
 // ═══════════════════════════════════════════════════════════════
-function UTMLink({ href, className, children, ...props }: { href: string; className?: string; children: React.ReactNode; [key: string]: any }) {
+function UTMLink({ href, className, children, ...props }: { href: string; className?: string; children: React.ReactNode; onClick?: React.MouseEventHandler<HTMLAnchorElement>; target?: string; rel?: string }) {
   const utmQuery = useUTMQueryString();
   
   const isExternal = href.startsWith('http') || href.startsWith('#');
@@ -68,21 +67,8 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const calculateTimeLeft = () => {
-    const targetDate = new Date('2027-05-13T09:00:00').getTime();
-    const diff = targetDate - Date.now();
-    if (diff <= 0) return { days: 0, hours: 0, minutes: 0 };
-    return {
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((diff / (1000 * 60)) % 60),
-    };
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000);
-    return () => clearInterval(timer);
+  useEffect(() => () => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
   }, []);
 
   const handleMouseEnter = (title: string) => {
@@ -98,41 +84,21 @@ export default function Navbar() {
     <div className="w-full bg-[#ffffff] text-[#020B43]">
         {/* TOP BAR */}
         <div>
-          {/* Ticker strip */}
-          <div className="bg-[#ffffff] w-full">
-            <Container className="flex items-center justify-end py-1.5">
-              <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-[#020B43]">
-                <span>
-                  <strong className="text-sm font-bold text-[#008738]">{String(timeLeft.days).padStart(2, '0')}</strong>{' '}
-                  <span className="text-gray-300">Days</span>
-                </span>
-                <span className="text-white/30">|</span>
-                <span>
-                  <strong className="text-sm font-bold text-[#008738]">{String(timeLeft.hours).padStart(2, '0')}</strong>{' '}
-                  <span className="text-gray-300">Hours</span>
-                </span>
-                <span className="text-white/30">|</span>
-                <span>
-                  <strong className="text-sm font-bold text-[#008738]">{String(timeLeft.minutes).padStart(2, '0')}</strong>{' '}
-                  <span className="text-gray-300">Mins</span>
-                </span>
-              </div>
-            </Container>
-          </div>
-
          {/* Logo + date + nav items */}
 <div className="w-full bg-[#ffffff]">
-  <Container className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3 py-3.5">
+  <div className="mx-auto flex w-full max-w-[2560px] flex-nowrap items-center justify-between gap-4 px-4 py-3 lg:px-6 xl:px-10">
     
-    <div className="flex min-w-0 items-center gap-5 xl:gap-5">
+    <div className="flex min-w-0 items-center gap-3 xl:gap-5">
 
       {/* Logo + Subtitle */}
 <div className="flex shrink-0 flex-col items-center">
   <UTMLink href="/">
-    <img
+    <Image
       src="/ITS_logo_white.png"
       alt="IndiaMet Expo"
-      className="-mt-0 h-30 w-auto cursor-pointer object-contain sm:h-20"
+      width={270}
+      height={100}
+      className="h-16 w-auto cursor-pointer object-contain xl:h-20"
     />
   </UTMLink>
 
@@ -143,16 +109,16 @@ export default function Navbar() {
 </div>
 
       {/* Date + Venue */}
-      <div className="mt-7 hidden shrink-0 pl-2 sm:block xl:pl-4">
-        <h1 className="font-[var(--font-montserrat)] text-lg font-bold leading-none tracking-tight text-[#020B43] xl:text-[22px]">
+      <div className="hidden shrink-0 lg:block">
+        <h1 className="font-[var(--font-montserrat)] whitespace-nowrap text-sm font-bold leading-tight tracking-tight text-[#020B43] xl:text-base">
           13 - 15 May  2027
         </h1>
 
-        <p className="mt-1 font-[var(--font-montserrat)] text-sm text-[#020B43] xl:text-[18px]">
+        <p className="mt-0.5 whitespace-nowrap font-[var(--font-montserrat)] text-[11px] leading-tight text-[#020B43] xl:text-xs">
           Auto Cluster Exhibition Center
         </p>
 
-        <p className="font-[var(--font-montserrat)] text-sm text-[#020B43] xl:text-[18px]">
+        <p className="font-[var(--font-montserrat)] text-[11px] leading-tight text-[#020B43] xl:text-xs">
           Pune, India
         </p>
       </div>
@@ -161,7 +127,7 @@ export default function Navbar() {
 
     <nav
       aria-label="Primary"
-      className="mt-6 flex min-w-0 flex-[1_1_20rem] flex-wrap items-center justify-end gap-x-2 gap-y-1 sm:mt-8 lg:mt-10 xl:mt-14 xl:gap-x-4 2xl:mt-14 2xl:flex-[1_1_auto] 2xl:flex-nowrap 2xl:gap-x-8"
+      className="flex shrink-0 flex-nowrap items-center justify-end uppercase gap-3 xl:gap-5 2xl:gap-7"
     >
       {navItems.map((item, index) => {
         const hasLinks = Boolean(item.links && item.links.length > 0);
@@ -182,7 +148,7 @@ export default function Navbar() {
                 onClick={() =>
                   setOpenDropdown((current) => (current === item.title ? null : item.title))
                 }
-                className="flex items-center gap-0.5 whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#008738] lg:text-xs xl:gap-1 xl:py-2 xl:text-sm 2xl:text-base"
+                className="flex items-center gap-0.5 whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#008738] lg:text-xs xl:gap-1 xl:text-sm"
               >
                 {item.title}
                 <ChevronDown
@@ -193,7 +159,7 @@ export default function Navbar() {
               </button>
               {openDropdown === item.title && (
                 <div
-                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#021533] shadow-lg ${
+                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#021533] text-white shadow-lg ${
                     alignRight ? 'right-0' : 'left-0'
                   }`}
                   onMouseEnter={() => handleMouseEnter(item.title)}
@@ -216,7 +182,7 @@ export default function Navbar() {
           ) : (
             <UTMLink
               href={item.href || '#'}
-              className="block whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#008738] lg:text-xs xl:py-2 xl:text-sm 2xl:text-base"
+              className="block whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#008738] lg:text-xs xl:text-sm"
             >
               {item.title}
             </UTMLink>
@@ -225,7 +191,7 @@ export default function Navbar() {
         );
       })}
     </nav>
-  </Container>
+  </div>
 </div>
         </div>
     </div>

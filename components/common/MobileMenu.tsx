@@ -56,7 +56,7 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
           </div>
 
           {/* Navigation Links */}
-          <div className="flex flex-col">
+          <div className="flex flex-col uppercase">
             {navItems.map((item) => {
               const hasLinks = item.links && item.links.length > 0;
               const isDropdownOpen = openDropdown === item.title;
