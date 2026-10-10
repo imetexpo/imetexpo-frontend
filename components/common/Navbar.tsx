@@ -86,7 +86,7 @@ export default function Navbar() {
         <div>
          {/* Logo + date + nav items */}
 <div className="w-full bg-[#020B43]">
-  <div className="mx-auto flex w-full max-w-[2560px] flex-nowrap items-center justify-between gap-4 px-4 py-3 lg:px-6 xl:px-10">
+  <div className="mx-auto flex w-full max-w-[2560px] flex-nowrap items-center justify-between gap-4 px-4 py-14 lg:px-6 xl:px-20">
     
     <div className="flex min-w-0 items-center gap-3 xl:gap-5">
 
