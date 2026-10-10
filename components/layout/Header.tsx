@@ -62,7 +62,7 @@ export default function Header() {
           <div
             aria-hidden="true"
             className="h-[25px] w-full"
-            style={{ background: 'linear-gradient(to right, #020B43, #008738)' }}
+            style={{ background: 'linear-gradient(to right, #020B43, #020B43)' }}
           />
         )}
       </div>
@@ -124,7 +124,7 @@ export default function Header() {
           <div
             aria-hidden="true"
             className="h-[25px] w-full"
-            style={{ background: 'linear-gradient(to right, #020B43, #008738)' }}
+            style={{ background: 'linear-gradient(to right, #020B43, #020B43)' }}
           />
         )}
       </div>

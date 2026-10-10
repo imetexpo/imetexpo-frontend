@@ -81,11 +81,11 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full bg-[#ffffff] text-[#020B43]">
+    <div className="w-full bg-[#020B43] text-[#ffffff]">
         {/* TOP BAR */}
         <div>
          {/* Logo + date + nav items */}
-<div className="w-full bg-[#ffffff]">
+<div className="w-full bg-[#020B43]">
   <div className="mx-auto flex w-full max-w-[2560px] flex-nowrap items-center justify-between gap-4 px-4 py-3 lg:px-6 xl:px-10">
     
     <div className="flex min-w-0 items-center gap-3 xl:gap-5">
@@ -94,7 +94,7 @@ export default function Navbar() {
 <div className="flex shrink-0 flex-col items-center">
   <UTMLink href="/">
     <Image
-      src="/ITS_logo_white.png"
+      src="/footer_logo.png"
       alt="IndiaMet Expo"
       width={270}
       height={100}
@@ -110,15 +110,15 @@ export default function Navbar() {
 
       {/* Date + Venue */}
       <div className="hidden shrink-0 lg:block">
-        <h1 className="font-[var(--font-montserrat)] whitespace-nowrap text-xl font-bold leading-tight tracking-tight text-[#020B43] xxl:text-base">
+        <h1 className="font-[var(--font-montserrat)] whitespace-nowrap text-xl font-bold leading-tight tracking-tight text-[#ffffff] xxl:text-base">
           13 - 15 MAY  2027
         </h1>
 
-        <p className="mt-0.5 whitespace-nowrap font-[var(--font-montserrat)] text-[18px] leading-tight text-[#020B43] xl:text-x">
+        <p className="mt-0.5 whitespace-nowrap font-[var(--font-montserrat)] text-[18px] leading-tight text-[#ffffff] xl:text-x">
           AUTO CLUSTER EXHIBITION CENTER
         </p>
 
-        <p className="font-[var(--font-montserrat)] text-[18px] leading-tight text-[#020B43] xxl:text-xs">
+        <p className="font-[var(--font-montserrat)] text-[18px] leading-tight text-[#ffffff] xxl:text-xs">
           PUNE, INDIA
         </p>
       </div>
@@ -159,7 +159,7 @@ export default function Navbar() {
               </button>
               {openDropdown === item.title && (
                 <div
-                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#021533] text-white shadow-lg ${
+                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#020B43] text-white shadow-lg ${
                     alignRight ? 'right-0' : 'left-0'
                   }`}
                   onMouseEnter={() => handleMouseEnter(item.title)}
