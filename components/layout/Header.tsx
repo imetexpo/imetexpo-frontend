@@ -61,7 +61,7 @@ export default function Header() {
         {isHomePage && (
           <div
             aria-hidden="true"
-            className="h-[25px] w-full"
+            className="h-[5px] w-full"
             style={{ background: 'linear-gradient(to right, #020B43, #020B43)' }}
           />
         )}
