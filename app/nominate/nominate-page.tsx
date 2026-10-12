@@ -239,7 +239,7 @@ export default function NominatePage() {
                   <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#008738]/10 text-2xl text-[#008738]">
                     ✓
                   </div>
-                  <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#020B43]">
+                  <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#000000]">
                     Nomination Submitted
                   </h2>
                   <p className="mx-auto max-w-sm text-lg sm:text-xl text-gray-600">
@@ -581,7 +581,7 @@ export default function NominatePage() {
                     {active === steps.length - 1 ? (
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#008738] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#020B43]"
+                        className="inline-flex items-center gap-2 rounded-sm bg-[#008738] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
                       >
                         Submit
                       </button>
@@ -589,7 +589,7 @@ export default function NominatePage() {
                       <button
                         type="button"
                         onClick={handleNext}
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#008738] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#020B43]"
+                        className="inline-flex items-center gap-2 rounded-sm bg-[#008738] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
                       >
                         Save & Continue →
                       </button>
@@ -643,15 +643,15 @@ export default function NominatePage() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-base text-gray-500">Nominations Open</p>
-                    <p className="text-lg sm:text-xl font-semibold text-[#020B43]">01 January 2027</p>
+                    <p className="text-lg sm:text-xl font-semibold text-[#000000]">01 January 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-base text-gray-500">Last Date to Nominate</p>
-                    <p className="text-lg sm:text-xl font-semibold text-[#020B43]">31 March 2027</p>
+                    <p className="text-lg sm:text-xl font-semibold text-[#000000]">31 March 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-base text-gray-500">Finalists Announcement</p>
-                    <p className="text-lg sm:text-xl font-semibold text-[#020B43]">15 April 2027</p>
+                    <p className="text-lg sm:text-xl font-semibold text-[#000000]">15 April 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-base text-gray-500">Awards Ceremony</p>
@@ -663,8 +663,8 @@ export default function NominatePage() {
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#008738]">Need Help?</h3>
                 <p className="mb-3 text-lg sm:text-xl text-gray-700">Our team is here to assist you with your nomination.</p>
-                <p className="text-lg sm:text-xl text-[#020B43]">📞 +91 91483 19993</p>
-                <p className="text-lg sm:text-xl text-[#020B43]">✉️ support@indiametexpo.com</p>
+                <p className="text-lg sm:text-xl text-[#000000]">📞 +91 91483 19993</p>
+                <p className="text-lg sm:text-xl text-[#000000]">✉️ support@indiametexpo.com</p>
               </div>
             </aside>
           </div>
@@ -705,7 +705,7 @@ function ReviewSection({ title, rows }: { title: string; rows: [string, string][
   const filled = rows.filter(([, value]) => value && value.trim() !== '');
   return (
     <div className="rounded-sm border border-gray-200 p-4">
-      <h4 className="mb-3 text-sm font-semibold text-[#020B43]">{title}</h4>
+      <h4 className="mb-3 text-sm font-semibold text-[#000000]">{title}</h4>
       {filled.length === 0 ? (
         <p className="text-xs italic text-gray-400">Nothing entered</p>
       ) : (

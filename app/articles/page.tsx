@@ -81,13 +81,13 @@ export default function ArticlesPage() {
                       className="w-full h-full object-cover transition-transform duration-550 group-hover:scale-105"
                       src={article.image}
                     />
-                    <div className="absolute inset-0 bg-[#020B43]/10 group-hover:bg-[#020B43]/25 transition duration-300"></div>
+                    <div className="absolute inset-0 bg-[#000000]/10 group-hover:bg-[#000000]/25 transition duration-300"></div>
                   </div>
                   <div className="p-5 space-y-3 font-sans">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
                       {formatDate(article.publishedDate)}
                     </p>
-                    <h2 className="font-bebas text-2xl text-[#020B43] line-clamp-2 group-hover:text-[#008738] transition-colors duration-300 uppercase font-bold">
+                    <h2 className="font-bebas text-2xl text-[#000000] line-clamp-2 group-hover:text-[#008738] transition-colors duration-300 uppercase font-bold">
                       {article.title}
                     </h2>
                     {article.excerpt && (
@@ -98,7 +98,7 @@ export default function ArticlesPage() {
                   </div>
                 </div>
                 <div className="p-5 pt-0 mt-auto">
-                  <span className="text-xs font-bold text-[#008738] group-hover:text-[#020B43] transition-colors uppercase tracking-wider flex items-center gap-1">
+                  <span className="text-xs font-bold text-[#008738] group-hover:text-[#000000] transition-colors uppercase tracking-wider flex items-center gap-1">
                     Read Article →
                   </span>
                 </div>

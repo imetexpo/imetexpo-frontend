@@ -22,7 +22,7 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
             <p className="text-[#008738] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
               Articles
             </p>
-            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#020B43] leading-tight uppercase tracking-tight mt-3">
+            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#000000] leading-tight uppercase tracking-tight mt-3">
               EVENT INSIGHTS & INDUSTRY TRENDS
             </h2>
             <p className="text-gray-600 mt-2 text-lg sm:text-xl font-sans">
@@ -56,7 +56,7 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
                   {formatDate(featuredArticle.publishedDate)}
                 </p>
                 <Link href={`/articles/${featuredArticle.slug}`}>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#020B43] mt-2 leading-snug hover:text-[#008738] transition">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#000000] mt-2 leading-snug hover:text-[#008738] transition">
                     {featuredArticle.title}
                   </h3>
                 </Link>
@@ -84,7 +84,7 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
                     {formatDate(article.publishedDate)}
                   </p>
                   <Link href={`/articles/${article.slug}`}>
-                    <h4 className="text-base sm:text-lg font-bold text-[#020B43] mt-1 leading-snug hover:text-[#008738] transition line-clamp-2">
+                    <h4 className="text-base sm:text-lg font-bold text-[#000000] mt-1 leading-snug hover:text-[#008738] transition line-clamp-2">
                       {article.title}
                     </h4>
                   </Link>

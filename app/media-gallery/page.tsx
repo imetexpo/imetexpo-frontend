@@ -120,7 +120,7 @@ export default function MediaGalleryPage() {
         {/* Gallery Header */}
         <Container>
           <div className="border-b border-gray-250 pb-6 mb-8 mt-10">
-            <h1 className="font-bebas text-5xl sm:text-6xl text-[#020B43] uppercase tracking-wide">
+            <h1 className="font-bebas text-5xl sm:text-6xl text-[#000000] uppercase tracking-wide">
               A Visual Journey Through <span className="text-[#008738]">INDIAMET Expo</span>
             </h1>
             <p className="mt-2 text-sm text-gray-650 font-sans">

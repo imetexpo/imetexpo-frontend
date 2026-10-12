@@ -62,7 +62,7 @@ export default function Header() {
           <div
             aria-hidden="true"
             className="h-[5px] w-full"
-            style={{ background: 'linear-gradient(to right, #020B43, #020B43)' }}
+            style={{ background: 'linear-gradient(to right, #000000, #000000)' }}
           />
         )}
       </div>
@@ -76,7 +76,7 @@ export default function Header() {
 
       <div
         ref={mobileHeaderRef}
-        className="lg:hidden fixed top-0 left-0 w-full z-[60] bg-[#020B43] shadow-lg"
+        className="lg:hidden fixed top-0 left-0 w-full z-[60] bg-[#000000] shadow-lg"
       >
         <div className="px-3 py-3 sm:px-4">
           <div className="flex items-center justify-between">
@@ -100,7 +100,7 @@ export default function Header() {
               <Link
                 href="/login/"
                 className="bg-[#008738] text-white px-4 py-1.5 text-sm border border-white/20
-                hover:bg-[#008738] hover:text-[#020B43] transition-all duration-300 rounded-sm"
+                hover:bg-[#008738] hover:text-[#000000] transition-all duration-300 rounded-sm"
               >
                 Login
               </Link>

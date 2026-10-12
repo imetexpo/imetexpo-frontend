@@ -74,7 +74,7 @@ export default function ExhibitorLoginPage() {
   };
 
   return (
-    <div className="relative isolate flex w-full flex-1 items-start justify-center overflow-x-hidden bg-[#020B43] px-4 py-5 sm:items-center sm:py-10">
+    <div className="relative isolate flex w-full flex-1 items-start justify-center overflow-x-hidden bg-[#000000] px-4 py-5 sm:items-center sm:py-10">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[#008738] opacity-20 blur-3xl sm:h-64 sm:w-64" />
         <div className="absolute -bottom-16 -left-16 h-80 w-40 rounded-full bg-[#008738] opacity-10 blur-3xl sm:h-64 sm:w-64" />
@@ -162,7 +162,7 @@ export default function ExhibitorLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-sm bg-[#008738] py-3 font-semibold uppercase tracking-wider text-white shadow-lg transition hover:bg-[#FFD154] hover:text-[#020B43] disabled:cursor-not-allowed disabled:opacity-50"
+              className="w-full rounded-sm bg-[#008738] py-3 font-semibold uppercase tracking-wider text-white shadow-lg transition hover:bg-[#FFD154] hover:text-[#000000] disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">

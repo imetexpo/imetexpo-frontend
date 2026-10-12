@@ -81,11 +81,11 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full bg-[#020B43] text-[#ffffff]">
+    <div className="w-full bg-[#000000] text-[#ffffff]">
         {/* TOP BAR */}
         <div>
          {/* Logo + date + nav items */}
-<div className="w-full bg-[#020B43]">
+<div className="w-full bg-[#000000]">
   <div className="mx-auto flex w-full max-w-[2560px] flex-nowrap items-center justify-between gap-4 px-4 py-14 lg:px-6 xl:px-20">
     
     <div className="flex min-w-0 items-center gap-3 xl:gap-5">
@@ -98,7 +98,7 @@ export default function Navbar() {
       alt="IndiaMet Expo"
       width={270}
       height={100}
-      className="h-16 w-auto cursor-pointer object-contain xl:h-20"
+      className="h-16 w-auto cursor-pointer object-contain xl:h-35"
     />
   </UTMLink>
 
@@ -159,7 +159,7 @@ export default function Navbar() {
               </button>
               {openDropdown === item.title && (
                 <div
-                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#020B43] text-white shadow-lg ${
+                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#000000] text-white shadow-lg ${
                     alignRight ? 'right-0' : 'left-0'
                   }`}
                   onMouseEnter={() => handleMouseEnter(item.title)}

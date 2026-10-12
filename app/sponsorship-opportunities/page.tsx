@@ -18,7 +18,7 @@ export default function AdvertisingDetailsPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#020B43]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#000000]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -302,7 +302,7 @@ export default function AdvertisingDetailsPage() {
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl text-[#020B43] uppercase">
+              <h2 className="font-bebas text-4xl sm:text-5xl text-[#000000] uppercase">
                 By leveraging these promotional options, you can:
               </h2>
               <p className="mt-2 text-base sm:text-lg font-bold text-[#008738] uppercase tracking-wider">
@@ -334,7 +334,7 @@ export default function AdvertisingDetailsPage() {
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl sm:text-5xl text-[#020B43] uppercase">
+              <h2 className="font-bebas text-4xl sm:text-5xl text-[#000000] uppercase">
                 Sponsorship <span className="text-[#008738]"> Options</span>
               </h2>
               <div className="mt-8 space-y-6">
@@ -344,7 +344,7 @@ export default function AdvertisingDetailsPage() {
                     className="group overflow-hidden rounded-sm border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-lg"
                   >
                     <div className="grid lg:grid-cols-[280px_1fr]">
-                      <div className="relative flex min-h-[220px] items-center justify-center bg-[#020B43] p-8 lg:min-h-full">
+                      <div className="relative flex min-h-[220px] items-center justify-center bg-[#000000] p-8 lg:min-h-full">
                         <div className="absolute inset-y-0 left-0 w-1.5 bg-[#008738]" />
                         <div className="flex h-40 w-40 items-center justify-center overflow-hidden rounded-sm bg-white p-5 sm:h-44 sm:w-44">
                           <ImageWithFallback
@@ -359,11 +359,11 @@ export default function AdvertisingDetailsPage() {
 
                       <div className="flex flex-col gap-4 p-6 sm:p-8">
                         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                          <h4 className="font-bebas text-3xl font-bold tracking-wide text-[#020B43] uppercase sm:text-4xl">
+                          <h4 className="font-bebas text-3xl font-bold tracking-wide text-[#000000] uppercase sm:text-4xl">
                             {item.title}
                           </h4>
                           <Link href={item.buttonLink} className="shrink-0">
-                            <button className="bg-[#008738] hover:bg-[#020B43] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                            <button className="bg-[#008738] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                               {item.buttonText}
                             </button>
                           </Link>

@@ -26,7 +26,7 @@ export default function SectionHeader({
 
       {/* TITLE */}
       <h2 
-        className={`font-bebas font-bold text-[46px] md:text-[70px] uppercase tracking-[2px] text-[#020B43] leading-[1.05] ${
+        className={`font-bebas font-bold text-[46px] md:text-[70px] uppercase tracking-[2px] text-[#000000] leading-[1.05] ${
           topText ? 'mt-3' : ''
         }`}
       >

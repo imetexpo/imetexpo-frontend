@@ -33,7 +33,7 @@ export default function AboutSection() {
               About INDIAMET Expo
             </p>
 
-            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#020B43] leading-tight uppercase tracking-tight">
+            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#000000] leading-tight uppercase tracking-tight">
               POWERING THE FUTURE OF PRECISION & QUALITY
             </h2>
 
@@ -58,7 +58,7 @@ export default function AboutSection() {
             <div className="mt-4 sm:mt-5 lg:mt-6">
               <Button
                 href="/about"
-                className="bg-[#008738] hover:bg-[#020B43] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 inline-block rounded-sm"
+                className="bg-[#008738] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 inline-block rounded-sm"
               >
                 Learn More
               </Button>
