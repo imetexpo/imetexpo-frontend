@@ -86,7 +86,7 @@ export default function Navbar() {
         <div>
          {/* Logo + date + nav items */}
 <div className="w-full bg-[#000000]">
-  <div className="mx-auto flex w-full max-w-[2560px] flex-nowrap items-center justify-between gap-4 px-4 py-14 lg:px-6 xl:px-20">
+  <div className="mx-auto flex w-full max-w-[2560px] flex-nowrap items-center justify-between gap-4 px-4 py-4 lg:px-6 xl:px-20">
     
     <div className="flex min-w-0 items-center gap-3 xl:gap-5">
 
@@ -127,7 +127,7 @@ export default function Navbar() {
 
     <nav
       aria-label="Primary"
-      className="flex shrink-0 flex-nowrap items-center justify-end uppercase gap-3 xl:gap-5 2xl:gap-7"
+      className="mt-12 flex shrink-0 flex-nowrap items-center justify-end uppercase gap-3 xl:gap-5 2xl:gap-7"
     >
       {navItems.map((item, index) => {
         const hasLinks = Boolean(item.links && item.links.length > 0);
