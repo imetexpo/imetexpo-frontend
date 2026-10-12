@@ -15,7 +15,7 @@ export default function Header() {
   const desktopNavRef = useRef<HTMLDivElement>(null);
   const mobileHeaderRef = useRef<HTMLDivElement>(null);
   const [desktopNavHeight, setDesktopNavHeight] = useState(isHomePage ? 129 : 104);
-  const [mobileHeaderHeight, setMobileHeaderHeight] = useState(isHomePage ? 105 : 80);
+  const [mobileHeaderHeight, setMobileHeaderHeight] = useState(80);
 
   useEffect(() => {
     const el = desktopNavRef.current;
@@ -120,13 +120,6 @@ export default function Header() {
             </div>
           </div>
         </div>
-        {isHomePage && (
-          <div
-            aria-hidden="true"
-            className="h-[25px] w-full"
-            style={{ background: 'linear-gradient(to right, #020B43, #020B43)' }}
-          />
-        )}
       </div>
 
       {/* Mobile spacer to prevent page content underlap */}
