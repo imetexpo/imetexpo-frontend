@@ -96,7 +96,7 @@ export default function Navbar() {
     <Image
       src="/footer_logo.png"
       alt="IndiaMet Expo"
-      width={270}
+      width={200}
       height={100}
       className="h-16 w-auto cursor-pointer object-contain xl:h-35"
     />
