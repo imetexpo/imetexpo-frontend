@@ -98,7 +98,7 @@ export default function Navbar() {
       alt="IndiaMet Expo"
       width={200}
       height={100}
-      className="h-16 w-auto cursor-pointer object-contain xl:h-15"
+      className="h-16 w-auto cursor-pointer object-contain xl:h-40"
     />
   </UTMLink>
 

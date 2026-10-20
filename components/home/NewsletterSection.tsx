@@ -6,7 +6,7 @@ import Container from '../ui/container';
 export default function NewsletterSection() {
   return (
     <section className="bg-[#000000] py-16 sm:py-20 lg:py-24 text-white border-t border-white/10">
-      <Container>
+      {/* <Container>
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10">
           <div className="max-w-[900px] text-center lg:text-left">
             <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-white leading-tight uppercase tracking-tight">
@@ -26,7 +26,7 @@ export default function NewsletterSection() {
             </Button>
           </div>
         </div>
-      </Container>
+      </Container> */}
     </section>
   );
 }
