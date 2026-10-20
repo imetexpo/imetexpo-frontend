@@ -8,43 +8,43 @@ import Container from '../ui/container';
 const sectorsData = [
   {
     id: 1,
-    title: 'Coordinate Measuring Machines (CMM)',
-    slug: 'coordinate-measuring-machines-cmm',
+  title: "Coordinate Measuring Machines (CMM)",
+  slug: "coordinate-measuring-machines-cmm",
     shortText: 'Advanced CMMs and 3D coordinate measurement systems for high-precision inspection and quality control.',
     image: '/images/cmm.png',
   },
   {
     id: 2,
-    title: 'Dimensional Measurement',
-    slug: 'dimensional-measurement',
+  title: "Dimensional Measurement & Gauging",
+  slug: "dimensional-measurement-and-gauging",
     shortText: 'Precision instruments and systems for dimensional, form, surface, and geometric measurement.',
     image: '/images/measure.jpg',
   },
   {
     id: 3,
-    title: 'Optical & Vision Metrology',
-    slug: 'optical-and-vision-metrology',
+  title: "Optical & Vision Metrology",
+  slug: "optical-and-vision-metrology",
     shortText: 'Optical measurement, machine vision, 3D scanning, and non-contact inspection technologies.',
     image: '/images/optical.jpg',
   },
   {
     id: 4,
-    title: 'Calibration & Testing',
-    slug: 'calibration-and-testing',
+  title: "3D Scanning & Digital Measurement",
+  slug: "3d-scanning-and-digital-measurement",
     shortText: 'Calibration equipment, testing systems, reference standards, and laboratory measurement solutions.',
     image: '/images/calibration.webp',
   },
   {
     id: 5,
-    title: 'Surface & Form Measurement',
-    slug: 'surface-and-form-measurement',
+title: "Surface & Form Measurement",
+  slug: "surface-and-form-measurement",
     shortText: 'Advanced solutions for surface roughness, contour, roundness, cylindricity, and form measurement.',
     image: '/images/surface.jpeg',
   },
   {
     id: 6,
-    title: 'Metrology Software & Industry 4.0',
-    slug: 'metrology-software-and-industry-40',
+   title: "Calibration & Reference Standards",
+  slug: "calibration-and-reference-standards",
     shortText: 'Smart metrology software, automation, digital inspection, data analytics, and connected quality solutions.',
     image: '/images/software.png',
   },
@@ -96,7 +96,7 @@ export default function SectorsSection() {
                     <Image
                       src={sector.image}
                       alt={sector.title}
-                      fill
+                                            fill
                       className="object-cover group-hover:scale-105 transition duration-500"
                     />
                   </div>
