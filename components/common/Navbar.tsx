@@ -81,7 +81,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full bg-[#ffffff] text-[#000000]">
+    <div className="w-full bg-[#ffffff] text-[#003A77]">
         {/* TOP BAR */}
         <div>
          {/* Logo + date + nav items */}
@@ -159,7 +159,7 @@ export default function Navbar() {
               </button>
               {openDropdown === item.title && (
                 <div
-                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#000000] text-white shadow-lg ${
+                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#003A77] text-white shadow-lg ${
                     alignRight ? 'right-0' : 'left-0'
                   }`}
                   onMouseEnter={() => handleMouseEnter(item.title)}

@@ -9,7 +9,7 @@ export default function ExhibitorContent() {
   return (
     <div className="flex flex-col gap-6 sm:gap-8">
       <div className="space-y-4">
-        <h2 className="font-bebas text-3xl text-[#000000] uppercase">
+        <h2 className="font-bebas text-3xl text-[#003A77] uppercase">
           Why <span className="text-[#00A1B1]">Exhibit?</span>
         </h2>
         <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
@@ -41,7 +41,7 @@ export default function ExhibitorContent() {
       </div>
 
       <div className="space-y-4">
-        <h2 className="font-bebas text-3xl text-[#000000] uppercase">
+        <h2 className="font-bebas text-3xl text-[#003A77] uppercase">
           Who You'll <span className="text-[#00A1B1]">Meet:</span>
         </h2>
         <ul className="space-y-2">

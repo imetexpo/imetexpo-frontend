@@ -119,7 +119,7 @@ export default function ResourceGuidePage({
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#000000]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#003A77]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl" />
         </div>
@@ -145,13 +145,13 @@ export default function ResourceGuidePage({
                   />
                 </div>
                 <div className="order-2 space-y-6 lg:order-1">
-                  <h1 className="font-bebas text-5xl uppercase leading-tight text-[#000000] sm:text-6xl md:text-7xl">
+                  <h1 className="font-bebas text-5xl uppercase leading-tight text-[#003A77] sm:text-6xl md:text-7xl">
                     {introTitle} <span className="text-[#00A1B1]">{introAccent}</span>
                   </h1>
                   <p className="font-sans text-lg leading-relaxed text-gray-700 sm:text-xl">{introBody}</p>
                   <div className="pt-2">
                     <Link href={introCtaHref} target={introCtaHref.startsWith('http') ? '_blank' : undefined}>
-                      <button className="rounded-sm bg-[#00A1B1] px-8 py-3 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]">
+                      <button className="rounded-sm bg-[#00A1B1] px-8 py-3 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77]">
                         {introCtaText}
                       </button>
                     </Link>
@@ -165,7 +165,7 @@ export default function ResourceGuidePage({
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12 lg:mt-16">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl uppercase text-[#000000] sm:text-5xl md:text-6xl">
+              <h2 className="font-bebas text-4xl uppercase text-[#003A77] sm:text-5xl md:text-6xl">
                 {benefitsHeading} <span className="text-[#00A1B1]">{benefitsAccent}</span>
               </h2>
               <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -195,7 +195,7 @@ export default function ResourceGuidePage({
         <Container className="py-10">
           <div className="animated-block mt-8 sm:mt-12 lg:mt-16">
             <div className="animated-block-target">
-              <h2 className="font-bebas text-4xl uppercase text-[#000000] sm:text-5xl md:text-6xl">
+              <h2 className="font-bebas text-4xl uppercase text-[#003A77] sm:text-5xl md:text-6xl">
                 {optionsHeading} <span className="text-[#00A1B1]">{optionsAccent}</span>
               </h2>
               <p className="mt-2 text-sm font-bold uppercase tracking-wider text-[#00A1B1]">{optionsSubheading}</p>
@@ -216,7 +216,7 @@ export default function ResourceGuidePage({
                         />
                       </div>
                       <div className="flex flex-col gap-3 p-5">
-                        <h4 className="font-bebas text-2xl font-bold uppercase text-[#000000] sm:text-3xl">
+                        <h4 className="font-bebas text-2xl font-bold uppercase text-[#003A77] sm:text-3xl">
                           {option.title}
                         </h4>
                         <p className="line-clamp-4 text-lg leading-relaxed text-gray-650 sm:text-xl">
@@ -226,7 +226,7 @@ export default function ResourceGuidePage({
                     </div>
                     <div className="mt-auto p-5 pt-0">
                       <Link href={option.buttonLink || '/contact-us'}>
-                        <button className="rounded-sm bg-[#00A1B1] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]">
+                        <button className="rounded-sm bg-[#00A1B1] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77]">
                           {option.buttonText || 'Enquire Now'}
                         </button>
                       </Link>
@@ -242,7 +242,7 @@ export default function ResourceGuidePage({
           <div className="animated-block-target">
             <div className="border-t border-b border-gray-150 bg-[#FCF8F3] py-16">
               <Container>
-                <h2 className="font-bebas text-4xl uppercase text-[#000000] sm:text-5xl md:text-6xl">
+                <h2 className="font-bebas text-4xl uppercase text-[#003A77] sm:text-5xl md:text-6xl">
                   {faqHeading} <span className="text-[#00A1B1]">{faqAccent}</span>
                 </h2>
                 <div className="mt-8 space-y-4">
@@ -253,7 +253,7 @@ export default function ResourceGuidePage({
                         onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
                         className="flex w-full cursor-pointer items-center justify-between p-4 text-left transition-all hover:bg-gray-50 sm:p-5"
                       >
-                        <h4 className="pr-4 font-sans text-base font-bold uppercase text-[#000000] sm:text-lg md:text-xl">
+                        <h4 className="pr-4 font-sans text-base font-bold uppercase text-[#003A77] sm:text-lg md:text-xl">
                           {item.question}
                         </h4>
                         <div className="relative shrink-0">

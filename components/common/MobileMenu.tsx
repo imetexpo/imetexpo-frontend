@@ -38,13 +38,13 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
     <>
       {/* Overlay */}
       <div 
-        className="fixed inset-0 bg-[#000000]/60 z-40 lg:hidden transition-opacity duration-300" 
+        className="fixed inset-0 bg-[#003A77]/60 z-40 lg:hidden transition-opacity duration-300" 
         onClick={onClose} 
       />
       
       {/* Floating Rounded Menu Card */}
       <div
-        className="fixed left-4 right-4 bottom-4 bg-[#000000] border border-neutral-900 z-45 shadow-2xl overflow-y-auto rounded-[28px] p-6 text-white lg:hidden flex flex-col justify-between font-sans transition-all duration-300 animate-slide-up no-scrollbar"
+        className="fixed left-4 right-4 bottom-4 bg-[#003A77] border border-neutral-900 z-45 shadow-2xl overflow-y-auto rounded-[28px] p-6 text-white lg:hidden flex flex-col justify-between font-sans transition-all duration-300 animate-slide-up no-scrollbar"
         style={{ top: topOffset }}
       >
         
@@ -113,14 +113,14 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
           <Link
             href="/exhibiting-enquiry/"
             onClick={onClose}
-            className="block w-full rounded-sm border border-[#00A1B1] bg-[#00A1B1] py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#000000]"
+            className="block w-full rounded-sm border border-[#00A1B1] bg-[#00A1B1] py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#003A77]"
           >
             Exhibit
           </Link>
           <Link
             href="/visitor-registration/"
             onClick={onClose}
-            className="block w-full rounded-sm border border-white bg-transparent py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-[#000000]"
+            className="block w-full rounded-sm border border-white bg-transparent py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-[#003A77]"
           >
             Register
           </Link>

@@ -37,7 +37,7 @@ export default function PlanYourTravelPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#000000]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#003A77]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl" />
         </div>
@@ -290,7 +290,7 @@ export default function PlanYourTravelPage() {
           <div className="animated-block-target">
             <Container>
               <div className="mb-10 flex flex-col items-start justify-between gap-6 border-b border-gray-200 pb-8 lg:flex-row lg:items-center">
-                <h2 className="font-bebas text-4xl uppercase text-[#000000] md:text-5xl">
+                <h2 className="font-bebas text-4xl uppercase text-[#003A77] md:text-5xl">
                   Travel{" "}
                   <span className="text-[#00A1B1]">
                     Information
@@ -305,7 +305,7 @@ export default function PlanYourTravelPage() {
                     className={`cursor-pointer rounded-sm px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                       activeTab === "exhibitor"
                         ? "bg-[#00A1B1] text-white"
-                        : "bg-transparent text-[#000000] hover:text-[#00A1B1]"
+                        : "bg-transparent text-[#003A77] hover:text-[#00A1B1]"
                     }`}
                   >
                     For Exhibitors
@@ -317,7 +317,7 @@ export default function PlanYourTravelPage() {
                     className={`cursor-pointer rounded-sm px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                       activeTab === "visitor"
                         ? "bg-[#00A1B1] text-white"
-                        : "bg-transparent text-[#000000] hover:text-[#00A1B1]"
+                        : "bg-transparent text-[#003A77] hover:text-[#00A1B1]"
                     }`}
                   >
                     For Visitors
@@ -342,7 +342,7 @@ export default function PlanYourTravelPage() {
                       </div>
 
                       <div className="flex-1 space-y-2 text-center md:text-left">
-                        <h4 className="font-bebas text-2xl font-bold uppercase tracking-wide text-[#000000]">
+                        <h4 className="font-bebas text-2xl font-bold uppercase tracking-wide text-[#003A77]">
                           {item.title}
                         </h4>
 
@@ -354,7 +354,7 @@ export default function PlanYourTravelPage() {
                       <div className="mt-4 shrink-0 md:mt-0">
                         <Link
                           href={item.buttonLink}
-                          className="inline-flex rounded-sm bg-[#00A1B1] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
+                          className="inline-flex rounded-sm bg-[#00A1B1] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77]"
                         >
                           {item.buttonText}
                         </Link>
@@ -372,7 +372,7 @@ export default function PlanYourTravelPage() {
           <div className="animated-block-target">
             <Container>
               <div className="mb-10 border-l-4 border-[#00A1B1] pl-6">
-                <h2 className="font-bebas text-4xl uppercase text-[#000000] md:text-5xl">
+                <h2 className="font-bebas text-4xl uppercase text-[#003A77] md:text-5xl">
                   Accommodation in{" "}
                   <span className="text-[#00A1B1]">Pune</span>
                 </h2>
@@ -400,7 +400,7 @@ export default function PlanYourTravelPage() {
                       </div>
 
                       <div className="mt-4">
-                        <h4 className="line-clamp-1 font-bebas text-2xl font-bold uppercase tracking-wide text-[#000000]">
+                        <h4 className="line-clamp-1 font-bebas text-2xl font-bold uppercase tracking-wide text-[#003A77]">
                           {hotel.name}
                         </h4>
 
@@ -415,7 +415,7 @@ export default function PlanYourTravelPage() {
                         href={hotel.bookLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 rounded-sm bg-[#00A1B1] py-2 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
+                        className="flex-1 rounded-sm bg-[#00A1B1] py-2 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77]"
                       >
                         Book Room
                       </Link>
@@ -424,7 +424,7 @@ export default function PlanYourTravelPage() {
                         href={hotel.mapLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 rounded-sm border border-[#00A1B1] py-2 text-center text-xs font-bold uppercase tracking-wider text-[#00A1B1] transition-all duration-300 hover:border-[#000000] hover:bg-[#000000] hover:text-white"
+                        className="flex-1 rounded-sm border border-[#00A1B1] py-2 text-center text-xs font-bold uppercase tracking-wider text-[#00A1B1] transition-all duration-300 hover:border-[#003A77] hover:bg-[#003A77] hover:text-white"
                       >
                         Location
                       </Link>
@@ -444,7 +444,7 @@ export default function PlanYourTravelPage() {
         {/* Quick Navigation */}
         {/* <div className="animated-block mt-20">
           <div className="animated-block-target">
-            <div className="border-t border-[#00A1B1] bg-[#000000] py-16 text-white">
+            <div className="border-t border-[#00A1B1] bg-[#003A77] py-16 text-white">
               <Container>
                 <h2 className="text-center font-bebas text-5xl uppercase tracking-wider md:text-6xl lg:text-left">
                   Quick Navigation

@@ -192,7 +192,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#00A1B1]/10 text-2xl text-[#00A1B1]">
           ✓
         </div>
-        <h3 className="font-bebas text-3xl uppercase tracking-wide text-[#000000]">
+        <h3 className="font-bebas text-3xl uppercase tracking-wide text-[#003A77]">
           Thank You{submittedName ? `, ${submittedName}` : ''}
         </h3>
         <p className="mt-2 text-sm text-gray-600">
@@ -201,7 +201,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         <button
           type="button"
           onClick={() => setShowThankYou(false)}
-          className="mt-6 rounded-sm bg-[#00A1B1] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
+          className="mt-6 rounded-sm bg-[#00A1B1] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77]"
         >
           Register another delegate
         </button>
@@ -423,7 +423,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`rounded-sm bg-[#00A1B1] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000] ${
+          className={`rounded-sm bg-[#00A1B1] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77] ${
             isSubmitting ? 'cursor-not-allowed opacity-70' : ''
           }`}
         >

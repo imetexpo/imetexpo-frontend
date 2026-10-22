@@ -13,7 +13,7 @@ export default function BrochureSection() {
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-[#000000]/70" />
+      <div className="absolute inset-0 bg-[#003A77]/70" />
       
       <Image
         src="/imgs/shape-1.svg"
@@ -58,7 +58,7 @@ export default function BrochureSection() {
             </p>
             <Button
               href="/event-brochure/"
-              className="bg-[#00A1B1] hover:bg-white hover:text-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mx-auto lg:mx-0"
+              className="bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mx-auto lg:mx-0"
             >
               Download Your Event Brochure
             </Button>

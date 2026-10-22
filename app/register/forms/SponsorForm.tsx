@@ -355,7 +355,7 @@ export default function SponsorForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`w-full bg-[#00A1B1] hover:bg-[#000000] text-white font-semibold py-3 px-4 rounded-lg transition-all hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:ring-offset-2 ${
+        className={`w-full bg-[#00A1B1] hover:bg-[#003A77] text-white font-semibold py-3 px-4 rounded-lg transition-all hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:ring-offset-2 ${
           isSubmitting ? "opacity-70 cursor-not-allowed" : ""
         }`}
       >

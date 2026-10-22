@@ -20,7 +20,7 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
           <p className="text-[#00A1B1] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
             Key Outcomes of Exhibiting
           </p>
-          <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#000000] leading-tight uppercase tracking-tight mt-3">
+          <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#003A77] leading-tight uppercase tracking-tight mt-3">
             TURN PRECISION TECHNOLOGY INTO BUSINESS GROWTH
           </h2>
           <p className="mt-4 sm:mt-5 font-sans text-lg sm:text-xl text-gray-700 leading-relaxed max-w-3xl">
@@ -56,7 +56,7 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
         <div className="mt-8 sm:mt-10 lg:mt-12">
           <Link
             href="/post-show-report/"
-            className="inline-block bg-[#00A1B1] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
+            className="inline-block bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
           >
             Download Expo Brochure
           </Link>

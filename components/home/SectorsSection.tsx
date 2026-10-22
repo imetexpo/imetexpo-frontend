@@ -62,7 +62,7 @@ export default function SectorsSection() {
               <p className="text-[#00A1B1] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
                 Event Sectors
               </p>
-              <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#000000] leading-tight uppercase tracking-tight mt-3">
+              <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#003A77] leading-tight uppercase tracking-tight mt-3">
                 EXPLORE KEY SECTORS SHAPING THE FUTURE OF PRECISION
               </h2>
             </div>
@@ -121,7 +121,7 @@ export default function SectorsSection() {
           <Container> 
             <div className="mt-8 sm:mt-10 lg:mt-12">
               <Link href="/sectors/">
-                <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                   Explore All The Sectors
                 </button>
               </Link>

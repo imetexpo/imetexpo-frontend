@@ -300,7 +300,7 @@ export default function OurExhibitionsSection() {
     <Container className="py-12 sm:py-16 lg:py-20">
       <div className="flex w-full items-end justify-between gap-10 max-lg:flex-wrap lg:gap-20 2xl:gap-40">
         <div>
-          <h3 className="font-bebas text-3xl leading-tight text-[#000000] sm:text-4xl md:text-5xl lg:text-6xl">
+          <h3 className="font-bebas text-3xl leading-tight text-[#003A77] sm:text-4xl md:text-5xl lg:text-6xl">
             Our Exhibitions at a Glance
           </h3>
           <div className="mt-4 space-y-4 text-lg leading-relaxed text-gray-700 sm:mt-5 sm:text-xl">
@@ -348,7 +348,7 @@ export default function OurExhibitionsSection() {
                 rel="noopener noreferrer"
                 href={event.href}
               >
-                <span className="flex items-center gap-2 font-bebas text-2xl text-[#00A1B1] transition-colors duration-300 hover:text-[#000000]">
+                <span className="flex items-center gap-2 font-bebas text-2xl text-[#00A1B1] transition-colors duration-300 hover:text-[#003A77]">
                   Visit Website
                   <ChevronIcon />
                 </span>

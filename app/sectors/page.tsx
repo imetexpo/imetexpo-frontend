@@ -19,7 +19,7 @@ export default function SectorsPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#000000]">
+      <div className="fixed inset-0 z-100 grid place-content-center bg-[#003A77]">
         <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
           <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
         </div>
@@ -128,7 +128,7 @@ export default function SectorsPage() {
   return (
     <div className="intro-animation">
       {/* Mobile Header */}
-      <div className="fixed left-0 top-0 z-50 w-full bg-[#000000] px-5 py-2 lg:hidden">
+      <div className="fixed left-0 top-0 z-50 w-full bg-[#003A77] px-5 py-2 lg:hidden">
         <div className="flex justify-between">
           <Link href="/">
             <Image src="/imgs/logo-its.png" alt="INDIAMET Expo" width={140} height={40} className="h-auto w-auto object-contain" />
@@ -163,7 +163,7 @@ export default function SectorsPage() {
           <div className="animated-block-target">
             <Container>
               <div className="text-center lg:text-left">
-                <h2 className="mt-10 font-bebas text-5xl text-[#000000] md:text-6xl lg:text-7xl">
+                <h2 className="mt-10 font-bebas text-5xl text-[#003A77] md:text-6xl lg:text-7xl">
                   Sectors Showcased at <span className="text-[#00A1B1]">INDIAMET Expo</span>
                 </h2>
                 <p className="mx-auto mt-5 max-w-9xl text-lg sm:text-xl text-gray-700 lg:mx-0">
@@ -222,7 +222,7 @@ export default function SectorsPage() {
             <Container>
               <div className="mb-10 text-center lg:mb-12 lg:text-left">
                 <p className="font-bold text-[#00A1B1]">Quick Guide</p>
-                <h3 className="mt-2 font-bebas text-5xl text-[#000000] md:text-6xl lg:text-7xl">
+                <h3 className="mt-2 font-bebas text-5xl text-[#003A77] md:text-6xl lg:text-7xl">
                   Simplifying Your <span className="text-[#00A1B1]">Participation Journey</span>
                 </h3>
               </div>
@@ -239,17 +239,17 @@ export default function SectorsPage() {
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-[#000000]/20 group-hover:bg-[#000000]/40 transition-all duration-300"></div>
+                      <div className="absolute inset-0 bg-[#003A77]/20 group-hover:bg-[#003A77]/40 transition-all duration-300"></div>
                       <div className="absolute bottom-4 left-0 right-0 flex justify-start pl-4">
                         <Link href={item.buttonLink}>
-                          <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                          <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                             {item.buttonText}
                           </button>
                         </Link>
                       </div>
                     </div>
                     <div className="flex flex-1 flex-col gap-3 p-5 font-sans">
-                      <h4 className="font-bebas text-2xl text-[#000000] md:text-3xl font-bold">{item.title}</h4>
+                      <h4 className="font-bebas text-2xl text-[#003A77] md:text-3xl font-bold">{item.title}</h4>
                       <p className="text-lg sm:text-xl text-gray-600 leading-relaxed line-clamp-3">{item.description}</p>
                     </div>
                   </div>

@@ -42,7 +42,7 @@ export default function SponsorContent() {
       </div>
 
       <div>
-        <h3 className="text-2xl font-bold text-[#000000] mb-4 font-bebas">Partnership Benefits</h3>
+        <h3 className="text-2xl font-bold text-[#003A77] mb-4 font-bebas">Partnership Benefits</h3>
         <ul className="space-y-3">
           {[
             "Premium visibility across all event marketing materials",

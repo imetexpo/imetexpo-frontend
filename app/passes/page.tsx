@@ -218,13 +218,13 @@ export default function PassesPage() {
       {step === 'phone' && (
         <>
           <section className="relative overflow-hidden bg-[#FCF8F3]">
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:44px_44px]" />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#003A770a_1px,transparent_1px),linear-gradient(to_bottom,#003A770a_1px,transparent_1px)] bg-[size:44px_44px]" />
             <Container className="relative grid items-center gap-12 py-12 lg:grid-cols-2 lg:py-16">
               <div>
                 <span className="inline-flex items-center rounded-sm bg-[#00A1B1]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#00A1B1]">
                   IndiaMET 2027 · Registration Open
                 </span>
-                <h1 className="mt-5 font-bebas text-5xl uppercase leading-none tracking-tight text-[#000000] md:text-6xl lg:text-7xl">
+                <h1 className="mt-5 font-bebas text-5xl uppercase leading-none tracking-tight text-[#003A77] md:text-6xl lg:text-7xl">
                   Your <span className="text-[#00A1B1]">Digital Visitor Badge</span> In Seconds
                 </h1>
                 <p className="mt-4 max-w-xl text-lg sm:text-xl leading-relaxed text-gray-600">
@@ -232,11 +232,11 @@ export default function PassesPage() {
                   via WhatsApp or SMS, and walk into the exhibition hassle-free.
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider">
-                  <span className="rounded-sm bg-white px-3 py-1 text-[#000000] shadow-sm">1 Register</span>
+                  <span className="rounded-sm bg-white px-3 py-1 text-[#003A77] shadow-sm">1 Register</span>
                   <ArrowRight className="h-4 w-4 text-gray-400" />
                   <span className="rounded-sm bg-[#00A1B1]/10 px-3 py-1 text-[#00A1B1]">2 Get Badge</span>
                   <ArrowRight className="h-4 w-4 text-gray-400" />
-                  <span className="rounded-sm bg-[#000000] px-3 py-1 text-white">3 Walk In</span>
+                  <span className="rounded-sm bg-[#003A77] px-3 py-1 text-white">3 Walk In</span>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
@@ -247,7 +247,7 @@ export default function PassesPage() {
                   </a>
                   <a
                     href="#register"
-                    className="inline-flex items-center rounded-sm border border-[#000000] bg-white px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#000000] transition-all duration-300 hover:bg-[#000000] hover:text-white"
+                    className="inline-flex items-center rounded-sm border border-[#003A77] bg-white px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#003A77] transition-all duration-300 hover:bg-[#003A77] hover:text-white"
                   >
                     Learn How It Works
                   </a>
@@ -281,11 +281,11 @@ export default function PassesPage() {
             </Container>
           </section>
 
-          <section id="register" className="bg-[#000000] px-4 py-10 text-white">
+          <section id="register" className="bg-[#003A77] px-4 py-10 text-white">
             <Container>
               <Link
                 href="/"
-                className="inline-flex rounded-sm border border-white/30 px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition-colors hover:bg-white hover:text-[#000000]"
+                className="inline-flex rounded-sm border border-white/30 px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition-colors hover:bg-white hover:text-[#003A77]"
               >
                 ← Back to Home
               </Link>
@@ -308,18 +308,18 @@ export default function PassesPage() {
             <Container>
               <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
                 <div className="h-fit space-y-5 rounded-sm border border-gray-100 bg-white p-5 shadow-sm">
-                  <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#000000]">Event Details</h3>
+                  <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#003A77]">Event Details</h3>
                   <div className="flex gap-3 text-sm text-gray-600">
                     <Calendar className="mt-0.5 h-5 w-5 text-[#00A1B1]" />
                     <div>
-                      <p className="font-medium text-[#000000]">Event Dates</p>
+                      <p className="font-medium text-[#003A77]">Event Dates</p>
                       <p>22–14 May  2027</p>
                     </div>
                   </div>
                   <div className="flex gap-3 text-sm text-gray-600">
                     <MapPin className="mt-0.5 h-5 w-5 text-[#00A1B1]" />
                     <div>
-                      <p className="font-medium text-[#000000]">Venue</p>
+                      <p className="font-medium text-[#003A77]">Venue</p>
                       <p>Auto Cluster Exhibition Center, Pune, India</p>
                     </div>
                   </div>
@@ -327,7 +327,7 @@ export default function PassesPage() {
 
                 <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                   <p className="text-xs font-bold uppercase tracking-widest text-[#00A1B1]">IndiaMET 2027</p>
-                  <h3 className="mt-2 font-bebas text-3xl uppercase tracking-wide text-[#000000]">
+                  <h3 className="mt-2 font-bebas text-3xl uppercase tracking-wide text-[#003A77]">
                     Choose Verification Method
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">Select how you&apos;d like to receive your one-time password</p>
@@ -339,7 +339,7 @@ export default function PassesPage() {
                         type="button"
                         onClick={() => setChannel(item)}
                         className={`rounded-sm py-2.5 text-sm font-semibold uppercase tracking-wider capitalize ${
-                          channel === item ? 'bg-[#000000] text-white shadow-sm' : 'text-gray-500'
+                          channel === item ? 'bg-[#003A77] text-white shadow-sm' : 'text-gray-500'
                         }`}
                       >
                         {item === 'sms' ? 'SMS' : 'WhatsApp'}
@@ -347,12 +347,12 @@ export default function PassesPage() {
                     ))}
                   </div>
 
-                  <div className="mt-4 flex items-start gap-2 rounded-sm bg-[#FCF8F3] px-4 py-3 text-sm text-[#000000]">
+                  <div className="mt-4 flex items-start gap-2 rounded-sm bg-[#FCF8F3] px-4 py-3 text-sm text-[#003A77]">
                     <MessageSquare className="mt-0.5 h-4 w-4 shrink-0 text-[#00A1B1]" />
                     OTP will be sent via {channel === 'sms' ? 'SMS' : 'WhatsApp'} to your phone number
                   </div>
 
-                  <label className="mt-5 block text-xs font-bold uppercase tracking-wider text-[#000000]">
+                  <label className="mt-5 block text-xs font-bold uppercase tracking-wider text-[#003A77]">
                     Mobile Number *
                   </label>
                   <div className="mt-2 flex overflow-hidden rounded-sm border border-gray-300">
@@ -381,7 +381,7 @@ export default function PassesPage() {
                     type="button"
                     onClick={sendOtp}
                     disabled={loading}
-                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-[#00A1B1] px-4 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000] disabled:opacity-60"
+                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-[#00A1B1] px-4 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77] disabled:opacity-60"
                   >
                     <Smartphone className="h-4 w-4" />
                     {loading ? 'Sending OTP...' : `Send OTP via ${channel === 'sms' ? 'SMS' : 'WhatsApp'}`}
@@ -404,7 +404,7 @@ export default function PassesPage() {
           <Container>
             <div className="grid gap-6 lg:grid-cols-[260px_1fr]">
               <div className="h-fit space-y-5 rounded-sm border border-gray-100 bg-white p-5 shadow-sm">
-                <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#000000]">Event Details</h3>
+                <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#003A77]">Event Details</h3>
                 <p className="flex gap-2 text-sm text-gray-600">
                   <Calendar className="h-4 w-4 text-[#00A1B1]" /> 22–14 May  2027
                 </p>
@@ -415,7 +415,7 @@ export default function PassesPage() {
               <form onSubmit={completeRegistration} className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h2 className="font-bebas text-3xl uppercase tracking-wide text-[#000000]">Complete Registration</h2>
+                    <h2 className="font-bebas text-3xl uppercase tracking-wide text-[#003A77]">Complete Registration</h2>
                     <p className="text-sm text-gray-500">Fill in your details to complete registration</p>
                   </div>
                   <button
@@ -481,8 +481,8 @@ export default function PassesPage() {
                 </div>
 
                 <div className="mt-6">
-                  <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#000000]">What are you looking for?</h3>
-                  <p className="mt-2 rounded-sm bg-[#FCF8F3] px-4 py-3 text-sm text-[#000000]">
+                  <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#003A77]">What are you looking for?</h3>
+                  <p className="mt-2 rounded-sm bg-[#FCF8F3] px-4 py-3 text-sm text-[#003A77]">
                     Please select at least one interest to continue with your registration.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -494,7 +494,7 @@ export default function PassesPage() {
                         className={`rounded-sm border px-3 py-2 text-xs font-bold uppercase tracking-wider ${
                           form.interests.includes(interest)
                             ? 'border-[#00A1B1] bg-[#00A1B1] text-white'
-                            : 'border-gray-300 bg-white text-[#000000] hover:border-[#00A1B1]'
+                            : 'border-gray-300 bg-white text-[#003A77] hover:border-[#00A1B1]'
                         }`}
                       >
                         {interest}
@@ -507,7 +507,7 @@ export default function PassesPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="mt-6 w-full rounded-sm bg-[#00A1B1] py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000] disabled:opacity-60"
+                  className="mt-6 w-full rounded-sm bg-[#00A1B1] py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77] disabled:opacity-60"
                 >
                   {loading ? 'Creating your pass...' : 'Complete Registration'}
                 </button>
@@ -524,14 +524,14 @@ export default function PassesPage() {
             <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#00A1B1]/15 text-[#00A1B1]">
               <Check className="h-7 w-7" />
             </div>
-            <h2 className="font-bebas text-4xl uppercase tracking-wide text-[#000000]">Registration Successful!</h2>
+            <h2 className="font-bebas text-4xl uppercase tracking-wide text-[#003A77]">Registration Successful!</h2>
             <p className="mt-2 text-sm text-gray-500">
               Your visitor pass has been sent via {pass.channel === 'sms' ? 'SMS' : 'WhatsApp'}.
             </p>
             <div className="mt-8">
               <VisitorPassCard pass={pass} />
             </div>
-            <div className="mt-6 rounded-sm bg-white p-4 text-left text-sm text-[#000000] shadow-sm">
+            <div className="mt-6 rounded-sm bg-white p-4 text-left text-sm text-[#003A77] shadow-sm">
               <p className="font-semibold">Next step</p>
               <p className="mt-1 text-gray-600">
                 Show this screen or download the badge at the entrance. Registration number:
@@ -541,7 +541,7 @@ export default function PassesPage() {
             <button
               type="button"
               onClick={() => window.print()}
-              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-[#00A1B1] py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-[#00A1B1] py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77]"
             >
               <Download className="h-4 w-4" /> Download Full Badge
             </button>
@@ -553,7 +553,7 @@ export default function PassesPage() {
             <div className="mt-6 grid grid-cols-2 gap-3">
               <Link
                 href="/"
-                className="rounded-sm bg-[#000000] py-3 text-xs font-bold uppercase tracking-wider text-white"
+                className="rounded-sm bg-[#003A77] py-3 text-xs font-bold uppercase tracking-wider text-white"
               >
                 Back to Home
               </Link>
@@ -570,7 +570,7 @@ export default function PassesPage() {
       )}
 
       {otpOpen && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-[#000000]/60 p-4">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-[#003A77]/60 p-4">
           <div className="w-full max-w-md rounded-sm bg-white p-6 shadow-2xl">
             <div className="flex items-center justify-between">
               <p className="text-xs font-bold uppercase tracking-widest text-[#00A1B1]">IndiaMET 2027</p>
@@ -578,7 +578,7 @@ export default function PassesPage() {
                 ✕
               </button>
             </div>
-            <h3 className="mt-4 font-bebas text-3xl uppercase tracking-wide text-[#000000]">Verify Your Phone Number</h3>
+            <h3 className="mt-4 font-bebas text-3xl uppercase tracking-wide text-[#003A77]">Verify Your Phone Number</h3>
             <p className="mt-2 text-sm text-gray-500">
               We&apos;ve sent a 4-digit verification code to <strong>{displayPhone}</strong>
             </p>
@@ -586,7 +586,7 @@ export default function PassesPage() {
               <Lightbulb className="h-4 w-4" /> Tip: Copy the OTP and paste it here to auto-fill
             </p>
             {devOtp && (
-              <p className="mt-2 rounded-sm bg-[#FCF8F3] px-3 py-2 text-xs text-[#000000]">
+              <p className="mt-2 rounded-sm bg-[#FCF8F3] px-3 py-2 text-xs text-[#003A77]">
                 Development OTP: <strong>{devOtp}</strong> (also printed in the backend console)
               </p>
             )}
@@ -673,7 +673,7 @@ function Field({
 function StatusCard({ title, body }: { title: string; body: string }) {
   return (
     <div className="rounded-sm border border-gray-100 bg-white p-3 shadow-sm">
-      <p className="font-semibold text-[#000000]">{title}</p>
+      <p className="font-semibold text-[#003A77]">{title}</p>
       <p className="mt-1 text-gray-500">{body}</p>
     </div>
   );

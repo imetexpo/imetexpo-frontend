@@ -31,7 +31,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#000000] text-gray-400 border-t border-white/10">
+    <footer className="bg-[#003A77] text-gray-400 border-t border-white/10">
       {/* Top Section */}
       <Container className="py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 xl:gap-20">
@@ -143,7 +143,7 @@ export default function Footer() {
                       fill="currentColor"
                       strokeWidth="0"
                       viewBox={viewBox}
-                      className="h-5 w-5 text-[#000000] group-hover:text-white"
+                      className="h-5 w-5 text-[#003A77] group-hover:text-white"
                       height="1em"
                       width="1em"
                       xmlns="http://www.w3.org/2000/svg"

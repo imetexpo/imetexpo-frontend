@@ -181,7 +181,7 @@ export default function EnquiryForm() {
           Your visitor registration for INDIAMET Expo 2026 has been submitted successfully.
           A confirmation email has been sent to your registered email address.
         </p>
-        <Link href="/" className="inline-block bg-[#00A1B1] text-white px-6 py-2 rounded-lg hover:bg-[#000000] transition">
+        <Link href="/" className="inline-block bg-[#00A1B1] text-white px-6 py-2 rounded-lg hover:bg-[#003A77] transition">
           Back to Home
         </Link>
       </div>
@@ -416,7 +416,7 @@ export default function EnquiryForm() {
       <button
         type="submit"
         disabled={loading || !termsAccepted}
-        className="w-full bg-[#00A1B1] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-[#000000] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-[#00A1B1] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-[#003A77] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? (
           <span className="flex items-center justify-center gap-2">
