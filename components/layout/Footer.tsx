@@ -39,7 +39,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="space-y-4">
             <Image
-              src="/footer_logo.png"
+              src="/ITS_logo_white.png"
               alt="IndiaMet Expo"
               width={280}
               height={100}
