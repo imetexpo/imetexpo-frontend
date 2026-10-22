@@ -45,7 +45,7 @@ export default function SectorPage() {
             The sector you're looking for doesn't exist or has been moved.
           </p>
           <Link href="/sectors">
-            <button className="mt-8 bg-[#008738] hover:bg-[#000000] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+            <button className="mt-8 bg-[#00A1B1] hover:bg-[#000000] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
               Back to All Sectors
             </button>
           </Link>
@@ -105,7 +105,7 @@ export default function SectorPage() {
                 {sector.buttonText && (
                   <div className="pt-4">
                     <Link href={sector.buttonLink || "/exhibiting-enquiry"}>
-                      <button className="bg-[#008738] hover:bg-[#000000] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         {sector.buttonText}
                       </button>
                     </Link>
@@ -122,12 +122,12 @@ export default function SectorPage() {
             <div className="animated-block-target">
               <Container>
                 <h2 className="mb-8 font-bebas text-4xl text-[#000000] md:text-5xl uppercase">
-                  Sub-Sectors Within <span className="text-[#008738]">{sector.title}</span>
+                  Sub-Sectors Within <span className="text-[#00A1B1]">{sector.title}</span>
                 </h2>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {sector.subSectors.map((sub, idx) => (
                     <div key={idx} className="rounded-sm border border-gray-100 bg-[#FCF8F3] p-6 shadow-sm transition-all hover:shadow-md">
-                      <h3 className="mb-3 font-bebas text-2xl text-[#008738] uppercase font-bold">
+                      <h3 className="mb-3 font-bebas text-2xl text-[#00A1B1] uppercase font-bold">
                         {sub.title}
                       </h3>
                       <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
@@ -152,7 +152,7 @@ export default function SectorPage() {
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {sector.keyProducts.map((product, idx) => (
                     <div key={idx} className="flex items-center gap-2 rounded-sm bg-[#FCF8F3] border border-gray-100 p-3">
-                      <span className="text-xl text-[#008738]">✓</span>
+                      <span className="text-xl text-[#00A1B1]">✓</span>
                       <span className="text-gray-700 text-sm">{product}</span>
                     </div>
                   ))}
@@ -167,9 +167,9 @@ export default function SectorPage() {
           <div className="animated-block-target">
             <Container>
               <div className="mb-10 text-center lg:mb-12 lg:text-left">
-                <p className="font-bold text-[#008738] uppercase text-xs tracking-wider">Quick Guide</p>
+                <p className="font-bold text-[#00A1B1] uppercase text-xs tracking-wider">Quick Guide</p>
                 <h3 className="mt-2 font-bebas text-5xl text-[#000000] md:text-6xl lg:text-7xl uppercase">
-                  Simplifying Your <span className="text-[#008738]">Participation Journey</span>
+                  Simplifying Your <span className="text-[#00A1B1]">Participation Journey</span>
                 </h3>
               </div>
 
@@ -189,7 +189,7 @@ export default function SectorPage() {
                       <div className="absolute inset-0 bg-[#000000]/20 transition-all duration-300 group-hover:bg-[#000000]/40"></div>
                       <div className="absolute bottom-4 left-0 right-0 flex justify-start pl-4">
                         <Link href={item.buttonLink}>
-                          <button className="bg-[#008738] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                          <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                             {item.buttonText}
                           </button>
                         </Link>
@@ -214,7 +214,7 @@ export default function SectorPage() {
         <div className="animated-block mt-8">
           <Container>
             <Link href="/sectors">
-              <button className="flex items-center gap-2 text-[#008738] transition-all hover:gap-3 hover:text-[#000000] font-sans font-medium text-sm">
+              <button className="flex items-center gap-2 text-[#00A1B1] transition-all hover:gap-3 hover:text-[#000000] font-sans font-medium text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>

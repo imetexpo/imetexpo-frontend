@@ -62,7 +62,7 @@ export default function Header() {
           <div
             aria-hidden="true"
             className="h-[5px] w-full"
-            style={{ background: 'linear-gradient(to right, #000000, #000000)' }}
+            style={{ background: 'linear-gradient(to right, #ffffff, #ffffffff)' }}
           />
         )}
       </div>
@@ -99,8 +99,8 @@ export default function Header() {
             <div className="flex shrink-0 items-center gap-2">
               <Link
                 href="/login/"
-                className="bg-[#008738] text-white px-4 py-1.5 text-sm border border-white/20
-                hover:bg-[#008738] hover:text-[#000000] transition-all duration-300 rounded-sm"
+                className="bg-[#00A1B1] text-white px-4 py-1.5 text-sm border border-white/20
+                hover:bg-[#00A1B1] hover:text-[#000000] transition-all duration-300 rounded-sm"
               >
                 Login
               </Link>
@@ -112,9 +112,9 @@ export default function Header() {
                 aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? (
-                  <X size={32} className="text-[#008738]" />
+                  <X size={32} className="text-[#00A1B1]" />
                 ) : (
-                  <Menu size={32} className="text-[#008738]" />
+                  <Menu size={32} className="text-[#00A1B1]" />
                 )}
               </button>
             </div>

@@ -29,7 +29,7 @@ export default function AboutSection() {
 
           {/* RIGHT CONTENT */}
           <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6">
-            <p className="text-[#008738] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
+            <p className="text-[#00A1B1] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
               About INDIAMET Expo
             </p>
 
@@ -58,7 +58,7 @@ export default function AboutSection() {
             <div className="mt-4 sm:mt-5 lg:mt-6">
               <Button
                 href="/about"
-                className="bg-[#008738] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 inline-block rounded-sm"
+                className="bg-[#00A1B1] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 inline-block rounded-sm"
               >
                 Learn More
               </Button>

@@ -348,7 +348,7 @@ export default function OurExhibitionsSection() {
                 rel="noopener noreferrer"
                 href={event.href}
               >
-                <span className="flex items-center gap-2 font-bebas text-2xl text-[#008738] transition-colors duration-300 hover:text-[#000000]">
+                <span className="flex items-center gap-2 font-bebas text-2xl text-[#00A1B1] transition-colors duration-300 hover:text-[#000000]">
                   Visit Website
                   <ChevronIcon />
                 </span>

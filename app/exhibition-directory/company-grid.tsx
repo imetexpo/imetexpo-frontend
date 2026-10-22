@@ -101,9 +101,9 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
               </td>
               <td className="hidden p-4 text-gray-600 md:table-cell">
                 <div className="flex items-center gap-2">
-                  <Building size={14} className="text-[#008738]" />
+                  <Building size={14} className="text-[#00A1B1]" />
                   <span>{company.pavilion}</span>
-                  <MapPin size={14} className="ml-2 text-[#008738]" />
+                  <MapPin size={14} className="ml-2 text-[#00A1B1]" />
                   <span>{company.country}</span>
                 </div>
               </td>
@@ -118,7 +118,7 @@ export default function CompanyGrid({ companies, viewMode, onProductBrochureClic
                     </span>
                   ))}
                   {company.sector.length > 2 && (
-                    <span className="rounded-sm bg-[#008738]/10 px-2 py-1 text-xs text-[#008738]">
+                    <span className="rounded-sm bg-[#00A1B1]/10 px-2 py-1 text-xs text-[#00A1B1]">
                       +{company.sector.length - 2}
                     </span>
                   )}

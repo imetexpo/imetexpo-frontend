@@ -86,7 +86,7 @@ export default function CompanyDirectory() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#FCF8F3] font-sans">
         <div className="text-center">
-          <Loader2 className="mx-auto mb-4 h-12 w-12 animate-spin text-[#008738]" />
+          <Loader2 className="mx-auto mb-4 h-12 w-12 animate-spin text-[#00A1B1]" />
           <p className="text-sm text-gray-600">Loading exhibitors...</p>
         </div>
       </div>
@@ -102,7 +102,7 @@ export default function CompanyDirectory() {
       >
         <Link
           href="/exhibiting-enquiry/"
-          className="inline-block rounded-sm bg-[#008738] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
+          className="inline-block rounded-sm bg-[#00A1B1] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
         >
           Exhibit at INDIAMET Expo →
         </Link>
@@ -125,7 +125,7 @@ export default function CompanyDirectory() {
                 }}
                 className={`cursor-pointer rounded-sm px-3 py-2 text-xs font-bold uppercase tracking-wider transition-colors sm:px-4 ${
                   !selectedLetter
-                    ? 'border border-[#008738] bg-[#008738] text-white'
+                    ? 'border border-[#00A1B1] bg-[#00A1B1] text-white'
                     : 'border border-gray-300 bg-white text-slate-800 hover:bg-slate-100'
                 }`}
               >
@@ -142,7 +142,7 @@ export default function CompanyDirectory() {
                     }}
                     className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-sm border text-xs font-bold uppercase tracking-wider transition-colors sm:h-9 sm:w-9 ${
                       selectedLetter === letter
-                        ? 'border-[#008738] bg-[#008738] text-white'
+                        ? 'border-[#00A1B1] bg-[#00A1B1] text-white'
                         : 'border-gray-300 bg-white text-slate-700 hover:bg-slate-100'
                     }`}
                   >
@@ -168,7 +168,7 @@ export default function CompanyDirectory() {
                   setSearchQuery(e.target.value);
                   setCurrentPage(1);
                 }}
-                className="w-full rounded-sm border border-gray-300 bg-white py-3 pl-10 pr-10 text-sm focus:border-[#008738] focus:outline-none focus:ring-1 focus:ring-[#008738]"
+                className="w-full rounded-sm border border-gray-300 bg-white py-3 pl-10 pr-10 text-sm focus:border-[#00A1B1] focus:outline-none focus:ring-1 focus:ring-[#00A1B1]"
               />
               {searchQuery && (
                 <button
@@ -189,7 +189,7 @@ export default function CompanyDirectory() {
               onClick={() => setViewMode('grid')}
               className={`cursor-pointer rounded-sm p-2 transition-colors ${
                 viewMode === 'grid'
-                  ? 'border border-[#008738] bg-[#008738] text-white'
+                  ? 'border border-[#00A1B1] bg-[#00A1B1] text-white'
                   : 'border border-gray-300 bg-white text-slate-600'
               }`}
               aria-label="Grid view"
@@ -200,7 +200,7 @@ export default function CompanyDirectory() {
               onClick={() => setViewMode('gallery')}
               className={`cursor-pointer rounded-sm p-2 transition-colors ${
                 viewMode === 'gallery'
-                  ? 'border border-[#008738] bg-[#008738] text-white'
+                  ? 'border border-[#00A1B1] bg-[#00A1B1] text-white'
                   : 'border border-gray-300 bg-white text-slate-600'
               }`}
               aria-label="Gallery view"
@@ -211,7 +211,7 @@ export default function CompanyDirectory() {
               onClick={() => setViewMode('list')}
               className={`cursor-pointer rounded-sm p-2 transition-colors ${
                 viewMode === 'list'
-                  ? 'border border-[#008738] bg-[#008738] text-white'
+                  ? 'border border-[#00A1B1] bg-[#00A1B1] text-white'
                   : 'border border-gray-300 bg-white text-slate-600'
               }`}
               aria-label="List view"
@@ -222,7 +222,7 @@ export default function CompanyDirectory() {
 
           {loading ? (
             <div className="flex justify-center py-12">
-              <Loader2 className="h-8 w-8 animate-spin text-[#008738]" />
+              <Loader2 className="h-8 w-8 animate-spin text-[#00A1B1]" />
             </div>
           ) : (
             <CompanyGrid
@@ -260,7 +260,7 @@ export default function CompanyDirectory() {
                         onClick={() => setCurrentPage(page)}
                         className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-sm text-xs font-bold uppercase tracking-wider transition-colors sm:h-9 sm:w-9 ${
                           currentPage === page
-                            ? 'border border-[#008738] bg-[#008738] text-white'
+                            ? 'border border-[#00A1B1] bg-[#00A1B1] text-white'
                             : 'border border-gray-300 bg-white text-slate-700 hover:bg-slate-100'
                         }`}
                       >
@@ -301,7 +301,7 @@ export default function CompanyDirectory() {
                   setSelectedLetter(null);
                   setCurrentPage(1);
                 }}
-                className="mt-6 cursor-pointer rounded-sm bg-[#008738] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
+                className="mt-6 cursor-pointer rounded-sm bg-[#00A1B1] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
               >
                 Clear all filters
               </button>

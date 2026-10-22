@@ -5,7 +5,7 @@ export default function BrochureContent() {
     <div className="flex flex-col gap-6">
       <div className="space-y-3">
         <h2 className="font-bebas text-3xl leading-[1.05] tracking-tight uppercase text-[#000000]">
-          INDIAMET Expo <span className="text-[#008738]">2026</span>
+          INDIAMET Expo <span className="text-[#00A1B1]">2026</span>
         </h2>
         <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
   Step into India’s premier exhibition for metrology, precision measurement, 
@@ -24,7 +24,7 @@ export default function BrochureContent() {
           { value: "1st", label: "Edition" },
         ].map((item, i) => (
           <div key={i} className="text-center">
-            <h3 className="text-3xl font-bebas text-[#008738] uppercase font-bold">{item.value}</h3>
+            <h3 className="text-3xl font-bebas text-[#00A1B1] uppercase font-bold">{item.value}</h3>
             <p className="text-[10px] uppercase font-bold text-gray-600 mt-1 tracking-wider">{item.label}</p>
           </div>
         ))}
@@ -37,7 +37,7 @@ export default function BrochureContent() {
 
   <ul className="text-xs text-gray-650 space-y-2.5">
     <li className="flex items-start gap-2">
-      <span className="text-[#008738]">•</span>
+      <span className="text-[#00A1B1]">•</span>
       <span>
         Connect with key decision-makers from manufacturing, quality, metrology,
         inspection and engineering departments.
@@ -45,7 +45,7 @@ export default function BrochureContent() {
     </li>
 
     <li className="flex items-start gap-2">
-      <span className="text-[#008738]">•</span>
+      <span className="text-[#00A1B1]">•</span>
       <span>
         Discover the latest CMMs, 3D scanning, machine vision, calibration,
         testing and precision measurement technologies.
@@ -53,7 +53,7 @@ export default function BrochureContent() {
     </li>
 
     <li className="flex items-start gap-2">
-      <span className="text-[#008738]">•</span>
+      <span className="text-[#00A1B1]">•</span>
       <span>
         Explore business opportunities with manufacturers and buyers looking
         for advanced metrology, inspection and quality solutions.

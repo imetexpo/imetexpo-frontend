@@ -58,7 +58,7 @@ export default function Footer() {
               </h5>
               <a
                 href="mailto:pad@maxxmedia.in"
-                className="hover:text-[#008738] transition-colors text-x"
+                className="hover:text-[#00A1B1] transition-colors text-x"
               >
                 pad@maxxmedia.in
               </a>
@@ -68,7 +68,7 @@ export default function Footer() {
               <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Hotline
               </h5>
-              <a href="tel:+91 9148319993" className="hover:text-[#008738] transition-colors text-x">
+              <a href="tel:+91 9148319993" className="hover:text-[#00A1B1] transition-colors text-x">
                 +91- 91483 19993
               </a>
             </div>
@@ -77,7 +77,7 @@ export default function Footer() {
               <h5 className="text-xl font-bold uppercase tracking-wider text-white mb-2 font-bebas">
                 Visitor Support
               </h5>
-              <a href="tel:++91- 63649 36468" className="hover:text-[#008738] transition-colors text-x">
+              <a href="tel:++91- 63649 36468" className="hover:text-[#00A1B1] transition-colors text-x">
                 +91- 63649 36468
               </a>
             </div>
@@ -136,7 +136,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="group flex h-10 w-10 items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-110 hover:bg-[#008738]"
+                    className="group flex h-10 w-10 items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-110 hover:bg-[#00A1B1]"
                   >
                     <svg
                       stroke="currentColor"

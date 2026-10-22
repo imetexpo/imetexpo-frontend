@@ -111,7 +111,7 @@ export default function WhyExhibitPage() {
                 <div className="grid items-center gap-10 overflow-hidden lg:grid-cols-5 lg:gap-20">
                   <div className="lg:col-span-5">
                     <div className="flex flex-col gap-5">
-                      <p className="font-bold text-[#008738]">Your Gateway to Precision Manufacturing Growth in India</p>
+                      <p className="font-bold text-[#00A1B1]">Your Gateway to Precision Manufacturing Growth in India</p>
                       <h2 className="font-bebas text-6xl text-[#000000] md:text-7xl">Powering the Future of Metrology, Measurement & Quality</h2>
                       <p className="text-lg sm:text-xl text-gray-700">
                        As manufacturing moves toward greater precision, automation, digitalisation, and quality excellence, 
@@ -123,25 +123,25 @@ export default function WhyExhibitPage() {
                     </div>
                     <div className="mt-10 flex flex-wrap gap-8 2xl:gap-16">
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#008738] md:text-6xl">1st</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] md:text-6xl">1st</h3>
                         <p className="text-sm font-semibold tracking-wider uppercase text-[#000000] font-sans">Edition</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#008738] md:text-6xl">10,000+</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] md:text-6xl">10,000+</h3>
                         <p className="text-sm font-semibold tracking-wider uppercase text-[#000000] font-sans">Trade Visitors</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#008738] md:text-6xl">150+</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] md:text-6xl">150+</h3>
                         <p className="text-sm font-semibold tracking-wider uppercase text-[#000000] font-sans">Exhibitors</p>
                       </div>
                       <div className="flex w-fit flex-col justify-center font-bebas last-of-type:border-none lg:border-r lg:pr-8 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#008738] md:text-6xl">50+</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] md:text-6xl">50+</h3>
                         <p className="text-sm font-semibold tracking-wider uppercase text-[#000000] font-sans">Conference Speakers</p>
                       </div>
                     </div>
                     <div className="mt-10">
                       <Link href="/about">
-                        <button className="bg-[#008738] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           About INDIAMET Expo
                         </button>
                       </Link>
@@ -195,7 +195,7 @@ export default function WhyExhibitPage() {
                   ))}
                 </div>
                 <Link href="/exhibiting-enquiry">
-                  <button className="bg-[#008738] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Book A Stand</button>
+                  <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Book A Stand</button>
                 </Link>
               </Container>
             </div>
@@ -218,25 +218,25 @@ export default function WhyExhibitPage() {
                     </div>
                     <div className="mt-10 grid grid-cols-2 gap-6 bg-[#FCF8F3] border border-gray-100 p-8 rounded-sm font-sans">
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#008738] font-bebas">68%</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] font-bebas">68%</h3>
                         <p className="text-sm font-semibold uppercase text-[#000000]">Industry Decision-Makers</p>
                       </div>
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#008738] font-bebas">72%</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] font-bebas">72%</h3>
                         <p className="text-sm font-semibold uppercase text-[#000000]">Manufacturing & Engineering Professionals</p>
                       </div>
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#008738] font-bebas">45%</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] font-bebas">45%</h3>
                         <p className="text-sm font-semibold uppercase text-[#000000]">Procurement & Purchase Influencers</p>
                       </div>
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#008738] font-bebas">30%</h3>
+                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] font-bebas">30%</h3>
                         <p className="text-sm font-semibold uppercase text-[#000000]">Senior Management & C-Level Executives</p>
                       </div>
                     </div>
                     <div className="mt-10">
                       <Link href="/exhibiting-enquiry">
-                        <button className="bg-[#008738] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Enquire to Exhibit</button>
+                        <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Enquire to Exhibit</button>
                       </Link>
                     </div>
                   </div>
@@ -287,7 +287,7 @@ export default function WhyExhibitPage() {
                         about the show and explore your participation opportunities.
                       </p>
                       <Link href="/event-brochure">
-                        <button className="bg-[#008738] hover:bg-white hover:text-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#00A1B1] hover:bg-white hover:text-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Download Now
                         </button>
                       </Link>
@@ -343,7 +343,7 @@ export default function WhyExhibitPage() {
               <Container>
                 <div className="mb-10 flex justify-between max-lg:flex-col lg:items-end">
                   <div className="lg:basis-2/3">
-                    <p className="font-bold text-[#008738]">Testimonials</p>
+                    <p className="font-bold text-[#00A1B1]">Testimonials</p>
                     <h3 className="my-3 font-bebas text-6xl text-[#000000] md:text-7xl">Why the Industry Chooses INDIAMET Expo</h3>
                   </div>
                 </div>
@@ -354,10 +354,10 @@ export default function WhyExhibitPage() {
                     { name: "Nguyen Van Hieu", title: "Procurement Manager", company: "Casumina", quote: "The quality of visitors and exhibitors is exceptional. We found new raw material suppliers and advanced testing equipment that significantly improved our production efficiency." }
                   ].map((testimonial, idx) => (
                     <div key={idx} className="relative flex h-full flex-col overflow-hidden rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300 font-sans">
-                      <div className="text-4xl mb-4 text-[#008738] font-serif">&ldquo;</div>
+                      <div className="text-4xl mb-4 text-[#00A1B1] font-serif">&ldquo;</div>
                       <p className="mb-auto text-lg sm:text-xl italic text-gray-700 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
                       <div className="mt-6 flex items-center gap-4 border-t border-gray-200 pt-5">
-                        <div className="h-12 w-12 rounded-sm bg-gradient-to-br from-[#008738] to-orange-600 flex items-center justify-center text-white font-bold text-lg">
+                        <div className="h-12 w-12 rounded-sm bg-gradient-to-br from-[#00A1B1] to-orange-600 flex items-center justify-center text-white font-bold text-lg">
                           {testimonial.name.charAt(0)}
                         </div>
                         <div>
@@ -405,7 +405,7 @@ export default function WhyExhibitPage() {
           {/* Quick Navigation Footer */}
           {/* <div className="animated-block mt-20">
             <div className="animated-block-target">
-              <div className="border-t-8 border-[#008738] bg-[#000000] py-20 text-white">
+              <div className="border-t-8 border-[#00A1B1] bg-[#000000] py-20 text-white">
                 <Container>
                   <h2 className="font-bebas text-6xl md:text-7xl">Quick Navigation</h2>
                   <div className="mt-16 grid grid-cols-2 gap-y-10 md:grid-cols-5">
@@ -434,7 +434,7 @@ export default function WhyExhibitPage() {
             </div>
           </div> */}
 
-          {/* <hr className="border-t-6 border-[#008738]" /> */}
+          {/* <hr className="border-t-6 border-[#00A1B1]" /> */}
         </div>
         <BackToTop />
       </div>

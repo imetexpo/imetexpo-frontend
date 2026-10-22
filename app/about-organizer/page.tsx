@@ -95,7 +95,7 @@ export default function AboutITEPage() {
                     {stats.map((stat, idx) => (
                       <div key={idx} className="flex w-1/2 sm:w-1/3 md:w-1/4 items-start justify-start">
                         <div className="px-4 sm:px-6 md:px-8 text-start">
-                          <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#008738]">
+                          <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#00A1B1]">
                             {stat.value}
                           </h3>
                           <p className="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold uppercase text-[#000000]">

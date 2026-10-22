@@ -194,7 +194,7 @@ function Ring({ percent, label }: { percent: number; label: string }) {
           cx="60"
           cy="60"
           r={r}
-          stroke="#008738"
+          stroke="#00A1B1"
           strokeWidth="10"
           fill="none"
           strokeDasharray={c}
@@ -215,7 +215,7 @@ function Ring({ percent, label }: { percent: number; label: string }) {
 
 function SectionEyebrow({ children }: { children: string }) {
   return (
-    <p className="mb-2 text-xs font-bold uppercase tracking-[1.5px] text-[#008738]">{children}</p>
+    <p className="mb-2 text-xs font-bold uppercase tracking-[1.5px] text-[#00A1B1]">{children}</p>
   );
 }
 
@@ -236,7 +236,7 @@ export default function AwardsPage() {
           </Link>
           <Link
             href="/nominate/"
-            className="rounded-sm bg-[#008738] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
+            className="rounded-sm bg-[#00A1B1] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
           >
             Nominate Now →
           </Link>
@@ -268,14 +268,14 @@ export default function AwardsPage() {
               </p>
               <div className="grid max-w-xl grid-cols-2 gap-6 sm:grid-cols-4">
                 {stats.map(([n, l]) => (
-                  <div key={l} className="border-l-2 border-[#008738] pl-4">
-                    <p className="text-2xl font-bold text-[#008738]">{n}</p>
+                  <div key={l} className="border-l-2 border-[#00A1B1] pl-4">
+                    <p className="text-2xl font-bold text-[#00A1B1]">{n}</p>
                     <p className="mt-1 text-xs text-gray-500">{l}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="relative h-80 overflow-hidden rounded-sm border border-[#008738]/20 bg-[#FCF8F3] lg:h-96">
+            <div className="relative h-80 overflow-hidden rounded-sm border border-[#00A1B1]/20 bg-[#FCF8F3] lg:h-96">
               <img src={HERO_IMAGE} alt="Global Metrology Excellence Awards" className="h-full w-full object-cover" />
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function AwardsPage() {
             {categories.map((category) => (
               <div
                 key={category.title}
-                className="flex flex-col overflow-hidden rounded-sm border border-gray-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#008738] hover:shadow-md"
+                className="flex flex-col overflow-hidden rounded-sm border border-gray-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00A1B1] hover:shadow-md"
               >
                 <div className="relative h-44 w-full overflow-hidden bg-[#FCF8F3] sm:h-48">
                   <img
@@ -354,10 +354,10 @@ export default function AwardsPage() {
             {process.map(([icon, title, desc], i) => (
               <div key={title} className="flex w-full items-start md:w-auto md:flex-1">
                 <div className="flex flex-1 flex-col items-center gap-4 text-center">
-                  <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#008738] bg-white text-4xl shadow-sm md:h-28 md:w-28 md:text-5xl">
+                  <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#00A1B1] bg-white text-4xl shadow-sm md:h-28 md:w-28 md:text-5xl">
                     {icon}
                   </div>
-                  <p className="text-sm font-bold uppercase leading-snug tracking-wide text-[#008738] md:text-base">
+                  <p className="text-sm font-bold uppercase leading-snug tracking-wide text-[#00A1B1] md:text-base">
                     {title}
                   </p>
                   <p className="max-w-[13rem] text-sm font-medium leading-relaxed text-[#000000] md:text-base">
@@ -365,7 +365,7 @@ export default function AwardsPage() {
                   </p>
                 </div>
                 {i < process.length - 1 && (
-                  <span className="mx-2 hidden h-28 items-center justify-center text-3xl font-bold text-[#008738] md:flex">
+                  <span className="mx-2 hidden h-28 items-center justify-center text-3xl font-bold text-[#00A1B1] md:flex">
                     →
                   </span>
                 )}
@@ -391,7 +391,7 @@ export default function AwardsPage() {
               >
                 <div className="flex h-48 items-center justify-center bg-[#FCF8F3] text-6xl">👤</div>
                 <div className="p-4">
-                  <span className="mb-2 inline-block rounded-sm border border-[#008738]/40 px-2 py-0.5 text-[10px] uppercase tracking-wide text-[#008738]">
+                  <span className="mb-2 inline-block rounded-sm border border-[#00A1B1]/40 px-2 py-0.5 text-[10px] uppercase tracking-wide text-[#00A1B1]">
                     {member.role}
                   </span>
                   <h3 className="text-sm font-semibold text-[#000000]">{member.name}</h3>
@@ -406,7 +406,7 @@ export default function AwardsPage() {
             </p>
             <Link
               href="#jury"
-              className="inline-block rounded-sm border border-[#008738] px-6 py-2 text-xs font-bold uppercase tracking-wider text-[#008738] transition-all duration-300 hover:bg-[#008738] hover:text-white"
+              className="inline-block rounded-sm border border-[#00A1B1] px-6 py-2 text-xs font-bold uppercase tracking-wider text-[#00A1B1] transition-all duration-300 hover:bg-[#00A1B1] hover:text-white"
             >
               View All Jury
             </Link>
@@ -472,14 +472,14 @@ function PartnerTrack({ items }: { items: { name: string; role: string }[] }) {
         {loop.map((item, index) => (
           <div
             key={`${item.role}-${index}`}
-            className="flex w-[220px] min-h-[180px] flex-shrink-0 flex-col items-center justify-center gap-4 rounded-sm border border-gray-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#008738] hover:shadow-md md:w-[260px]"
+            className="flex w-[220px] min-h-[180px] flex-shrink-0 flex-col items-center justify-center gap-4 rounded-sm border border-gray-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#00A1B1] hover:shadow-md md:w-[260px]"
           >
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#008738]/10">
-              <span className="text-2xl font-bold text-[#008738]">{item.role.charAt(0)}</span>
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#00A1B1]/10">
+              <span className="text-2xl font-bold text-[#00A1B1]">{item.role.charAt(0)}</span>
             </div>
             <div className="text-center">
               <p className="text-lg font-bold text-[#000000]">{item.name}</p>
-              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-[#008738]">{item.role}</p>
+              <p className="mt-1 text-sm font-semibold uppercase tracking-wide text-[#00A1B1]">{item.role}</p>
             </div>
           </div>
         ))}

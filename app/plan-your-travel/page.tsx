@@ -292,7 +292,7 @@ export default function PlanYourTravelPage() {
               <div className="mb-10 flex flex-col items-start justify-between gap-6 border-b border-gray-200 pb-8 lg:flex-row lg:items-center">
                 <h2 className="font-bebas text-4xl uppercase text-[#000000] md:text-5xl">
                   Travel{" "}
-                  <span className="text-[#008738]">
+                  <span className="text-[#00A1B1]">
                     Information
                   </span>{" "}
                   &amp; Guidelines
@@ -304,8 +304,8 @@ export default function PlanYourTravelPage() {
                     onClick={() => selectTab("exhibitor")}
                     className={`cursor-pointer rounded-sm px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                       activeTab === "exhibitor"
-                        ? "bg-[#008738] text-white"
-                        : "bg-transparent text-[#000000] hover:text-[#008738]"
+                        ? "bg-[#00A1B1] text-white"
+                        : "bg-transparent text-[#000000] hover:text-[#00A1B1]"
                     }`}
                   >
                     For Exhibitors
@@ -316,8 +316,8 @@ export default function PlanYourTravelPage() {
                     onClick={() => selectTab("visitor")}
                     className={`cursor-pointer rounded-sm px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                       activeTab === "visitor"
-                        ? "bg-[#008738] text-white"
-                        : "bg-transparent text-[#000000] hover:text-[#008738]"
+                        ? "bg-[#00A1B1] text-white"
+                        : "bg-transparent text-[#000000] hover:text-[#00A1B1]"
                     }`}
                   >
                     For Visitors
@@ -354,7 +354,7 @@ export default function PlanYourTravelPage() {
                       <div className="mt-4 shrink-0 md:mt-0">
                         <Link
                           href={item.buttonLink}
-                          className="inline-flex rounded-sm bg-[#008738] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
+                          className="inline-flex rounded-sm bg-[#00A1B1] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
                         >
                           {item.buttonText}
                         </Link>
@@ -371,13 +371,13 @@ export default function PlanYourTravelPage() {
         <div className="animated-block mt-16 lg:mt-24">
           <div className="animated-block-target">
             <Container>
-              <div className="mb-10 border-l-4 border-[#008738] pl-6">
+              <div className="mb-10 border-l-4 border-[#00A1B1] pl-6">
                 <h2 className="font-bebas text-4xl uppercase text-[#000000] md:text-5xl">
                   Accommodation in{" "}
-                  <span className="text-[#008738]">Pune</span>
+                  <span className="text-[#00A1B1]">Pune</span>
                 </h2>
 
-                <p className="mt-2 text-sm font-bold uppercase tracking-wider text-[#008738]">
+                <p className="mt-2 text-sm font-bold uppercase tracking-wider text-[#00A1B1]">
                   Convenient hotel options for INDIAMET 2027 exhibitors &amp;
                   visitors
                 </p>
@@ -415,7 +415,7 @@ export default function PlanYourTravelPage() {
                         href={hotel.bookLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 rounded-sm bg-[#008738] py-2 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
+                        className="flex-1 rounded-sm bg-[#00A1B1] py-2 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#000000]"
                       >
                         Book Room
                       </Link>
@@ -424,7 +424,7 @@ export default function PlanYourTravelPage() {
                         href={hotel.mapLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 rounded-sm border border-[#008738] py-2 text-center text-xs font-bold uppercase tracking-wider text-[#008738] transition-all duration-300 hover:border-[#000000] hover:bg-[#000000] hover:text-white"
+                        className="flex-1 rounded-sm border border-[#00A1B1] py-2 text-center text-xs font-bold uppercase tracking-wider text-[#00A1B1] transition-all duration-300 hover:border-[#000000] hover:bg-[#000000] hover:text-white"
                       >
                         Location
                       </Link>
@@ -444,7 +444,7 @@ export default function PlanYourTravelPage() {
         {/* Quick Navigation */}
         {/* <div className="animated-block mt-20">
           <div className="animated-block-target">
-            <div className="border-t border-[#008738] bg-[#000000] py-16 text-white">
+            <div className="border-t border-[#00A1B1] bg-[#000000] py-16 text-white">
               <Container>
                 <h2 className="text-center font-bebas text-5xl uppercase tracking-wider md:text-6xl lg:text-left">
                   Quick Navigation
@@ -460,11 +460,11 @@ export default function PlanYourTravelPage() {
                         href={item.link}
                         className="group flex flex-col items-center"
                       >
-                        <div className="flex h-16 w-16 items-center justify-center rounded-sm bg-gray-800 transition-colors group-hover:bg-[#008738]">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-sm bg-gray-800 transition-colors group-hover:bg-[#00A1B1]">
                           <div className="text-2xl">{item.icon}</div>
                         </div>
 
-                        <p className="mt-4 text-xs font-bold uppercase tracking-wider text-gray-300 transition-colors group-hover:text-[#008738]">
+                        <p className="mt-4 text-xs font-bold uppercase tracking-wider text-gray-300 transition-colors group-hover:text-[#00A1B1]">
                           {item.label}
                         </p>
                       </Link>

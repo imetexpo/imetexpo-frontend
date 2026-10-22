@@ -86,7 +86,7 @@ export default function PartnersSponsorsPage() {
                   <Link
                     href={partner.website}
                     target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#008738] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#000000] transition-colors"
+                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#00A1B1] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#000000] transition-colors"
                   >
                     Visit Website
                   </Link>
@@ -122,7 +122,7 @@ export default function PartnersSponsorsPage() {
                   <Link
                     href={partner.website}
                     target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#008738] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#000000] transition-colors"
+                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#00A1B1] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#000000] transition-colors"
                   >
                     Visit Website
                   </Link>
@@ -161,7 +161,7 @@ export default function PartnersSponsorsPage() {
                   <Link
                     href={partner.website}
                     target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#008738] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#000000] transition-colors"
+                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#00A1B1] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#000000] transition-colors"
                   >
                     Visit Website
                   </Link>
@@ -174,7 +174,7 @@ export default function PartnersSponsorsPage() {
         {/* Quick Navigation Section */}
         {/* <div className="animated-block mt-20">
           <div className="animated-block-target">
-            <div className="border-t-8 border-[#008738] bg-[#000000] py-20 text-white">
+            <div className="border-t-8 border-[#00A1B1] bg-[#000000] py-20 text-white">
               <Container> */}
                 {/* HEADING */}
                 {/* <h2 className="font-bebas text-6xl md:text-7xl">
@@ -213,7 +213,7 @@ export default function PartnersSponsorsPage() {
           </div> */}
         {/* </div> */}
 
-        {/* <hr className="border-t-6 border-[#008738]" /> */}
+        {/* <hr className="border-t-6 border-[#00A1B1]" /> */}
       </div>
       <BackToTop />
     </div>

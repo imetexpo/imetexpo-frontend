@@ -135,7 +135,7 @@ export default function SectorsPage() {
           </Link>
           <button className="z-10" aria-label="Menu">
             <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.66667 20C0.746193 20 0 19.2538 0 18.3333C0 17.4129 0.746193 16.6667 1.66667 16.6667H30.3333C31.2538 16.6667 32 17.4129 32 18.3333C32 19.2538 31.2538 20 30.3333 20H1.66667ZM1.66667 11.6667C0.746193 11.6667 0 10.9205 0 10C0 9.07952 0.746192 8.33333 1.66667 8.33333H30.3333C31.2538 8.33333 32 9.07952 32 10C32 10.9205 31.2538 11.6667 30.3333 11.6667H1.66667ZM1.66667 3.33333C0.746193 3.33333 0 2.58714 0 1.66667C0 0.746192 0.746192 0 1.66667 0H30.3333C31.2538 0 32 0.746192 32 1.66667C32 2.58714 31.2538 3.33333 30.3333 3.33333H1.66667Z" fill="#008738"></path>
+              <path d="M1.66667 20C0.746193 20 0 19.2538 0 18.3333C0 17.4129 0.746193 16.6667 1.66667 16.6667H30.3333C31.2538 16.6667 32 17.4129 32 18.3333C32 19.2538 31.2538 20 30.3333 20H1.66667ZM1.66667 11.6667C0.746193 11.6667 0 10.9205 0 10C0 9.07952 0.746192 8.33333 1.66667 8.33333H30.3333C31.2538 8.33333 32 9.07952 32 10C32 10.9205 31.2538 11.6667 30.3333 11.6667H1.66667ZM1.66667 3.33333C0.746193 3.33333 0 2.58714 0 1.66667C0 0.746192 0.746192 0 1.66667 0H30.3333C31.2538 0 32 0.746192 32 1.66667C32 2.58714 31.2538 3.33333 30.3333 3.33333H1.66667Z" fill="#00A1B1"></path>
             </svg>
           </button>
         </div>
@@ -164,7 +164,7 @@ export default function SectorsPage() {
             <Container>
               <div className="text-center lg:text-left">
                 <h2 className="mt-10 font-bebas text-5xl text-[#000000] md:text-6xl lg:text-7xl">
-                  Sectors Showcased at <span className="text-[#008738]">INDIAMET Expo</span>
+                  Sectors Showcased at <span className="text-[#00A1B1]">INDIAMET Expo</span>
                 </h2>
                 <p className="mx-auto mt-5 max-w-9xl text-lg sm:text-xl text-gray-700 lg:mx-0">
                   INDIAMET brings together the complete spectrum of metrology, measurement, inspection, 
@@ -204,7 +204,7 @@ export default function SectorsPage() {
                         />
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 pt-8 rounded-b-sm">
-                        <h3 className="text-center font-bebas text-lg sm:text-xl text-white transition-colors duration-300 group-hover:text-[#008738] font-bold uppercase tracking-wide">
+                        <h3 className="text-center font-bebas text-lg sm:text-xl text-white transition-colors duration-300 group-hover:text-[#00A1B1] font-bold uppercase tracking-wide">
                           {sector.title}
                         </h3>
                       </div>
@@ -221,9 +221,9 @@ export default function SectorsPage() {
           <div className="animated-block-target">
             <Container>
               <div className="mb-10 text-center lg:mb-12 lg:text-left">
-                <p className="font-bold text-[#008738]">Quick Guide</p>
+                <p className="font-bold text-[#00A1B1]">Quick Guide</p>
                 <h3 className="mt-2 font-bebas text-5xl text-[#000000] md:text-6xl lg:text-7xl">
-                  Simplifying Your <span className="text-[#008738]">Participation Journey</span>
+                  Simplifying Your <span className="text-[#00A1B1]">Participation Journey</span>
                 </h3>
               </div>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -242,7 +242,7 @@ export default function SectorsPage() {
                       <div className="absolute inset-0 bg-[#000000]/20 group-hover:bg-[#000000]/40 transition-all duration-300"></div>
                       <div className="absolute bottom-4 left-0 right-0 flex justify-start pl-4">
                         <Link href={item.buttonLink}>
-                          <button className="bg-[#008738] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                          <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                             {item.buttonText}
                           </button>
                         </Link>

@@ -97,8 +97,8 @@ export default function BecameDelegatePage() {
                       onClick={() => setSelectedPackage(packageKey)}
                       className={`flex flex-col rounded-sm border p-4 text-left transition-all ${
                         isSelected
-                          ? 'border-[#008738] bg-[#008738]/5 ring-1 ring-[#008738]'
-                          : 'border-gray-100 bg-[#FCF8F3] hover:border-[#008738]/50'
+                          ? 'border-[#00A1B1] bg-[#00A1B1]/5 ring-1 ring-[#00A1B1]'
+                          : 'border-gray-100 bg-[#FCF8F3] hover:border-[#00A1B1]/50'
                       }`}
                     >
                       <h3 className="mb-2 font-bebas text-2xl uppercase text-[#000000]">
@@ -107,13 +107,13 @@ export default function BecameDelegatePage() {
                       <ul className="mb-4 flex-1 space-y-2">
                         {pkg.features.map((feature) => (
                           <li key={feature} className="flex items-start text-sm text-gray-700">
-                            <span className="mt-0.5 mr-2 text-[#008738]">✓</span>
+                            <span className="mt-0.5 mr-2 text-[#00A1B1]">✓</span>
                             <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
                       <div className="mt-auto border-t border-gray-200 pt-3">
-                        <div className="font-bebas text-2xl text-[#008738]">{pkg.price}</div>
+                        <div className="font-bebas text-2xl text-[#00A1B1]">{pkg.price}</div>
                       </div>
                     </button>
                   );
@@ -133,7 +133,7 @@ export default function BecameDelegatePage() {
                   ['20+', 'Hours of Content'],
                 ].map(([stat, label]) => (
                   <div key={label}>
-                    <p className="font-bebas text-5xl text-[#008738]">{stat}</p>
+                    <p className="font-bebas text-5xl text-[#00A1B1]">{stat}</p>
                     <p className="mt-2 text-base text-gray-700">{label}</p>
                   </div>
                 ))}

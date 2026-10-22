@@ -305,7 +305,7 @@ export default function AdvertisingDetailsPage() {
               <h2 className="font-bebas text-4xl sm:text-5xl text-[#000000] uppercase">
                 By leveraging these promotional options, you can:
               </h2>
-              <p className="mt-2 text-base sm:text-lg font-bold text-[#008738] uppercase tracking-wider">
+              <p className="mt-2 text-base sm:text-lg font-bold text-[#00A1B1] uppercase tracking-wider">
                 Please review the requirements carefully to ensure timely submission.
               </p>
               
@@ -321,7 +321,7 @@ export default function AdvertisingDetailsPage() {
                         className="h-full w-full"
                       />
                     </div>
-                    <h3 className="mt-5 font-bebas text-2xl text-[#008738] uppercase font-bold">{benefit.title}</h3>
+                    <h3 className="mt-5 font-bebas text-2xl text-[#00A1B1] uppercase font-bold">{benefit.title}</h3>
                     <p className="mt-3 text-lg sm:text-xl text-gray-650 leading-relaxed">{benefit.description}</p>
                   </div>
                 ))}
@@ -335,7 +335,7 @@ export default function AdvertisingDetailsPage() {
           <div className="animated-block mt-8 sm:mt-12">
             <div className="animated-block-target">
               <h2 className="font-bebas text-4xl sm:text-5xl text-[#000000] uppercase">
-                Sponsorship <span className="text-[#008738]"> Options</span>
+                Sponsorship <span className="text-[#00A1B1]"> Options</span>
               </h2>
               <div className="mt-8 space-y-6">
                 {sponsorshipTabs.map((item, idx) => (
@@ -345,7 +345,7 @@ export default function AdvertisingDetailsPage() {
                   >
                     <div className="grid lg:grid-cols-[280px_1fr]">
                       <div className="relative flex min-h-[220px] items-center justify-center bg-[#000000] p-8 lg:min-h-full">
-                        <div className="absolute inset-y-0 left-0 w-1.5 bg-[#008738]" />
+                        <div className="absolute inset-y-0 left-0 w-1.5 bg-[#00A1B1]" />
                         <div className="flex h-40 w-40 items-center justify-center overflow-hidden rounded-sm bg-white p-5 sm:h-44 sm:w-44">
                           <ImageWithFallback
                             src={item.image}
@@ -363,7 +363,7 @@ export default function AdvertisingDetailsPage() {
                             {item.title}
                           </h4>
                           <Link href={item.buttonLink} className="shrink-0">
-                            <button className="bg-[#008738] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                            <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                               {item.buttonText}
                             </button>
                           </Link>
@@ -376,7 +376,7 @@ export default function AdvertisingDetailsPage() {
                         <ul className="grid gap-2.5 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-3">
                           {item.points.map((point) => (
                             <li key={point} className="flex gap-3 text-left text-lg leading-relaxed text-gray-700 sm:text-xl">
-                              <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[#008738]" />
+                              <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[#00A1B1]" />
                               <span>{point}</span>
                             </li>
                           ))}

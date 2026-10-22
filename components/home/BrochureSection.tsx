@@ -58,7 +58,7 @@ export default function BrochureSection() {
             </p>
             <Button
               href="/event-brochure/"
-              className="bg-[#008738] hover:bg-white hover:text-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mx-auto lg:mx-0"
+              className="bg-[#00A1B1] hover:bg-white hover:text-[#000000] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mx-auto lg:mx-0"
             >
               Download Your Event Brochure
             </Button>

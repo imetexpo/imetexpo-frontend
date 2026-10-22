@@ -121,7 +121,7 @@ export default function MediaGalleryPage() {
         <Container>
           <div className="border-b border-gray-250 pb-6 mb-8 mt-10">
             <h1 className="font-bebas text-5xl sm:text-6xl text-[#000000] uppercase tracking-wide">
-              A Visual Journey Through <span className="text-[#008738]">INDIAMET Expo</span>
+              A Visual Journey Through <span className="text-[#00A1B1]">INDIAMET Expo</span>
             </h1>
             <p className="mt-2 text-sm text-gray-650 font-sans">
               Discover the stories behind the images that have shaped INDIAMET Expo's legacy as a key event in the tyre manufacturing and rubber processing sector.
@@ -148,7 +148,7 @@ export default function MediaGalleryPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition duration-300"></div>
                   {/* Category Title */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="font-bebas text-2xl text-white uppercase group-hover:text-[#008738] transition-colors duration-300 font-bold tracking-wide">
+                    <h3 className="font-bebas text-2xl text-white uppercase group-hover:text-[#00A1B1] transition-colors duration-300 font-bold tracking-wide">
                       {category.title}
                     </h3>
                   </div>

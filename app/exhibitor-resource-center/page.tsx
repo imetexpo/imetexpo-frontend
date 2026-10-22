@@ -177,14 +177,14 @@ const faqItems = [
                 {/* LEFT CONTENT */}
                 <div className="order-2 lg:order-1 space-y-6">
                   <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl leading-tight text-[#000000] uppercase">
-                    Explore <span className="text-[#008738]">Opportunities</span>
+                    Explore <span className="text-[#00A1B1]">Opportunities</span>
                   </h1>
                   <p className="text-lg sm:text-xl leading-relaxed text-gray-700 font-sans">
                     As a participant at INDIAMET Expo, our team is dedicated to providing you with a variety of participation opportunities to make the most of your exhibition experience. From pre-event to post, we have created guides to help with the decision-making process and onboarding in a seamless manner.
                   </p>
                   <div className="pt-2">
                     <Link href="https://cdn-ite.prismetic.com/02_Manual_Forms_Mining_World_Russia_2026_EUR_0ddf1ecf29.pdf" target="_blank">
-                      <button className="bg-[#008738] hover:bg-[#000000] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         Download Guide
                       </button>
                     </Link>
@@ -200,7 +200,7 @@ const faqItems = [
           <div className="animated-block mt-8 sm:mt-12 lg:mt-16">
             <div className="animated-block-target">
               <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#000000] uppercase">
-                Stands for your <span className="text-[#008738]">Business Objectives</span>
+                Stands for your <span className="text-[#00A1B1]">Business Objectives</span>
               </h2>
               <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {benefits.map((benefit, idx) => (
@@ -214,7 +214,7 @@ const faqItems = [
                         className="h-full w-full"
                       />
                     </div>
-                    <h3 className="mt-5 font-bebas text-2xl text-[#008738] uppercase font-bold">{benefit.title}</h3>
+                    <h3 className="mt-5 font-bebas text-2xl text-[#00A1B1] uppercase font-bold">{benefit.title}</h3>
                     <p className="mt-3 text-lg sm:text-xl text-gray-650 leading-relaxed">{benefit.description}</p>
                   </div>
                 ))}
@@ -228,9 +228,9 @@ const faqItems = [
           <div className="animated-block mt-8 sm:mt-12 lg:mt-16">
             <div className="animated-block-target">
               <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#000000] uppercase">
-                Explore Our <span className="text-[#008738]">Stand Options</span>
+                Explore Our <span className="text-[#00A1B1]">Stand Options</span>
               </h2>
-              <p className="mt-2 text-sm font-bold text-[#008738] uppercase tracking-wider">Selection Made Simple</p>
+              <p className="mt-2 text-sm font-bold text-[#00A1B1] uppercase tracking-wider">Selection Made Simple</p>
               <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {standOptions.map((option, idx) => (
                   <div key={idx} className="group flex flex-col justify-between overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3] shadow-sm hover:shadow-md transition-all duration-300">
@@ -251,7 +251,7 @@ const faqItems = [
                     </div>
                     <div className="p-5 pt-0 mt-auto">
                       <Link href="/exhibiting-enquiry">
-                        <button className="bg-[#008738] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <button className="bg-[#00A1B1] hover:bg-[#000000] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Enquire Now
                         </button>
                       </Link>
@@ -269,7 +269,7 @@ const faqItems = [
             <div className="bg-[#FCF8F3] py-16 border-t border-b border-gray-150">
               <Container>
                 <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-[#000000] uppercase">
-                  Exhibition <span className="text-[#008738]">Guide</span>
+                  Exhibition <span className="text-[#00A1B1]">Guide</span>
                 </h2>
                 <div className="mt-8 space-y-4">
                   {faqItems.map((item, idx) => (
@@ -290,7 +290,7 @@ const faqItems = [
                             xmlns="http://www.w3.org/2000/svg"
                             className={`size-5 transition-transform duration-200 ${openFaqIndex === idx ? "rotate-45" : ""}`}
                           >
-                            <path d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z" fill="#008738" fillRule="evenodd" clipRule="evenodd"></path>
+                            <path d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z" fill="#00A1B1" fillRule="evenodd" clipRule="evenodd"></path>
                           </svg>
                         </div>
                       </button>

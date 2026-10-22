@@ -2,7 +2,7 @@ export default function SponsorContent() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h2 className="text-3xl font-bold text-[#008738] mb-4 font-bebas">
+        <h2 className="text-3xl font-bold text-[#00A1B1] mb-4 font-bebas">
           INDIAMET Expo 2027 Conference
         </h2>
         <div className="space-y-4 text-gray-700">
@@ -24,19 +24,19 @@ export default function SponsorContent() {
 
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-[#f5f5f5] p-4 rounded-xl text-center">
-          <p className="text-3xl font-bold text-[#008738] font-bebas">150+</p>
+          <p className="text-3xl font-bold text-[#00A1B1] font-bebas">150+</p>
           <p className="text-sm text-gray-600">Exhibitors</p>
         </div>
         <div className="bg-[#f5f5f5] p-4 rounded-xl text-center">
-          <p className="text-3xl font-bold text-[#008738] font-bebas">30+</p>
+          <p className="text-3xl font-bold text-[#00A1B1] font-bebas">30+</p>
           <p className="text-sm text-gray-600">Speakers</p>
         </div>
         <div className="bg-[#f5f5f5] p-4 rounded-xl text-center">
-          <p className="text-3xl font-bold text-[#008738] font-bebas">500+</p>
+          <p className="text-3xl font-bold text-[#00A1B1] font-bebas">500+</p>
           <p className="text-sm text-gray-600">Delegates</p>
         </div>
         <div className="bg-[#f5f5f5] p-4 rounded-xl text-center">
-          <p className="text-3xl font-bold text-[#008738] font-bebas">15+</p>
+          <p className="text-3xl font-bold text-[#00A1B1] font-bebas">15+</p>
           <p className="text-sm text-gray-600">Countries</p>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function SponsorContent() {
             "Post-event recognition and media coverage",
           ].map((benefit, index) => (
             <li key={index} className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-[#008738] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-[#00A1B1] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               <span className="text-gray-700 text-sm">{benefit}</span>

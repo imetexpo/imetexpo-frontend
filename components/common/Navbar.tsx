@@ -81,11 +81,11 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full bg-[#000000] text-[#ffffff]">
+    <div className="w-full bg-[#ffffff] text-[#000000]">
         {/* TOP BAR */}
         <div>
          {/* Logo + date + nav items */}
-<div className="w-full bg-[#000000]">
+<div className="w-full bg-[#ffffff]">
   <div className="mx-auto flex w-full max-w-[2560px] flex-nowrap items-center justify-between gap-4 px-4 py-4 lg:px-6 xl:px-20">
     
     <div className="flex min-w-0 items-center gap-3 xl:gap-5">
@@ -148,7 +148,7 @@ export default function Navbar() {
                 onClick={() =>
                   setOpenDropdown((current) => (current === item.title ? null : item.title))
                 }
-                className="flex items-center gap-0.5 whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#008738] lg:text-xs xl:gap-1 xl:text-sm"
+                className="flex items-center gap-0.5 whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#00A1B1] lg:text-xs xl:gap-1 xl:text-sm"
               >
                 {item.title}
                 <ChevronDown
@@ -170,7 +170,7 @@ export default function Navbar() {
                       <UTMLink
                         key={link.text}
                         href={link.href}
-                        className="block px-4 py-2 text-sm hover:bg-[#008738] hover:text-white transition-colors"
+                        className="block px-4 py-2 text-sm hover:bg-[#00A1B1] hover:text-white transition-colors"
                       >
                         {link.text}
                       </UTMLink>
@@ -182,7 +182,7 @@ export default function Navbar() {
           ) : (
             <UTMLink
               href={item.href || '#'}
-              className="block whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#008738] lg:text-xs xl:text-sm"
+              className="block whitespace-nowrap py-1.5 text-[11px] transition-colors hover:text-[#00A1B1] lg:text-xs xl:text-sm"
             >
               {item.title}
             </UTMLink>
