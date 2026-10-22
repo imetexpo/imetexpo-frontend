@@ -74,11 +74,8 @@ export default function HeroSection() {
           <div className="mt-4 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-5 lg:gap-8">
             {/* Description — fixed readable font size, no vw */}
             <p className="font-sans text-lg sm:text-xl text-gray-200 leading-relaxed max-w-3xl">
-             INDIAMET Expo Brings Together Global Technology Leaders, Metrology Experts, 
-             Manufacturers, and Quality Professionals to Explore Cutting-Edge Measurement, 
-             Inspection, Calibration, and Quality Assurance Technologies. The Platform Fosters 
-             Innovation, Knowledge Exchange, and Industry Collaboration to Advance Precision 
-             Engineering and Shape the Future of Manufacturing Excellence.
+            INDIAMET Expo Connects Global Industry Leaders And Quality Professionals To Discover 
+            Advanced Measurement, Inspection, Calibration, And Quality Solutions For Precision Manufacturing.
             </p>
 
             {/* Exhibit button */}
