@@ -86,7 +86,7 @@ export default function Header() {
                 alt="IndiaMet Expo"
                 width={270}
                 height={100}
-                className="h-14 w-auto max-w-[160px] object-contain sm:h-16 sm:max-w-[180px]"
+                className="h-14 w-auto max-w-[160px] object-contain sm:h-16 sm:max-w-[280px]"
               />
             </Link>
 
