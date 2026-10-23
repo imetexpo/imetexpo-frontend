@@ -83,24 +83,24 @@ const keyEventsData = [
   },
   {
     title: "Sustainability Forum",
-    image: "https://cdn.itegroupnews.com/4_C4_A3872_1202c590ba.jpg",
+    image: "/images/4_C4_A3872_1202c590ba.jpg",
   },
   {
     title: "Technical Conferences",
-    image: "https://cdn.itegroupnews.com/4_C4_A5222_ad4a659bdc.jpg",
+    image: "/images/4_C4_A5222_ad4a659bdc.jpg",
   },
 ];
 
 const conferencePartners = [
   {
     name: "Zyfra",
-    logo: "https://cdn.itegroupnews.com/2_48e8e636ac.png",
+    logo: "/images/2_48e8e636ac.png",
     type: "Technology Partner",
     url: "https://www.zyfra.com/",
   },
   {
     name: "Modern Tyre Industry",
-    logo: "https://cdn.itegroupnews.com/3_c5c5637a9c.png",
+    logo: "/images/3_c5c5637a9c.png",
     type: "Media Partner",
     url: "#",
   },

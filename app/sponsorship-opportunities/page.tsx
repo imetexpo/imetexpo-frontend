@@ -30,37 +30,37 @@ export default function AdvertisingDetailsPage() {
     {
       title: "Reach Your Target Audience",
       description: "Communicate directly with industry specialists and decision-makers.",
-      icon: "https://cdn.itegroupnews.com/4_7579e3b4df.png",
+      icon: "/images/4_7579e3b4df.png",
       fallbackIcon: "🎯"
     },
     {
       title: "Increase Stand Traffic",
       description: "Drive more visitors to your booth and create meaningful connections.",
-      icon: "https://cdn.itegroupnews.com/5_e69e2d6c8b.png",
+      icon: "/images/5_e69e2d6c8b.png",
       fallbackIcon: "📊"
     },
     {
       title: "Gain a Competitive Edge",
       description: "Stand out among exhibitors and position your brand as an industry leader.",
-      icon: "https://cdn.itegroupnews.com/6_1234567890.png",
+      icon: "/images/6_1234567890.png",
       fallbackIcon: "⚡"
     },
     {
       title: "Boost Brand Awareness",
       description: "Strengthen your company's image and market visibility.",
-      icon: "https://cdn.itegroupnews.com/7_93579318f2.png",
+      icon: "/images/7_93579318f2.png",
       fallbackIcon: "🏷️"
     },
     {
       title: "Showcase Innovations",
       description: "Highlight new products and services to a highly relevant audience.",
-      icon: "https://cdn.itegroupnews.com/8_fa2729f754.png",
+      icon: "/images/8_fa2729f754.png",
       fallbackIcon: "💡"
     },
     {
       title: "Drive Sales & Business Growth",
       description: "Convert exhibition exposure into direct sales opportunities.",
-      icon: "https://cdn.itegroupnews.com/9_1c550dbab6.png",
+      icon: "/images/9_1c550dbab6.png",
       fallbackIcon: "📈"
     }
   ];
@@ -80,7 +80,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/1_9622597897.png",
+      image: "/images/1_9622597897.png",
       fallbackIcon: "🏆"
     },
     {
@@ -97,7 +97,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/2_af03062734.png",
+      image: "/images/2_af03062734.png",
       fallbackIcon: "🥇"
     },
     {
@@ -114,7 +114,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/3_065bb10e11.png",
+      image: "/images/3_065bb10e11.png",
       fallbackIcon: "🥈"
     },
     {
@@ -131,7 +131,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/4_b530561fa3.png",
+      image: "/images/4_b530561fa3.png",
       fallbackIcon: "🥉"
     },
     {
@@ -148,7 +148,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/1_9622597897.png",
+      image: "/images/1_9622597897.png",
       fallbackIcon: "🎟️"
     },
     {
@@ -165,7 +165,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/2_af03062734.png",
+      image: "/images/2_af03062734.png",
       fallbackIcon: "🎫"
     },
     {
@@ -182,7 +182,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/3_065bb10e11.png",
+      image: "/images/3_065bb10e11.png",
       fallbackIcon: "🚪"
     },
     {
@@ -199,7 +199,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/4_b530561fa3.png",
+      image: "/images/4_b530561fa3.png",
       fallbackIcon: "🎤"
     },
     {
@@ -216,7 +216,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/1_9622597897.png",
+      image: "/images/1_9622597897.png",
       fallbackIcon: "🔬"
     },
     {
@@ -233,7 +233,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/2_af03062734.png",
+      image: "/images/2_af03062734.png",
       fallbackIcon: "📱"
     },
     {
@@ -250,7 +250,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "https://cdn.itegroupnews.com/3_065bb10e11.png",
+      image: "/images/3_065bb10e11.png",
       fallbackIcon: "📰"
     }
   ];

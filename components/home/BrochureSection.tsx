@@ -8,7 +8,7 @@ export default function BrochureSection() {
   return (
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28 text-white">
       <Image
-        src="https://cdn.itegroupnews.com/img_3_4b6edc76d1.jpg"
+        src="/images/img_3_4b6edc76d1.jpg"
         alt="Background"
         fill
         className="object-cover"
@@ -29,7 +29,7 @@ export default function BrochureSection() {
           <div className="relative flex justify-center lg:justify-start w-full lg:w-auto">
             <div className="relative w-[250px] sm:w-[300px] lg:w-[380px]">
               <Image
-                src="https://cdn.itegroupnews.com/Sales_Brochure_84b3c56f9d.png"
+                src="/images/Sales_Brochure_84b3c56f9d.png"
                 alt="Brochure"
                 width={380}
                 height={380}

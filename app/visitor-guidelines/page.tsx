@@ -22,42 +22,42 @@ export default function VisitorGuidelinesPage() {
           title: 'Pre-Register Online',
           description:
             'Complete visitor registration before show days to save time at the entrance. Bring your confirmation and a government-issued photo ID.',
-          icon: 'https://cdn.itegroupnews.com/staff_management_1_e3b60c1db6.png',
+          icon: '/images/staff_management_1_e3b60c1db6.png',
           fallbackIcon: '📝',
         },
         {
           title: 'Badge & Entry',
           description:
             'Wear your visitor badge at all times inside the venue. Entry is for registered visitors, exhibitors, speakers, and accredited media only.',
-          icon: 'https://cdn.itegroupnews.com/partnership_41fd66a951.png',
+          icon: '/images/partnership_41fd66a951.png',
           fallbackIcon: '🎫',
         },
         {
           title: 'Opening Hours',
           description:
             'The exhibition is open 13 May 10:00–18:00, 14 May 10:00–18:00, and 15 May 10:00–16:00. Last entry is typically 30 minutes before close.',
-          icon: 'https://cdn.itegroupnews.com/meeting_3e0de9e870.png',
+          icon: '/images/meeting_3e0de9e870.png',
           fallbackIcon: '🕐',
         },
         {
           title: 'Photography Policy',
           description:
             'Personal photography is generally allowed in public aisles. Always ask exhibitors before photographing products, stands, or demonstrations.',
-          icon: 'https://cdn.itegroupnews.com/branding_c56168b0cb.png',
+          icon: '/images/branding_c56168b0cb.png',
           fallbackIcon: '📷',
         },
         {
           title: 'Safety on the Floor',
           description:
             'Follow aisle directions, keep clear of live machinery demonstrations, and comply with steward and security instructions at all times.',
-          icon: 'https://cdn.itegroupnews.com/research_5ebaa8133d.png',
+          icon: '/images/research_5ebaa8133d.png',
           fallbackIcon: '🛡️',
         },
         {
           title: 'Business Conduct',
           description:
             'INDIAMET is a professional B2B exhibition. Business attire is recommended. Treat exhibitors, speakers, and fellow visitors with courtesy.',
-          icon: 'https://cdn.itegroupnews.com/product_release_d7b5bbb99c.png',
+          icon: '/images/product_release_d7b5bbb99c.png',
           fallbackIcon: '🤝',
         },
       ]}
@@ -69,7 +69,7 @@ export default function VisitorGuidelinesPage() {
           title: 'Visitor Pass',
           description:
             'Register for a visitor pass online. Keep a digital or printed copy of your confirmation and present it with photo ID at registration.',
-          image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop',
+          image: '/images/photo-1556742049-0cfed4f6a45d.jpg',
           fallbackIcon: '🎟️',
           buttonText: 'Register Now',
           buttonLink: '/visitor-registration',
@@ -78,7 +78,7 @@ export default function VisitorGuidelinesPage() {
           title: 'On-Site Registration',
           description:
             'If you have not pre-registered, on-site counters will be available. Expect queues at peak hours on opening day. Carry a visiting card and photo ID.',
-          image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=500&fit=crop',
+          image: '/images/photo-1517245386807-bb43f82c33c4.jpg',
           fallbackIcon: '📋',
           buttonText: 'Contact Support',
           buttonLink: '/contact-us',
@@ -87,7 +87,7 @@ export default function VisitorGuidelinesPage() {
           title: 'Group & Student Visits',
           description:
             'Organised groups and institutions should write to visitor support in advance so badges and entry can be coordinated smoothly.',
-          image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=500&fit=crop',
+          image: '/images/photo-1521737604893-d14cc237f11d.jpg',
           fallbackIcon: '👥',
           buttonText: 'Email Us',
           buttonLink: '/contact-us',

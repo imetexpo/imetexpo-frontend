@@ -273,7 +273,7 @@ export default function WhyExhibitPage() {
                   <div className="grid items-center gap-10 md:grid-cols-12">
                     <div className="flex justify-center md:col-span-4">
                       <img
-                        src="https://cdn.itegroupnews.com/Sales_Brochure_84b3c56f9d.png"
+                        src="/images/Sales_Brochure_84b3c56f9d.png"
                         alt="Brochure"
                         className="h-64 w-auto object-contain"
                       />
@@ -308,17 +308,17 @@ export default function WhyExhibitPage() {
                     {
                       title: "Rapid Growth in Precision Manufacturing",
                       desc: "India’s automotive, aerospace, defence, electronics, engineering, and industrial manufacturing sectors are rapidly adopting advanced technologies to achieve higher precision, productivity, and quality. This is driving strong demand for modern metrology, inspection, and measurement solutions..",
-                      image: "https://cdn.itegroupnews.com/wide_angle_shot_excavation_machines_lookout_jackerath_garzweiler_skywalk_germany_58dec187f5.jpg"
+                      image: "/images/wide_angle_shot_excavation_machines_lookout_jackerath_garzweiler_skywalk_germany_58dec187f5.jpg"
                     },
                     {
                       title: "Rise of Smart & Automated Manufacturing",
                       desc: "The shift toward Industry 4.0, automation, digital manufacturing, and data-driven quality management is transforming how manufacturers measure and control production. Advanced CMMs, 3D scanning, machine vision, sensors, and connected metrology systems are becoming increasingly important.",
-                      image: "https://cdn.itegroupnews.com/business_team_global_business_planning_working_concept_4d7db7d78d.jpg"
+                      image: "/images/business_team_global_business_planning_working_concept_4d7db7d78d.jpg"
                     },
                     {
                       title: "Growing Focus on Quality & Global Standards",
                       desc: "Indian manufacturers are increasingly focused on achieving global quality standards, improving dimensional accuracy, reducing production errors, and strengthening traceability. This is creating new opportunities for calibration, testing, inspection, measurement software, and quality technologies.",
-                      image: "https://cdn.itegroupnews.com/view_heavy_machinery_used_construction_industry_a179c698c8.jpg"
+                      image: "/images/view_heavy_machinery_used_construction_industry_a179c698c8.jpg"
                     }
                   ].map((item, idx) => (
                     <div key={idx} className="relative flex min-h-[350px] flex-col overflow-hidden text-white rounded-sm border border-white/10">

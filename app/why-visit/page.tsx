@@ -123,7 +123,7 @@ export default function WhyVisitPage() {
       description:
         "Gain valuable insights from industry experts, technology leaders, quality professionals, and manufacturing specialists discussing the latest developments in metrology, measurement, inspection, calibration, digital quality, and precision manufacturing.",
       image:
-        "https://cdn.itegroupnews.com/MW_24_2304_0004_FORUM_i_c9f88bc608.jpg",
+        "/images/MW_24_2304_0004_FORUM_i_c9f88bc608.jpg",
       buttonText: "Explore Summit",
       buttonLink: "/summit",
     },
@@ -132,7 +132,7 @@ export default function WhyVisitPage() {
       description:
         "Recognise outstanding achievements, innovations, technologies, and contributions that are advancing measurement science, quality engineering, inspection, calibration, and precision manufacturing.",
       image:
-        "https://cdn.itegroupnews.com/QR_MW_eng_web_site_e73baacf2e.svg",
+        "/images/QR_MW_eng_web_site_e73baacf2e.svg",
       buttonText: "View Awards",
       buttonLink: "/awards",
     },
@@ -141,7 +141,7 @@ export default function WhyVisitPage() {
       description:
         "Build valuable professional connections with manufacturers, technology providers, quality experts, engineers, OEMs, buyers, and decision-makers from India's growing precision manufacturing ecosystem.",
       image:
-        "https://cdn.itegroupnews.com/QR_MW_eng_web_site_e73baacf2e.svg",
+        "/images/QR_MW_eng_web_site_e73baacf2e.svg",
       buttonText: "Connect",
       buttonLink: "/http://wwww.metrologytoday.com",
     },
@@ -152,25 +152,25 @@ export default function WhyVisitPage() {
       label: "Become an Exhibitor",
       link: "/exhibiting-enquiry",
       icon:
-        "https://cdn.itegroupnews.com/Vector_1_440f5852b9.png",
+        "/images/Vector_1_440f5852b9.png",
     },
     {
       label: "Register as a Visitor",
       link: "/visitor-registration",
       icon:
-        "https://cdn.itegroupnews.com/Vector_2_9be2b98909.png",
+        "/images/Vector_2_9be2b98909.png",
     },
     {
       label: "Download Event Brochure",
       link: "/event-brochure",
       icon:
-        "https://cdn.itegroupnews.com/Group_e024d13500.png",
+        "/images/Group_e024d13500.png",
     },
     {
       label: "Plan Your Travel",
       link: "/plan-your-travel",
       icon:
-        "https://cdn.itegroupnews.com/Vector_1_b2c1ab92d0.png",
+        "/images/Vector_1_b2c1ab92d0.png",
     },
   ];
 
@@ -381,7 +381,7 @@ export default function WhyVisitPage() {
                 <div className="absolute inset-0">
 
                   <img
-                    src="https://cdn.itegroupnews.com/img_3_4b6edc76d1.jpg"
+                    src="/images//img_3_4b6edc76d1.jpg"
                     alt="INDIAMET Exhibition"
                     className="h-full w-full object-cover"
                   />
@@ -397,7 +397,7 @@ export default function WhyVisitPage() {
                     <div className="flex justify-center md:col-span-4">
 
                       <img
-                        src="https://cdn.itegroupnews.com/Sales_Brochure_84b3c56f9d.png"
+                        src="/images/Sales_Brochure_84b3c56f9d.png"
                         alt="INDIAMET Event Brochure"
                         className="h-48 sm:h-56 lg:h-64 w-auto object-contain"
                       />
@@ -545,7 +545,7 @@ export default function WhyVisitPage() {
                   <div className="relative min-h-[350px] sm:min-h-[400px] overflow-hidden rounded-sm border border-white/10">
 
                     <img
-                      src="https://cdn.itegroupnews.com/img_3_4b6edc76d1.jpg"
+                      src="/images/img_3_4b6edc76d1.jpg"
                       alt="Industries and Manufacturing Professionals"
                       className="absolute inset-0 h-full w-full object-cover"
                     />
@@ -585,7 +585,7 @@ export default function WhyVisitPage() {
                   <div className="relative min-h-[350px] sm:min-h-[400px] overflow-hidden rounded-sm border border-white/10">
 
                     <img
-                      src="https://cdn.itegroupnews.com/img_3_4b6edc76d1.jpg"
+                      src="/images/img_3_4b6edc76d1.jpg"
                       alt="Metrology Technology Solutions"
                       className="absolute inset-0 h-full w-full object-cover"
                     />
