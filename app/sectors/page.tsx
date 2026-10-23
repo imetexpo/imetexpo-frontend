@@ -115,7 +115,7 @@ export default function SectorsPage() {
     description: "Explore INDIAMET 2027, discover the exhibition sectors, visitor profile, exhibiting opportunities, and everything you need to plan your participation.",
     buttonText: "Download Now",
     buttonLink: "/event-brochure",
-    image: "https://cdn.itegroupnews.com/Untitled_500_x_500_px_cd8f081eec.png"
+    image: "/images/Untitled_500_x_500_px_cd8f081eec.png"
   },
   {
     title: "Become a Visitor",
