@@ -198,7 +198,7 @@ const exhibitions: Exhibition[] = [
     startDate: 'Mar 30th, 2027',
     endDate: 'Apr 2nd, 2027',
     venue: 'Crocus Expo, Moscow',
-    href: '#,
+    href: '#',
   },
   {
     name: 'MITT',
