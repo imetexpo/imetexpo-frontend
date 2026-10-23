@@ -15,7 +15,7 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
   return (
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28 text-white">
       <Image
-        src="https://cdn.itegroupnews.com/img_5_cb9a8893c7.jpg"
+        src=""
         alt="Background"
         fill
         priority

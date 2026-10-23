@@ -167,22 +167,22 @@ export default function WhyExhibitPage() {
                     {
                       title: "Struggling to find qualified buyers?",
                       desc: "Meet a focused audience of manufacturers, OEMs, engineers, quality professionals, procurement teams, and decision-makers actively looking for metrology, measurement, inspection, calibration, and quality solutions.",
-                      icon: "https://cdn.itegroupnews.com/recruitment_12105214_9abca4ba0e.png"
+                      icon: "/images/recruitment_12105214_9abca4ba0e.png"
                     },
                     {
                       title: "Looking to expand your market presence?",
                       desc: "Gain direct access to India’s growing precision manufacturing ecosystem, including automotive, aerospace, defence, engineering, electronics, medical devices, and other high-precision industries.",
-                      icon: "https://cdn.itegroupnews.com/goal_2974630_407b28db91.png"
+                      icon: "/images/goal_2974630_407b28db91.png"
                     },
                     {
                       title: "Worried about standing out in a competitive market?",
                       desc: "Showcase your latest metrology and measurement technologies through live demonstrations and direct engagement with industry professionals looking for advanced solutions to improve accuracy, quality, and productivity.",
-                      icon: "https://cdn.itegroupnews.com/marketing_14125861_0aab65a0a8.png"
+                      icon: "/images/marketing_14125861_0aab65a0a8.png"
                     },
                     {
                       title: "Looking for buyers ready to invest?",
                       desc: "Connect with companies investing in advanced measurement, inspection, automation, digital quality, and Industry 4.0 technologies — and turn technology demonstrations into qualified business opportunities.ng.",
-                      icon: "https://cdn.itegroupnews.com/contract_10861184_2c90043b14.png"
+                      icon: "/images/contract_10861184_2c90043b14.png"
                     }
                   ].map((benefit, idx) => (
                     <div key={idx} className="flex flex-col gap-4 font-sans">

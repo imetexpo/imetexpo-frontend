@@ -36,42 +36,42 @@ export default function ExhibitorResourceCenterPage() {
     title: "Generate New Business Leads",
     description:
       "Connect with qualified buyers, OEMs, engineers, quality professionals, and decision-makers actively looking for metrology, measurement, inspection, calibration, and quality solutions.",
-    icon: "https://cdn.itegroupnews.com/staff_management_1_e3b60c1db6.png",
+    icon: "/images/staff_management_1_e3b60c1db6.png",
     fallbackIcon: "🎯",
   },
   {
     title: "Strengthen Customer Relationships",
     description:
       "Meet existing customers face-to-face, understand their evolving requirements, demonstrate new solutions, and strengthen long-term business relationships.",
-    icon: "https://cdn.itegroupnews.com/partnership_41fd66a951.png",
+    icon: "/images/partnership_41fd66a951.png",
     fallbackIcon: "🤝",
   },
   {
     title: "Conduct Business Meetings",
     description:
       "Create dedicated meeting areas for technical discussions, product consultations, negotiations, project requirements, and focused business conversations with key decision-makers.",
-    icon: "https://cdn.itegroupnews.com/meeting_3e0de9e870.png",
+    icon: "/images/meeting_3e0de9e870.png",
     fallbackIcon: "📊",
   },
   {
     title: "Build Brand Visibility",
     description:
       "Stand out at INDIAMET with a strong exhibition presence, impactful branding, live demonstrations, and professional product displays that strengthen your position in the precision manufacturing market.",
-    icon: "https://cdn.itegroupnews.com/branding_c56168b0cb.png",
+    icon: "/images/branding_c56168b0cb.png",
     fallbackIcon: "🏷️",
   },
   {
     title: "Study Market & Competitors",
     description:
       "Gain valuable insights into market trends, competing technologies, customer expectations, and emerging opportunities across India's metrology, measurement, inspection, and quality ecosystem.",
-    icon: "https://cdn.itegroupnews.com/research_5ebaa8133d.png",
+    icon: "/images/research_5ebaa8133d.png",
     fallbackIcon: "🔍",
   },
   {
     title: "Launch New Technologies",
     description:
       "Use INDIAMET as a powerful platform to introduce new products, technologies, equipment, and solutions through live demonstrations and direct engagement with prospective customers.",
-    icon: "https://cdn.itegroupnews.com/product_release_d7b5bbb99c.png",
+    icon: "/images/product_release_d7b5bbb99c.png",
     fallbackIcon: "🚀",
   },
 ];

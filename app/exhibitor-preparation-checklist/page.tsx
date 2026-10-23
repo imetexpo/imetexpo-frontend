@@ -13,7 +13,7 @@ export default function ExhibitorPreparationChecklistPage() {
       introBody="Use this checklist to get ready for INDIAMET 2027 — from stand design and branding to freight, technical orders, staff travel, and opening-day operations. Completing each step on time keeps build-up smooth and your team ready to meet buyers."
       introCtaText="Download Guide"
       introCtaHref="/exhibitor-resource-center"
-      introImage="/images/photo-1450101499163-c8848c66ca85?w=1200&h=800&fit=crop"
+      introImage="/images/photo-1450101499163-c8848c66ca85.jpg"
       introImageAlt="Exhibitor preparation checklist"
       benefitsHeading="Preparation"
       benefitsAccent="Priorities"
@@ -69,7 +69,7 @@ export default function ExhibitorPreparationChecklistPage() {
           title: 'Before You Ship',
           description:
             'Lock stand layout, service orders, insurance, and freight documents. Share emergency contacts with the organiser and your contractor.',
-          image: '/images/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop',
+          image: '/images/photo-1454165804606-c3d57bc86b40.jpg',
           fallbackIcon: '✅',
           buttonText: 'Logistics Guide',
           buttonLink: '/freight-handling-logistics',
@@ -78,7 +78,7 @@ export default function ExhibitorPreparationChecklistPage() {
           title: 'Build-Up Days',
           description:
             'Arrive with badges, drawings, and toolkits. Check power, lighting, and product placement. Complete safety walkthroughs before opening.',
-          image: '/images/photo-1504307651254-35680f356dfd?w=800&h=500&fit=crop',
+          image: '/images/photo-1504307651254-35680f356dfd.jpg',
           fallbackIcon: '🔨',
           buttonText: 'Resource Center',
           buttonLink: '/exhibitor-resource-center',
@@ -87,7 +87,7 @@ export default function ExhibitorPreparationChecklistPage() {
           title: 'Show Days & Close',
           description:
             'Staff the stand throughout opening hours, capture leads, and restock literature. After close, follow official move-out rules before dismantling.',
-          image: '/images/photo-1551836022-d5d88e9218df?w=800&h=500&fit=crop',
+          image: '/images/photo-1551836022-d5d88e9218df.jpg',
           fallbackIcon: '📌',
           buttonText: 'Enquire Now',
           buttonLink: '/exhibiting-enquiry',

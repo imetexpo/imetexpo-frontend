@@ -57,7 +57,7 @@ export default function SectorPage() {
   const quickGuideItems = [
     {
       title: "Become an Exhibitor",
-      description: "Connect with 8,000+ tyre industry professionals across 3 days for unparalleled networking opportunities.",
+      description: "Connect with 10,000+ metrology industry professionals across 3 days for unparalleled networking opportunities.",
       buttonText: "Book A Stand",
       buttonLink: "/exhibiting-enquiry",
       image: "https://cdn.itegroupnews.com/mw24_1062_min_91b90d653f.jpg"

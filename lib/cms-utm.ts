@@ -109,7 +109,7 @@ export async function getOrCreateUTMInCMS(utmData: any): Promise<CMSUTMCampaign 
     if (existing) return existing;
 
     // 2. Try to create — if it races and another tab/request already created it, fetch again
-    const FALLBACK_URL = 'https://tyre-expo.vercel.app/';
+    const FALLBACK_URL = 'https://imetexpo-frontend.vercel.app/';
 
     function toAbsoluteUrl(raw: string | undefined): string {
         if (!raw) return FALLBACK_URL;
