@@ -70,13 +70,23 @@ export default function AdvertisingDetailsPage() {
       title: "Presenting Sponsor",
       description: "Position your brand at the forefront of INDIAMET Expo with premium visibility across the exhibition website, visitor communications, venue branding, registration promotions, social media and selected official marketing materials.",
       points: [
-        "Exclusive presenting-partner recognition on the official website, event brochure, and selected visitor communications",
-        "Premium on-site branding at key visitor touchpoints, including registration, entrance, and high-traffic exhibition areas",
-        "Logo placement on official email campaigns, social media posts, and selected pre-show marketing materials",
-        "Opportunity to deliver a featured industry presentation or opening address during the summit programme",
-        "Complimentary exhibitor stand upgrade or prominent product showcase space, subject to availability",
-        "VIP hospitality access for clients, partners, and senior management during the exhibition",
-        "Priority branding in visitor registration promotions and selected digital advertising creatives",
+        "Event branding: “INDIAMET Expo 2027 presented by [Sponsor Name]",
+        "Exclusive presenting sponsor recognition across major event branding.",
+        "Prime-position logo on the official event website homepage.",
+        "Largest sponsor logo on the event backdrop, entrance branding and registration area.,",
+        "Logo on official visitor invitations, digital brochures and promotional creatives.",
+        "Prominent logo placement on all major email campaigns and social media promotions.",
+        "One premium 36 sqm exhibition space (shell scheme)",
+        "One exclusive 20-minute keynote or industry presentation, subject to programme approval.",
+        "Opportunity to deliver the opening address at the conference.",
+        "One sponsored technical session or panel discussion.",
+        "One dedicated sponsor interview/video feature.",
+        "Up to three dedicated social media promotional posts.",
+        "Up to three promotional email mentions.",
+        "10 exhibitor/staff badges.",
+        "10 VIP/invitation passes.",
+        "Sponsor acknowledgement in the post-event report.",
+       "Opportunity to distribute company brochures or promotional material at the registration area, subject to approval."
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
@@ -87,14 +97,20 @@ export default function AdvertisingDetailsPage() {
       title: "Platinum Sponsor",
       description: "Achieve high-impact visibility among manufacturing, metrology, quality, inspection and engineering professionals through premium venue branding, digital promotion, technical presentation opportunities and product showcase support.",
       points: [
-        "High-visibility logo placement on the exhibition website, official brochure, and selected venue signage",
-        "Premium branding on selected exhibition aisles, session areas, or digital screens",
-        "One dedicated technical presentation or product spotlight in the knowledge programme",
-        "Social media features highlighting your brand, products, and participation at INDIAMET",
-        "Inclusion in selected pre-show and on-site visitor communications",
-        "Complimentary visitor passes for clients and business partners",
-        "Lead-generation support through selected networking and showcase opportunities",
-      ],
+        "Premium logo placement on the event website.",
+        "Prominent logo on the main entrance and exhibition branding.",
+        "Logo on conference and visitor promotional materials.",
+        "One premium 27 sqm exhibition space (shell scheme).",
+        "One 15-minute technical presentation, subject to programme approval.",
+        "One panel discussion participation opportunity.",
+        "One dedicated sponsor interview/video feature.",
+        "Up to two dedicated social media promotional posts.",
+        "Two email campaign mentions.",
+        "8 exhibitor/staff badges.",
+        "8 VIP/invitation passes.",
+        "Sponsor acknowledgement in the post-event report.",
+
+            ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
       image: "/images/2_af03062734.png",
@@ -104,13 +120,43 @@ export default function AdvertisingDetailsPage() {
       title: "Gold Sponsor",
       description: "Strengthen your brand presence with targeted exposure through exhibition signage, website visibility, brochure branding, social media promotion, product features and opportunities to engage relevant industry decision-makers.",
       points: [
-        "Logo presence on the official website and selected pages of the event brochure",
-        "On-site branding through selected exhibition signage and promotional displays",
-        "Social media mention and product or company feature across INDIAMET channels",
-        "Opportunity to showcase a featured product, solution, or case study",
-        "Inclusion in selected visitor email communications before the show",
-        "Complimentary passes for customers, distributors, and sales teams",
-        "Recognition as a Gold Sponsor on selected digital and print materials",
+       "Logo on the official event website sponsor section.",
+
+
+
+"Logo on selected event promotional materials.",
+
+
+
+"Prominent logo placement on the conference backdrop.",
+
+
+
+"One 18 sqm exhibition space (shell scheme).",
+
+
+
+"One 10-minute technical presentation, subject to programme approval.",
+
+
+
+"One social media promotional post.",
+
+
+
+"One email campaign mention.",
+
+
+
+"6 exhibitor/staff badges.",
+
+
+
+"6 VIP/invitation passes.",
+
+
+
+"Sponsor acknowledgement in the post-event report."
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
@@ -121,13 +167,36 @@ export default function AdvertisingDetailsPage() {
       title: "Silver Sponsor",
       description: "A focused sponsorship option for specialist technology and solution providers seeking visibility among professionals involved in metrology, precision measurement, inspection, testing and quality management.",
       points: [
-        "Logo listing on the official website and selected sponsor acknowledgement materials",
-        "Branding in selected exhibition communications and digital directories",
-        "Opportunity to highlight a specialist product or application for metrology and quality teams",
-        "Social media acknowledgement as a Silver Sponsor",
-        "Selected on-site brand visibility in designated sponsor areas",
-        "Complimentary visitor invitations for key customers and channel partners",
-        "Cost-effective exposure among a highly targeted technical audience",
+       
+       "Logo on the event website sponsor section.",
+
+
+
+"Logo on selected event branding and promotional creatives.",
+
+
+
+"One 12 sqm exhibition space (shell scheme).",
+
+
+
+"One opportunity to participate in a technical panel, subject to programme approval.",
+
+
+
+"One social media sponsor acknowledgement.",
+
+
+
+"4 exhibitor/staff badges.",
+
+
+
+"4 VIP/invitation passes.",
+
+
+
+"Sponsor acknowledgement in the post-event report."
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
@@ -152,16 +221,15 @@ export default function AdvertisingDetailsPage() {
       fallbackIcon: "🎟️"
     },
     {
-      title: "Visitor Badge Sponsor",
+      title: "Official Lanyard Sponsor",
       description: "Put your brand directly in the hands of exhibition visitors with branding opportunities on visitor badges and selected registration-area communication materials.",
       points: [
-        "Logo or brand mark on official visitor badges worn throughout the exhibition",
-        "Continuous brand exposure as visitors move across halls, sessions, and networking areas",
-        "Recognition as the official Visitor Badge Sponsor on selected communications",
-        "Branding support in the badge collection or lanyard distribution area",
-        "Opportunity to include a short brand line or URL on selected badge artwork, subject to production",
-        "High-frequency visibility among exhibitors, visitors, speakers, and media",
-        "Ideal for brands seeking recall beyond a single stand or signage location",
+        
+"Exclusive branding on visitor and exhibitor lanyards.",
+"Sponsor logo printed alongside INDIAMET branding.",
+"Logo on event website and sponsor board.",
+"Social media sponsor announcement.",
+"4 exhibitor/staff badges and 4 VIP passes.",
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
@@ -169,40 +237,23 @@ export default function AdvertisingDetailsPage() {
       fallbackIcon: "🎫"
     },
     {
-      title: "Entrance & Welcome Sponsor",
+      title: "Official Visitor Badge Sponsor",
       description: "Create a strong first impression with prominent branding at the exhibition entrance, welcome area, selected directional signage and visitor arrival points.",
       points: [
-        "Prominent branding at the main exhibition entrance and welcome zone",
-        "Logo placement on selected directional signage guiding visitors into the halls",
-        "High-impact first-impression visibility for arriving exhibitors, visitors, and guests",
-        "Opportunity for branded welcome messaging or digital display at arrival points",
-        "Recognition as the Entrance & Welcome Sponsor on selected event materials",
-        "Photo-opportunity branding in a high-traffic visitor gathering area",
-        "Strong association with the official start of the INDIAMET visitor experience",
+       
+"Sponsor logo on visitor badges.",
+"Branding on badge holders, where applicable.",
+"Logo on registration counter branding.",
+"Website and social media recognition.",
+
+"3 exhibitor/staff badges and 3 VIP passes.",
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
       image: "/images/3_065bb10e11.png",
       fallbackIcon: "🚪"
     },
-    {
-      title: "Knowledge Session Sponsor",
-      description: "Associate your company with technical knowledge and industry learning through session branding, stage visibility, speaker introduction, presentation opportunities and digital promotion.",
-      points: [
-        "Session-stage branding including backdrop, lectern, or digital screen presence",
-        "Opportunity to introduce the session or deliver a short technical presentation",
-        "Logo placement on selected session listings, agendas, and digital programme pages",
-        "Recognition in speaker communications and selected summit promotions",
-        "Association with expert discussions on metrology, inspection, quality, and manufacturing",
-        "Lead capture opportunities among engineers, quality managers, and technical buyers",
-        "Post-session digital mention across selected INDIAMET communication channels",
-      ],
-      buttonText: "Enquire Now",
-      buttonLink: "/sponsorship-enquiry",
-      image: "/images/4_b530561fa3.png",
-      fallbackIcon: "🎤"
-    },
-    {
+        {
       title: "Technology Showcase Sponsor",
       description: "Highlight your latest metrology, inspection, measurement and quality technologies through dedicated showcase branding, product demonstrations and digital promotion.",
       points: [
@@ -219,40 +270,92 @@ export default function AdvertisingDetailsPage() {
       image: "/images/1_9622597897.png",
       fallbackIcon: "🔬"
     },
-    {
-      title: "Digital Promotion Partner",
-      description: "Extend your INDIAMET Expo presence beyond the exhibition floor with website visibility, social media promotion, product features, email campaigns and digital brochure opportunities.",
-      points: [
-        "Featured logo and profile on selected pages of the official exhibition website",
-        "Sponsored social media posts highlighting your brand, products, or participation",
-        "Inclusion in selected pre-show and post-show email campaigns to registered audiences",
-        "Product or company feature in the digital brochure or online exhibitor communications",
-        "Banner or tile placement in selected digital visitor journeys, subject to inventory",
-        "Year-round digital recall beyond the three exhibition days",
-        "Measurable reach among manufacturers, metrology specialists, and quality decision-makers",
-      ],
-      buttonText: "Enquire Now",
-      buttonLink: "/sponsorship-enquiry",
-      image: "/images/2_af03062734.png",
-      fallbackIcon: "📱"
-    },
-    {
-      title: "Official Brochure Sponsor",
+        {
+      title: "Conference Session Partner",
       description: "Showcase your brand and products through premium advertising and branding opportunities within the official INDIAMET Expo brochure and its digital version.",
       points: [
-        "Premium advertising position in the official printed exhibition brochure",
-        "Matching visibility in the digital brochure circulated to registered visitors and exhibitors",
-        "Logo acknowledgement as the Official Brochure Sponsor on selected inner pages",
-        "Opportunity to feature product imagery, a company profile, or a technical highlight",
-        "Longer shelf life as visitors retain and share the brochure during and after the event",
-        "Distribution to on-site visitors, exhibitors, speakers, and selected industry partners",
-        "Strong branding among a qualified audience planning their exhibition visit",
+"Sponsor branding on conference session backdrop.",
+"Sponsor acknowledgement by session moderator.",
+"Logo on conference programme.",
+"Opportunity to nominate a speaker, subject to approval.",
+"3 exhibitor/staff badges and 3 VIP passes.",
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
       image: "/images/3_065bb10e11.png",
       fallbackIcon: "📰"
     }
+,
+      {
+      title: "Conference Delegate Kit Sponsor",
+      description: "Showcase your brand and products through premium advertising and branding opportunities within the official INDIAMET Expo brochure and its digital version.",
+      points: [
+
+" Exclusive recognition as the Official Conference Delegate Kit Sponsor of INDIAMET Expo 2027.",
+"Sponsor logo printed on conference delegate kit bags or folders.",
+"Sponsor logo on selected stationery items, such as notebooks and writing pads.",
+"Opportunity to include company brochures, product catalogues and promotional inserts in delegate kits.",
+"Company logo displayed on the conference sponsor backdrop.",
+"Sponsor acknowledgement on the official INDIAMET website.",
+"One dedicated social media sponsor announcement.",
+"Sponsor acknowledgement in the conference programme.",
+"Opportunity to display a promotional standee near the conference registration area.",
+"4 exhibitor/staff badges and 4 VIP passes."
+      ],
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "/images/3_065bb10e11.png",
+      fallbackIcon: "📰"
+    }
+,
+    {
+      title: "Official Conference Lunch Partner",
+      description: "Position your brand at the centre of conference networking and delegate engagement.",
+      points: [
+
+"Exclusive recognition as the Official Conference Lunch Partner.",
+"Sponsor logo on lunch-area branding and selected conference signage.",
+"Branding on the conference programme and event website.",
+"Sponsor logo on lunch invitation or delegate communication.",
+"Opportunity to place company brochures or promotional material at the lunch area.",
+"One branded standee at the lunch venue.",
+"Acknowledgement by the conference host during the lunch announcement.",
+"5 conference delegate passes.",
+"2 VIP passes.",
+"Company logo and sponsor profile in selected event promotions.",
+      ],
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "/images/3_065bb10e11.png",
+      fallbackIcon: "📰"
+    }
+,
+
+ {
+      title: "Official Exhibitor Networking Dinner Partner",
+      description: "Connect your brand with industry leaders, exhibitors, technology providers and decision-makers in an exclusive networking environment.",
+      points: [
+
+"Exclusive recognition as the Official Exhibitor Networking Dinner Partner.",
+"Prominent logo branding at the dinner entrance and venue.",
+"Branding on the main dinner backdrop and stage.",
+"Opportunity for a company representative to deliver a welcome address.",
+"Sponsor logo on dinner invitations and event communications.",
+"Opportunity to distribute company brochures and promotional material.",
+"Dedicated branding on dinner tables or selected table cards.",
+"Company logo on the event website and social media promotions.",
+"Verbal acknowledgement by the event host.",
+"10 dinner invitations for company representatives and guests.",
+"5 VIP passes.",
+"Opportunity to display one company standee at the venue.",
+      ],
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "/images/3_065bb10e11.png",
+      fallbackIcon: "📰"
+    }
+
+
   ];
 
   const ImageWithFallback = ({
