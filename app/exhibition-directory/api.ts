@@ -53,7 +53,7 @@ const MOCK_COMPANIES: ExhibitionCompany[] = [
     id: "1",
     name: "NPO Akonit",
     shortName: "Akonit",
-    description: "#"
+    description: "#",
     fullAddress: "123 Industrial Park, Moscow, Russia",
     logo: "",
     country: "Russia",
