@@ -82,7 +82,7 @@ export default function ContactUsPage() {
                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                           </svg>
                         </div>
-                        <span className="text-xs font-bold text-slate-800 font-sans tracking-wide">pad@diemex.in</span>
+                        <span className="text-xs font-bold text-slate-800 font-sans tracking-wide">pad@maxxmedia.in</span>
                       </div>
                     </div>
                   </div>
