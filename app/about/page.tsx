@@ -216,7 +216,7 @@ export default function AboutPage() {
               <div className="relative mx-auto overflow-hidden py-12 sm:py-16 lg:py-20 text-white">
                 <div className="absolute inset-0">
                   <img
-                    src="https://cdn.itegroupnews.com/img_3_4b6edc76d1.jpg"
+                    src="/images/img_3_4b6edc76d1.jpg"
                     alt="Event Background"
                     className="h-full w-full object-cover"
                   />

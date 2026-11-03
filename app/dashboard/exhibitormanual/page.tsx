@@ -41,8 +41,8 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/a
 const DEFAULT_SECTIONS: ManualSection[] = [
   {
     id: '1',
-    title: 'Welcome to India Tyre Expo 2027',
-    content: 'Welcome to the India Tyre Expo 2027. This manual contains important information for all exhibitors. Please read all sections carefully to ensure a smooth and successful exhibition experience.\n\nKey Highlights:\n• Over 500+ exhibitors from 25+ countries\n• 50,000+ expected visitors\n• 10,000+ sq.m of exhibition space\n• 3 days of networking and business opportunities',
+    title: 'Welcome to IndiaMet Expo 2027',
+    content: 'Welcome to the IndiaMet Expo 2027. This manual contains important information for all exhibitors. Please read all sections carefully to ensure a smooth and successful exhibition experience.\n\nKey Highlights:\n• Over 200+ exhibitors from 15+ countries\n• 50,000+ expected visitors\n• 2,000+ sq.m of exhibition space\n• 3 days of networking and business opportunities',
     category: 'general'
   },
   {
@@ -72,7 +72,7 @@ const DEFAULT_SECTIONS: ManualSection[] = [
   {
     id: '6',
     title: 'Logistics & Shipping',
-    content: 'Shipping Address:\nIndia Tyre Expo 2027\n[Exhibitor Name], Booth No. [Your Booth Number]\nIndia Expo Centre & Mart\nGreater Noida, Uttar Pradesh - 201306\n\nImportant Notes:\n• All shipments must be labeled properly\n• On-site handling charges apply\n• Storage available from 10th November, 2024\n• Empty crate storage available\n\nCustoms Clearance (International Exhibitors):\n• Temporary import documentation required\n• Contact logistics partner for assistance\n• Allow 5-7 days for customs clearance',
+    content: 'Shipping Address:\nIndiaMet Expo 2027\n[Exhibitor Name], Booth No. [Your Booth Number]\nIndia Expo Centre & Mart\nGreater Noida, Uttar Pradesh - 201306\n\nImportant Notes:\n• All shipments must be labeled properly\n• On-site handling charges apply\n• Storage available from 10th November, 2024\n• Empty crate storage available\n\nCustoms Clearance (International Exhibitors):\n• Temporary import documentation required\n• Contact logistics partner for assistance\n• Allow 5-7 days for customs clearance',
     category: 'logistics'
   }
 ];

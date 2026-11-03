@@ -261,7 +261,7 @@ export default function WhyExhibitPage() {
                 {/* BACKGROUND IMAGE */}
                 <div className="absolute inset-0">
                   <img
-                    src="https://cdn.itegroupnews.com/img_3_4b6edc76d1.jpg"
+                    src="/images/img_3_4b6edc76d1.jpg"
                     alt="Event Background"
                     className="h-full w-full object-cover"
                   />

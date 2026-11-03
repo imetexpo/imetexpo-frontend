@@ -116,7 +116,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 </svg>
               </div>
               <span className="text-lg font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-                Tyre Expo
+                Indiamet Expo
               </span>
             </div>
           ) : (

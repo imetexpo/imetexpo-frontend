@@ -83,7 +83,7 @@ export default function SettingsPage() {
                                     </label>
                                     <input
                                         type="text"
-                                        defaultValue="The Ultimate Tyre Exhibition"
+                                        defaultValue="Industrial Metrology Exhibition"
                                         className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
                                     />
                                 </div>

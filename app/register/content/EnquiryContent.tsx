@@ -23,10 +23,10 @@ export default function EnquiryContent() {
         <h3 className="font-bebas text-2xl text-[#003A77] mb-4">Why Visit?</h3>
         <ul className="space-y-3">
           {[
-            "Meet 350+ leading tyre manufacturers and suppliers",
-            "Discover the latest tyre manufacturing technologies",
+            "Meet 200+ leading metrology manufacturers and suppliers",
+            "Discover the latest metrology manufacturing technologies",
             "Network with industry experts and decision-makers",
-            "Explore innovative solutions for tyre production",
+            "Explore innovative solutions for metrology production",
             "Attend technical conferences and workshops",
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-2">

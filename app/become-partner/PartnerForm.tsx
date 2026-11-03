@@ -349,7 +349,7 @@ export default function PartnerForm() {
               />
               <label htmlFor="marketing" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
                 I want to stay informed about exhibitions organized by
-                <strong> Tyre Expo Organizing Committee</strong>, and be the first to
+                <strong> IndiaMet Expo Organizing Committee</strong>, and be the first to
                 receive information about exhibition stand sales, business program
                 events, advertising and sponsorship opportunities.
               </label>
