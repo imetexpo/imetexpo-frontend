@@ -10,7 +10,7 @@ import {
 } from "./registrationRoutes";
 
 const TAB_LABELS: Record<RegistrationTab, string> = {
-  enquiry: "Enquiry",
+  enquiry: "Visitor",
   exhibitor: "Exhibitor",
   sponsor: "Sponsor",
   brochure: "Brochure",

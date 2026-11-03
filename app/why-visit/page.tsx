@@ -143,7 +143,7 @@ export default function WhyVisitPage() {
       image:
         "/images/QR_MW_eng_web_site_e73baacf2e.svg",
       buttonText: "Connect",
-      buttonLink: "/http://wwww.metrologytoday.com",
+      buttonLink: "/https://wwww.metrologyupdate.com",
     },
   ];
 

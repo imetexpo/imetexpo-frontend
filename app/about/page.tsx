@@ -67,7 +67,7 @@ export default function AboutPage() {
   ],
 
   buttonText: "Explore Connect",
-  buttonLink: "/http://www.metrologyupdate.com"
+  buttonLink: "/https://www.metrologyupdate.com"
 }
   ];
 
