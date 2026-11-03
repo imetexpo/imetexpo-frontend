@@ -17,17 +17,20 @@ const steps = [
 ];
 
 const categoryOptions = [
-  'Outstanding Tyre Manufacturing',
-  'Best Rubber Compound Innovation',
-  'Quality Excellence Award',
-  'Tyre Testing & QC Award',
-  'Machinery & Automation Award',
-  'Inspection Technology Award',
-  'Recycling & Sustainability Award',
-  'Smart Manufacturing Award',
-  'Young Professional Award',
-  'Green Manufacturing Award',
-  'Excellence in R&D',
+  'Global Metrology Excellence Award',
+  'Advanced Measurement Technology Award',
+  'Precision Measurement Innovation Award',
+  'CMM & 3D Metrology Excellence Award',
+  'Machine Vision & Smart Inspection Award',
+  'Calibration Excellence Award',
+  'Quality & Measurement Leadership Awar',
+  'Best Industrial Metrology Application Award',
+  'Digital & Smart Metrology Award',
+  'Sustainable Metrology Award',
+  'Emerging Metrology Company Award',
+  'Metrology Startup of the Year',
+  'Metrology Education & Skill Development Award',
+  'Metrology Professional of the Year',
   'Lifetime Achievement Award',
 ];
 
