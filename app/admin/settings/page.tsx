@@ -93,7 +93,7 @@ export default function SettingsPage() {
                                     </label>
                                     <input
                                         type="text"
-                                        defaultValue="March 15-20, 2024"
+                                        defaultValue="May 13-15, 2027"
                                         className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
                                     />
                                 </div>
