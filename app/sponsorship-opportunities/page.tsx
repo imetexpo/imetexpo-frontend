@@ -90,7 +90,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/1_9622597897.png",
+      image: "/images/presenting.jpg",
       fallbackIcon: "🏆"
     },
     {
@@ -113,7 +113,7 @@ export default function AdvertisingDetailsPage() {
             ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/2_af03062734.png",
+      image: "/images/platinum.webp",
       fallbackIcon: "🥇"
     },
     {
@@ -125,42 +125,18 @@ export default function AdvertisingDetailsPage() {
 
 
 "Logo on selected event promotional materials.",
-
-
-
 "Prominent logo placement on the conference backdrop.",
-
-
-
 "One 18 sqm exhibition space (shell scheme).",
-
-
-
 "One 10-minute technical presentation, subject to programme approval.",
-
-
-
 "One social media promotional post.",
-
-
-
 "One email campaign mention.",
-
-
-
 "6 exhibitor/staff badges.",
-
-
-
 "6 VIP/invitation passes.",
-
-
-
 "Sponsor acknowledgement in the post-event report."
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/3_065bb10e11.png",
+      image: "/images/gold.webp",
       fallbackIcon: "🥈"
     },
     {
@@ -169,38 +145,17 @@ export default function AdvertisingDetailsPage() {
       points: [
        
        "Logo on the event website sponsor section.",
-
-
-
 "Logo on selected event branding and promotional creatives.",
-
-
-
 "One 12 sqm exhibition space (shell scheme).",
-
-
-
 "One opportunity to participate in a technical panel, subject to programme approval.",
-
-
-
 "One social media sponsor acknowledgement.",
-
-
-
 "4 exhibitor/staff badges.",
-
-
-
 "4 VIP/invitation passes.",
-
-
-
 "Sponsor acknowledgement in the post-event report."
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/4_b530561fa3.png",
+      image: "/images/silver.jpg",
       fallbackIcon: "🥉"
     },
     {
@@ -217,7 +172,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/1_9622597897.png",
+      image: "/images/visitor.webp",
       fallbackIcon: "🎟️"
     },
     {
@@ -233,7 +188,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/2_af03062734.png",
+      image: "/images/lanyard.webp",
       fallbackIcon: "🎫"
     },
     {
@@ -250,7 +205,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/3_065bb10e11.png",
+      image: "/images/visitor_badge.webp",
       fallbackIcon: "🚪"
     },
         {
@@ -267,7 +222,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/1_9622597897.png",
+      image: "/images/technology.png",
       fallbackIcon: "🔬"
     },
         {
@@ -282,7 +237,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/3_065bb10e11.png",
+      image: "/images/session.jpg",
       fallbackIcon: "📰"
     }
 ,
@@ -304,7 +259,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/3_065bb10e11.png",
+      image: "/images/conference.webp",
       fallbackIcon: "📰"
     }
 ,
@@ -326,7 +281,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/3_065bb10e11.png",
+      image: "/images/conflunch.jpg",
       fallbackIcon: "📰"
     }
 ,
@@ -351,7 +306,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/3_065bb10e11.png",
+      image: "/images/exhibitor_dinner.jpg",
       fallbackIcon: "📰"
     }
 
