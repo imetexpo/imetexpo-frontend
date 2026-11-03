@@ -217,7 +217,7 @@ export default function MyStallsPage() {
                 <CalendarIcon className="h-5 w-5 text-amber-500 mt-0.5" />
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wide">Exhibition Dates</p>
-                  <p className="font-semibold text-gray-800">15-17 March, 2025</p>
+                  <p className="font-semibold text-gray-800">13-15 May, 2027</p>
                 </div>
               </div>
             </div>

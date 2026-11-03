@@ -6,7 +6,7 @@ export default function EnquiryContent() {
         <div className="space-y-4">
           <div>
             <p className="text-[#00A1B1] font-semibold text-sm">Dates</p>
-            <p className="text-gray-700 text-lg sm:text-xl">15-17 October 2026</p>
+            <p className="text-gray-700 text-lg sm:text-xl">13-15 May, 2027</p>
           </div>
           <div>
             <p className="text-[#00A1B1] font-semibold text-sm">Venue</p>
