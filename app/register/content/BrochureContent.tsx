@@ -65,7 +65,7 @@ export default function BrochureContent() {
       <div className="pt-4 border-t border-gray-200 flex justify-center lg:justify-start">
         <div className="relative w-40 h-52 rotate-[-4deg] shadow-md rounded-sm overflow-hidden border border-gray-150">
           <Image
-            src="https://cdn.itegroupnews.com/Sales_Brochure_84b3c56f9d.png"
+            src="/images/indiamet_Brochure.png"
             alt="Event Brochure"
             fill
             className="object-cover"

@@ -229,7 +229,7 @@ export default function AboutPage() {
                     <div className="grid items-center gap-8 md:grid-cols-12">
                       <div className="flex justify-center md:col-span-5 lg:col-span-4">
                         <img
-                          src="https://cdn.itegroupnews.com/Sales_Brochure_84b3c56f9d.png"
+                          src="/images/indiamet_Brochure.png"
                           alt="Brochure"
                           className="h-48 sm:h-56 lg:h-64 w-auto object-contain"
                         />

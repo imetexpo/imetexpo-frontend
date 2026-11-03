@@ -273,7 +273,7 @@ export default function WhyExhibitPage() {
                   <div className="grid items-center gap-10 md:grid-cols-12">
                     <div className="flex justify-center md:col-span-4">
                       <img
-                        src="/images/Sales_Brochure_84b3c56f9d.png"
+                        src="/images/indiamet_Brochure.png"
                         alt="Brochure"
                         className="h-64 w-auto object-contain"
                       />

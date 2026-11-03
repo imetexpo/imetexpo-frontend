@@ -397,7 +397,7 @@ export default function WhyVisitPage() {
                     <div className="flex justify-center md:col-span-4">
 
                       <img
-                        src="/images/Sales_Brochure_84b3c56f9d.png"
+                        src="/images/indiamet_Brochure.png"
                         alt="INDIAMET Event Brochure"
                         className="h-48 sm:h-56 lg:h-64 w-auto object-contain"
                       />

@@ -29,14 +29,14 @@ export default function BrochureSection() {
           <div className="relative flex justify-center lg:justify-start w-full lg:w-auto">
             <div className="relative w-[250px] sm:w-[300px] lg:w-[380px]">
               <Image
-                src="/images/Sales_Brochure_84b3c56f9d.png"
+                src="/images/indiamet_Brochure.png"
                 alt="Brochure"
                 width={380}
                 height={380}
                 className="absolute top-4 sm:top-6 left-4 sm:left-6 rotate-[-8deg] opacity-80 shadow-xl"
               />
               <Image
-                src="https://cdn.itegroupnews.com/Sales_Brochure_84b3c56f9d.png"
+                src="/images/indiamet_Brochure.png"
                 alt="Brochure"
                 width={380}
                 height={380}
