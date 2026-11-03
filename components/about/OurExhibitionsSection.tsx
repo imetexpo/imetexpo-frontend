@@ -14,7 +14,7 @@ type Exhibition = {
 const exhibitions: Exhibition[] = [
   {
     name: 'MIMS AutoMobility Saint Peterburg',
-    logo: '#',
+    logo: '',
     description: 'International trade fair for automotive production, aftermarket and service industry',
     startDate: 'Aug 25th, 2026',
     endDate: 'Aug 28th, 2026',
@@ -23,7 +23,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'A-FEST',
-    logo: '#',
+    logo: '',
     description:
       'A new event in Aquaflame and AIRVent ecosystem for designers and installers of heating, water supply, ventilation, and air conditioning systems.',
     startDate: 'Sep 8th, 2026',
@@ -33,7 +33,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'WorldFood Moscow',
-    logo: '#',
+    logo: '',
     description: 'The international food and drink exhibition.',
     startDate: 'Sep 15th, 2026',
     endDate: 'Sep 18th, 2026',
@@ -42,7 +42,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'Comtrans',
-    logo: '#',
+    logo: '',
     description: 'The international exhibition of commercial vehicles.',
     startDate: 'Sep 22nd, 2026',
     endDate: 'Sep 25th, 2026',
@@ -51,7 +51,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'Fastenex',
-    logo: '#',
+    logo: '',
     description: 'The international exhibition of fasteners and industrial supply.',
     startDate: 'Oct 6th, 2026',
     endDate: 'Oct 9th, 2026',
@@ -60,7 +60,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'Weldex',
-    logo: '#',
+    logo: '',
     description: 'The international exhibition of welding materials, equipment and technologies.',
     startDate: 'Oct 6th, 2026',
     endDate: 'Oct 9th, 2026',
@@ -69,7 +69,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'TransRussia Summit',
-    logo: '#',
+    logo: '',
     description: 'Summit for the transport and logistics industry',
     startDate: 'Oct 19th, 2026',
     endDate: 'Oct 21st, 2026',
@@ -78,7 +78,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'MosBuild Summit',
-    logo: '#',
+    logo: '',
     description: 'Summit for the construction industry',
     startDate: 'Oct 21st, 2026',
     endDate: 'Oct 23rd, 2026',
@@ -87,7 +87,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'MiningWorld Summit',
-    logo: '#',
+    logo: '',
     description: 'Summit for the mining industry',
     startDate: 'Nov 16th, 2026',
     endDate: 'Nov 18th, 2026',
@@ -96,7 +96,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'YugAgro',
-    logo: '#',
+    logo: '',
     description:
       'The international exhibition of agricultural machinery, equipment, and materials for crop production.',
     startDate: 'Nov 17th, 2026',
@@ -106,7 +106,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'RosUpack Summit',
-    logo: '#',
+    logo: '',
     description: 'Summit for the packaging industry',
     startDate: 'Nov 18th, 2026',
     endDate: 'Nov 20th, 2026',
@@ -115,7 +115,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'Pharmtech & Ingredients',
-    logo: '#',
+    logo: '',
     description:
       'The international exhibition for equipment, raw materials and technologies for pharmaceutical production.',
     startDate: 'Nov 24th, 2026',
@@ -125,7 +125,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'Woodex',
-    logo: '#',
+    logo: '',
     description:
       'The international exhibition of equipment, materials and components for woodworking and furniture industry',
     startDate: 'Dec 1st, 2026',
@@ -135,7 +135,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'DairyTech',
-    logo: '#',
+    logo: '',
     description: 'The international exhibition of equipment for milk and dairy production.',
     startDate: 'Jan 26th, 2027',
     endDate: 'Jan 28th, 2027',
@@ -144,7 +144,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'AIRVent',
-    logo: '#',
+    logo: '',
     description:
       'The international exhibition of ventilation, air conditioning, and refrigeration equipment.',
     startDate: 'Feb 1st, 2027',
@@ -154,7 +154,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'Aquaflame',
-    logo: '#',
+    logo: '',
     description:
       'The international exhibition for domestic and industrial heating, water supply, engineering systems, and equipment for swimming pools and spas.',
     startDate: 'Feb 1st, 2027',
@@ -164,7 +164,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'TranRussia',
-    logo: '#',
+    logo: '',
     description: 'The international event for transportation and logistics market experts.',
     startDate: 'Mar 16th, 2027',
     endDate: 'Mar 18th, 2027',
@@ -173,7 +173,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'SkladTech',
-    logo: '#',
+    logo: '',
     description:
       'The special exposition for warehouse and handling equipment, automation systems and solutions.',
     startDate: 'Mar 16th, 2027',
@@ -183,7 +183,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'MosBuild',
-    logo: '#',
+    logo: '',
     description: 'The international building and interiors trade show.',
     startDate: 'Mar 30th, 2027',
     endDate: 'Apr 2nd, 2027',
@@ -192,7 +192,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'MosHome',
-    logo: '#',
+    logo: '',
     description:
       'The International exhibition of consumer goods for house, garden, sports and leisure MosHome.',
     startDate: 'Mar 30th, 2027',
@@ -202,7 +202,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'MITT',
-    logo: '#',
+    logo: '',
     description: 'The international travel & hospitality show.',
     startDate: 'Apr 13th, 2027',
     endDate: 'Apr 15th, 2027',
@@ -211,7 +211,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'ExpoCifra',
-    logo: '#',
+    logo: '',
     description:
       'The international exhibition of information technologies and digital transformation solutions. Co-located with ExpoElectronica',
     startDate: 'Apr 13th, 2027',
@@ -221,7 +221,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'ExpoElectronica',
-    logo: '#',
+    logo: '',
     description:
       'The international exhibition of electronica, components and technologies, materials and equipment, embedded systems and turnkey solutions.',
     startDate: 'Apr 13th, 2027',
@@ -231,7 +231,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'Analitika Expo',
-    logo: '#',
+    logo: '',
     description: 'The international exhibition of laboratory equipment and chemical reagents.',
     startDate: 'Apr 21st, 2027',
     endDate: 'Apr 23rd, 2027',
@@ -240,7 +240,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'Securika Moscow',
-    logo: '#',
+    logo: '',
     description: 'The international exhibition of security and fire protection equipment and products.',
     startDate: 'Apr 21st, 2027',
     endDate: 'Apr 23rd, 2027',
@@ -249,7 +249,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'IndiaMet 2027',
-    logo: '#',
+    logo: '',
     description:
       'The international exhibition of Industrial Metrologymachines and equipment.',
     startDate: 'May 13th, 2027',
@@ -259,7 +259,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'RosUpack',
-    logo: '#',
+    logo: '',
     description: 'The international event for package manufacturers and consumers. Co-located with Printech.',
     startDate: 'Jun 15th, 2027',
     endDate: 'Jun 18th, 2027',
@@ -268,7 +268,7 @@ const exhibitions: Exhibition[] = [
   },
   {
     name: 'Printech',
-    logo: '#',
+    logo: '',
     description:
       'The international exhibition of equipment, technologies and supplies for printing and advertising production. Co-located with RosUpack.',
     startDate: 'Jun 15th, 2027',

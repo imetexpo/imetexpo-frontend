@@ -102,7 +102,7 @@ const conferencePartners = [
     name: "Modern Tyre Industry",
     logo: "/images/3_c5c5637a9c.png",
     type: "Media Partner",
-    url: "#",
+    url: "",
   },
 ];
 
