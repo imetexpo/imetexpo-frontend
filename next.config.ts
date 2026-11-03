@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.itegroupnews.com',
+        hostname: '',
         port: '',
         pathname: '/**',
       },

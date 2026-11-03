@@ -183,7 +183,7 @@ const faqItems = [
                     As a participant at INDIAMET Expo, our team is dedicated to providing you with a variety of participation opportunities to make the most of your exhibition experience. From pre-event to post, we have created guides to help with the decision-making process and onboarding in a seamless manner.
                   </p>
                   <div className="pt-2">
-                    <Link href="https://cdn-ite.prismetic.com/02_Manual_Forms_Mining_World_Russia_2026_EUR_0ddf1ecf29.pdf" target="_blank">
+                    <Link href="" target="_blank">
                       <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         Download Guide
                       </button>

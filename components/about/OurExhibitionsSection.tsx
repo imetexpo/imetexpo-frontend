@@ -248,13 +248,13 @@ const exhibitions: Exhibition[] = [
     href: '#',
   },
   {
-    name: 'MiningWorld',
+    name: 'IndiaMet 2027',
     logo: '#',
     description:
-      'The international exhibition of machines and equipment for mining, processing, and transportation of minerals.',
-    startDate: 'Apr 27th, 2027',
-    endDate: 'Apr 29th, 2027',
-    venue: 'Crocus Expo, Moscow',
+      'The international exhibition of Industrial Metrologymachines and equipment.',
+    startDate: 'May 13th, 2027',
+    endDate: 'May 15th, 2027',
+    venue: 'Auto Cluster Exhibitoin Centre, Pune, India',
     href: '#',
   },
   {

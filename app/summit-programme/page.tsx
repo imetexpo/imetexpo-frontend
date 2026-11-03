@@ -155,7 +155,7 @@ export default function ConferenceProgrammePage() {
                   </div>
 
                   <div className="pt-2">
-                    <Link href="https://cdn-ite.prismetic.com/CP_Agenda_ITS_Tyre_Expo_2026.pdf" target="_blank" rel="noopener noreferrer">
+                    <Link href="" target="_blank" rel="noopener noreferrer">
                       <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         View Agenda
                       </button>

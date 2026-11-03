@@ -53,7 +53,7 @@ const MOCK_COMPANIES: ExhibitionCompany[] = [
     id: "1",
     name: "NPO Akonit",
     shortName: "Akonit",
-    description: "Leading manufacturer of mining equipment and standardized parts for the mining industry. With over 30 years of experience, NPO Akonit provides innovative solutions for mineral processing and mining operations.",
+    description: "#"
     fullAddress: "123 Industrial Park, Moscow, Russia",
     logo: "",
     country: "Russia",
@@ -61,7 +61,7 @@ const MOCK_COMPANIES: ExhibitionCompany[] = [
     pavilion: "Pavilion 1",
     hall: "Hall A",
     standNumber: "A101",
-    sector: ["Mining Equipment", "Mineral Processing", "Spare Parts"],
+    sector: [""],
     website: "https://akonit.ru",
     contactPerson: {
       name: "Ivan Petrov",
@@ -74,7 +74,7 @@ const MOCK_COMPANIES: ExhibitionCompany[] = [
     id: "2",
     name: "Sever Minerals",
     shortName: "Sever",
-    description: "Comprehensive mining solutions provider specializing in mineral exploration and extraction technologies.",
+    description: "",
     fullAddress: "45 Northern Avenue, St. Petersburg, Russia",
     logo: "",
     country: "Russia",
