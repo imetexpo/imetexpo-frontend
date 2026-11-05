@@ -6,6 +6,8 @@ import { useRouter, useParams } from "next/navigation";
 import { ArrowLeft, Save, Upload, Image as ImageIcon, X } from "lucide-react";
 import { getRentalItemById, updateRentalItem, RentalItem } from "@/lib/api/rentalItems";
 import toast from "react-hot-toast";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const categories = [
     { value: "AV", label: "AV Equipment" },
@@ -135,7 +137,7 @@ export default function EditRentalItemPage() {
     if (fetching) {
         return (
             <div className="flex items-center justify-center min-h-[60vh]">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"></div>
+                <LoadingDots tone="light" className="mx-auto flex" />
             </div>
         );
     }
@@ -317,7 +319,7 @@ export default function EditRentalItemPage() {
                         className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2 disabled:opacity-50"
                     >
                         {loading ? (
-                            <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                            <LoadingDots size="sm" tone="light" />
                         ) : (
                             <Save size={18} />
                         )}

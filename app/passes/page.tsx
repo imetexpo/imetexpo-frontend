@@ -21,6 +21,8 @@ import VisitorPassCard from '@/components/passes/VisitorPassCard';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
 import PageHero from '@/components/layout/PageHero';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const API = getBackendUrl();
 const COUNTRIES = [
@@ -384,7 +386,7 @@ export default function PassesPage() {
                     className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-[#00A1B1] px-4 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77] disabled:opacity-60"
                   >
                     <Smartphone className="h-4 w-4" />
-                    {loading ? 'Sending OTP...' : `Send OTP via ${channel === 'sms' ? 'SMS' : 'WhatsApp'}`}
+                    {loading ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Sending OTP...</span> : `Send OTP via ${channel === 'sms' ? 'SMS' : 'WhatsApp'}`}
                   </button>
                   <p className="mt-3 text-center text-xs text-gray-400">
                     {channel === 'sms' ? 'SMS' : 'WhatsApp'} OTP from IndiaMET 2027 · Expires in 10 minutes
@@ -509,7 +511,7 @@ export default function PassesPage() {
                   disabled={loading}
                   className="mt-6 w-full rounded-sm bg-[#00A1B1] py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77] disabled:opacity-60"
                 >
-                  {loading ? 'Creating your pass...' : 'Complete Registration'}
+                  {loading ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Creating your pass...</span> : 'Complete Registration'}
                 </button>
                 <p className="mt-3 text-center text-xs text-gray-400">By registering, you agree to our terms and conditions</p>
               </form>

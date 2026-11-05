@@ -11,6 +11,8 @@ import {
     HousekeepingConfig
 } from "@/lib/api/housekeeping";
 import toast from "react-hot-toast";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function AdminHousekeepingPage() {
     const [config, setConfig] = useState<HousekeepingConfig | null>(null);
@@ -138,7 +140,7 @@ export default function AdminHousekeepingPage() {
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-[400px]">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"></div>
+                <LoadingDots tone="light" className="mx-auto flex" />
             </div>
         );
     }

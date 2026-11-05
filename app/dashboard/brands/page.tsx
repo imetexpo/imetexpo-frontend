@@ -3,6 +3,8 @@
 
 import { useState, useEffect } from 'react';
 import { TagIcon, PlusIcon, PencilIcon, TrashIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const API_BASE = 'http://localhost:5000/api';
 
@@ -100,7 +102,7 @@ export default function BrandsPage() {
     if (loading) {
         return (
             <div className="flex justify-center items-center h-64">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500"></div>
+                <LoadingDots className="mx-auto flex" />
             </div>
         );
     }

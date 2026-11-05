@@ -6,6 +6,8 @@ import { Plus, Edit, Trash2, Search, Package, CheckCircle, XCircle, Eye, Refresh
 import Link from "next/link";
 import { getFurniture, deleteFurniture, updateStockStatus, Furniture } from "@/lib/api/furniture";
 import toast from "react-hot-toast";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const categories = ["All", "Tables", "Chairs", "Seating", "Counters", "Storage", "Display", "Decor"];
 
@@ -189,7 +191,7 @@ export default function AdminFurniturePage() {
             {/* Furniture Grid */}
             {loading ? (
                 <div className="flex items-center justify-center min-h-[400px]">
-                    <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"></div>
+                    <LoadingDots tone="light" className="mx-auto flex" />
                 </div>
             ) : furniture.length === 0 ? (
                 <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-12 text-center">

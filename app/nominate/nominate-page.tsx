@@ -16,6 +16,8 @@ import {
   normalizeNomination, validateNominationStep,
   type NominationData, type NominationField, type NominationErrors,
 } from '@/lib/nominationForm';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function NominatePage() {
   const router = useRouter();
@@ -364,7 +366,7 @@ export default function NominatePage() {
                     )}
                     <button type="submit" disabled={submitting || (active === 4 && !consent)}
                       className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#00A1B1] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#003A77] disabled:cursor-not-allowed disabled:opacity-50 sm:ml-auto">
-                      {submitting ? 'Submitting nomination…'
+                      {submitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting nomination…</span>
                         : active === 4 ? 'Submit nomination'
                         : returnToReview ? 'Save & return to review →'
                         : active === 3 ? 'Review nomination →' : 'Continue →'}

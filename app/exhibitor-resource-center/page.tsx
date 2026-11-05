@@ -7,6 +7,8 @@ import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function ExhibitorResourceCenterPage() {
   const [loading, setLoading] = useState(true);
@@ -19,11 +21,7 @@ export default function ExhibitorResourceCenterPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#003A77]">
-        <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
-          <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
-        </div>
-      </div>
+      <LoadingDots fullScreen />
     );
   }
 

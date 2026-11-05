@@ -2,29 +2,10 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import {
-  BoltIcon,
-  WrenchScrewdriverIcon,
-  UserGroupIcon,
-  ComputerDesktopIcon,
-  SparklesIcon,
-  WifiIcon,
-  TruckIcon,
-  ShieldCheckIcon,
-  HomeModernIcon,
-  PlusIcon,
-  EyeIcon,
-  TrashIcon,
-  CheckCircleIcon,
-  ClockIcon,
-  XCircleIcon,
-  DocumentTextIcon,
-  ArrowPathIcon,
-  CurrencyDollarIcon,
-  BanknotesIcon,
-  CubeIcon,
-} from '@heroicons/react/24/outline';
+import { BoltIcon, WrenchScrewdriverIcon, UserGroupIcon, ComputerDesktopIcon, SparklesIcon, WifiIcon, TruckIcon, ShieldCheckIcon, HomeModernIcon, PlusIcon, EyeIcon, TrashIcon, CheckCircleIcon, ClockIcon, XCircleIcon, DocumentTextIcon, CurrencyDollarIcon, BanknotesIcon, CubeIcon } from '@heroicons/react/24/outline';
 import { MapPinIcon, UserIcon } from 'lucide-react';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface Requirement {
   id: string;
@@ -94,7 +75,7 @@ export default function RequirementsPage() {
       case 'approved': return <CheckCircleIcon className="h-4 w-4 text-green-500" />;
       case 'pending': return <ClockIcon className="h-4 w-4 text-yellow-500" />;
       case 'rejected': return <XCircleIcon className="h-4 w-4 text-red-500" />;
-      case 'in-progress': return <ArrowPathIcon className="h-4 w-4 text-blue-500 animate-spin" />;
+      case 'in-progress': return <LoadingDots size="sm" />;
       default: return <ClockIcon className="h-4 w-4 text-gray-400" />;
     }
   };

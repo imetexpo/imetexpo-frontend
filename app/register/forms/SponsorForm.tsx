@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function SponsorForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -359,7 +361,7 @@ export default function SponsorForm() {
           isSubmitting ? "opacity-70 cursor-not-allowed" : ""
         }`}
       >
-        {isSubmitting ? "Processing..." : "Register as Partner →"}
+        {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Processing...</span> : "Register as Partner →"}
       </button>
 
       <p className="text-xs text-gray-500 mt-3 text-center">

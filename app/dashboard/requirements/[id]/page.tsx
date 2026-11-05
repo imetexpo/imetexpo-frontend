@@ -15,6 +15,8 @@ import {
   UserIcon,
   BoltIcon,
 } from '@heroicons/react/24/outline';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 // Mock data - in real app, fetch from API
 const mockRequirements: Record<string, any> = {
@@ -110,7 +112,7 @@ export default function RequirementDetailPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500"></div>
+        <LoadingDots className="mx-auto flex" />
       </div>
     );
   }

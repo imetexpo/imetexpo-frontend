@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { ShieldCheckIcon, ArrowLeftIcon, CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { securityGuardAPI, extraRequirementsAPI } from '@/lib/api/exhibitorClient';
 import { toast } from 'react-hot-toast';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface SecurityGuardConfig {
   costPerGuardPerDay: number;
@@ -161,7 +163,7 @@ export default function SecurityGuardsPage() {
   if (loading) {
     return (
       <div className="max-w-3xl mx-auto text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600 mx-auto"></div>
+        <LoadingDots className="mx-auto flex" />
         <p className="mt-4 text-gray-600">Loading security guard rates...</p>
       </div>
     );
@@ -305,7 +307,7 @@ export default function SecurityGuardsPage() {
           disabled={submitting}
           className="w-full py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {submitting ? 'Submitting...' : 'Submit Requirement'}
+          {submitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : 'Submit Requirement'}
         </button>
       </form>
     </div>

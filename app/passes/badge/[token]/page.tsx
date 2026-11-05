@@ -3,6 +3,8 @@
 import { use, useEffect, useState } from 'react';
 import VisitorPassCard from '@/components/passes/VisitorPassCard';
 import { getBackendUrl } from '@/lib/api/backendUrl';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function PassBadgePage({ params }: { params: Promise<{ token: string }> }) {
   const { token } = use(params);
@@ -31,8 +33,7 @@ export default function PassBadgePage({ params }: { params: Promise<{ token: str
   if (!pass) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#FCF8F3] p-6 text-gray-500">
-        Loading visitor pass...
-      </div>
+        <LoadingDots label="Loading visitor pass..." /></div>
     );
   }
 

@@ -5,6 +5,8 @@ import { Plus, Edit, Trash2, Search, Package, Tv, Printer, CheckCircle, XCircle,
 import Link from "next/link";
 import { getRentalItems, deleteRentalItem, updateRentalItemStatus, RentalItem } from "@/lib/api/rentalItems";
 import toast from "react-hot-toast";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const categories = [
     { value: "All", label: "All Categories" },
@@ -189,7 +191,7 @@ export default function AdminRentalItemsPage() {
 
             {loading ? (
                 <div className="flex items-center justify-center min-h-[400px]">
-                    <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"></div>
+                    <LoadingDots tone="light" className="mx-auto flex" />
                 </div>
             ) : items.length === 0 ? (
                 <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-12 text-center">

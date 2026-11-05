@@ -15,6 +15,8 @@ import {
     brochuresAPI,
     Brochure
 } from '@/lib/api/exhibitorClient';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const API_BASE = 'https://localhost:5000/api';
 
@@ -103,7 +105,7 @@ export default function BrochuresPage() {
     if (loading) {
         return (
             <div className="flex justify-center items-center h-64">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500"></div>
+                <LoadingDots className="mx-auto flex" />
             </div>
         );
     }
@@ -238,7 +240,7 @@ export default function BrochuresPage() {
                                     disabled={uploading}
                                     className="flex-1 px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 disabled:opacity-50"
                                 >
-                                    {uploading ? 'Uploading...' : 'Upload'}
+                                    {uploading ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Uploading...</span> : 'Upload'}
                                 </button>
                             </div>
                         </form>

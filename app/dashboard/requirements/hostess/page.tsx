@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { SparklesIcon, ArrowLeftIcon, CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { hostessAPI, extraRequirementsAPI, HostessCategory } from '@/lib/api/exhibitorClient';
 import toast from 'react-hot-toast';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 // Default fallback categories if API fails
 const DEFAULT_CATEGORIES: HostessCategory[] = [
@@ -166,7 +168,7 @@ export default function HostessServicesPage() {
   if (loading) {
     return (
       <div className="max-w-3xl mx-auto text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-600 mx-auto"></div>
+        <LoadingDots className="mx-auto flex" />
         <p className="mt-4 text-gray-600">Loading hostess packages...</p>
       </div>
     );
@@ -330,7 +332,7 @@ export default function HostessServicesPage() {
           disabled={submitting || (formData.categoryA === 0 && formData.categoryB === 0)}
           className="w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-rose-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {submitting ? 'Submitting...' : 'Submit Requirement'}
+          {submitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : 'Submit Requirement'}
         </button>
       </form>
     </div>

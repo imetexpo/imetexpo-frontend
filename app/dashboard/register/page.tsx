@@ -3,7 +3,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { EyeIcon, EyeSlashIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -349,7 +351,7 @@ export default function RegisterPage() {
                 >
                   {loading ? (
                     <span className="flex items-center justify-center gap-2">
-                      <ArrowPathIcon className="h-5 w-5 animate-spin" />
+                      <LoadingDots size="sm" tone="light" />
                       Registering...
                     </span>
                   ) : (

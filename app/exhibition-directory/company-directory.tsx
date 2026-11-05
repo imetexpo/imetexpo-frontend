@@ -3,12 +3,14 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Search, Loader2, X } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import BackToTop from '@/components/layout/BackToTop';
 import Container from '@/components/ui/container';
 import CompanyGrid from './company-grid';
 import { fetchExhibitionCompanies, ExhibitionCompany, generateSlug } from '@/lib/api/exhibitorClient';
 import PageHero from '@/components/layout/PageHero';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function CompanyDirectory() {
   const router = useRouter();
@@ -86,7 +88,7 @@ export default function CompanyDirectory() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#FCF8F3] font-sans">
         <div className="text-center">
-          <Loader2 className="mx-auto mb-4 h-12 w-12 animate-spin text-[#00A1B1]" />
+          <LoadingDots className="mx-auto flex mb-4" />
           <p className="text-sm text-gray-600">Loading exhibitors...</p>
         </div>
       </div>
@@ -222,7 +224,7 @@ export default function CompanyDirectory() {
 
           {loading ? (
             <div className="flex justify-center py-12">
-              <Loader2 className="h-8 w-8 animate-spin text-[#00A1B1]" />
+              <LoadingDots className="mx-auto flex" />
             </div>
           ) : (
             <CompanyGrid

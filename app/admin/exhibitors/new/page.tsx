@@ -7,6 +7,8 @@ import { ArrowLeft, Save, Building, User, Mail, Phone, MapPin, CreditCard, Lock,
 import { createExhibitor } from "@/lib/api/exhibitors";
 import { getAdminToken, isAuthenticated } from "@/lib/api/auth";
 import toast from "react-hot-toast";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function AddExhibitorPage() {
     const router = useRouter();
@@ -443,7 +445,7 @@ export default function AddExhibitorPage() {
                         className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {loading ? (
-                            <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                            <LoadingDots size="sm" tone="light" />
                         ) : (
                             <Save size={18} />
                         )}

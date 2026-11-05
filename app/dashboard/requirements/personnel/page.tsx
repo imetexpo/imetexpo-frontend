@@ -12,6 +12,8 @@ import {
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline';
 import { extraRequirementsAPI } from '@/lib/api/exhibitorClient';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface Personnel {
   id: number;
@@ -233,7 +235,7 @@ export default function PersonnelRequirementsPage() {
           disabled={submitting}
           className="w-full py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {submitting ? 'Submitting...' : 'Submit Pass Request'}
+          {submitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : 'Submit Pass Request'}
         </button>
       </form>
     </div>

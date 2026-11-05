@@ -15,6 +15,8 @@ import {
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline';
 import { profileAPI, extraRequirementsAPI } from '@/lib/api/exhibitorClient';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface BasicInfo {
   title: string;
@@ -175,7 +177,7 @@ export default function BasicInfoPage() {
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+        <LoadingDots className="mx-auto flex" />
         <p className="mt-4 text-gray-600">Loading your information...</p>
       </div>
     );
@@ -386,7 +388,7 @@ export default function BasicInfoPage() {
             disabled={saving}
             className="flex-1 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-indigo-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {saving ? 'Saving...' : 'Save & Continue'}
+            {saving ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Saving...</span> : 'Save & Continue'}
           </button>
         </div>
       </form>

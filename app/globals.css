@@ -169,3 +169,17 @@ body {
     animation: awards-marquee 18s linear infinite;
   }
 }
+/* Show the same three brand dots while the animation engine loads. */
+.loading-dots-visual:has(svg) > .loading-dots-placeholder {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-dots-player {
+    display: none;
+  }
+
+  .loading-dots-visual:has(svg) > .loading-dots-placeholder {
+    visibility: visible;
+  }
+}

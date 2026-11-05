@@ -10,6 +10,8 @@ import {
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline';
 import { electricalAPI, extraRequirementsAPI } from '@/lib/api/exhibitorClient';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface ElectricalRates {
   temporary: { ratePerKW: number };
@@ -126,7 +128,7 @@ export default function ElectricalRequirementsPage() {
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+        <LoadingDots className="mx-auto flex" />
         <p className="mt-4 text-gray-600">Loading electrical rates...</p>
       </div>
     );
@@ -291,7 +293,7 @@ export default function ElectricalRequirementsPage() {
               disabled={submitting}
               className="w-full py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {submitting ? 'Submitting...' : 'Submit Electrical Requirement'}
+              {submitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : 'Submit Electrical Requirement'}
             </button>
           </form>
         </div>

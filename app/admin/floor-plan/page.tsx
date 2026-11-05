@@ -6,6 +6,8 @@ import { ZoomIn, ZoomOut, Upload, Map, RefreshCw, X, Save, Image as ImageIcon, M
 import toast from "react-hot-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getAdminToken } from "@/lib/api/auth";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface Booth {
     id: string;
@@ -235,7 +237,7 @@ export default function FloorPlanPage() {
     if (authLoading || loading) {
         return (
             <div className="flex items-center justify-center min-h-[60vh]">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"></div>
+                <LoadingDots tone="light" className="mx-auto flex" />
             </div>
         );
     }
@@ -401,7 +403,7 @@ export default function FloorPlanPage() {
                         </div>
                         <div className="flex gap-3 mt-6 pt-4 border-t border-gray-700">
                             <button onClick={handleUpdateBooth} disabled={updatingBooth} className="flex-1 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition disabled:opacity-50 flex items-center justify-center gap-2">
-                                {updatingBooth ? <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div> : <Save size={16} />}
+                                {updatingBooth ? <LoadingDots size="sm" tone="light" /> : <Save size={16} />}
                                 {updatingBooth ? "Saving..." : "Save Changes"}
                             </button>
                         </div>
@@ -428,7 +430,7 @@ export default function FloorPlanPage() {
                             </div>
                             {uploading && (
                                 <div className="flex items-center justify-center gap-2 text-gray-300">
-                                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-orange-500 border-t-transparent"></div>
+                                    <LoadingDots size="sm" tone="light" />
                                     <span>Uploading...</span>
                                 </div>
                             )}

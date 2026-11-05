@@ -6,6 +6,8 @@ import Link from "next/link";
 import Container from "@/components/ui/container";
 import BackToTop from "@/components/layout/BackToTop";
 import PartnersSection from "@/components/home/PartnersSection";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 // Type definitions for components
 interface InputProps {
@@ -430,7 +432,7 @@ export default function PostShowReportPage() {
                     disabled={isSubmitting}
                     className="w-full bg-[#00A1B1] hover:bg-[#003A77] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
-                    {isSubmitting ? 'Submitting...' : 'DOWNLOAD REPORT'}
+                    {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : 'DOWNLOAD REPORT'}
                   </button>
                 </div>
 

@@ -4,6 +4,8 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Save, Plus, Trash2 } from "lucide-react";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function EditTyrePage() {
     const params = useParams();
@@ -238,7 +240,7 @@ export default function EditTyrePage() {
                         className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2"
                     >
                         {loading ? (
-                            <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                            <LoadingDots size="sm" tone="light" />
                         ) : (
                             <Save size={18} />
                         )}

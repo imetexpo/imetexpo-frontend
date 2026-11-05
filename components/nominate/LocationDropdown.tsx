@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const OTHER = '__other__';
 const inputClass = 'w-full rounded-lg border border-gray-300 bg-white px-3.5 py-3 text-sm text-gray-900 outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1] disabled:cursor-not-allowed disabled:bg-gray-100';
@@ -26,7 +28,7 @@ export default function LocationDropdown({ label, name, value, options, loading,
       <label htmlFor={name} className="text-sm font-medium text-gray-700">
         {label} <span className="text-[#00A1B1]">*</span>
       </label>
-      <select
+      <div className="relative"><select
         id={name}
         name={custom ? name + 'Selection' : name}
         value={custom ? OTHER : value}
@@ -45,7 +47,7 @@ export default function LocationDropdown({ label, name, value, options, loading,
         <option value="">{loading ? 'Loading...' : 'Select ' + label.toLowerCase()}</option>
         {options.map((option) => <option key={option} value={option}>{option}</option>)}
         <option value={OTHER}>Other / Not listed</option>
-      </select>
+      </select>{loading && <LoadingDots size="sm" className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2" label="Loading..." />}</div>
       {custom && (
         <>
           <label htmlFor={name + 'Custom'} className="sr-only">Enter {label.toLowerCase()}</label>

@@ -12,6 +12,8 @@ import {
     getSecurityGuardRateHistory,
     type SecurityGuardConfig
 } from "@/lib/api/securityGuard";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function AdminSecurityGuardPage() {
     const [rate, setRate] = useState(2500);
@@ -136,7 +138,7 @@ export default function AdminSecurityGuardPage() {
             <div className="max-w-2xl mx-auto p-6">
                 <div className="flex items-center justify-center h-64">
                     <div className="text-center">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto"></div>
+                        <LoadingDots tone="light" className="mx-auto flex" />
                         <p className="text-gray-400 mt-4">Loading configuration...</p>
                     </div>
                 </div>
@@ -206,7 +208,7 @@ export default function AdminSecurityGuardPage() {
                                 disabled={resetting}
                             >
                                 {resetting ? (
-                                    <RefreshCw size={16} className="animate-spin" />
+                                    <LoadingDots size="sm" tone="light" />
                                 ) : (
                                     <RefreshCw size={16} />
                                 )}
@@ -256,7 +258,7 @@ export default function AdminSecurityGuardPage() {
                             >
                                 {updating ? (
                                     <>
-                                        <RefreshCw size={16} className="animate-spin" />
+                                        <LoadingDots size="sm" tone="light" />
                                         Saving...
                                     </>
                                 ) : (

@@ -6,6 +6,8 @@ import { Search, Plus, Eye, Edit, Trash2, Mail, Phone, Building, CheckCircle, Cl
 import Link from "next/link";
 import { getExhibitors, deleteExhibitor, resendCredentials, Exhibitor } from "@/lib/api/exhibitors";
 import toast from "react-hot-toast";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const getStatusBadge = (status: string) => {
     const statusMap: Record<string, { icon: any; color: string; label: string }> = {
@@ -151,7 +153,7 @@ export default function ExhibitorsPage() {
                             {loading ? (
                                 <tr>
                                     <td colSpan={5} className="px-6 py-12 text-center">
-                                        <div className="animate-spin rounded-full h-8 w-8 border-2 border-orange-500 border-t-transparent mx-auto"></div>
+                                        <LoadingDots tone="light" className="mx-auto flex" />
                                         <p className="text-gray-400 mt-2">Loading exhibitors...</p>
                                     </td>
                                 </tr>

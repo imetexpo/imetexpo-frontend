@@ -4,6 +4,8 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import AdminShell from "./AdminShell";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function AdminLayout({
     children,
@@ -40,7 +42,7 @@ export default function AdminLayout({
     if (isAuthenticated === null) {
         return (
             <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"></div>
+                <LoadingDots tone="light" className="mx-auto flex" />
             </div>
         );
     }

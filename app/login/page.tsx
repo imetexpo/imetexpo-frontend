@@ -4,10 +4,12 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { EyeIcon, EyeSlashIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import { authAPI } from '@/lib/api/exhibitorClient';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
@@ -166,7 +168,7 @@ export default function ExhibitorLoginPage() {
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">
-                  <ArrowPathIcon className="h-5 w-5 animate-spin" />
+                  <LoadingDots size="sm" tone="light" />
                   Logging in...
                 </span>
               ) : (

@@ -15,6 +15,8 @@ import {
     SecurityDeposit
 } from "@/lib/api/securityDeposit";
 import toast from "react-hot-toast";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const categoryOptions = [
     { value: '0-36', label: '0-36 sq.m', min: 0, max: 36 },
@@ -228,7 +230,7 @@ export default function AdminSecurityDepositPage() {
             {/* Tiers Grid */}
             {loading ? (
                 <div className="flex items-center justify-center min-h-[400px]">
-                    <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"></div>
+                    <LoadingDots tone="light" className="mx-auto flex" />
                 </div>
             ) : deposits.length === 0 ? (
                 <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-12 text-center">

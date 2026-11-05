@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 type Country = { name: string };
 type State = { name: string };
@@ -315,7 +317,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
           <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
             Country <span className="text-[#00A1B1]">*</span>
           </label>
-          <select
+          <div className="relative"><select
             name="country"
             value={formData.country}
             onChange={handleChange}
@@ -328,7 +330,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
                 {country.name}
               </option>
             ))}
-          </select>
+          </select>{countriesLoading && <LoadingDots size="sm" className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2" label="Loading countries..." />}</div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -336,7 +338,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
             <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
               State <span className="text-[#00A1B1]">*</span>
             </label>
-            <select
+            <div className="relative"><select
               name="state"
               value={formData.state}
               onChange={handleChange}
@@ -356,13 +358,13 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
                   {state.name}
                 </option>
               ))}
-            </select>
+            </select>{statesLoading && <LoadingDots size="sm" className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2" label="Loading states..." />}</div>
           </div>
           <div>
             <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
               City <span className="text-[#00A1B1]">*</span>
             </label>
-            <select
+            <div className="relative"><select
               name="city"
               value={formData.city}
               onChange={handleChange}
@@ -384,7 +386,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
                   {city.name}
                 </option>
               ))}
-            </select>
+            </select>{citiesLoading && <LoadingDots size="sm" className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2" label="Loading cities..." />}</div>
           </div>
         </div>
 
@@ -427,7 +429,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
             isSubmitting ? 'cursor-not-allowed opacity-70' : ''
           }`}
         >
-          {isSubmitting ? 'Processing...' : 'Register as Delegate'}
+          {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Processing...</span> : 'Register as Delegate'}
         </button>
 
         <p className="text-[11px] leading-relaxed text-gray-500">

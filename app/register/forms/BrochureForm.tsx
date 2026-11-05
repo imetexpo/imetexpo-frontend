@@ -5,6 +5,8 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const productSectors = [
   "Coordinate Measuring Machines (CMM)",
@@ -356,7 +358,7 @@ export default function BrochureForm() {
           disabled={isSubmitting}
           className="w-full bg-[#00A1B1] hover:bg-[#003A77] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
-          {isSubmitting ? "Submitting..." : "DOWNLOAD BROCHURE"}
+          {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : "DOWNLOAD BROCHURE"}
         </button>
       </div>
 

@@ -50,6 +50,8 @@ const countries = [
 import { useUTMData } from "@/hooks/useUTMTracker";
 import toast from "react-hot-toast";
 import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function SponsorshipEnquiryPage() {
   const { utmData, campaign } = useUTMData();
@@ -374,7 +376,7 @@ export default function SponsorshipEnquiryPage() {
                   disabled={isSubmitting}
                   className="w-full bg-[#00A1B1] text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-[#003A77] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
+                  {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : 'Submit Enquiry'}
                 </button>
 
                 {/* Terms & Conditions */}

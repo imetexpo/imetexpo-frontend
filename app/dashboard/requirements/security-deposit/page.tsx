@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { BanknotesIcon, ArrowLeftIcon, CheckCircleIcon, ExclamationTriangleIcon, CreditCardIcon, XCircleIcon } from '@heroicons/react/24/outline';
 import { securityDepositAPI, extraRequirementsAPI, SecurityDepositTier } from '@/lib/api/exhibitorClient';
 import toast from 'react-hot-toast';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function SecurityDepositPage() {
   const router = useRouter();
@@ -151,7 +153,7 @@ export default function SecurityDepositPage() {
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto"></div>
+        <LoadingDots className="mx-auto flex" />
         <p className="mt-4 text-gray-600">Loading security deposit tiers...</p>
       </div>
     );
@@ -353,7 +355,7 @@ export default function SecurityDepositPage() {
             disabled={submitting || !selectedTier}
             className="w-full mt-4 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {submitting ? 'Saving...' : 'Continue to Preview'}
+            {submitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Saving...</span> : 'Continue to Preview'}
           </button>
 
           {/* Info Card */}

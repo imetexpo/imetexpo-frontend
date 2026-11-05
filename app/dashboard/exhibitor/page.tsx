@@ -20,6 +20,8 @@ import {
 
 import { profileAPI } from '@/lib/api/exhibitorClient';
 import toast from 'react-hot-toast';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface ProfileFormData {
   id?: string;
@@ -269,7 +271,7 @@ export default function CompanyProfilePage() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500"></div>
+        <LoadingDots className="mx-auto flex" />
       </div>
     );
   }
@@ -306,7 +308,7 @@ export default function CompanyProfilePage() {
               disabled={saving}
               className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {saving ? 'Saving...' : 'Save Changes'}
+              {saving ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Saving...</span> : 'Save Changes'}
             </button>
           </div>
         )}
@@ -364,7 +366,7 @@ export default function CompanyProfilePage() {
                   />
                   <div className="bg-amber-500 text-white p-1.5 rounded-full hover:bg-amber-600 transition">
                     {isUploading ? (
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                      <LoadingDots size="sm" />
                     ) : (
                       <ArrowUpTrayIcon className="h-4 w-4" />
                     )}

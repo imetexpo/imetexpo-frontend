@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { COUNTRIES, INDUSTRIES, AWARD_CATEGORIES } from "@/lib/registrationOptions";
 import AwardsTurnstile from "./AwardsTurnstile";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const inputClass = "w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#00A1B1] focus:ring-2 focus:ring-[#00A1B1]";
 const initialForm = {
@@ -160,7 +162,7 @@ export default function AwardsForm() {
         {error && <p role="alert" className="text-sm text-red-600">{error}</p>}
         <button type="submit" disabled={loading || !termsAccepted || (captchaEnabled && !captchaToken)}
           className="w-full rounded-lg bg-[#00A1B1] px-6 py-3 text-lg font-semibold text-white transition hover:bg-[#003A77] disabled:cursor-not-allowed disabled:opacity-50">
-          {loading ? "Submitting..." : "Submit"}
+          {loading ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : "Submit"}
         </button>
       </fieldset>
       <p className="text-center text-xs text-gray-500">All fields marked with * are required.</p>

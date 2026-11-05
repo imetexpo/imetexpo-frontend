@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Eye, EyeOff, LogIn, Truck, AlertCircle } from "lucide-react";
 import { adminLogin } from "@/lib/api/auth";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function AdminLoginPage() {
     const router = useRouter();
@@ -111,7 +113,7 @@ export default function AdminLoginPage() {
                             className="w-full py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-red-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {loading ? (
-                                <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                                <LoadingDots size="sm" tone="light" />
                             ) : (
                                 <>
                                     <LogIn size={18} />

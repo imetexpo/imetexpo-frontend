@@ -3,10 +3,12 @@
 
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ArrowLeft, Edit, Mail, Phone, MapPin, Building, Calendar, CheckCircle, Clock, XCircle, Package, FileText, CreditCard, Lock, RefreshCw } from "lucide-react";
+import { ArrowLeft, Edit, Mail, Phone, MapPin, Building, Calendar, CheckCircle, Clock, XCircle, Package, FileText, CreditCard, Lock } from "lucide-react";
 import Link from "next/link";
 import { getExhibitor, getExhibitorProducts, getExhibitorBrands, getExhibitorBrochures, Exhibitor, StallDetails, resendCredentials } from "@/lib/api/exhibitors";
 import toast from "react-hot-toast";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const getStatusColor = (status: string) => {
     switch (status) {
@@ -110,7 +112,7 @@ export default function ExhibitorDetailPage() {
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-[60vh]">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"></div>
+                <LoadingDots tone="light" className="mx-auto flex" />
             </div>
         );
     }
@@ -146,7 +148,7 @@ export default function ExhibitorDetailPage() {
                         disabled={resending}
                         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center gap-2 disabled:opacity-50"
                     >
-                        {resending ? <RefreshCw size={18} className="animate-spin" /> : <Mail size={18} />}
+                        {resending ? <LoadingDots size="sm" tone="light" /> : <Mail size={18} />}
                         Resend Credentials
                     </button>
                     <Link href={`/admin/exhibitors/${exhibitor.id}/edit`} className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition flex items-center gap-2">

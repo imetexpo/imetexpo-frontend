@@ -12,6 +12,8 @@ import {
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const statsData = [
   { value: "60+", label: "Conference Speakers" },
@@ -116,11 +118,7 @@ export default function ConferenceProgrammePage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#003A77]">
-        <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-500 text-4xl">
-          <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-orange-300 text-2xl"></div>
-        </div>
-      </div>
+      <LoadingDots fullScreen />
     );
   }
 

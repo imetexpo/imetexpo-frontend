@@ -13,6 +13,8 @@ import {
   BuildingOfficeIcon,
   UserIcon,
 } from '@heroicons/react/24/outline';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 const mockInvoice: Record<string, any> = {
   '1': {
@@ -55,7 +57,7 @@ export default function InvoiceDetailPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500"></div>
+        <LoadingDots className="mx-auto flex" />
       </div>
     );
   }

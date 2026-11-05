@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ComputerDesktopIcon, ArrowLeftIcon, CheckCircleIcon, PlusIcon, MinusIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { rentalItemsAPI, extraRequirementsAPI, RentalItem } from '@/lib/api/exhibitorClient';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 function SuccessPage({ onBack }: { onBack: () => void }) {
   return (
@@ -138,7 +140,7 @@ export default function RentalItemsPage() {
   if (loading) {
     return (
       <div className="max-w-6xl mx-auto text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto"></div>
+        <LoadingDots className="mx-auto flex" />
         <p className="mt-4 text-gray-600">Loading rental catalog...</p>
       </div>
     );
@@ -271,7 +273,7 @@ export default function RentalItemsPage() {
               disabled={selectedItems.length === 0 || submitting}
               className="w-full py-2.5 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {submitting ? 'Submitting...' : 'Submit Rental Request'}
+              {submitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" label="" />Submitting...</span> : 'Submit Rental Request'}
             </button>
           </div>
         </div>

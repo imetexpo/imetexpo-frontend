@@ -27,6 +27,8 @@ import ExhibitorContent from "./content/ExhibitorContent";
 import SponsorContent from "./content/SponsorContent";
 import BrochureContent from "./content/BrochureContent";
 import AwardsContent from "./content/AwardsContent";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 function RegisterPageContent() {
   const searchParams = useSearchParams();
@@ -99,7 +101,7 @@ function RegisterPageContent() {
 
 export default function RegisterPage() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div className="flex min-h-72 items-center justify-center"><LoadingDots label="Loading registration form..." /></div>}>
       <RegisterPageContent />
     </Suspense>
   );

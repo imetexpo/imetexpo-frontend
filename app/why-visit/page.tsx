@@ -10,6 +10,8 @@ import SectorsSection from "@/components/home/SectorsSection";
 import BackToTop from "@/components/layout/BackToTop";
 import React from "react";
 import PageHero from "@/components/layout/PageHero";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function WhyVisitPage() {
   const [loading, setLoading] = useState(true);
@@ -21,11 +23,7 @@ export default function WhyVisitPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-100 grid place-content-center bg-[#003A77]">
-        <div className="flex size-20 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-[#00A1B1] text-4xl">
-          <div className="flex size-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-[#00A1B1] text-2xl"></div>
-        </div>
-      </div>
+      <LoadingDots fullScreen />
     );
   }
 

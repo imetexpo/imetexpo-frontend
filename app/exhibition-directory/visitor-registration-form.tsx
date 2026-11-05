@@ -3,8 +3,10 @@
 
 import React from "react"
 import { useState, useEffect } from 'react'
-import { X, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
+import { X, CheckCircle, AlertCircle } from 'lucide-react';
 import { env } from "process"
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface VisitorRegistrationFormProps {
   isOpen: boolean
@@ -490,7 +492,7 @@ export default function VisitorRegistrationForm({
               >
                 {loading ? (
                   <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <LoadingDots size="sm" tone="light" />
                     Sending OTP...
                   </>
                 ) : (
@@ -549,7 +551,7 @@ export default function VisitorRegistrationForm({
               >
                 {loading ? (
                   <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <LoadingDots size="sm" tone="light" />
                     Verifying...
                   </>
                 ) : (

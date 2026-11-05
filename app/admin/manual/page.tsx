@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import toast from "react-hot-toast";
 import axios from "axios";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface ManualSection {
     id: string;
@@ -534,7 +536,7 @@ export default function AdminManualPage() {
             {/* Manuals List */}
             {loading ? (
                 <div className="flex items-center justify-center min-h-[400px]">
-                    <div className="animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"></div>
+                    <LoadingDots tone="light" className="mx-auto flex" />
                 </div>
             ) : manuals.length === 0 ? (
                 <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-12 text-center">

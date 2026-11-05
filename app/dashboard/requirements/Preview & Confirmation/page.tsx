@@ -17,6 +17,8 @@ import {
 } from '@heroicons/react/24/outline';
 import { extraRequirementsAPI } from '@/lib/api/exhibitorClient';
 import toast from 'react-hot-toast';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface SummaryItem {
     id: string;
@@ -432,7 +434,7 @@ export default function PreviewAndPaymentPage() {
     if (loading) {
         return (
             <div className="max-w-4xl mx-auto text-center py-12">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600 mx-auto"></div>
+                <LoadingDots className="mx-auto flex" />
                 <p className="mt-4 text-gray-600">Loading your requirements preview...</p>
             </div>
         );
@@ -711,7 +713,7 @@ export default function PreviewAndPaymentPage() {
                             >
                                 {submitting ? (
                                     <>
-                                        <div className="animate-spin rounded-full h-4 w-4 border-2 border-amber-600 border-t-transparent"></div>
+                                        <LoadingDots size="sm" />
                                         Processing...
                                     </>
                                 ) : (

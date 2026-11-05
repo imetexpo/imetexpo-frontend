@@ -16,6 +16,8 @@ import {
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline';
 import { boothAPI, extraRequirementsAPI } from '@/lib/api/exhibitorClient';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface BoothDetails {
   boothNo: string;
@@ -175,7 +177,7 @@ export default function BoothDetailsPage() {
   if (loading) {
     return (
       <div className="max-w-5xl mx-auto text-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600 mx-auto"></div>
+        <LoadingDots className="mx-auto flex" />
         <p className="mt-4 text-gray-600">Loading booth details...</p>
       </div>
     );
@@ -440,7 +442,7 @@ export default function BoothDetailsPage() {
             disabled={saving}
             className="flex-1 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {saving ? 'Saving...' : 'Save Booth Details'}
+            {saving ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Saving...</span> : 'Save Booth Details'}
           </button>
         </div>
       </form>

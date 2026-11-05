@@ -2,12 +2,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Globe, Eye, Download, MapPin, Building, Package, Tag, File, X, Menu, ArrowLeft, Share2, Loader2, MessageCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Globe, Eye, Download, MapPin, Building, Package, Tag, File, X, Menu, ArrowLeft, Share2, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { fetchExhibitionCompanyBySlug, fetchExhibitorProducts, fetchExhibitorBrochures, fetchExhibitorBrands, ExhibitionCompany } from '@/lib/api/exhibitorClient';
 import VisitorRegistrationForm from '../visitor-registration-form';
 import Container from '@/components/ui/container';
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 export default function ExhibitorDetailPage() {
   const params = useParams();
@@ -117,7 +119,7 @@ export default function ExhibitorDetailPage() {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center font-sans">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-[#00A1B1] mx-auto mb-4" />
+          <LoadingDots className="mx-auto flex mb-4" />
           <p className="text-slate-650 text-sm">Loading company details...</p>
         </div>
       </div>

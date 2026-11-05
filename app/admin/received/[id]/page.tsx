@@ -4,6 +4,8 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, CheckCircle, XCircle, Clock, Package, User, Mail, Phone, Calendar, FileText, Building } from "lucide-react";
+import LoadingDots from '@/components/ui/LoadingDots';
+
 
 interface RequirementDetail {
     id: string;
@@ -101,7 +103,7 @@ export default function RequirementDetailPage() {
                         className="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2"
                     >
                         {updating ? (
-                            <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                            <LoadingDots size="sm" tone="light" />
                         ) : (
                             <CheckCircle size={18} />
                         )}
