@@ -34,3 +34,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Awards enquiries
+
+The Awards registration tab is available at `/register?t=awards`. It submits to
+`/api/awards`, validates the required fields and terms acceptance, and saves the
+enquiry through the existing CMS lead integration. Set `NEXT_PUBLIC_CMS_PROJECT_ID`
+and `NEXT_PUBLIC_CMS_GRAPHQL_ENDPOINT` as for the other registration forms.
+Awards enquiries use the CMS's `OTHER` lead type; the selected industry, award
+category, consent and submission time are retained in the lead message.
+
+To enable Cloudflare Turnstile, set `NEXT_PUBLIC_TURNSTILE_SITE_KEY` and the
+server-only `TURNSTILE_SECRET_KEY` for the same widget, allow the website's hostname
+in Cloudflare, then rebuild/restart. When configured, the server verifies the
+single-use token before saving the lead. With neither key configured, the form
+operates without a CAPTCHA. Configuring only one key rejects submissions.
+
+Nominator country, state and city selections are independent of the nominee's
+address. States and cities load from CountriesNow, as in the existing delegate
+form. Changing a country clears its state and city; changing a state clears its
+city. Other / Not listed supports places missing from the data or an unavailable
+location service.

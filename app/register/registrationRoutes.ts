@@ -1,10 +1,11 @@
-export type RegistrationTab = 'enquiry' | 'exhibitor' | 'sponsor' | 'brochure';
+export type RegistrationTab = 'enquiry' | 'exhibitor' | 'sponsor' | 'brochure' | 'awards';
 
 export const REGISTRATION_TABS: RegistrationTab[] = [
     'enquiry',
     'exhibitor',
     'sponsor',
     'brochure',
+    'awards',
 ];
 
 export const TAB_QUERY_PARAM = 't';
@@ -16,7 +17,7 @@ export const LEGACY_PATH_TO_TAB: Record<string, RegistrationTab> = {
     '/event-brochure': 'brochure',
 };
 
-export const TAB_TO_LEGACY_PATH: Record<RegistrationTab, string> = {
+export const TAB_TO_LEGACY_PATH: Partial<Record<RegistrationTab, string>> = {
     enquiry: '/visitor-registration',
     exhibitor: '/exhibiting-enquiry',
     sponsor: '/become-partner',
@@ -44,6 +45,11 @@ export const REGISTRATION_HERO: Record<
         accent: 'SPONSOR',
         subtitle:
             'Partner with INDIAMET Expo and put your brand in front of industry professionals.',
+    },
+    awards: {
+        title: 'REGISTER FOR',
+        accent: 'AWARDS',
+        subtitle: 'Share your details and award category of interest. Our team will contact you with further information.',
     },
     brochure: {
         title: 'DOWNLOAD',

@@ -1,614 +1,392 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
 import PageHero from '@/components/layout/PageHero';
 import { Field, TextInput, TextArea, Select } from '@/components/nominate/FormFields';
-
-const steps = [
-  'Nominator Details',
-  'Nominee Details',
-  'Category Selection',
-  'Supporting Details',
-  'Review & Submit',
-];
-
-const categoryOptions = [
-  'Global Metrology Excellence Award',
-  'Advanced Measurement Technology Award',
-  'Precision Measurement Innovation Award',
-  'CMM & 3D Metrology Excellence Award',
-  'Machine Vision & Smart Inspection Award',
-  'Calibration Excellence Award',
-  'Quality & Measurement Leadership Awar',
-  'Best Industrial Metrology Application Award',
-  'Digital & Smart Metrology Award',
-  'Sustainable Metrology Award',
-  'Emerging Metrology Company Award',
-  'Metrology Startup of the Year',
-  'Metrology Education & Skill Development Award',
-  'Metrology Professional of the Year',
-  'Lifetime Achievement Award',
-];
-
-const countryOptions = [
-  'India',
-  'United States',
-  'Germany',
-  'China',
-  'United Kingdom',
-  'UAE',
-  'Singapore',
-  'Japan',
-  'South Korea',
-  'Thailand',
-  'Malaysia',
-  'Indonesia',
-  'France',
-  'Italy',
-  'Other',
-];
-
-type FormData = {
-  nominatorName: string;
-  contactPerson: string;
-  designation: string;
-  email: string;
-  mobile: string;
-  nominatorCountry: string;
-  nomineeName: string;
-  nomineeType: 'Organization' | 'Individual';
-  website: string;
-  address: string;
-  city: string;
-  state: string;
-  nomineeCountry: string;
-  pinCode: string;
-  nomineeEmail: string;
-  nomineePhone: string;
-  category: string;
-  achievements: string;
-  supportingLinks: string;
-  additionalComments: string;
-};
-
-const initialFormData: FormData = {
-  nominatorName: '',
-  contactPerson: '',
-  designation: '',
-  email: '',
-  mobile: '',
-  nominatorCountry: '',
-  nomineeName: '',
-  nomineeType: 'Organization',
-  website: '',
-  address: '',
-  city: '',
-  state: '',
-  nomineeCountry: '',
-  pinCode: '',
-  nomineeEmail: '',
-  nomineePhone: '',
-  category: '',
-  achievements: '',
-  supportingLinks: '',
-  additionalComments: '',
-};
-
-const requiredByStep: (keyof FormData)[][] = [
-  ['nominatorName', 'contactPerson', 'designation', 'email', 'mobile', 'nominatorCountry'],
-  ['nomineeName', 'address', 'city', 'state', 'nomineeCountry', 'pinCode', 'nomineeEmail', 'nomineePhone'],
-  ['category'],
-  [],
-  [],
-];
+import LocationDropdown from '@/components/nominate/LocationDropdown';
+import { COUNTRIES } from '@/lib/registrationOptions';
+import { useLocationOptions } from '@/hooks/useLocationOptions';
+import {
+  EMPTY_NOMINATION, NOMINATION_CATEGORIES, NOMINATION_LABELS, NOMINATION_LIMITS,
+  NOMINATION_STEPS, NOMINATION_STEP_FIELDS, REQUIRED_NOMINATION_FIELDS,
+  normalizeNomination, validateNominationStep,
+  type NominationData, type NominationField, type NominationErrors,
+} from '@/lib/nominationForm';
 
 export default function NominatePage() {
-  const router = useRouter();
   const [active, setActive] = useState(0);
-  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [furthest, setFurthest] = useState(0);
+  const [formData, setFormData] = useState<NominationData>({ ...EMPTY_NOMINATION });
   const [consent, setConsent] = useState(false);
-  const [error, setError] = useState('');
+  const [errors, setErrors] = useState<NominationErrors>({});
+  const [submitError, setSubmitError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [returnToReview, setReturnToReview] = useState(false);
+  const [validationAttempt, setValidationAttempt] = useState(0);
+  const formRef = useRef<HTMLFormElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const interacted = useRef(false);
+  const requestPending = useRef(false);
+  const states = useLocationOptions(formData.nominatorCountry);
+  const cities = useLocationOptions(formData.nominatorCountry, formData.nominatorState, 'cities');
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  useEffect(() => {
+    if (!interacted.current) return;
+    const invalid = formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]:not(:disabled)');
+    const target = invalid || headingRef.current;
+    target?.focus({ preventScroll: true });
+    target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, [active, validationAttempt, submitted]);
 
-  const handleBack = () => {
-    if (active > 0) {
-      setError('');
-      setActive(active - 1);
+  function updateField(name: NominationField, value: string) {
+    setFormData((previous) => ({
+      ...previous,
+      [name]: value,
+      ...(name === 'nominatorCountry' ? { nominatorState: '', nominatorCity: '' } : {}),
+      ...(name === 'nominatorState' ? { nominatorCity: '' } : {}),
+    }));
+    setErrors((previous) => {
+      const next = { ...previous };
+      delete next[name];
+      if (name === 'nominatorCountry') { delete next.nominatorState; delete next.nominatorCity; }
+      if (name === 'nominatorState') delete next.nominatorCity;
+      return next;
+    });
+    setSubmitError('');
+  }
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
+    updateField(event.target.name as NominationField, event.target.value);
+  }
+
+  function validateThrough(lastStep: number) {
+    for (let step = 0; step <= lastStep; step++) {
+      const nextErrors = validateNominationStep(formData, step);
+      if (Object.keys(nextErrors).length) {
+        setActive(step);
+        setErrors(nextErrors);
+        setValidationAttempt((attempt) => attempt + 1);
+        return false;
+      }
     }
-  };
+    setErrors({});
+    return true;
+  }
 
-  const handleNext = () => {
-    const missing = requiredByStep[active].some((key) => !formData[key]);
-    if (missing) {
-      setError('Please fill in all required fields before continuing.');
-      return;
-    }
-    setError('');
-    if (active < steps.length - 1) setActive(active + 1);
-  };
+  function goToStep(step: number) {
+    if (submitting || step > furthest) return;
+    interacted.current = true;
+    setSubmitError('');
+    setReturnToReview(false);
+    if (step > active && !validateThrough(step - 1)) return;
+    setErrors({});
+    setActive(step);
+  }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  function handleNext() {
+    interacted.current = true;
+    const destination = returnToReview ? NOMINATION_STEPS.length - 1 : active + 1;
+    if (!validateThrough(destination - 1)) return;
+    setSubmitError('');
+    setActive(destination);
+    setFurthest((previous) => Math.max(previous, destination));
+    setReturnToReview(false);
+  }
+
+  function editSection(step: number) {
+    if (submitting) return;
+    interacted.current = true;
+    setErrors({});
+    setSubmitError('');
+    setActive(step);
+    setReturnToReview(true);
+  }
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (requestPending.current) return;
+    if (active < NOMINATION_STEPS.length - 1) { handleNext(); return; }
+    interacted.current = true;
+    if (!validateThrough(NOMINATION_STEPS.length - 2)) return;
     if (!consent) {
-      setError('Please accept the terms & privacy policy to submit your nomination.');
+      setSubmitError('Please confirm the details and accept the privacy policy before submitting.');
       return;
     }
-    setError('');
-    console.log('Nomination submitted:', formData);
-    setSubmitted(true);
-  };
-
-  const goToStep = (i: number) => {
-    if (i <= active) {
-      setError('');
-      setActive(i);
+    requestPending.current = true;
+    setSubmitting(true);
+    setSubmitError('');
+    try {
+      const response = await fetch('/api/nominations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...normalizeNomination(formData), consent }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        if (result.errors && Number.isInteger(result.step)) {
+          setActive(result.step);
+          setErrors(result.errors);
+          setValidationAttempt((attempt) => attempt + 1);
+        }
+        throw new Error(result.message || 'Your nomination could not be submitted. Please try again.');
+      }
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Unable to submit. Please try again.');
+    } finally {
+      requestPending.current = false;
+      setSubmitting(false);
     }
-  };
+  }
+
+  function inputProps(name: NominationField) {
+    return {
+      name,
+      value: formData[name],
+      onChange: handleChange,
+      required: REQUIRED_NOMINATION_FIELDS.includes(name),
+      maxLength: NOMINATION_LIMITS[name],
+      'aria-invalid': errors[name] ? true as const : undefined,
+      'aria-describedby': errors[name] ? name + '-error' : undefined,
+    };
+  }
+
+  function renderField(
+    name: NominationField,
+    options: { type?: string; placeholder?: string; rows?: number; wide?: boolean; hint?: string; autoComplete?: string } = {},
+  ) {
+    const props = inputProps(name);
+    const describedBy = [props['aria-describedby'], options.hint ? name + '-hint' : ''].filter(Boolean).join(' ') || undefined;
+    return (
+      <Field key={name} label={NOMINATION_LABELS[name]} required={props.required}
+        error={errors[name]} hint={options.hint} className={options.wide ? 'md:col-span-2' : ''}>
+        {options.rows
+          ? <TextArea {...props} aria-describedby={describedBy} rows={options.rows} placeholder={options.placeholder} />
+          : <TextInput {...props} aria-describedby={describedBy} type={options.type || 'text'}
+              autoComplete={options.autoComplete} placeholder={options.placeholder} />}
+      </Field>
+    );
+  }
+
+  function reviewRows(step: number): [string, string][] {
+    return NOMINATION_STEP_FIELDS[step].map((name) => [NOMINATION_LABELS[name], formData[name]]);
+  }
 
   return (
     <div className="intro-animation overflow-hidden bg-white font-sans">
-      <PageHero
-        title="AWARDS"
-        accent="NOMINATE"
-        subtitle="Recognize. Celebrate. Inspire excellence. Nominate the best organisations and individuals shaping the future of metrology and precision manufacturing."
-      />
+      <PageHero title="AWARDS" accent="NOMINATE"
+        subtitle="Recognize. Celebrate. Inspire excellence. Nominate the best organisations and individuals shaping the future of metrology and precision manufacturing." />
 
       <section className="border-b border-gray-100 bg-[#FCF8F3] py-4">
         <Container>
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/" className="transition-colors hover:text-[#00A1B1]">
-              Home
-            </Link>
-            <span className="text-gray-400">/</span>
-            <Link href="/awards/" className="transition-colors hover:text-[#00A1B1]">
-              Awards
-            </Link>
-            <span className="text-gray-400">/</span>
-            <span className="font-medium text-[#00A1B1]">Nomination Form</span>
-          </div>
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-600">
+            <Link href="/" className="hover:text-[#00A1B1]">Home</Link>
+            <span aria-hidden="true" className="text-gray-400">/</span>
+            <Link href="/awards/" className="hover:text-[#00A1B1]">Awards</Link>
+            <span aria-hidden="true" className="text-gray-400">/</span>
+            <span aria-current="page" className="font-medium text-[#00A1B1]">Nomination Form</span>
+          </nav>
         </Container>
       </section>
 
-      <section className="bg-[#FCF8F3] py-8">
-        <Container>
-          <div className="flex items-start overflow-x-auto pb-2">
-            {steps.map((label, i) => {
-              const isReached = i <= active;
-              return (
-                <div key={label} className="flex flex-1 items-center last:flex-none">
-                  <div className="flex min-w-[4.5rem] flex-col items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => goToStep(i)}
-                      disabled={i > active}
-                      className={`flex h-9 w-9 items-center justify-center rounded-full border-2 text-sm font-bold transition-colors duration-300 ${
-                        isReached
-                          ? 'cursor-pointer border-[#00A1B1] bg-[#00A1B1] text-white'
-                          : 'cursor-not-allowed border-gray-300 bg-white text-gray-700'
-                      }`}
-                    >
-                      {i + 1}
-                    </button>
-                    <span
-                      className={`hidden text-center text-[10px] uppercase tracking-wide sm:block ${
-                        i === active ? 'font-bold text-[#00A1B1]' : 'text-gray-600'
-                      }`}
-                    >
-                      {label}
-                    </span>
-                  </div>
-                  {i < steps.length - 1 && (
-                    <span
-                      className={`mx-2 mb-5 h-px flex-1 transition-colors duration-300 ${
-                        i < active ? 'bg-[#00A1B1]' : 'bg-gray-300'
-                      }`}
-                    />
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </Container>
-      </section>
+      {!submitted && (
+        <section className="border-b border-gray-100 bg-[#FCF8F3] py-6">
+          <Container>
+            <nav aria-label="Nomination progress" className="overflow-x-auto pb-2">
+              <ol className="flex min-w-[600px] items-start">
+                {NOMINATION_STEPS.map((step, index) => {
+                  const current = index === active;
+                  const complete = index < furthest && !Object.keys(validateNominationStep(formData, index)).length;
+                  return (
+                    <li key={step.title} className="flex min-w-0 flex-1 items-center last:flex-none">
+                      <button type="button" onClick={() => goToStep(index)}
+                        disabled={index > furthest || submitting}
+                        aria-current={current ? 'step' : undefined}
+                        aria-label={'Step ' + (index + 1) + ': ' + step.title + (complete ? ', complete' : '')}
+                        className="group flex w-28 flex-col items-center gap-2 disabled:cursor-not-allowed">
+                        <span className={'flex h-10 w-10 items-center justify-center rounded-full border-2 text-sm font-semibold transition ' +
+                          (current ? 'border-[#00A1B1] bg-[#00A1B1] text-white ring-4 ring-[#00A1B1]/10'
+                            : complete ? 'border-[#00A1B1] bg-[#00A1B1]/10 text-[#008896]'
+                            : 'border-gray-300 bg-white text-gray-500')}>
+                          {complete && !current ? <span aria-hidden="true">✓</span> : index + 1}
+                        </span>
+                        <span className={'text-center text-xs leading-relaxed ' + (current ? 'font-semibold text-[#003A77]' : 'text-gray-600')}>
+                          {step.title}
+                        </span>
+                      </button>
+                      {index < NOMINATION_STEPS.length - 1 && <span aria-hidden="true"
+                        className={'mx-1 mb-8 h-px flex-1 ' + (complete ? 'bg-[#00A1B1]' : 'bg-gray-300')} />}
+                    </li>
+                  );
+                })}
+              </ol>
+            </nav>
+          </Container>
+        </section>
+      )}
 
-      <section className="py-10 lg:py-16" id="form">
+      <section className="py-8 lg:py-12" id="form">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-2">
-            <form
-              onSubmit={handleSubmit}
-              className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm md:p-8"
-            >
-              <button
-                type="button"
-                onClick={() => router.push('/awards/')}
-                className="mb-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-600 transition-colors hover:text-[#00A1B1]"
-              >
+          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_19rem] xl:grid-cols-[minmax(0,1fr)_22rem]">
+            <form ref={formRef} onSubmit={handleSubmit} noValidate aria-busy={submitting}
+              className="min-w-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-8">
+              <Link href="/awards/" className="mb-7 inline-flex text-sm font-medium text-gray-500 hover:text-[#00A1B1]">
                 ← Back to Awards
-              </button>
+              </Link>
 
               {submitted ? (
-                <div className="py-10 text-center">
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#00A1B1]/10 text-2xl text-[#00A1B1]">
-                    ✓
-                  </div>
-                  <h2 className="mb-2 font-bebas text-3xl uppercase tracking-wide text-[#003A77]">
-                    Nomination Submitted
-                  </h2>
-                  <p className="mx-auto max-w-sm text-lg sm:text-xl text-gray-600">
-                    Thank you — your nomination has been received. Our team will review it and get in
-                    touch if any further details are needed.
+                <div role="status" className="py-10 text-center">
+                  <div aria-hidden="true" className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#00A1B1]/10 text-3xl text-[#00A1B1]">✓</div>
+                  <h2 ref={headingRef} tabIndex={-1} className="mb-3 font-bebas text-4xl text-[#003A77] outline-none">Nomination Submitted</h2>
+                  <p className="mx-auto max-w-md text-base leading-relaxed text-gray-600">
+                    Thank you, {formData.contactPerson}. Your nomination for {formData.nomineeName} has been received.
+                    Our team will review it and contact you if further details are needed.
                   </p>
+                  <Link href="/awards/" className="mt-6 inline-flex rounded-lg bg-[#00A1B1] px-6 py-3 text-sm font-semibold text-white hover:bg-[#003A77]">
+                    Back to Awards →
+                  </Link>
                 </div>
               ) : (
                 <>
+                  <div className="mb-7 border-b border-gray-100 pb-6">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#00A1B1]" aria-live="polite">
+                      Step {active + 1} of {NOMINATION_STEPS.length}
+                    </p>
+                    <h2 ref={headingRef} tabIndex={-1} className="font-bebas text-3xl text-[#003A77] outline-none">
+                      {active + 1}. {NOMINATION_STEPS[active].title}
+                    </h2>
+                    <p className="mt-2 text-sm leading-relaxed text-gray-600">{NOMINATION_STEPS[active].description}</p>
+                    {active < 3 && <p className="mt-2 text-xs text-gray-500">Fields marked <span className="text-[#00A1B1]">*</span> are required.</p>}
+                  </div>
+
+                  {Object.keys(errors).length > 0 && (
+                    <div role="alert" className="mb-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                      Please check the highlighted fields before continuing.
+                    </div>
+                  )}
+
                   {active === 0 && (
-                    <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#00A1B1]">
-                        1. Nominator Details
-                      </h2>
-                      <div className="grid gap-5 md:grid-cols-2">
-                        <Field label="Name of Nominator / Organization" required className="md:col-span-2">
-                          <TextInput
-                            name="nominatorName"
-                            value={formData.nominatorName}
-                            onChange={handleChange}
-                            placeholder="Enter your name or organization"
-                          />
-                        </Field>
-                        <Field label="Contact Person" required>
-                          <TextInput
-                            name="contactPerson"
-                            value={formData.contactPerson}
-                            onChange={handleChange}
-                            placeholder="Enter contact person name"
-                          />
-                        </Field>
-                        <Field label="Designation" required>
-                          <TextInput
-                            name="designation"
-                            value={formData.designation}
-                            onChange={handleChange}
-                            placeholder="Enter designation"
-                          />
-                        </Field>
-                        <Field label="Email Address" required>
-                          <TextInput
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Enter email address"
-                          />
-                        </Field>
-                        <Field label="Mobile Number" required>
-                          <TextInput
-                            name="mobile"
-                            value={formData.mobile}
-                            onChange={handleChange}
-                            prefix="+91"
-                            placeholder="Enter mobile number"
-                          />
-                        </Field>
-                        <Field label="Country" required>
-                          <Select
-                            name="nominatorCountry"
-                            value={formData.nominatorCountry}
-                            onChange={handleChange}
-                            placeholder="Select country"
-                            options={countryOptions}
-                          />
-                        </Field>
-                      </div>
+                    <div className="grid gap-5 md:grid-cols-2">
+                      {renderField('nominatorName', { wide: true, placeholder: 'Enter your name or organization', autoComplete: 'organization' })}
+                      {renderField('contactPerson', { placeholder: 'Enter contact person name', autoComplete: 'name' })}
+                      {renderField('designation', { placeholder: 'Enter your designation', autoComplete: 'organization-title' })}
+                      {renderField('email', { type: 'email', placeholder: 'you@company.com', autoComplete: 'email' })}
+                      {renderField('mobile', { type: 'tel', placeholder: '+91 9876543210', autoComplete: 'tel' })}
+                      <Field label="Country" required error={errors.nominatorCountry}>
+                        <Select {...inputProps('nominatorCountry')} autoComplete="country-name" options={COUNTRIES} placeholder="Select country" />
+                      </Field>
+                      <LocationDropdown key={formData.nominatorCountry + '-state'}
+                        label="State / Province" name="nominatorState" value={formData.nominatorState}
+                        options={states.options} loading={states.loading} error={states.error}
+                        validationError={errors.nominatorState} disabled={!formData.nominatorCountry}
+                        onChange={(value) => updateField('nominatorState', value)} />
+                      <LocationDropdown key={formData.nominatorCountry + '-' + formData.nominatorState + '-city'}
+                        label="City" name="nominatorCity" value={formData.nominatorCity}
+                        options={cities.options} loading={cities.loading} error={cities.error}
+                        validationError={errors.nominatorCity} disabled={!formData.nominatorState.trim()}
+                        onChange={(value) => updateField('nominatorCity', value)} />
                     </div>
                   )}
 
                   {active === 1 && (
-                    <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#00A1B1]">
-                        2. Nominee Details
-                      </h2>
-                      <div className="grid gap-5 md:grid-cols-2">
-                        <Field
-                          label="Name of Nominee (Organization / Individual)"
-                          required
-                          className="md:col-span-2"
-                        >
-                          <TextInput
-                            name="nomineeName"
-                            value={formData.nomineeName}
-                            onChange={handleChange}
-                            placeholder="Enter nominee name"
-                          />
-                        </Field>
-
-                        <div className="flex items-center gap-6 text-sm text-gray-700 md:col-span-2">
-                          <span className="font-medium">
-                            Type of Nominee <span className="text-[#00A1B1]">*</span>
-                          </span>
-                          <label className="flex items-center gap-2">
-                            <input
-                              type="radio"
-                              name="nomineeType"
-                              value="Organization"
-                              checked={formData.nomineeType === 'Organization'}
-                              onChange={handleChange}
-                              className="accent-[#00A1B1]"
-                            />
-                            Organization
-                          </label>
-                          <label className="flex items-center gap-2">
-                            <input
-                              type="radio"
-                              name="nomineeType"
-                              value="Individual"
-                              checked={formData.nomineeType === 'Individual'}
-                              onChange={handleChange}
-                              className="accent-[#00A1B1]"
-                            />
-                            Individual
-                          </label>
+                    <div className="grid gap-5 md:grid-cols-2">
+                      <fieldset className="min-w-0 md:col-span-2">
+                        <legend className="mb-3 text-sm font-medium text-gray-700">Type of Nominee <span className="text-[#00A1B1]">*</span></legend>
+                        <div className="grid grid-cols-2 gap-3">
+                          {(['Organization', 'Individual'] as const).map((type) => (
+                            <label key={type} className={'flex cursor-pointer items-center gap-3 rounded-lg border p-3 text-sm transition ' +
+                              (formData.nomineeType === type ? 'border-[#00A1B1] bg-[#00A1B1]/5 text-[#003A77]' : 'border-gray-300 text-gray-600')}>
+                              <input type="radio" name="nomineeType" value={type} checked={formData.nomineeType === type}
+                                onChange={handleChange} required aria-invalid={errors.nomineeType ? true : undefined}
+                                aria-describedby={errors.nomineeType ? 'nomineeType-error' : undefined} className="accent-[#00A1B1]" />
+                              {type}
+                            </label>
+                          ))}
                         </div>
-
-                        <Field label="Website">
-                          <TextInput
-                            name="website"
-                            value={formData.website}
-                            onChange={handleChange}
-                            placeholder="Enter website (if applicable)"
-                          />
-                        </Field>
-                        <Field label="Address" required className="md:col-span-2">
-                          <TextArea
-                            name="address"
-                            value={formData.address}
-                            onChange={handleChange}
-                            placeholder="Enter complete address"
-                            rows={2}
-                          />
-                        </Field>
-                        <Field label="City" required>
-                          <TextInput
-                            name="city"
-                            value={formData.city}
-                            onChange={handleChange}
-                            placeholder="Enter city"
-                          />
-                        </Field>
-                        <Field label="State / Province" required>
-                          <TextInput
-                            name="state"
-                            value={formData.state}
-                            onChange={handleChange}
-                            placeholder="Enter state"
-                          />
-                        </Field>
-                        <Field label="Country" required>
-                          <Select
-                            name="nomineeCountry"
-                            value={formData.nomineeCountry}
-                            onChange={handleChange}
-                            placeholder="Select country"
-                            options={countryOptions}
-                          />
-                        </Field>
-                        <Field label="PIN / ZIP Code" required>
-                          <TextInput
-                            name="pinCode"
-                            value={formData.pinCode}
-                            onChange={handleChange}
-                            placeholder="Enter PIN / ZIP"
-                          />
-                        </Field>
-                        <Field label="Email" required>
-                          <TextInput
-                            type="email"
-                            name="nomineeEmail"
-                            value={formData.nomineeEmail}
-                            onChange={handleChange}
-                            placeholder="Enter email address"
-                          />
-                        </Field>
-                        <Field label="Phone / Mobile" required>
-                          <TextInput
-                            name="nomineePhone"
-                            value={formData.nomineePhone}
-                            onChange={handleChange}
-                            prefix="+91"
-                            placeholder="Enter number"
-                          />
-                        </Field>
-                      </div>
+                        {errors.nomineeType && <p id="nomineeType-error" className="mt-2 text-sm text-red-600">{errors.nomineeType}</p>}
+                      </fieldset>
+                      {renderField('nomineeName', { wide: true, placeholder: formData.nomineeType === 'Organization' ? 'Enter organization name' : 'Enter nominee’s full name' })}
+                      {renderField('nomineeEmail', { type: 'email', placeholder: 'nominee@company.com' })}
+                      {renderField('nomineePhone', { type: 'tel', placeholder: '+91 9876543210' })}
+                      {renderField('website', { wide: true, type: 'url', placeholder: 'https://example.com', hint: 'Optional — add the nominee’s website or professional profile.' })}
+                      {renderField('address', { wide: true, rows: 2, placeholder: 'Enter street address, building or office details' })}
+                      {renderField('pinCode', { placeholder: 'Enter PIN or ZIP code' })}
                     </div>
                   )}
 
                   {active === 2 && (
-                    <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#00A1B1]">
-                        3. Category Selection
-                      </h2>
-                      <Field label="Select Award Category" required>
-                        <Select
-                          name="category"
-                          value={formData.category}
-                          onChange={handleChange}
-                          placeholder="-- Select Award Category --"
-                          options={categoryOptions}
-                        />
+                    <div className="space-y-5">
+                      <Field label="Award Category" required error={errors.category}>
+                        <Select {...inputProps('category')} options={NOMINATION_CATEGORIES} placeholder="Select award category" />
                       </Field>
-                      <div className="mt-5 flex flex-col items-start justify-between gap-4 rounded-sm border border-gray-200 bg-[#FCF8F3] p-4 sm:flex-row sm:items-center">
-                        <div className="flex items-center gap-3">
-                          <span className="text-xl">🏆</span>
-                          <p className="text-lg sm:text-xl text-gray-700">Not sure which category to choose?</p>
-                        </div>
-                        <Link
-                          href="/awards/"
-                          className="whitespace-nowrap rounded-sm border border-[#00A1B1] px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#00A1B1] transition-colors hover:bg-[#00A1B1] hover:text-white"
-                        >
-                          View Categories →
+                      <div className="rounded-lg border border-[#00A1B1]/20 bg-[#00A1B1]/5 p-4 text-sm leading-relaxed text-gray-600">
+                        Not sure which category to choose?{' '}
+                        <Link href="/awards/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#008896] underline">
+                          View award categories ↗
                         </Link>
                       </div>
                     </div>
                   )}
 
                   {active === 3 && (
-                    <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#00A1B1]">
-                        4. Supporting Details
-                      </h2>
-                      <div className="grid gap-5">
-                        <Field label="Key Achievements / Notable Contributions">
-                          <TextArea
-                            name="achievements"
-                            value={formData.achievements}
-                            onChange={handleChange}
-                            placeholder="Describe the nominee's key achievements relevant to this category"
-                            rows={4}
-                          />
-                        </Field>
-                        <Field label="Supporting Links (media coverage, case studies, etc.)">
-                          <TextInput
-                            name="supportingLinks"
-                            value={formData.supportingLinks}
-                            onChange={handleChange}
-                            placeholder="Paste one or more links, separated by commas"
-                          />
-                        </Field>
-                        <Field label="Additional Comments">
-                          <TextArea
-                            name="additionalComments"
-                            value={formData.additionalComments}
-                            onChange={handleChange}
-                            placeholder="Anything else the jury should know"
-                            rows={3}
-                          />
-                        </Field>
-                      </div>
+                    <div className="grid gap-5">
+                      {renderField('achievements', { rows: 5, placeholder: 'Describe the nominee’s achievements and their impact', hint: 'Include relevant results, innovations or milestones.' })}
+                      {renderField('supportingLinks', { rows: 3, placeholder: 'https://example.com/case-study', hint: 'Optional — add one link per line, such as case studies or media coverage.' })}
+                      {renderField('additionalComments', { rows: 3, placeholder: 'Anything else you would like the jury to know' })}
                     </div>
                   )}
 
                   {active === 4 && (
-                    <div>
-                      <h2 className="mb-4 font-bebas text-2xl uppercase tracking-wide text-[#00A1B1]">
-                        5. Review & Submit
-                      </h2>
-                      <p className="mb-6 text-lg sm:text-xl text-gray-500">
-                        Please check everything below before submitting. You can jump back to any earlier
-                        step using the numbers above.
-                      </p>
-                      <div className="space-y-6">
-                        <ReviewSection
-                          title="Nominator Details"
-                          rows={[
-                            ['Name of Nominator / Organization', formData.nominatorName],
-                            ['Contact Person', formData.contactPerson],
-                            ['Designation', formData.designation],
-                            ['Email Address', formData.email],
-                            ['Mobile Number', formData.mobile],
-                            ['Country', formData.nominatorCountry],
-                          ]}
-                        />
-                        <ReviewSection
-                          title="Nominee Details"
-                          rows={[
-                            ['Name of Nominee', formData.nomineeName],
-                            ['Type of Nominee', formData.nomineeType],
-                            ['Website', formData.website],
-                            ['Address', formData.address],
-                            ['City', formData.city],
-                            ['State / Province', formData.state],
-                            ['Country', formData.nomineeCountry],
-                            ['PIN / ZIP Code', formData.pinCode],
-                            ['Email', formData.nomineeEmail],
-                            ['Phone / Mobile', formData.nomineePhone],
-                          ]}
-                        />
-                        <ReviewSection title="Category Selection" rows={[['Award Category', formData.category]]} />
-                        <ReviewSection
-                          title="Supporting Details"
-                          rows={[
-                            ['Key Achievements', formData.achievements],
-                            ['Supporting Links', formData.supportingLinks],
-                            ['Additional Comments', formData.additionalComments],
-                          ]}
-                        />
-                      </div>
-                      <label className="mt-6 flex items-start gap-2 text-lg sm:text-xl text-gray-700">
-                        <input
-                          type="checkbox"
-                          checked={consent}
-                          onChange={(e) => setConsent(e.target.checked)}
-                          className="mt-1 accent-[#00A1B1]"
-                        />
+                    <div className="space-y-5">
+                      {[0, 1, 2, 3].map((step) => (
+                        <ReviewSection key={step} title={NOMINATION_STEPS[step].title} rows={reviewRows(step)}
+                          disabled={submitting} onEdit={() => editSection(step)} />
+                      ))}
+                      <label className="flex items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm leading-relaxed text-gray-700">
+                        <input type="checkbox" name="consent" checked={consent} disabled={submitting}
+                          onChange={(event) => { setConsent(event.target.checked); setSubmitError(''); }}
+                          required className="mt-1 h-4 w-4 shrink-0 accent-[#00A1B1]" />
                         <span>
-                          I confirm the above details are accurate and I agree to the{' '}
-                          <Link href="/privacy-policy" className="text-[#00A1B1] underline">
-                            terms & conditions
-                          </Link>{' '}
-                          and{' '}
-                          <Link href="/privacy-policy" className="text-[#00A1B1] underline">
-                            privacy policy
-                          </Link>
-                          .
+                          I confirm the details above are accurate and agree to the{' '}
+                          <Link href="/privacy-policy" target="_blank" className="text-[#008896] underline">privacy policy</Link>.
+                          <span className="text-[#00A1B1]"> *</span>
                         </span>
                       </label>
                     </div>
                   )}
 
-                  {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
+                  {submitError && <p role="alert" className="mt-5 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700">{submitError}</p>}
 
-                  <div className="mt-8 flex items-center justify-between gap-4">
-                    <button
-                      type="button"
-                      onClick={handleBack}
-                      disabled={active === 0}
-                      className={`inline-flex items-center gap-2 rounded-sm px-6 py-3 text-xs font-bold uppercase tracking-wider transition-colors ${
-                        active === 0
-                          ? 'cursor-not-allowed bg-gray-200 text-gray-400'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      }`}
-                    >
-                      ← Previous Step
-                    </button>
-
-                    {active === steps.length - 1 ? (
-                      <button
-                        type="submit"
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#00A1B1] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77]"
-                      >
-                        Submit
-                      </button>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={handleNext}
-                        className="inline-flex items-center gap-2 rounded-sm bg-[#00A1B1] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#003A77]"
-                      >
-                        Save & Continue →
+                  <div className="mt-8 flex flex-col-reverse gap-3 border-t border-gray-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                    {active > 0 && (
+                      <button type="button" disabled={submitting} onClick={() => goToStep(active - 1)}
+                        className="rounded-lg border border-gray-300 px-5 py-3 text-sm font-semibold text-gray-600 transition hover:bg-gray-50 disabled:opacity-50">
+                        ← Previous step
                       </button>
                     )}
+                    <button type="submit" disabled={submitting || (active === 4 && !consent)}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#00A1B1] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#003A77] disabled:cursor-not-allowed disabled:opacity-50 sm:ml-auto">
+                      {submitting ? 'Submitting nomination…'
+                        : active === 4 ? 'Submit nomination'
+                        : returnToReview ? 'Save & return to review →'
+                        : active === 3 ? 'Review nomination →' : 'Continue →'}
+                    </button>
                   </div>
                 </>
               )}
             </form>
 
-            <aside className="flex flex-col gap-6">
+            <aside className="flex min-w-0 flex-col gap-5">
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#00A1B1]">
                   ABOUT GMEA AWARDS
 
                 </h3>
-                <p className="mb-3 text-lg sm:text-xl text-gray-700">
+                <p className="mb-3 text-base leading-relaxed text-gray-700">
                   The Global Metrology Excellence Awards (GMEA) honor outstanding achievements, innovation, and leadership in the field of metrology, measurement, inspection and quality assurance.
 
 
@@ -623,7 +401,7 @@ export default function NominatePage() {
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#00A1B1]">Why Nominate?</h3>
-                <ul className="space-y-2 text-lg sm:text-xl text-gray-700">
+                <ul className="space-y-2 text-base leading-relaxed text-gray-700">
                   {[
                     'Gain global recognition',
                     'Enhance brand reputation',
@@ -646,28 +424,28 @@ export default function NominatePage() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-base text-gray-500">Nominations Open</p>
-                    <p className="text-lg sm:text-xl font-semibold text-[#003A77]">01 January 2027</p>
+                    <p className="text-base leading-relaxed font-semibold text-[#003A77]">01 January 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-base text-gray-500">Last Date to Nominate</p>
-                    <p className="text-lg sm:text-xl font-semibold text-[#003A77]">31 March 2027</p>
+                    <p className="text-base leading-relaxed font-semibold text-[#003A77]">31 March 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-base text-gray-500">Finalists Announcement</p>
-                    <p className="text-lg sm:text-xl font-semibold text-[#003A77]">15 April 2027</p>
+                    <p className="text-base leading-relaxed font-semibold text-[#003A77]">15 April 2027</p>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <p className="text-base text-gray-500">Awards Ceremony</p>
-                    <p className="text-lg sm:text-xl font-bold text-[#00A1B1]">14 May 2027</p>
+                    <p className="text-base leading-relaxed font-bold text-[#00A1B1]">14 May 2027</p>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 font-bebas text-xl uppercase tracking-wide text-[#00A1B1]">Need Help?</h3>
-                <p className="mb-3 text-lg sm:text-xl text-gray-700">Our team is here to assist you with your nomination.</p>
-                <p className="text-lg sm:text-xl text-[#003A77]">📞 +91 91483 19993</p>
-                <p className="text-lg sm:text-xl text-[#003A77]">✉️ support@indiametexpo.com</p>
+                <p className="mb-3 text-base leading-relaxed text-gray-700">Our team is here to assist you with your nomination.</p>
+                <p className="text-base leading-relaxed text-[#003A77]">📞 +91 91483 19993</p>
+                <p className="text-base leading-relaxed text-[#003A77]">✉️ support@indiametexpo.com</p>
               </div>
             </aside>
           </div>
@@ -699,28 +477,38 @@ export default function NominatePage() {
         </Container>
       </section>
 
+
       <BackToTop />
     </div>
   );
 }
 
-function ReviewSection({ title, rows }: { title: string; rows: [string, string][] }) {
-  const filled = rows.filter(([, value]) => value && value.trim() !== '');
+function ReviewSection({ title, rows, onEdit, disabled }: {
+  title: string;
+  rows: [string, string][];
+  onEdit: () => void;
+  disabled: boolean;
+}) {
+  const filled = rows.filter(([, value]) => value.trim());
   return (
-    <div className="rounded-sm border border-gray-200 p-4">
-      <h4 className="mb-3 text-sm font-semibold text-[#003A77]">{title}</h4>
-      {filled.length === 0 ? (
-        <p className="text-xs italic text-gray-400">Nothing entered</p>
-      ) : (
-        <dl className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+    <section className="rounded-lg border border-gray-200 p-4 sm:p-5">
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <h3 className="text-base font-semibold text-[#003A77]">{title}</h3>
+        <button type="button" disabled={disabled} onClick={onEdit} aria-label={'Edit ' + title}
+          className="rounded-md px-2 py-1 text-sm font-semibold text-[#008896] hover:bg-[#00A1B1]/5 disabled:opacity-50">
+          Edit
+        </button>
+      </div>
+      {filled.length ? (
+        <dl className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
           {filled.map(([label, value]) => (
-            <div key={label}>
-              <dt className="text-[11px] uppercase tracking-wide text-gray-400">{label}</dt>
-              <dd className="break-words text-lg sm:text-xl text-gray-800">{value}</dd>
+            <div key={label} className="min-w-0">
+              <dt className="mb-1 text-xs text-gray-500">{label}</dt>
+              <dd className="whitespace-pre-line text-sm leading-relaxed text-gray-800 [overflow-wrap:anywhere]">{value}</dd>
             </div>
           ))}
         </dl>
-      )}
-    </div>
+      ) : <p className="text-sm text-gray-500">No supporting details added.</p>}
+    </section>
   );
 }

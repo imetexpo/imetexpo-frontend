@@ -20,11 +20,13 @@ import EnquiryForm from "./forms/EnquiryForm";
 import ExhibitorForm from "./forms/ExhibitorForm";
 import SponsorForm from "./forms/SponsorForm";
 import BrochureForm from "./forms/BrochureForm";
+import AwardsForm from "./forms/AwardsForm";
 
 import EnquiryContent from "./content/EnquiryContent";
 import ExhibitorContent from "./content/ExhibitorContent";
 import SponsorContent from "./content/SponsorContent";
 import BrochureContent from "./content/BrochureContent";
+import AwardsContent from "./content/AwardsContent";
 
 function RegisterPageContent() {
   const searchParams = useSearchParams();
@@ -43,6 +45,8 @@ function RegisterPageContent() {
         return <SponsorContent />;
       case "brochure":
         return <BrochureContent />;
+      case "awards":
+        return <AwardsContent />;
       default:
         return <EnquiryContent />;
     }
@@ -58,6 +62,8 @@ function RegisterPageContent() {
         return <SponsorForm />;
       case "brochure":
         return <BrochureForm />;
+      case "awards":
+        return <AwardsForm />;
       default:
         return <EnquiryForm />;
     }
@@ -72,7 +78,7 @@ function RegisterPageContent() {
       <section className="bg-white pt-0 lg:pt-0 pb-20">
         <Container>
           {/* Tab Navigation */}
-          <div className="max-w-3xl mx-auto mb-12 mt-10">
+          <div className="max-w-4xl mx-auto mb-12 mt-10">
             <RegistrationTabs activeTab={activeTab} />
           </div>
 
