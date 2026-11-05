@@ -1,7 +1,13 @@
-import { PROJECT_ID_VAR, submitContactForm } from '@/lib/graphql-client';
+import { randomUUID } from 'node:crypto';
+import { after } from 'next/server';
+import { PROJECT_ID_VAR } from '@/lib/graphql-client';
+import { processNomination } from '@/lib/nominationProcessing';
 import {
-  NOMINATION_LABELS, NOMINATION_STEP_FIELDS, normalizeNomination, validateNominationStep,
+  NOMINATION_STEP_FIELDS, normalizeNomination, validateNominationStep,
 } from '@/lib/nominationForm';
+
+export const runtime = 'nodejs';
+export const maxDuration = 60;
 
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
@@ -25,37 +31,15 @@ export async function POST(request: Request) {
   if (body.consent !== true) {
     return Response.json({ success: false, message: 'Please confirm the details and accept the privacy policy.' }, { status: 400 });
   }
-  if (!PROJECT_ID_VAR.projectId) {
+  if (!PROJECT_ID_VAR.projectId || !process.env.NEXT_PUBLIC_CMS_GRAPHQL_ENDPOINT ||
+      !process.env.RESEND_API_KEY || !process.env.RESEND_FROM) {
     return Response.json({
       success: false, message: 'Nominations are temporarily unavailable. Your details are still here; please try again later.',
     }, { status: 503 });
   }
 
-  try {
-    const result = await submitContactForm(PROJECT_ID_VAR.projectId, {
-      formType: 'award-nomination',
-      name: data.contactPerson,
-      email: data.email,
-      companyName: data.nominatorName,
-      jobTitle: data.designation,
-      phone: data.mobile,
-      country: data.nominatorCountry,
-      state: data.nominatorState,
-      city: data.nominatorCity,
-      message: [
-        'Award nomination',
-        ...NOMINATION_STEP_FIELDS.slice(0, 4).flatMap((fields) =>
-          fields.map((field) => NOMINATION_LABELS[field] + ': ' + (data[field] || 'Not provided')),
-        ),
-        'Details confirmed and privacy policy accepted: Yes',
-        'Submitted at: ' + new Date().toISOString(),
-      ].join('\n'),
-    });
-    if (result.errors?.length || !result.data?.createLead?.id) throw new Error('Nomination was not saved');
-    return Response.json({ success: true });
-  } catch {
-    return Response.json({
-      success: false, message: 'Your nomination could not be saved. Your details are still here; please try again.',
-    }, { status: 502 });
-  }
+  const submissionId = randomUUID();
+  const submittedAt = new Date().toISOString();
+  after(() => processNomination(data, submissionId, submittedAt));
+  return Response.json({ success: true, submissionId }, { status: 202 });
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
 import PageHero from '@/components/layout/PageHero';
@@ -17,13 +18,13 @@ import {
 } from '@/lib/nominationForm';
 
 export default function NominatePage() {
+  const router = useRouter();
   const [active, setActive] = useState(0);
   const [furthest, setFurthest] = useState(0);
   const [formData, setFormData] = useState<NominationData>({ ...EMPTY_NOMINATION });
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<NominationErrors>({});
   const [submitError, setSubmitError] = useState('');
-  const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [returnToReview, setReturnToReview] = useState(false);
   const [validationAttempt, setValidationAttempt] = useState(0);
@@ -35,12 +36,16 @@ export default function NominatePage() {
   const cities = useLocationOptions(formData.nominatorCountry, formData.nominatorState, 'cities');
 
   useEffect(() => {
+    router.prefetch('/nominate/thank-you');
+  }, [router]);
+
+  useEffect(() => {
     if (!interacted.current) return;
     const invalid = formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]:not(:disabled)');
     const target = invalid || headingRef.current;
     target?.focus({ preventScroll: true });
     target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, [active, validationAttempt, submitted]);
+  }, [active, validationAttempt]);
 
   function updateField(name: NominationField, value: string) {
     setFormData((previous) => ({
@@ -119,6 +124,7 @@ export default function NominatePage() {
     requestPending.current = true;
     setSubmitting(true);
     setSubmitError('');
+    let accepted = false;
     try {
       const response = await fetch('/api/nominations', {
         method: 'POST',
@@ -134,12 +140,15 @@ export default function NominatePage() {
         }
         throw new Error(result.message || 'Your nomination could not be submitted. Please try again.');
       }
-      setSubmitted(true);
+      router.replace('/nominate/thank-you');
+      accepted = true;
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : 'Unable to submit. Please try again.');
     } finally {
-      requestPending.current = false;
-      setSubmitting(false);
+      if (!accepted) {
+        requestPending.current = false;
+        setSubmitting(false);
+      }
     }
   }
 
@@ -193,8 +202,7 @@ export default function NominatePage() {
         </Container>
       </section>
 
-      {!submitted && (
-        <section className="border-b border-gray-100 bg-[#FCF8F3] py-6">
+      <section className="border-b border-gray-100 bg-[#FCF8F3] py-6">
           <Container>
             <nav aria-label="Nomination progress" className="overflow-x-auto pb-2">
               <ol className="flex min-w-[600px] items-start">
@@ -226,8 +234,7 @@ export default function NominatePage() {
               </ol>
             </nav>
           </Container>
-        </section>
-      )}
+      </section>
 
       <section className="py-8 lg:py-12" id="form">
         <Container>
@@ -238,20 +245,7 @@ export default function NominatePage() {
                 ← Back to Awards
               </Link>
 
-              {submitted ? (
-                <div role="status" className="py-10 text-center">
-                  <div aria-hidden="true" className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#00A1B1]/10 text-3xl text-[#00A1B1]">✓</div>
-                  <h2 ref={headingRef} tabIndex={-1} className="mb-3 font-bebas text-4xl text-[#003A77] outline-none">Nomination Submitted</h2>
-                  <p className="mx-auto max-w-md text-base leading-relaxed text-gray-600">
-                    Thank you, {formData.contactPerson}. Your nomination for {formData.nomineeName} has been received.
-                    Our team will review it and contact you if further details are needed.
-                  </p>
-                  <Link href="/awards/" className="mt-6 inline-flex rounded-lg bg-[#00A1B1] px-6 py-3 text-sm font-semibold text-white hover:bg-[#003A77]">
-                    Back to Awards →
-                  </Link>
-                </div>
-              ) : (
-                <>
+              <>
                   <div className="mb-7 border-b border-gray-100 pb-6">
                     <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#00A1B1]" aria-live="polite">
                       Step {active + 1} of {NOMINATION_STEPS.length}
@@ -376,8 +370,7 @@ export default function NominatePage() {
                         : active === 3 ? 'Review nomination →' : 'Continue →'}
                     </button>
                   </div>
-                </>
-              )}
+              </>
             </form>
 
             <aside className="flex min-w-0 flex-col gap-5">

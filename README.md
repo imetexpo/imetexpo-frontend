@@ -55,3 +55,26 @@ address. States and cities load from CountriesNow, as in the existing delegate
 form. Changing a country clears its state and city; changing a state clears its
 city. Other / Not listed supports places missing from the data or an unavailable
 location service.
+
+## Nomination thank-you flow
+
+After a valid nomination is accepted, `POST /api/nominations` immediately returns
+HTTP 202 and the browser replaces the form with `/nominate/thank-you`. This page is
+prefetched while the form is open. Validation and connection failures leave the
+details in the form for correction or retry.
+
+CMS saving and the confirmation email run on the server using Next.js `after()`.
+Each task runs independently, has an eight-second request timeout, and retries
+once. The Resend confirmation uses a submission-specific idempotency key to avoid
+duplicate emails when retrying. Failed background tasks log their submission
+reference and task name without logging the submitted personal details.
+
+Configure `NEXT_PUBLIC_CMS_PROJECT_ID`, `NEXT_PUBLIC_CMS_GRAPHQL_ENDPOINT`,
+`RESEND_API_KEY` and `RESEND_FROM` in the Next.js server environment. The Resend
+values are server-only and must never use a `NEXT_PUBLIC_` prefix. The local setup
+reuses the email credentials already configured in the backend; configure these
+same variables separately when deploying the frontend.
+
+The route allows up to 60 seconds for background processing. The deployment must
+support Next.js `after()` (the local Node.js server does). This is request-scoped
+background processing, not a persisted queue across server restarts.

@@ -41,7 +41,8 @@ export const UTM_QUERIES = {
 
 export async function graphqlRequest<T>(
     query: string,
-    variables: Record<string, any> = {}
+    variables: Record<string, any> = {},
+    options: { signal?: AbortSignal } = {},
 ): Promise<{ data?: T; errors?: any[] }> {
     const endpoint = process.env.NEXT_PUBLIC_CMS_GRAPHQL_ENDPOINT;
     if (!endpoint) {
@@ -52,6 +53,7 @@ export async function graphqlRequest<T>(
     try {
         const response = await fetch(endpoint, {
             method: 'POST',
+            signal: options.signal,
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -79,7 +81,11 @@ export async function graphqlRequest<T>(
     }
 }
 
-export async function submitContactForm(projectId: string, input: any) {
+export async function submitContactForm(
+    projectId: string,
+    input: any,
+    options: { signal?: AbortSignal } = {},
+) {
     const query = `
         mutation CreateLead($input: CreateLeadInput!) {
             createLead(input: $input) {
@@ -127,6 +133,6 @@ export async function submitContactForm(projectId: string, input: any) {
 
     return graphqlRequest<{ createLead: { id: string } }>(query, {
         input: graphqlInput,
-    });
+    }, options);
 }
 
