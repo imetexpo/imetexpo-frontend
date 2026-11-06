@@ -1,10 +1,14 @@
-import CompanyDirectory from './company-directory';
+import PageContent from './company-directory';
+import PageSeo from '@/components/seo/PageSeo';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Exhibitor Directory - IndiaMET 2027',
-  description: 'Browse participating companies in the IndiaMET 2027 exhibition',
-};
+export const metadata = buildPageMetadata('/exhibition-directory');
 
-export default function ExhibitionDirectoryPage() {
-  return <CompanyDirectory />;
+export default function Page() {
+  return (
+    <>
+      <PageContent />
+      <PageSeo pageKey="/exhibition-directory" />
+    </>
+  );
 }
