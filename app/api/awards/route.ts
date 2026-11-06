@@ -21,6 +21,9 @@ export async function POST(request: Request) {
   const awardCategory = text("awardCategory");
   const message = text("message");
   const phone = text("phone");
+  const state = text("state");
+  const city = text("city");
+  const pincode = text("pincode");
 
   if (!name || !jobTitle || !companyName || !email || !country || !awardCategory || body.termsAccepted !== true) {
     return Response.json({ success: false, message: "Please complete all required fields and accept the terms." }, { status: 400 });
@@ -74,6 +77,9 @@ export async function POST(request: Request) {
         "Awards enquiry",
         "Award Category: " + awardCategory,
         "Industry: " + (industry || "Not specified"),
+        "State / Province: " + (state || "N/A"),
+        "City: " + (city || "N/A"),
+        "Pin Code / Zip: " + (pincode || "N/A"),
         "Terms and Conditions accepted: Yes",
         "Submitted at: " + new Date().toISOString(),
         "",

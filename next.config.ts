@@ -21,6 +21,18 @@ const nextConfig: NextConfig = {
   ...(process.env.NODE_ENV === 'development' && {
     serverExternalPackages: [],
   }),
+  async rewrites() {
+    return [
+      {
+        source: '/terms-of-use',
+        destination: '/termstouse',
+      },
+      {
+        source: '/cookie-policy',
+        destination: '/cookies-policy',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
