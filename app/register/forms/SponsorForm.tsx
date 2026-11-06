@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
-
+import CountryStateCityFields from "@/components/common/CountryStateCityFields";
 
 export default function SponsorForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,6 +17,7 @@ export default function SponsorForm() {
     companyName: "",
     gstin: "",
     address: "",
+    country: "",
     city: "",
     state: "",
     pincode: "",
@@ -87,6 +88,7 @@ export default function SponsorForm() {
           companyName: "",
           gstin: "",
           address: "",
+          country: "",
           city: "",
           state: "",
           pincode: "",
@@ -235,33 +237,15 @@ export default function SponsorForm() {
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            City <span className="text-[#00A1B1]">*</span>
-          </label>
-          <input
-            type="text"
-            name="city"
-            value={formData.city}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition-all bg-white"
-            placeholder="Enter city"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            State <span className="text-[#00A1B1]">*</span>
-          </label>
-          <input
-            type="text"
-            name="state"
-            value={formData.state}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition-all bg-white"
-            placeholder="Enter state"
+        <div className="md:col-span-2 space-y-4">
+          <CountryStateCityFields
+            country={formData.country}
+            state={formData.state}
+            city={formData.city}
+            onCountryChange={(country) => setFormData((prev) => ({ ...prev, country, state: "", city: "" }))}
+            onStateChange={(state) => setFormData((prev) => ({ ...prev, state, city: "" }))}
+            onCityChange={(city) => setFormData((prev) => ({ ...prev, city }))}
+            labelClassName="block text-sm font-medium text-gray-700 mb-2"
           />
         </div>
 

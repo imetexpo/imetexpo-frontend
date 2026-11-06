@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
 import LoadingDots from '@/components/ui/LoadingDots';
-
+import CountryStateCityFields from "@/components/common/CountryStateCityFields";
 
 const productSectors = [
   "Coordinate Measuring Machines (CMM)",
@@ -23,21 +23,6 @@ const productSectors = [
   "Metrology Services & Laboratories",
 ];
 
-const countries = [
-  "Afghanistan", "Albania", "Algeria", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
-  "Bahrain", "Bangladesh", "Belarus", "Belgium", "Bolivia", "Botswana", "Brazil", "Bulgaria",
-  "Canada", "Chile", "China", "Colombia", "Congo", "Croatia", "Czech Republic", "Denmark",
-  "Ecuador", "Egypt", "Estonia", "Finland", "France", "Georgia", "Germany", "Ghana",
-  "Greece", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland",
-  "Israel", "Italy", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kuwait", "Kyrgyzstan",
-  "Latvia", "Lebanon", "Lithuania", "Luxembourg", "Malaysia", "Mexico", "Mongolia", "Morocco",
-  "Netherlands", "New Zealand", "Nigeria", "Norway", "Oman", "Pakistan", "Peru", "Philippines",
-  "Poland", "Portugal", "Qatar", "Romania", "Russia", "Saudi Arabia", "Serbia", "Singapore",
-  "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sudan", "Sweden",
-  "Switzerland", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Turkey", "Turkmenistan", "Ukraine",
-  "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vietnam", "Zambia", "Zimbabwe",
-];
-
 export default function BrochureForm() {
   const { utmData, campaign } = useUTMData();
 
@@ -48,6 +33,9 @@ export default function BrochureForm() {
     website: "",
     jobTitle: "",
     country: "",
+    state: "",
+    city: "",
+    pincode: "",
     phone: "",
     email: "",
     productSectors: [] as string[],
@@ -83,7 +71,8 @@ export default function BrochureForm() {
 
     if (
       !formData.firstName || !formData.lastName || !formData.company ||
-      !formData.jobTitle || !formData.country || !formData.phone || !formData.email
+      !formData.jobTitle || !formData.country || !formData.state ||
+      !formData.city || !formData.pincode || !formData.phone || !formData.email
     ) {
       setSubmitError("Please fill in all required fields");
       return;
@@ -107,6 +96,9 @@ export default function BrochureForm() {
       jobTitle: formData.jobTitle,
       phone: formData.phone,
       country: formData.country,
+      state: formData.state,
+      city: formData.city,
+      pincode: formData.pincode,
       website: formData.website,
       productSectors: formData.productSectors,
       submittedAt: new Date().toISOString(),
@@ -158,6 +150,9 @@ export default function BrochureForm() {
         website: "",
         jobTitle: "",
         country: "",
+        state: "",
+        city: "",
+        pincode: "",
         phone: "",
         email: "",
         productSectors: [],
@@ -263,24 +258,29 @@ export default function BrochureForm() {
         />
       </div>
 
+      <CountryStateCityFields
+        country={formData.country}
+        state={formData.state}
+        city={formData.city}
+        onCountryChange={(country) => setFormData((prev) => ({ ...prev, country, state: "", city: "" }))}
+        onStateChange={(state) => setFormData((prev) => ({ ...prev, state, city: "" }))}
+        onCityChange={(city) => setFormData((prev) => ({ ...prev, city }))}
+        labelClassName="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1"
+        inputClassName="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
+      />
+
       <div className="space-y-1">
         <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-          Country <span className="text-red-500">*</span>
+          Pin Code / Zip Code <span className="text-red-500">*</span>
         </label>
-        <select
-          name="country"
-          value={formData.country}
+        <input
+          name="pincode"
+          value={formData.pincode}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm cursor-pointer"
+          placeholder="Pin Code / Zip Code"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
           required
-        >
-          <option value="">Select Country</option>
-          {countries.map((country) => (
-            <option key={country} value={country}>
-              {country}
-            </option>
-          ))}
-        </select>
+        />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
 import LoadingDots from '@/components/ui/LoadingDots';
+import CountryStateCityFields from "@/components/common/CountryStateCityFields";
 
 
 const productSectors = [
@@ -33,6 +34,9 @@ export default function ExhibitorForm() {
     companyWebsite: "",
     jobTitle: "",
     country: "",
+    state: "",
+    city: "",
+    pincode: "",
     phone: "",
     workEmail: "",
     productSector: "",
@@ -61,8 +65,8 @@ export default function ExhibitorForm() {
 
     if (
       !formData.interestLevel || !formData.firstName || !formData.lastName || !formData.companyName ||
-      !formData.companyWebsite || !formData.jobTitle || !formData.country || !formData.phone ||
-      !formData.workEmail || !formData.productSector
+      !formData.companyWebsite || !formData.jobTitle || !formData.country || !formData.state ||
+      !formData.city || !formData.pincode || !formData.phone || !formData.workEmail || !formData.productSector
     ) {
       setSubmitError("Please fill in all required fields");
       return;
@@ -87,6 +91,9 @@ export default function ExhibitorForm() {
       jobTitle: formData.jobTitle,
       phone: formData.phone,
       country: formData.country,
+      state: formData.state,
+      city: formData.city,
+      pincode: formData.pincode,
       productSector: formData.productSector,
       message: formData.comments,
       interestLevel: formData.interestLevel,
@@ -249,35 +256,45 @@ export default function ExhibitorForm() {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-1">
-          <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-            Job Title <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="jobTitle"
-            value={formData.jobTitle}
-            onChange={handleChange}
-            placeholder="Job title"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
-            required
-          />
-        </div>
-        <div className="space-y-1">
-          <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-            Country <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            placeholder="Country"
-            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
-            required
-          />
-        </div>
+      <div className="space-y-1">
+        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
+          Job Title <span className="text-red-500">*</span>
+        </label>
+        <input
+          type="text"
+          name="jobTitle"
+          value={formData.jobTitle}
+          onChange={handleChange}
+          placeholder="Job title"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
+          required
+        />
+      </div>
+
+      <CountryStateCityFields
+        country={formData.country}
+        state={formData.state}
+        city={formData.city}
+        onCountryChange={(country) => setFormData((prev) => ({ ...prev, country, state: "", city: "" }))}
+        onStateChange={(state) => setFormData((prev) => ({ ...prev, state, city: "" }))}
+        onCityChange={(city) => setFormData((prev) => ({ ...prev, city }))}
+        labelClassName="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1"
+        inputClassName="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
+      />
+
+      <div className="space-y-1">
+        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
+          Pin Code / Zip Code <span className="text-red-500">*</span>
+        </label>
+        <input
+          type="text"
+          name="pincode"
+          value={formData.pincode}
+          onChange={handleChange}
+          placeholder="Enter pin code / zip code"
+          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
+          required
+        />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

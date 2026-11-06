@@ -43,7 +43,9 @@ export default function Footer() {
               alt="IndiaMet Expo"
               width={280}
               height={100}
-              className="object-contain"
+              priority
+              className="h-auto w-auto object-contain"
+              style={{ width: 'auto', height: 'auto' }}
             />
             {/* <p className="text-x text-gray-100 font-sans mt-2">
               Metrology Exhibiton & Summit.
@@ -178,11 +180,11 @@ export default function Footer() {
             <div className="flex shrink-0 items-center gap-2 text-xs text-neutral-500 sm:gap-3 sm:text-[16px]">
               <p className="whitespace-nowrap">© IndiaMet 2027. All Rights Reserved.</p>
               <span className="text-neutral-800">|</span>
-              <Link href="#" className="whitespace-nowrap hover:text-white transition-colors">Terms of Use</Link>
+              <Link href="/termstouse" className="whitespace-nowrap hover:text-white transition-colors">Terms of Use</Link>
               <span className="text-neutral-800">|</span>
-              <Link href="#" className="whitespace-nowrap hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/privacy-policy" className="whitespace-nowrap hover:text-white transition-colors">Privacy Policy</Link>
               <span className="text-neutral-800">|</span>
-              <Link href="#" className="whitespace-nowrap hover:text-white transition-colors">Cookie Policy</Link>
+              <Link href="/cookies-policy" className="whitespace-nowrap hover:text-white transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>

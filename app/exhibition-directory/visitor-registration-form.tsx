@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import { X, CheckCircle, AlertCircle } from 'lucide-react';
 import { env } from "process"
 import LoadingDots from '@/components/ui/LoadingDots';
+import CountryStateCityFields from '@/components/common/CountryStateCityFields';
 
 
 interface VisitorRegistrationFormProps {
@@ -366,78 +367,33 @@ export default function VisitorRegistrationForm({
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                <div>
-                  <label className="block text-sm font-medium text-slate-900 mb-1 md:mb-2">
-                    Country <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    name="country"
-                    value={formData.country}
-                    onChange={handleInputChange}
-                    required
-                    disabled={loading}
-                    className="w-full px-3 py-2 md:px-4 md:py-2.5 bg-white border border-slate-300 rounded text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none cursor-pointer disabled:bg-slate-100 disabled:cursor-not-allowed"
-                  >
-                    <option value="">Select Country</option>
-                    {COUNTRIES.map((country) => (
-                      <option key={country} value={country}>
-                        {country}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+              <CountryStateCityFields
+                country={formData.country}
+                state={formData.state}
+                city={formData.city}
+                disabled={loading}
+                onCountryChange={(country) => setFormData((prev) => ({ ...prev, country, state: '', city: '' }))}
+                onStateChange={(state) => setFormData((prev) => ({ ...prev, state, city: '' }))}
+                onCityChange={(city) => setFormData((prev) => ({ ...prev, city }))}
+                labelClassName="block text-sm font-medium text-slate-900 mb-1 md:mb-2"
+                inputClassName="w-full px-3 py-2 md:px-4 md:py-2.5 bg-white border border-slate-300 rounded text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-transparent disabled:bg-slate-100 disabled:cursor-not-allowed"
+              />
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-900 mb-1 md:mb-2">
-                    State <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="state"
-                    value={formData.state}
-                    onChange={handleInputChange}
-                    required
-                    disabled={loading}
-                    className="w-full px-3 py-2 md:px-4 md:py-2.5 bg-white border border-slate-300 rounded text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:bg-slate-100 disabled:cursor-not-allowed"
-                    placeholder="Enter state"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                <div>
-                  <label className="block text-sm font-medium text-slate-900 mb-1 md:mb-2">
-                    City <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="city"
-                    value={formData.city}
-                    onChange={handleInputChange}
-                    required
-                    disabled={loading}
-                    className="w-full px-3 py-2 md:px-4 md:py-2.5 bg-white border border-slate-300 rounded text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:bg-slate-100 disabled:cursor-not-allowed"
-                    placeholder="Enter city"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-900 mb-1 md:mb-2">
-                    Pin Code / Zip Code <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="pinCode"
-                    value={formData.pinCode}
-                    onChange={handleInputChange}
-                    required
-                    disabled={loading}
-                    maxLength={10}
-                    className="w-full px-3 py-2 md:px-4 md:py-2.5 bg-white border border-slate-300 rounded text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:bg-slate-100 disabled:cursor-not-allowed"
-                    placeholder="Enter pin code"
-                  />
-                </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-900 mb-1 md:mb-2">
+                  Pin Code / Zip Code <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="pinCode"
+                  value={formData.pinCode}
+                  onChange={handleInputChange}
+                  required
+                  disabled={loading}
+                  maxLength={10}
+                  className="w-full px-3 py-2 md:px-4 md:py-2.5 bg-white border border-slate-300 rounded text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-transparent disabled:bg-slate-100 disabled:cursor-not-allowed"
+                  placeholder="Enter pin code"
+                />
               </div>
 
               <div>

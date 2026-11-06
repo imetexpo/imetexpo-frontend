@@ -6,12 +6,12 @@ import { useUTMData } from "@/hooks/useUTMTracker";
 import { COUNTRIES, INDUSTRIES, AWARD_CATEGORIES } from "@/lib/registrationOptions";
 import AwardsTurnstile from "./AwardsTurnstile";
 import LoadingDots from '@/components/ui/LoadingDots';
-
+import CountryStateCityFields from "@/components/common/CountryStateCityFields";
 
 const inputClass = "w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#00A1B1] focus:ring-2 focus:ring-[#00A1B1]";
 const initialForm = {
   name: "", jobTitle: "", companyName: "", email: "", phone: "",
-  country: "", industry: "", awardCategory: "", message: "",
+  country: "", state: "", city: "", pincode: "", industry: "", awardCategory: "", message: "",
 };
 
 export default function AwardsForm() {
@@ -113,28 +113,76 @@ export default function AwardsForm() {
               />
             </div>
           ))}
-          {([
-            { name: "country", label: "Country", options: COUNTRIES, required: true },
-            { name: "industry", label: "Industry", options: INDUSTRIES, required: false },
-            { name: "awardCategory", label: "Award Category", options: AWARD_CATEGORIES, required: true },
-          ] as const).map((field) => (
-            <div key={field.name} className={field.name === "awardCategory" ? "md:col-span-2" : ""}>
-              <label htmlFor={"awards-" + field.name} className="mb-2 block text-sm font-medium text-gray-700">
-                {field.label} {field.required && <span className="text-[#00A1B1]">*</span>}
-              </label>
-              <select
-                id={"awards-" + field.name}
-                name={field.name}
-                value={formData[field.name]}
-                onChange={handleChange}
-                required={field.required}
-                className={inputClass}
-              >
-                <option value="">Select {field.label}</option>
-                {field.options.map((option) => <option key={option} value={option}>{option}</option>)}
-              </select>
-            </div>
-          ))}
+          <div className="md:col-span-2 space-y-4">
+            <CountryStateCityFields
+              country={formData.country}
+              state={formData.state}
+              city={formData.city}
+              onCountryChange={(country) => setFormData((prev) => ({ ...prev, country, state: "", city: "" }))}
+              onStateChange={(state) => setFormData((prev) => ({ ...prev, state, city: "" }))}
+              onCityChange={(city) => setFormData((prev) => ({ ...prev, city }))}
+              labelClassName="mb-2 block text-sm font-medium text-gray-700"
+              inputClassName={inputClass}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="awards-pincode" className="mb-2 block text-sm font-medium text-gray-700">
+              Pin Code / Zip Code <span className="text-[#00A1B1]">*</span>
+            </label>
+            <input
+              id="awards-pincode"
+              name="pincode"
+              type="text"
+              value={formData.pincode}
+              onChange={handleChange}
+              required
+              maxLength={20}
+              placeholder="Enter pin code / zip code"
+              className={inputClass}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="awards-industry" className="mb-2 block text-sm font-medium text-gray-700">
+              Industry
+            </label>
+            <select
+              id="awards-industry"
+              name="industry"
+              value={formData.industry}
+              onChange={handleChange}
+              className={inputClass}
+            >
+              <option value="">Select Industry</option>
+              {INDUSTRIES.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="md:col-span-2">
+            <label htmlFor="awards-awardCategory" className="mb-2 block text-sm font-medium text-gray-700">
+              Award Category <span className="text-[#00A1B1]">*</span>
+            </label>
+            <select
+              id="awards-awardCategory"
+              name="awardCategory"
+              value={formData.awardCategory}
+              onChange={handleChange}
+              required
+              className={inputClass}
+            >
+              <option value="">Select Award Category</option>
+              {AWARD_CATEGORIES.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
         <div>
           <label htmlFor="awards-message" className="mb-2 block text-sm font-medium text-gray-700">Message</label>

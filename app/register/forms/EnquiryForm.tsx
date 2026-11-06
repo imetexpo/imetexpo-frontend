@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
 import LoadingDots from '@/components/ui/LoadingDots';
+import CountryStateCityFields from "@/components/common/CountryStateCityFields";
 
 
 interface Country {
@@ -252,56 +253,14 @@ export default function EnquiryForm() {
         />
       </div>
 
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Country <span className="text-red-500">*</span>
-        </label>
-        <select
-          name="country"
-          value={formData.country}
-          onChange={handleInputChange}
-          required
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
-        >
-          <option value="">Select Country</option>
-          {countries.map((country) => (
-            <option key={country.name} value={country.name}>
-              {country.name}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            State <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="state"
-            value={formData.state}
-            onChange={handleInputChange}
-            required
-            placeholder="Enter your state"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            City <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="city"
-            value={formData.city}
-            onChange={handleInputChange}
-            required
-            placeholder="Enter your city"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
-          />
-        </div>
-      </div>
+      <CountryStateCityFields
+        country={formData.country}
+        state={formData.state}
+        city={formData.city}
+        onCountryChange={(country) => setFormData((prev) => ({ ...prev, country, state: "", city: "" }))}
+        onStateChange={(state) => setFormData((prev) => ({ ...prev, state, city: "" }))}
+        onCityChange={(city) => setFormData((prev) => ({ ...prev, city }))}
+      />
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
