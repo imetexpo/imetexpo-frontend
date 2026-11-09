@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { COUNTRIES, INDUSTRIES, AWARD_CATEGORIES } from "@/lib/registrationOptions";
 import AwardsTurnstile from "./AwardsTurnstile";
@@ -16,7 +17,29 @@ const initialForm = {
 
 export default function AwardsForm() {
   const { utmData } = useUTMData();
-  const [formData, setFormData] = useState(initialForm);
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category") || searchParams.get("awardCategory") || "";
+
+  const findMatchingCategory = (param: string) => {
+    if (!param) return "";
+    const clean = param.trim().toLowerCase();
+    const matched = AWARD_CATEGORIES.find((cat) => cat.toLowerCase() === clean);
+    return matched || "";
+  };
+
+  const [formData, setFormData] = useState(() => ({
+    ...initialForm,
+    awardCategory: findMatchingCategory(categoryParam),
+  }));
+
+  useEffect(() => {
+    if (categoryParam) {
+      const matched = findMatchingCategory(categoryParam);
+      if (matched) {
+        setFormData((prev) => ({ ...prev, awardCategory: matched }));
+      }
+    }
+  }, [categoryParam]);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
   const [captchaAttempt, setCaptchaAttempt] = useState(0);
@@ -83,7 +106,7 @@ export default function AwardsForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form id="awards-form" onSubmit={handleSubmit} className="space-y-5 scroll-mt-28">
       <h2 className="font-bebas text-3xl text-[#003A77]">Awards Enquiry</h2>
       <fieldset disabled={loading} className="space-y-5">
         <legend className="sr-only">Awards enquiry details</legend>

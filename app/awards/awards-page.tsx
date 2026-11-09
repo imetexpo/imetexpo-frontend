@@ -247,7 +247,7 @@ export default function AwardsPage() {
             Sponsor Now
           </Link>
           <Link
-            href="/nominate/"
+            href="/register?t=awards"
             className="rounded-sm bg-[#00A1B1] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
           >
             Nominate Now →
@@ -324,26 +324,35 @@ export default function AwardsPage() {
               Award Categories
             </h2>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => (
-              <div
+              <Link
                 key={category.title}
-                className="flex flex-col overflow-hidden rounded-sm border border-gray-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00A1B1] hover:shadow-md"
+                href={`/register?t=awards&category=${encodeURIComponent(category.title)}#awards-form`}
+                className="group flex flex-col overflow-hidden rounded-sm border border-gray-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00A1B1] hover:shadow-lg"
               >
-                <div className="relative flex h-64 w-full items-center justify-center overflow-hidden bg-[#05172b] p-3 sm:h-72">
+                <div className="relative w-full aspect-[3/2] overflow-hidden bg-[#05172b]">
                   <img
                     src={category.image}
                     alt={category.title}
-                    className="h-full w-full object-contain"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div className="flex flex-col gap-3 p-6">
-                  <h3 className="font-bebas text-xl uppercase tracking-wide text-[#003A77] md:text-2xl">
-                    {category.title}
-                  </h3>
-                  <p className="text-lg leading-relaxed text-gray-600 sm:text-xl">{category.description}</p>
+                <div className="flex flex-1 flex-col justify-between gap-4 p-6">
+                  <div>
+                    <h3 className="font-bebas text-xl uppercase tracking-wide text-[#003A77] transition-colors group-hover:text-[#00A1B1] md:text-2xl">
+                      {category.title}
+                    </h3>
+                    <p className="mt-2 text-base leading-relaxed text-gray-600 sm:text-lg">
+                      {category.description}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 pt-2 text-xs font-bold uppercase tracking-wider text-[#00A1B1] group-hover:text-[#003A77]">
+                    <span>Nominate for this Category</span>
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </Container>
