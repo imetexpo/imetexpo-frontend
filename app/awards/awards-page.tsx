@@ -55,7 +55,7 @@ const categories = [
       'Honours outstanding overall achievement in metrology, measurement science, and quality excellence at a national or international level.',
   },
   {
-    image: '/images/bestmetrology.png',
+    image: '/images/awards/innovation.png',
     title: 'Advanced Measurement Technology Award',
     description:
       'Recognises breakthrough instruments, sensors, and measurement systems that raise accuracy, speed, or capability in industrial applications.',
