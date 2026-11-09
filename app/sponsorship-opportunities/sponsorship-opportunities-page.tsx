@@ -74,7 +74,7 @@ export default function AdvertisingDetailsPage() {
         "Largest sponsor logo on the event backdrop, entrance branding and registration area.,",
         "Logo on official visitor invitations, digital brochures and promotional creatives.",
         "Prominent logo placement on all major email campaigns and social media promotions.",
-        "One premium 36 sqm exhibition space (shell scheme)",
+        "One premium 150 sqm exhibition space (Raw Space)",
         "One exclusive 20-minute keynote or industry presentation, subject to programme approval.",
         "Opportunity to deliver the opening address at the conference.",
         "One sponsored technical session or panel discussion.",
@@ -98,7 +98,7 @@ export default function AdvertisingDetailsPage() {
         "Premium logo placement on the event website.",
         "Prominent logo on the main entrance and exhibition branding.",
         "Logo on conference and visitor promotional materials.",
-        "One premium 27 sqm exhibition space (shell scheme).",
+        "One premium 90 sqm exhibition space (Raw Space).",
         "One 15-minute technical presentation, subject to programme approval.",
         "One panel discussion participation opportunity.",
         "One dedicated sponsor interview/video feature.",
@@ -115,7 +115,7 @@ export default function AdvertisingDetailsPage() {
       fallbackIcon: "🥇"
     },
     {
-      title: "Gold Sponsor",
+      title: "Gold Sponsor - 2",
       description: "Strengthen your brand presence with targeted exposure through exhibition signage, website visibility, brochure branding, social media promotion, product features and opportunities to engage relevant industry decision-makers.",
       points: [
        "Logo on the official event website sponsor section.",
@@ -124,7 +124,7 @@ export default function AdvertisingDetailsPage() {
 
 "Logo on selected event promotional materials.",
 "Prominent logo placement on the conference backdrop.",
-"One 18 sqm exhibition space (shell scheme).",
+"One 60 sqm exhibition space (shell scheme).",
 "One 10-minute technical presentation, subject to programme approval.",
 "One social media promotional post.",
 "One email campaign mention.",
@@ -138,13 +138,33 @@ export default function AdvertisingDetailsPage() {
       fallbackIcon: "🥈"
     },
     {
-      title: "Silver Sponsor",
+      title: "Silver Sponsor - 2",
       description: "A focused sponsorship option for specialist technology and solution providers seeking visibility among professionals involved in metrology, precision measurement, inspection, testing and quality management.",
       points: [
        
        "Logo on the event website sponsor section.",
 "Logo on selected event branding and promotional creatives.",
-"One 12 sqm exhibition space (shell scheme).",
+"One 12 sqm exhibition space (Raw Space).",
+"One opportunity to participate in a technical panel, subject to programme approval.",
+"One social media sponsor acknowledgement.",
+"4 exhibitor/staff badges.",
+"4 VIP/invitation passes.",
+"Sponsor acknowledgement in the post-event report."
+      ],
+      buttonText: "Enquire Now",
+      buttonLink: "/sponsorship-enquiry",
+      image: "/images/silver.jpg",
+      fallbackIcon: "🥉"
+    },
+
+    {
+      title: "Bronze Sponsor - 2",
+      description: "A focused sponsorship option for specialist technology and solution providers seeking visibility among professionals involved in metrology, precision measurement, inspection, testing and quality management.",
+      points: [
+       
+       "Logo on the event website sponsor section.",
+"Logo on selected event branding and promotional creatives.",
+"One 24 sqm exhibition space (Raw Space).",
 "One opportunity to participate in a technical panel, subject to programme approval.",
 "One social media sponsor acknowledgement.",
 "4 exhibitor/staff badges.",
