@@ -101,7 +101,7 @@ export function buildPageSchema(key: string) {
         '@type': 'ExhibitionEvent',
         '@id': eventId,
         name: 'IndiaMet Expo 2027',
-        description: 'International exhibition for metallurgy, steel, foundry, casting, aluminium and metal processing technology.',
+        description: 'International exhibition for metrology, precision measurement, inspection, 3D scanning, quality control and calibration technology.',
         startDate: '2027-05-13T10:00:00+05:30',
         endDate: '2027-05-15T16:00:00+05:30',
         eventStatus: 'https://schema.org/EventScheduled',

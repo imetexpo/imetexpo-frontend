@@ -1,56 +1,39 @@
 {
   "/": {
     "url": "https://www.indiametexpo.com/",
-    "title": "IndiaMet Expo 2027 Pune | Metallurgy & Metal Exhibition India",
-    "description": "IndiaMet Expo 2027 brings metallurgy, steel, foundry, casting and aluminium technologies to Pune, 13-15 May. Register to visit or enquire about a stall.",
+    "title": "IndiaMet Expo 2027 Pune | Metrology Exhibition India",
+    "description": "IndiaMet 2027 is a metrology exhibition in Pune, 13-15 May. Explore measurement technology, CMM, 3D scanning and inspection. Register or book a stall.",
     "keywords": [
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition",
-      "metal exhibition Pune 2027",
-      "metallurgy exhibition Pune",
-      "metal expo Pune",
-      "steel exhibition Pune",
-      "foundry exhibition Pune",
-      "industrial exhibition Pune 2027",
-      "manufacturing trade show Pune",
-      "engineering exhibition Pune",
-      "metal industry expo Maharashtra",
-      "trade exhibition Chinchwad Pune",
+      "metrology exhibition India",
+      "IndiaMet Expo 2027",
+      "metrology expo Pune",
+      "measurement technology expo",
+      "coordinate measuring machines",
+      "CMM exhibition",
+      "3D scanning expo",
+      "inspection technology exhibition",
+      "quality control exhibition India",
+      "industrial metrology Pune",
+      "Auto Cluster Pune exhibition",
+      "metrology trade show India",
+      "precision measurement exhibition",
+      "metrology expo India",
       "indiamet expo",
-      "india met expo",
       "indiamet 2027",
-      "india met exhibition",
-      "indiamet exhibition Pune",
       "indiamet visitor registration",
-      "indiamet exhibitor registration",
-      "indiamet stall booking",
-      "indiamet exhibition dates",
-      "indiamet exhibition venue"
+      "indiamet stall booking"
     ],
     "schemaType": "WebPage",
     "schemaName": "IndiaMet Expo 2027",
-    "schemaDescription": "International exhibition for metallurgy, steel, foundry, casting, aluminium and metal processing technology.",
+    "schemaDescription": "IndiaMet 2027 is a metrology exhibition in Pune, 13-15 May. Explore measurement technology, CMM, 3D scanning and inspection. Register or book a stall.",
     "faqs": [
       {
         "question": "What is IndiaMet Expo 2027?",
-        "answer": "IndiaMet Expo 2027 is a metallurgy and metal industry exhibition in Pune, India, covering steel, foundry, casting, aluminium and metal processing technologies."
+        "answer": "IndiaMet Expo 2027 is a metrology exhibition in India for measurement technology, inspection and quality control, held in Pune."
       },
       {
-        "question": "What is the IndiaMet metallurgy exhibition about?",
-        "answer": "It connects suppliers of metal production, processing and manufacturing technologies with manufacturers, foundries, fabricators and industrial buyers."
+        "question": "What is the IndiaMet metrology exhibition about?",
+        "answer": "It brings together suppliers of industrial metrology, precision measurement and inspection solutions with manufacturers and quality teams."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -61,16 +44,16 @@
         "answer": "It is held at the Auto Cluster Exhibition Centre, Plot No. C-181, Chinchwad East, Mumbai Pune Road, Pune 411019, Maharashtra, India."
       },
       {
-        "question": "Who should visit this metal expo in India?",
-        "answer": "Steel and aluminium producers, foundry professionals, casting specialists, fabricators, manufacturing engineers, procurement teams and industrial decision makers."
+        "question": "Who should visit this metrology expo in India?",
+        "answer": "Quality, inspection, metrology and manufacturing engineers, production heads, procurement teams, tool rooms and R&D professionals."
       },
       {
-        "question": "Which technologies does IndiaMet Expo cover?",
-        "answer": "The exhibition covers steel processing, foundry and casting equipment, aluminium and non-ferrous metal technologies, metal forming, furnaces, heat treatment, testing and recycling."
+        "question": "What will I see at the IndiaMet measurement technology expo?",
+        "answer": "Coordinate measuring machines, 3D scanning, optical and laser measurement systems, machine vision, surface roughness testers and calibration solutions."
       },
       {
-        "question": "Why attend a metallurgy exhibition in Pune?",
-        "answer": "Pune is a major manufacturing and automotive hub, so it is a strong location to meet buyers of precision metal manufacturing and metal testing technology."
+        "question": "Why attend a metrology exhibition in Pune?",
+        "answer": "Pune is a major manufacturing and automotive hub, so it is a strong location to meet buyers of precision measurement and inspection technology."
       },
       {
         "question": "How do I register as a visitor?",
@@ -89,42 +72,26 @@
   },
   "/about": {
     "url": "https://www.indiametexpo.com/about",
-    "title": "About IndiaMet Expo 2027 | Metallurgy Exhibition Pune",
-    "description": "Explore IndiaMet Expo 2027, a metallurgy and metal industry exhibition in Pune, 13-15 May. Discover steel, foundry, casting and metal processing technologies.",
+    "title": "About IndiaMet Expo 2027 | Measurement Technology Expo",
+    "description": "Know the IndiaMet exhibition dates, 13-15 May 2027, and about this industrial metrology and precision measurement exhibition in Pune. Plan your visit.",
     "keywords": [
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition",
-      "steel industry India",
-      "steel manufacturing India",
-      "steel expo India",
-      "steel technology exhibition",
-      "stainless steel industry",
-      "steel processing technology",
-      "iron and steel industry India",
-      "steel manufacturers India",
-      "steel industry trade show",
-      "steel production technology"
+      "about IndiaMet Expo 2027",
+      "measurement technology expo",
+      "metrology exhibition Pune",
+      "industrial metrology exhibition",
+      "precision measurement exhibition India",
+      "IndiaMet exhibition dates",
+      "Auto Cluster Chinchwad",
+      "metrology trade show India",
+      "quality assurance exhibition"
     ],
     "schemaType": "AboutPage",
     "schemaName": "About IndiaMet Expo 2027",
-    "schemaDescription": "Learn about IndiaMet, an exhibition for metallurgy, steel, foundry, casting, non-ferrous metals and metal manufacturing.",
+    "schemaDescription": "Know the IndiaMet exhibition dates, 13-15 May 2027, and about this industrial metrology and precision measurement exhibition in Pune. Plan your visit.",
     "faqs": [
       {
         "question": "What is IndiaMet Expo?",
-        "answer": "IndiaMet Expo is a metallurgy and metal industry exhibition focused on steel, foundry, casting, aluminium, metal processing and industrial manufacturing."
+        "answer": "IndiaMet Expo is a measurement technology exhibition focused on metrology, inspection and quality assurance for Indian industry."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -135,20 +102,20 @@
         "answer": "It is held at the Auto Cluster Exhibition Centre, Plot No. C-181, Chinchwad East, Mumbai Pune Road, Pune 411019, Maharashtra, India."
       },
       {
-        "question": "What is an industrial metallurgy exhibition?",
-        "answer": "It is a trade show where suppliers present technologies for producing, processing, casting, forming, testing and recycling metals, and industry buyers compare solutions."
+        "question": "What is an industrial metrology exhibition?",
+        "answer": "It is a trade show where suppliers display measurement, inspection and calibration technologies used in manufacturing, and buyers compare solutions."
       },
       {
-        "question": "Which metal manufacturing technologies are covered?",
-        "answer": "Steel processing, foundry and casting, aluminium and non-ferrous metals, metalworking, fabrication, furnaces, heat treatment and metal testing technologies."
+        "question": "What is covered at this precision measurement exhibition?",
+        "answer": "Precision measuring instruments, CMMs, optical and 3D measurement, machine vision and quality control solutions."
       },
       {
-        "question": "Who should attend this metallurgy exhibition?",
-        "answer": "Metal producers, foundry and casting teams, manufacturing engineers, fabricators, plant managers, procurement teams and researchers."
+        "question": "Who should attend this measurement technology exhibition?",
+        "answer": "Metrology and quality professionals, design and production engineers, tool room teams, OEM buyers and researchers."
       },
       {
         "question": "Who organises IndiaMet Expo 2027?",
-        "answer": "Maxx Business Media Pvt. Ltd. organises this metallurgy exhibition in Pune."
+        "answer": "Maxx Business Media Pvt. Ltd. organises this metrology exhibition in Pune."
       },
       {
         "question": "What are the opening hours of IndiaMet Expo 2027?",
@@ -156,7 +123,7 @@
       },
       {
         "question": "Why is IndiaMet held in Pune?",
-        "answer": "Pune has a large base of automotive, engineering and precision manufacturing companies, which are key users of metallurgy."
+        "answer": "Pune has a large base of automotive, engineering and precision manufacturing companies, which are key users of metrology."
       },
       {
         "question": "Who can I contact for IndiaMet Expo 2027 queries?",
@@ -167,38 +134,19 @@
   },
   "/about-organizer": {
     "url": "https://www.indiametexpo.com/about-organizer",
-    "title": "Organizer | Maxx Business Media - IndiaMet Expo 2027",
-    "description": "Meet Maxx Business Media, organizer of IndiaMet Expo 2027 in Pune. Connect with the team behind this metallurgy, steel, foundry and metal industry exhibition.",
+    "title": "Organizer | Maxx Business Media - IndiaMet Expo Pune",
+    "description": "Meet Maxx Business Media, the organizer of IndiaMet Expo Pune 2027, a metrology exhibition in India for measurement and inspection technology.",
     "keywords": [
-      "indiamet expo",
-      "india met expo",
-      "indiamet 2027",
-      "india met exhibition",
-      "indiamet exhibition Pune",
-      "indiamet visitor registration",
-      "indiamet exhibitor registration",
-      "indiamet stall booking",
-      "indiamet exhibition dates",
-      "indiamet exhibition venue",
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition"
+      "Maxx Business Media",
+      "IndiaMet organizer",
+      "IndiaMet Expo Pune organizer",
+      "metrology exhibition organizer India",
+      "B2B exhibition organizer India",
+      "DIEMEX organizer"
     ],
     "schemaType": "AboutPage",
-    "schemaName": "About the IndiaMet Organizer",
-    "schemaDescription": "Information about the organizer of IndiaMet Expo 2027.",
+    "schemaName": "About the Organizer",
+    "schemaDescription": "Meet Maxx Business Media, the organizer of IndiaMet Expo Pune 2027, a metrology exhibition in India for measurement and inspection technology.",
     "faqs": [
       {
         "question": "Who is the organizer of IndiaMet Expo Pune?",
@@ -213,8 +161,8 @@
         "answer": "The organizer also runs DIEMEX, the die and mould exhibition in Pune."
       },
       {
-        "question": "What is IndiaMet Expo, the metallurgy exhibition in India?",
-        "answer": "IndiaMet is a metallurgy and metal industry exhibition covering steel, foundry, casting, aluminium and metal manufacturing technologies."
+        "question": "What is IndiaMet Expo, the metrology exhibition in India?",
+        "answer": "IndiaMet is a metrology and measurement technology exhibition covering inspection, quality control and precision engineering."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -245,38 +193,19 @@
   },
   "/partners-and-sponsors": {
     "url": "https://www.indiametexpo.com/partners-and-sponsors",
-    "title": "Partners & Sponsors | IndiaMet Metal Expo 2027",
-    "description": "Explore partners and sponsors of IndiaMet Expo 2027, Pune's metallurgy and metal industry exhibition, 13-15 May. Enquire about partnership opportunities.",
+    "title": "Partners & Sponsors | IndiaMet Metrology Expo 2027",
+    "description": "Meet the partners and sponsors of IndiaMet Expo 2027, the metrology expo in India for precision engineering, 13-15 May in Pune. Become a sponsor.",
     "keywords": [
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition",
-      "indiamet expo",
-      "india met expo",
-      "indiamet 2027",
-      "india met exhibition",
-      "indiamet exhibition Pune",
-      "indiamet visitor registration",
-      "indiamet exhibitor registration",
-      "indiamet stall booking",
-      "indiamet exhibition dates",
-      "indiamet exhibition venue"
+      "IndiaMet partners",
+      "IndiaMet sponsors",
+      "metrology expo sponsors",
+      "precision engineering sponsors India",
+      "metrology industry partners",
+      "sponsor metrology expo"
     ],
     "schemaType": "CollectionPage",
-    "schemaName": "IndiaMet Partners and Sponsors",
-    "schemaDescription": "Explore partners and sponsors associated with IndiaMet Expo 2027.",
+    "schemaName": "Partners & Sponsors",
+    "schemaDescription": "Meet the partners and sponsors of IndiaMet Expo 2027, the metrology expo in India for precision engineering, 13-15 May in Pune. Become a sponsor.",
     "faqs": [
       {
         "question": "Who are the partners and sponsors of IndiaMet Expo 2027?",
@@ -287,8 +216,8 @@
         "answer": "Visit the sponsorship page, submit the sponsor form, or email pad@maxxmedia.in for packages."
       },
       {
-        "question": "Why sponsor a metal expo in India?",
-        "answer": "Sponsorship provides opportunities to present your brand to metallurgy, steel, foundry, casting and metal manufacturing professionals."
+        "question": "Why sponsor a metrology expo in India?",
+        "answer": "Sponsorship builds brand visibility among buyers in the metrology industry and the precision engineering community."
       },
       {
         "question": "Can associations and institutes partner with IndiaMet?",
@@ -299,8 +228,8 @@
         "answer": "Yes. Trade media and digital platforms can apply as media partners."
       },
       {
-        "question": "Can sponsors connect with metal manufacturing buyers in India?",
-        "answer": "The event is aimed at metal industry professionals, including producers, foundries, fabricators, manufacturing teams and industrial buyers."
+        "question": "Do sponsors reach precision engineering buyers in India?",
+        "answer": "The audience includes quality, inspection and manufacturing professionals in precision engineering and related industries."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -312,7 +241,7 @@
       },
       {
         "question": "Who organises IndiaMet Expo 2027?",
-        "answer": "Maxx Business Media Pvt. Ltd. organises this metallurgy exhibition in Pune."
+        "answer": "Maxx Business Media Pvt. Ltd. organises this metrology exhibition in Pune."
       },
       {
         "question": "Who can I contact for IndiaMet Expo 2027 queries?",
@@ -323,49 +252,37 @@
   },
   "/why-exhibit": {
     "url": "https://www.indiametexpo.com/why-exhibit",
-    "title": "Why Exhibit | IndiaMet Metallurgy Expo Stall Booking 2027",
-    "description": "Enquire about a stall at IndiaMet Expo 2027 in Pune, 13-15 May. Showcase steel, foundry, casting and metal processing technologies to industry buyers.",
+    "title": "Why Exhibit | IndiaMet Stall Booking, Pune 2027",
+    "description": "Book a stall at IndiaMet Expo 2027, a metrology equipment exhibition in Pune, 13-15 May. Meet quality and inspection buyers and generate leads.",
     "keywords": [
-      "metal expo exhibitor registration",
-      "metallurgy exhibition stall booking",
-      "metal industry exhibition booth booking",
-      "steel expo exhibitor registration",
-      "industrial exhibition stall booking Pune",
-      "metal exhibition participation",
-      "metal expo visitor registration",
-      "metallurgy exhibition visitor registration",
-      "metal exhibition tickets Pune",
-      "industrial trade fair registration Pune",
-      "metal exhibition Pune 2027",
-      "metallurgy exhibition Pune",
-      "metal expo Pune",
-      "steel exhibition Pune",
-      "foundry exhibition Pune",
-      "industrial exhibition Pune 2027",
-      "manufacturing trade show Pune",
-      "engineering exhibition Pune",
-      "metal industry expo Maharashtra",
-      "trade exhibition Chinchwad Pune"
+      "why exhibit IndiaMet",
+      "IndiaMet stall booking",
+      "metrology equipment exhibition",
+      "exhibit in Pune",
+      "metrology exhibition stall booking",
+      "quality inspection buyers Pune",
+      "metrology lead generation",
+      "CMM exhibitors India"
     ],
     "schemaType": "WebPage",
-    "schemaName": "Why Exhibit at IndiaMet 2027",
-    "schemaDescription": "Explore exhibitor opportunities at IndiaMet Expo 2027.",
+    "schemaName": "Why Exhibit",
+    "schemaDescription": "Book a stall at IndiaMet Expo 2027, a metrology equipment exhibition in Pune, 13-15 May. Meet quality and inspection buyers and generate leads.",
     "faqs": [
       {
         "question": "Why should I exhibit at IndiaMet Expo 2027?",
-        "answer": "IndiaMet provides a platform to showcase metal industry technologies and connect with manufacturers, foundries, fabricators and prospective industrial buyers."
+        "answer": "You meet buyers and engineers looking for metrology equipment, measurement technology and inspection solutions, and you generate qualified leads."
       },
       {
         "question": "How does IndiaMet stall booking work?",
         "answer": "Submit the exhibitor registration or enquiry form, and the team will share stall options and pricing."
       },
       {
-        "question": "Who can exhibit at this metallurgy and metal technology exhibition?",
-        "answer": "Suppliers of steel processing equipment, foundry machinery, casting solutions, aluminium technologies, fabrication systems, furnaces, heat treatment, testing and recycling equipment."
+        "question": "Who can exhibit at this metrology equipment exhibition?",
+        "answer": "Suppliers of metrology equipment, CMMs, 3D scanners, optical and laser systems, machine vision, calibration and software."
       },
       {
-        "question": "Who is the exhibition audience?",
-        "answer": "Metal producers, foundry and casting professionals, manufacturing and plant teams, fabricators, engineers and procurement decision makers."
+        "question": "Who will visit my stall?",
+        "answer": "Quality, inspection, production and procurement teams from manufacturing, automotive and engineering companies."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -396,91 +313,49 @@
   },
   "/sectors": {
     "url": "https://www.indiametexpo.com/sectors",
-    "title": "Steel, Foundry & Metal Processing Sectors | IndiaMet 2027",
-    "description": "Explore IndiaMet Expo sectors: steel, foundry and casting, aluminium and non-ferrous metals, fabrication, furnaces, heat treatment and metal recycling.",
+    "title": "Metrology Equipment Exhibition | IndiaMet Expo Sectors",
+    "description": "See sectors at IndiaMet Expo Pune: metrology equipment, inspection technology, calibration and quality control solutions. 13-15 May 2027.",
     "keywords": [
-      "steel industry India",
-      "steel manufacturing India",
-      "steel expo India",
-      "steel technology exhibition",
-      "stainless steel industry",
-      "steel processing technology",
-      "iron and steel industry India",
-      "steel manufacturers India",
-      "steel industry trade show",
-      "steel production technology",
-      "foundry expo India",
-      "foundry industry India",
-      "casting technology exhibition",
-      "metal casting technology",
-      "die casting exhibition India",
-      "investment casting industry",
-      "sand casting technology",
-      "foundry equipment manufacturers",
-      "industrial casting solutions",
-      "foundry technology expo",
-      "aluminium industry India",
-      "aluminium expo India",
-      "aluminium casting technology",
-      "non ferrous metal industry",
-      "aluminium extrusion industry",
-      "aluminium processing technology",
-      "copper industry India",
-      "aluminium manufacturing India",
-      "non ferrous metals exhibition",
-      "aluminium foundry exhibition",
-      "metal fabrication industry",
-      "sheet metal processing",
-      "metal forming technology",
-      "metalworking technology",
-      "metal cutting technology",
-      "metal surface treatment",
-      "metal finishing technology",
-      "precision metal manufacturing",
-      "metal fabrication exhibition",
-      "sheet metal exhibition India",
-      "industrial furnace technology",
-      "heat treatment equipment",
-      "induction melting furnace",
-      "metal testing equipment",
-      "metallurgical laboratory equipment",
-      "industrial automation manufacturing",
-      "metal recycling technology",
-      "steel plant equipment",
-      "foundry machinery",
-      "industrial manufacturing technology"
+      "metrology equipment exhibition",
+      "inspection technology exhibition",
+      "calibration exhibition India",
+      "quality control exhibition India",
+      "precision measuring instruments",
+      "IndiaMet sectors",
+      "machine vision exhibition",
+      "surface roughness testers"
     ],
     "schemaType": "CollectionPage",
-    "schemaName": "IndiaMet Exhibition Sectors",
-    "schemaDescription": "Explore metallurgy, steel, foundry, casting, aluminium, metal processing and industrial technology sectors at IndiaMet.",
+    "schemaName": "Exhibition Sectors",
+    "schemaDescription": "See sectors at IndiaMet Expo Pune: metrology equipment, inspection technology, calibration and quality control solutions. 13-15 May 2027.",
     "faqs": [
       {
         "question": "What sectors are covered at IndiaMet Expo?",
-        "answer": "Steel and stainless steel, foundry and casting, aluminium and non-ferrous metals, metal processing and fabrication, furnaces, heat treatment, testing, automation and recycling."
+        "answer": "Metrology equipment, precision measuring instruments, inspection systems, calibration services and quality control solutions."
       },
       {
-        "question": "Does IndiaMet cover the steel industry?",
-        "answer": "The exhibition covers steel manufacturing and processing technologies, steel plant equipment, stainless steel and iron and steel industry solutions."
+        "question": "Is IndiaMet a metrology equipment exhibition?",
+        "answer": "Yes. It showcases metrology equipment and measurement technology for industrial use."
       },
       {
-        "question": "Which foundry and casting technologies are covered?",
-        "answer": "Foundry machinery, metal casting, die casting, investment casting, sand casting and industrial casting solutions."
+        "question": "What is shown at the inspection technology exhibition?",
+        "answer": "Industrial inspection equipment, automated inspection, vision systems and digital quality inspection tools."
       },
       {
-        "question": "Are aluminium and non-ferrous metal technologies included?",
-        "answer": "The sector profile includes aluminium casting, extrusion, processing and manufacturing, alongside copper and other non-ferrous metal technologies."
+        "question": "Are calibration services part of this calibration exhibition in India?",
+        "answer": "Calibration products and services are a core part of metrology and are relevant to the expo."
       },
       {
-        "question": "Which metal processing and fabrication technologies are covered?",
-        "answer": "Sheet metal processing, metal forming, metal cutting, fabrication, surface treatment, finishing and precision metal manufacturing."
+        "question": "What quality control solutions are on display?",
+        "answer": "Quality control exhibition India visitors can see gauges, CMMs, testers and software for quality assurance."
       },
       {
-        "question": "Which industrial technologies are relevant to the exhibition?",
-        "answer": "Industrial furnaces, induction melting, heat treatment equipment, metallurgical laboratory and testing equipment, automation and metal recycling."
+        "question": "Which precision measuring instruments will I find?",
+        "answer": "Instruments such as gauges, micrometers, height gauges and surface testers, along with advanced measuring machines."
       },
       {
         "question": "Which industries use these technologies?",
-        "answer": "Steel and aluminium production, foundries, automotive, aerospace, engineering, fabrication, machinery and general manufacturing."
+        "answer": "Automotive, aerospace, tooling, machinery, electronics and general manufacturing."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -499,23 +374,19 @@
   },
   "/plan-your-travel?tab=exhibitor": {
     "url": "https://www.indiametexpo.com/plan-your-travel?tab=exhibitor",
-    "title": "Exhibitor Travel Guide | IndiaMet Metal Expo Pune 2027",
-    "description": "Plan your journey to IndiaMet Expo 2027, 13-15 May at Auto Cluster, Chinchwad, Pune. Find exhibitor travel, accommodation and logistics information.",
+    "title": "Exhibitor Travel Guide | IndiaMet Expo Pune 2027",
+    "description": "Plan your trip to IndiaMet Expo Pune 2027. Get the venue address, travel, stay and logistics tips for exhibitors at Auto Cluster, Chinchwad.",
     "keywords": [
-      "metal exhibition Pune 2027",
-      "metallurgy exhibition Pune",
-      "metal expo Pune",
-      "steel exhibition Pune",
-      "foundry exhibition Pune",
-      "industrial exhibition Pune 2027",
-      "manufacturing trade show Pune",
-      "engineering exhibition Pune",
-      "metal industry expo Maharashtra",
-      "trade exhibition Chinchwad Pune"
+      "IndiaMet exhibitor travel guide",
+      "Auto Cluster Chinchwad travel",
+      "exhibitor accommodation Pune",
+      "IndiaMet venue Pune",
+      "travel to Auto Cluster Chinchwad",
+      "hotels near Auto Cluster Pune"
     ],
     "schemaType": "WebPage",
-    "schemaName": "Exhibitor Travel Planning | IndiaMet 2027",
-    "schemaDescription": "Travel planning information for IndiaMet exhibitors visiting Pune.",
+    "schemaName": "Exhibitor Travel Guide",
+    "schemaDescription": "Plan your trip to IndiaMet Expo Pune 2027. Get the venue address, travel, stay and logistics tips for exhibitors at Auto Cluster, Chinchwad.",
     "faqs": [
       {
         "question": "Where is the IndiaMet Expo in Pune?",
@@ -538,8 +409,8 @@
         "answer": "Pune International Airport is the nearest. Taxis and app cabs are available to Chinchwad."
       },
       {
-        "question": "Which railway stations can I use to reach the venue?",
-        "answer": "Chinchwad and Pune Junction provide rail access to the area. Plan your onward cab, auto or local transport journey to the venue."
+        "question": "Which railway stations are nearby?",
+        "answer": "Chinchwad and Pune Junction. A short cab or auto ride takes you to the venue."
       },
       {
         "question": "Where can exhibitors stay?",
@@ -562,33 +433,18 @@
   },
   "/register?t=exhibitor": {
     "url": "https://www.indiametexpo.com/register?t=exhibitor",
-    "title": "Exhibitor Registration | IndiaMet Metallurgy Expo Pune 2027",
-    "description": "Register exhibitor interest for IndiaMet Expo 2027 in Pune, 13-15 May. Enquire about metallurgy exhibition stall booking and metal industry booth options.",
+    "title": "IndiaMet Exhibitor Registration | Expo Pune 2027",
+    "description": "Complete IndiaMet exhibitor registration for the metrology expo in Pune, 13-15 May 2027. Book your stall and meet inspection and quality buyers.",
     "keywords": [
-      "metal expo exhibitor registration",
-      "metallurgy exhibition stall booking",
-      "metal industry exhibition booth booking",
-      "steel expo exhibitor registration",
-      "industrial exhibition stall booking Pune",
-      "metal exhibition participation",
-      "metal expo visitor registration",
-      "metallurgy exhibition visitor registration",
-      "metal exhibition tickets Pune",
-      "industrial trade fair registration Pune",
-      "metal exhibition Pune 2027",
-      "metallurgy exhibition Pune",
-      "metal expo Pune",
-      "steel exhibition Pune",
-      "foundry exhibition Pune",
-      "industrial exhibition Pune 2027",
-      "manufacturing trade show Pune",
-      "engineering exhibition Pune",
-      "metal industry expo Maharashtra",
-      "trade exhibition Chinchwad Pune"
+      "IndiaMet exhibitor registration",
+      "book stall IndiaMet 2027",
+      "metrology expo exhibitor registration",
+      "exhibit at IndiaMet Pune",
+      "metrology equipment stall booking"
     ],
     "schemaType": "WebPage",
-    "schemaName": "Exhibitor Registration | IndiaMet Expo 2027",
-    "schemaDescription": "Register your exhibitor interest for IndiaMet Expo 2027.",
+    "schemaName": "Exhibitor Registration",
+    "schemaDescription": "Complete IndiaMet exhibitor registration for the metrology expo in Pune, 13-15 May 2027. Book your stall and meet inspection and quality buyers.",
     "faqs": [
       {
         "question": "How do I complete IndiaMet exhibitor registration?",
@@ -603,8 +459,8 @@
         "answer": "The team contacts you with stall options, pricing and the next steps."
       },
       {
-        "question": "Who can exhibit at this metallurgy exhibition in Pune?",
-        "answer": "Suppliers serving metallurgy, steel, foundry, casting, aluminium, metalworking, fabrication, testing and industrial manufacturing can enquire about participation."
+        "question": "Who can exhibit at this metrology exhibition in Pune?",
+        "answer": "Suppliers of metrology equipment, measurement technology, inspection, 3D scanning and calibration."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -635,50 +491,30 @@
   },
   "/sponsorship-opportunities": {
     "url": "https://www.indiametexpo.com/sponsorship-opportunities",
-    "title": "Sponsorship Opportunities | IndiaMet Metal Expo 2027",
-    "description": "Explore sponsorship opportunities at IndiaMet Expo 2027 in Pune, 13-15 May. Present your brand to steel, foundry, casting and metal manufacturing buyers.",
+    "title": "Sponsorship | IndiaMet Metrology Exhibition 2027",
+    "description": "Sponsor IndiaMet Expo 2027, a metrology expo in India, Pune, 13-15 May. Explore branding packages to reach the metrology industry.",
     "keywords": [
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition",
-      "indiamet expo",
-      "india met expo",
-      "indiamet 2027",
-      "india met exhibition",
-      "indiamet exhibition Pune",
-      "indiamet visitor registration",
-      "indiamet exhibitor registration",
-      "indiamet stall booking",
-      "indiamet exhibition dates",
-      "indiamet exhibition venue"
+      "IndiaMet sponsorship",
+      "metrology expo sponsorship",
+      "metrology exhibition branding",
+      "sponsor metrology expo India",
+      "metrology industry sponsorship packages"
     ],
     "schemaType": "WebPage",
-    "schemaName": "IndiaMet Sponsorship Opportunities",
-    "schemaDescription": "Explore sponsorship opportunities at IndiaMet Expo 2027.",
+    "schemaName": "Sponsorship Opportunities",
+    "schemaDescription": "Sponsor IndiaMet Expo 2027, a metrology expo in India, Pune, 13-15 May. Explore branding packages to reach the metrology industry.",
     "faqs": [
       {
         "question": "What sponsorship opportunities are available at IndiaMet Expo?",
         "answer": "Branding, event and content sponsorships. The page lists current options and the team can tailor packages."
       },
       {
-        "question": "Why sponsor a metallurgy and metal expo in India?",
-        "answer": "Sponsorship offers brand visibility among metal producers, foundry and casting professionals, fabricators and manufacturing decision makers."
+        "question": "Why sponsor a metrology expo in India?",
+        "answer": "You gain visibility among quality, inspection and manufacturing decision makers."
       },
       {
-        "question": "Who is the audience of this metal industry event?",
-        "answer": "Metallurgy, steel, foundry, casting, aluminium, fabrication and manufacturing professionals, engineers and industrial buyers."
+        "question": "Who is the audience of this metrology industry event?",
+        "answer": "Metrology, quality and production professionals, OEM buyers and engineering teams."
       },
       {
         "question": "How do I apply for sponsorship?",
@@ -713,61 +549,49 @@
   },
   "/exhibition-directory": {
     "url": "https://www.indiametexpo.com/exhibition-directory",
-    "title": "Exhibitor Directory | Steel & Foundry Suppliers | IndiaMet",
-    "description": "Explore IndiaMet Expo exhibitors and search for steel, foundry, casting, aluminium, metal processing and industrial equipment suppliers in Pune.",
+    "title": "Exhibitor List | CMM, 3D & Optical Metrology Expo",
+    "description": "Browse IndiaMet exhibitors: coordinate measuring machine, 3D measurement, laser and optical metrology suppliers at Pune, 13-15 May 2027.",
     "keywords": [
-      "industrial furnace technology",
-      "heat treatment equipment",
-      "induction melting furnace",
-      "metal testing equipment",
-      "metallurgical laboratory equipment",
-      "industrial automation manufacturing",
-      "metal recycling technology",
-      "steel plant equipment",
-      "foundry machinery",
-      "industrial manufacturing technology",
-      "foundry expo India",
-      "foundry industry India",
-      "casting technology exhibition",
-      "metal casting technology",
-      "die casting exhibition India",
-      "investment casting industry",
-      "sand casting technology",
-      "foundry equipment manufacturers",
-      "industrial casting solutions",
-      "foundry technology expo"
+      "IndiaMet exhibitor list",
+      "CMM suppliers India",
+      "3D measurement technology exhibitors",
+      "optical metrology suppliers",
+      "laser measurement systems India",
+      "IndiaMet exhibition directory",
+      "machine vision companies India",
+      "coordinate measuring machine suppliers"
     ],
     "schemaType": "CollectionPage",
-    "schemaName": "IndiaMet Exhibition Directory",
-    "schemaDescription": "Explore the IndiaMet exhibition directory.",
+    "schemaName": "Exhibitor Directory",
+    "schemaDescription": "Browse IndiaMet exhibitors: coordinate measuring machine, 3D measurement, laser and optical metrology suppliers at Pune, 13-15 May 2027.",
     "faqs": [
       {
         "question": "Where can I see the IndiaMet Expo exhibitor list?",
         "answer": "The exhibition directory page lists confirmed exhibitors and is updated as new companies join."
       },
       {
-        "question": "How can I find steel industry exhibitors?",
-        "answer": "Use the directory search and company profiles to look for steel manufacturers, steel processing technology and steel plant equipment suppliers."
+        "question": "Which exhibitors show a coordinate measuring machine?",
+        "answer": "Search the directory for CMM and coordinate measuring machine suppliers, and check their profiles."
       },
       {
-        "question": "Can I find foundry equipment manufacturers and casting suppliers?",
-        "answer": "Search confirmed company listings for foundry machinery, metal casting, die casting, investment casting and sand casting solutions."
+        "question": "Can I find CMM measurement technology suppliers?",
+        "answer": "Yes. Filter or search the directory for CMM measurement technology and related inspection solutions."
       },
       {
-        "question": "Where can I find aluminium and non-ferrous metal suppliers?",
-        "answer": "Search the directory for aluminium casting, extrusion, processing and manufacturing, copper and other non-ferrous metal technologies."
+        "question": "Where do I find 3D measurement technology and 3D scanning for inspection?",
+        "answer": "Look for 3D measurement technology and 3D scanning exhibitors in the directory listings."
       },
       {
-        "question": "How can I find metal processing and fabrication exhibitors?",
-        "answer": "Use company listings to search for sheet metal processing, metal forming, cutting, surface treatment and metal finishing technologies."
+        "question": "Which exhibitors offer laser measurement systems and optical metrology?",
+        "answer": "Use the directory search to find laser measurement systems and optical metrology suppliers."
       },
       {
-        "question": "Are furnace, heat treatment and automation companies listed?",
-        "answer": "Companies appear in the directory as their participation is confirmed. Search for industrial furnaces, heat treatment equipment and manufacturing automation."
+        "question": "Are machine vision technology companies listed?",
+        "answer": "Machine vision technology exhibitors appear in the directory when they confirm participation."
       },
       {
-        "question": "Can I search for metal testing and recycling suppliers?",
-        "answer": "Use the directory to look for metal testing equipment, metallurgical laboratory equipment and metal recycling technology providers."
+        "question": "Can I find surface roughness measurement suppliers?",
+        "answer": "Yes. Search for surface roughness measurement testers and related instruments."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -786,54 +610,35 @@
   },
   "/why-visit": {
     "url": "https://www.indiametexpo.com/why-visit",
-    "title": "Why Visit | IndiaMet Metallurgy Exhibition Pune 2027",
-    "description": "Visit IndiaMet Expo 2027 in Pune, 13-15 May. Explore metallurgy, steel, foundry, aluminium, metalworking and industrial manufacturing technologies.",
+    "title": "Why Visit | IndiaMet Metrology Exhibition Pune 2027",
+    "description": "Visit IndiaMet Expo 2027 in Pune. Explore precision manufacturing technology, smart inspection and digital quality inspection. 13-15 May 2027.",
     "keywords": [
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition",
-      "metal exhibition Pune 2027",
-      "metallurgy exhibition Pune",
-      "metal expo Pune",
-      "steel exhibition Pune",
-      "foundry exhibition Pune",
-      "industrial exhibition Pune 2027",
-      "manufacturing trade show Pune",
-      "engineering exhibition Pune",
-      "metal industry expo Maharashtra",
-      "trade exhibition Chinchwad Pune"
+      "why visit IndiaMet",
+      "metrology exhibition Pune 2027",
+      "smart inspection exhibition",
+      "digital quality inspection",
+      "precision manufacturing technology",
+      "compare CMM 3D scanning"
     ],
     "schemaType": "WebPage",
-    "schemaName": "Why Visit IndiaMet 2027",
-    "schemaDescription": "Discover reasons to visit IndiaMet Expo 2027.",
+    "schemaName": "Why Visit",
+    "schemaDescription": "Visit IndiaMet Expo 2027 in Pune. Explore precision manufacturing technology, smart inspection and digital quality inspection. 13-15 May 2027.",
     "faqs": [
       {
         "question": "Why should I visit IndiaMet Expo 2027?",
-        "answer": "You can explore metallurgy, steel, foundry, casting, aluminium and metal manufacturing technologies and connect with suppliers in one place."
+        "answer": "You can compare precision manufacturing technology, metrology and inspection solutions and meet suppliers in one place."
       },
       {
         "question": "Who should visit?",
-        "answer": "Metal producers, foundry and casting teams, fabricators, plant managers, engineers, procurement teams and researchers."
+        "answer": "Quality, metrology, production and design engineers, tool rooms, procurement teams and researchers."
       },
       {
-        "question": "What is metal processing technology?",
-        "answer": "It includes forming, cutting, rolling, heat treatment, surface treatment and finishing methods used to turn metals into usable products and components."
+        "question": "What is smart manufacturing inspection?",
+        "answer": "It uses automated measurement, vision and software to inspect parts faster and with less manual effort. Exhibitors show such solutions."
       },
       {
-        "question": "What is industrial automation in metal manufacturing?",
-        "answer": "It uses control systems, software, robotics and connected equipment to manage production, handling, inspection and other metal manufacturing processes."
+        "question": "What is digital quality inspection?",
+        "answer": "It records inspection data digitally for traceability and analysis. Expect software and connected measuring systems at the expo."
       },
       {
         "question": "How do I register as a visitor?",
@@ -864,31 +669,26 @@
   },
   "/passes": {
     "url": "https://www.indiametexpo.com/passes",
-    "title": "Visitor Registration & Passes | IndiaMet Metal Expo 2027",
-    "description": "Register for IndiaMet Expo 2027 and get your visitor pass for the metal and metallurgy exhibition in Pune, 13-15 May. Check registration and access details.",
+    "title": "IndiaMet Visitor Registration & Passes | Pune 2027",
+    "description": "Complete IndiaMet visitor registration and get your pass for the metrology expo in Pune, 13-15 May 2027. Check pass types and access.",
     "keywords": [
-      "metal expo exhibitor registration",
-      "metallurgy exhibition stall booking",
-      "metal industry exhibition booth booking",
-      "steel expo exhibitor registration",
-      "industrial exhibition stall booking Pune",
-      "metal exhibition participation",
-      "metal expo visitor registration",
-      "metallurgy exhibition visitor registration",
-      "metal exhibition tickets Pune",
-      "industrial trade fair registration Pune"
+      "IndiaMet visitor registration",
+      "IndiaMet passes",
+      "metrology expo passes Pune",
+      "visitor pass IndiaMet 2027",
+      "delegate pass IndiaMet"
     ],
     "schemaType": "WebPage",
-    "schemaName": "IndiaMet Expo 2027 Passes",
-    "schemaDescription": "Information about visitor and delegate passes for IndiaMet Expo 2027.",
+    "schemaName": "Visitor Registration & Passes",
+    "schemaDescription": "Complete IndiaMet visitor registration and get your pass for the metrology expo in Pune, 13-15 May 2027. Check pass types and access.",
     "faqs": [
       {
         "question": "How do I complete IndiaMet visitor registration?",
-        "answer": "Open the passes page, enter your phone number, complete the verification step and provide the requested registration details."
+        "answer": "Choose a pass on the passes page and fill in the registration form."
       },
       {
-        "question": "Where can I find visitor and delegate registration information?",
-        "answer": "Use the passes page for visitor registration and the become a delegate page for summit participation details."
+        "question": "What types of passes are available?",
+        "answer": "The page lists categories such as visitor and delegate passes with access details."
       },
       {
         "question": "Do I need to register in advance?",
@@ -899,8 +699,8 @@
         "answer": "On-site options depend on the organizer. Check the passes page or contact the team."
       },
       {
-        "question": "Where can I check whether my pass includes summit access?",
-        "answer": "Check the delegate registration and summit pages, or contact the organizer to confirm the access included with your registration."
+        "question": "Do delegate passes include summit access?",
+        "answer": "Delegate passes include summit sessions. See the passes and summit pages."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -927,38 +727,18 @@
   },
   "/register?t=brochure": {
     "url": "https://www.indiametexpo.com/register?t=brochure",
-    "title": "Download Brochure | IndiaMet Metallurgy Expo 2027 Pune",
-    "description": "Request the IndiaMet Expo 2027 brochure for metallurgy, steel, foundry and metal manufacturing sectors, exhibitor information, dates and Pune venue details.",
+    "title": "Download Brochure | IndiaMet Expo 2027 Pune",
+    "description": "Download the IndiaMet Expo 2027 brochure for this measurement technology exhibition in Pune: profile, sectors, stall and venue details.",
     "keywords": [
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition",
-      "indiamet expo",
-      "india met expo",
-      "indiamet 2027",
-      "india met exhibition",
-      "indiamet exhibition Pune",
-      "indiamet visitor registration",
-      "indiamet exhibitor registration",
-      "indiamet stall booking",
-      "indiamet exhibition dates",
-      "indiamet exhibition venue"
+      "download IndiaMet brochure",
+      "IndiaMet Expo 2027 brochure",
+      "measurement technology expo brochure",
+      "metrology exhibition brochure Pune",
+      "IndiaMet profile and sectors"
     ],
     "schemaType": "WebPage",
-    "schemaName": "Download the IndiaMet 2027 Brochure",
-    "schemaDescription": "Request the IndiaMet Expo 2027 event brochure.",
+    "schemaName": "Download Event Brochure",
+    "schemaDescription": "Download the IndiaMet Expo 2027 brochure for this measurement technology exhibition in Pune: profile, sectors, stall and venue details.",
     "faqs": [
       {
         "question": "How do I download the IndiaMet Expo brochure?",
@@ -969,8 +749,8 @@
         "answer": "Event profile, sectors, exhibiting and sponsorship options, venue and dates."
       },
       {
-        "question": "Is the brochure useful for exhibitors?",
-        "answer": "Yes. It provides information to help metallurgy, steel, foundry, casting and metal technology businesses consider exhibiting."
+        "question": "Is it useful for exhibitors?",
+        "answer": "Yes. It explains the audience, benefits and stall options of this measurement technology exhibition."
       },
       {
         "question": "Is it useful for sponsors?",
@@ -978,7 +758,7 @@
       },
       {
         "question": "What is IndiaMet Expo?",
-        "answer": "IndiaMet Expo is a metallurgy and metal industry exhibition in Pune."
+        "answer": "A metrology and measurement technology exhibition in Pune."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -990,7 +770,7 @@
       },
       {
         "question": "Who organises IndiaMet Expo 2027?",
-        "answer": "Maxx Business Media Pvt. Ltd. organises this metallurgy exhibition in Pune."
+        "answer": "Maxx Business Media Pvt. Ltd. organises this metrology exhibition in Pune."
       },
       {
         "question": "What are the opening hours of IndiaMet Expo 2027?",
@@ -1005,63 +785,40 @@
   },
   "/articles": {
     "url": "https://www.indiametexpo.com/articles",
-    "title": "Metallurgy, Steel & Foundry Articles | IndiaMet Expo 2027",
-    "description": "Explore metallurgy and metal industry insights from IndiaMet Expo, covering steel processing, foundry technology, aluminium, fabrication and manufacturing.",
+    "title": "Metrology Articles & News | IndiaMet Expo 2027",
+    "description": "Read metrology industry news and insights on smart metrology, metrology automation and digital quality inspection from IndiaMet Expo, Pune.",
     "keywords": [
-      "upcoming metal exhibitions in India",
-      "upcoming metallurgy exhibitions 2027",
-      "steel and metal exhibitions 2027",
-      "manufacturing exhibitions in Pune 2027",
-      "upcoming industrial exhibitions India",
-      "metal industry events India",
-      "metallurgy trade shows 2027",
-      "industrial trade fairs India 2027",
-      "steel industry events India",
-      "foundry and casting exhibitions India",
-      "steel industry India",
-      "steel manufacturing India",
-      "steel expo India",
-      "steel technology exhibition",
-      "stainless steel industry",
-      "steel processing technology",
-      "iron and steel industry India",
-      "steel manufacturers India",
-      "steel industry trade show",
-      "steel production technology",
-      "foundry expo India",
-      "foundry industry India",
-      "casting technology exhibition",
-      "metal casting technology",
-      "die casting exhibition India",
-      "investment casting industry",
-      "sand casting technology",
-      "foundry equipment manufacturers",
-      "industrial casting solutions",
-      "foundry technology expo"
+      "metrology articles",
+      "metrology news India",
+      "smart metrology",
+      "metrology automation",
+      "digital quality inspection articles",
+      "metrology trends",
+      "precision engineering metrology"
     ],
     "schemaType": "CollectionPage",
-    "schemaName": "IndiaMet Articles and Industry Insights",
-    "schemaDescription": "Browse articles and insights about metallurgy, steel, foundry technology, casting and metal manufacturing.",
+    "schemaName": "Metrology Articles & Insights",
+    "schemaDescription": "Read metrology industry news and insights on smart metrology, metrology automation and digital quality inspection from IndiaMet Expo, Pune.",
     "faqs": [
       {
         "question": "What is in the IndiaMet articles section?",
-        "answer": "Industry insights and event information relevant to metallurgy, steel, foundry, casting, aluminium, fabrication and metal manufacturing."
+        "answer": "News and insights on metrology, inspection, quality control and precision engineering in India."
       },
       {
-        "question": "What is steel processing technology?",
-        "answer": "It covers processes such as forming, rolling, cutting, heat treatment and finishing that convert steel into materials and components for industrial use."
+        "question": "What is smart metrology?",
+        "answer": "Smart metrology combines connected measuring systems, data and software to make measurement faster and more traceable."
       },
       {
-        "question": "What is foundry technology?",
-        "answer": "Foundry technology covers the equipment and processes used to melt metal, prepare moulds, cast components, finish castings and check their quality."
+        "question": "What is metrology automation?",
+        "answer": "It automates measurement and inspection with robots, vision and software to reduce manual work."
       },
       {
-        "question": "Which topics are relevant to metal industry events in India?",
-        "answer": "Steel production and processing, foundry and casting technologies, aluminium and non-ferrous metals, automation, testing and metal recycling."
+        "question": "What is happening in the metrology industry?",
+        "answer": "Trends include digital quality inspection, 3D measurement and in-line smart manufacturing inspection."
       },
       {
-        "question": "Why does precision metal manufacturing need testing?",
-        "answer": "Metal and component testing helps manufacturers check material properties, dimensions, surface quality and whether products meet the required specifications."
+        "question": "Why does precision engineering in India need metrology?",
+        "answer": "Tight tolerances in automotive, aerospace and tooling need reliable measurement for quality."
       },
       {
         "question": "How often are articles published?",
@@ -1088,37 +845,23 @@
   },
   "/summit": {
     "url": "https://www.indiametexpo.com/summit",
-    "title": "IndiaMet Summit 2027 | Metallurgy & Metal Industry Conference",
-    "description": "Explore the IndiaMet Summit at IndiaMet Expo 2027 in Pune. Find conference and delegate information for metallurgy, steel, foundry and metal manufacturing.",
+    "title": "IndiaMet Summit 2027 | Smart Metrology Conference",
+    "description": "Join the IndiaMet Summit 2027 in Pune on smart metrology, metrology automation and digital quality inspection. 13-15 May 2027. Register as a delegate.",
     "keywords": [
-      "industrial furnace technology",
-      "heat treatment equipment",
-      "induction melting furnace",
-      "metal testing equipment",
-      "metallurgical laboratory equipment",
-      "industrial automation manufacturing",
-      "metal recycling technology",
-      "steel plant equipment",
-      "foundry machinery",
-      "industrial manufacturing technology",
-      "upcoming metal exhibitions in India",
-      "upcoming metallurgy exhibitions 2027",
-      "steel and metal exhibitions 2027",
-      "manufacturing exhibitions in Pune 2027",
-      "upcoming industrial exhibitions India",
-      "metal industry events India",
-      "metallurgy trade shows 2027",
-      "industrial trade fairs India 2027",
-      "steel industry events India",
-      "foundry and casting exhibitions India"
+      "IndiaMet Summit 2027",
+      "smart metrology conference",
+      "metrology automation conference",
+      "digital quality inspection summit",
+      "metrology conference Pune",
+      "metrology speaker sessions"
     ],
     "schemaType": "WebPage",
     "schemaName": "IndiaMet Summit 2027",
-    "schemaDescription": "Information about the IndiaMet metallurgy and metal industry summit.",
+    "schemaDescription": "Join the IndiaMet Summit 2027 in Pune on smart metrology, metrology automation and digital quality inspection. 13-15 May 2027. Register as a delegate.",
     "faqs": [
       {
         "question": "What is the IndiaMet Summit?",
-        "answer": "A conference programme held alongside IndiaMet Expo, bringing together professionals interested in metallurgy and metal manufacturing."
+        "answer": "A conference programme held with IndiaMet Expo 2027, featuring sessions on metrology and quality."
       },
       {
         "question": "When is IndiaMet 2027? What are the IndiaMet exhibition dates?",
@@ -1129,12 +872,12 @@
         "answer": "It is held at the Auto Cluster Exhibition Centre, Plot No. C-181, Chinchwad East, Mumbai Pune Road, Pune 411019, Maharashtra, India."
       },
       {
-        "question": "Where can I find the summit topics and programme?",
-        "answer": "Check the summit page for the confirmed programme and sessions relevant to metallurgy, steel, foundry, casting and metal manufacturing."
+        "question": "What topics will the summit cover?",
+        "answer": "Smart metrology, metrology automation and digital quality inspection, as updated on the page."
       },
       {
-        "question": "Who should attend the summit?",
-        "answer": "Metallurgy and metal manufacturing professionals, steel and foundry specialists, engineers, technical leaders and researchers."
+        "question": "Who should attend?",
+        "answer": "Metrology and quality leaders, engineers, technical heads and researchers."
       },
       {
         "question": "How do I register for the summit?",
@@ -1161,33 +904,18 @@
   },
   "/became-delegate": {
     "url": "https://www.indiametexpo.com/became-delegate",
-    "title": "Become a Delegate | IndiaMet Metallurgy Summit Pune 2027",
-    "description": "Register delegate interest for the IndiaMet Summit at IndiaMet Expo 2027 in Pune. Connect with metallurgy, steel, foundry and metal manufacturing professionals.",
+    "title": "Become a Delegate | IndiaMet Summit, Pune 2027",
+    "description": "Register as a delegate for the IndiaMet Summit at IndiaMet Expo 2027, Pune. Network with metrology industry leaders. 13-15 May 2027.",
     "keywords": [
-      "industrial furnace technology",
-      "heat treatment equipment",
-      "induction melting furnace",
-      "metal testing equipment",
-      "metallurgical laboratory equipment",
-      "industrial automation manufacturing",
-      "metal recycling technology",
-      "steel plant equipment",
-      "foundry machinery",
-      "industrial manufacturing technology",
-      "upcoming metal exhibitions in India",
-      "upcoming metallurgy exhibitions 2027",
-      "steel and metal exhibitions 2027",
-      "manufacturing exhibitions in Pune 2027",
-      "upcoming industrial exhibitions India",
-      "metal industry events India",
-      "metallurgy trade shows 2027",
-      "industrial trade fairs India 2027",
-      "steel industry events India",
-      "foundry and casting exhibitions India"
+      "become a delegate IndiaMet",
+      "IndiaMet delegate registration",
+      "metrology summit delegate",
+      "IndiaMet conference pass",
+      "metrology networking Pune"
     ],
     "schemaType": "WebPage",
-    "schemaName": "Become an IndiaMet Summit Delegate",
-    "schemaDescription": "Explore delegate participation in the IndiaMet metallurgy and metal industry summit.",
+    "schemaName": "Become a Delegate",
+    "schemaDescription": "Register as a delegate for the IndiaMet Summit at IndiaMet Expo 2027, Pune. Network with metrology industry leaders. 13-15 May 2027.",
     "faqs": [
       {
         "question": "Who is a delegate at IndiaMet Expo?",
@@ -1203,7 +931,7 @@
       },
       {
         "question": "Who should register as a delegate?",
-        "answer": "Professionals from metallurgy, steel, foundry, casting, aluminium, fabrication and metal manufacturing, along with engineers and business leaders."
+        "answer": "Professionals from the metrology industry, quality teams, engineers and business leaders."
       },
       {
         "question": "Is there a delegate fee?",
@@ -1234,38 +962,17 @@
   },
   "/register?t=sponsor": {
     "url": "https://www.indiametexpo.com/register?t=sponsor",
-    "title": "Sponsor Registration | IndiaMet Metal Expo Pune 2027",
-    "description": "Submit a sponsorship enquiry for IndiaMet Expo 2027 in Pune. Explore branding opportunities for your business at this metallurgy and metal industry exhibition.",
+    "title": "Sponsor Registration | IndiaMet Expo Pune 2027",
+    "description": "Register as a sponsor for IndiaMet Expo Pune 2027, a metrology exhibition in India. Promote your brand to quality and inspection buyers.",
     "keywords": [
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition",
-      "indiamet expo",
-      "india met expo",
-      "indiamet 2027",
-      "india met exhibition",
-      "indiamet exhibition Pune",
-      "indiamet visitor registration",
-      "indiamet exhibitor registration",
-      "indiamet stall booking",
-      "indiamet exhibition dates",
-      "indiamet exhibition venue"
+      "IndiaMet sponsor registration",
+      "sponsor IndiaMet Expo Pune",
+      "metrology exhibition sponsorship registration",
+      "promote brand metrology buyers"
     ],
     "schemaType": "WebPage",
-    "schemaName": "IndiaMet Sponsor Registration",
-    "schemaDescription": "Submit an IndiaMet Expo sponsorship enquiry.",
+    "schemaName": "Sponsor Registration",
+    "schemaDescription": "Register as a sponsor for IndiaMet Expo Pune 2027, a metrology exhibition in India. Promote your brand to quality and inspection buyers.",
     "faqs": [
       {
         "question": "How do I register as a sponsor?",
@@ -1277,7 +984,7 @@
       },
       {
         "question": "What are the benefits?",
-        "answer": "Brand visibility, leads and recognition in the metallurgy industry."
+        "answer": "Brand visibility, leads and recognition in the metrology industry."
       },
       {
         "question": "When will the team contact me?",
@@ -1297,7 +1004,7 @@
       },
       {
         "question": "Who organises IndiaMet Expo 2027?",
-        "answer": "Maxx Business Media Pvt. Ltd. organises this metallurgy exhibition in Pune."
+        "answer": "Maxx Business Media Pvt. Ltd. organises this metrology exhibition in Pune."
       },
       {
         "question": "Can sponsors also exhibit?",
@@ -1312,46 +1019,27 @@
   },
   "/awards": {
     "url": "https://www.indiametexpo.com/awards",
-    "title": "IndiaMet Awards 2027 | Metallurgy & Metal Industry Excellence",
-    "description": "Explore the IndiaMet Awards 2027 in Pune, recognizing innovation and excellence in metallurgy, steel, foundry, casting and metal manufacturing. Learn how to nominate.",
+    "title": "IndiaMet Awards 2027 | Metrology & Quality Excellence",
+    "description": "Discover the IndiaMet Awards at IndiaMet Expo 2027, Pune, honouring excellence in metrology, inspection and quality. Nominate for 13-15 May.",
     "keywords": [
-      "indiamet expo",
-      "india met expo",
-      "indiamet 2027",
-      "india met exhibition",
-      "indiamet exhibition Pune",
-      "indiamet visitor registration",
-      "indiamet exhibitor registration",
-      "indiamet stall booking",
-      "indiamet exhibition dates",
-      "indiamet exhibition venue",
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition"
+      "IndiaMet Awards 2027",
+      "Global Metrology Excellence Awards",
+      "metrology quality awards",
+      "GMEA 2027",
+      "metrology awards Pune",
+      "metrology industry recognition"
     ],
     "schemaType": "WebPage",
-    "schemaName": "IndiaMet Awards 2027",
-    "schemaDescription": "Information about the IndiaMet Awards 2027 for metallurgy and metal industry excellence.",
+    "schemaName": "Global Metrology Excellence Awards",
+    "schemaDescription": "Discover the IndiaMet Awards at IndiaMet Expo 2027, Pune, honouring excellence in metrology, inspection and quality. Nominate for 13-15 May.",
     "faqs": [
       {
         "question": "What are the IndiaMet Awards?",
-        "answer": "The IndiaMet Awards recognize industry achievements and innovation. Check the awards page for the current categories and eligibility before submitting a nomination."
+        "answer": "Awards that recognise excellence and innovation in metrology, inspection and quality control."
       },
       {
-        "question": "Who can be nominated?",
-        "answer": "Companies, teams and professionals can be nominated where they meet the published category and eligibility requirements."
+        "question": "Who can win?",
+        "answer": "Companies, teams and professionals from the metrology industry and manufacturing."
       },
       {
         "question": "How can I nominate?",
@@ -1371,15 +1059,15 @@
       },
       {
         "question": "Who organises IndiaMet Expo 2027?",
-        "answer": "Maxx Business Media Pvt. Ltd. organises this metallurgy exhibition in Pune."
+        "answer": "Maxx Business Media Pvt. Ltd. organises this metrology exhibition in Pune."
       },
       {
         "question": "Can I sponsor the awards?",
         "answer": "Yes. Contact the team or use the sponsorship page."
       },
       {
-        "question": "Where can I find the nomination deadline?",
-        "answer": "Check the awards and nomination pages or contact the organizer for the current deadline."
+        "question": "Is there a nomination deadline?",
+        "answer": "The date is shown on the awards and nominate pages."
       },
       {
         "question": "Who can I contact for IndiaMet Expo 2027 queries?",
@@ -1390,38 +1078,18 @@
   },
   "/nominate": {
     "url": "https://www.indiametexpo.com/nominate",
-    "title": "Nominate for IndiaMet Awards 2027 | Metallurgy & Metals",
-    "description": "Submit an IndiaMet Awards 2027 nomination for achievements in metallurgy, metal manufacturing, steel, foundry or casting. Explore categories and entry details.",
+    "title": "Nominate for IndiaMet Awards 2027 | Metrology Expo",
+    "description": "Nominate your company for the IndiaMet Awards 2027 at the Pune metrology expo. Submit entries for metrology and quality excellence. 13-15 May.",
     "keywords": [
-      "indiamet expo",
-      "india met expo",
-      "indiamet 2027",
-      "india met exhibition",
-      "indiamet exhibition Pune",
-      "indiamet visitor registration",
-      "indiamet exhibitor registration",
-      "indiamet stall booking",
-      "indiamet exhibition dates",
-      "indiamet exhibition venue",
-      "metallurgy exhibition India",
-      "metal exhibition India",
-      "metal expo India",
-      "metal industry exhibition",
-      "metallurgy expo India",
-      "metal trade show India",
-      "steel exhibition India",
-      "foundry exhibition India",
-      "metal processing exhibition",
-      "casting exhibition India",
-      "aluminium exhibition India",
-      "metalworking exhibition India",
-      "metal manufacturing exhibition",
-      "metallurgy trade fair India",
-      "metal technology exhibition"
+      "nominate for IndiaMet Awards",
+      "IndiaMet awards nomination",
+      "metrology awards entry",
+      "nominate metrology company",
+      "quality excellence nomination"
     ],
     "schemaType": "WebPage",
-    "schemaName": "IndiaMet Awards Nomination",
-    "schemaDescription": "Submit an awards nomination for IndiaMet.",
+    "schemaName": "Nominate for Awards",
+    "schemaDescription": "Nominate your company for the IndiaMet Awards 2027 at the Pune metrology expo. Submit entries for metrology and quality excellence. 13-15 May.",
     "faqs": [
       {
         "question": "How do I nominate for the IndiaMet Awards 2027?",
@@ -1429,7 +1097,7 @@
       },
       {
         "question": "Who can nominate?",
-        "answer": "Companies and professionals can submit nominations where they meet the published eligibility requirements."
+        "answer": "Companies in the metrology industry can nominate themselves or others."
       },
       {
         "question": "What details are needed?",
@@ -1445,7 +1113,7 @@
       },
       {
         "question": "What is the last date to nominate?",
-        "answer": "Check the awards page or contact the organizing team for the current nomination deadline."
+        "answer": "See the awards page for the deadline."
       },
       {
         "question": "How are winners selected?",
@@ -1468,33 +1136,19 @@
   },
   "/contact-us": {
     "url": "https://www.indiametexpo.com/contact-us",
-    "title": "Contact IndiaMet Expo 2027 | Metallurgy & Metal Expo Pune",
-    "description": "Contact the IndiaMet Expo 2027 team for metallurgy exhibition stall booking, visitor registration and sponsorship enquiries in Pune, 13-15 May.",
+    "title": "Contact IndiaMet Expo 2027 | Metrology Expo Pune",
+    "description": "Contact the IndiaMet Expo 2027 team for visitor registration, stall booking and sponsorship queries. Metrology exhibition in Pune, 13-15 May.",
     "keywords": [
-      "metal expo exhibitor registration",
-      "metallurgy exhibition stall booking",
-      "metal industry exhibition booth booking",
-      "steel expo exhibitor registration",
-      "industrial exhibition stall booking Pune",
-      "metal exhibition participation",
-      "metal expo visitor registration",
-      "metallurgy exhibition visitor registration",
-      "metal exhibition tickets Pune",
-      "industrial trade fair registration Pune",
-      "indiamet expo",
-      "india met expo",
-      "indiamet 2027",
-      "india met exhibition",
-      "indiamet exhibition Pune",
-      "indiamet visitor registration",
-      "indiamet exhibitor registration",
-      "indiamet stall booking",
-      "indiamet exhibition dates",
-      "indiamet exhibition venue"
+      "contact IndiaMet Expo",
+      "IndiaMet Expo contact number",
+      "IndiaMet email",
+      "Auto Cluster Pune contact",
+      "Maxx Business Media contact",
+      "visitor support IndiaMet"
     ],
     "schemaType": "ContactPage",
-    "schemaName": "Contact IndiaMet Expo 2027",
-    "schemaDescription": "Contact IndiaMet Expo for exhibition enquiries and visitor assistance.",
+    "schemaName": "Contact Us",
+    "schemaDescription": "Contact the IndiaMet Expo 2027 team for visitor registration, stall booking and sponsorship queries. Metrology exhibition in Pune, 13-15 May.",
     "faqs": [
       {
         "question": "How can I contact the IndiaMet Expo team?",
@@ -1518,7 +1172,7 @@
       },
       {
         "question": "Who organises IndiaMet Expo 2027?",
-        "answer": "Maxx Business Media Pvt. Ltd. organises this metallurgy exhibition in Pune."
+        "answer": "Maxx Business Media Pvt. Ltd. organises this metrology exhibition in Pune."
       },
       {
         "question": "How do I enquire about stall booking?",
@@ -1541,8 +1195,8 @@
   },
   "/register?t=enquiry": {
     "url": "https://www.indiametexpo.com/register?t=enquiry",
-    "title": "Visitor Registration | IndiaMet Metal Expo 2027",
-    "description": "Register your interest in visiting IndiaMet Expo 2027, a metallurgy and metal industry exhibition in Pune, 13-15 May.",
+    "title": "Visitor Registration | IndiaMet Metrology Expo 2027",
+    "description": "Register your interest in visiting IndiaMet Expo 2027, a metrology and measurement technology exhibition in Pune, 13-15 May.",
     "keywords": [
       "indiamet expo",
       "india met expo",
@@ -1572,13 +1226,13 @@
     ],
     "schemaType": "WebPage",
     "schemaName": "IndiaMet Visitor Registration",
-    "schemaDescription": "Register your interest in visiting IndiaMet Expo 2027, a metallurgy and metal industry exhibition in Pune, 13-15 May.",
+    "schemaDescription": "Register your interest in visiting IndiaMet Expo 2027, a metrology and measurement technology exhibition in Pune, 13-15 May.",
     "faqs": [],
     "inSitemap": false
   },
   "/register?t=awards": {
     "url": "https://www.indiametexpo.com/register?t=awards",
-    "title": "Awards Enquiry | IndiaMet Expo 2027",
+    "title": "Awards Enquiry | IndiaMet Metrology Awards 2027",
     "description": "Enquire about IndiaMet Awards 2027. Share your details and award category of interest with the event team.",
     "keywords": [
       "indiamet expo",
@@ -1615,7 +1269,7 @@
   },
   "/plan-your-travel?tab=visitor": {
     "url": "https://www.indiametexpo.com/plan-your-travel?tab=visitor",
-    "title": "Visitor Travel Guide | IndiaMet Metal Expo Pune 2027",
+    "title": "Visitor Travel Guide | IndiaMet Metrology Expo Pune 2027",
     "description": "Plan your visit to IndiaMet Expo 2027 at Auto Cluster, Chinchwad, Pune. Find travel, accommodation and visitor information for 13-15 May.",
     "keywords": [
       "metal exhibition Pune 2027",
