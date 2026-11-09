@@ -49,13 +49,13 @@ const whyParticipate = [
 
 const categories = [
   {
-    image: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&h=500&fit=crop',
+    image: '/images/awards/bestmetrology.png',
     title: 'Global Metrology Excellence Award',
     description:
       'Honours outstanding overall achievement in metrology, measurement science, and quality excellence at a national or international level.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=500&fit=crop',
+    image: '/images/bestmetrology.png',
     title: 'Advanced Measurement Technology Award',
     description:
       'Recognises breakthrough instruments, sensors, and measurement systems that raise accuracy, speed, or capability in industrial applications.',
