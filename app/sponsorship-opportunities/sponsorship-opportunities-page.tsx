@@ -144,7 +144,7 @@ export default function AdvertisingDetailsPage() {
        
        "Logo on the event website sponsor section.",
 "Logo on selected event branding and promotional creatives.",
-"One 12 sqm exhibition space (Raw Space).",
+"One 35 sqm exhibition space (Raw Space).",
 "One opportunity to participate in a technical panel, subject to programme approval.",
 "One social media sponsor acknowledgement.",
 "4 exhibitor/staff badges.",
