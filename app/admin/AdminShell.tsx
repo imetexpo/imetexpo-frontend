@@ -132,8 +132,16 @@ function isGroup(item: NavItem): item is NavGroup {
   return "subItems" in item && Array.isArray(item.subItems);
 }
 
+function isPathActive(targetHref: string, pathname: string): boolean {
+  if (pathname === targetHref || pathname.startsWith(`${targetHref}/`)) return true;
+  if (targetHref === "/admin/floor-plan" && (pathname === "/admin/exhibition/booths" || pathname.startsWith("/admin/exhibition/booths/"))) return true;
+  if (targetHref === "/admin/exhibition/exhibitors" && (pathname === "/admin/exhibitors" || pathname.startsWith("/admin/exhibitors/"))) return true;
+  if (targetHref === "/admin/exhibition/teams" && (pathname === "/admin/teams" || pathname.startsWith("/admin/teams/"))) return true;
+  return false;
+}
+
 function itemContainsPath(item: NavItem, pathname: string): boolean {
-  if (!isGroup(item)) return pathname === item.href || pathname.startsWith(`${item.href}/`);
+  if (!isGroup(item)) return isPathActive(item.href, pathname);
   return item.subItems.some((child) => itemContainsPath(child, pathname));
 }
 
@@ -218,7 +226,7 @@ function renderNavItem(
   return (
     <NavButton
       key={item.href}
-      active={pathname === item.href || pathname.startsWith(`${item.href}/`)}
+      active={isPathActive(item.href, pathname)}
       onClick={() => handleNavigation(item.href)}
       icon={item.icon}
       label={item.name}
