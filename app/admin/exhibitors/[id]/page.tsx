@@ -6,6 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Edit, Mail, Phone, MapPin, Building, Calendar, CheckCircle, Clock, XCircle, Package, FileText, CreditCard, Lock } from "lucide-react";
 import Link from "next/link";
 import { getExhibitor, getExhibitorProducts, getExhibitorBrands, getExhibitorBrochures, Exhibitor, StallDetails, resendCredentials } from "@/lib/api/exhibitors";
+import { calculateStallPayment, formatINR, formatPhaseDate } from "@/lib/stallPayment";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
 
@@ -128,6 +129,16 @@ export default function ExhibitorDetailPage() {
     const stallDetails: StallDetails = exhibitor.stallDetails || {};
     const statusLabel = getStatusLabel(exhibitor.status);
     const statusColor = getStatusColor(exhibitor.status);
+
+    const payment = calculateStallPayment(
+        {
+            stallCost: (exhibitor as any).stallCost,
+            discount: (exhibitor as any).discount,
+            gstPercent: (exhibitor as any).gstPercent,
+            paymentPhases: (exhibitor as any).paymentPhases,
+        },
+        stallDetails as any
+    );
 
     return (
         <div className="space-y-6">
@@ -334,6 +345,52 @@ export default function ExhibitorDetailPage() {
                                 <p className="text-xs text-gray-700 mt-1">{stallDetails.notes}</p>
                             </div>
                         )}
+                    </div>
+
+                    {/* Stall Cost & Payment Schedule */}
+                    <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs p-6">
+                        <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+                            <h2 className="text-base font-semibold text-gray-900 flex items-center gap-2">
+                                <CreditCard size={18} className="text-[#003A77]" />
+                                Stall Cost & Payment
+                            </h2>
+                            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700">
+                                Total: {formatINR(payment.finalAmount)}
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-3 gap-2 mb-4 text-center">
+                            <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100">
+                                <p className="text-xs text-gray-500">Stall Cost</p>
+                                <p className="text-sm font-bold text-gray-900 mt-0.5">{formatINR(payment.stallCost)}</p>
+                            </div>
+                            <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100">
+                                <p className="text-xs text-gray-500">GST ({payment.gstPercent}%)</p>
+                                <p className="text-sm font-bold text-gray-900 mt-0.5">{formatINR(payment.gstAmount)}</p>
+                            </div>
+                            <div className="p-2.5 rounded-lg bg-gray-50 border border-gray-100">
+                                <p className="text-xs text-gray-500">Discount</p>
+                                <p className="text-sm font-bold text-gray-900 mt-0.5">{formatINR(payment.discount)}</p>
+                            </div>
+                        </div>
+                        <div className="space-y-3">
+                            {payment.paymentPhases.map((phase) => (
+                                <div key={phase.phase} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-gray-100 px-4 py-3 bg-gray-50/50">
+                                    <div>
+                                        <p className="text-sm font-medium text-gray-900">{phase.label || `Payment ${phase.phase}`}</p>
+                                        <p className="text-xs text-gray-500">{phase.percent}% · {formatPhaseDate(phase.dueDate)}</p>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-sm font-semibold text-gray-900">{formatINR(phase.amount)}</p>
+                                        <span className={`inline-block text-xs px-2 py-0.5 rounded-full capitalize font-semibold ${
+                                            phase.status === 'paid' ? 'bg-green-50 text-green-700' :
+                                            phase.status === 'overdue' ? 'bg-red-50 text-red-700' : 'bg-amber-50 text-amber-700'
+                                        }`}>
+                                            {phase.status || 'pending'}
+                                        </span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Quick Actions */}

@@ -106,6 +106,9 @@ export interface Exhibitor {
     boothPrice?: string;
     status: string;
     originalPassword?: string;
+    stallCost?: number | string;
+    gstPercent?: number | string;
+    discount?: number | string;
     stallDetails?: StallDetails;
     address?: string;
     website?: string;
@@ -388,3 +391,44 @@ export async function getExhibitorBrochures(id: string) {
     const response = await api.get(`/exhibitors/${id}/brochures`);
     return response.data;
 }
+
+export const dashboardAPI = {
+    getPayment: async () => {
+        const rawUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        const baseUrl = rawUrl.replace(/\/api\/?$/, "");
+        const token =
+            (typeof window !== "undefined" && (
+                localStorage.getItem("tyre_expo_token") ||
+                localStorage.getItem("exhibitorToken") ||
+                localStorage.getItem("exhibitor_token") ||
+                localStorage.getItem("token")
+            )) || "";
+        const response = await axios.get(`${baseUrl}/api/exhibitorDashboard/payment`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        if (!response.data.success) {
+            throw new Error(response.data.error || "Failed to load stall payment");
+        }
+        return response.data.data;
+    },
+
+    confirmStallPayment: async (payload: { orderId?: string; phase?: number; paymentId?: string }) => {
+        const rawUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        const baseUrl = rawUrl.replace(/\/api\/?$/, "");
+        const token =
+            (typeof window !== "undefined" && (
+                localStorage.getItem("tyre_expo_token") ||
+                localStorage.getItem("exhibitorToken") ||
+                localStorage.getItem("exhibitor_token") ||
+                localStorage.getItem("token")
+            )) || "";
+        const response = await axios.post(`${baseUrl}/api/exhibitorDashboard/confirm-stall-payment`, payload, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        if (!response.data.success) {
+            throw new Error(response.data.error || "Failed to record stall payment");
+        }
+        return response.data.data;
+    },
+};
+
