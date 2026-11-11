@@ -1,4 +1,3 @@
-// app/admin/housekeeping/page.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -13,7 +12,6 @@ import {
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
 
-
 export default function AdminHousekeepingPage() {
     const [config, setConfig] = useState<HousekeepingConfig | null>(null);
     const [loading, setLoading] = useState(true);
@@ -25,7 +23,6 @@ export default function AdminHousekeepingPage() {
         try {
             setLoading(true);
             const response = await getHousekeepingConfig();
-            console.log("Housekeeping config response:", response);
 
             if (response && response.success !== false) {
                 const configData = response.data || response;
@@ -35,7 +32,6 @@ export default function AdminHousekeepingPage() {
                     shiftHours: configData.shiftHours?.toString() || "10",
                 });
             } else {
-                // Use default values
                 setTempConfig({
                     ratePerShift: "2000",
                     shiftHours: "10",
@@ -56,8 +52,6 @@ export default function AdminHousekeepingPage() {
     const fetchStatistics = async () => {
         try {
             const response = await getHousekeepingStatistics();
-            console.log("Statistics response:", response);
-
             if (response && response.success) {
                 const statsData = response.data;
                 setStatistics({
@@ -77,43 +71,42 @@ export default function AdminHousekeepingPage() {
     }, []);
 
     const handleSave = async () => {
-        const newRate = parseInt(tempConfig.ratePerShift);
-        const newHours = parseInt(tempConfig.shiftHours);
+        const rate = parseInt(tempConfig.ratePerShift);
+        const hours = parseInt(tempConfig.shiftHours);
 
-        if (isNaN(newRate) || newRate < 0) {
-            toast.error("Please enter a valid rate");
+        if (!rate || rate <= 0) {
+            toast.error("Please enter a valid rate per shift");
             return;
         }
-        if (isNaN(newHours) || newHours < 1 || newHours > 24) {
+
+        if (!hours || hours <= 0 || hours > 24) {
             toast.error("Shift hours must be between 1 and 24");
             return;
         }
 
         try {
             const response = await updateHousekeepingConfig({
-                ratePerShift: newRate,  // Changed from ratePerStaffPerDay
-                shiftHours: newHours,
+                ratePerShift: rate,
+                shiftHours: hours,
             });
-            console.log("Update response:", response);
 
             if (response && response.success !== false) {
                 const updatedData = response.data || response;
                 setConfig(updatedData);
-                toast.success("Housekeeping rates updated successfully");
+                toast.success("Housekeeping configuration updated successfully");
                 setEditing(false);
                 fetchStatistics();
             } else {
-                toast.error(response?.message || response?.error || "Failed to update");
+                toast.error(response?.message || "Failed to update configuration");
             }
         } catch (error: any) {
-            console.error("Update error:", error);
-            const errorMsg = error.response?.data?.message || error.response?.data?.error || "Failed to update housekeeping rates";
-            toast.error(errorMsg);
+            console.error("Save error:", error);
+            toast.error(error.response?.data?.message || "Failed to update configuration");
         }
     };
 
     const handleReset = async () => {
-        if (confirm("Are you sure you want to reset to default values (₹2000 per day, 10 hours shift)?")) {
+        if (confirm("Are you sure you want to reset housekeeping configuration to default?")) {
             try {
                 const response = await resetHousekeepingToDefault();
                 if (response && response.success !== false) {
@@ -139,154 +132,154 @@ export default function AdminHousekeepingPage() {
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center min-h-[400px]">
-                <LoadingDots tone="light" className="mx-auto flex" />
+            <div className="bg-white rounded-xl border border-gray-200/80 p-12 flex items-center justify-center min-h-[300px]">
+                <LoadingDots tone="dark" className="mx-auto flex" />
             </div>
         );
     }
 
     return (
-        <div className="max-w-4xl mx-auto p-6">
+        <div className="max-w-4xl mx-auto space-y-6">
             {/* Header */}
-            <div className="flex items-center gap-3 mb-6">
-                <div className="h-12 w-12 bg-indigo-500/20 rounded-xl flex items-center justify-center">
-                    <Home className="h-6 w-6 text-indigo-400" />
+            <div className="flex items-center gap-3">
+                <div className="h-11 w-11 bg-teal-50 border border-teal-100 rounded-xl flex items-center justify-center">
+                    <Home className="h-5 w-5 text-[#00A1B1]" />
                 </div>
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Housekeeping Configuration</h1>
-                    <p className="text-gray-400 mt-1">Set rates and working hours for housekeeping staff</p>
+                    <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Housekeeping Configuration</h1>
+                    <p className="text-xs sm:text-sm text-gray-500 mt-0.5">Set rates and working hours for housekeeping staff</p>
                 </div>
             </div>
 
             {/* Statistics Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-xs text-gray-400">Total Configurations</p>
-                            <p className="text-2xl font-bold text-white">{statistics.totalConfigs}</p>
+                            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Total Configurations</p>
+                            <p className="text-2xl font-bold text-gray-900 mt-1">{statistics.totalConfigs}</p>
                         </div>
-                        <TrendingUp className="h-8 w-8 text-gray-500" />
+                        <TrendingUp className="h-7 w-7 text-gray-400" />
                     </div>
                 </div>
-                <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/30">
+                <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-xs">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-xs text-gray-400">Current Rate</p>
-                            <p className="text-2xl font-bold text-green-400">{formatCurrency(statistics.currentRate)}</p>
+                            <p className="text-xs font-medium text-emerald-700 uppercase tracking-wider">Current Rate</p>
+                            <p className="text-2xl font-bold text-emerald-600 mt-1">{formatCurrency(statistics.currentRate)}</p>
                         </div>
-                        <DollarSign className="h-8 w-8 text-green-500/50" />
+                        <DollarSign className="h-7 w-7 text-emerald-500/40" />
                     </div>
                 </div>
-                <div className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
+                <div className="bg-white rounded-xl p-4 border border-teal-100 shadow-xs">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-xs text-gray-400">Average Rate</p>
-                            <p className="text-2xl font-bold text-purple-400">{formatCurrency(statistics.averageRate)}</p>
+                            <p className="text-xs font-medium text-teal-700 uppercase tracking-wider">Average Rate</p>
+                            <p className="text-2xl font-bold text-[#00A1B1] mt-1">{formatCurrency(statistics.averageRate)}</p>
                         </div>
-                        <Calculator className="h-8 w-8 text-purple-500/50" />
+                        <Calculator className="h-7 w-7 text-teal-500/40" />
                     </div>
                 </div>
             </div>
 
             {/* Main Configuration Card */}
-            <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6">
+            <div className="bg-white rounded-xl border border-gray-200/80 p-6 shadow-xs">
                 {!editing ? (
                     <div className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="text-center p-6 bg-gray-700/30 rounded-lg">
-                                <div className="flex items-center justify-center gap-2 mb-2">
-                                    <DollarSign className="h-5 w-5 text-orange-400" />
-                                    <p className="text-gray-400">Rate per Shift</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="text-center p-6 bg-slate-50 border border-slate-200/80 rounded-xl">
+                                <div className="flex items-center justify-center gap-1.5 mb-2">
+                                    <DollarSign className="h-5 w-5 text-[#003A77]" />
+                                    <p className="text-xs font-medium text-gray-600 uppercase tracking-wider">Rate per Shift</p>
                                 </div>
-                                <p className="text-3xl font-bold text-orange-400">
+                                <p className="text-3xl font-bold text-[#003A77]">
                                     {formatCurrency(config?.ratePerShift || 2000)}
                                 </p>
                                 <p className="text-xs text-gray-500 mt-1">per staff per shift</p>
                             </div>
-                            <div className="text-center p-6 bg-gray-700/30 rounded-lg">
-                                <div className="flex items-center justify-center gap-2 mb-2">
-                                    <Clock className="h-5 w-5 text-orange-400" />
-                                    <p className="text-gray-400">Shift Hours</p>
+                            <div className="text-center p-6 bg-slate-50 border border-slate-200/80 rounded-xl">
+                                <div className="flex items-center justify-center gap-1.5 mb-2">
+                                    <Clock className="h-5 w-5 text-[#00A1B1]" />
+                                    <p className="text-xs font-medium text-gray-600 uppercase tracking-wider">Shift Hours</p>
                                 </div>
-                                <p className="text-3xl font-bold text-white">{config?.shiftHours || 10} hours</p>
+                                <p className="text-3xl font-bold text-gray-900">{config?.shiftHours || 10} hours</p>
                                 <p className="text-xs text-gray-500 mt-1">per shift</p>
                             </div>
                         </div>
-                        <div className="flex justify-end gap-3">
+                        <div className="flex justify-end gap-3 pt-2">
                             <button
                                 onClick={handleReset}
-                                className="px-4 py-2 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700 transition flex items-center gap-2"
+                                className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition flex items-center gap-2"
                             >
-                                <RotateCcw size={16} />
+                                <RotateCcw size={15} />
                                 Reset to Default
                             </button>
                             <button
                                 onClick={() => setEditing(true)}
-                                className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition flex items-center gap-2"
+                                className="px-4 py-2 bg-[#003A77] hover:bg-[#002855] text-white text-sm font-medium rounded-lg shadow-xs transition flex items-center gap-2"
                             >
-                                <Pencil size={16} />
+                                <Pencil size={15} />
                                 Edit Rates
                             </button>
                         </div>
                     </div>
                 ) : (
-                    <div className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
-                                    Rate per Shift (₹)
+                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                                    Rate per Shift (₹) <span className="text-rose-500">*</span>
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">₹</span>
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">₹</span>
                                     <input
                                         type="number"
                                         value={tempConfig.ratePerShift}
                                         onChange={(e) => setTempConfig({ ...tempConfig, ratePerShift: e.target.value })}
-                                        className="w-full pl-8 pr-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                        className="w-full pl-7 pr-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
                                         placeholder="2000"
                                     />
                                 </div>
-                                <p className="text-xs text-gray-500 mt-1">Cost per housekeeping staff member per shift</p>
+                                <p className="text-[11px] text-gray-500 mt-1">Cost per housekeeping staff member per shift</p>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
-                                    Shift Hours
+                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                                    Shift Hours <span className="text-rose-500">*</span>
                                 </label>
                                 <input
                                     type="number"
                                     value={tempConfig.shiftHours}
                                     onChange={(e) => setTempConfig({ ...tempConfig, shiftHours: e.target.value })}
-                                    className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
                                     placeholder="10"
                                 />
-                                <p className="text-xs text-gray-500 mt-1">Hours per shift (1-24 hours)</p>
+                                <p className="text-[11px] text-gray-500 mt-1">Hours per shift (1-24 hours)</p>
                             </div>
                         </div>
 
                         {/* Preview calculated costs */}
-                        <div className="bg-gray-700/30 rounded-lg p-4">
-                            <h3 className="text-sm font-medium text-gray-300 mb-3 flex items-center gap-2">
-                                <Calculator size={16} />
+                        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                            <h3 className="text-xs font-semibold text-gray-700 mb-3 flex items-center gap-1.5 uppercase tracking-wider">
+                                <Calculator size={14} className="text-[#00A1B1]" />
                                 Cost Preview
                             </h3>
                             <div className="grid grid-cols-2 gap-4 text-sm">
                                 <div>
-                                    <span className="text-gray-400">For 1 staff, 1 day (1 shift):</span>
-                                    <p className="text-lg font-bold text-orange-400">
+                                    <span className="text-xs text-gray-500">For 1 staff, 1 day (1 shift):</span>
+                                    <p className="text-lg font-bold text-[#003A77]">
                                         {formatCurrency(parseInt(tempConfig.ratePerShift) || 0)}
                                     </p>
                                 </div>
                                 <div>
-                                    <span className="text-gray-400">For 2 staff, 3 days:</span>
-                                    <p className="text-lg font-bold text-orange-400">
+                                    <span className="text-xs text-gray-500">For 2 staff, 3 days:</span>
+                                    <p className="text-lg font-bold text-[#003A77]">
                                         {formatCurrency((parseInt(tempConfig.ratePerShift) || 0) * 2 * 3)}
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="flex justify-end gap-3">
+                        <div className="flex justify-end gap-3 pt-3 border-t border-gray-200">
                             <button
                                 onClick={() => {
                                     setEditing(false);
@@ -297,15 +290,15 @@ export default function AdminHousekeepingPage() {
                                         });
                                     }
                                 }}
-                                className="px-4 py-2 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700 transition"
+                                className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
                             >
                                 Cancel
                             </button>
                             <button
                                 onClick={handleSave}
-                                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition flex items-center gap-2"
+                                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg shadow-xs transition flex items-center gap-1.5"
                             >
-                                <Save size={16} />
+                                <Save size={15} />
                                 Save Changes
                             </button>
                         </div>
@@ -314,14 +307,14 @@ export default function AdminHousekeepingPage() {
             </div>
 
             {/* Info Card */}
-            <div className="mt-6 bg-blue-500/10 rounded-xl border border-blue-500/30 p-4">
+            <div className="bg-blue-50/70 rounded-xl border border-blue-200 p-4">
                 <div className="flex items-start gap-3">
-                    <div className="h-8 w-8 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Users className="h-4 w-4 text-blue-400" />
+                    <div className="h-8 w-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Users className="h-4 w-4 text-[#003A77]" />
                     </div>
                     <div>
-                        <h3 className="text-sm font-medium text-blue-400">Housekeeping Staff Information</h3>
-                        <p className="text-xs text-gray-400 mt-1">
+                        <h3 className="text-xs font-semibold text-[#003A77] uppercase tracking-wider">Housekeeping Staff Information</h3>
+                        <p className="text-xs text-gray-600 mt-1">
                             Rate applies per staff member per shift. Each shift lasts {config?.shiftHours || 10} hours.
                         </p>
                     </div>

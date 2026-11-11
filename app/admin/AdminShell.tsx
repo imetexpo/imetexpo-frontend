@@ -163,7 +163,7 @@ function NavButton({
   return (
     <button
       onClick={onClick}
-      className={`flex w-full items-center gap-2.5 rounded-md px-2.5 py-[7px] text-[13px] leading-none transition-colors ${active
+      className={`flex w-full cursor-pointer items-center gap-2.5 rounded-md px-2.5 py-[7px] text-[13px] leading-none transition-colors ${active
         ? "bg-white/10 font-medium text-white shadow-sm"
         : "font-normal text-white/70 hover:bg-white/[0.08] hover:text-white"
         }`}
@@ -328,7 +328,7 @@ function SidebarFrame({
 
 export default function AdminShell({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [openMenus, setOpenMenus] = useState<Set<string>>(new Set());
+  const [openMenus, setOpenMenus] = useState<Set<string>>(new Set(["Exhibition"]));
   const [notificationCount, setNotificationCount] = useState(0);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [user, setUser] = useState<{ name?: string; email?: string } | null>(null);

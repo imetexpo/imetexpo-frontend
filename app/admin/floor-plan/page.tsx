@@ -254,26 +254,25 @@ export default function FloorPlanPage() {
     };
 
     return (
-        <div className="space-y-6 p-6">
-            {/* Your existing JSX here */}
+        <div className="space-y-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Floor Plan Manager</h1>
-                    <p className="text-gray-400 mt-1">
-                        {floorPlan?.imageUrl ? "Floor plan active" : "No floor plan uploaded"}
+                    <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Floor Plan Manager</h1>
+                    <p className="text-sm text-gray-500 mt-1">
+                        {floorPlan?.imageUrl ? "Interactive exhibition floor plan active" : "No floor plan uploaded"}
                     </p>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2.5">
                     <button
                         onClick={() => setShowUploadModal(true)}
-                        className="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2"
+                        className="px-4 py-2.5 bg-gradient-to-r from-[#003A77] to-[#004A96] hover:from-[#002855] hover:to-[#003A77] text-white rounded-lg shadow-sm hover:shadow transition flex items-center gap-2 text-sm font-medium cursor-pointer"
                     >
                         <Upload size={16} />
                         Upload Layout
                     </button>
                     <button
                         onClick={fetchFloorPlan}
-                        className="px-4 py-2 bg-gray-800 rounded-lg text-gray-300 hover:bg-gray-700 transition flex items-center gap-2"
+                        className="px-4 py-2.5 border border-gray-300 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition flex items-center gap-2 text-sm font-medium cursor-pointer shadow-2xs"
                     >
                         <RefreshCw size={16} />
                         Refresh
@@ -282,27 +281,27 @@ export default function FloorPlanPage() {
             </div>
 
             {error && (
-                <div className="bg-red-500/10 rounded-xl p-4 border border-red-500/30">
+                <div className="bg-red-50 rounded-xl p-4 border border-red-200">
                     <div className="flex items-center gap-2">
-                        <AlertCircle className="h-5 w-5 text-red-400" />
-                        <p className="text-red-300">{error}</p>
+                        <AlertCircle className="h-5 w-5 text-red-500" />
+                        <p className="text-red-700 text-sm font-medium">{error}</p>
                     </div>
-                    <button onClick={fetchFloorPlan} className="mt-2 text-sm text-orange-400 hover:text-orange-300">
+                    <button onClick={fetchFloorPlan} className="mt-2 text-xs text-[#003A77] hover:underline font-semibold cursor-pointer">
                         Try again
                     </button>
                 </div>
             )}
 
             {!floorPlan?.imageUrl && !error && (
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-12 text-center">
-                    <Map className="h-16 w-16 text-gray-500 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-white mb-2">No Floor Plan Uploaded</h3>
-                    <p className="text-gray-400 mb-6">Upload a floor plan image to get started</p>
+                <div className="bg-white rounded-xl border border-gray-200/80 p-12 text-center shadow-xs">
+                    <Map className="h-12 w-12 text-gray-300 mx-auto mb-3" />
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">No Floor Plan Uploaded</h3>
+                    <p className="text-gray-500 text-sm mb-6">Upload a floor plan image to manage booth allocations visually</p>
                     <button
                         onClick={() => setShowUploadModal(true)}
-                        className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2 mx-auto"
+                        className="px-5 py-2.5 bg-gradient-to-r from-[#003A77] to-[#004A96] hover:from-[#002855] hover:to-[#003A77] text-white rounded-lg shadow-sm hover:shadow transition flex items-center gap-2 mx-auto text-sm font-medium cursor-pointer"
                     >
-                        <Upload size={18} />
+                        <Upload size={16} />
                         Upload Floor Plan
                     </button>
                 </div>
@@ -310,21 +309,21 @@ export default function FloorPlanPage() {
 
             {floorPlan?.imageUrl && (
                 <>
-                    <div className="flex items-center gap-3">
-                        <button onClick={handleZoomOut} className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
-                            <ZoomOut size={18} className="text-gray-300" />
+                    <div className="bg-white rounded-xl border border-gray-200/80 p-3 shadow-xs flex items-center gap-3">
+                        <button onClick={handleZoomOut} className="p-2 border border-gray-300 bg-white hover:bg-gray-50 rounded-lg transition cursor-pointer text-gray-700">
+                            <ZoomOut size={16} />
                         </button>
-                        <span className="text-white font-medium">{Math.round(zoom * 100)}%</span>
-                        <button onClick={handleZoomIn} className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition">
-                            <ZoomIn size={18} className="text-gray-300" />
+                        <span className="text-gray-900 font-semibold text-sm min-w-12 text-center">{Math.round(zoom * 100)}%</span>
+                        <button onClick={handleZoomIn} className="p-2 border border-gray-300 bg-white hover:bg-gray-50 rounded-lg transition cursor-pointer text-gray-700">
+                            <ZoomIn size={16} />
                         </button>
-                        <button onClick={handleZoomReset} className="px-3 py-2 bg-gray-800 rounded-lg text-sm text-gray-300 hover:bg-gray-700 transition">
-                            <Maximize size={14} className="inline mr-1" />
+                        <button onClick={handleZoomReset} className="px-3 py-1.5 border border-gray-300 bg-white hover:bg-gray-50 rounded-lg text-xs font-medium text-gray-700 transition cursor-pointer flex items-center gap-1">
+                            <Maximize size={12} />
                             Reset
                         </button>
                     </div>
 
-                    <div className="bg-gray-900 rounded-xl border border-gray-700 overflow-auto" style={{ height: "600px" }}>
+                    <div className="bg-slate-100 rounded-xl border border-gray-200/80 overflow-auto shadow-inner" style={{ height: "600px" }}>
                         <div className="relative" style={{ transform: `scale(${zoom})`, transformOrigin: "top left", width: "fit-content", minWidth: "100%" }}>
                             <div className="relative inline-block">
                                 <img src={floorPlan.imageUrl} alt="Floor Plan" className="block max-w-none" />
@@ -332,7 +331,7 @@ export default function FloorPlanPage() {
                                     <div
                                         key={booth.id}
                                         onClick={() => handleBoothClick(booth)}
-                                        className={`absolute border-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:brightness-110 ${getStatusColor(booth.status)}`}
+                                        className={`absolute border-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:brightness-105 ${getStatusColor(booth.status)}`}
                                         style={{
                                             left: `${booth.x}%`,
                                             top: `${booth.y}%`,
@@ -341,8 +340,8 @@ export default function FloorPlanPage() {
                                         }}
                                     >
                                         <div className="absolute inset-0 flex flex-col items-center justify-center p-1">
-                                            <span className="text-white font-bold text-xs md:text-sm text-center truncate w-full">{booth.number}</span>
-                                            {booth.company && <span className="text-xs text-gray-200 truncate w-full text-center hidden sm:block">{booth.company}</span>}
+                                            <span className="text-white font-bold text-xs md:text-sm text-center truncate w-full drop-shadow-sm">{booth.number}</span>
+                                            {booth.company && <span className="text-[11px] text-white/90 truncate w-full text-center hidden sm:block drop-shadow-sm">{booth.company}</span>}
                                         </div>
                                     </div>
                                 ))}
@@ -351,44 +350,44 @@ export default function FloorPlanPage() {
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div className="bg-gray-800/50 rounded-xl p-4 text-center border border-gray-700">
-                            <p className="text-2xl font-bold text-white">{stats.total}</p>
-                            <p className="text-xs text-gray-400">Total Booths</p>
+                        <div className="bg-white rounded-xl p-4 text-center border border-gray-200/80 shadow-xs">
+                            <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
+                            <p className="text-xs text-gray-500 font-medium mt-0.5">Total Booths</p>
                         </div>
-                        <div className="bg-green-500/10 rounded-xl p-4 text-center border border-green-500/30">
-                            <p className="text-2xl font-bold text-green-400">{stats.available}</p>
-                            <p className="text-xs text-gray-400">Available</p>
+                        <div className="bg-emerald-50/40 rounded-xl p-4 text-center border border-emerald-200/80 shadow-xs">
+                            <p className="text-2xl font-bold text-emerald-700">{stats.available}</p>
+                            <p className="text-xs text-emerald-600 font-medium mt-0.5">Available</p>
                         </div>
-                        <div className="bg-blue-500/10 rounded-xl p-4 text-center border border-blue-500/30">
-                            <p className="text-2xl font-bold text-blue-400">{stats.booked}</p>
-                            <p className="text-xs text-gray-400">Booked</p>
+                        <div className="bg-sky-50/40 rounded-xl p-4 text-center border border-sky-200/80 shadow-xs">
+                            <p className="text-2xl font-bold text-[#003A77]">{stats.booked}</p>
+                            <p className="text-xs text-sky-700 font-medium mt-0.5">Booked</p>
                         </div>
-                        <div className="bg-yellow-500/10 rounded-xl p-4 text-center border border-yellow-500/30">
-                            <p className="text-2xl font-bold text-yellow-400">{stats.reserved}</p>
-                            <p className="text-xs text-gray-400">Reserved</p>
+                        <div className="bg-amber-50/40 rounded-xl p-4 text-center border border-amber-200/80 shadow-xs">
+                            <p className="text-2xl font-bold text-amber-700">{stats.reserved}</p>
+                            <p className="text-xs text-amber-600 font-medium mt-0.5">Reserved</p>
                         </div>
                     </div>
                 </>
             )}
 
-            {/* Modals remain the same */}
+            {/* Modals */}
             {showModal && selectedBooth && (
-                <div className="fixed inset-0 bg-[#003A77]/80 flex items-center justify-center z-50 p-4">
-                    <div className="bg-gray-800 rounded-2xl max-w-md w-full p-6 border border-gray-700">
-                        <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-xl font-bold text-white">Booth {selectedBooth.number}</h3>
-                            <button onClick={() => setShowModal(false)} className="p-1 hover:bg-gray-700 rounded-lg transition">
+                <div className="fixed inset-0 bg-[#003A77]/40 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+                    <div className="bg-white rounded-2xl max-w-md w-full p-6 border border-gray-200 shadow-2xl">
+                        <div className="flex justify-between items-center mb-4 pb-3 border-b border-gray-100">
+                            <h3 className="text-lg font-bold text-gray-900">Booth {selectedBooth.number}</h3>
+                            <button onClick={() => setShowModal(false)} className="p-1 hover:bg-gray-100 rounded-lg transition cursor-pointer">
                                 <X size={20} className="text-gray-400" />
                             </button>
                         </div>
                         <div className="space-y-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-1">Booth Number</label>
-                                <input type="text" value={editBoothData.number || ""} onChange={(e) => setEditBoothData({ ...editBoothData, number: e.target.value })} className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white" />
+                                <label className="block text-sm font-medium text-gray-700 mb-1.5">Booth Number</label>
+                                <input type="text" value={editBoothData.number || ""} onChange={(e) => setEditBoothData({ ...editBoothData, number: e.target.value })} className="w-full px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:bg-white" />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-1">Status</label>
-                                <select value={editBoothData.status || "available"} onChange={(e) => setEditBoothData({ ...editBoothData, status: e.target.value as any })} className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white">
+                                <label className="block text-sm font-medium text-gray-700 mb-1.5">Status</label>
+                                <select value={editBoothData.status || "available"} onChange={(e) => setEditBoothData({ ...editBoothData, status: e.target.value as any })} className="w-full px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:bg-white cursor-pointer">
                                     <option value="available">Available</option>
                                     <option value="booked">Booked</option>
                                     <option value="reserved">Reserved</option>
@@ -396,13 +395,16 @@ export default function FloorPlanPage() {
                             </div>
                             {(editBoothData.status === "booked" || editBoothData.status === "reserved") && (
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-300 mb-1">Company Name</label>
-                                    <input type="text" value={editBoothData.company || ""} onChange={(e) => setEditBoothData({ ...editBoothData, company: e.target.value })} className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white" />
+                                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Company Name</label>
+                                    <input type="text" value={editBoothData.company || ""} onChange={(e) => setEditBoothData({ ...editBoothData, company: e.target.value })} className="w-full px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:bg-white" />
                                 </div>
                             )}
                         </div>
-                        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-700">
-                            <button onClick={handleUpdateBooth} disabled={updatingBooth} className="flex-1 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition disabled:opacity-50 flex items-center justify-center gap-2">
+                        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-100">
+                            <button onClick={() => setShowModal(false)} className="flex-1 px-4 py-2.5 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition text-sm font-medium cursor-pointer">
+                                Cancel
+                            </button>
+                            <button onClick={handleUpdateBooth} disabled={updatingBooth} className="flex-1 px-4 py-2.5 bg-gradient-to-r from-[#003A77] to-[#004A96] hover:from-[#002855] hover:to-[#003A77] text-white rounded-lg shadow-sm font-medium transition disabled:opacity-50 flex items-center justify-center gap-2 text-sm cursor-pointer">
                                 {updatingBooth ? <LoadingDots size="sm" tone="light" /> : <Save size={16} />}
                                 {updatingBooth ? "Saving..." : "Save Changes"}
                             </button>
@@ -412,26 +414,28 @@ export default function FloorPlanPage() {
             )}
 
             {showUploadModal && (
-                <div className="fixed inset-0 bg-[#003A77]/80 flex items-center justify-center z-50 p-4">
-                    <div className="bg-gray-800 rounded-2xl max-w-md w-full p-6 border border-gray-700">
-                        <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-xl font-bold text-white">Upload Floor Plan</h3>
-                            <button onClick={() => setShowUploadModal(false)} className="p-1 hover:bg-gray-700 rounded-lg transition">
+                <div className="fixed inset-0 bg-[#003A77]/40 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+                    <div className="bg-white rounded-2xl max-w-md w-full p-6 border border-gray-200 shadow-2xl">
+                        <div className="flex justify-between items-center mb-4 pb-3 border-b border-gray-100">
+                            <h3 className="text-lg font-bold text-gray-900">Upload Floor Plan</h3>
+                            <button onClick={() => setShowUploadModal(false)} className="p-1 hover:bg-gray-100 rounded-lg transition cursor-pointer">
                                 <X size={20} className="text-gray-400" />
                             </button>
                         </div>
                         <div className="space-y-4">
-                            <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center">
-                                <ImageIcon className="h-12 w-12 text-gray-500 mx-auto mb-3" />
-                                <p className="text-gray-400 mb-2">Click or drag to upload floor plan image</p>
-                                <p className="text-xs text-gray-500">PNG, JPG, JPEG up to 10MB</p>
+                            <div className="border-2 border-dashed border-gray-300 hover:border-[#00A1B1] rounded-xl p-8 text-center transition bg-gray-50/50">
+                                <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-3" />
+                                <p className="text-gray-700 font-medium mb-1 text-sm">Click or drag to upload floor plan image</p>
+                                <p className="text-xs text-gray-400">PNG, JPG, JPEG up to 10MB</p>
                                 <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} className="hidden" id="floorPlanUpload" />
-                                <label htmlFor="floorPlanUpload" className="mt-4 inline-block px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition cursor-pointer">Select Image</label>
+                                <label htmlFor="floorPlanUpload" className="mt-4 inline-block px-4 py-2 bg-gradient-to-r from-[#003A77] to-[#004A96] hover:from-[#002855] hover:to-[#003A77] text-white rounded-lg shadow-sm text-sm font-medium transition cursor-pointer">
+                                    Select Image
+                                </label>
                             </div>
                             {uploading && (
-                                <div className="flex items-center justify-center gap-2 text-gray-300">
-                                    <LoadingDots size="sm" tone="light" />
-                                    <span>Uploading...</span>
+                                <div className="flex items-center justify-center gap-2 text-gray-600 text-sm">
+                                    <LoadingDots size="sm" tone="dark" />
+                                    <span>Uploading layout...</span>
                                 </div>
                             )}
                         </div>
