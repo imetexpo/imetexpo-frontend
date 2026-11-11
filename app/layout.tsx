@@ -80,6 +80,16 @@ export default function RootLayout({
       className={`${bebas.variable} ${roboto.variable} ${montserrat.variable} h-full antialiased`}
     >
       <head>
+        {/* Google Tag Manager */}
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-M5H5HRZM"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-NM56GWMC"
+          strategy="afterInteractive"
+        />
+
         {/* Google Analytics - First script loads the library */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CGKLPLYCF9"
@@ -137,6 +147,23 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans overflow-x-hidden">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M5H5HRZM"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NM56GWMC"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {!hideHeaderFooter && (
           <Suspense fallback={null}>
             <Header />
