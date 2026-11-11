@@ -6,13 +6,11 @@ import { getElectricalRates, deleteElectricalRate, toggleElectricalRateStatus, E
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
 
-
 export default function AdminElectricalRatesPage() {
     const [rates, setRates] = useState<ElectricalRate[]>([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
     const [editingRate, setEditingRate] = useState<ElectricalRate | null>(null);
-    // Calculate stats from rates instead of API
     const [statistics, setStatistics] = useState({ total: 0, active: 0, exhibition: 0, temporary: 0 });
     const [formData, setFormData] = useState({
         type: 'both' as 'temporary' | 'exhibition' | 'both',
@@ -22,7 +20,6 @@ export default function AdminElectricalRatesPage() {
         description: '',
     });
 
-    // Calculate statistics locally from rates array
     const calculateLocalStatistics = (ratesList: ElectricalRate[]) => {
         const total = ratesList.length;
         const active = ratesList.filter(rate => rate.isActive).length;
@@ -77,7 +74,6 @@ export default function AdminElectricalRatesPage() {
             const response = await toggleElectricalRateStatus(id);
             if (response.success) {
                 toast.success(`Rate ${!currentStatus ? 'activated' : 'deactivated'} successfully`);
-                // Update local state immediately for better UX
                 const updatedRates = rates.map(rate =>
                     rate.id === id ? { ...rate, isActive: !currentStatus } : rate
                 );
@@ -104,27 +100,27 @@ export default function AdminElectricalRatesPage() {
     const getTypeBadge = (type: string) => {
         switch (type) {
             case 'exhibition':
-                return <span className="px-2 py-1 text-xs rounded-full bg-blue-500/20 text-blue-400 flex items-center gap-1"><Eye size={12} /> Exhibition</span>;
+                return <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200"><Eye size={12} /> Exhibition</span>;
             case 'temporary':
-                return <span className="px-2 py-1 text-xs rounded-full bg-purple-500/20 text-purple-400 flex items-center gap-1"><Zap size={12} /> Temporary</span>;
+                return <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200"><Zap size={12} /> Temporary</span>;
             default:
-                return <span className="px-2 py-1 text-xs rounded-full bg-green-500/20 text-green-400 flex items-center gap-1"><Power size={12} /> Both</span>;
+                return <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-50 text-teal-700 border border-teal-200"><Power size={12} /> Both</span>;
         }
     };
 
     const formatCurrency = (amount: number) => `₹${amount.toLocaleString()}`;
 
     return (
-        <div className="space-y-6 p-6">
+        <div className="space-y-6">
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div className="flex items-center gap-3">
-                    <div className="h-12 w-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
-                        <BoltIcon className="h-6 w-6 text-orange-400" />
+                    <div className="h-11 w-11 bg-amber-50 border border-amber-100 rounded-xl flex items-center justify-center">
+                        <BoltIcon className="h-5 w-5 text-amber-600" />
                     </div>
                     <div>
-                        <h1 className="text-2xl font-bold text-white">Electrical Rates Configuration</h1>
-                        <p className="text-gray-400 mt-1">Set pricing for electrical requirements per KW</p>
+                        <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Electrical Rates Configuration</h1>
+                        <p className="text-xs sm:text-sm text-gray-500 mt-0.5">Set pricing for electrical requirements per KW</p>
                     </div>
                 </div>
                 <button
@@ -139,108 +135,113 @@ export default function AdminElectricalRatesPage() {
                         });
                         setShowModal(true);
                     }}
-                    className="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-[#003A77] hover:bg-[#002855] text-white text-sm font-medium rounded-lg shadow-xs transition"
                 >
-                    <Plus size={18} />
+                    <Plus size={16} />
                     Add Rate
                 </button>
             </div>
 
-            {/* Statistics Cards - Calculated locally */}
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-                <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-                    <p className="text-2xl font-bold text-white">{statistics.total}</p>
-                    <p className="text-xs text-gray-400">Total Rates</p>
+            {/* Statistics Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
+                    <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Total Rates</p>
+                    <p className="text-2xl font-bold text-gray-900 mt-1">{statistics.total}</p>
                 </div>
-                <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/30">
-                    <p className="text-2xl font-bold text-green-400">{statistics.active}</p>
-                    <p className="text-xs text-gray-400">Active Rates</p>
+                <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-xs">
+                    <p className="text-xs font-medium text-emerald-700 uppercase tracking-wider">Active Rates</p>
+                    <p className="text-2xl font-bold text-emerald-600 mt-1">{statistics.active}</p>
                 </div>
-                <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
-                    <p className="text-2xl font-bold text-blue-400">{statistics.exhibition}</p>
-                    <p className="text-xs text-gray-400">Exhibition Rates</p>
+                <div className="bg-white rounded-xl p-4 border border-blue-100 shadow-xs">
+                    <p className="text-xs font-medium text-blue-700 uppercase tracking-wider">Exhibition Rates</p>
+                    <p className="text-2xl font-bold text-[#003A77] mt-1">{statistics.exhibition}</p>
                 </div>
-                <div className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
-                    <p className="text-2xl font-bold text-purple-400">{statistics.temporary}</p>
-                    <p className="text-xs text-gray-400">Temporary Rates</p>
+                <div className="bg-white rounded-xl p-4 border border-purple-100 shadow-xs">
+                    <p className="text-xs font-medium text-purple-700 uppercase tracking-wider">Temporary Rates</p>
+                    <p className="text-2xl font-bold text-purple-600 mt-1">{statistics.temporary}</p>
                 </div>
             </div>
 
             {/* Rates Table */}
             {loading ? (
-                <div className="flex items-center justify-center min-h-[400px]">
-                    <LoadingDots tone="light" className="mx-auto flex" />
+                <div className="bg-white rounded-xl border border-gray-200/80 p-12 flex items-center justify-center min-h-[300px]">
+                    <LoadingDots tone="dark" className="mx-auto flex" />
                 </div>
             ) : rates.length === 0 ? (
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-12 text-center">
-                    <BoltIcon className="h-16 w-16 text-gray-500 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-white mb-2">No Electrical Rates Configured</h3>
-                    <p className="text-gray-400 mb-6">Add your first electrical rate configuration</p>
+                <div className="bg-white rounded-xl border border-gray-200/80 p-12 text-center shadow-xs">
+                    <BoltIcon className="h-12 w-12 text-gray-300 mx-auto mb-3" />
+                    <h3 className="text-base font-semibold text-gray-900 mb-1">No Electrical Rates Configured</h3>
+                    <p className="text-xs text-gray-500 mb-4">Add your first electrical rate configuration</p>
                     <button
                         onClick={() => setShowModal(true)}
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-[#003A77] hover:bg-[#002855] text-white text-sm font-medium rounded-lg transition"
                     >
-                        <Plus size={18} />
+                        <Plus size={16} />
                         Add Rate
                     </button>
                 </div>
             ) : (
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 overflow-hidden">
+                <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs overflow-hidden">
                     <div className="overflow-x-auto">
-                        <table className="w-full">
-                            <thead className="bg-gray-800/80">
+                        <table className="w-full text-left text-sm">
+                            <thead className="bg-gray-50 border-b border-gray-200 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                 <tr>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Type</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Rate per KW</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Effective From</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Effective To</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Status</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Actions</th>
+                                    <th className="px-5 py-3.5">Type</th>
+                                    <th className="px-5 py-3.5">Rate per KW</th>
+                                    <th className="px-5 py-3.5">Effective From</th>
+                                    <th className="px-5 py-3.5">Effective To</th>
+                                    <th className="px-5 py-3.5">Status</th>
+                                    <th className="px-5 py-3.5 text-right">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-700">
+                            <tbody className="divide-y divide-gray-100 text-gray-700">
                                 {rates.map((rate) => (
-                                    <tr key={rate.id} className="hover:bg-gray-700/50 transition">
-                                        <td className="px-6 py-4">
+                                    <tr key={rate.id} className="hover:bg-gray-50/70 transition">
+                                        <td className="px-5 py-3.5">
                                             {getTypeBadge(rate.type)}
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <span className="text-xl font-bold text-orange-400">{formatCurrency(rate.ratePerKW)}</span>
+                                        <td className="px-5 py-3.5">
+                                            <span className="text-base font-bold text-[#003A77]">{formatCurrency(rate.ratePerKW)}</span>
                                             <span className="text-xs text-gray-500 ml-1">/KW</span>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-2">
-                                                <Calendar size={14} className="text-gray-500" />
-                                                <span className="text-white">{formatDate(rate.effectiveFrom)}</span>
+                                        <td className="px-5 py-3.5">
+                                            <div className="flex items-center gap-1.5 text-gray-700">
+                                                <Calendar size={13} className="text-gray-400" />
+                                                <span>{formatDate(rate.effectiveFrom)}</span>
                                             </div>
                                         </td>
-                                        <td className="px-6 py-4">
+                                        <td className="px-5 py-3.5">
                                             {rate.effectiveTo ? (
-                                                <div className="flex items-center gap-2">
-                                                    <Calendar size={14} className="text-gray-500" />
-                                                    <span className="text-white">{formatDate(rate.effectiveTo)}</span>
+                                                <div className="flex items-center gap-1.5 text-gray-700">
+                                                    <Calendar size={13} className="text-gray-400" />
+                                                    <span>{formatDate(rate.effectiveTo)}</span>
                                                 </div>
                                             ) : (
-                                                <span className="text-gray-500">No expiry</span>
+                                                <span className="text-gray-400 text-xs">No expiry</span>
                                             )}
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <span className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium ${rate.isActive ? 'bg-green-500/20 text-green-400' : 'bg-gray-500/20 text-gray-400'}`}>
-                                                {rate.isActive ? <CheckCircle size={12} /> : <XCircle size={12} />}
+                                        <td className="px-5 py-3.5">
+                                            <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium border ${
+                                                rate.isActive 
+                                                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
+                                                    : 'bg-gray-100 text-gray-600 border-gray-200'
+                                            }`}>
+                                                {rate.isActive ? <CheckCircle size={11} /> : <XCircle size={11} />}
                                                 {rate.isActive ? 'Active' : 'Inactive'}
                                             </span>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-2">
+                                        <td className="px-5 py-3.5 text-right">
+                                            <div className="flex items-center justify-end gap-1">
                                                 <button
                                                     onClick={() => handleToggleStatus(rate.id, rate.isActive)}
-                                                    className={`p-1.5 rounded-lg transition ${rate.isActive
-                                                            ? 'text-gray-400 hover:text-red-400 hover:bg-red-500/20'
-                                                            : 'text-gray-400 hover:text-green-400 hover:bg-green-500/20'
-                                                        }`}
+                                                    className={`p-1.5 rounded-lg transition ${
+                                                        rate.isActive
+                                                            ? 'text-gray-400 hover:text-rose-600 hover:bg-rose-50'
+                                                            : 'text-gray-400 hover:text-emerald-600 hover:bg-emerald-50'
+                                                    }`}
                                                     title={rate.isActive ? "Deactivate" : "Activate"}
                                                 >
-                                                    {rate.isActive ? <XCircle size={16} /> : <CheckCircle size={16} />}
+                                                    {rate.isActive ? <XCircle size={15} /> : <CheckCircle size={15} />}
                                                 </button>
                                                 <button
                                                     onClick={() => {
@@ -254,15 +255,17 @@ export default function AdminElectricalRatesPage() {
                                                         });
                                                         setShowModal(true);
                                                     }}
-                                                    className="p-1.5 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition"
+                                                    className="p-1.5 text-gray-400 hover:text-[#003A77] hover:bg-gray-100 rounded-lg transition"
+                                                    title="Edit"
                                                 >
-                                                    <Edit size={16} />
+                                                    <Edit size={15} />
                                                 </button>
                                                 <button
                                                     onClick={() => handleDelete(rate.id, rate.ratePerKW)}
-                                                    className="p-1.5 text-gray-400 hover:text-red-400 hover:bg-red-500/20 rounded-lg transition"
+                                                    className="p-1.5 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition"
+                                                    title="Delete"
                                                 >
-                                                    <Trash2 size={16} />
+                                                    <Trash2 size={15} />
                                                 </button>
                                             </div>
                                         </td>
@@ -276,26 +279,26 @@ export default function AdminElectricalRatesPage() {
 
             {/* Add/Edit Modal */}
             {showModal && (
-                <div className="fixed inset-0 bg-[#003A77]/80 flex items-center justify-center z-50 p-4">
-                    <div className="bg-gray-800 rounded-2xl max-w-md w-full p-6 border border-gray-700">
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+                    <div className="bg-white rounded-2xl max-w-md w-full p-6 border border-gray-200 shadow-xl">
                         <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-xl font-bold text-white">
+                            <h3 className="text-lg font-bold text-gray-900">
                                 {editingRate ? 'Edit Electrical Rate' : 'Add New Electrical Rate'}
                             </h3>
-                            <button onClick={() => setShowModal(false)} className="p-1 hover:bg-gray-700 rounded-lg transition">
-                                <X size={20} className="text-gray-400" />
+                            <button onClick={() => setShowModal(false)} className="p-1 hover:bg-gray-100 rounded-lg transition">
+                                <X size={18} className="text-gray-400" />
                             </button>
                         </div>
 
                         <div className="space-y-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
-                                    Rate Type <span className="text-red-400">*</span>
+                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                                    Rate Type <span className="text-rose-500">*</span>
                                 </label>
                                 <select
                                     value={formData.type}
                                     onChange={(e) => setFormData({ ...formData, type: e.target.value as any })}
-                                    className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1]"
                                 >
                                     <option value="both">Both (Exhibition & Temporary)</option>
                                     <option value="exhibition">Exhibition Only</option>
@@ -304,16 +307,16 @@ export default function AdminElectricalRatesPage() {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
-                                    Rate per KW (₹) <span className="text-red-400">*</span>
+                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                                    Rate per KW (₹) <span className="text-rose-500">*</span>
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">₹</span>
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">₹</span>
                                     <input
                                         type="number"
                                         value={formData.ratePerKW}
                                         onChange={(e) => setFormData({ ...formData, ratePerKW: e.target.value })}
-                                        className="w-full pl-8 pr-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                        className="w-full pl-7 pr-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
                                         placeholder="3500"
                                         required
                                     />
@@ -321,49 +324,49 @@ export default function AdminElectricalRatesPage() {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
-                                    Effective From <span className="text-red-400">*</span>
+                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                                    Effective From <span className="text-rose-500">*</span>
                                 </label>
                                 <input
                                     type="date"
                                     value={formData.effectiveFrom}
                                     onChange={(e) => setFormData({ ...formData, effectiveFrom: e.target.value })}
-                                    className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
                                     required
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
+                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
                                     Effective To (Optional)
                                 </label>
                                 <input
                                     type="date"
                                     value={formData.effectiveTo}
                                     onChange={(e) => setFormData({ ...formData, effectiveTo: e.target.value })}
-                                    className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
                                 />
-                                <p className="text-xs text-gray-500 mt-1">Leave empty for no expiry</p>
+                                <p className="text-[11px] text-gray-400 mt-1">Leave empty for no expiry</p>
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
+                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
                                     Description (Optional)
                                 </label>
                                 <textarea
                                     rows={2}
                                     value={formData.description}
                                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                                    className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
                                     placeholder="Additional notes about this rate"
                                 />
                             </div>
                         </div>
 
-                        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-700">
+                        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-200">
                             <button
                                 onClick={() => setShowModal(false)}
-                                className="flex-1 px-4 py-2 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700 transition"
+                                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
                             >
                                 Cancel
                             </button>
@@ -411,9 +414,9 @@ export default function AdminElectricalRatesPage() {
                                         toast.error(error.response?.data?.message || "Operation failed");
                                     }
                                 }}
-                                className="flex-1 px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center justify-center gap-2"
+                                className="flex-1 px-4 py-2 bg-[#003A77] hover:bg-[#002855] text-white text-sm font-medium rounded-lg transition flex items-center justify-center gap-1.5 shadow-xs"
                             >
-                                <Save size={16} />
+                                <Save size={15} />
                                 {editingRate ? 'Update Rate' : 'Create Rate'}
                             </button>
                         </div>

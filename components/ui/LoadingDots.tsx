@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 
 type LoadingDotsProps = {
   size?: 'sm' | 'md' | 'lg';
-  tone?: 'brand' | 'light';
+  tone?: 'brand' | 'light' | 'dark';
   label?: string;
   className?: string;
   fullScreen?: boolean;

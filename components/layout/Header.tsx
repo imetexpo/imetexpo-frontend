@@ -80,26 +80,32 @@ export default function Header() {
       >
         <div className="px-3 py-3 sm:px-4">
           <div className="flex items-center justify-between">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="shrink-0">
               <Image
                 src="/ITS_logo_white.png"
                 alt="IndiaMet Expo"
                 width={270}
                 height={100}
-                className="h-14 w-auto max-w-[160px] object-contain sm:h-16 sm:max-w-[280px]"
+                className="h-11 w-auto max-w-[125px] object-contain sm:h-16 sm:max-w-[280px]"
               />
             </Link>
 
-            <div className="ml-3 hidden min-w-0 flex-1 text-[10px] leading-tight text-gray-300 sm:block">
-              <p className="font-semibold text-white">13 - 15 May 2027</p>
-              <p>Auto Cluster Exhibition Center</p>
-              <p>Pune, India</p>
+            <div className="mx-2 min-w-0 flex-1 text-center sm:text-left">
+              <p className="font-[var(--font-montserrat)] font-bold text-white text-[10px] xs:text-[11px] sm:text-sm uppercase tracking-wide whitespace-nowrap">
+                13 - 15 MAY 2027
+              </p>
+              <p className="hidden text-[10px] leading-tight text-gray-300 sm:block">
+                Auto Cluster Exhibition Center
+              </p>
+              <p className="hidden text-[10px] leading-tight text-gray-300 sm:block">
+                Pune, India
+              </p>
             </div>
 
-            <div className="flex shrink-0 items-center gap-2">
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
               <Link
                 href="/login/"
-                className="bg-[#00A1B1] text-white px-4 py-1.5 text-sm border border-white/20
+                className="bg-[#00A1B1] text-white px-2.5 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm border border-white/20
                 hover:bg-[#00A1B1] hover:text-[#003A77] transition-all duration-300 rounded-sm"
               >
                 Login
@@ -107,14 +113,14 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 hover:bg-white/10 rounded-sm transition cursor-pointer"
+                className="p-1.5 sm:p-2 hover:bg-white/10 rounded-sm transition cursor-pointer"
                 aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? (
-                  <X size={32} className="text-[#00A1B1]" />
+                  <X className="size-7 sm:size-8 text-[#00A1B1]" />
                 ) : (
-                  <Menu size={32} className="text-[#00A1B1]" />
+                  <Menu className="size-7 sm:size-8 text-[#00A1B1]" />
                 )}
               </button>
             </div>

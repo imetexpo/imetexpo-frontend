@@ -50,9 +50,10 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
         
         {/* Main Content Area */}
         <div className="flex-1">
-          {/* Label */}
-          <div className="text-[11px] font-sans font-semibold uppercase tracking-wider text-neutral-500 mb-5 pl-1">
-            Main menu
+          {/* Label & Event Date */}
+          <div className="flex items-center justify-between text-[11px] font-sans font-semibold uppercase tracking-wider text-neutral-400 mb-5 pl-1">
+            <span>Main menu</span>
+            <span className="text-[#FFD154] font-bold">13 - 15 MAY 2027</span>
           </div>
 
           {/* Navigation Links */}

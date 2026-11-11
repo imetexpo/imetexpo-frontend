@@ -424,43 +424,43 @@ export default function AdminManualPage() {
 
     const getCategoryBadge = (category: string) => {
         const colors: Record<string, string> = {
-            general: 'bg-blue-500/20 text-blue-400',
-            rules: 'bg-red-500/20 text-red-400',
-            setup: 'bg-green-500/20 text-green-400',
-            technical: 'bg-purple-500/20 text-purple-400',
-            logistics: 'bg-orange-500/20 text-orange-400',
-            schedule: 'bg-cyan-500/20 text-cyan-400',
-            contact: 'bg-pink-500/20 text-pink-400'
+            general: 'bg-blue-50 text-blue-700 border border-blue-200',
+            rules: 'bg-red-50 text-red-700 border border-red-200',
+            setup: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
+            technical: 'bg-purple-50 text-purple-700 border border-purple-200',
+            logistics: 'bg-amber-50 text-amber-700 border border-amber-200',
+            schedule: 'bg-cyan-50 text-cyan-700 border border-cyan-200',
+            contact: 'bg-pink-50 text-pink-700 border border-pink-200'
         };
-        return colors[category?.toLowerCase()] || 'bg-gray-500/20 text-gray-400';
+        return colors[category?.toLowerCase()] || 'bg-gray-100 text-gray-600 border border-gray-200';
     };
 
     return (
-        <div className="space-y-6 p-6">
+        <div className="space-y-6">
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div className="flex items-center gap-3">
-                    <div className="h-12 w-12 bg-amber-500/20 rounded-xl flex items-center justify-center">
-                        <FileText className="h-6 w-6 text-amber-400" />
+                    <div className="h-11 w-11 bg-[#003A77]/10 rounded-xl flex items-center justify-center shrink-0">
+                        <FileText className="h-6 w-6 text-[#003A77]" />
                     </div>
                     <div>
-                        <h1 className="text-2xl font-bold text-white">Exhibitor Manual Manager</h1>
-                        <p className="text-gray-400 mt-1">Manage manual sections and PDF documents</p>
+                        <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Exhibitor Manual Manager</h1>
+                        <p className="text-sm text-gray-500 mt-0.5">Manage manual sections and downloadable PDF documents</p>
                     </div>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2.5">
                     <button
                         onClick={() => openCreateModal('section')}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center gap-2"
+                        className="px-4 py-2.5 border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 rounded-lg text-sm font-medium transition flex items-center gap-2 cursor-pointer shadow-2xs"
                     >
-                        <Plus size={18} />
+                        <Plus size={16} />
                         Add Text Section
                     </button>
                     <button
                         onClick={() => openCreateModal('pdf')}
-                        className="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2"
+                        className="px-4 py-2.5 bg-gradient-to-r from-[#003A77] to-[#004A96] hover:from-[#002855] hover:to-[#003A77] text-white rounded-lg shadow-sm hover:shadow transition flex items-center gap-2 text-sm font-medium cursor-pointer"
                     >
-                        <Upload size={18} />
+                        <Upload size={16} />
                         Upload PDF
                     </button>
                 </div>
@@ -468,42 +468,42 @@ export default function AdminManualPage() {
 
             {/* Statistics Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-                <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-                    <p className="text-2xl font-bold text-white">{statistics.totalManuals}</p>
-                    <p className="text-xs text-gray-400">Total Items</p>
+                <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
+                    <p className="text-2xl font-bold text-gray-900">{statistics.totalManuals}</p>
+                    <p className="text-xs text-gray-500 font-medium mt-0.5">Total Items</p>
                 </div>
-                <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/30">
-                    <p className="text-2xl font-bold text-green-400">{statistics.publishedManuals}</p>
-                    <p className="text-xs text-gray-400">Published</p>
+                <div className="bg-emerald-50/40 rounded-xl p-4 border border-emerald-200/80 shadow-xs">
+                    <p className="text-2xl font-bold text-emerald-700">{statistics.publishedManuals}</p>
+                    <p className="text-xs text-emerald-600 font-medium mt-0.5">Published</p>
                 </div>
-                <div className="bg-yellow-500/10 rounded-xl p-4 border border-yellow-500/30">
-                    <p className="text-2xl font-bold text-yellow-400">{statistics.draftManuals}</p>
-                    <p className="text-xs text-gray-400">Draft</p>
+                <div className="bg-amber-50/40 rounded-xl p-4 border border-amber-200/80 shadow-xs">
+                    <p className="text-2xl font-bold text-amber-700">{statistics.draftManuals}</p>
+                    <p className="text-xs text-amber-600 font-medium mt-0.5">Drafts</p>
                 </div>
-                <div className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
-                    <p className="text-2xl font-bold text-purple-400">{statistics.totalDownloads}</p>
-                    <p className="text-xs text-gray-400">Total Downloads</p>
+                <div className="bg-sky-50/40 rounded-xl p-4 border border-sky-200/80 shadow-xs">
+                    <p className="text-2xl font-bold text-[#003A77]">{statistics.totalDownloads}</p>
+                    <p className="text-xs text-sky-700 font-medium mt-0.5">Total Downloads</p>
                 </div>
             </div>
 
             {/* Filters */}
-            <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-                <div className="flex flex-col sm:flex-row gap-4">
+            <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
+                <div className="flex flex-col sm:flex-row gap-3">
                     <div className="flex-1 relative">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                         <input
                             type="text"
                             placeholder="Search by title or description..."
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            onKeyPress={(e) => e.key === "Enter" && fetchManuals()}
-                            className="w-full pl-10 pr-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+                            onKeyDown={(e) => e.key === "Enter" && fetchManuals()}
+                            className="w-full pl-10 pr-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                         />
                     </div>
                     <select
                         value={categoryFilter}
                         onChange={(e) => setCategoryFilter(e.target.value)}
-                        className="px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                        className="px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                     >
                         <option value="all">All Categories</option>
                         <option value="general">General</option>
@@ -517,7 +517,7 @@ export default function AdminManualPage() {
                     <select
                         value={statusFilter}
                         onChange={(e) => setStatusFilter(e.target.value)}
-                        className="px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                        className="px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                     >
                         <option value="all">All Status</option>
                         <option value="published">Published</option>
@@ -525,9 +525,9 @@ export default function AdminManualPage() {
                     </select>
                     <button
                         onClick={fetchManuals}
-                        className="px-4 py-2.5 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition flex items-center gap-2"
+                        className="px-4 py-2.5 border border-gray-300 bg-white text-gray-700 rounded-lg hover:bg-gray-50 hover:text-gray-900 transition flex items-center justify-center gap-2 text-sm font-medium cursor-pointer shadow-2xs"
                     >
-                        <RefreshCw size={18} />
+                        <RefreshCw size={16} />
                         Refresh
                     </button>
                 </div>
@@ -535,91 +535,91 @@ export default function AdminManualPage() {
 
             {/* Manuals List */}
             {loading ? (
-                <div className="flex items-center justify-center min-h-[400px]">
-                    <LoadingDots tone="light" className="mx-auto flex" />
+                <div className="flex items-center justify-center min-h-[300px]">
+                    <LoadingDots tone="dark" className="mx-auto flex" />
                 </div>
             ) : manuals.length === 0 ? (
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-12 text-center">
-                    <FileText className="h-16 w-16 text-gray-500 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-white mb-2">No Manual Items Found</h3>
-                    <p className="text-gray-400 mb-6">Add text sections or upload PDFs to get started</p>
-                    <div className="flex justify-center gap-4">
+                <div className="bg-white rounded-xl border border-gray-200/80 p-12 text-center shadow-xs">
+                    <FileText className="h-12 w-12 text-gray-300 mx-auto mb-3" />
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">No Manual Items Found</h3>
+                    <p className="text-gray-500 text-sm mb-6">Add text sections or upload PDFs to get started</p>
+                    <div className="flex justify-center gap-3">
                         <button
                             onClick={() => openCreateModal('section')}
-                            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                            className="px-4 py-2 border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 rounded-lg text-sm font-medium transition cursor-pointer"
                         >
                             Add Text Section
                         </button>
                         <button
                             onClick={() => openCreateModal('pdf')}
-                            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition"
+                            className="px-4 py-2 bg-gradient-to-r from-[#003A77] to-[#004A96] hover:from-[#002855] hover:to-[#003A77] text-white rounded-lg text-sm font-medium transition cursor-pointer"
                         >
                             Upload PDF
                         </button>
                     </div>
                 </div>
             ) : (
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 overflow-hidden">
+                <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs overflow-hidden">
                     <div className="overflow-x-auto">
-                        <table className="w-full">
-                            <thead className="bg-gray-800/80">
+                        <table className="w-full text-left">
+                            <thead className="bg-gray-50/80 border-b border-gray-200">
                                 <tr>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Type</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Title</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Category</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Version/Size</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Last Updated</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Downloads</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Status</th>
-                                    <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Actions</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Type</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Title</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Category</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Version/Size</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Last Updated</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Downloads</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
+                                    <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-700">
+                            <tbody className="divide-y divide-gray-100">
                                 {manuals.map((item) => (
-                                    <tr key={item.id} className="hover:bg-gray-700/50 transition">
+                                    <tr key={item.id} className="hover:bg-slate-50/70 transition-colors">
                                         <td className="px-6 py-4">
                                             {item.type === 'section' ? (
-                                                <span className="inline-flex items-center gap-1 px-2 py-1 text-xs rounded-full bg-blue-500/20 text-blue-400">
+                                                <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded-full bg-sky-50 text-sky-700 border border-sky-200/80 font-medium">
                                                     <FileText size={12} /> Text
                                                 </span>
                                             ) : (
-                                                <span className="inline-flex items-center gap-1 px-2 py-1 text-xs rounded-full bg-red-500/20 text-red-400">
+                                                <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded-full bg-rose-50 text-rose-700 border border-rose-200/80 font-medium">
                                                     <File size={12} /> PDF
                                                 </span>
                                             )}
                                         </td>
                                         <td className="px-6 py-4">
                                             <div>
-                                                <p className="text-white font-medium">{item.title}</p>
+                                                <p className="text-gray-900 font-semibold text-sm">{item.title}</p>
                                                 {item.description && (
-                                                    <p className="text-xs text-gray-400 mt-1 line-clamp-1">{item.description}</p>
+                                                    <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">{item.description}</p>
                                                 )}
                                             </div>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <span className={`inline-flex px-2 py-1 text-xs rounded-full ${getCategoryBadge(item.category)}`}>
+                                            <span className={`inline-flex px-2.5 py-1 text-xs rounded-full font-medium ${getCategoryBadge(item.category)}`}>
                                                 {item.category || 'General'}
                                             </span>
                                         </td>
                                         <td className="px-6 py-4">
                                             {item.type === 'section' ? (
-                                                <span className="text-gray-400 text-sm">Version {item.version}</span>
+                                                <span className="text-gray-500 text-xs font-mono">v{item.version}</span>
                                             ) : (
-                                                <span className="text-gray-400 text-sm">{formatFileSize(item.file_size)}</span>
+                                                <span className="text-gray-500 text-xs font-mono">{formatFileSize(item.file_size)}</span>
                                             )}
                                         </td>
                                         <td className="px-6 py-4">
-                                            <span className="text-gray-400 text-sm">{formatDate(item.last_updated)}</span>
+                                            <span className="text-gray-500 text-xs">{formatDate(item.last_updated)}</span>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <span className="text-white">{item.downloads || 0}</span>
+                                            <span className="text-gray-900 font-semibold text-sm">{item.downloads || 0}</span>
                                         </td>
                                         <td className="px-6 py-4">
                                             <button
                                                 onClick={() => handleToggleStatus(item)}
-                                                className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium transition ${item.status === 'published'
-                                                        ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30'
-                                                        : 'bg-gray-500/20 text-gray-400 hover:bg-gray-500/30'
+                                                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium transition cursor-pointer ${item.status === 'published'
+                                                        ? 'bg-emerald-50 text-emerald-700 border border-emerald-200/80 hover:bg-emerald-100'
+                                                        : 'bg-gray-100 text-gray-600 border border-gray-200 hover:bg-gray-200'
                                                     }`}
                                             >
                                                 {item.status === 'published' ? <CheckCircle size={12} /> : <XCircle size={12} />}
@@ -627,13 +627,13 @@ export default function AdminManualPage() {
                                             </button>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-1.5">
                                                 {item.type === 'pdf' && item.file_path && (
                                                     <a
                                                         href={item.file_path}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="p-1.5 text-gray-400 hover:text-blue-400 hover:bg-blue-500/20 rounded-lg transition"
+                                                        className="p-1.5 text-gray-500 hover:text-[#003A77] hover:bg-slate-100 rounded-lg transition"
                                                         title="View/Download"
                                                     >
                                                         <Eye size={16} />
@@ -641,13 +641,15 @@ export default function AdminManualPage() {
                                                 )}
                                                 <button
                                                     onClick={() => openEditModal(item)}
-                                                    className="p-1.5 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition"
+                                                    className="p-1.5 text-gray-500 hover:text-[#00A1B1] hover:bg-teal-50 rounded-lg transition cursor-pointer"
+                                                    title="Edit"
                                                 >
                                                     <Edit size={16} />
                                                 </button>
                                                 <button
                                                     onClick={() => handleDelete(item)}
-                                                    className="p-1.5 text-gray-400 hover:text-red-400 hover:bg-red-500/20 rounded-lg transition"
+                                                    className="p-1.5 text-gray-500 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition cursor-pointer"
+                                                    title="Delete"
                                                 >
                                                     <Trash2 size={16} />
                                                 </button>
@@ -661,42 +663,42 @@ export default function AdminManualPage() {
                 </div>
             )}
 
-            {/* Add/Edit Modal - same as before */}
+            {/* Add/Edit Modal */}
             {showModal && (
-                <div className="fixed inset-0 bg-[#003A77]/80 flex items-center justify-center z-50 p-4">
-                    <div className="bg-gray-800 rounded-2xl max-w-lg w-full p-6 border border-gray-700 max-h-[90vh] overflow-y-auto">
-                        <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-xl font-bold text-white">
+                <div className="fixed inset-0 bg-[#003A77]/40 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+                    <div className="bg-white rounded-2xl max-w-lg w-full p-6 border border-gray-200 shadow-2xl max-h-[90vh] overflow-y-auto">
+                        <div className="flex justify-between items-center mb-5 pb-3 border-b border-gray-100">
+                            <h3 className="text-lg font-bold text-gray-900">
                                 {editingItem ? 'Edit' : 'Add'} {modalType === 'section' ? 'Text Section' : 'PDF Document'}
                             </h3>
-                            <button onClick={() => setShowModal(false)} className="p-1 hover:bg-gray-700 rounded-lg transition">
+                            <button onClick={() => setShowModal(false)} className="p-1 hover:bg-gray-100 rounded-lg transition cursor-pointer">
                                 <X size={20} className="text-gray-400" />
                             </button>
                         </div>
 
                         <div className="space-y-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
-                                    Title <span className="text-red-400">*</span>
+                                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                    Title <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
                                     value={formData.title}
                                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                                    className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                    className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                                     placeholder="Enter title"
                                     required
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
+                                <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                     Category
                                 </label>
                                 <select
                                     value={formData.category}
                                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                                    className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                    className="w-full px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                                 >
                                     <option value="general">General</option>
                                     <option value="rules">Rules & Regulations</option>
@@ -709,58 +711,56 @@ export default function AdminManualPage() {
                             </div>
 
                             {modalType === 'section' ? (
-                                <>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-300 mb-2">
-                                            Content <span className="text-red-400">*</span>
-                                        </label>
-                                        <textarea
-                                            rows={10}
-                                            value={formData.content}
-                                            onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                                            className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                                            placeholder="Enter content here..."
-                                            required
-                                        />
-                                    </div>
-                                </>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                        Content <span className="text-red-500">*</span>
+                                    </label>
+                                    <textarea
+                                        rows={8}
+                                        value={formData.content}
+                                        onChange={(e) => setFormData({ ...formData, content: e.target.value })}
+                                        className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
+                                        placeholder="Enter content here..."
+                                        required
+                                    />
+                                </div>
                             ) : (
                                 <>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                             Description
                                         </label>
                                         <textarea
                                             rows={3}
                                             value={formData.content}
                                             onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                                            className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                            className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                                             placeholder="Enter description"
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                             Version
                                         </label>
                                         <input
                                             type="text"
                                             value={formData.version}
                                             onChange={(e) => setFormData({ ...formData, version: e.target.value })}
-                                            className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                            className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                                             placeholder="1.0"
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-300 mb-2">
-                                            File {!editingItem && <span className="text-red-400">*</span>}
+                                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                            File {!editingItem && <span className="text-red-500">*</span>}
                                         </label>
                                         <input
                                             type="file"
                                             accept=".pdf,.doc,.docx,.txt"
                                             onChange={(e) => setSelectedFile(e.target.files?.[0] || null)}
-                                            className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:bg-orange-500 file:text-white hover:file:bg-orange-600"
+                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-[#003A77] file:text-white hover:file:bg-[#002855] file:cursor-pointer"
                                         />
                                         {editingItem && (
                                             <p className="text-xs text-gray-500 mt-1">Leave empty to keep current file</p>
@@ -770,13 +770,13 @@ export default function AdminManualPage() {
                             )}
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">
+                                <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                     Status
                                 </label>
                                 <select
                                     value={formData.status}
                                     onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                                    className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                    className="w-full px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                                 >
                                     <option value="published">Published (Visible to exhibitors)</option>
                                     <option value="draft">Draft (Hidden from exhibitors)</option>
@@ -784,10 +784,10 @@ export default function AdminManualPage() {
                             </div>
                         </div>
 
-                        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-700">
+                        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-100">
                             <button
                                 onClick={() => setShowModal(false)}
-                                className="flex-1 px-4 py-2 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700 transition"
+                                className="flex-1 px-4 py-2.5 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition text-sm font-medium cursor-pointer shadow-2xs"
                             >
                                 Cancel
                             </button>
@@ -801,7 +801,7 @@ export default function AdminManualPage() {
                                         await uploadPDF();
                                     }
                                 }}
-                                className="flex-1 px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center justify-center gap-2"
+                                className="flex-1 px-4 py-2.5 bg-gradient-to-r from-[#003A77] to-[#004A96] hover:from-[#002855] hover:to-[#003A77] text-white rounded-lg shadow-sm font-medium transition flex items-center justify-center gap-2 text-sm cursor-pointer"
                             >
                                 <Save size={16} />
                                 {editingItem ? 'Update' : 'Create'}

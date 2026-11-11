@@ -18,40 +18,40 @@ interface Requirement {
 }
 
 const sampleRequirements: Requirement[] = [
-    { id: "REQ001", company: "Apollo Tyres", boothNumber: "A-101", contactPerson: "Rajesh Kumar", requestType: "Extra Power Supply", description: "Need additional 15A power outlet", priority: "high", status: "pending", submittedAt: "2024-01-15" },
-    { id: "REQ002", company: "MRF Tyres", boothNumber: "B-205", contactPerson: "Sundar P", requestType: "WiFi Setup", description: "Dedicated high-speed internet connection", priority: "medium", status: "approved", submittedAt: "2024-01-14" },
-    { id: "REQ003", company: "Bridgestone", boothNumber: "C-312", contactPerson: "Kenji Tanaka", requestType: "LED Display", description: "55\" LED display for product showcase", priority: "high", status: "pending", submittedAt: "2024-01-13" },
-    { id: "REQ004", company: "CEAT Tyres", boothNumber: "D-408", contactPerson: "Anil Sharma", requestType: "Furniture", description: "Additional tables and chairs", priority: "low", status: "completed", submittedAt: "2024-01-12" },
-    { id: "REQ005", company: "JK Tyres", boothNumber: "E-515", contactPerson: "Vikram Singh", requestType: "Security Service", description: "24/7 security guard", priority: "high", status: "pending", submittedAt: "2024-01-11" },
-    { id: "REQ006", company: "Continental", boothNumber: "F-620", contactPerson: "Mark Weber", requestType: "Air Conditioning", description: "Additional AC unit", priority: "medium", status: "approved", submittedAt: "2024-01-10" },
+    { id: "REQ001", company: "Hexagon Metrology", boothNumber: "A-101", contactPerson: "Rajesh Kumar", requestType: "Extra 3-Phase Power", description: "Need additional 32A 3-phase outlet for CMM machine demonstration", priority: "high", status: "pending", submittedAt: "2024-01-15" },
+    { id: "REQ002", company: "Carl Zeiss India", boothNumber: "B-205", contactPerson: "Sundar P", requestType: "Dedicated WiFi", description: "High-speed dedicated lease line for live cloud telemetry", priority: "medium", status: "approved", submittedAt: "2024-01-14" },
+    { id: "REQ003", company: "Mitutoyo South Asia", boothNumber: "C-312", contactPerson: "Kenji Tanaka", requestType: "LED Wall Display", description: "65\" Ultra-HD 4K display for optical measurement showcase", priority: "high", status: "pending", submittedAt: "2024-01-13" },
+    { id: "REQ004", company: "Renishaw Metrology", boothNumber: "D-408", contactPerson: "Anil Sharma", requestType: "Executive Furniture", description: "2 glass tables and 8 cushioned executive chairs", priority: "low", status: "completed", submittedAt: "2024-01-12" },
+    { id: "REQ005", company: "Faro Technologies", boothNumber: "E-515", contactPerson: "Vikram Singh", requestType: "Security Guard", description: "Overnight dedicated security guard for portable laser scanners", priority: "high", status: "pending", submittedAt: "2024-01-11" },
+    { id: "REQ006", company: "Tokyo Seimitsu", boothNumber: "F-620", contactPerson: "Mark Weber", requestType: "Compressed Air", description: "6 bar continuous compressed air connection", priority: "medium", status: "approved", submittedAt: "2024-01-10" },
 ];
 
 const getPriorityColor = (priority: string) => {
     switch (priority) {
-        case "high": return "bg-red-500/20 text-red-400";
-        case "medium": return "bg-yellow-500/20 text-yellow-400";
-        case "low": return "bg-green-500/20 text-green-400";
-        default: return "bg-gray-500/20 text-gray-400";
+        case "high": return "bg-rose-50 text-rose-700 border border-rose-200/80";
+        case "medium": return "bg-amber-50 text-amber-700 border border-amber-200/80";
+        case "low": return "bg-emerald-50 text-emerald-700 border border-emerald-200/80";
+        default: return "bg-gray-100 text-gray-600 border border-gray-200";
     }
 };
 
 const getStatusIcon = (status: string) => {
     switch (status) {
-        case "pending": return <Clock size={14} />;
-        case "approved": return <CheckCircle size={14} />;
-        case "rejected": return <XCircle size={14} />;
-        case "completed": return <CheckCircle size={14} />;
-        default: return <Clock size={14} />;
+        case "pending": return <Clock size={12} />;
+        case "approved": return <CheckCircle size={12} />;
+        case "rejected": return <XCircle size={12} />;
+        case "completed": return <CheckCircle size={12} />;
+        default: return <Clock size={12} />;
     }
 };
 
 const getStatusColor = (status: string) => {
     switch (status) {
-        case "pending": return "bg-yellow-500/20 text-yellow-400";
-        case "approved": return "bg-green-500/20 text-green-400";
-        case "rejected": return "bg-red-500/20 text-red-400";
-        case "completed": return "bg-blue-500/20 text-blue-400";
-        default: return "bg-gray-500/20 text-gray-400";
+        case "pending": return "bg-amber-50 text-amber-700 border border-amber-200/80";
+        case "approved": return "bg-emerald-50 text-emerald-700 border border-emerald-200/80";
+        case "rejected": return "bg-rose-50 text-rose-700 border border-rose-200/80";
+        case "completed": return "bg-sky-50 text-[#003A77] border border-sky-200/80";
+        default: return "bg-gray-100 text-gray-600 border border-gray-200";
     }
 };
 
@@ -61,76 +61,77 @@ export default function ReceivedRequirementsPage() {
 
     const filteredRequirements = sampleRequirements.filter(req => {
         const matchesSearch = req.company.toLowerCase().includes(search.toLowerCase()) ||
-            req.requestType.toLowerCase().includes(search.toLowerCase());
+            req.requestType.toLowerCase().includes(search.toLowerCase()) ||
+            req.boothNumber.toLowerCase().includes(search.toLowerCase());
         const matchesStatus = statusFilter === "all" || req.status === statusFilter;
         return matchesSearch && matchesStatus;
     });
 
     return (
-        <div className="space-y-6 p-6">
+        <div className="space-y-6">
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Extra Requirements</h1>
-                    <p className="text-gray-400 mt-1">View and manage exhibitor requests</p>
+                    <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Extra Requirements Received</h1>
+                    <p className="text-sm text-gray-500 mt-1">Review, approve, and manage custom utility orders from exhibitors</p>
                 </div>
-                <button className="px-4 py-2 bg-gray-800 rounded-lg text-gray-300 hover:bg-gray-700 transition flex items-center gap-2">
-                    <Download size={18} />
+                <button className="px-4 py-2.5 border border-gray-300 bg-white hover:bg-gray-50 rounded-lg text-gray-700 text-sm font-medium transition flex items-center gap-2 cursor-pointer shadow-2xs">
+                    <Download size={16} className="text-gray-500" />
                     Export
                 </button>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-                    <div className="flex items-center gap-2 text-gray-400 mb-2">
-                        <Package size={16} />
-                        <span className="text-sm">Total Requests</span>
+                <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
+                    <div className="flex items-center gap-2 text-gray-500 mb-1.5">
+                        <Package size={16} className="text-[#003A77]" />
+                        <span className="text-xs font-medium">Total Requests</span>
                     </div>
-                    <p className="text-2xl font-bold text-white">{sampleRequirements.length}</p>
+                    <p className="text-2xl font-bold text-gray-900">{sampleRequirements.length}</p>
                 </div>
-                <div className="bg-yellow-500/10 rounded-xl p-4 border border-yellow-500/30">
-                    <div className="flex items-center gap-2 text-yellow-400 mb-2">
+                <div className="bg-amber-50/40 rounded-xl p-4 border border-amber-200/80 shadow-xs">
+                    <div className="flex items-center gap-2 text-amber-700 mb-1.5">
                         <Clock size={16} />
-                        <span className="text-sm">Pending</span>
+                        <span className="text-xs font-medium">Pending Review</span>
                     </div>
-                    <p className="text-2xl font-bold text-yellow-400">{sampleRequirements.filter(r => r.status === "pending").length}</p>
+                    <p className="text-2xl font-bold text-amber-700">{sampleRequirements.filter(r => r.status === "pending").length}</p>
                 </div>
-                <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/30">
-                    <div className="flex items-center gap-2 text-green-400 mb-2">
+                <div className="bg-emerald-50/40 rounded-xl p-4 border border-emerald-200/80 shadow-xs">
+                    <div className="flex items-center gap-2 text-emerald-700 mb-1.5">
                         <CheckCircle size={16} />
-                        <span className="text-sm">Approved</span>
+                        <span className="text-xs font-medium">Approved</span>
                     </div>
-                    <p className="text-2xl font-bold text-green-400">{sampleRequirements.filter(r => r.status === "approved").length}</p>
+                    <p className="text-2xl font-bold text-emerald-700">{sampleRequirements.filter(r => r.status === "approved").length}</p>
                 </div>
-                <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
-                    <div className="flex items-center gap-2 text-blue-400 mb-2">
+                <div className="bg-sky-50/40 rounded-xl p-4 border border-sky-200/80 shadow-xs">
+                    <div className="flex items-center gap-2 text-[#003A77] mb-1.5">
                         <CheckCircle size={16} />
-                        <span className="text-sm">Completed</span>
+                        <span className="text-xs font-medium">Fulfilled</span>
                     </div>
-                    <p className="text-2xl font-bold text-blue-400">{sampleRequirements.filter(r => r.status === "completed").length}</p>
+                    <p className="text-2xl font-bold text-[#003A77]">{sampleRequirements.filter(r => r.status === "completed").length}</p>
                 </div>
             </div>
 
             {/* Filters */}
-            <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-                <div className="flex flex-col sm:flex-row gap-4">
+            <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
+                <div className="flex flex-col sm:flex-row gap-3">
                     <div className="flex-1 relative">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                         <input
                             type="text"
-                            placeholder="Search by company or request..."
+                            placeholder="Search by company, booth number, or request type..."
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+                            className="w-full pl-10 pr-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                         />
                     </div>
                     <select
                         value={statusFilter}
                         onChange={(e) => setStatusFilter(e.target.value)}
-                        className="px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                        className="px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                     >
-                        <option value="all">All Status</option>
+                        <option value="all">All Request Status</option>
                         <option value="pending">Pending</option>
                         <option value="approved">Approved</option>
                         <option value="rejected">Rejected</option>
@@ -140,50 +141,50 @@ export default function ReceivedRequirementsPage() {
             </div>
 
             {/* Requirements Table */}
-            <div className="bg-gray-800/50 rounded-xl border border-gray-700 overflow-hidden">
+            <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs overflow-hidden">
                 <div className="overflow-x-auto">
-                    <table className="w-full">
-                        <thead className="bg-gray-800/80">
+                    <table className="w-full text-left">
+                        <thead className="bg-gray-50/80 border-b border-gray-200">
                             <tr>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">ID</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Company</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Request Type</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Description</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Priority</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Status</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Submitted</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Actions</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">ID</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Company</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Type</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Description</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Priority</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Submitted</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Action</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-700">
+                        <tbody className="divide-y divide-gray-100">
                             {filteredRequirements.map((req) => (
-                                <tr key={req.id} className="hover:bg-gray-700/50 transition">
-                                    <td className="px-6 py-4 font-mono text-sm text-orange-400">{req.id}</td>
+                                <tr key={req.id} className="hover:bg-slate-50/70 transition-colors">
+                                    <td className="px-6 py-4 font-mono font-semibold text-[#003A77] text-sm">{req.id}</td>
                                     <td className="px-6 py-4">
-                                        <p className="text-white">{req.company}</p>
-                                        <p className="text-xs text-gray-500">Booth: {req.boothNumber}</p>
+                                        <p className="font-semibold text-gray-900 text-sm">{req.company}</p>
+                                        <p className="text-xs text-gray-400 mt-0.5">Booth: {req.boothNumber}</p>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <Wrench size={14} className="text-gray-500" />
-                                            <span className="text-white">{req.requestType}</span>
+                                        <div className="flex items-center gap-1.5">
+                                            <Wrench size={14} className="text-[#00A1B1] shrink-0" />
+                                            <span className="text-sm font-medium text-gray-800">{req.requestType}</span>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 text-gray-300 max-w-xs truncate">{req.description}</td>
+                                    <td className="px-6 py-4 text-xs text-gray-600 max-w-xs truncate">{req.description}</td>
                                     <td className="px-6 py-4">
-                                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(req.priority)}`}>
+                                        <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium capitalize shadow-2xs ${getPriorityColor(req.priority)}`}>
                                             {req.priority}
                                         </span>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <span className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(req.status)}`}>
+                                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium shadow-2xs capitalize ${getStatusColor(req.status)}`}>
                                             {getStatusIcon(req.status)}
                                             {req.status}
                                         </span>
                                     </td>
-                                    <td className="px-6 py-4 text-gray-400">{req.submittedAt}</td>
+                                    <td className="px-6 py-4 text-xs text-gray-500">{req.submittedAt}</td>
                                     <td className="px-6 py-4">
-                                        <Link href={`/admin/received/${req.id}`} className="p-1.5 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition">
+                                        <Link href={`/admin/received/${req.id}`} className="p-1.5 text-gray-500 hover:text-[#003A77] hover:bg-slate-100 rounded-lg transition inline-flex">
                                             <Eye size={16} />
                                         </Link>
                                     </td>
@@ -194,9 +195,9 @@ export default function ReceivedRequirementsPage() {
                 </div>
 
                 {filteredRequirements.length === 0 && (
-                    <div className="text-center py-12">
-                        <Package className="h-12 w-12 text-gray-500 mx-auto mb-3" />
-                        <p className="text-gray-400">No requirements found</p>
+                    <div className="text-center py-16">
+                        <Package className="h-10 w-10 text-gray-300 mx-auto mb-2.5" />
+                        <p className="text-gray-500 font-medium">No requirements found</p>
                     </div>
                 )}
             </div>
