@@ -173,7 +173,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/silver.jpg",
+      image: "/images/Bronze-Sponsor.webp",
       fallbackIcon: "🥉"
     },
     {
