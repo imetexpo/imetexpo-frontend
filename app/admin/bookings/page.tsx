@@ -17,25 +17,25 @@ interface Booking {
 }
 
 const sampleBookings: Booking[] = [
-    { id: "B001", company: "Apollo Tyres", boothNumber: "A-101", boothSize: "9x9 m", bookingDate: "2024-01-15", amount: "₹1,50,000", status: "confirmed", paymentStatus: "paid" },
-    { id: "B002", company: "MRF Tyres", boothNumber: "B-205", boothSize: "12x12 m", bookingDate: "2024-01-14", amount: "₹2,00,000", status: "pending", paymentStatus: "pending" },
-    { id: "B003", company: "Bridgestone", boothNumber: "C-312", boothSize: "15x15 m", bookingDate: "2024-01-13", amount: "₹2,50,000", status: "confirmed", paymentStatus: "paid" },
-    { id: "B004", company: "CEAT Tyres", boothNumber: "D-408", boothSize: "9x9 m", bookingDate: "2024-01-12", amount: "₹1,50,000", status: "cancelled", paymentStatus: "pending" },
-    { id: "B005", company: "JK Tyres", boothNumber: "E-515", boothSize: "12x12 m", bookingDate: "2024-01-11", amount: "₹2,00,000", status: "confirmed", paymentStatus: "pending" },
-    { id: "B006", company: "Continental", boothNumber: "F-620", boothSize: "15x15 m", bookingDate: "2024-01-10", amount: "₹2,50,000", status: "confirmed", paymentStatus: "paid" },
+    { id: "B001", company: "Hexagon Metrology", boothNumber: "A-101", boothSize: "9x9 m", bookingDate: "2024-01-15", amount: "₹1,50,000", status: "confirmed", paymentStatus: "paid" },
+    { id: "B002", company: "Carl Zeiss India", boothNumber: "B-205", boothSize: "12x12 m", bookingDate: "2024-01-14", amount: "₹2,00,000", status: "pending", paymentStatus: "pending" },
+    { id: "B003", company: "Mitutoyo South Asia", boothNumber: "C-312", boothSize: "15x15 m", bookingDate: "2024-01-13", amount: "₹2,50,000", status: "confirmed", paymentStatus: "paid" },
+    { id: "B004", company: "Renishaw Metrology", boothNumber: "D-408", boothSize: "9x9 m", bookingDate: "2024-01-12", amount: "₹1,50,000", status: "cancelled", paymentStatus: "pending" },
+    { id: "B005", company: "Faro Technologies", boothNumber: "E-515", boothSize: "12x12 m", bookingDate: "2024-01-11", amount: "₹2,00,000", status: "confirmed", paymentStatus: "pending" },
+    { id: "B006", company: "Tokyo Seimitsu", boothNumber: "F-620", boothSize: "15x15 m", bookingDate: "2024-01-10", amount: "₹2,50,000", status: "confirmed", paymentStatus: "paid" },
 ];
 
 const statusColors = {
-    confirmed: { bg: "bg-green-500/20", text: "text-green-400", icon: CheckCircle },
-    pending: { bg: "bg-yellow-500/20", text: "text-yellow-400", icon: Clock },
-    cancelled: { bg: "bg-red-500/20", text: "text-red-400", icon: XCircle },
-    payment_due: { bg: "bg-orange-500/20", text: "text-orange-400", icon: DollarSign },
+    confirmed: { bg: "bg-emerald-50 text-emerald-700 border border-emerald-200/80", icon: CheckCircle, label: "Confirmed" },
+    pending: { bg: "bg-amber-50 text-amber-700 border border-amber-200/80", icon: Clock, label: "Pending" },
+    cancelled: { bg: "bg-rose-50 text-rose-700 border border-rose-200/80", icon: XCircle, label: "Cancelled" },
+    payment_due: { bg: "bg-orange-50 text-orange-700 border border-orange-200/80", icon: DollarSign, label: "Payment Due" },
 };
 
 const paymentStatusColors = {
-    paid: "bg-green-500/20 text-green-400",
-    pending: "bg-yellow-500/20 text-yellow-400",
-    overdue: "bg-red-500/20 text-red-400",
+    paid: "bg-emerald-50 text-emerald-700 border border-emerald-200/80",
+    pending: "bg-amber-50 text-amber-700 border border-amber-200/80",
+    overdue: "bg-rose-50 text-rose-700 border border-rose-200/80",
 };
 
 export default function BookingsPage() {
@@ -54,58 +54,58 @@ export default function BookingsPage() {
     const totalAmount = filteredBookings.reduce((sum, b) => sum + parseInt(b.amount.replace(/[^0-9]/g, "")), 0);
 
     return (
-        <div className="space-y-6 p-6">
+        <div className="space-y-6">
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Booth Bookings</h1>
-                    <p className="text-gray-400 mt-1">Manage all booth booking requests</p>
+                    <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Booth Bookings</h1>
+                    <p className="text-sm text-gray-500 mt-1">Manage and track all exhibition booth reservations</p>
                 </div>
-                <button className="px-4 py-2 bg-gray-800 rounded-lg text-gray-300 hover:bg-gray-700 transition flex items-center gap-2">
-                    <Download size={16} />
+                <button className="px-4 py-2 border border-gray-300 bg-white hover:bg-gray-50 rounded-lg text-gray-700 text-sm font-medium transition flex items-center gap-2 cursor-pointer shadow-2xs">
+                    <Download size={16} className="text-gray-500" />
                     Export Report
                 </button>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-                    <p className="text-2xl font-bold text-white">{sampleBookings.length}</p>
-                    <p className="text-xs text-gray-400">Total Bookings</p>
+                <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
+                    <p className="text-2xl font-bold text-gray-900">{sampleBookings.length}</p>
+                    <p className="text-xs text-gray-500 font-medium mt-0.5">Total Bookings</p>
                 </div>
-                <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/30">
-                    <p className="text-2xl font-bold text-green-400">{sampleBookings.filter(b => b.status === "confirmed").length}</p>
-                    <p className="text-xs text-gray-400">Confirmed</p>
+                <div className="bg-emerald-50/40 rounded-xl p-4 border border-emerald-200/80 shadow-xs">
+                    <p className="text-2xl font-bold text-emerald-700">{sampleBookings.filter(b => b.status === "confirmed").length}</p>
+                    <p className="text-xs text-emerald-600 font-medium mt-0.5">Confirmed</p>
                 </div>
-                <div className="bg-yellow-500/10 rounded-xl p-4 border border-yellow-500/30">
-                    <p className="text-2xl font-bold text-yellow-400">{sampleBookings.filter(b => b.status === "pending").length}</p>
-                    <p className="text-xs text-gray-400">Pending</p>
+                <div className="bg-amber-50/40 rounded-xl p-4 border border-amber-200/80 shadow-xs">
+                    <p className="text-2xl font-bold text-amber-700">{sampleBookings.filter(b => b.status === "pending").length}</p>
+                    <p className="text-xs text-amber-600 font-medium mt-0.5">Pending Review</p>
                 </div>
-                <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
-                    <p className="text-2xl font-bold text-blue-400">₹{totalAmount.toLocaleString()}</p>
-                    <p className="text-xs text-gray-400">Total Revenue</p>
+                <div className="bg-sky-50/40 rounded-xl p-4 border border-sky-200/80 shadow-xs">
+                    <p className="text-2xl font-bold text-[#003A77]">₹{totalAmount.toLocaleString()}</p>
+                    <p className="text-xs text-sky-700 font-medium mt-0.5">Total Value</p>
                 </div>
             </div>
 
             {/* Filters */}
-            <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-                <div className="flex flex-col sm:flex-row gap-4">
+            <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
+                <div className="flex flex-col sm:flex-row gap-3">
                     <div className="flex-1 relative">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                         <input
                             type="text"
-                            placeholder="Search by company or booth..."
+                            placeholder="Search by company or booth number..."
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+                            className="w-full pl-10 pr-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                         />
                     </div>
                     <select
                         value={statusFilter}
                         onChange={(e) => setStatusFilter(e.target.value)}
-                        className="px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                        className="px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                     >
-                        <option value="all">All Status</option>
+                        <option value="all">All Booking Status</option>
                         <option value="confirmed">Confirmed</option>
                         <option value="pending">Pending</option>
                         <option value="cancelled">Cancelled</option>
@@ -114,7 +114,7 @@ export default function BookingsPage() {
                     <select
                         value={paymentFilter}
                         onChange={(e) => setPaymentFilter(e.target.value)}
-                        className="px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                        className="px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                     >
                         <option value="all">All Payments</option>
                         <option value="paid">Paid</option>
@@ -125,49 +125,51 @@ export default function BookingsPage() {
             </div>
 
             {/* Bookings Table */}
-            <div className="bg-gray-800/50 rounded-xl border border-gray-700 overflow-hidden">
+            <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs overflow-hidden">
                 <div className="overflow-x-auto">
-                    <table className="w-full">
-                        <thead className="bg-gray-800/80">
+                    <table className="w-full text-left">
+                        <thead className="bg-gray-50/80 border-b border-gray-200">
                             <tr>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Booking ID</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Company</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Booth</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Amount</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Booking Date</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Status</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Payment</th>
-                                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase">Actions</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Booking ID</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Company</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Booth</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Amount</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Payment</th>
+                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Action</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-700">
+                        <tbody className="divide-y divide-gray-100">
                             {filteredBookings.map((booking) => {
-                                const StatusIcon = statusColors[booking.status as keyof typeof statusColors]?.icon || Clock;
+                                const statusConfig = statusColors[booking.status] || statusColors.pending;
+                                const StatusIcon = statusConfig.icon;
+                                const payClass = paymentStatusColors[booking.paymentStatus] || paymentStatusColors.pending;
                                 return (
-                                    <tr key={booking.id} className="hover:bg-gray-700/50 transition">
-                                        <td className="px-6 py-4 font-medium text-white">{booking.id}</td>
-                                        <td className="px-6 py-4 text-white">{booking.company}</td>
+                                    <tr key={booking.id} className="hover:bg-slate-50/70 transition-colors">
+                                        <td className="px-6 py-4 font-mono font-semibold text-[#003A77] text-sm">{booking.id}</td>
+                                        <td className="px-6 py-4 font-medium text-gray-900 text-sm">{booking.company}</td>
                                         <td className="px-6 py-4">
                                             <div>
-                                                <p className="text-white">{booking.boothNumber}</p>
+                                                <p className="font-semibold text-gray-900 text-sm">{booking.boothNumber}</p>
                                                 <p className="text-xs text-gray-400">{booking.boothSize}</p>
                                             </div>
                                         </td>
-                                        <td className="px-6 py-4 text-orange-400 font-medium">{booking.amount}</td>
-                                        <td className="px-6 py-4 text-gray-300">{booking.bookingDate}</td>
+                                        <td className="px-6 py-4 font-semibold text-[#003A77] text-sm">{booking.amount}</td>
+                                        <td className="px-6 py-4 text-xs text-gray-500">{booking.bookingDate}</td>
                                         <td className="px-6 py-4">
-                                            <span className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium ${statusColors[booking.status as keyof typeof statusColors]?.bg || "bg-gray-500/20"} ${statusColors[booking.status as keyof typeof statusColors]?.text || "text-gray-400"}`}>
+                                            <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium shadow-2xs ${statusConfig.bg}`}>
                                                 <StatusIcon size={12} />
-                                                {booking.status}
+                                                {statusConfig.label}
                                             </span>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${paymentStatusColors[booking.paymentStatus as keyof typeof paymentStatusColors]}`}>
+                                            <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium shadow-2xs capitalize ${payClass}`}>
                                                 {booking.paymentStatus}
                                             </span>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <Link href={`/admin/bookings/${booking.id}`} className="p-1.5 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition">
+                                            <Link href={`/admin/bookings/${booking.id}`} className="p-1.5 text-gray-500 hover:text-[#003A77] hover:bg-slate-100 rounded-lg transition inline-flex">
                                                 <Eye size={16} />
                                             </Link>
                                         </td>
@@ -179,9 +181,9 @@ export default function BookingsPage() {
                 </div>
 
                 {filteredBookings.length === 0 && (
-                    <div className="text-center py-12">
-                        <Calendar className="h-12 w-12 text-gray-500 mx-auto mb-3" />
-                        <p className="text-gray-400">No bookings found</p>
+                    <div className="text-center py-16">
+                        <Calendar className="h-10 w-10 text-gray-300 mx-auto mb-2.5" />
+                        <p className="text-gray-500 font-medium">No bookings found</p>
                     </div>
                 )}
             </div>

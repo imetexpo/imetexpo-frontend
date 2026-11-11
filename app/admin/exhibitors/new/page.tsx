@@ -9,7 +9,6 @@ import { getAdminToken, isAuthenticated } from "@/lib/api/auth";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
 
-
 export default function AddExhibitorPage() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
@@ -39,7 +38,6 @@ export default function AddExhibitorPage() {
     useEffect(() => {
         const token = getAdminToken();
         if (!token) {
-            console.log("❌ No token found, redirecting to login");
             router.push("/admin/login");
         }
     }, [router]);
@@ -75,7 +73,6 @@ export default function AddExhibitorPage() {
         return Object.keys(newErrors).length === 0;
     };
 
-    // app/admin/exhibitors/new/page.tsx - Update handleSubmit
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -100,34 +97,23 @@ export default function AddExhibitorPage() {
                 boothType: formData.boothType,
                 boothDimensions: formData.boothDimensions,
                 boothNotes: formData.boothNotes,
-                boothPrice: formData.boothPrice,
+                boothPrice: formData.boothPrice || undefined,
                 address: formData.address,
                 website: formData.website,
             };
 
-            console.log("📡 Creating exhibitor with token:", getAdminToken()?.substring(0, 30));
             const response = await createExhibitor(submitData);
 
             if (response.success) {
                 toast.success("Exhibitor created successfully!");
-                if (response.data.originalPassword) {
-                    toast.success(`Password: ${response.data.originalPassword}`, { duration: 10000 });
-                }
                 router.push("/admin/exhibitors");
             } else {
                 toast.error(response.error || "Failed to create exhibitor");
             }
         } catch (error: any) {
             console.error("Create exhibitor error:", error);
-
-            // Handle 401 specifically
             if (error.response?.status === 401) {
-                console.log("🔴 Got 401 error. Token might be invalid.");
-                const currentToken = getAdminToken();
-                console.log("Current token:", currentToken);
-
-                toast.error("Session issue. Please logout and login again.");
-                // Don't auto-redirect, let user decide
+                toast.error("Session issue. Please login again.");
             } else {
                 toast.error(error.response?.data?.error || "Failed to create exhibitor");
             }
@@ -140,29 +126,32 @@ export default function AddExhibitorPage() {
     const boothSizes = ["3m x 3m", "6m x 6m", "9m x 9m", "12m x 12m", "15m x 15m"];
 
     return (
-        <div className="space-y-6 p-6">
+        <div className="space-y-6">
             <div className="flex items-center gap-4">
-                <button onClick={() => router.back()} className="p-2 hover:bg-gray-800 rounded-lg transition">
-                    <ArrowLeft className="h-5 w-5 text-gray-400" />
+                <button 
+                    onClick={() => router.back()} 
+                    className="p-2 border border-gray-200 bg-white hover:bg-gray-50 rounded-lg text-gray-600 transition cursor-pointer shadow-2xs"
+                >
+                    <ArrowLeft className="h-5 w-5" />
                 </button>
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Add New Exhibitor</h1>
-                    <p className="text-gray-400 mt-1">Register a new exhibitor for the exhibition</p>
+                    <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Add New Exhibitor</h1>
+                    <p className="text-sm text-gray-500 mt-1">Register a new exhibitor for IndiaMET 2027</p>
                 </div>
             </div>
 
             <form onSubmit={handleSubmit} className="max-w-4xl">
                 {/* Company Information */}
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6 mb-6">
-                    <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                        <Building size={18} className="text-orange-400" />
+                <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs p-6 mb-6">
+                    <h2 className="text-base font-semibold text-gray-900 mb-5 flex items-center gap-2">
+                        <Building size={18} className="text-[#003A77]" />
                         Company Information
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="md:col-span-2">
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
-                                Company Name <span className="text-red-400">*</span>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                Company Name <span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
@@ -170,13 +159,13 @@ export default function AddExhibitorPage() {
                                 required
                                 value={formData.company}
                                 onChange={handleChange}
-                                className={`w-full px-4 py-2.5 bg-gray-700 border ${errors.company ? 'border-red-500' : 'border-gray-600'} rounded-lg text-white focus:outline-none focus:border-orange-500`}
-                                placeholder="e.g., Apollo Tyres Ltd"
+                                className={`w-full px-4 py-2.5 bg-gray-50/50 border ${errors.company ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition`}
+                                placeholder="e.g., Precision Metrology Systems Ltd"
                             />
-                            {errors.company && <p className="text-red-400 text-sm mt-1">{errors.company}</p>}
+                            {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company}</p>}
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Sector/Industry
                             </label>
                             <input
@@ -184,12 +173,12 @@ export default function AddExhibitorPage() {
                                 name="sector"
                                 value={formData.sector}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                                placeholder="e.g., Tyre Manufacturing"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
+                                placeholder="e.g., Metrology & Testing Equipment"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Website
                             </label>
                             <input
@@ -197,12 +186,12 @@ export default function AddExhibitorPage() {
                                 name="website"
                                 value={formData.website}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                                 placeholder="https://example.com"
                             />
                         </div>
                         <div className="md:col-span-2">
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Address
                             </label>
                             <textarea
@@ -210,24 +199,24 @@ export default function AddExhibitorPage() {
                                 rows={2}
                                 value={formData.address}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                                placeholder="Street address"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
+                                placeholder="Street address, City, State"
                             />
                         </div>
                     </div>
                 </div>
 
                 {/* Contact Information */}
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6 mb-6">
-                    <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                        <User size={18} className="text-orange-400" />
+                <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs p-6 mb-6">
+                    <h2 className="text-base font-semibold text-gray-900 mb-5 flex items-center gap-2">
+                        <User size={18} className="text-[#003A77]" />
                         Contact Information
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
-                                Contact Person Name <span className="text-red-400">*</span>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                Contact Person Name <span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
@@ -235,14 +224,14 @@ export default function AddExhibitorPage() {
                                 required
                                 value={formData.name}
                                 onChange={handleChange}
-                                className={`w-full px-4 py-2.5 bg-gray-700 border ${errors.name ? 'border-red-500' : 'border-gray-600'} rounded-lg text-white focus:outline-none focus:border-orange-500`}
+                                className={`w-full px-4 py-2.5 bg-gray-50/50 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition`}
                                 placeholder="Full name"
                             />
-                            {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
+                            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
-                                Email <span className="text-red-400">*</span>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                Email <span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="email"
@@ -250,13 +239,13 @@ export default function AddExhibitorPage() {
                                 required
                                 value={formData.email}
                                 onChange={handleChange}
-                                className={`w-full px-4 py-2.5 bg-gray-700 border ${errors.email ? 'border-red-500' : 'border-gray-600'} rounded-lg text-white focus:outline-none focus:border-orange-500`}
+                                className={`w-full px-4 py-2.5 bg-gray-50/50 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition`}
                                 placeholder="email@company.com"
                             />
-                            {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
+                            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Phone
                             </label>
                             <input
@@ -264,7 +253,7 @@ export default function AddExhibitorPage() {
                                 name="phone"
                                 value={formData.phone}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                                 placeholder="+91 XXXXXXXXXX"
                             />
                         </div>
@@ -272,16 +261,16 @@ export default function AddExhibitorPage() {
                 </div>
 
                 {/* Login Credentials */}
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6 mb-6">
-                    <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                        <Lock size={18} className="text-orange-400" />
+                <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs p-6 mb-6">
+                    <h2 className="text-base font-semibold text-gray-900 mb-5 flex items-center gap-2">
+                        <Lock size={18} className="text-[#003A77]" />
                         Login Credentials
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
-                                Password <span className="text-red-400">*</span>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                Password <span className="text-red-500">*</span>
                             </label>
                             <div className="relative">
                                 <input
@@ -290,22 +279,22 @@ export default function AddExhibitorPage() {
                                     required
                                     value={formData.password}
                                     onChange={handleChange}
-                                    className={`w-full px-4 py-2.5 bg-gray-700 border ${errors.password ? 'border-red-500' : 'border-gray-600'} rounded-lg text-white focus:outline-none focus:border-orange-500 pr-10`}
+                                    className={`w-full px-4 py-2.5 bg-gray-50/50 border ${errors.password ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white pr-10 transition`}
                                     placeholder="Enter password"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition cursor-pointer"
                                 >
                                     {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                                 </button>
                             </div>
-                            {errors.password && <p className="text-red-400 text-sm mt-1">{errors.password}</p>}
+                            {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
-                                Confirm Password <span className="text-red-400">*</span>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                                Confirm Password <span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="password"
@@ -313,24 +302,24 @@ export default function AddExhibitorPage() {
                                 required
                                 value={formData.confirmPassword}
                                 onChange={handleChange}
-                                className={`w-full px-4 py-2.5 bg-gray-700 border ${errors.confirmPassword ? 'border-red-500' : 'border-gray-600'} rounded-lg text-white focus:outline-none focus:border-orange-500`}
+                                className={`w-full px-4 py-2.5 bg-gray-50/50 border ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition`}
                                 placeholder="Confirm password"
                             />
-                            {errors.confirmPassword && <p className="text-red-400 text-sm mt-1">{errors.confirmPassword}</p>}
+                            {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword}</p>}
                         </div>
                     </div>
                 </div>
 
                 {/* Booth Information */}
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6 mb-6">
-                    <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                        <MapPin size={18} className="text-orange-400" />
+                <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs p-6 mb-6">
+                    <h2 className="text-base font-semibold text-gray-900 mb-5 flex items-center gap-2">
+                        <MapPin size={18} className="text-[#003A77]" />
                         Booth Information
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Booth Number
                             </label>
                             <input
@@ -338,19 +327,19 @@ export default function AddExhibitorPage() {
                                 name="boothNumber"
                                 value={formData.boothNumber}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                                 placeholder="e.g., A-101"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Booth Type
                             </label>
                             <select
                                 name="boothType"
                                 value={formData.boothType}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                             >
                                 <option value="">Select booth type</option>
                                 {boothTypes.map(type => (
@@ -359,14 +348,14 @@ export default function AddExhibitorPage() {
                             </select>
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Booth Size
                             </label>
                             <select
                                 name="boothSize"
                                 value={formData.boothSize}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                             >
                                 <option value="">Select booth size</option>
                                 {boothSizes.map(size => (
@@ -375,7 +364,7 @@ export default function AddExhibitorPage() {
                             </select>
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Booth Price (₹)
                             </label>
                             <input
@@ -383,12 +372,12 @@ export default function AddExhibitorPage() {
                                 name="boothPrice"
                                 value={formData.boothPrice}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                                 placeholder="e.g., 250000"
                             />
                         </div>
                         <div className="md:col-span-2">
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Booth Dimensions / Notes
                             </label>
                             <textarea
@@ -396,7 +385,7 @@ export default function AddExhibitorPage() {
                                 rows={2}
                                 value={formData.boothNotes}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
                                 placeholder="Special requirements or notes about the booth"
                             />
                         </div>
@@ -404,22 +393,22 @@ export default function AddExhibitorPage() {
                 </div>
 
                 {/* Status */}
-                <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6 mb-6">
-                    <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                        <CreditCard size={18} className="text-orange-400" />
+                <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs p-6 mb-6">
+                    <h2 className="text-base font-semibold text-gray-900 mb-5 flex items-center gap-2">
+                        <CreditCard size={18} className="text-[#003A77]" />
                         Account Status
                     </h2>
 
                     <div className="grid grid-cols-1 gap-4">
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
                                 Status
                             </label>
                             <select
                                 name="status"
                                 value={formData.status}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
+                                className="w-full px-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
                             >
                                 <option value="pending">Pending</option>
                                 <option value="approved">Approved (Active)</option>
@@ -431,18 +420,18 @@ export default function AddExhibitorPage() {
                 </div>
 
                 {/* Form Actions */}
-                <div className="flex justify-end gap-4">
+                <div className="flex justify-end gap-3">
                     <button
                         type="button"
                         onClick={() => router.back()}
-                        className="px-6 py-2.5 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-800 transition"
+                        className="px-5 py-2.5 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition text-sm font-medium cursor-pointer shadow-2xs"
                     >
                         Cancel
                     </button>
                     <button
                         type="submit"
                         disabled={loading}
-                        className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-6 py-2.5 bg-gradient-to-r from-[#003A77] to-[#004A96] hover:from-[#002855] hover:to-[#003A77] text-white rounded-lg shadow-sm font-medium flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transition cursor-pointer"
                     >
                         {loading ? (
                             <LoadingDots size="sm" tone="light" />

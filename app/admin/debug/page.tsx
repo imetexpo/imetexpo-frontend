@@ -15,7 +15,6 @@ export default function DebugPage() {
         setToken(storedToken);
         setUser(storedUser);
 
-        // Test the token with backend
         if (storedToken) {
             fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/auth/verify`, {
                 headers: {
@@ -29,28 +28,31 @@ export default function DebugPage() {
     }, []);
 
     return (
-        <div className="p-6 space-y-6">
-            <h1 className="text-2xl font-bold text-white">Debug Page</h1>
+        <div className="space-y-6">
+            <div>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Debug Console</h1>
+                <p className="text-xs sm:text-sm text-gray-500 mt-0.5">Admin session diagnostic data</p>
+            </div>
 
-            <div className="bg-gray-800 rounded-xl p-6">
-                <h2 className="text-lg font-semibold text-white mb-4">Token Status</h2>
-                <p className="text-gray-300">Token exists: {token ? "✅ Yes" : "❌ No"}</p>
+            <div className="bg-white rounded-xl border border-gray-200/80 p-6 shadow-xs">
+                <h2 className="text-sm font-bold text-gray-900 mb-3">Token Status</h2>
+                <p className="text-sm text-gray-700">Token exists: {token ? "✅ Yes" : "❌ No"}</p>
                 {token && (
-                    <>
-                        <p className="text-gray-300 mt-2">Token value: <span className="text-xs">{token.substring(0, 50)}...</span></p>
-                        <p className="text-gray-300 mt-2">Token length: {token.length}</p>
-                    </>
+                    <div className="mt-3 space-y-1">
+                        <p className="text-xs text-gray-600">Token value: <span className="font-mono text-gray-800">{token.substring(0, 50)}...</span></p>
+                        <p className="text-xs text-gray-600">Token length: {token.length}</p>
+                    </div>
                 )}
             </div>
 
-            <div className="bg-gray-800 rounded-xl p-6">
-                <h2 className="text-lg font-semibold text-white mb-4">User Data</h2>
-                <pre className="text-xs text-gray-300">{JSON.stringify(user, null, 2)}</pre>
+            <div className="bg-white rounded-xl border border-gray-200/80 p-6 shadow-xs">
+                <h2 className="text-sm font-bold text-gray-900 mb-3">User Data</h2>
+                <pre className="text-xs text-gray-700 bg-gray-50 p-4 rounded-lg overflow-x-auto border border-gray-200">{JSON.stringify(user, null, 2)}</pre>
             </div>
 
-            <div className="bg-gray-800 rounded-xl p-6">
-                <h2 className="text-lg font-semibold text-white mb-4">Token Validation Result</h2>
-                <pre className="text-xs text-gray-300">{JSON.stringify(validationResult, null, 2)}</pre>
+            <div className="bg-white rounded-xl border border-gray-200/80 p-6 shadow-xs">
+                <h2 className="text-sm font-bold text-gray-900 mb-3">Token Validation Result</h2>
+                <pre className="text-xs text-gray-700 bg-gray-50 p-4 rounded-lg overflow-x-auto border border-gray-200">{JSON.stringify(validationResult, null, 2)}</pre>
             </div>
         </div>
     );

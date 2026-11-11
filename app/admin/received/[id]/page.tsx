@@ -6,7 +6,6 @@ import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, CheckCircle, XCircle, Clock, Package, User, Mail, Phone, Calendar, FileText, Building } from "lucide-react";
 import LoadingDots from '@/components/ui/LoadingDots';
 
-
 interface RequirementDetail {
     id: string;
     company: string;
@@ -25,16 +24,16 @@ interface RequirementDetail {
 
 const sampleRequirement: RequirementDetail = {
     id: "REQ001",
-    company: "Apollo Tyres",
-    boothNumber: "A-101",
-    contactPerson: "Rajesh Kumar",
-    email: "rajesh@apollotyres.com",
-    phone: "+91 98765 43210",
+    company: "Sudeep Polymers (P) Ltd",
+    boothNumber: "A47",
+    contactPerson: "Mr. Devanand S",
+    email: "devanand.s@sudeeppolymers.com",
+    phone: "+91 91300 56911",
     requestType: "Extra Power Supply",
-    description: "Need additional 15A power outlet for heavy machinery display",
+    description: "Need additional 15A power outlet for metallurgical testing and heavy equipment display",
     priority: "high",
     status: "pending",
-    submittedAt: "2024-01-15",
+    submittedAt: "2027-01-15",
     adminNotes: "",
     items: [
         { name: "Additional Power Outlet (15A)", quantity: 2, unitPrice: "₹3,000", total: "₹6,000" },
@@ -45,20 +44,20 @@ const sampleRequirement: RequirementDetail = {
 
 const getPriorityColor = (priority: string) => {
     switch (priority) {
-        case "high": return "bg-red-500/20 text-red-400";
-        case "medium": return "bg-yellow-500/20 text-yellow-400";
-        case "low": return "bg-green-500/20 text-green-400";
-        default: return "bg-gray-500/20 text-gray-400";
+        case "high": return "bg-rose-50 text-rose-700 border border-rose-200";
+        case "medium": return "bg-amber-50 text-amber-700 border border-amber-200";
+        case "low": return "bg-emerald-50 text-emerald-700 border border-emerald-200";
+        default: return "bg-gray-100 text-gray-700 border border-gray-200";
     }
 };
 
 const getStatusColor = (status: string) => {
     switch (status) {
-        case "pending": return "bg-yellow-500/20 text-yellow-400";
-        case "approved": return "bg-green-500/20 text-green-400";
-        case "rejected": return "bg-red-500/20 text-red-400";
-        case "completed": return "bg-blue-500/20 text-blue-400";
-        default: return "bg-gray-500/20 text-gray-400";
+        case "pending": return "bg-amber-50 text-amber-700 border border-amber-200";
+        case "approved": return "bg-emerald-50 text-emerald-700 border border-emerald-200";
+        case "rejected": return "bg-rose-50 text-rose-700 border border-rose-200";
+        case "completed": return "bg-blue-50 text-blue-700 border border-blue-200";
+        default: return "bg-gray-100 text-gray-700 border border-gray-200";
     }
 };
 
@@ -75,7 +74,7 @@ export default function RequirementDetailPage() {
         setTimeout(() => {
             setRequirement(prev => ({ ...prev, status: status as any, adminNotes }));
             setUpdating(false);
-        }, 1000);
+        }, 800);
     };
 
     const totalAmount = requirement.items.reduce((sum, item) => {
@@ -84,107 +83,109 @@ export default function RequirementDetailPage() {
     }, 0);
 
     return (
-        <div className="space-y-6 p-6">
+        <div className="space-y-6">
             {/* Header */}
             <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                    <button onClick={() => router.back()} className="p-2 hover:bg-gray-800 rounded-lg transition">
-                        <ArrowLeft className="h-5 w-5 text-gray-400" />
+                <div className="flex items-center gap-3">
+                    <button onClick={() => router.back()} className="p-2 bg-white border border-gray-200 hover:bg-gray-50 rounded-lg text-gray-600 shadow-xs transition">
+                        <ArrowLeft className="h-5 w-5" />
                     </button>
                     <div>
-                        <h1 className="text-2xl font-bold text-white">Requirement Details</h1>
-                        <p className="text-gray-400 mt-1">Request ID: {requirement.id}</p>
+                        <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Requirement Details</h1>
+                        <p className="text-xs sm:text-sm text-gray-500 mt-0.5">Request ID: {requirement.id}</p>
                     </div>
                 </div>
                 <div className="flex gap-3">
                     <button
                         onClick={handleUpdateStatus}
                         disabled={updating}
-                        className="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:from-orange-600 hover:to-red-700 transition flex items-center gap-2"
+                        className="px-4 py-2 bg-[#003A77] hover:bg-[#002855] text-white text-sm font-medium rounded-lg shadow-xs transition flex items-center gap-2"
                     >
                         {updating ? (
                             <LoadingDots size="sm" tone="light" />
                         ) : (
-                            <CheckCircle size={18} />
+                            <CheckCircle size={16} />
                         )}
                         {updating ? "Updating..." : "Update Status"}
                     </button>
                 </div>
             </div>
 
-            <div className="grid grid-cos\;1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Left Column */}
                 <div className="lg:col-span-2 space-y-6">
                     {/* Request Info */}
-                    <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6">
-                        <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                            <FileText size={18} className="text-orange-400" />
+                    <div className="bg-white rounded-xl border border-gray-200/80 p-6 shadow-xs">
+                        <h2 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <FileText size={18} className="text-[#00A1B1]" />
                             Request Information
                         </h2>
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <p className="text-sm text-gray-400">Request Type</p>
-                                <p className="text-white font-medium">{requirement.requestType}</p>
+                                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Request Type</p>
+                                <p className="text-gray-900 font-semibold text-sm mt-1">{requirement.requestType}</p>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-400">Priority</p>
-                                <span className={`inline-flex px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(requirement.priority)}`}>
-                                    {requirement.priority}
+                                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Priority</p>
+                                <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium mt-1 ${getPriorityColor(requirement.priority)}`}>
+                                    {requirement.priority.toUpperCase()}
                                 </span>
                             </div>
                             <div className="col-span-2">
-                                <p className="text-sm text-gray-400">Description</p>
-                                <p className="text-white mt-1">{requirement.description}</p>
+                                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Description</p>
+                                <p className="text-gray-700 text-sm mt-1 leading-relaxed">{requirement.description}</p>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-400">Submitted On</p>
-                                <div className="flex items-center gap-2 mt-1">
-                                    <Calendar size={14} className="text-gray-500" />
-                                    <span className="text-white">{requirement.submittedAt}</span>
+                                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Submitted On</p>
+                                <div className="flex items-center gap-1.5 mt-1 text-gray-700 text-sm">
+                                    <Calendar size={13} className="text-gray-400" />
+                                    <span>{requirement.submittedAt}</span>
                                 </div>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-400">Current Status</p>
-                                <span className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(requirement.status)}`}>
-                                    {requirement.status === "pending" && <Clock size={12} />}
-                                    {requirement.status === "approved" && <CheckCircle size={12} />}
-                                    {requirement.status === "rejected" && <XCircle size={12} />}
-                                    {requirement.status}
+                                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Current Status</p>
+                                <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium mt-1 ${getStatusColor(requirement.status)}`}>
+                                    {requirement.status === "pending" && <Clock size={11} />}
+                                    {requirement.status === "approved" && <CheckCircle size={11} />}
+                                    {requirement.status === "rejected" && <XCircle size={11} />}
+                                    {requirement.status.toUpperCase()}
                                 </span>
                             </div>
                         </div>
                     </div>
 
                     {/* Items List */}
-                    <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6">
-                        <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                            <Package size={18} className="text-orange-400" />
-                            Requested Items
-                        </h2>
+                    <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs overflow-hidden">
+                        <div className="p-5 border-b border-gray-200">
+                            <h2 className="text-base font-bold text-gray-900 flex items-center gap-2">
+                                <Package size={18} className="text-[#00A1B1]" />
+                                Requested Items
+                            </h2>
+                        </div>
                         <div className="overflow-x-auto">
-                            <table className="w-full">
-                                <thead className="bg-gray-700/50 rounded-lg">
+                            <table className="w-full text-left text-sm">
+                                <thead className="bg-gray-50 border-b border-gray-200 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     <tr>
-                                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-300">Item</th>
-                                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-300">Quantity</th>
-                                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-300">Unit Price</th>
-                                        <th className="px-4 py-3 text-left text-sm font-medium text-gray-300">Total</th>
+                                        <th className="px-5 py-3.5">Item</th>
+                                        <th className="px-5 py-3.5">Quantity</th>
+                                        <th className="px-5 py-3.5">Unit Price</th>
+                                        <th className="px-5 py-3.5 text-right">Total</th>
                                     </tr>
                                 </thead>
-                                <tbody className="divide-y divide-gray-700">
+                                <tbody className="divide-y divide-gray-100 text-gray-700">
                                     {requirement.items.map((item, idx) => (
-                                        <tr key={idx}>
-                                            <td className="px-4 py-3 text-white">{item.name}</td>
-                                            <td className="px-4 py-3 text-gray-300">{item.quantity}</td>
-                                            <td className="px-4 py-3 text-gray-300">{item.unitPrice}</td>
-                                            <td className="px-4 py-3 text-orange-400 font-medium">{item.total}</td>
+                                        <tr key={idx} className="hover:bg-gray-50/70 transition">
+                                            <td className="px-5 py-3.5 font-medium text-gray-900">{item.name}</td>
+                                            <td className="px-5 py-3.5 text-gray-600">{item.quantity}</td>
+                                            <td className="px-5 py-3.5 text-gray-600">{item.unitPrice}</td>
+                                            <td className="px-5 py-3.5 text-right font-semibold text-[#003A77]">{item.total}</td>
                                         </tr>
                                     ))}
                                 </tbody>
-                                <tfoot className="bg-gray-700/30">
+                                <tfoot className="bg-slate-50 border-t border-gray-200">
                                     <tr>
-                                        <td colSpan={3} className="px-4 py-3 text-right font-medium text-white">Total Amount:</td>
-                                        <td className="px-4 py-3 text-orange-400 font-bold">₹{totalAmount.toLocaleString()}</td>
+                                        <td colSpan={3} className="px-5 py-3.5 text-right text-xs font-semibold uppercase text-gray-700">Total Amount:</td>
+                                        <td className="px-5 py-3.5 text-right text-base font-bold text-emerald-700">₹{totalAmount.toLocaleString()}</td>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -195,53 +196,62 @@ export default function RequirementDetailPage() {
                 {/* Right Column */}
                 <div className="space-y-6">
                     {/* Exhibitor Info */}
-                    <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6">
-                        <h2 className="text-lg font-semibold text-white mb-4">Exhibitor Information</h2>
-                        <div className="space-y-3">
-                            <div className="flex items-center gap-2">
-                                <Building size={14} className="text-gray-500" />
-                                <span className="text-white">{requirement.company}</span>
+                    <div className="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs">
+                        <h2 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <Building size={16} className="text-[#00A1B1]" />
+                            Exhibitor Information
+                        </h2>
+                        <div className="space-y-3 text-sm">
+                            <div className="flex items-center gap-2.5">
+                                <Building size={15} className="text-gray-400" />
+                                <span className="font-semibold text-gray-900">{requirement.company}</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <User size={14} className="text-gray-500" />
-                                <span className="text-white">{requirement.contactPerson}</span>
+                            <div className="flex items-center gap-2.5">
+                                <User size={15} className="text-gray-400" />
+                                <span className="text-gray-700">{requirement.contactPerson}</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Mail size={14} className="text-gray-500" />
-                                <span className="text-gray-300">{requirement.email}</span>
+                            <div className="flex items-center gap-2.5">
+                                <Mail size={15} className="text-gray-400" />
+                                <span className="text-gray-700">{requirement.email}</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Phone size={14} className="text-gray-500" />
-                                <span className="text-gray-300">{requirement.phone}</span>
+                            <div className="flex items-center gap-2.5">
+                                <Phone size={15} className="text-gray-400" />
+                                <span className="text-gray-700">{requirement.phone}</span>
                             </div>
-                            <div className="pt-3 border-t border-gray-700">
-                                <span className="text-sm text-gray-400">Booth Number:</span>
-                                <p className="text-white font-medium">{requirement.boothNumber}</p>
+                            <div className="pt-3 border-t border-gray-100">
+                                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">Booth Number:</span>
+                                <p className="text-gray-900 font-bold text-base mt-0.5">{requirement.boothNumber}</p>
                             </div>
                         </div>
                     </div>
 
                     {/* Status Update */}
-                    <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6">
-                        <h2 className="text-lg font-semibold text-white mb-4">Update Status</h2>
-                        <div className="space-y-4">
-                            <select
-                                value={status}
-                                onChange={(e) => setStatus(e.target.value as any)}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                            >
-                                <option value="pending">Pending</option>
-                                <option value="approved">Approved</option>
-                                <option value="rejected">Rejected</option>
-                                <option value="completed">Completed</option>
-                            </select>
-                            <textarea
-                                placeholder="Add admin notes..."
-                                rows={3}
-                                value={adminNotes}
-                                onChange={(e) => setAdminNotes(e.target.value)}
-                                className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
-                            />
+                    <div className="bg-white rounded-xl border border-gray-200/80 p-5 shadow-xs">
+                        <h2 className="text-base font-bold text-gray-900 mb-4">Update Status</h2>
+                        <div className="space-y-3.5">
+                            <div>
+                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">Action Status</label>
+                                <select
+                                    value={status}
+                                    onChange={(e) => setStatus(e.target.value as any)}
+                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1]"
+                                >
+                                    <option value="pending">Pending</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="rejected">Rejected</option>
+                                    <option value="completed">Completed</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">Admin Notes</label>
+                                <textarea
+                                    placeholder="Add admin notes..."
+                                    rows={3}
+                                    value={adminNotes}
+                                    onChange={(e) => setAdminNotes(e.target.value)}
+                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
