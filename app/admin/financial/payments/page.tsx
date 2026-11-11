@@ -1,220 +1,416 @@
-// app/admin/financial/payments/page.tsx
 "use client";
 
-import { useState } from "react";
-import { Search, Eye, Download, Filter, CheckCircle, XCircle, Clock, DollarSign, Receipt, CreditCard, Banknote } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Search, DollarSign, CheckCircle, XCircle, Clock, Download, Eye, Loader2, RefreshCw } from "lucide-react";
+import {
+  fetchAdminInvoices,
+  getAdminAuthToken,
+  invoiceToPayment,
+  type FinancePayment,
+} from "@/lib/adminFinance";
 
-interface Payment {
-    id: string;
-    invoiceId: string;
-    company: string;
-    boothNumber: string;
-    amount: string;
-    method: "card" | "bank" | "cash" | "upi";
-    status: "completed" | "pending" | "failed" | "refunded";
-    transactionId: string;
-    date: string;
-}
-
-const samplePayments: Payment[] = [
-    { id: "PAY001", invoiceId: "INV-2024-001", company: "Hexagon Metrology", boothNumber: "A-101", amount: "₹1,50,000", method: "card", status: "completed", transactionId: "TXN123456", date: "2024-01-15" },
-    { id: "PAY002", invoiceId: "INV-2024-002", company: "Carl Zeiss India", boothNumber: "B-205", amount: "₹2,00,000", method: "bank", status: "pending", transactionId: "TXN123457", date: "2024-01-14" },
-    { id: "PAY003", invoiceId: "INV-2024-003", company: "Mitutoyo South Asia", boothNumber: "C-312", amount: "₹2,50,000", method: "upi", status: "completed", transactionId: "TXN123458", date: "2024-01-13" },
-    { id: "PAY004", invoiceId: "INV-2024-004", company: "Renishaw Metrology", boothNumber: "D-408", amount: "₹1,50,000", method: "card", status: "failed", transactionId: "TXN123459", date: "2024-01-12" },
-    { id: "PAY005", invoiceId: "INV-2024-005", company: "Faro Technologies", boothNumber: "E-515", amount: "₹2,00,000", method: "bank", status: "completed", transactionId: "TXN123460", date: "2024-01-11" },
-    { id: "PAY006", invoiceId: "INV-2024-006", company: "Tokyo Seimitsu", boothNumber: "F-620", amount: "₹2,50,000", method: "cash", status: "completed", transactionId: "TXN123461", date: "2024-01-10" },
-    { id: "PAY007", invoiceId: "INV-2024-007", company: "Taylor Hobson", boothNumber: "G-725", amount: "₹1,80,000", method: "upi", status: "refunded", transactionId: "TXN123462", date: "2024-01-09" },
-];
-
-const getMethodIcon = (method: string) => {
-    switch (method) {
-        case "card": return <CreditCard size={14} />;
-        case "bank": return <Banknote size={14} />;
-        case "cash": return <DollarSign size={14} />;
-        case "upi": return <CreditCard size={14} />;
-        default: return <Receipt size={14} />;
-    }
-};
-
-const getStatusColor = (status: string) => {
-    switch (status) {
-        case "completed": return "bg-emerald-50 text-emerald-700 border border-emerald-200/80";
-        case "pending": return "bg-amber-50 text-amber-700 border border-amber-200/80";
-        case "failed": return "bg-rose-50 text-rose-700 border border-rose-200/80";
-        case "refunded": return "bg-orange-50 text-orange-700 border border-orange-200/80";
-        default: return "bg-gray-100 text-gray-600 border border-gray-200";
-    }
-};
-
-const getStatusIcon = (status: string) => {
-    switch (status) {
-        case "completed": return <CheckCircle size={14} />;
-        case "pending": return <Clock size={14} />;
-        case "failed": return <XCircle size={14} />;
-        case "refunded": return <XCircle size={14} />;
-        default: return <Clock size={14} />;
-    }
+const formatCurrency = (amount: number) => {
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(amount);
 };
 
 export default function PaymentsPage() {
-    const [search, setSearch] = useState("");
-    const [statusFilter, setStatusFilter] = useState("all");
-    const [methodFilter, setMethodFilter] = useState("all");
+  const router = useRouter();
+  const [search, setSearch] = useState("");
+  const [selectedStatus, setSelectedStatus] = useState<string>("all");
+  const [selectedMethod, setSelectedMethod] = useState<string>("all");
+  const [dateRange, setDateRange] = useState<string>("all");
+  const [payments, setPayments] = useState<FinancePayment[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-    const filteredPayments = samplePayments.filter(payment => {
-        const matchesSearch = payment.company.toLowerCase().includes(search.toLowerCase()) ||
-            payment.invoiceId.toLowerCase().includes(search.toLowerCase()) ||
-            payment.transactionId.toLowerCase().includes(search.toLowerCase());
-        const matchesStatus = statusFilter === "all" || payment.status === statusFilter;
-        const matchesMethod = methodFilter === "all" || payment.method === methodFilter;
-        return matchesSearch && matchesStatus && matchesMethod;
-    });
+  const statuses = ["all", "completed", "pending", "failed", "refunded"];
+  const methods = ["all", "credit_card", "bank_transfer", "check", "cash", "online"];
+  const dateRanges = ["all", "today", "week", "month", "quarter"];
 
-    const totalAmount = filteredPayments.reduce((sum, p) => {
-        const amountNum = parseInt(p.amount.replace(/[^0-9]/g, ""));
-        return sum + amountNum;
-    }, 0);
+  const loadPayments = async () => {
+    const token = getAdminAuthToken();
+    if (!token) {
+      router.push("/admin/login");
+      return;
+    }
 
-    const completedAmount = filteredPayments.filter(p => p.status === "completed").reduce((sum, p) => {
-        const amountNum = parseInt(p.amount.replace(/[^0-9]/g, ""));
-        return sum + amountNum;
-    }, 0);
+    try {
+      setLoading(true);
+      setError(null);
+      const invoices = await fetchAdminInvoices(token);
+      setPayments(invoices.map(invoiceToPayment));
+    } catch (err) {
+      if (err instanceof Error && err.message === "unauthorized") {
+        localStorage.removeItem("token");
+        localStorage.removeItem("admin_token");
+        router.push("/admin/login");
+        return;
+      }
+      setError(err instanceof Error ? err.message : "Failed to load payments");
+      setPayments([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
+    loadPayments();
+  }, []);
+
+  const getMethodText = (method: string) => {
+    switch (method) {
+      case "credit_card":
+        return "Credit Card";
+      case "bank_transfer":
+        return "Bank Transfer";
+      case "check":
+        return "Cheque / DD";
+      case "cash":
+        return "Cash";
+      case "online":
+        return "Online";
+      default:
+        return method.charAt(0).toUpperCase() + method.slice(1).replace("_", " ");
+    }
+  };
+
+  const getStatusIcon = (status: FinancePayment["status"]) => {
+    switch (status) {
+      case "completed":
+        return <CheckCircle className="h-5 w-5 text-green-500" />;
+      case "pending":
+        return <Clock className="h-5 w-5 text-yellow-500" />;
+      case "failed":
+        return <XCircle className="h-5 w-5 text-red-500" />;
+      case "refunded":
+        return <RefreshCw className="h-5 w-5 text-purple-500" />;
+      default:
+        return <Clock className="h-5 w-5 text-gray-500" />;
+    }
+  };
+
+  const filteredPayments = payments.filter((payment) => {
+    const matchesSearch =
+      payment.invoiceNumber.toLowerCase().includes(search.toLowerCase()) ||
+      payment.company.toLowerCase().includes(search.toLowerCase());
+    const matchesStatus = selectedStatus === "all" || payment.status === selectedStatus;
+    const matchesMethod = selectedMethod === "all" || payment.method === selectedMethod;
+
+    let matchesDate = true;
+    if (dateRange !== "all" && payment.date) {
+      const paymentDate = new Date(payment.date);
+      const today = new Date();
+
+      switch (dateRange) {
+        case "today":
+          matchesDate = paymentDate.toDateString() === today.toDateString();
+          break;
+        case "week": {
+          const weekAgo = new Date(today);
+          weekAgo.setDate(today.getDate() - 7);
+          matchesDate = paymentDate >= weekAgo;
+          break;
+        }
+        case "month": {
+          const monthAgo = new Date(today);
+          monthAgo.setMonth(today.getMonth() - 1);
+          matchesDate = paymentDate >= monthAgo;
+          break;
+        }
+        case "quarter": {
+          const quarterAgo = new Date(today);
+          quarterAgo.setMonth(today.getMonth() - 3);
+          matchesDate = paymentDate >= quarterAgo;
+          break;
+        }
+      }
+    }
+
+    return matchesSearch && matchesStatus && matchesMethod && matchesDate;
+  });
+
+  const totalRevenue = payments
+    .filter((p) => p.status === "completed")
+    .reduce((sum, p) => sum + p.amount, 0);
+
+  const pendingAmount = payments
+    .filter((p) => p.status === "pending")
+    .reduce((sum, p) => sum + p.amount, 0);
+
+  const refundedAmount = payments
+    .filter((p) => p.status === "refunded")
+    .reduce((sum, p) => sum + p.amount, 0);
+
+  const handleExport = () => {
+    const csvContent =
+      "data:text/csv;charset=utf-8," +
+      [
+        "Invoice,Company,Amount,Status,Method,Date",
+        ...filteredPayments.map(
+          (p) => `"${p.invoiceNumber}","${p.company}",${p.amount},"${p.status}","${p.method}","${p.date}"`
+        ),
+      ].join("\n");
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `payments-${new Date().toISOString().split("T")[0]}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  if (loading && payments.length === 0) {
     return (
-        <div className="space-y-6">
-            {/* Header */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div>
-                    <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Payments</h1>
-                    <p className="text-sm text-gray-500 mt-1">Manage and audit all exhibitor payment transactions</p>
-                </div>
-                <button className="px-4 py-2.5 border border-gray-300 bg-white hover:bg-gray-50 rounded-lg text-gray-700 text-sm font-medium transition flex items-center gap-2 cursor-pointer shadow-2xs">
-                    <Download size={16} className="text-gray-500" />
-                    Export Report
-                </button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
-                    <p className="text-2xl font-bold text-gray-900">{samplePayments.length}</p>
-                    <p className="text-xs text-gray-500 font-medium mt-0.5">Total Transactions</p>
-                </div>
-                <div className="bg-emerald-50/40 rounded-xl p-4 border border-emerald-200/80 shadow-xs">
-                    <p className="text-2xl font-bold text-emerald-700">₹{(completedAmount / 100000).toFixed(1)}L</p>
-                    <p className="text-xs text-emerald-600 font-medium mt-0.5">Completed</p>
-                </div>
-                <div className="bg-amber-50/40 rounded-xl p-4 border border-amber-200/80 shadow-xs">
-                    <p className="text-2xl font-bold text-amber-700">{samplePayments.filter(p => p.status === "pending").length}</p>
-                    <p className="text-xs text-amber-600 font-medium mt-0.5">Pending</p>
-                </div>
-                <div className="bg-sky-50/40 rounded-xl p-4 border border-sky-200/80 shadow-xs">
-                    <p className="text-2xl font-bold text-[#003A77]">₹{(totalAmount / 100000).toFixed(1)}L</p>
-                    <p className="text-xs text-sky-700 font-medium mt-0.5">Total Value</p>
-                </div>
-            </div>
-
-            {/* Filters */}
-            <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
-                <div className="flex flex-col sm:flex-row gap-3">
-                    <div className="flex-1 relative">
-                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-                        <input
-                            type="text"
-                            placeholder="Search by company, invoice, or transaction ID..."
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition"
-                        />
-                    </div>
-                    <select
-                        value={statusFilter}
-                        onChange={(e) => setStatusFilter(e.target.value)}
-                        className="px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
-                    >
-                        <option value="all">All Payment Status</option>
-                        <option value="completed">Completed</option>
-                        <option value="pending">Pending</option>
-                        <option value="failed">Failed</option>
-                        <option value="refunded">Refunded</option>
-                    </select>
-                    <select
-                        value={methodFilter}
-                        onChange={(e) => setMethodFilter(e.target.value)}
-                        className="px-3.5 py-2.5 bg-gray-50/50 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] focus:bg-white transition cursor-pointer"
-                    >
-                        <option value="all">All Methods</option>
-                        <option value="card">Credit/Debit Card</option>
-                        <option value="bank">Bank Transfer</option>
-                        <option value="upi">UPI</option>
-                        <option value="cash">Cash</option>
-                    </select>
-                </div>
-            </div>
-
-            {/* Payments Table */}
-            <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs overflow-hidden">
-                <div className="overflow-x-auto">
-                    <table className="w-full text-left">
-                        <thead className="bg-gray-50/80 border-b border-gray-200">
-                            <tr>
-                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Payment ID</th>
-                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Invoice</th>
-                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Company</th>
-                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Amount</th>
-                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Method</th>
-                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
-                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
-                                <th className="px-6 py-3.5 text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {filteredPayments.map((payment) => (
-                                <tr key={payment.id} className="hover:bg-slate-50/70 transition-colors">
-                                    <td className="px-6 py-4 font-mono font-semibold text-[#003A77] text-sm">{payment.id}</td>
-                                    <td className="px-6 py-4 text-xs font-mono text-gray-500">{payment.invoiceId}</td>
-                                    <td className="px-6 py-4">
-                                        <p className="font-semibold text-gray-900 text-sm">{payment.company}</p>
-                                        <p className="text-xs text-gray-400 mt-0.5">Booth: {payment.boothNumber}</p>
-                                    </td>
-                                    <td className="px-6 py-4 font-semibold text-[#003A77] text-sm">{payment.amount}</td>
-                                    <td className="px-6 py-4">
-                                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-gray-50 border border-gray-200 text-gray-700">
-                                            {getMethodIcon(payment.method)}
-                                            {payment.method.toUpperCase()}
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium shadow-2xs ${getStatusColor(payment.status)}`}>
-                                            {getStatusIcon(payment.status)}
-                                            <span className="capitalize">{payment.status}</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-xs text-gray-500">{payment.date}</td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-1.5">
-                                            <Link href={`/admin/financial/payments/${payment.id}`} className="p-1.5 text-gray-500 hover:text-[#003A77] hover:bg-slate-100 rounded-lg transition inline-flex">
-                                                <Eye size={16} />
-                                            </Link>
-                                            <button className="p-1.5 text-gray-500 hover:text-[#00A1B1] hover:bg-teal-50 rounded-lg transition inline-flex cursor-pointer">
-                                                <Download size={16} />
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-
-                {filteredPayments.length === 0 && (
-                    <div className="text-center py-16">
-                        <DollarSign className="h-10 w-10 text-gray-300 mx-auto mb-2.5" />
-                        <p className="text-gray-500 font-medium">No payments found</p>
-                    </div>
-                )}
-            </div>
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <Loader2 className="h-12 w-12 text-blue-500 animate-spin mx-auto mb-4" />
+          <p className="text-gray-600">Loading payments...</p>
         </div>
+      </div>
     );
+  }
+
+  return (
+    <div className="space-y-6 p-6">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">Payment Management</h1>
+          <p className="text-gray-600 text-sm">Live payments from exhibitor invoices</p>
+        </div>
+        <div className="flex space-x-3">
+          <button
+            onClick={loadPayments}
+            className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg shadow-xs text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition cursor-pointer"
+          >
+            <RefreshCw className={`mr-2 h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+            Refresh
+          </button>
+          <button
+            onClick={handleExport}
+            className="inline-flex items-center px-4 py-2 border border-transparent rounded-lg shadow-xs text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition cursor-pointer"
+          >
+            <Download className="mr-2 h-4 w-4" />
+            Export
+          </button>
+        </div>
+      </div>
+
+      {error ? (
+        <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">{error}</div>
+      ) : null}
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="bg-white shadow-xs rounded-xl p-6 border border-gray-100">
+          <div className="flex items-center">
+            <div className="flex-shrink-0 rounded-lg p-3 bg-green-100">
+              <DollarSign className="h-6 w-6 text-green-600" />
+            </div>
+            <div className="ml-5">
+              <p className="text-sm font-medium text-gray-500">Collected</p>
+              <p className="text-2xl font-semibold text-gray-900">{formatCurrency(totalRevenue)}</p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white shadow-xs rounded-xl p-6 border border-gray-100">
+          <div className="flex items-center">
+            <div className="flex-shrink-0 rounded-lg p-3 bg-yellow-100">
+              <Clock className="h-6 w-6 text-yellow-600" />
+            </div>
+            <div className="ml-5">
+              <p className="text-sm font-medium text-gray-500">Pending Payments</p>
+              <p className="text-2xl font-semibold text-gray-900">{formatCurrency(pendingAmount)}</p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white shadow-xs rounded-xl p-6 border border-gray-100">
+          <div className="flex items-center">
+            <div className="flex-shrink-0 rounded-lg p-3 bg-blue-100">
+              <CheckCircle className="h-6 w-6 text-blue-600" />
+            </div>
+            <div className="ml-5">
+              <p className="text-sm font-medium text-gray-500">Successful Payments</p>
+              <p className="text-2xl font-semibold text-gray-900">
+                {payments.filter((p) => p.status === "completed").length}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white shadow-xs rounded-xl p-6 border border-gray-100">
+          <div className="flex items-center">
+            <div className="flex-shrink-0 rounded-lg p-3 bg-purple-100">
+              <RefreshCw className="h-6 w-6 text-purple-600" />
+            </div>
+            <div className="ml-5">
+              <p className="text-sm font-medium text-gray-500">Refunded</p>
+              <p className="text-2xl font-semibold text-gray-900">{formatCurrency(refundedAmount)}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white shadow-xs rounded-xl p-4 border border-gray-100">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Search</label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-gray-400" />
+              </div>
+              <input
+                type="text"
+                placeholder="Search invoice or company..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+            <select
+              value={selectedStatus}
+              onChange={(e) => setSelectedStatus(e.target.value)}
+              className="block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-2xs focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            >
+              {statuses.map((status) => (
+                <option key={status} value={status}>
+                  {status.charAt(0).toUpperCase() + status.slice(1)}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Method</label>
+            <select
+              value={selectedMethod}
+              onChange={(e) => setSelectedMethod(e.target.value)}
+              className="block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-2xs focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            >
+              {methods.map((method) => (
+                <option key={method} value={method}>
+                  {getMethodText(method)}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Date Range</label>
+            <select
+              value={dateRange}
+              onChange={(e) => setDateRange(e.target.value)}
+              className="block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-2xs focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            >
+              {dateRanges.map((range) => (
+                <option key={range} value={range}>
+                  {range.charAt(0).toUpperCase() + range.slice(1)}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white shadow-xs overflow-hidden sm:rounded-xl border border-gray-100">
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Invoice</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Company</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Method</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {filteredPayments.map((payment) => (
+                <tr key={payment.id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm font-medium text-gray-900">{payment.invoiceNumber}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-900">{payment.company}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm font-semibold text-gray-900">{formatCurrency(payment.amount)}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center">
+                      {getStatusIcon(payment.status)}
+                      <span
+                        className={`ml-2 px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                          payment.status === "completed"
+                            ? "bg-green-100 text-green-800"
+                            : payment.status === "pending"
+                              ? "bg-yellow-100 text-yellow-800"
+                              : payment.status === "failed"
+                                ? "bg-red-100 text-red-800"
+                                : "bg-purple-100 text-purple-800"
+                        }`}
+                      >
+                        {payment.status === "completed" ? "Paid" : payment.status}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-900">{getMethodText(payment.method)}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-900">
+                      {new Date(payment.date).toLocaleDateString("en-IN", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </div>
+                    {payment.dueDate ? (
+                      <div className="text-xs text-gray-500">
+                        Due: {new Date(payment.dueDate).toLocaleDateString("en-IN")}
+                      </div>
+                    ) : null}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <Link
+                      href={`/admin/financial/invoices/${payment.id}`}
+                      className="text-blue-600 hover:text-blue-900 px-2 py-1 rounded hover:bg-blue-50 inline-flex"
+                      title="View invoice"
+                    >
+                      <Eye className="h-4 w-4" />
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {filteredPayments.length === 0 && !loading ? (
+        <div className="text-center py-12">
+          <DollarSign className="mx-auto h-12 w-12 text-gray-400" />
+          <h3 className="mt-2 text-sm font-medium text-gray-900">No payments found</h3>
+          <p className="mt-1 text-sm text-gray-500">
+            {search ? "Try adjusting your search or filter." : "No payment records yet."}
+          </p>
+        </div>
+      ) : null}
+
+      <div className="text-sm text-gray-500">
+        Showing {filteredPayments.length} of {payments.length} payments
+      </div>
+    </div>
+  );
 }

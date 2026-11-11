@@ -8,11 +8,16 @@ import { createExhibitor } from "@/lib/api/exhibitors";
 import { getAdminToken, isAuthenticated } from "@/lib/api/auth";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
+import ExhibitorPaymentFields, {
+    defaultPaymentFormValue,
+    type PaymentFormValue,
+} from "@/components/admin/ExhibitorPaymentFields";
 
 export default function AddExhibitorPage() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [payment, setPayment] = useState<PaymentFormValue>(defaultPaymentFormValue);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -98,6 +103,14 @@ export default function AddExhibitorPage() {
                 boothDimensions: formData.boothDimensions,
                 boothNotes: formData.boothNotes,
                 boothPrice: formData.boothPrice || undefined,
+                stallCost: payment.stallCost,
+                gstPercent: payment.gstPercent || "18",
+                discount: payment.discount,
+                paymentPhases: payment.phases.map((phase, index) => ({
+                    phase: index + 1,
+                    dueDate: phase.dueDate,
+                    status: phase.status,
+                })),
                 address: formData.address,
                 website: formData.website,
             };
@@ -390,6 +403,11 @@ export default function AddExhibitorPage() {
                             />
                         </div>
                     </div>
+                </div>
+
+                {/* Stall Cost & Payment Schedule */}
+                <div className="mb-6">
+                    <ExhibitorPaymentFields value={payment} onChange={setPayment} />
                 </div>
 
                 {/* Status */}

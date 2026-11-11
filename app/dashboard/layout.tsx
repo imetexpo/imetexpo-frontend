@@ -17,23 +17,38 @@ import {
   BellIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  ChevronDownIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
 import LoadingDots from '@/components/ui/LoadingDots';
 
+type NavItem = {
+  name: string;
+  href?: string;
+  icon: any;
+  children?: Array<{ name: string; href: string }>;
+};
 
-const navigation = [
+const navigation: NavItem[] = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
   { name: 'Company Profile', href: '/dashboard/exhibitor', icon: UserIcon },
-  { name: 'Invoices', href: '/dashboard/invoice', icon: CreditCardIcon },
+  { name: 'Invoices', href: '/dashboard/invoice', icon: DocumentTextIcon },
   { name: 'Floor Layout', href: '/dashboard/layout', icon: MapIcon },
   { name: 'My Stalls', href: '/dashboard/stall', icon: ShoppingCartIcon },
+  {
+    name: 'Payment',
+    icon: CreditCardIcon,
+    children: [
+      { name: 'Stall Payment', href: '/dashboard/payment/stall' },
+      { name: 'Payment Remainders', href: '/dashboard/payment/remainders' },
+    ],
+  },
   { name: 'Products', href: '/dashboard/products', icon: DocumentTextIcon },
   { name: 'Brands', href: '/dashboard/brands', icon: DocumentTextIcon },
   { name: 'Brochures', href: '/dashboard/brochures', icon: DocumentTextIcon },
   { name: 'Requirements', href: '/dashboard/requirements', icon: CogIcon },
   { name: 'Team Members', href: '/dashboard/team', icon: UserGroupIcon },
-  { name: 'Exhibitor Manual', href: '/dashboard/exhibitormanual', icon: BookOpenIcon },
+  { name: 'Exhibitor Manual', href: '/dashboard/manual', icon: BookOpenIcon },
 ];
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -44,6 +59,16 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
+
+  const [openMenus, setOpenMenus] = useState<string[]>(
+    pathname.startsWith('/dashboard/payment') ? ['Payment'] : []
+  );
+
+  const toggleMenu = (name: string) => {
+    setOpenMenus((prev) =>
+      prev.includes(name) ? prev.filter((item) => item !== name) : [...prev, name]
+    );
+  };
 
   // Check authentication
   useEffect(() => {
@@ -140,21 +165,80 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </div>
 
         {/* Navigation */}
-        <nav className="mt-6 px-3">
+        <nav className="mt-6 px-3 space-y-1">
           {navigation.map((item) => {
+            if (item.children) {
+              const childActive = item.children.some(
+                (child) => pathname === child.href || pathname.startsWith(`${child.href}/`)
+              );
+              const expanded = openMenus.includes(item.name) || childActive;
+
+              return (
+                <div key={item.name} className="mb-1">
+                  <button
+                    type="button"
+                    onClick={() => toggleMenu(item.name)}
+                    className={`group flex w-full items-center rounded-xl px-3 py-2.5 text-sm font-medium transition-all ${
+                      childActive
+                        ? 'bg-gradient-to-r from-amber-50 to-orange-50 text-amber-700'
+                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    } ${!isOpen && 'justify-center'}`}
+                  >
+                    <item.icon
+                      className={`h-5 w-5 ${!isOpen ? 'mr-0' : 'mr-3'} ${
+                        childActive ? 'text-amber-500' : 'text-gray-400 group-hover:text-gray-500'
+                      }`}
+                    />
+                    {isOpen && (
+                      <>
+                        <span className="flex-1 text-left">{item.name}</span>
+                        <ChevronDownIcon
+                          className={`h-4 w-4 transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}
+                        />
+                      </>
+                    )}
+                  </button>
+                  {isOpen && expanded && (
+                    <div className="mt-1 space-y-1 pl-9">
+                      {item.children.map((child) => {
+                        const isChildActive = pathname === child.href;
+                        return (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            onClick={() => isMobile && setMobileOpen(false)}
+                            className={`block rounded-lg px-2.5 py-2 text-xs font-medium transition-all ${
+                              isChildActive
+                                ? 'bg-amber-100/80 font-semibold text-amber-900'
+                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                            }`}
+                          >
+                            {child.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.name}
-                href={item.href}
-                className={`group mb-1 flex items-center rounded-xl px-3 py-2.5 text-sm font-medium transition-all ${isActive
+                href={item.href || '#'}
+                onClick={() => isMobile && setMobileOpen(false)}
+                className={`group mb-1 flex items-center rounded-xl px-3 py-2.5 text-sm font-medium transition-all ${
+                  isActive
                     ? 'bg-gradient-to-r from-amber-50 to-orange-50 text-amber-700'
                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                  } ${!isOpen && 'justify-center'}`}
+                } ${!isOpen && 'justify-center'}`}
               >
                 <item.icon
-                  className={`h-5 w-5 ${!isOpen ? 'mr-0' : 'mr-3'} ${isActive ? 'text-amber-500' : 'text-gray-400 group-hover:text-gray-500'
-                    }`}
+                  className={`h-5 w-5 ${!isOpen ? 'mr-0' : 'mr-3'} ${
+                    isActive ? 'text-amber-500' : 'text-gray-400 group-hover:text-gray-500'
+                  }`}
                 />
                 {isOpen && <span>{item.name}</span>}
               </Link>

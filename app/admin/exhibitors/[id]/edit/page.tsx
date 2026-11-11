@@ -7,6 +7,11 @@ import { ArrowLeft, Save, Building, User, Mail, Phone, MapPin, CreditCard, Lock,
 import { getExhibitor, updateExhibitor, Exhibitor } from "@/lib/api/exhibitors";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
+import ExhibitorPaymentFields, {
+    defaultPaymentFormValue,
+    type PaymentFormValue,
+} from "@/components/admin/ExhibitorPaymentFields";
+import { toDateInputValue } from "@/lib/stallPayment";
 
 export default function EditExhibitorPage() {
     const params = useParams();
@@ -17,6 +22,7 @@ export default function EditExhibitorPage() {
     const [fetching, setFetching] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
     const [showNewPassword, setShowNewPassword] = useState(false);
+    const [payment, setPayment] = useState<PaymentFormValue>(defaultPaymentFormValue);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -80,6 +86,21 @@ export default function EditExhibitorPage() {
                         website: exhibitor.website || "",
                         newPassword: "",
                         confirmNewPassword: "",
+                    });
+
+                    const stall = exhibitor.stallDetails || {};
+                    const phases = Array.isArray(stall.paymentPhases) ? stall.paymentPhases : [];
+                    setPayment({
+                        stallCost: String(stall.stallCost ?? exhibitor.stallCost ?? ""),
+                        gstPercent: String(stall.gstPercent ?? exhibitor.gstPercent ?? "18"),
+                        discount: String(stall.discount ?? exhibitor.discount ?? ""),
+                        phases: [1, 2, 3].map((num) => {
+                            const found = phases.find((p: any) => Number(p?.phase) === num);
+                            return {
+                                dueDate: found?.dueDate ? toDateInputValue(found.dueDate) : "",
+                                status: found?.status || "pending",
+                            };
+                        }),
                     });
                 } else {
                     toast.error("Failed to load exhibitor data");
@@ -153,6 +174,14 @@ export default function EditExhibitorPage() {
                 boothDimensions: formData.boothDimensions,
                 boothNotes: formData.boothNotes,
                 boothPrice: formData.boothPrice ? parseFloat(formData.boothPrice) : undefined,
+                stallCost: payment.stallCost,
+                gstPercent: payment.gstPercent || "18",
+                discount: payment.discount,
+                paymentPhases: payment.phases.map((phase, index) => ({
+                    phase: index + 1,
+                    dueDate: phase.dueDate,
+                    status: phase.status,
+                })),
                 address: formData.address,
                 website: formData.website,
             };
@@ -462,6 +491,11 @@ export default function EditExhibitorPage() {
                             />
                         </div>
                     </div>
+                </div>
+
+                {/* Stall Cost & Payment Schedule */}
+                <div className="mb-6">
+                    <ExhibitorPaymentFields value={payment} onChange={setPayment} />
                 </div>
 
                 {/* Status */}
