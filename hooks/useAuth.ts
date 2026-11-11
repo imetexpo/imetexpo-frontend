@@ -7,14 +7,11 @@ export function useAuth() {
     const [token, setToken] = useState<string | null>(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        // Simply check if token exists in localStorage
         const storedToken = getAdminToken();
         const storedUser = getAdminUser();
-
-        console.log('🔐 useAuth - Token exists:', !!storedToken);
-        console.log('🔐 useAuth - User exists:', !!storedUser);
 
         if (storedToken && storedUser) {
             setToken(storedToken);
@@ -31,6 +28,8 @@ export function useAuth() {
 
     const login = async (email: string, password: string) => {
         try {
+            setIsLoading(true);
+            setError(null);
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/auth/login`, {
                 method: 'POST',
                 headers: {
@@ -40,32 +39,40 @@ export function useAuth() {
             });
 
             const data = await response.json();
-            console.log('📡 Login response:', data);
 
-            if (data.success) {
+            if (data.success && data.data) {
                 const { token, user } = data.data;
 
-                // Store in localStorage
+                // Store in localStorage both formats for seamless compatibility
                 localStorage.setItem('adminToken', token);
                 localStorage.setItem('adminUser', JSON.stringify(user));
+                localStorage.setItem('admin_token', token);
+                localStorage.setItem('admin_user', JSON.stringify(user));
 
                 setToken(token);
                 setUser(user);
                 setIsAuthenticated(true);
 
-                return { success: true, user };
+                return { success: true, data: { token, user }, user };
             } else {
-                throw new Error(data.error || 'Login failed');
+                const errMsg = data.error || data.message || 'Invalid email or password';
+                setError(errMsg);
+                return { success: false, error: errMsg };
             }
-        } catch (error: any) {
-            console.error('Login error:', error);
-            throw new Error(error.message || 'Login failed');
+        } catch (err: any) {
+            const errMsg = err.message || 'Login failed. Please check your credentials.';
+            setError(errMsg);
+            return { success: false, error: errMsg };
+        } finally {
+            setIsLoading(false);
         }
     };
 
     const logout = () => {
         localStorage.removeItem('adminToken');
         localStorage.removeItem('adminUser');
+        localStorage.removeItem('admin_token');
+        localStorage.removeItem('admin_user');
         setToken(null);
         setUser(null);
         setIsAuthenticated(false);
@@ -76,6 +83,8 @@ export function useAuth() {
         token,
         isAuthenticated,
         isLoading,
+        loading: isLoading,
+        error,
         login,
         logout,
     };
