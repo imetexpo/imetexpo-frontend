@@ -67,11 +67,13 @@ const navigation: NavSection[] = [
   {
     label: "Management",
     items: [
+      { name: "Blogs", href: "/admin/blogs", icon: BookOpen },
+      { name: "Badge Designs", href: "/admin/badge-designs", icon: LayoutGrid },
       {
         name: "Exhibition",
         icon: Building,
         subItems: [
-          { name: "Exhibitors", href: "/admin/exhibitors", icon: Briefcase },
+          { name: "Exhibitors", href: "/admin/exhibition/exhibitors", icon: Briefcase },
           { name: "Floor Plan", href: "/admin/floor-plan", icon: Globe },
           { name: "Bookings", href: "/admin/bookings", icon: CalendarCheck },
           { name: "Manuals", href: "/admin/manual", icon: BookOpen },

@@ -10,21 +10,19 @@ const api = axios.create({
     },
 });
 
-// Track if we're already redirecting
 let isRedirecting = false;
 
 api.interceptors.request.use(
     (config) => {
         if (typeof window !== "undefined") {
-            const token = localStorage.getItem("adminToken");
-            console.log("🔑 [Request] Token exists:", !!token);
-            console.log("🔑 [Request] URL:", config.url);
+            const token =
+                localStorage.getItem("adminToken") ||
+                localStorage.getItem("admin_token") ||
+                localStorage.getItem("token") ||
+                localStorage.getItem("exhibitor_token");
 
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
-                console.log("✅ [Request] Token added to headers");
-            } else {
-                console.log("❌ [Request] No token found");
             }
         }
         return config;
@@ -34,29 +32,20 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
     (response) => {
-        console.log("✅ [Response]", response.status, response.config.url);
         return response;
     },
     (error) => {
-        console.log("❌ [Response Error]", error.response?.status, error.response?.config?.url);
-        console.log("❌ [Response Error Data]", error.response?.data);
-
         if (error.response?.status === 401 && typeof window !== "undefined" && !isRedirecting) {
-            console.log("🔴 401 Unauthorized - Checking token...");
-            const token = localStorage.getItem("adminToken");
+            const token =
+                localStorage.getItem("adminToken") ||
+                localStorage.getItem("admin_token");
 
-            if (token) {
-                console.log("⚠️ Token exists but was rejected by server");
-                console.log("⚠️ Token value:", token.substring(0, 30) + "...");
-
-                // Don't auto-redirect, just reject the promise
-                // Let the component handle the error
-                return Promise.reject(error);
-            } else {
-                console.log("❌ No token found, redirecting to login");
+            if (!token) {
                 isRedirecting = true;
                 localStorage.removeItem("adminToken");
+                localStorage.removeItem("admin_token");
                 localStorage.removeItem("adminUser");
+                localStorage.removeItem("admin_user");
                 window.location.href = "/admin/login";
                 setTimeout(() => { isRedirecting = false; }, 1000);
             }
@@ -66,15 +55,38 @@ api.interceptors.response.use(
 );
 
 // ============================================
-// INTERFACES - ADD THESE EXPORTS
+// INTERFACES
 // ============================================
 
+export type ExhibitorStatus =
+    | "pending"
+    | "active"
+    | "inactive"
+    | "approved"
+    | "rejected";
+
 export interface StallDetails {
+    hall?: string;
+    pavilion?: string;
     size?: string;
     type?: string;
+    openSides?: string;
     dimensions?: string;
     notes?: string;
     price?: string;
+    stallCost?: number;
+    gstPercent?: number;
+    discount?: number;
+    gstAmount?: number;
+    finalAmount?: number;
+    paymentPhases?: Array<{
+        phase: number;
+        label?: string;
+        percent: number;
+        amount: number;
+        dueDate?: string;
+        status?: 'pending' | 'paid' | 'overdue';
+    }>;
 }
 
 export interface Exhibitor {
@@ -84,14 +96,21 @@ export interface Exhibitor {
     phone: string;
     company: string;
     sector?: string;
+    booth?: string;
     boothNumber?: string;
-    status: 'pending' | 'active' | 'approved' | 'inactive' | 'rejected';
+    boothSize?: string;
+    boothType?: string;
+    boothOpenSides?: string;
+    boothDimensions?: string;
+    boothNotes?: string;
+    boothPrice?: string;
+    status: string;
     originalPassword?: string;
     stallDetails?: StallDetails;
     address?: string;
     website?: string;
     createdAt: string;
-    updatedAt: string;
+    updatedAt?: string;
     lastLogin?: string;
 }
 
@@ -102,19 +121,171 @@ export interface CreateExhibitorData {
     company: string;
     sector?: string;
     boothNumber?: string;
-    password: string;
+    password?: string;
     status?: string;
     boothSize?: string;
     boothType?: string;
+    boothOpenSides?: string;
     boothDimensions?: string;
     boothNotes?: string;
     boothPrice?: string;
     address?: string;
     website?: string;
+    stallCost?: number | string;
+    gstPercent?: number | string;
+    discount?: number | string;
+    paymentPhases?: any[];
 }
 
+export interface PaginatedResponse<T> {
+    success: boolean;
+    data: T[];
+    pagination?: {
+        total: number;
+        page: number;
+        limit: number;
+        totalPages: number;
+    };
+    message?: string;
+    error?: string;
+}
+
+export interface ApiResponse<T> {
+    success: boolean;
+    data: T;
+    message?: string;
+    error?: string;
+}
+
+const mapExhibitorData = (data: any): Exhibitor => {
+    let stallDetails = data.stallDetails || {};
+    if (typeof stallDetails === "string") {
+        try {
+            stallDetails = JSON.parse(stallDetails);
+        } catch {
+            stallDetails = {};
+        }
+    }
+
+    return {
+        id: data.id || data._id || "",
+        name: data.name || "",
+        email: data.email || "",
+        phone: data.phone || "",
+        company: data.company || "",
+        sector: data.sector || "",
+        booth: data.boothNumber || data.booth || "Not assigned",
+        boothNumber: data.boothNumber || data.booth,
+        boothSize: data.boothSize || stallDetails?.size || "",
+        boothType: data.boothType || stallDetails?.type || "standard",
+        boothOpenSides: data.boothOpenSides || stallDetails?.openSides || "",
+        boothDimensions: data.boothDimensions || stallDetails?.dimensions || "",
+        boothNotes: data.boothNotes || stallDetails?.notes || "",
+        boothPrice: data.boothPrice || stallDetails?.price || "",
+        status: data.status === "approved" ? "active" : (data.status || "pending"),
+        originalPassword: data.originalPassword || data.metadata?.originalPassword,
+        createdAt: data.createdAt || new Date().toISOString(),
+        updatedAt: data.updatedAt,
+        address: data.address,
+        website: data.website,
+        stallDetails: stallDetails,
+    };
+};
+
 // ============================================
-// API FUNCTIONS
+// EXHIBITORS API OBJECT (Diemex parity)
+// ============================================
+
+export const exhibitorsAPI = {
+    getAll: async (params?: {
+        page?: number;
+        limit?: number;
+        search?: string;
+        sector?: string;
+        status?: string;
+    }): Promise<PaginatedResponse<Exhibitor>> => {
+        try {
+            const response = await api.get("/exhibitors", { params });
+            const rawData = response.data?.data || response.data || [];
+            const mappedData = Array.isArray(rawData) ? rawData.map(mapExhibitorData) : [];
+
+            return {
+                success: response.data?.success !== false,
+                data: mappedData,
+                pagination: response.data?.pagination || {
+                    total: mappedData.length,
+                    page: params?.page || 1,
+                    limit: params?.limit || 10,
+                    totalPages: Math.ceil(mappedData.length / (params?.limit || 10)),
+                },
+            };
+        } catch (error: any) {
+            console.error("Error fetching exhibitors:", error);
+            throw new Error(error.response?.data?.error || error.message || "Failed to fetch exhibitors");
+        }
+    },
+
+    getById: async (id: string): Promise<ApiResponse<Exhibitor>> => {
+        try {
+            const response = await api.get(`/exhibitors/${id}`);
+            const rawData = response.data?.data || response.data;
+            return {
+                success: response.data?.success !== false,
+                data: mapExhibitorData(rawData),
+            };
+        } catch (error: any) {
+            console.error("Error fetching exhibitor:", error);
+            throw new Error(error.response?.data?.error || error.message || "Failed to fetch exhibitor");
+        }
+    },
+
+    create: async (data: CreateExhibitorData): Promise<Exhibitor> => {
+        try {
+            const response = await api.post("/exhibitors", data);
+            return mapExhibitorData(response.data?.data || response.data);
+        } catch (error: any) {
+            console.error("Error creating exhibitor:", error);
+            throw new Error(error.response?.data?.error || error.message || "Failed to create exhibitor");
+        }
+    },
+
+    update: async (id: string, data: Partial<CreateExhibitorData>): Promise<Exhibitor> => {
+        try {
+            const response = await api.put(`/exhibitors/${id}`, data);
+            return mapExhibitorData(response.data?.data || response.data);
+        } catch (error: any) {
+            console.error("Error updating exhibitor:", error);
+            throw new Error(error.response?.data?.error || error.message || "Failed to update exhibitor");
+        }
+    },
+
+    delete: async (id: string): Promise<void> => {
+        try {
+            await api.delete(`/exhibitors/${id}`);
+        } catch (error: any) {
+            console.error("Error deleting exhibitor:", error);
+            throw new Error(error.response?.data?.error || error.message || "Failed to delete exhibitor");
+        }
+    },
+
+    resendCredentials: async (id: string): Promise<{ success: boolean; message?: string }> => {
+        try {
+            const response = await api.post(`/exhibitors/${id}/resend-credentials`);
+            return response.data;
+        } catch (error: any) {
+            console.error("Error resending credentials:", error);
+            throw new Error(error.response?.data?.error || error.message || "Failed to resend credentials");
+        }
+    },
+
+    bulkUpdateStatus: async (ids: string[], status: string) => {
+        const response = await api.post("/exhibitors/bulk/update-status", { ids, status });
+        return response.data;
+    },
+};
+
+// ============================================
+// NAMED FUNCTION EXPORTS (Backward compatibility)
 // ============================================
 
 export async function getExhibitors(params?: {
@@ -124,39 +295,83 @@ export async function getExhibitors(params?: {
     sector?: string;
     status?: string;
 }) {
-    const response = await api.get('/exhibitors', { params });
-    return response.data;
+    return exhibitorsAPI.getAll(params);
 }
 
-export async function getExhibitor(id: string) {
-    const response = await api.get(`/exhibitors/${id}`);
-    return response.data;
+export async function getExhibitor(id: string): Promise<{ success: boolean; data: Exhibitor; error?: string }> {
+    try {
+        const res = await exhibitorsAPI.getById(id);
+        return {
+            success: true,
+            data: res.data,
+        };
+    } catch (error: any) {
+        return {
+            success: false,
+            data: {} as Exhibitor,
+            error: error.message || "Failed to fetch exhibitor",
+        };
+    }
 }
 
-export async function createExhibitor(data: CreateExhibitorData) {
-    console.log("📡 [createExhibitor] Making request with data:", data);
-    const response = await api.post("/exhibitors", data);
-    return response.data;
+export async function getExhibitorById(id: string) {
+    return exhibitorsAPI.getById(id);
 }
 
-export async function updateExhibitor(id: string, data: Partial<CreateExhibitorData>) {
-    const response = await api.put(`/exhibitors/${id}`, data);
-    return response.data;
+export async function createExhibitor(data: CreateExhibitorData): Promise<{ success: boolean; data: Exhibitor; error?: string }> {
+    try {
+        const created = await exhibitorsAPI.create(data);
+        return {
+            success: true,
+            data: created,
+        };
+    } catch (error: any) {
+        return {
+            success: false,
+            data: {} as Exhibitor,
+            error: error.message || "Failed to create exhibitor",
+        };
+    }
+}
+
+export async function updateExhibitor(id: string, data: Partial<CreateExhibitorData>): Promise<{ success: boolean; data: Exhibitor; error?: string }> {
+    try {
+        const updated = await exhibitorsAPI.update(id, data);
+        return {
+            success: true,
+            data: updated,
+        };
+    } catch (error: any) {
+        return {
+            success: false,
+            data: {} as Exhibitor,
+            error: error.message || "Failed to update exhibitor",
+        };
+    }
 }
 
 export async function deleteExhibitor(id: string) {
-    const response = await api.delete(`/exhibitors/${id}`);
-    return response.data;
+    return exhibitorsAPI.delete(id);
 }
 
 export async function bulkUpdateStatus(ids: string[], status: string) {
-    const response = await api.post('/exhibitors/bulk/update-status', { ids, status });
-    return response.data;
+    return exhibitorsAPI.bulkUpdateStatus(ids, status);
 }
 
-export async function resendCredentials(id: string) {
-    const response = await api.post(`/exhibitors/${id}/resend-credentials`);
-    return response.data;
+export async function resendCredentials(id: string): Promise<{ success: boolean; data?: any; error?: string; message?: string }> {
+    try {
+        const res = await exhibitorsAPI.resendCredentials(id);
+        return {
+            success: true,
+            data: res,
+            message: res?.message || "Credentials sent successfully",
+        };
+    } catch (error: any) {
+        return {
+            success: false,
+            error: error.message || "Failed to resend credentials",
+        };
+    }
 }
 
 export async function getExhibitorProducts(id: string) {
