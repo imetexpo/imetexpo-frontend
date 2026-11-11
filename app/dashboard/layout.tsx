@@ -17,6 +17,7 @@ import {
   BellIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline';
 import LoadingDots from '@/components/ui/LoadingDots';
 
@@ -31,6 +32,7 @@ const navigation = [
   { name: 'Brands', href: '/dashboard/brands', icon: DocumentTextIcon },
   { name: 'Brochures', href: '/dashboard/brochures', icon: DocumentTextIcon },
   { name: 'Requirements', href: '/dashboard/requirements', icon: CogIcon },
+  { name: 'Team Members', href: '/dashboard/team', icon: UserGroupIcon },
   { name: 'Exhibitor Manual', href: '/dashboard/exhibitormanual', icon: BookOpenIcon },
 ];
 
