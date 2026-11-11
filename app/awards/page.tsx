@@ -1,11 +1,14 @@
-import AwardsPage from './awards-page';
+import PageContent from './awards-page';
+import PageSeo from '@/components/seo/PageSeo';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Global Metrology Excellence Awards 2027',
-  description:
-    'Recognizing excellence in metrology and precision engineering at Global Metrology Excellence Awards 2027.',
-};
+export const metadata = buildPageMetadata('/awards');
 
-export default function Awards() {
-  return <AwardsPage />;
+export default function Page() {
+  return (
+    <>
+      <PageContent />
+      <PageSeo pageKey="/awards" />
+    </>
+  );
 }

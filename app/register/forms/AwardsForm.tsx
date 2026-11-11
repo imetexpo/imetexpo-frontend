@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { COUNTRIES, INDUSTRIES, AWARD_CATEGORIES } from "@/lib/registrationOptions";
 import AwardsTurnstile from "./AwardsTurnstile";
@@ -16,7 +17,50 @@ const initialForm = {
 
 export default function AwardsForm() {
   const { utmData } = useUTMData();
-  const [formData, setFormData] = useState(initialForm);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category") || searchParams.get("awardCategory") || "";
+
+  const findMatchingCategory = (param: string) => {
+    if (!param) return "";
+    const clean = param.trim().toLowerCase();
+    const matched = AWARD_CATEGORIES.find((cat) => cat.toLowerCase() === clean);
+    return matched || "";
+  };
+
+  const [formData, setFormData] = useState(() => ({
+    ...initialForm,
+    awardCategory: findMatchingCategory(categoryParam),
+  }));
+
+  useEffect(() => {
+    if (categoryParam) {
+      const matched = findMatchingCategory(categoryParam);
+      if (matched) {
+        setFormData((prev) => {
+          if (prev.awardCategory === matched) return prev;
+          return { ...prev, awardCategory: matched };
+        });
+      }
+    }
+  }, [categoryParam]);
+
+  const updateCategoryUrl = (newCategory: string) => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (newCategory) {
+      params.set("category", newCategory);
+    } else {
+      params.delete("category");
+    }
+    const hash = window.location.hash || "#awards-form";
+    const queryString = params.toString();
+    const newUrl = `${window.location.pathname}${queryString ? `?${queryString}` : ""}${hash}`;
+
+    window.history.replaceState(window.history.state, "", newUrl);
+    router.replace(newUrl, { scroll: false });
+  };
+
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
   const [captchaAttempt, setCaptchaAttempt] = useState(0);
@@ -28,6 +72,10 @@ export default function AwardsForm() {
   function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
     const { name, value } = event.target;
     setFormData((previous) => ({ ...previous, [name]: value }));
+
+    if (name === "awardCategory") {
+      updateCategoryUrl(value);
+    }
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -83,7 +131,7 @@ export default function AwardsForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form id="awards-form" onSubmit={handleSubmit} className="space-y-5 scroll-mt-28">
       <h2 className="font-bebas text-3xl text-[#003A77]">Awards Enquiry</h2>
       <fieldset disabled={loading} className="space-y-5">
         <legend className="sr-only">Awards enquiry details</legend>

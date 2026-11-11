@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import {
     getUTMParams,
@@ -22,7 +22,7 @@ const UTM_KEYS = [
     'utm_id',
 ] as const;
 
-export function UTMProvider({ children }: { children: React.ReactNode }) {
+function UTMTracker() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -134,5 +134,16 @@ export function UTMProvider({ children }: { children: React.ReactNode }) {
         handleUTMDetection();
     }, [searchParams, pathname]);
 
-    return <>{children}</>;
+    return null;
+}
+// Query tracking may wait for client URL data; page content can still render on the server.
+export function UTMProvider({ children }: { children: React.ReactNode }) {
+    return (
+        <>
+            <Suspense fallback={null}>
+                <UTMTracker />
+            </Suspense>
+            {children}
+        </>
+    );
 }

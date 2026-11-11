@@ -1,11 +1,14 @@
-import NominatePage from './nominate-page';
+import PageContent from './nominate-page';
+import PageSeo from '@/components/seo/PageSeo';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Nomination Form | Global Metrology Excellence Awards 2027',
-  description:
-    'Nominate organizations and individuals for the Global Metrology Excellence Awards 2027.',
-};
+export const metadata = buildPageMetadata('/nominate');
 
-export default function Nominate() {
-  return <NominatePage />;
+export default function Page() {
+  return (
+    <>
+      <PageContent />
+      <PageSeo pageKey="/nominate" />
+    </>
+  );
 }

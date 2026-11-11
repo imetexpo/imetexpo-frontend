@@ -22,7 +22,6 @@ import {
   programData,
   whyAttend,
   delegatePackages,
-  faqItems,
   venueImages,
 } from './data';
 
@@ -375,47 +374,6 @@ function ContactsSection() {
   );
 }
 
-function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  return (
-    <section>
-      <h2 className="mb-8 border-b border-gray-200 pb-6 font-bebas text-4xl uppercase tracking-tight text-[#003A77] sm:text-5xl lg:text-6xl">
-        FAQ
-      </h2>
-      <div className="space-y-2">
-        {faqItems.map((item, index) => {
-          const isOpen = openIndex === index;
-          return (
-            <div key={item.id} className="border-b border-gray-200">
-              <button
-                type="button"
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-center justify-between py-5 text-left"
-                aria-expanded={isOpen}
-              >
-                <h3 className="pr-4 text-base font-semibold text-[#003A77] sm:text-lg">
-                  {item.question}
-                </h3>
-                <span className={`shrink-0 text-[#00A1B1] transition-transform ${isOpen ? 'rotate-180' : ''}`}>
-                  ▼
-                </span>
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  isOpen ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 opacity-0'
-                }`}
-              >
-                <p className="text-lg sm:text-xl leading-relaxed text-gray-600">{item.answer}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
 export default function SummitPage() {
   return (
     <div className="intro-animation overflow-hidden bg-white font-sans">
@@ -449,9 +407,6 @@ export default function SummitPage() {
             <ContactsSection />
           </Container>
         </div>
-        <Container>
-          <FAQSection />
-        </Container>
       </div>
       <BackToTop />
     </div>

@@ -1,11 +1,14 @@
-import BecameDelegatePage from './became-delegate-page';
+import PageContent from './became-delegate-page';
+import PageSeo from '@/components/seo/PageSeo';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Become a Delegate | IndiaMET Summit 2027',
-  description:
-    'Register as a delegate for the IndiaMET Summit 2027 in Pune. Student, General, and Group of 3 packages available.',
-};
+export const metadata = buildPageMetadata('/became-delegate');
 
-export default function BecameDelegate() {
-  return <BecameDelegatePage />;
+export default function Page() {
+  return (
+    <>
+      <PageContent />
+      <PageSeo pageKey="/became-delegate" />
+    </>
+  );
 }
