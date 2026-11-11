@@ -1,286 +1,512 @@
 // app/admin/AdminShell.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import Image from "next/image";
 import {
-    LayoutDashboard,
-    FileText,
-    Users,
-    Settings,
-    DollarSign,
-    Menu,
-    X,
-    LogOut,
-    ChevronRight,
-    ChevronDown,
-    Truck,
-    Package,
-    Wrench,
-    Shield,
-    Bell,
-    User,
-    BarChart3,
-    Globe,
-    CreditCard,
-    PieChart,
-    Camera,
-    ClipboardCheck,
-    Home,
-    Sparkles,
-    Bolt,
-    Droplet,
-    Tv,
-    Wind,
-    Banknote,
+  LayoutDashboard,
+  LayoutGrid,
+  FileText,
+  Settings,
+  DollarSign,
+  Menu,
+  X,
+  LogOut,
+  Building,
+  Briefcase,
+  Globe,
+  BookOpen,
+  CreditCard,
+  PieChart,
+  ChevronDown,
+  Cable,
+  Droplet,
+  Monitor,
+  Power,
+  ShieldCheck,
+  Sofa,
+  Package,
+  Bell,
+  Armchair,
+  UserRound,
+  Brush,
+  Landmark,
+  Users,
+  BarChart3,
+  CalendarCheck,
 } from "lucide-react";
 import toast from "react-hot-toast";
 
-const navigation = [
-    { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard, color: "text-orange-500" },
-    { name: "Exhibitors", icon: Users, color: "text-blue-500", href: "/admin/exhibitors" },
-    { name: "Floor Plan", icon: Globe, color: "text-indigo-500", href: "/admin/floor-plan" },
-    { name: "Bookings", icon: ClipboardCheck, color: "text-cyan-500", href: "/admin/bookings" },
-    {
+type NavLeaf = {
+  name: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+};
+
+type NavGroup = {
+  name: string;
+  icon: React.ComponentType<{ className?: string }>;
+  subItems: Array<NavLeaf | NavGroup>;
+};
+
+type NavItem = NavLeaf | NavGroup;
+
+type NavSection = {
+  label: string;
+  items: NavItem[];
+};
+
+const navigation: NavSection[] = [
+  {
+    label: "Main",
+    items: [
+      { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
+    ],
+  },
+  {
+    label: "Management",
+    items: [
+      {
+        name: "Exhibition",
+        icon: Building,
+        subItems: [
+          { name: "Exhibitors", href: "/admin/exhibitors", icon: Briefcase },
+          { name: "Floor Plan", href: "/admin/floor-plan", icon: Globe },
+          { name: "Bookings", href: "/admin/bookings", icon: CalendarCheck },
+          { name: "Manuals", href: "/admin/manual", icon: BookOpen },
+        ],
+      },
+      {
         name: "Financial",
         icon: DollarSign,
-        color: "text-amber-500",
         subItems: [
-            { name: "Payments", href: "/admin/financial/payments", icon: CreditCard },
-            { name: "Invoices", href: "/admin/financial/invoices", icon: FileText },
-            { name: "Revenue Analytics", href: "/admin/financial/revenue", icon: PieChart },
+          { name: "Payments", href: "/admin/financial/payments", icon: CreditCard },
+          { name: "Invoices", href: "/admin/financial/invoices", icon: FileText },
+          { name: "Revenue Analytics", href: "/admin/financial/revenue", icon: PieChart },
         ],
-    },
-    {
+      },
+    ],
+  },
+  {
+    label: "Services",
+    items: [
+      {
         name: "Extra Requirements",
-        icon: Wrench,
-        color: "text-emerald-500",
+        icon: Sofa,
         subItems: [
-            { name: "Received", href: "/admin/received", icon: ClipboardCheck },
-            {
-                name: "Settings",
-                icon: Settings,
-                color: "text-gray-500",
-                subItems: [
-                    { name: "Furniture Catalog", href: "/admin/furniture", icon: Package },
-                    { name: "AV & IT Rentals", href: "/admin/rental-items", icon: Tv },
-                    { name: "Electrical Rates", href: "/admin/electrical-rates", icon: Bolt },
-                    { name: "Hostess Rates", href: "/admin/hostess-rates", icon: Sparkles },
-                    { name: "Compressed Air", href: "/admin/compressed-air", icon: Wind },
-                    { name: "Water Connection", href: "/admin/water-connection", icon: Droplet },
-                    { name: "Security Guard", href: "/admin/security-guard", icon: Shield },
-                    { name: "Housekeeping", href: "/admin/housekeeping", icon: Home },
-                    { name: "Security Deposit", href: "/admin/security-deposit", icon: Banknote },
-                ]
-            }
-        ]
-    },
-    // { name: "Media", icon: Camera, color: "text-pink-500", href: "/admin/media" },
-    { name: "Manuals", icon: FileText, color: "text-green-500", href: "/admin/manual" },
-    { name: "Reports", icon: BarChart3, color: "text-teal-500", href: "/admin/reports" },
+          { name: "Received", href: "/admin/received", icon: Package },
+          {
+            name: "Settings",
+            icon: Settings,
+            subItems: [
+              { name: "Furniture", href: "/admin/furniture", icon: Armchair },
+              { name: "AV & IT Rentals", href: "/admin/rental-items", icon: Monitor },
+              { name: "Electrical Load", href: "/admin/electrical-rates", icon: Power },
+              { name: "Hostess Rates", href: "/admin/hostess-rates", icon: UserRound },
+              { name: "Compressed Air", href: "/admin/compressed-air", icon: Cable },
+              { name: "Water Connection", href: "/admin/water-connection", icon: Droplet },
+              { name: "Security Guard", href: "/admin/security-guard", icon: ShieldCheck },
+              { name: "Housekeeping", href: "/admin/housekeeping", icon: Brush },
+              { name: "Security Deposit", href: "/admin/security-deposit", icon: Landmark },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Analytics & System",
+    items: [
+      { name: "Reports", href: "/admin/reports", icon: BarChart3 },
+      { name: "Settings", href: "/admin/settings", icon: Settings },
+    ],
+  },
 ];
 
-export default function AdminShell({ children }: { children: React.ReactNode }) {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [openMenus, setOpenMenus] = useState<Set<string>>(new Set());
-    const [mobileOpenMenus, setMobileOpenMenus] = useState<Set<string>>(new Set());
-    const [userMenuOpen, setUserMenuOpen] = useState(false);
-    const [user, setUser] = useState<any>(null);
-    const router = useRouter();
-    const pathname = usePathname();
+function isGroup(item: NavItem): item is NavGroup {
+  return "subItems" in item && Array.isArray(item.subItems);
+}
 
-    useEffect(() => {
-        const userStr = localStorage.getItem("adminUser");
-        if (userStr) {
-            try {
-                setUser(JSON.parse(userStr));
-            } catch (e) {
-                console.error("Failed to parse user:", e);
-            }
-        }
-    }, []);
+function itemContainsPath(item: NavItem, pathname: string): boolean {
+  if (!isGroup(item)) return pathname === item.href || pathname.startsWith(`${item.href}/`);
+  return item.subItems.some((child) => itemContainsPath(child, pathname));
+}
 
-    const toggleMenu = (name: string, isMobile: boolean = false) => {
-        if (isMobile) {
-            const newSet = new Set(mobileOpenMenus);
-            newSet.has(name) ? newSet.delete(name) : newSet.add(name);
-            setMobileOpenMenus(newSet);
-        } else {
-            const newSet = new Set(openMenus);
-            newSet.has(name) ? newSet.delete(name) : newSet.add(name);
-            setOpenMenus(newSet);
-        }
-    };
+function collectOpenMenus(sections: NavSection[], pathname: string, open = new Set<string>()) {
+  sections.forEach((section) => {
+    section.items.forEach((item) => walkOpen(item, pathname, open));
+  });
+  return open;
+}
 
-    const handleLogout = () => {
-        localStorage.removeItem("adminToken");
-        localStorage.removeItem("adminUser");
-        toast.success("Logged out successfully");
-        window.location.href = "/admin/login";
-    };
+function walkOpen(item: NavItem, pathname: string, open: Set<string>) {
+  if (isGroup(item) && itemContainsPath(item, pathname)) {
+    open.add(item.name);
+    item.subItems.forEach((child) => walkOpen(child, pathname, open));
+  }
+}
 
-    const handleNavigation = (href: string) => {
-        router.push(href);
-        setSidebarOpen(false);
-    };
+function NavButton({
+  active,
+  onClick,
+  icon: Icon,
+  label,
+  trailing,
+}: {
+  active?: boolean;
+  onClick: () => void;
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  trailing?: React.ReactNode;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`flex w-full items-center gap-2.5 rounded-md px-2.5 py-[7px] text-[13px] leading-none transition-colors ${active
+        ? "bg-white/10 font-medium text-white shadow-sm"
+        : "font-normal text-white/70 hover:bg-white/[0.08] hover:text-white"
+        }`}
+    >
+      <Icon className={`h-4 w-4 shrink-0 ${active ? "text-[#00A1B1]" : "text-white/50"}`} />
+      <span className="flex-1 truncate text-left">{label}</span>
+      {trailing}
+    </button>
+  );
+}
 
-    const renderNavItem = (item: any, level: number = 0, isMobile: boolean = false) => {
-        const hasSubItems = item.subItems && item.subItems.length > 0;
-        const isOpen = isMobile ? mobileOpenMenus.has(item.name) : openMenus.has(item.name);
-
-        if (hasSubItems) {
-            return (
-                <div key={item.name} className={`${level > 0 ? 'ml-4' : ''}`}>
-                    <button
-                        onClick={() => toggleMenu(item.name, isMobile)}
-                        className={`w-full flex items-center px-4 py-3 text-sm rounded-xl transition-all ${isOpen ? 'bg-orange-500/20 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800/50'}`}
-                    >
-                        <item.icon className={`h-5 w-5 mr-3 ${item.color}`} />
-                        <span className="flex-1 text-left">{item.name}</span>
-                        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-                    </button>
-                    {isOpen && (
-                        <div className="ml-6 pl-4 border-l border-gray-700 space-y-1 mt-1">
-                            {item.subItems.map((subItem: any) => renderNavItem(subItem, level + 1, isMobile))}
-                        </div>
-                    )}
-                </div>
-            );
-        }
-
-        if (!item.href) return null;
-
-        return (
-            <button
-                key={item.href}
-                onClick={() => handleNavigation(item.href)}
-                className={`w-full flex items-center px-4 py-3 text-sm rounded-xl transition-all ${pathname === item.href ? 'bg-orange-500/20 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800/50'}`}
-            >
-                <item.icon className={`h-5 w-5 mr-3 ${item.color}`} />
-                <span>{item.name}</span>
-                {pathname === item.href && <ChevronRight className="h-4 w-4 ml-auto text-orange-500" />}
-            </button>
-        );
-    };
+function renderNavItem(
+  item: NavItem,
+  pathname: string,
+  handleNavigation: (href: string) => void,
+  openMenus: Set<string>,
+  toggleMenu: (name: string) => void
+) {
+  if (isGroup(item)) {
+    const isOpen = openMenus.has(item.name);
+    const childActive = itemContainsPath(item, pathname);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-            {/* Mobile Sidebar */}
-            {sidebarOpen && <div className="fixed inset-0 z-50 bg-[#003A77]/80 backdrop-blur-sm lg:hidden" onClick={() => setSidebarOpen(false)} />}
-            <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-gradient-to-b from-gray-900 to-gray-800 border-r border-gray-700 transform transition-all duration-300 lg:hidden ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-                <div className="px-6 py-5 flex items-center justify-between border-b border-gray-700">
-                    <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                            <Truck className="h-5 w-5 text-white" />
-                        </div>
-                        <div>
-                            <span className="font-bold text-lg text-white">IndiaMET</span>
-                            <p className="text-xs text-gray-400">Admin Panel</p>
-                        </div>
-                    </div>
-                    <button onClick={() => setSidebarOpen(false)} className="p-2 hover:bg-gray-800 rounded-xl">
-                        <X className="h-5 w-5 text-gray-400" />
-                    </button>
-                </div>
-                <div className="px-4 py-6 border-b border-gray-700">
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-800/50">
-                        <div className="h-12 w-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                            <User className="h-6 w-6 text-white" />
-                        </div>
-                        <div className="flex-1">
-                            <p className="font-semibold text-white truncate">{user?.name || 'Admin'}</p>
-                            <p className="text-xs text-gray-400 truncate">{user?.email || 'admin@example.com'}</p>
-                        </div>
-                    </div>
-                </div>
-                <nav className="flex-1 px-3 space-y-1 overflow-y-auto h-[calc(100vh-14rem)] py-4">
-                    {navigation.map((item) => renderNavItem(item, 0, true))}
-                </nav>
-                <div className="p-4 border-t border-gray-700">
-                    <button onClick={handleLogout} className="w-full flex items-center justify-center gap-2 text-sm text-gray-400 hover:text-white py-3 hover:bg-gray-800/50 rounded-xl">
-                        <LogOut className="h-4 w-4" />
-                        Sign Out
-                    </button>
-                </div>
-            </div>
-
-            {/* Desktop Sidebar */}
-            <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-72 lg:flex-col bg-gradient-to-b from-gray-900 to-gray-800 border-r border-gray-700">
-                <div className="px-6 py-6 flex items-center gap-3 border-b border-gray-700">
-                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                        <Truck className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                        <h1 className="font-bold text-xl text-white">IndiaMET</h1>
-                        <p className="text-xs text-gray-400">Management System</p>
-                    </div>
-                </div>
-                <div className="px-4 py-6 border-b border-gray-700">
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
-                        <div className="h-14 w-14 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                            <User className="h-7 w-7 text-white" />
-                        </div>
-                        <div className="flex-1">
-                            <p className="font-semibold text-white">{user?.name || 'Admin'}</p>
-                            <p className="text-sm text-gray-400">{user?.email || 'admin@example.com'}</p>
-                            <span className="px-2 py-0.5 bg-orange-500/20 text-orange-400 text-xs rounded-full mt-1 inline-block">Admin</span>
-                        </div>
-                    </div>
-                </div>
-                <nav className="flex-1 px-3 space-y-1 overflow-y-auto py-6">
-                    {navigation.map((item) => renderNavItem(item, 0, false))}
-                </nav>
-                <div className="p-4 border-t border-gray-700">
-                    <button onClick={handleLogout} className="w-full flex items-center justify-center gap-2 text-sm text-gray-400 hover:text-white py-3 hover:bg-gray-800/50 rounded-xl">
-                        <LogOut className="h-4 w-4" />
-                        Sign Out
-                    </button>
-                    <div className="mt-4 px-3 pt-4 border-t border-gray-700/50">
-                        <p className="text-xs text-gray-500 text-center">© 2024 IndiaMET</p>
-                    </div>
-                </div>
-            </div>
-
-            {/* Main Content */}
-            <div className="lg:pl-72">
-                <header className="h-16 bg-gray-900/90 backdrop-blur-xl border-b border-gray-700/50 flex items-center px-6 justify-between sticky top-0 z-40">
-                    <button className="lg:hidden p-2 hover:bg-gray-800 rounded-xl" onClick={() => setSidebarOpen(true)}>
-                        <Menu className="h-5 w-5 text-gray-400" />
-                    </button>
-                    <div className="hidden md:flex items-center gap-3">
-                        <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
-                        <span className="text-sm text-gray-400">
-                            Welcome back, <span className="text-white font-medium">{user?.name?.split(' ')[0] || 'Admin'}</span>
-                        </span>
-                    </div>
-                    <div className="relative">
-                        <button onClick={() => setUserMenuOpen(!userMenuOpen)} className="flex items-center gap-3 px-4 py-2 rounded-xl hover:bg-gray-800">
-                            <div className="h-9 w-9 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                                <User className="h-5 w-5 text-white" />
-                            </div>
-                            <span className="hidden lg:block text-sm font-semibold text-white">{user?.name || 'Admin'}</span>
-                            <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} />
-                        </button>
-                        {userMenuOpen && (
-                            <div className="absolute right-0 top-full mt-2 w-48 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl py-2 z-50">
-                                <div className="px-4 py-3 border-b border-gray-700">
-                                    <p className="text-sm font-medium text-white">{user?.name || 'Admin'}</p>
-                                    <p className="text-xs text-gray-400 truncate">{user?.email || 'admin@example.com'}</p>
-                                </div>
-                                <button onClick={handleLogout} className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-red-400 hover:text-white hover:bg-red-500/20">
-                                    <LogOut className="h-4 w-4" />
-                                    Sign Out
-                                </button>
-                            </div>
-                        )}
-                    </div>
-                </header>
-                <main className="p-6">
-                    <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl border border-gray-700/30 shadow-xl">
-                        {children}
-                    </div>
-                </main>
-            </div>
-        </div>
+      <div key={item.name}>
+        <NavButton
+          active={childActive && !isOpen}
+          onClick={() => toggleMenu(item.name)}
+          icon={item.icon}
+          label={item.name}
+          trailing={
+            <ChevronDown
+              className={`h-3.5 w-3.5 text-white/40 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                }`}
+            />
+          }
+        />
+        {isOpen ? (
+          <div className="relative ml-[18px] mt-0.5 space-y-0.5 border-l border-white/10 py-0.5 pl-2.5">
+            {item.subItems.map((child) =>
+              renderNavItem(child, pathname, handleNavigation, openMenus, toggleMenu)
+            )}
+          </div>
+        ) : null}
+      </div>
     );
+  }
+
+  return (
+    <NavButton
+      key={item.href}
+      active={pathname === item.href || pathname.startsWith(`${item.href}/`)}
+      onClick={() => handleNavigation(item.href)}
+      icon={item.icon}
+      label={item.name}
+    />
+  );
+}
+
+function SidebarNav({
+  pathname,
+  handleNavigation,
+  openMenus,
+  toggleMenu,
+}: {
+  pathname: string;
+  handleNavigation: (href: string) => void;
+  openMenus: Set<string>;
+  toggleMenu: (name: string) => void;
+}) {
+  return (
+    <nav className="sidebar-scroll flex-1 space-y-5 overflow-y-auto px-3 py-4">
+      {navigation.map((section) => (
+        <div key={section.label}>
+          <p className="mb-1.5 px-2.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/40">
+            {section.label}
+          </p>
+          <div className="space-y-0.5">
+            {section.items.map((item) =>
+              renderNavItem(item, pathname, handleNavigation, openMenus, toggleMenu)
+            )}
+          </div>
+        </div>
+      ))}
+    </nav>
+  );
+}
+
+function SidebarBrand({ onClose }: { onClose?: () => void }) {
+  return (
+    <div className="flex h-16 shrink-0 items-center gap-2.5 border-b border-white/10 px-4">
+      <div className="relative h-10 w-[140px] shrink-0">
+        <Image
+          src="/ITS_logo_white.png"
+          alt="IndiaMET Expo"
+          fill
+          className="object-contain object-left drop-shadow-sm"
+          sizes="140px"
+          priority
+        />
+      </div>
+      <span className="rounded border border-[#00A1B1]/40 bg-[#00A1B1]/15 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#00A1B1]">
+        Admin
+      </span>
+      {onClose ? (
+        <button
+          onClick={onClose}
+          className="ml-auto rounded-md p-1.5 text-white/50 hover:bg-white/10 hover:text-white"
+          aria-label="Close menu"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
+function SidebarFooter({
+  name,
+  email,
+  onLogout,
+}: {
+  name?: string;
+  email?: string;
+  onLogout: () => void;
+}) {
+  const initial = (name || "A").trim().charAt(0).toUpperCase();
+  return (
+    <div className="shrink-0 border-t border-white/10 p-3">
+      <div className="mb-2 flex items-center gap-2.5 px-1.5 py-1">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#00A1B1] text-xs font-semibold text-white shadow-sm">
+          {initial}
+        </div>
+        <div className="min-w-0">
+          <p className="truncate text-[13px] font-medium text-white">{name || "Administrator"}</p>
+          <p className="truncate text-[11px] text-white/50">{email || "admin@indiametexpo.com"}</p>
+        </div>
+      </div>
+      <button
+        onClick={onLogout}
+        className="flex w-full items-center gap-2.5 rounded-md px-2.5 py-2 text-[13px] text-white/70 hover:bg-white/[0.08] hover:text-white transition-colors"
+      >
+        <LogOut className="h-4 w-4 text-[#00A1B1]" />
+        Sign out
+      </button>
+    </div>
+  );
+}
+
+function SidebarFrame({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <aside className={`flex w-[260px] flex-col bg-[#003A77] text-white shadow-xl ${className ?? ""}`}>
+      {children}
+    </aside>
+  );
+}
+
+export default function AdminShell({ children }: { children: React.ReactNode }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [openMenus, setOpenMenus] = useState<Set<string>>(new Set());
+  const [notificationCount, setNotificationCount] = useState(0);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [user, setUser] = useState<{ name?: string; email?: string } | null>(null);
+
+  const router = useRouter();
+  const pathname = usePathname() || "";
+
+  useEffect(() => {
+    const userStr = localStorage.getItem("adminUser");
+    if (userStr) {
+      try {
+        setUser(JSON.parse(userStr));
+      } catch (e) {
+        console.error("Failed to parse user:", e);
+      }
+    }
+  }, []);
+
+  const pathOpenMenus = useMemo(() => collectOpenMenus(navigation, pathname), [pathname]);
+
+  useEffect(() => {
+    setOpenMenus((prev) => {
+      const next = new Set(prev);
+      pathOpenMenus.forEach((name) => next.add(name));
+      return next;
+    });
+  }, [pathOpenMenus]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (sidebarOpen && !target.closest("#mobile-sidebar") && !target.closest("[data-menu-button]")) {
+        setSidebarOpen(false);
+      }
+      if (!target.closest("#user-menu")) {
+        setUserMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [sidebarOpen]);
+
+  const toggleMenu = (name: string) => {
+    setOpenMenus((prev) => {
+      const next = new Set(prev);
+      next.has(name) ? next.delete(name) : next.add(name);
+      return next;
+    });
+  };
+
+  const handleLogout = async () => {
+    try {
+      localStorage.removeItem("adminToken");
+      localStorage.removeItem("adminUser");
+      toast.success("Logged out successfully");
+      router.push("/admin/login");
+    } catch {
+      toast.error("Failed to logout");
+    }
+  };
+
+  const handleNavigation = (href: string) => {
+    router.push(href);
+    setSidebarOpen(false);
+  };
+
+  const sidebarInner = () => (
+    <>
+      <SidebarNav
+        pathname={pathname}
+        handleNavigation={handleNavigation}
+        openMenus={openMenus}
+        toggleMenu={toggleMenu}
+      />
+      <SidebarFooter name={user?.name} email={user?.email} onLogout={handleLogout} />
+    </>
+  );
+
+  return (
+    <div className="min-h-screen bg-[#F4F6FA]">
+      <style>{`
+        .sidebar-scroll::-webkit-scrollbar { width: 6px; }
+        .sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+        .sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 999px; }
+        .sidebar-scroll { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.18) transparent; }
+      `}</style>
+
+      {sidebarOpen ? (
+        <div
+          className="fixed inset-0 z-50 bg-[#003A77]/60 backdrop-blur-xs lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      ) : null}
+
+      <SidebarFrame
+        className={`fixed inset-y-0 left-0 z-50 transition-transform duration-300 lg:hidden ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+      >
+        <div id="mobile-sidebar" className="flex h-full flex-col">
+          <SidebarBrand onClose={() => setSidebarOpen(false)} />
+          {sidebarInner()}
+        </div>
+      </SidebarFrame>
+
+      <SidebarFrame className="hidden lg:fixed lg:inset-y-0 lg:flex">
+        <SidebarBrand />
+        {sidebarInner()}
+      </SidebarFrame>
+
+      <div className="lg:pl-[260px]">
+        {/* HEADER / NAVBAR */}
+        <header className="sticky top-0 z-40 flex h-16 items-center justify-between border-b border-slate-200 bg-white px-4 sm:px-6 shadow-xs">
+          <div className="flex items-center gap-3">
+            <button
+              data-menu-button
+              className="rounded-md p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-800 lg:hidden"
+              onClick={() => setSidebarOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+            <div className="hidden md:block">
+              <p className="text-sm font-semibold text-[#003A77]">
+                Welcome back{user?.name ? `, ${user.name.split(" ")[0]}` : ""}
+              </p>
+              <p className="text-xs text-slate-500">IndiaMET 2027 Exhibition Administration</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setNotificationCount(0)}
+              className="relative rounded-md p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition"
+              aria-label="Notifications"
+            >
+              <Bell className="h-5 w-5" />
+              {notificationCount > 0 ? (
+                <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-[#00A1B1]" />
+              ) : null}
+            </button>
+
+            <div className="relative" id="user-menu">
+              <button
+                onClick={() => setUserMenuOpen(!userMenuOpen)}
+                className="flex items-center gap-2 rounded-md px-2 py-1.5 hover:bg-slate-100 transition"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#003A77] text-xs font-semibold text-white">
+                  {(user?.name || "A").trim().charAt(0).toUpperCase()}
+                </div>
+                <div className="hidden text-left lg:block">
+                  <p className="text-sm font-medium text-slate-800">{user?.name || "Administrator"}</p>
+                  <p className="text-[11px] text-slate-500">Super Admin</p>
+                </div>
+                <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform ${userMenuOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {userMenuOpen ? (
+                <div className="absolute right-0 top-full mt-2 w-52 rounded-lg border border-slate-200 bg-white py-1 shadow-lg z-50">
+                  <div className="border-b border-slate-100 px-3 py-2">
+                    <p className="text-sm font-medium text-slate-800">{user?.name || "Administrator"}</p>
+                    <p className="truncate text-xs text-slate-500">{user?.email || "admin@indiametexpo.com"}</p>
+                  </div>
+                  <button
+                    onClick={handleLogout}
+                    className="flex w-full items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 transition"
+                  >
+                    <LogOut className="h-4 w-4" />
+                    Sign out
+                  </button>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </header>
+
+        <main className="p-4 sm:p-6">{children}</main>
+      </div>
+    </div>
+  );
 }
