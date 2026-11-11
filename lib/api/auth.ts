@@ -21,31 +21,35 @@ export async function adminLogin(email: string, password: string) {
             const { token, user } = response.data.data;
             localStorage.setItem('adminToken', token);
             localStorage.setItem('adminUser', JSON.stringify(user));
+            localStorage.setItem('admin_token', token);
+            localStorage.setItem('admin_user', JSON.stringify(user));
             console.log("✅ Token stored in localStorage");
             return { success: true, data: { token, user } };
         }
-        return { success: false, error: response.data.error };
+        return { success: false, error: response.data.error || 'Invalid email or password' };
     } catch (error: any) {
         console.error("❌ Login error:", error);
-        return { success: false, error: error.response?.data?.error || 'Login failed' };
+        return { success: false, error: error.response?.data?.error || error.response?.data?.message || error.message || 'Login failed' };
     }
 }
 
 export async function adminLogout() {
     localStorage.removeItem('adminToken');
     localStorage.removeItem('adminUser');
+    localStorage.removeItem('admin_token');
+    localStorage.removeItem('admin_user');
 }
 
 export function getAdminToken() {
     if (typeof window !== 'undefined') {
-        return localStorage.getItem('adminToken');
+        return localStorage.getItem('adminToken') || localStorage.getItem('admin_token');
     }
     return null;
 }
 
 export function getAdminUser() {
     if (typeof window !== 'undefined') {
-        const user = localStorage.getItem('adminUser');
+        const user = localStorage.getItem('adminUser') || localStorage.getItem('admin_user');
         return user ? JSON.parse(user) : null;
     }
     return null;
