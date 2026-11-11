@@ -85,6 +85,10 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtm.js?id=GTM-M5H5HRZM"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-NM56GWMC"
+          strategy="afterInteractive"
+        />
 
         {/* Google Analytics - First script loads the library */}
         <Script
@@ -147,6 +151,14 @@ export default function RootLayout({
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-M5H5HRZM"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NM56GWMC"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
