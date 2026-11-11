@@ -78,7 +78,7 @@ const navigation: NavSection[] = [
           { name: "Extra Requirements", href: "/admin/exhibition/requirements", icon: Package },
           { name: "Floor Plan", href: "/admin/floor-plan", icon: Globe },
           { name: "Bookings", href: "/admin/bookings", icon: CalendarCheck },
-          { name: "Manuals", href: "/admin/manual", icon: BookOpen },
+          { name: "Manuals", href: "/admin/exhibition/manuals", icon: BookOpen },
         ],
       },
       {
@@ -137,6 +137,7 @@ function isPathActive(targetHref: string, pathname: string): boolean {
   if (targetHref === "/admin/floor-plan" && (pathname === "/admin/exhibition/booths" || pathname.startsWith("/admin/exhibition/booths/"))) return true;
   if (targetHref === "/admin/exhibition/exhibitors" && (pathname === "/admin/exhibitors" || pathname.startsWith("/admin/exhibitors/"))) return true;
   if (targetHref === "/admin/exhibition/teams" && (pathname === "/admin/teams" || pathname.startsWith("/admin/teams/"))) return true;
+  if (targetHref === "/admin/exhibition/manuals" && (pathname === "/admin/manual" || pathname.startsWith("/admin/manual/"))) return true;
   return false;
 }
 
