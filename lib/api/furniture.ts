@@ -1,7 +1,8 @@
 // lib/api/furniture.ts
 import axios from "axios";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const rawApiUrl = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API_BASE_URL = rawApiUrl.endsWith("/api") ? rawApiUrl : `${rawApiUrl}/api`;
 
 const api = axios.create({
     baseURL: API_BASE_URL,
@@ -13,7 +14,10 @@ const api = axios.create({
 api.interceptors.request.use(
     (config) => {
         if (typeof window !== "undefined") {
-            const token = localStorage.getItem("adminToken");
+            const token =
+                localStorage.getItem("adminToken") ||
+                localStorage.getItem("admin_token") ||
+                localStorage.getItem("token");
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             }
@@ -31,6 +35,7 @@ export interface Furniture {
     cost3Days: number;
     category: string;
     inStock: boolean;
+    isActive: boolean;
     imageUrl: string | null;
     cloudinaryPublicId: string | null;
     createdAt: string;
@@ -44,6 +49,7 @@ export interface CreateFurnitureData {
     cost3Days: number;
     category: string;
     inStock: boolean;
+    isActive?: boolean;
 }
 
 // Get all furniture with filters
@@ -71,6 +77,7 @@ export async function createFurniture(data: CreateFurnitureData, imageFile?: Fil
     formData.append('cost3Days', data.cost3Days.toString());
     formData.append('category', data.category);
     formData.append('inStock', data.inStock.toString());
+    if (data.isActive !== undefined) formData.append('isActive', data.isActive.toString());
     if (imageFile) formData.append('image', imageFile);
 
     const response = await api.post('/admin/furniture', formData, {
@@ -84,12 +91,13 @@ export async function createFurniture(data: CreateFurnitureData, imageFile?: Fil
 // Update furniture with image
 export async function updateFurniture(id: string, data: Partial<CreateFurnitureData>, imageFile?: File) {
     const formData = new FormData();
-    if (data.code) formData.append('code', data.code);
-    if (data.description) formData.append('description', data.description);
-    if (data.size) formData.append('size', data.size);
-    if (data.cost3Days) formData.append('cost3Days', data.cost3Days.toString());
-    if (data.category) formData.append('category', data.category);
+    if (data.code !== undefined) formData.append('code', data.code);
+    if (data.description !== undefined) formData.append('description', data.description);
+    if (data.size !== undefined) formData.append('size', data.size);
+    if (data.cost3Days !== undefined) formData.append('cost3Days', data.cost3Days.toString());
+    if (data.category !== undefined) formData.append('category', data.category);
     if (data.inStock !== undefined) formData.append('inStock', data.inStock.toString());
+    if (data.isActive !== undefined) formData.append('isActive', data.isActive.toString());
     if (imageFile) formData.append('image', imageFile);
 
     const response = await api.put(`/admin/furniture/${id}`, formData, {
@@ -115,6 +123,12 @@ export async function bulkDeleteFurniture(ids: string[]) {
 // Update stock status - FIXED: Using PATCH method with correct endpoint
 export async function updateStockStatus(id: string, inStock: boolean) {
     const response = await api.patch(`/admin/furniture/${id}/stock`, { inStock });
+    return response.data;
+}
+
+// Update active status
+export async function toggleFurnitureActive(id: string, isActive: boolean) {
+    const response = await api.patch(`/admin/furniture/${id}`, { isActive });
     return response.data;
 }
 

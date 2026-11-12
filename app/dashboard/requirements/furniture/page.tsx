@@ -10,22 +10,24 @@ import {
   MinusIcon,
   PlusIcon,
   PhotoIcon,
-  ExclamationTriangleIcon
+  ExclamationTriangleIcon,
 } from '@heroicons/react/24/outline';
 import { furnitureAPI, extraRequirementsAPI } from '@/lib/api/exhibitorClient';
 import LoadingDots from '@/components/ui/LoadingDots';
 
-
 interface FurnitureItem {
   id: string;
-  name: string;
+  code: string;
+  name?: string;
   description: string;
-  pricePerDay: number;
+  size?: string | null;
+  cost3Days: number;
+  pricePerDay?: number;
   quantity: number;
-  imageUrl: string;
+  imageUrl: string | null;
   category: string;
   stockStatus?: string;
-  inStock?: boolean;
+  inStock: boolean;
 }
 
 function SuccessPage({ onBack }: { onBack: () => void }) {
@@ -37,7 +39,10 @@ function SuccessPage({ onBack }: { onBack: () => void }) {
         </div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Furniture Request Submitted!</h2>
         <p className="text-gray-600 mb-6">Your furniture rental request has been submitted successfully.</p>
-        <button onClick={onBack} className="px-6 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition">
+        <button
+          onClick={onBack}
+          className="px-6 py-2 bg-[#003A77] text-white rounded-lg hover:bg-[#002855] transition"
+        >
           Back to Requirements
         </button>
       </div>
@@ -48,26 +53,33 @@ function SuccessPage({ onBack }: { onBack: () => void }) {
 export default function FurnitureRequirementsPage() {
   const router = useRouter();
   const [items, setItems] = useState<FurnitureItem[]>([]);
-  const [rentalDays, setRentalDays] = useState(3);
   const [submitted, setSubmitted] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
-  // Fetch furniture from API
   useEffect(() => {
     const fetchFurniture = async () => {
       try {
         setLoading(true);
         const response = await furnitureAPI.getAll();
         if (response.success) {
-          // Map API response to component format with quantity
-          const itemsWithQuantity = response.data.map((item: any) => ({
-            ...item,
-            quantity: 0
+          const mapped: FurnitureItem[] = (response.data || [])
+            .filter((item: any) => item.isActive !== false)
+            .map((item: any) => ({
+            id: item.id,
+            code: item.code || item.id,
+            name: item.name,
+            description: item.description || item.name || 'Furniture Item',
+            size: item.size || null,
+            cost3Days: Number(item.cost3Days ?? item.pricePerDay ?? 0),
+            category: item.category || 'Furniture',
+            imageUrl: item.imageUrl || null,
+            inStock: item.inStock !== undefined ? Boolean(item.inStock) : item.stockStatus !== 'out_of_stock',
+            quantity: 0,
           }));
-          setItems(itemsWithQuantity);
+          setItems(mapped);
         } else {
           setError('Failed to load furniture items');
         }
@@ -83,28 +95,24 @@ export default function FurnitureRequirementsPage() {
   }, []);
 
   const updateQuantity = (id: string, delta: number) => {
-    setItems(items.map(item => {
-      if (item.id === id) {
-        const newQuantity = Math.max(0, item.quantity + delta);
-        return { ...item, quantity: newQuantity };
-      }
-      return item;
-    }));
+    setItems((prev) =>
+      prev.map((item) => {
+        if (item.id === id) {
+          const newQuantity = Math.max(0, item.quantity + delta);
+          return { ...item, quantity: newQuantity };
+        }
+        return item;
+      })
+    );
   };
 
-  const calculateTotal = () => {
-    return items.reduce((sum, item) => sum + (item.pricePerDay * item.quantity * rentalDays), 0);
-  };
+  const selectedItems = items.filter((i) => i.quantity > 0);
+  const total = items.reduce((sum, item) => sum + item.cost3Days * item.quantity, 0);
 
-  const selectedItems = items.filter(i => i.quantity > 0);
-  const total = calculateTotal();
+  const categories = ['all', ...Array.from(new Set(items.map((i) => i.category).filter(Boolean)))];
 
-  // Get unique categories
-  const categories = ['all', ...new Set(items.map(i => i.category))];
-
-  const filteredItems = selectedCategory === 'all'
-    ? items
-    : items.filter(i => i.category === selectedCategory);
+  const filteredItems =
+    selectedCategory === 'all' ? items : items.filter((i) => i.category === selectedCategory);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -115,32 +123,36 @@ export default function FurnitureRequirementsPage() {
 
     setSubmitting(true);
     try {
-      // Format furniture items for API
-      const furnitureItems = selectedItems.map(item => ({
+      const furnitureItems = selectedItems.map((item) => ({
         id: item.id,
-        code: item.id,
-        name: item.name,
+        code: item.code,
+        description: item.description,
+        size: item.size || undefined,
         quantity: item.quantity,
-        cost: item.pricePerDay,
-        totalCost: item.pricePerDay * item.quantity * rentalDays
+        cost: item.cost3Days,
+        totalCost: item.cost3Days * item.quantity,
       }));
 
-      // Get general info from localStorage or context
       const generalInfo = JSON.parse(localStorage.getItem('exhibitorGeneralInfo') || '{}');
       const boothDetails = JSON.parse(localStorage.getItem('exhibitorBoothDetails') || '{}');
 
-      // Submit to API
       const response = await extraRequirementsAPI.submit({
+        type: 'exhibitor',
+        description: 'Furniture requirement submission',
         generalInfo,
         boothDetails,
-        eventName: 'Tyre Expo 2024',
+        eventName: 'IndiaMET 2027',
         furnitureItems,
-        notes: `Rental duration: ${rentalDays} days`
-      });
+        totals: {
+          servicesTotal: total,
+          gst: Math.round(total * 0.18),
+          total: Math.round(total * 1.18),
+        },
+        notes: 'Furniture rental (3-day exhibition period)',
+      } as any);
 
       if (response.success) {
         setSubmitted(true);
-        // Clear cart from localStorage if needed
         localStorage.removeItem('furnitureCart');
       } else {
         setError(response.error || 'Failed to submit requirement');
@@ -189,15 +201,20 @@ export default function FurnitureRequirementsPage() {
   return (
     <div className="max-w-7xl mx-auto">
       <div className="flex items-center gap-3 mb-6">
-        <button onClick={() => router.back()} className="p-2 text-gray-500 hover:text-gray-700 rounded-lg transition">
+        <button
+          onClick={() => router.back()}
+          className="p-2 text-gray-500 hover:text-gray-700 rounded-lg transition"
+        >
           <ArrowLeftIcon className="h-5 w-5" />
         </button>
-        <div className="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center">
-          <ComputerDesktopIcon className="h-6 w-6 text-purple-600" />
+        <div className="h-12 w-12 bg-sky-100 rounded-xl flex items-center justify-center">
+          <ComputerDesktopIcon className="h-6 w-6 text-[#003A77]" />
         </div>
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Furniture & Equipment Rental</h1>
-          <p className="text-gray-500 text-sm">Rent furniture, fixtures, and equipment for your booth</p>
+          <p className="text-gray-500 text-sm">
+            Rent furniture, fixtures, and equipment for your booth (3-day exhibition period)
+          </p>
         </div>
       </div>
 
@@ -206,62 +223,82 @@ export default function FurnitureRequirementsPage() {
         <div className="lg:col-span-2">
           {/* Category Filter */}
           <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
-            {categories.map(cat => (
+            {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition whitespace-nowrap ${selectedCategory === cat
-                    ? 'bg-purple-600 text-white'
+                className={`px-4 py-2 rounded-full text-sm font-medium transition whitespace-nowrap cursor-pointer ${
+                  selectedCategory === cat
+                    ? 'bg-[#003A77] text-white'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
+                }`}
               >
-                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                {cat === 'all' ? 'All' : cat}
               </button>
             ))}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {filteredItems.map((item) => (
-              <div key={item.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition">
+              <div
+                key={item.id}
+                className="bg-white rounded-2xl shadow-sm border border-gray-200/80 overflow-hidden hover:shadow-md transition"
+              >
                 {/* Image */}
-                <div className="h-40 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center relative">
+                <div className="h-44 bg-gray-100 flex items-center justify-center relative">
                   {item.imageUrl ? (
-                    <img src={item.imageUrl} alt={item.name} className="h-full w-full object-cover" />
+                    <img
+                      src={item.imageUrl}
+                      alt={item.description}
+                      className="h-full w-full object-cover"
+                    />
                   ) : (
-                    <PhotoIcon className="h-12 w-12 text-purple-300" />
+                    <PhotoIcon className="h-12 w-12 text-gray-300" />
                   )}
-                  <div className="absolute top-2 right-2 bg-white/90 rounded-full px-2 py-1 text-xs font-medium text-purple-600">
+                  <div className="absolute top-2 left-2 bg-white/95 rounded-full px-2.5 py-0.5 text-xs font-semibold text-[#003A77] shadow-2xs">
                     {item.category}
                   </div>
-                  {item.stockStatus === 'out_of_stock' && (
+                  <div className="absolute top-2 right-2 bg-slate-900/75 text-white rounded-md px-2 py-0.5 text-xs font-mono">
+                    {item.code}
+                  </div>
+                  {!item.inStock && (
                     <div className="absolute inset-0 bg-[#003A77]/50 flex items-center justify-center">
-                      <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Out of Stock</span>
+                      <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Out of Stock
+                      </span>
                     </div>
                   )}
                 </div>
 
                 <div className="p-4">
-                  <h3 className="font-semibold text-gray-800">{item.name}</h3>
-                  <p className="text-xs text-gray-500 mt-1">{item.description}</p>
-                  <div className="flex items-center justify-between mt-3">
+                  <h3 className="font-semibold text-gray-900">{item.description}</h3>
+                  {item.size && (
+                    <p className="text-xs text-gray-500 mt-0.5">Size: {item.size}</p>
+                  )}
+                  <div className="flex items-center justify-between mt-3 pt-2 border-t border-gray-100">
                     <div>
-                      <p className="text-sm font-semibold text-purple-600">₹{item.pricePerDay}/day</p>
+                      <p className="text-base font-bold text-[#003A77]">
+                        ₹{item.cost3Days.toLocaleString()}
+                      </p>
+                      <span className="text-[11px] text-gray-400">3-day exhibition rate</span>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2">
                       <button
                         type="button"
                         onClick={() => updateQuantity(item.id, -1)}
-                        disabled={item.stockStatus === 'out_of_stock'}
-                        className="p-1.5 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={!item.inStock || item.quantity === 0}
+                        className="p-1.5 text-gray-500 hover:text-gray-800 border border-gray-200 rounded-lg hover:bg-gray-100 transition disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
                       >
                         <MinusIcon className="h-4 w-4" />
                       </button>
-                      <span className="w-8 text-center font-medium text-gray-700">{item.quantity}</span>
+                      <span className="w-8 text-center font-semibold text-gray-800">
+                        {item.quantity}
+                      </span>
                       <button
                         type="button"
                         onClick={() => updateQuantity(item.id, 1)}
-                        disabled={item.stockStatus === 'out_of_stock'}
-                        className="p-1.5 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={!item.inStock}
+                        className="p-1.5 text-gray-500 hover:text-gray-800 border border-gray-200 rounded-lg hover:bg-gray-100 transition disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
                       >
                         <PlusIcon className="h-4 w-4" />
                       </button>
@@ -275,7 +312,7 @@ export default function FurnitureRequirementsPage() {
 
         {/* Cart Sidebar */}
         <div className="lg:col-span-1">
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-6 text-white sticky top-24">
+          <div className="bg-gradient-to-br from-[#003A77] to-[#005999] rounded-2xl p-6 text-white sticky top-24 shadow-md">
             <div className="flex items-center gap-2 mb-4">
               <ShoppingCartIcon className="h-5 w-5" />
               <h3 className="font-semibold">Your Cart</h3>
@@ -286,60 +323,59 @@ export default function FurnitureRequirementsPage() {
               )}
             </div>
 
-            <div className="mb-4">
-              <label className="block text-sm text-white/80 mb-1">Rental Duration</label>
-              <select
-                value={rentalDays}
-                onChange={(e) => setRentalDays(parseInt(e.target.value))}
-                className="w-full px-3 py-2 rounded-lg text-gray-800 bg-white"
-              >
-                <option value={1}>1 Day</option>
-                <option value={2}>2 Days</option>
-                <option value={3}>3 Days (Recommended)</option>
-                <option value={4}>4 Days</option>
-                <option value={5}>5 Days</option>
-              </select>
-            </div>
-
-            <div className="space-y-2 max-h-60 overflow-y-auto mb-4">
+            <div className="space-y-2 max-h-64 overflow-y-auto mb-4">
               {selectedItems.length === 0 ? (
-                <p className="text-sm text-white/70 text-center py-4">No items selected</p>
+                <p className="text-sm text-white/70 text-center py-6">No items selected</p>
               ) : (
-                selectedItems.map(item => (
-                  <div key={item.id} className="flex justify-between text-sm">
-                    <span>{item.name} x{item.quantity}</span>
-                    <span>₹{(item.pricePerDay * item.quantity * rentalDays).toLocaleString()}</span>
+                selectedItems.map((item) => (
+                  <div key={item.id} className="flex justify-between text-sm gap-2">
+                    <span className="truncate">
+                      {item.description} ({item.code}) x{item.quantity}
+                    </span>
+                    <span className="font-medium shrink-0">
+                      ₹{(item.cost3Days * item.quantity).toLocaleString()}
+                    </span>
                   </div>
                 ))
               )}
             </div>
 
             <div className="border-t border-white/20 pt-3 mb-4">
-              <div className="flex justify-between font-bold">
-                <span>Total:</span>
+              <div className="flex justify-between font-bold text-lg">
+                <span>Total (3 Days):</span>
                 <span>₹{total.toLocaleString()}</span>
               </div>
-              <p className="text-xs text-white/70 mt-1">* GST 18% extra as applicable</p>
-              <p className="text-xs text-white/50 mt-2">* Delivery & setup included</p>
+              <p className="text-xs text-white/75 mt-1">
+                * All furniture items are for 3-day exhibition period. GST 18% extra as applicable.
+              </p>
             </div>
 
             <button
               onClick={handleSubmit}
               disabled={selectedItems.length === 0 || submitting}
-              className="w-full py-2.5 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-2.5 bg-white text-[#003A77] font-semibold rounded-lg hover:bg-sky-50 transition disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
-              {submitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" label="" />Submitting...</span> : 'Submit Rental Request'}
+              {submitting ? (
+                <span className="inline-flex items-center justify-center gap-2">
+                  <LoadingDots size="sm" label="" />
+                  Submitting...
+                </span>
+              ) : (
+                'Submit Rental Request'
+              )}
             </button>
           </div>
 
           {/* Delivery Info */}
-          <div className="mt-4 bg-gray-50 rounded-2xl p-4 text-sm">
-            <p className="font-semibold text-gray-800 mb-2">📦 Delivery Information</p>
-            <p className="text-gray-600 text-xs">
-              • Free delivery and pickup within exhibition premises<br />
-              • Setup assistance available on request<br />
-              • 24/7 support for any issues<br />
-              • Damages policy applies
+          <div className="mt-4 bg-white border border-gray-200/80 rounded-2xl p-4 text-sm">
+            <p className="font-semibold text-gray-800 mb-2">Delivery Information</p>
+            <p className="text-gray-600 text-xs leading-relaxed">
+              • Free delivery and pickup within exhibition premises
+              <br />
+              • Setup assistance available on request
+              <br />
+              • 24/7 support for any issues
+              <br />• Damages policy applies
             </p>
           </div>
         </div>
