@@ -50,7 +50,7 @@ export default function SecurityGuardsPage() {
           // Ensure shifts object exists
           const data = response.data;
           const safeConfig: SecurityGuardConfig = {
-            costPerGuardPerDay: data.costPerGuardPerDay || 2500,
+            costPerGuardPerDay: Number((data as any).ratePerGuardPerDay ?? data.costPerGuardPerDay ?? 2500),
             shifts: {
               day: data.shifts?.day || { start: '09:00', end: '18:00', multiplier: 1 },
               night: data.shifts?.night || { start: '18:00', end: '09:00', multiplier: 1.5 },
@@ -124,18 +124,26 @@ export default function SecurityGuardsPage() {
       const boothDetails = JSON.parse(localStorage.getItem('exhibitorBoothDetails') || '{}');
 
       const totalCost = calculateTotal();
+      const gst = Math.round(totalCost * 0.18);
 
       const response = await extraRequirementsAPI.submit({
+        type: 'exhibitor',
+        description: 'Security guard requirement submission',
         generalInfo,
         boothDetails,
-        eventName: 'Tyre Expo 2024',
+        eventName: 'IndiaMET 2027',
         securityGuard: {
           quantity: formData.quantity,
           noOfDays: formData.days,
           totalCost: totalCost
         },
+        totals: {
+          servicesTotal: totalCost,
+          gst,
+          total: totalCost + gst
+        },
         notes: `Shift: ${formData.shift} (${getShiftDescription()}). ${formData.specialInstructions || 'No special instructions'}`
-      });
+      } as any);
 
       if (response.success) {
         setSubmitted(true);
