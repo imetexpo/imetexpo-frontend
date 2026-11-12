@@ -41,10 +41,11 @@ export default function HousekeepingPage() {
         const response = await housekeepingAPI.getConfig();
 
         if (response.success && response.data) {
+          const d = response.data as any;
           setConfig({
-            costPerStaffPerShift: response.data.costPerStaffPerShift || 2000,
-            shiftsPerDay: response.data.shiftsPerDay || 2,
-            shiftHours: response.data.shiftHours || 8
+            costPerStaffPerShift: Number(d.ratePerShift ?? d.chargesPerShift ?? d.costPerStaffPerShift ?? 2000),
+            shiftsPerDay: Number(d.shiftsPerDay ?? 2),
+            shiftHours: Number(d.shiftHours ?? 10)
           });
           setUsingFallback(false);
         } else {
@@ -92,19 +93,27 @@ export default function HousekeepingPage() {
 
       const totalCost = calculateTotal();
       const costPerShift = config?.costPerStaffPerShift || 2000;
+      const gst = Math.round(totalCost * 0.18);
 
       const response = await extraRequirementsAPI.submit({
+        type: 'exhibitor',
+        description: 'Housekeeping staff requirement submission',
         generalInfo,
         boothDetails,
-        eventName: 'Tyre Expo 2024',
+        eventName: 'IndiaMET 2027',
         housekeepingStaff: {
           quantity: formData.staff,
           noOfDays: formData.days,
           chargesPerShift: costPerShift,
           totalCost: totalCost
         },
+        totals: {
+          servicesTotal: totalCost,
+          gst,
+          total: totalCost + gst
+        },
         notes: `Shifts per day: ${formData.shifts}. ${formData.specialRequest || 'No special requests'}`
-      });
+      } as any);
 
       if (response.success) {
         setSubmitted(true);
