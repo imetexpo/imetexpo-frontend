@@ -35,6 +35,7 @@ import {
   Users,
   BarChart3,
   CalendarCheck,
+  QrCode,
 } from "lucide-react";
 import toast from "react-hot-toast";
 
@@ -69,6 +70,7 @@ const navigation: NavSection[] = [
     items: [
       { name: "Blogs", href: "/admin/blogs", icon: BookOpen },
       { name: "Badge Designs", href: "/admin/badge-designs", icon: LayoutGrid },
+      { name: "Pass Registrations", href: "/admin/pass-registrations", icon: Users },
       {
         name: "Exhibition",
         icon: Building,

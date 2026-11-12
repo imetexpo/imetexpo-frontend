@@ -1,0 +1,584 @@
+'use client';
+
+import { FormEvent, useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import {
+  CalendarDays,
+  CheckCircle2,
+  ChevronDown,
+  Lock,
+  MapPin,
+  Mail,
+  MessageCircle,
+  MessageSquare,
+
+} from 'lucide-react';
+import OtpModal from '@/components/passes/OtpModal';
+import PassesChrome from '@/components/passes/PassesChrome';
+import CountryFlag from '@/components/passes/CountryFlag';
+import {
+  registerVisitorPass,
+  savePassSession,
+  sendPassOtp,
+  verifyPassOtp,
+  type PassChannel,
+} from '@/lib/api/passes';
+
+const COUNTRIES = [
+  { code: '+91', flag: '🇮🇳', name: 'India', max: 10 },
+  { code: '+971', flag: '🇦🇪', name: 'UAE', max: 9 },
+  { code: '+1', flag: '🇺🇸', name: 'USA', max: 10 },
+  { code: '+44', flag: '🇬🇧', name: 'UK', max: 10 },
+  { code: '+65', flag: '🇸🇬', name: 'Singapore', max: 8 },
+  { code: '+60', flag: '🇲🇾', name: 'Malaysia', max: 10 },
+  { code: '+49', flag: '🇩🇪', name: 'Germany', max: 11 },
+  { code: '+86', flag: '🇨🇳', name: 'China', max: 11 },
+];
+
+const INTERESTS = [
+  'Die & Mould Manufacturers',
+  'OEMs & Automotive',
+  'Precision Engineering',
+  'Tooling & Components',
+  'Distributors & Wholesalers',
+  'Retailers & Resellers',
+  'Photographer & Videographer',
+  'Media & Publications',
+];
+
+const SOURCES = [
+  'Google Search',
+  'Social Media',
+  'Email Invitation',
+  'Colleague / Friend',
+  'Exhibition Website',
+  'Other',
+];
+
+type Step = 'phone' | 'details';
+
+export default function PassRegisterPage() {
+  const router = useRouter();
+  const [step, setStep] = useState<Step>('phone');
+  const [channel, setChannel] = useState<PassChannel>('sms');
+  const [email, setEmail] = useState('');
+  const [countryCode, setCountryCode] = useState('+91');
+  const [mobile, setMobile] = useState('');
+  const [countryOpen, setCountryOpen] = useState(false);
+  const [otpOpen, setOtpOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [otpLoading, setOtpLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [otpError, setOtpError] = useState('');
+  const [resendIn, setResendIn] = useState(45);
+  const [otpDigits, setOtpDigits] = useState(4);
+  const [verificationToken, setVerificationToken] = useState('');
+  const [verifiedPhone, setVerifiedPhone] = useState('');
+  const [form, setForm] = useState({
+    name: '',
+    designation: '',
+    company: '',
+    pinCode: '',
+    area: '',
+    city: '',
+    state: '',
+    country: 'India',
+    source: '',
+    interests: [] as string[],
+  });
+  const [pinStatus, setPinStatus] = useState('');
+
+  const selectedCountry = COUNTRIES.find((item) => item.code === countryCode) || COUNTRIES[0];
+  const isValidMobile =
+    countryCode === '+91'
+      ? /^[6-9]\d{9}$/.test(mobile)
+      : mobile.length >= 6 && mobile.length <= selectedCountry.max;
+
+  const channelLabel = channel === 'whatsapp' ? 'WhatsApp' : channel === 'email' ? 'Email' : 'SMS';
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+
+  const canSubmitDetails = useMemo(
+    () => form.name.trim().length >= 2 && form.company.trim().length >= 2 && form.interests.length > 0,
+    [form]
+  );
+
+  const handleChannelChange = (nextChannel: PassChannel) => {
+    setChannel(nextChannel);
+    setError('');
+    setOtpError('');
+  };
+
+  const sendOtp = async () => {
+    setError('');
+    setOtpError('');
+    setLoading(true);
+    try {
+      if (channel === 'email' && !isValidEmail) {
+        setError('Enter a valid email address');
+        setLoading(false);
+        return;
+      }
+      const result = await sendPassOtp({ countryCode, mobile, channel, email: email.trim() });
+      setResendIn(result.resendIn || 45);
+      setOtpDigits(result.digits || 4);
+      savePassSession({ countryCode, mobile, channel, phone: result.phone, e164: result.e164 });
+      setOtpOpen(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send OTP');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleVerify = async (otp: string) => {
+    if (otp.length !== otpDigits) return;
+    setOtpLoading(true);
+    setOtpError('');
+    try {
+      const result = await verifyPassOtp({ countryCode, mobile, otp });
+      setVerificationToken(result.verificationToken);
+      setVerifiedPhone(result.e164 || result.phone);
+      savePassSession({
+        countryCode,
+        mobile,
+        channel: result.channel,
+        phone: result.phone,
+        e164: result.e164,
+        verificationToken: result.verificationToken,
+        alreadyRegistered: result.alreadyRegistered,
+        pass: result.pass,
+        delivery: result.delivery,
+      });
+      setOtpOpen(false);
+
+      if (result.alreadyRegistered && result.pass) {
+        router.push('/passes/success');
+        return;
+      }
+
+      setForm((prev) => ({
+        ...prev,
+        country: countryCode === '+91' ? 'India' : prev.country,
+      }));
+      setStep('details');
+    } catch (err) {
+      setOtpError(err instanceof Error ? err.message : 'Invalid OTP');
+    } finally {
+      setOtpLoading(false);
+    }
+  };
+
+  const lookupPin = async (pin: string) => {
+    setForm((prev) => ({ ...prev, pinCode: pin }));
+    if (!/^\d{6}$/.test(pin)) {
+      setPinStatus('');
+      return;
+    }
+    try {
+      const response = await fetch(`https://api.postalpincode.in/pincode/${pin}`);
+      const data = await response.json();
+      const office = data?.[0]?.PostOffice?.[0];
+      if (office) {
+        setForm((prev) => ({
+          ...prev,
+          pinCode: pin,
+          area: office.Name || prev.area,
+          city: office.District || prev.city,
+          state: office.State || prev.state,
+          country: office.Country || 'India',
+        }));
+        setPinStatus('Auto-filled from pincode');
+      } else {
+        setPinStatus('Pincode not found');
+      }
+    } catch {
+      setPinStatus('Could not look up pincode');
+    }
+  };
+
+  const toggleInterest = (interest: string) => {
+    setForm((prev) => ({
+      ...prev,
+      interests: prev.interests.includes(interest)
+        ? prev.interests.filter((item) => item !== interest)
+        : [...prev.interests, interest],
+    }));
+  };
+
+  const handleRegister = async (event: FormEvent) => {
+    event.preventDefault();
+    if (!canSubmitDetails) return;
+    setLoading(true);
+    setError('');
+    try {
+      const result = await registerVisitorPass({
+        verificationToken,
+        name: form.name,
+        company: form.company,
+        pinCode: form.pinCode,
+        area: form.area,
+        city: form.city,
+        state: form.state,
+        country: form.country,
+        source: form.source,
+        interests: form.interests,
+      });
+      savePassSession({
+        countryCode,
+        mobile,
+        channel,
+        phone: verifiedPhone,
+        verificationToken,
+        pass: result.pass,
+        delivery: result.delivery,
+      });
+      router.push('/passes/success');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to complete registration');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#F3F5F9] font-parabolica">
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#004A96] via-[#003875] to-[#004A96] text-white">
+        <PassesChrome backHref="/passes" backLabel="Back to Exhibitions" />
+        <div className="mx-auto max-w-5xl px-5 pb-7 pt-20 sm:pb-8 sm:pt-24">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <span className="inline-flex items-center rounded-full bg-blue-400/20 px-2.5 py-0.5 text-xs font-semibold text-text-200 ring-1 ring-blue-300/30">
+              Registration Open
+            </span>
+            <span className="text-xs text-white/70">· 12–14 May 2027 · Pune, India</span>
+          </div>
+          <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            Visitor Pass Registration — IndiaMET 2027
+          </h1>
+          <p className="mt-1.5 max-w-2xl text-xs text-white/80 sm:text-sm">
+            Registration complete once you receive your digital QR visitor badge via WhatsApp, SMS, or Email.
+          </p>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-6 grid max-w-5xl gap-6 px-5 pb-16 lg:grid-cols-[240px_1fr]">
+        <aside className="h-fit rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <p className="text-xs font-bold uppercase tracking-wide text-slate-400">Event Details</p>
+          <div className="mt-4 space-y-4 text-sm">
+            <div className="flex gap-3">
+              <CalendarDays className="mt-0.5 h-4 w-4 text-[#004A96]" />
+              <div>
+                <p className="font-semibold text-slate-500">Event Dates</p>
+                <p className="font-bold text-slate-800">24–26 Mar 2027</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <MapPin className="mt-0.5 h-4 w-4 text-[#004A96]" />
+              <div>
+                <p className="font-semibold text-slate-500">Venue</p>
+                <p className="font-bold text-slate-800">Auto Cluster Exhibition Centre, Pune</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        {step === 'phone' ? (
+          <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/60 sm:p-8">
+            <h2 className="text-2xl font-black text-slate-900">Choose Verification Method</h2>
+            <p className="mt-1 text-sm text-slate-500">Select how you&apos;d like to receive your one-time password</p>
+
+            <div className="mt-5 grid grid-cols-2 gap-2 rounded-2xl bg-slate-100 p-1.5">
+              <button
+                type="button"
+                disabled={loading}
+                onClick={() => handleChannelChange('sms')}
+                className={`inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition ${channel === 'sms' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500'
+                  }`}
+              >
+                <MessageSquare className="h-4 w-4" />
+                SMS
+              </button>
+              <button
+                type="button"
+                disabled={loading}
+                onClick={() => handleChannelChange('whatsapp')}
+                className={`inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition ${channel === 'whatsapp' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500'
+                  }`}
+              >
+                <MessageCircle className="h-4 w-4 text-[#25D366]" />
+                WhatsApp
+              </button>
+              {/* <button
+                type="button"
+                disabled={loading}
+                onClick={() => handleChannelChange('email')}
+                className={`inline-flex items-center justify-center gap-2 rounded-xl px-3 py-3 text-sm font-bold transition ${
+                  channel === 'email' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500'
+                }`}
+              >
+                <Mail className="h-4 w-4" />
+                Email
+              </button> */}
+            </div>
+
+            <div className="mt-4 rounded-xl border border-[#004A96]/20 bg-[#E8F1F8] px-4 py-3 text-sm text-[#004A96]">
+              OTP will be sent via <strong>{channelLabel}</strong>
+              {channel === 'email' ? ' to your email address.' : ' to your phone number.'}
+            </div>
+
+            <label className="mt-5 block text-sm font-bold text-rose-600">Mobile Number *</label>
+            <div className="mt-2 flex gap-2">
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setCountryOpen((open) => !open)}
+                  className="flex h-12 min-w-[114px] items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold transition hover:border-slate-300 sm:min-w-[124px] sm:px-3"
+                >
+                  <span className="flex items-center gap-2">
+                    <CountryFlag code={selectedCountry.code} />
+                    <span>{selectedCountry.code}</span>
+                  </span>
+                  <ChevronDown className="h-4 w-4 shrink-0 text-slate-400" />
+                </button>
+                {countryOpen ? (
+                  <div className="absolute z-30 mt-1 w-60 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
+                    {COUNTRIES.map((item) => (
+                      <button
+                        key={item.code}
+                        type="button"
+                        onClick={() => {
+                          setCountryCode(item.code);
+                          setCountryOpen(false);
+                          setMobile('');
+                        }}
+                        className="flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-sm transition hover:bg-slate-50"
+                      >
+                        <CountryFlag code={item.code} />
+                        <span className="flex-1 font-medium text-slate-700">{item.name}</span>
+                        <span className="text-xs font-semibold text-slate-400">{item.code}</span>
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+              <input
+                value={mobile}
+                onChange={(event) => setMobile(event.target.value.replace(/\D/g, '').slice(0, selectedCountry.max))}
+                placeholder={countryCode === '+91' ? '10-digit mobile number' : 'Mobile number'}
+                className="h-12 flex-1 rounded-xl border border-slate-200 px-4 text-sm outline-none transition focus:border-[#004A96] focus:ring-4 focus:ring-[#004A96]/15"
+              />
+            </div>
+            <p className="mt-2 text-xs text-slate-400">Select your country code and enter your mobile number.</p>
+            {channel === 'email' ? (
+              <div className="mt-4">
+                <label className="block text-sm font-bold text-rose-600">Email *</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="you@company.com"
+                  className="mt-2 h-12 w-full rounded-xl border border-slate-200 px-4 text-sm outline-none transition focus:border-[#004A96] focus:ring-4 focus:ring-[#004A96]/15"
+                />
+                <p className="mt-2 text-xs text-slate-400">Use email to receive the OTP and visitor pass while testing.</p>
+              </div>
+            ) : null}
+            {error ? <p className="mt-3 text-sm font-medium text-red-600">{error}</p> : null}
+
+            <button
+              type="button"
+              disabled={!isValidMobile || loading || (channel === 'email' && !isValidEmail)}
+              onClick={sendOtp}
+              className="mt-6 w-full rounded-2xl bg-gradient-to-r from-[#004A96] to-[#004A96] py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition hover:brightness-110 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 disabled:shadow-none"
+            >
+              {loading ? 'Sending OTP…' : `Send OTP via ${channelLabel}`}
+            </button>
+            <p className="mt-3 text-center text-xs text-slate-400">
+              {channelLabel} OTP from DIEMEX · Expires in 10 minutes
+            </p>
+            <p className="mt-6 flex items-center justify-center gap-1.5 text-[11px] text-slate-400">
+              <Lock className="h-3.5 w-3.5" />
+              Your data is encrypted and secure
+            </p>
+          </section>
+        ) : (
+          <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/60 sm:p-8">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h2 className="text-2xl font-black text-slate-900">Complete Registration</h2>
+                <p className="text-sm text-slate-500">Fill in your details to complete registration</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setStep('phone');
+                  setVerificationToken('');
+                }}
+                className="text-sm font-semibold text-[#004A96] hover:underline"
+              >
+                Change Number
+              </button>
+            </div>
+
+            <form onSubmit={handleRegister} className="mt-6 space-y-4">
+              <Field
+                label="Full Name"
+                value={form.name}
+                onChange={(value) => setForm((prev) => ({ ...prev, name: value }))}
+                required
+              />
+              <Field
+                label="Designation"
+                value={form.designation}
+                onChange={(value) => setForm((prev) => ({ ...prev, designation: value }))}
+                required
+              />
+              <Field
+                label="Company Or Firm Name"
+                value={form.company}
+                onChange={(value) => setForm((prev) => ({ ...prev, company: value }))}
+                required
+              />
+
+              <div>
+                <label className="mb-1.5 block text-sm font-semibold text-slate-700">Phone No.</label>
+                <div className="flex items-center justify-between rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3">
+                  <span className="font-semibold text-slate-800">{verifiedPhone}</span>
+                  <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700">
+                    <CheckCircle2 className="h-4 w-4" />
+                    Verified
+                  </span>
+                </div>
+                <p className="mt-1 text-xs font-medium text-emerald-700">This number was verified via OTP</p>
+              </div>
+
+              <Field
+                label="Search By Area / Pin Code"
+                value={form.pinCode}
+                onChange={lookupPin}
+                placeholder="6-digit pincode"
+              />
+              <div className="grid gap-3 sm:grid-cols-2">
+                <LockedField label="Area" value={form.area} hint={pinStatus} />
+                <LockedField label="City" value={form.city} hint="Auto-filled from pincode" />
+                <LockedField label="State" value={form.state} hint="Auto-filled from pincode" />
+                <LockedField label="Country" value={form.country} hint="Set based on your phone number" />
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-semibold text-slate-700">How Did You Find Us</label>
+                <select
+                  value={form.source}
+                  onChange={(event) => setForm((prev) => ({ ...prev, source: event.target.value }))}
+                  className="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-[#004A96]"
+                >
+                  <option value="">Select a source</option>
+                  {SOURCES.map((source) => (
+                    <option key={source} value={source}>
+                      {source}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold text-slate-700">What are you looking for?</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {INTERESTS.map((interest) => {
+                    const selected = form.interests.includes(interest);
+                    return (
+                      <button
+                        key={interest}
+                        type="button"
+                        onClick={() => toggleInterest(interest)}
+                        className={`rounded-full px-3 py-1.5 text-xs font-semibold ring-1 transition ${selected
+                          ? 'bg-[#004A96] text-white ring-[#004A96]'
+                          : 'bg-white text-slate-600 ring-slate-200 hover:ring-slate-300'
+                          }`}
+                      >
+                        {interest}
+                      </button>
+                    );
+                  })}
+                </div>
+                {form.interests.length === 0 ? (
+                  <p className="mt-3 rounded-xl bg-[#E8F1F8] px-3 py-2 text-xs text-[#004A96]">
+                    Please select at least one interest to continue.
+                  </p>
+                ) : null}
+              </div>
+
+              {error ? <p className="text-sm font-medium text-red-600">{error}</p> : null}
+
+              <button
+                type="submit"
+                disabled={!canSubmitDetails || loading}
+                className="w-full rounded-2xl bg-[#004A96] py-3.5 text-sm font-bold text-white transition hover:bg-[#003875] disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {loading ? 'Issuing your pass…' : 'Complete Registration'}
+              </button>
+              <p className="text-center text-xs text-slate-400">
+                By registering, you agree to our terms and conditions.
+              </p>
+            </form>
+          </section>
+        )}
+      </div>
+
+      <OtpModal
+        open={otpOpen}
+        phone={channel === 'email' ? email.trim() : `${countryCode}${mobile}`}
+        channel={channel}
+        resendIn={resendIn}
+        length={otpDigits}
+        loading={otpLoading}
+        error={otpError}
+        onClose={() => setOtpOpen(false)}
+        onVerify={handleVerify}
+        onResend={sendOtp}
+      />
+    </div>
+  );
+}
+
+function Field({
+  label,
+  value,
+  onChange,
+  placeholder,
+  required,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  required?: boolean;
+}) {
+  return (
+    <label className="block">
+      <span className="mb-1.5 block text-sm font-semibold text-slate-700">
+        {label}
+        {required ? ' *' : ''}
+      </span>
+      <input
+        value={value}
+        required={required}
+        placeholder={placeholder}
+        onChange={(event) => onChange(event.target.value)}
+        className="h-12 w-full rounded-xl border border-slate-200 px-4 text-sm outline-none transition focus:border-[#004A96] focus:ring-4 focus:ring-[#004A96]/15"
+      />
+    </label>
+  );
+}
+
+function LockedField({ label, value, hint }: { label: string; value: string; hint?: string }) {
+  return (
+    <label className="block">
+      <span className="mb-1.5 block text-sm font-semibold text-slate-700">{label}</span>
+      <input
+        value={value}
+        readOnly
+        className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-600"
+      />
+      {hint && value ? <p className="mt-1 text-[11px] text-slate-400">{hint}</p> : null}
+    </label>
+  );
+}

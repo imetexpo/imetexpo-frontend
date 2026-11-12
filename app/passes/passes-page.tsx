@@ -270,6 +270,7 @@ export default function PassesPage() {
                 pass={{
                   registrationNumber: 'REG-ITS-PREVIEW',
                   qrToken: 'its-preview',
+                  qrDataUrl: 'https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=REG-ITS-PREVIEW',
                   passUrl: '/passes/',
                   name: 'Your Name',
                   company: 'Company / Organization',
@@ -278,7 +279,7 @@ export default function PassesPage() {
                     dates: '13–15 May  2027',
                     venue: 'Auto Cluster Exhibition Center, Pune',
                   },
-                }}
+                } as any}
               />
             </Container>
           </section>
