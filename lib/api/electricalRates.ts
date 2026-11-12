@@ -1,7 +1,8 @@
 // lib/api/electricalRates.ts
 import axios from "axios";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const rawApiUrl = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API_BASE_URL = rawApiUrl.endsWith("/api") ? rawApiUrl : `${rawApiUrl}/api`;
 
 const api = axios.create({
     baseURL: API_BASE_URL,
@@ -13,7 +14,10 @@ const api = axios.create({
 api.interceptors.request.use(
     (config) => {
         if (typeof window !== "undefined") {
-            const token = localStorage.getItem("adminToken");
+            const token =
+                localStorage.getItem("adminToken") ||
+                localStorage.getItem("admin_token") ||
+                localStorage.getItem("token");
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             }
@@ -77,23 +81,18 @@ export async function deleteElectricalRate(id: string) {
     return response.data;
 }
 
-// Toggle active status - Get current rate first, then update
-export async function toggleElectricalRateStatus(id: string) {
-    try {
-        // First get the current rate
+// Toggle active status via dedicated toggle-status endpoint
+export async function toggleElectricalRateStatus(id: string, isActive?: boolean) {
+    let nextStatus = isActive;
+    if (nextStatus === undefined) {
         const rate = await getElectricalRateById(id);
-        if (rate.success) {
-            // Update with opposite isActive value
-            const response = await updateElectricalRate(id, {
-                isActive: !rate.data.isActive
-            });
-            return response;
-        }
-        throw new Error("Rate not found");
-    } catch (error: any) {
-        console.error("Toggle status error:", error);
-        throw error;
+        if (!rate.success) throw new Error("Rate not found");
+        nextStatus = !rate.data.isActive;
     }
+    const response = await api.patch(`/admin/electrical-rates/${id}/toggle-status`, {
+        isActive: nextStatus,
+    });
+    return response.data;
 }
 
 // Get statistics - with fallback

@@ -97,17 +97,24 @@ export default function ElectricalRequirementsPage() {
       const totalCost = calculateTotal();
 
       const response = await extraRequirementsAPI.submit({
+        type: 'exhibitor',
+        description: 'Electrical load requirement submission',
         generalInfo,
         boothDetails,
-        eventName: 'Tyre Expo 2024',
+        eventName: 'IndiaMET 2027',
         electricalLoad: {
           temporaryLoad: formData.temporaryLoad || '0',
           temporaryTotal: (parseFloat(formData.temporaryLoad) || 0) * (rates?.temporary?.ratePerKW || 3500),
           exhibitionLoad: formData.exhibitionLoad || '0',
           exhibitionTotal: (parseFloat(formData.exhibitionLoad) || 0) * (rates?.exhibition?.ratePerKW || 3500),
         },
+        totals: {
+          servicesTotal: totalCost,
+          gst: Math.round(totalCost * 0.18),
+          total: Math.round(totalCost * 1.18),
+        },
         notes: `Voltage: ${formData.voltage}V, Phase: ${formData.phase}, Sockets: ${formData.sockets}, Lighting: ${formData.lightingPoints}, Special Equipment: ${formData.specialEquipment || 'None'}`
-      });
+      } as any);
 
       if (response.success) {
         setSubmitted(true);
