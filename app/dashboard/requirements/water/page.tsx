@@ -66,16 +66,23 @@ export default function WaterConnectionPage() {
       const totalCost = calculateTotal();
 
       const response = await extraRequirementsAPI.submit({
+        type: 'exhibitor',
+        description: 'Water connection requirement submission',
         generalInfo,
         boothDetails,
-        eventName: 'Tyre Expo 2024',
+        eventName: 'IndiaMET 2027',
         waterConnection: {
           connections: formData.connections,
-          costPerConnection: config?.costPerConnection || 5000,
+          costPerConnection: config?.costPerConnection || 15000,
           totalCost: totalCost
         },
+        totals: {
+          servicesTotal: totalCost,
+          gst: Math.round(totalCost * 0.18),
+          total: Math.round(totalCost * 1.18),
+        },
         notes: `Purpose: ${formData.purpose}. Drainage required: ${formData.drainage ? 'Yes' : 'No'}`
-      });
+      } as any);
 
       if (response.success) {
         setSubmitted(true);
