@@ -1,7 +1,8 @@
 // lib/api/securityDeposit.ts
 import axios from "axios";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const RAW_API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API_BASE_URL = RAW_API_URL.endsWith("/api") ? RAW_API_URL : `${RAW_API_URL}/api`;
 
 const api = axios.create({
     baseURL: API_BASE_URL,
@@ -13,7 +14,11 @@ const api = axios.create({
 api.interceptors.request.use(
     (config) => {
         if (typeof window !== "undefined") {
-            const token = localStorage.getItem("adminToken");
+            const token =
+                localStorage.getItem("adminToken") ||
+                localStorage.getItem("admin_token") ||
+                localStorage.getItem("token") ||
+                localStorage.getItem("exhibitorToken");
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             }
