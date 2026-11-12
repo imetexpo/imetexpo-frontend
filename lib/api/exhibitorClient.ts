@@ -1349,18 +1349,18 @@ export const extraRequirementsAPI = {
         return response.data;
     },
     updateStatus: async (id: string, status: string, adminNotes?: string): Promise<{ success: boolean; data: any }> => {
-        const response = await exhibitorClient.put(`/admin/extra-requirements/${id}`, { status, adminNotes });
+        const response = await exhibitorClient.put(`/extra-requirements/admin/${id}`, { status, adminNotes });
         return response.data;
     },
     getStats: async (): Promise<{ success: boolean; data: any }> => {
-        const response = await exhibitorClient.get('/admin/extra-requirements/stats');
+        const response = await exhibitorClient.get('/extra-requirements/admin/stats');
         return response.data;
     },
     getAllAdmin: async (page = 1, limit = 10, status?: string, search?: string): Promise<{ success: boolean; data: any[]; pagination: any }> => {
         const params = new URLSearchParams({ page: page.toString(), limit: limit.toString() });
         if (status && status !== 'all') params.append('status', status);
         if (search) params.append('search', search);
-        const response = await exhibitorClient.get(`/admin/extra-requirements/admin/all?${params}`);
+        const response = await exhibitorClient.get(`/extra-requirements/admin/all?${params}`);
         return response.data;
     }
 };
