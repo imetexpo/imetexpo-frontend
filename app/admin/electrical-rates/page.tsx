@@ -1,428 +1,601 @@
+// app/admin/electrical-rates/page.tsx
 "use client";
 
-import { useState, useEffect } from "react";
-import { Plus, Edit, Trash2, Save, X, BoltIcon, Calendar, CheckCircle, XCircle, Eye, Power, Zap } from "lucide-react";
-import { getElectricalRates, deleteElectricalRate, toggleElectricalRateStatus, ElectricalRate, updateElectricalRate, createElectricalRate } from "@/lib/api/electricalRates";
+import { useState, useEffect, useMemo } from "react";
+import { useRouter } from "next/navigation";
+import {
+  PencilIcon,
+  BoltIcon,
+  XMarkIcon,
+  PlusIcon,
+  TrashIcon,
+  ExclamationCircleIcon,
+  CalendarIcon,
+  ArrowPathIcon,
+} from "@heroicons/react/24/outline";
 import toast from "react-hot-toast";
-import LoadingDots from '@/components/ui/LoadingDots';
+import LoadingDots from "@/components/ui/LoadingDots";
+import {
+  getElectricalRates,
+  createElectricalRate,
+  updateElectricalRate,
+  deleteElectricalRate,
+  toggleElectricalRateStatus,
+  type ElectricalRate,
+} from "@/lib/api/electricalRates";
+
+interface FormDataState {
+  type: "temporary" | "exhibition" | "both";
+  ratePerKW: string;
+  effectiveFrom: string;
+  effectiveTo: string;
+  isActive: boolean;
+  description: string;
+}
+
+function getAdminToken(): string | null {
+  if (typeof window === "undefined") return null;
+  return (
+    localStorage.getItem("adminToken") ||
+    localStorage.getItem("admin_token") ||
+    localStorage.getItem("token")
+  );
+}
 
 export default function AdminElectricalRatesPage() {
-    const [rates, setRates] = useState<ElectricalRate[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [showModal, setShowModal] = useState(false);
-    const [editingRate, setEditingRate] = useState<ElectricalRate | null>(null);
-    const [statistics, setStatistics] = useState({ total: 0, active: 0, exhibition: 0, temporary: 0 });
-    const [formData, setFormData] = useState({
-        type: 'both' as 'temporary' | 'exhibition' | 'both',
-        ratePerKW: '',
-        effectiveFrom: '',
-        effectiveTo: '',
-        description: '',
+  const router = useRouter();
+  const [rates, setRates] = useState<ElectricalRate[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>("");
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [editingRate, setEditingRate] = useState<ElectricalRate | null>(null);
+  const [submitting, setSubmitting] = useState<boolean>(false);
+
+  const [formData, setFormData] = useState<FormDataState>({
+    type: "both",
+    ratePerKW: "3500",
+    effectiveFrom: new Date().toISOString().split("T")[0],
+    effectiveTo: "",
+    isActive: true,
+    description: "",
+  });
+
+  const loadRates = async () => {
+    const token = getAdminToken();
+    if (!token) {
+      router.push("/admin/login");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      setError("");
+      const response = await getElectricalRates();
+      if (response.success) {
+        setRates(response.data || []);
+      } else {
+        setError(response.message || "Failed to load rates. Please try again.");
+      }
+    } catch (err: any) {
+      if (err?.response?.status === 401) {
+        localStorage.removeItem("adminToken");
+        localStorage.removeItem("admin_token");
+        router.push("/admin/login");
+        return;
+      }
+      setError(
+        err?.response?.data?.message || err?.message || "Failed to load rates. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadRates();
+  }, []);
+
+  const stats = useMemo(() => {
+    const total = rates.length;
+    const active = rates.filter((r) => r.isActive).length;
+    const inactive = total - active;
+    const avg = total
+      ? Math.round(rates.reduce((acc, r) => acc + (Number(r.ratePerKW) || 0), 0) / total)
+      : 0;
+    return { total, active, inactive, avg };
+  }, [rates]);
+
+  const resetForm = () => {
+    setFormData({
+      type: "both",
+      ratePerKW: "3500",
+      effectiveFrom: new Date().toISOString().split("T")[0],
+      effectiveTo: "",
+      isActive: true,
+      description: "",
     });
+    setEditingRate(null);
+    setShowModal(false);
+  };
 
-    const calculateLocalStatistics = (ratesList: ElectricalRate[]) => {
-        const total = ratesList.length;
-        const active = ratesList.filter(rate => rate.isActive).length;
-        const exhibition = ratesList.filter(rate => rate.type === 'exhibition' || rate.type === 'both').length;
-        const temporary = ratesList.filter(rate => rate.type === 'temporary' || rate.type === 'both').length;
+  const openAddModal = () => {
+    setEditingRate(null);
+    setFormData({
+      type: "both",
+      ratePerKW: "3500",
+      effectiveFrom: new Date().toISOString().split("T")[0],
+      effectiveTo: "",
+      isActive: true,
+      description: "",
+    });
+    setShowModal(true);
+  };
 
-        setStatistics({ total, active, exhibition, temporary });
-    };
+  const editRate = (rate: ElectricalRate) => {
+    setEditingRate(rate);
+    setFormData({
+      type: rate.type,
+      ratePerKW: String(rate.ratePerKW ?? 0),
+      effectiveFrom: rate.effectiveFrom ? String(rate.effectiveFrom).split("T")[0] : "",
+      effectiveTo: rate.effectiveTo ? String(rate.effectiveTo).split("T")[0] : "",
+      isActive: Boolean(rate.isActive),
+      description: rate.description || "",
+    });
+    setShowModal(true);
+  };
 
-    const fetchRates = async () => {
-        try {
-            setLoading(true);
-            const response = await getElectricalRates();
-            if (response.success) {
-                const fetchedRates = response.data || [];
-                setRates(fetchedRates);
-                calculateLocalStatistics(fetchedRates);
-            } else {
-                toast.error(response.message || "Failed to load electrical rates");
-            }
-        } catch (error) {
-            console.error("Failed to fetch electrical rates:", error);
-            toast.error("Failed to load electrical rates");
-        } finally {
-            setLoading(false);
-        }
-    };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    useEffect(() => {
-        fetchRates();
-    }, []);
+    if (formData.ratePerKW === "" || !formData.effectiveFrom) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
 
-    const handleDelete = async (id: string, ratePerKW: number) => {
-        if (confirm(`Are you sure you want to delete the rate ₹${ratePerKW}/KW?`)) {
-            try {
-                const response = await deleteElectricalRate(id);
-                if (response.success) {
-                    toast.success("Electrical rate deleted successfully");
-                    fetchRates();
-                } else {
-                    toast.error(response.message || "Failed to delete");
-                }
-            } catch (error) {
-                console.error("Delete error:", error);
-                toast.error("Failed to delete electrical rate");
-            }
-        }
-    };
+    try {
+      setSubmitting(true);
+      setError("");
 
-    const handleToggleStatus = async (id: string, currentStatus: boolean) => {
-        try {
-            const response = await toggleElectricalRateStatus(id);
-            if (response.success) {
-                toast.success(`Rate ${!currentStatus ? 'activated' : 'deactivated'} successfully`);
-                const updatedRates = rates.map(rate =>
-                    rate.id === id ? { ...rate, isActive: !currentStatus } : rate
-                );
-                setRates(updatedRates);
-                calculateLocalStatistics(updatedRates);
-            } else {
-                toast.error(response.message || "Failed to update status");
-            }
-        } catch (error) {
-            console.error("Toggle status error:", error);
-            toast.error("Failed to update status");
-        }
-    };
+      const payload = {
+        type: formData.type,
+        ratePerKW: parseInt(formData.ratePerKW, 10) || 0,
+        effectiveFrom: formData.effectiveFrom,
+        effectiveTo: formData.effectiveTo || null,
+        isActive: formData.isActive,
+        description: formData.description,
+      };
 
-    const formatDate = (dateString: string) => {
-        if (!dateString) return 'N/A';
-        return new Date(dateString).toLocaleDateString('en-IN', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-        });
-    };
+      const response = editingRate
+        ? await updateElectricalRate(editingRate.id, payload)
+        : await createElectricalRate(payload);
 
-    const getTypeBadge = (type: string) => {
-        switch (type) {
-            case 'exhibition':
-                return <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200"><Eye size={12} /> Exhibition</span>;
-            case 'temporary':
-                return <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200"><Zap size={12} /> Temporary</span>;
-            default:
-                return <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-50 text-teal-700 border border-teal-200"><Power size={12} /> Both</span>;
-        }
-    };
+      if (!response.success) {
+        throw new Error(response.message || "Failed to save rate");
+      }
 
-    const formatCurrency = (amount: number) => `₹${amount.toLocaleString()}`;
+      toast.success(editingRate ? "Rate updated successfully" : "Rate added successfully");
+      await loadRates();
+      resetForm();
+    } catch (err: any) {
+      if (err?.response?.status === 401) {
+        localStorage.removeItem("adminToken");
+        localStorage.removeItem("admin_token");
+        router.push("/admin/login");
+        return;
+      }
+      const rawMsg = err?.response?.data?.message || err?.message || "Failed to save rate";
+      const friendlyMsg = rawMsg.includes("Active rate conflict")
+        ? "Cannot activate this rate: Another active rate already exists for the same period and type."
+        : rawMsg;
+      setError(friendlyMsg);
+      toast.error(friendlyMsg);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
+  const handleDelete = async (rate: ElectricalRate) => {
+    if (!confirm(`Are you sure you want to delete the rate ₹${rate.ratePerKW}/KW?`)) return;
+
+    try {
+      setError("");
+      const response = await deleteElectricalRate(rate.id);
+      if (!response.success) {
+        throw new Error(response.message || "Failed to delete rate");
+      }
+      toast.success("Rate deleted successfully");
+      await loadRates();
+    } catch (err: any) {
+      if (err?.response?.status === 401) {
+        router.push("/admin/login");
+        return;
+      }
+      const msg = err?.response?.data?.message || err?.message || "Failed to delete rate";
+      setError(msg);
+      toast.error(msg);
+    }
+  };
+
+  const handleToggleStatus = async (rate: ElectricalRate) => {
+    try {
+      setError("");
+      const nextStatus = !Boolean(rate.isActive);
+      const response = await toggleElectricalRateStatus(rate.id, nextStatus);
+      if (!response.success) {
+        throw new Error(response.message || "Failed to update status");
+      }
+      toast.success(`Rate ${nextStatus ? "activated" : "deactivated"} successfully`);
+      await loadRates();
+    } catch (err: any) {
+      if (err?.response?.status === 401) {
+        router.push("/admin/login");
+        return;
+      }
+      const rawMsg = err?.response?.data?.message || err?.message || "Failed to update status";
+      const friendlyMsg = rawMsg.includes("Active rate conflict")
+        ? "Cannot activate this rate: Another active rate already exists for the same period and type."
+        : rawMsg;
+      setError(friendlyMsg);
+      toast.error(friendlyMsg);
+    }
+  };
+
+  const getTypeLabel = (type: string): string => {
+    switch (type) {
+      case "both":
+        return "Temporary & Exhibition";
+      case "temporary":
+        return "Temporary Load";
+      case "exhibition":
+        return "Exhibition Load";
+      default:
+        return type;
+    }
+  };
+
+  const getTypeBadgeColor = (type: string): string => {
+    switch (type) {
+      case "both":
+        return "bg-purple-100 text-purple-800 border-purple-200";
+      case "temporary":
+        return "bg-sky-100 text-[#003A77] border-sky-200";
+      case "exhibition":
+        return "bg-emerald-100 text-emerald-800 border-emerald-200";
+      default:
+        return "bg-gray-100 text-gray-800 border-gray-200";
+    }
+  };
+
+  if (loading) {
     return (
-        <div className="space-y-6">
-            {/* Header */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div className="flex items-center gap-3">
-                    <div className="h-11 w-11 bg-amber-50 border border-amber-100 rounded-xl flex items-center justify-center">
-                        <BoltIcon className="h-5 w-5 text-amber-600" />
-                    </div>
-                    <div>
-                        <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Electrical Rates Configuration</h1>
-                        <p className="text-xs sm:text-sm text-gray-500 mt-0.5">Set pricing for electrical requirements per KW</p>
-                    </div>
-                </div>
-                <button
-                    onClick={() => {
-                        setEditingRate(null);
-                        setFormData({
-                            type: 'both',
-                            ratePerKW: '',
-                            effectiveFrom: '',
-                            effectiveTo: '',
-                            description: '',
-                        });
-                        setShowModal(true);
-                    }}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-[#003A77] hover:bg-[#002855] text-white text-sm font-medium rounded-lg shadow-xs transition"
-                >
-                    <Plus size={16} />
-                    Add Rate
-                </button>
-            </div>
-
-            {/* Statistics Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-                <div className="bg-white rounded-xl p-4 border border-gray-200/80 shadow-xs">
-                    <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Total Rates</p>
-                    <p className="text-2xl font-bold text-gray-900 mt-1">{statistics.total}</p>
-                </div>
-                <div className="bg-white rounded-xl p-4 border border-emerald-100 shadow-xs">
-                    <p className="text-xs font-medium text-emerald-700 uppercase tracking-wider">Active Rates</p>
-                    <p className="text-2xl font-bold text-emerald-600 mt-1">{statistics.active}</p>
-                </div>
-                <div className="bg-white rounded-xl p-4 border border-blue-100 shadow-xs">
-                    <p className="text-xs font-medium text-blue-700 uppercase tracking-wider">Exhibition Rates</p>
-                    <p className="text-2xl font-bold text-[#003A77] mt-1">{statistics.exhibition}</p>
-                </div>
-                <div className="bg-white rounded-xl p-4 border border-purple-100 shadow-xs">
-                    <p className="text-xs font-medium text-purple-700 uppercase tracking-wider">Temporary Rates</p>
-                    <p className="text-2xl font-bold text-purple-600 mt-1">{statistics.temporary}</p>
-                </div>
-            </div>
-
-            {/* Rates Table */}
-            {loading ? (
-                <div className="bg-white rounded-xl border border-gray-200/80 p-12 flex items-center justify-center min-h-[300px]">
-                    <LoadingDots tone="dark" className="mx-auto flex" />
-                </div>
-            ) : rates.length === 0 ? (
-                <div className="bg-white rounded-xl border border-gray-200/80 p-12 text-center shadow-xs">
-                    <BoltIcon className="h-12 w-12 text-gray-300 mx-auto mb-3" />
-                    <h3 className="text-base font-semibold text-gray-900 mb-1">No Electrical Rates Configured</h3>
-                    <p className="text-xs text-gray-500 mb-4">Add your first electrical rate configuration</p>
-                    <button
-                        onClick={() => setShowModal(true)}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-[#003A77] hover:bg-[#002855] text-white text-sm font-medium rounded-lg transition"
-                    >
-                        <Plus size={16} />
-                        Add Rate
-                    </button>
-                </div>
-            ) : (
-                <div className="bg-white rounded-xl border border-gray-200/80 shadow-xs overflow-hidden">
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left text-sm">
-                            <thead className="bg-gray-50 border-b border-gray-200 text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                <tr>
-                                    <th className="px-5 py-3.5">Type</th>
-                                    <th className="px-5 py-3.5">Rate per KW</th>
-                                    <th className="px-5 py-3.5">Effective From</th>
-                                    <th className="px-5 py-3.5">Effective To</th>
-                                    <th className="px-5 py-3.5">Status</th>
-                                    <th className="px-5 py-3.5 text-right">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-100 text-gray-700">
-                                {rates.map((rate) => (
-                                    <tr key={rate.id} className="hover:bg-gray-50/70 transition">
-                                        <td className="px-5 py-3.5">
-                                            {getTypeBadge(rate.type)}
-                                        </td>
-                                        <td className="px-5 py-3.5">
-                                            <span className="text-base font-bold text-[#003A77]">{formatCurrency(rate.ratePerKW)}</span>
-                                            <span className="text-xs text-gray-500 ml-1">/KW</span>
-                                        </td>
-                                        <td className="px-5 py-3.5">
-                                            <div className="flex items-center gap-1.5 text-gray-700">
-                                                <Calendar size={13} className="text-gray-400" />
-                                                <span>{formatDate(rate.effectiveFrom)}</span>
-                                            </div>
-                                        </td>
-                                        <td className="px-5 py-3.5">
-                                            {rate.effectiveTo ? (
-                                                <div className="flex items-center gap-1.5 text-gray-700">
-                                                    <Calendar size={13} className="text-gray-400" />
-                                                    <span>{formatDate(rate.effectiveTo)}</span>
-                                                </div>
-                                            ) : (
-                                                <span className="text-gray-400 text-xs">No expiry</span>
-                                            )}
-                                        </td>
-                                        <td className="px-5 py-3.5">
-                                            <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium border ${
-                                                rate.isActive 
-                                                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
-                                                    : 'bg-gray-100 text-gray-600 border-gray-200'
-                                            }`}>
-                                                {rate.isActive ? <CheckCircle size={11} /> : <XCircle size={11} />}
-                                                {rate.isActive ? 'Active' : 'Inactive'}
-                                            </span>
-                                        </td>
-                                        <td className="px-5 py-3.5 text-right">
-                                            <div className="flex items-center justify-end gap-1">
-                                                <button
-                                                    onClick={() => handleToggleStatus(rate.id, rate.isActive)}
-                                                    className={`p-1.5 rounded-lg transition ${
-                                                        rate.isActive
-                                                            ? 'text-gray-400 hover:text-rose-600 hover:bg-rose-50'
-                                                            : 'text-gray-400 hover:text-emerald-600 hover:bg-emerald-50'
-                                                    }`}
-                                                    title={rate.isActive ? "Deactivate" : "Activate"}
-                                                >
-                                                    {rate.isActive ? <XCircle size={15} /> : <CheckCircle size={15} />}
-                                                </button>
-                                                <button
-                                                    onClick={() => {
-                                                        setEditingRate(rate);
-                                                        setFormData({
-                                                            type: rate.type,
-                                                            ratePerKW: rate.ratePerKW.toString(),
-                                                            effectiveFrom: rate.effectiveFrom,
-                                                            effectiveTo: rate.effectiveTo || '',
-                                                            description: rate.description || '',
-                                                        });
-                                                        setShowModal(true);
-                                                    }}
-                                                    className="p-1.5 text-gray-400 hover:text-[#003A77] hover:bg-gray-100 rounded-lg transition"
-                                                    title="Edit"
-                                                >
-                                                    <Edit size={15} />
-                                                </button>
-                                                <button
-                                                    onClick={() => handleDelete(rate.id, rate.ratePerKW)}
-                                                    className="p-1.5 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition"
-                                                    title="Delete"
-                                                >
-                                                    <Trash2 size={15} />
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            )}
-
-            {/* Add/Edit Modal */}
-            {showModal && (
-                <div className="fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center z-50 p-4">
-                    <div className="bg-white rounded-2xl max-w-md w-full p-6 border border-gray-200 shadow-xl">
-                        <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-lg font-bold text-gray-900">
-                                {editingRate ? 'Edit Electrical Rate' : 'Add New Electrical Rate'}
-                            </h3>
-                            <button onClick={() => setShowModal(false)} className="p-1 hover:bg-gray-100 rounded-lg transition">
-                                <X size={18} className="text-gray-400" />
-                            </button>
-                        </div>
-
-                        <div className="space-y-4">
-                            <div>
-                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                                    Rate Type <span className="text-rose-500">*</span>
-                                </label>
-                                <select
-                                    value={formData.type}
-                                    onChange={(e) => setFormData({ ...formData, type: e.target.value as any })}
-                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1]"
-                                >
-                                    <option value="both">Both (Exhibition & Temporary)</option>
-                                    <option value="exhibition">Exhibition Only</option>
-                                    <option value="temporary">Temporary Only</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                                    Rate per KW (₹) <span className="text-rose-500">*</span>
-                                </label>
-                                <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">₹</span>
-                                    <input
-                                        type="number"
-                                        value={formData.ratePerKW}
-                                        onChange={(e) => setFormData({ ...formData, ratePerKW: e.target.value })}
-                                        className="w-full pl-7 pr-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
-                                        placeholder="3500"
-                                        required
-                                    />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                                    Effective From <span className="text-rose-500">*</span>
-                                </label>
-                                <input
-                                    type="date"
-                                    value={formData.effectiveFrom}
-                                    onChange={(e) => setFormData({ ...formData, effectiveFrom: e.target.value })}
-                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
-                                    required
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                                    Effective To (Optional)
-                                </label>
-                                <input
-                                    type="date"
-                                    value={formData.effectiveTo}
-                                    onChange={(e) => setFormData({ ...formData, effectiveTo: e.target.value })}
-                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
-                                />
-                                <p className="text-[11px] text-gray-400 mt-1">Leave empty for no expiry</p>
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                                    Description (Optional)
-                                </label>
-                                <textarea
-                                    rows={2}
-                                    value={formData.description}
-                                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                                    className="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:border-[#00A1B1] focus:ring-1 focus:ring-[#00A1B1]"
-                                    placeholder="Additional notes about this rate"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="flex gap-3 mt-6 pt-4 border-t border-gray-200">
-                            <button
-                                onClick={() => setShowModal(false)}
-                                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                onClick={async () => {
-                                    if (!formData.ratePerKW || !formData.effectiveFrom) {
-                                        toast.error("Please fill all required fields");
-                                        return;
-                                    }
-
-                                    try {
-                                        if (editingRate) {
-                                            const response = await updateElectricalRate(editingRate.id, {
-                                                type: formData.type,
-                                                ratePerKW: parseInt(formData.ratePerKW),
-                                                effectiveFrom: formData.effectiveFrom,
-                                                effectiveTo: formData.effectiveTo || null,
-                                                description: formData.description,
-                                            });
-                                            if (response.success) {
-                                                toast.success("Electrical rate updated successfully");
-                                                setShowModal(false);
-                                                fetchRates();
-                                            } else {
-                                                toast.error(response.message || "Failed to update");
-                                            }
-                                        } else {
-                                            const response = await createElectricalRate({
-                                                type: formData.type,
-                                                ratePerKW: parseInt(formData.ratePerKW),
-                                                effectiveFrom: formData.effectiveFrom,
-                                                effectiveTo: formData.effectiveTo || null,
-                                                description: formData.description,
-                                            });
-                                            if (response.success) {
-                                                toast.success("Electrical rate created successfully");
-                                                setShowModal(false);
-                                                fetchRates();
-                                            } else {
-                                                toast.error(response.message || "Failed to create");
-                                            }
-                                        }
-                                    } catch (error: any) {
-                                        console.error("Operation error:", error);
-                                        toast.error(error.response?.data?.message || "Operation failed");
-                                    }
-                                }}
-                                className="flex-1 px-4 py-2 bg-[#003A77] hover:bg-[#002855] text-white text-sm font-medium rounded-lg transition flex items-center justify-center gap-1.5 shadow-xs"
-                            >
-                                <Save size={15} />
-                                {editingRate ? 'Update Rate' : 'Create Rate'}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="text-center">
+          <LoadingDots tone="brand" className="mx-auto flex" />
+          <p className="mt-4 text-sm font-medium text-gray-600">Loading electrical rates...</p>
         </div>
+      </div>
     );
+  }
+
+  return (
+    <div className="space-y-6">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Electrical Load Rates</h1>
+          <p className="text-xs sm:text-sm text-gray-600 mt-0.5 sm:mt-1">
+            Manage per KW rates for electrical loads
+          </p>
+        </div>
+        <div className="flex items-center gap-2.5 w-full sm:w-auto">
+          <button
+            onClick={loadRates}
+            className="inline-flex items-center justify-center px-3.5 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors shadow-2xs text-sm cursor-pointer"
+          >
+            <ArrowPathIcon className="h-4 w-4 mr-1.5" />
+            Refresh
+          </button>
+          <button
+            onClick={openAddModal}
+            className="flex-1 sm:flex-none inline-flex items-center justify-center px-4 py-2 bg-[#003A77] text-white rounded-lg hover:bg-[#002855] transition-colors shadow-sm text-sm font-medium cursor-pointer"
+          >
+            <PlusIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-1.5" />
+            Add New Rate
+          </button>
+        </div>
+      </div>
+
+      {/* Error Message */}
+      {error && (
+        <div className="bg-rose-50 border border-rose-200 rounded-xl p-3.5 flex items-center text-rose-800">
+          <ExclamationCircleIcon className="h-5 w-5 mr-2 text-rose-600 shrink-0" />
+          <span className="flex-1 text-sm">{error}</span>
+          <button
+            onClick={() => setError("")}
+            className="ml-4 text-rose-600 hover:text-rose-800 cursor-pointer"
+          >
+            <XMarkIcon className="h-5 w-5" />
+          </button>
+        </div>
+      )}
+
+      {/* Stats Cards (Diemex 4 cards) */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="bg-white rounded-xl shadow-xs p-4 border border-gray-200/80">
+          <p className="text-xs sm:text-sm text-gray-500 font-medium">Total Rates</p>
+          <p className="text-xl sm:text-2xl font-bold text-gray-900 mt-1">{stats.total}</p>
+        </div>
+        <div className="bg-emerald-50/40 rounded-xl shadow-xs p-4 border border-emerald-200/80">
+          <p className="text-xs sm:text-sm text-emerald-700 font-medium">Active</p>
+          <p className="text-xl sm:text-2xl font-bold text-emerald-600 mt-1">{stats.active}</p>
+        </div>
+        <div className="bg-gray-50 rounded-xl shadow-xs p-4 border border-gray-200/80">
+          <p className="text-xs sm:text-sm text-gray-500 font-medium">Inactive</p>
+          <p className="text-xl sm:text-2xl font-bold text-gray-500 mt-1">{stats.inactive}</p>
+        </div>
+        <div className="bg-sky-50/40 rounded-xl shadow-xs p-4 border border-sky-200/80">
+          <p className="text-xs sm:text-sm text-[#003A77] font-medium">Avg. Rate</p>
+          <p className="text-xl sm:text-2xl font-bold text-[#003A77] mt-1">
+            ₹{stats.avg.toLocaleString()}
+          </p>
+        </div>
+      </div>
+
+      {/* Rates List - Card View (matching Diemex) */}
+      <div className="grid gap-3 sm:gap-4">
+        {rates.length > 0 ? (
+          rates.map((rate) => (
+            <div
+              key={rate.id}
+              className={`rounded-xl shadow-xs border p-4 sm:p-6 transition-all hover:shadow-md ${
+                rate.isActive
+                  ? "border-emerald-200 bg-emerald-50/30"
+                  : "border-gray-200 bg-white"
+              }`}
+            >
+              <div className="flex flex-col sm:flex-row justify-between items-start gap-3 sm:gap-4">
+                <div className="flex-1 w-full">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <BoltIcon
+                      className={`h-5 w-5 ${rate.isActive ? "text-[#003A77]" : "text-gray-400"}`}
+                    />
+                    <span
+                      className={`px-3 py-0.5 text-xs font-semibold rounded-full border ${getTypeBadgeColor(
+                        rate.type
+                      )}`}
+                    >
+                      {getTypeLabel(rate.type)}
+                    </span>
+                    <button
+                      onClick={() => handleToggleStatus(rate)}
+                      className={`px-3 py-0.5 text-xs font-semibold rounded-full transition-colors cursor-pointer ${
+                        rate.isActive
+                          ? "bg-emerald-100 text-emerald-800 hover:bg-emerald-200"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      }`}
+                    >
+                      {rate.isActive ? "Active" : "Inactive"}
+                    </button>
+                  </div>
+
+                  <div className="text-2xl sm:text-3xl font-bold text-[#003A77] mb-1.5">
+                    ₹{(Number(rate.ratePerKW) || 0).toLocaleString()}
+                    <span className="text-xs sm:text-sm font-normal text-gray-500 ml-1">/ KW</span>
+                  </div>
+
+                  {rate.description && (
+                    <p className="text-xs sm:text-sm text-gray-600 mb-3">{rate.description}</p>
+                  )}
+
+                  <div className="flex flex-wrap gap-4 text-xs text-gray-500">
+                    <div className="flex items-center">
+                      <CalendarIcon className="h-4 w-4 mr-1 text-gray-400" />
+                      <span className="font-medium mr-1">From:</span>
+                      {rate.effectiveFrom
+                        ? new Date(rate.effectiveFrom).toLocaleDateString("en-IN")
+                        : "N/A"}
+                    </div>
+                    {rate.effectiveTo && (
+                      <div className="flex items-center">
+                        <CalendarIcon className="h-4 w-4 mr-1 text-gray-400" />
+                        <span className="font-medium mr-1">To:</span>
+                        {new Date(rate.effectiveTo).toLocaleDateString("en-IN")}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex gap-2 self-end sm:self-start w-full sm:w-auto justify-end">
+                  <button
+                    onClick={() => editRate(rate)}
+                    className="p-2 text-[#003A77] hover:bg-sky-50 rounded-lg transition-colors cursor-pointer"
+                    title="Edit Rate"
+                  >
+                    <PencilIcon className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(rate)}
+                    className="p-2 text-rose-600 hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
+                    title="Delete Rate"
+                  >
+                    <TrashIcon className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="bg-white rounded-xl shadow-xs border border-gray-200 p-8 sm:p-12 text-center">
+            <BoltIcon className="h-14 w-14 text-gray-300 mx-auto mb-3" />
+            <h3 className="text-lg font-medium text-gray-900 mb-1">No Rates Found</h3>
+            <p className="text-sm text-gray-500 mb-4">
+              Get started by adding your first electrical rate
+            </p>
+            <button
+              onClick={openAddModal}
+              className="inline-flex items-center px-4 py-2 bg-[#003A77] text-white rounded-lg hover:bg-[#002855] transition-colors text-sm font-medium cursor-pointer"
+            >
+              <PlusIcon className="h-4 w-4 mr-1.5" />
+              Add New Rate
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Add/Edit Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-3 sm:p-4 z-50 overflow-y-auto">
+          <div className="bg-white rounded-2xl max-w-md w-full p-5 sm:p-6 shadow-xl my-4 sm:my-8 max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-5 pb-3 border-b border-gray-100">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900">
+                {editingRate ? "Edit Electrical Rate" : "Add New Electrical Rate"}
+              </h2>
+              <button
+                onClick={resetForm}
+                className="text-gray-400 hover:text-gray-600 transition-colors p-1 cursor-pointer"
+              >
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label
+                  htmlFor="type"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Rate Type <span className="text-rose-500">*</span>
+                </label>
+                <select
+                  id="type"
+                  name="type"
+                  value={formData.type}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      type: e.target.value as "temporary" | "exhibition" | "both",
+                    })
+                  }
+                  className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] bg-white"
+                  required
+                >
+                  <option value="both">Both Temporary &amp; Exhibition</option>
+                  <option value="temporary">Temporary Only</option>
+                  <option value="exhibition">Exhibition Only</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="ratePerKW"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Rate per KW (₹) <span className="text-rose-500">*</span>
+                </label>
+                <div className="relative">
+                  <span className="absolute left-3 top-2 text-gray-500 text-sm">₹</span>
+                  <input
+                    type="number"
+                    id="ratePerKW"
+                    name="ratePerKW"
+                    value={formData.ratePerKW}
+                    onChange={(e) => setFormData({ ...formData, ratePerKW: e.target.value })}
+                    className="w-full border border-gray-300 rounded-lg pl-7 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1]"
+                    min="0"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="effectiveFrom"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Effective From <span className="text-rose-500">*</span>
+                </label>
+                <input
+                  type="date"
+                  id="effectiveFrom"
+                  name="effectiveFrom"
+                  value={formData.effectiveFrom}
+                  onChange={(e) => setFormData({ ...formData, effectiveFrom: e.target.value })}
+                  className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1]"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="effectiveTo"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Effective To (Optional)
+                </label>
+                <input
+                  type="date"
+                  id="effectiveTo"
+                  name="effectiveTo"
+                  value={formData.effectiveTo}
+                  onChange={(e) => setFormData({ ...formData, effectiveTo: e.target.value })}
+                  className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1]"
+                  min={formData.effectiveFrom}
+                />
+                <p className="text-xs text-gray-500 mt-1">Leave empty for ongoing rates</p>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="description"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Description
+                </label>
+                <textarea
+                  id="description"
+                  name="description"
+                  value={formData.description}
+                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                  rows={3}
+                  className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1]"
+                  placeholder="Additional notes about this rate..."
+                />
+              </div>
+
+              <div className="flex items-center py-1">
+                <input
+                  type="checkbox"
+                  id="isActive"
+                  name="isActive"
+                  checked={formData.isActive}
+                  onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
+                  className="h-4 w-4 text-[#003A77] rounded border-gray-300 focus:ring-[#00A1B1]"
+                />
+                <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
+                  Active (apply this rate to new bookings)
+                </label>
+              </div>
+
+              <div className="flex justify-end gap-3 pt-4 border-t border-gray-100">
+                <button
+                  type="button"
+                  onClick={resetForm}
+                  className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors text-sm font-medium cursor-pointer"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="px-5 py-2 bg-[#003A77] text-white rounded-lg hover:bg-[#002855] transition-colors min-w-[90px] disabled:opacity-50 text-sm font-medium cursor-pointer"
+                >
+                  {submitting ? "Saving..." : editingRate ? "Update" : "Save"}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
