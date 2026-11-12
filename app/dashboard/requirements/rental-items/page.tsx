@@ -2,10 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { ComputerDesktopIcon, ArrowLeftIcon, CheckCircleIcon, PlusIcon, MinusIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import {
+  ComputerDesktopIcon,
+  ArrowLeftIcon,
+  CheckCircleIcon,
+  PlusIcon,
+  MinusIcon,
+} from '@heroicons/react/24/outline';
 import { rentalItemsAPI, extraRequirementsAPI, RentalItem } from '@/lib/api/exhibitorClient';
 import LoadingDots from '@/components/ui/LoadingDots';
-
 
 function SuccessPage({ onBack }: { onBack: () => void }) {
   return (
@@ -15,8 +20,13 @@ function SuccessPage({ onBack }: { onBack: () => void }) {
           <CheckCircleIcon className="h-8 w-8 text-green-600" />
         </div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Rental Items Submitted!</h2>
-        <p className="text-gray-600 mb-6">Your AV/IT rental request has been submitted successfully.</p>
-        <button onClick={onBack} className="px-6 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition">
+        <p className="text-gray-600 mb-6">
+          Your AV &amp; IT rental request has been submitted successfully.
+        </p>
+        <button
+          onClick={onBack}
+          className="px-6 py-2 bg-[#003A77] text-white rounded-lg hover:bg-[#002855] transition"
+        >
           Back to Requirements
         </button>
       </div>
@@ -25,31 +35,32 @@ function SuccessPage({ onBack }: { onBack: () => void }) {
 }
 
 interface CartItem extends RentalItem {
+  cost3Days: number;
   quantity: number;
 }
 
 export default function RentalItemsPage() {
   const router = useRouter();
   const [items, setItems] = useState<CartItem[]>([]);
-  const [rentalDays, setRentalDays] = useState(3);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch rental items from API
   useEffect(() => {
     const fetchRentalItems = async () => {
       try {
         setLoading(true);
         const response = await rentalItemsAPI.getAll();
         if (response.success) {
-          // Add quantity property to each item
-          const itemsWithQuantity = response.data.map(item => ({
-            ...item,
-            quantity: 0
-          }));
-          setItems(itemsWithQuantity);
+          const activeItems: CartItem[] = (response.data || [])
+            .filter((item: any) => item.isActive !== false)
+            .map((item: any) => ({
+              ...item,
+              cost3Days: Number(item.costFor3Days ?? item.pricePerDay ?? 0),
+              quantity: 0,
+            }));
+          setItems(activeItems);
         } else {
           setError('Failed to load rental items');
         }
@@ -65,26 +76,24 @@ export default function RentalItemsPage() {
   }, []);
 
   const updateQuantity = (id: string, delta: number) => {
-    setItems(items.map(item => {
-      if (item.id === id) {
-        const newQuantity = Math.max(0, item.quantity + delta);
-        return { ...item, quantity: newQuantity };
-      }
-      return item;
-    }));
+    setItems((prev) =>
+      prev.map((item) => {
+        if (item.id === id) {
+          const newQuantity = Math.max(0, item.quantity + delta);
+          return { ...item, quantity: newQuantity };
+        }
+        return item;
+      })
+    );
   };
 
-  const calculateTotal = () => {
-    return items.reduce((sum, item) => sum + (item.pricePerDay * item.quantity * rentalDays), 0);
-  };
+  const selectedItems = items.filter((i) => i.quantity > 0);
+  const total = items.reduce((sum, item) => sum + item.cost3Days * item.quantity, 0);
 
-  const selectedItems = items.filter(i => i.quantity > 0);
-  const total = calculateTotal();
-
-  // Group items by category
   const groupedItems = items.reduce((acc, item) => {
-    if (!acc[item.category]) acc[item.category] = [];
-    acc[item.category].push(item);
+    const cat = item.category || 'Other';
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(item);
     return acc;
   }, {} as Record<string, CartItem[]>);
 
@@ -103,22 +112,29 @@ export default function RentalItemsPage() {
       const generalInfo = JSON.parse(localStorage.getItem('exhibitorGeneralInfo') || '{}');
       const boothDetails = JSON.parse(localStorage.getItem('exhibitorBoothDetails') || '{}');
 
-      // Format rental items for API
-      const rentalItems = selectedItems.map(item => ({
+      const rentalItems = selectedItems.map((item) => ({
         id: item.id,
-        type: item.name,
+        type: item.category || 'AV/IT Rental',
+        description: item.description || item.name || item.itemKey || 'Rental Item',
         quantity: item.quantity,
-        costFor3Days: item.pricePerDay * rentalDays,
-        totalCost: item.pricePerDay * item.quantity * rentalDays
+        costFor3Days: item.cost3Days,
+        totalCost: item.cost3Days * item.quantity,
       }));
 
       const response = await extraRequirementsAPI.submit({
+        type: 'exhibitor',
+        description: 'AV & IT rental requirement submission',
         generalInfo,
         boothDetails,
-        eventName: 'Tyre Expo 2024',
+        eventName: 'IndiaMET 2027',
         rentalItems,
-        notes: `Rental duration: ${rentalDays} days`
-      });
+        totals: {
+          servicesTotal: total,
+          gst: Math.round(total * 0.18),
+          total: Math.round(total * 1.18),
+        },
+        notes: 'AV & IT rental (3-day exhibition period)',
+      } as any);
 
       if (response.success) {
         setSubmitted(true);
@@ -151,15 +167,20 @@ export default function RentalItemsPage() {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="flex items-center gap-3 mb-6">
-        <button onClick={() => router.back()} className="p-2 text-gray-500 hover:text-gray-700 rounded-lg transition">
+        <button
+          onClick={() => router.back()}
+          className="p-2 text-gray-500 hover:text-gray-700 rounded-lg transition"
+        >
           <ArrowLeftIcon className="h-5 w-5" />
         </button>
-        <div className="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center">
-          <ComputerDesktopIcon className="h-6 w-6 text-purple-600" />
+        <div className="h-12 w-12 bg-sky-100 rounded-xl flex items-center justify-center">
+          <ComputerDesktopIcon className="h-6 w-6 text-[#003A77]" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">AV & IT Equipment Rental</h1>
-          <p className="text-gray-500 text-sm">Rent audio, video, and IT equipment for your booth</p>
+          <h1 className="text-2xl font-bold text-gray-900">AV &amp; IT Equipment Rental</h1>
+          <p className="text-gray-500 text-sm">
+            Rent audio, video, and IT equipment for your booth (3-day exhibition period)
+          </p>
         </div>
       </div>
 
@@ -172,56 +193,80 @@ export default function RentalItemsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Rental Catalog */}
         <div className="lg:col-span-2 space-y-6">
-          {Object.entries(groupedItems).map(([category, categoryItems]) => (
-            <div key={category} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <div className="px-5 py-3 bg-gray-50 border-b border-gray-100">
-                <h2 className="font-semibold text-gray-800">{category}</h2>
-              </div>
-              <div className="divide-y divide-gray-100">
-                {categoryItems.map((item) => (
-                  <div key={item.id} className="p-4 flex items-center gap-4">
-                    {/* Image */}
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center">
-                      {item.imageUrl ? (
-                        <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover rounded-xl" />
-                      ) : (
-                        <ComputerDesktopIcon className="h-8 w-8 text-purple-500" />
-                      )}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-medium text-gray-800">{item.name}</h3>
-                      <p className="text-xs text-gray-500">{item.description}</p>
-                      <p className="text-sm font-semibold text-purple-600 mt-1">₹{item.pricePerDay}/day</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <button
-                        type="button"
-                        onClick={() => updateQuantity(item.id, -1)}
-                        disabled={!item.isActive}
-                        className="p-1.5 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        <MinusIcon className="h-4 w-4" />
-                      </button>
-                      <span className="w-8 text-center font-medium text-gray-700">{item.quantity}</span>
-                      <button
-                        type="button"
-                        onClick={() => updateQuantity(item.id, 1)}
-                        disabled={!item.isActive}
-                        className="p-1.5 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        <PlusIcon className="h-4 w-4" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {Object.keys(groupedItems).length === 0 ? (
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-10 text-center text-gray-500">
+              No active AV &amp; IT rental items available at the moment.
             </div>
-          ))}
+          ) : (
+            Object.entries(groupedItems).map(([category, categoryItems]) => (
+              <div
+                key={category}
+                className="bg-white rounded-2xl shadow-sm border border-gray-200/80 overflow-hidden"
+              >
+                <div className="px-5 py-3 bg-gray-50 border-b border-gray-100">
+                  <h2 className="font-semibold text-gray-800">
+                    {category === 'AV'
+                      ? 'AV Equipment'
+                      : category === 'IT'
+                      ? 'IT Equipment'
+                      : category}
+                  </h2>
+                </div>
+                <div className="divide-y divide-gray-100">
+                  {categoryItems.map((item) => (
+                    <div key={item.id} className="p-4 flex items-center gap-4">
+                      <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden shrink-0">
+                        {item.imageUrl ? (
+                          <img
+                            src={item.imageUrl}
+                            alt={item.description}
+                            className="w-full h-full object-cover rounded-xl"
+                          />
+                        ) : (
+                          <ComputerDesktopIcon className="h-8 w-8 text-gray-400" />
+                        )}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-gray-900">{item.description}</h3>
+                        {item.itemKey && (
+                          <p className="text-xs text-gray-400 font-mono">{item.itemKey}</p>
+                        )}
+                        <p className="text-sm font-bold text-[#003A77] mt-1">
+                          ₹{item.cost3Days.toLocaleString()}{' '}
+                          <span className="text-xs font-normal text-gray-400">/ 3 days</span>
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2 shrink-0">
+                        <button
+                          type="button"
+                          onClick={() => updateQuantity(item.id, -1)}
+                          disabled={item.quantity === 0}
+                          className="p-1.5 text-gray-500 hover:text-gray-800 border border-gray-200 rounded-lg hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                        >
+                          <MinusIcon className="h-4 w-4" />
+                        </button>
+                        <span className="w-8 text-center font-semibold text-gray-800">
+                          {item.quantity}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => updateQuantity(item.id, 1)}
+                          className="p-1.5 text-gray-500 hover:text-gray-800 border border-gray-200 rounded-lg hover:bg-gray-100 cursor-pointer"
+                        >
+                          <PlusIcon className="h-4 w-4" />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
         {/* Cart Sidebar */}
         <div className="lg:col-span-1">
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-6 text-white sticky top-24">
+          <div className="bg-gradient-to-br from-[#003A77] to-[#005999] rounded-2xl p-6 text-white sticky top-24 shadow-md">
             <div className="flex items-center gap-2 mb-4">
               <ComputerDesktopIcon className="h-5 w-5" />
               <h3 className="font-semibold">Your Rental Cart</h3>
@@ -232,48 +277,46 @@ export default function RentalItemsPage() {
               )}
             </div>
 
-            <div className="mb-4">
-              <label className="block text-sm text-white/80 mb-1">Rental Duration</label>
-              <select
-                value={rentalDays}
-                onChange={(e) => setRentalDays(parseInt(e.target.value))}
-                className="w-full px-3 py-2 rounded-lg text-gray-800 bg-white"
-              >
-                <option value={1}>1 Day</option>
-                <option value={2}>2 Days</option>
-                <option value={3}>3 Days (Recommended)</option>
-                <option value={4}>4 Days</option>
-                <option value={5}>5 Days</option>
-              </select>
-            </div>
-
             <div className="space-y-2 max-h-60 overflow-y-auto mb-4">
               {selectedItems.length === 0 ? (
-                <p className="text-sm text-white/70 text-center py-4">No items selected</p>
+                <p className="text-sm text-white/70 text-center py-6">No items selected</p>
               ) : (
-                selectedItems.map(item => (
-                  <div key={item.id} className="flex justify-between text-sm">
-                    <span>{item.name} x{item.quantity}</span>
-                    <span>₹{(item.pricePerDay * item.quantity * rentalDays).toLocaleString()}</span>
+                selectedItems.map((item) => (
+                  <div key={item.id} className="flex justify-between text-sm gap-2">
+                    <span className="truncate">
+                      {item.description} x{item.quantity}
+                    </span>
+                    <span className="font-medium shrink-0">
+                      ₹{(item.cost3Days * item.quantity).toLocaleString()}
+                    </span>
                   </div>
                 ))
               )}
             </div>
 
             <div className="border-t border-white/20 pt-3 mb-4">
-              <div className="flex justify-between font-bold">
-                <span>Total:</span>
+              <div className="flex justify-between font-bold text-lg">
+                <span>Total (3 Days):</span>
                 <span>₹{total.toLocaleString()}</span>
               </div>
-              <p className="text-xs text-white/70 mt-1">* GST 18% extra as applicable</p>
+              <p className="text-xs text-white/75 mt-1">
+                * Prices are for 3-day exhibition period. GST 18% extra as applicable.
+              </p>
             </div>
 
             <button
               onClick={handleSubmit}
               disabled={selectedItems.length === 0 || submitting}
-              className="w-full py-2.5 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-2.5 bg-white text-[#003A77] font-semibold rounded-lg hover:bg-sky-50 transition disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
-              {submitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" label="" />Submitting...</span> : 'Submit Rental Request'}
+              {submitting ? (
+                <span className="inline-flex items-center justify-center gap-2">
+                  <LoadingDots size="sm" label="" />
+                  Submitting...
+                </span>
+              ) : (
+                'Submit Rental Request'
+              )}
             </button>
           </div>
         </div>

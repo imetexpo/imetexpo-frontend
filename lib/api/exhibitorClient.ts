@@ -898,11 +898,13 @@ export const manualAPI = {
 
 export interface RentalItem {
     id: string;
-    name: string;
+    itemKey?: string;
+    name?: string;
     description: string;
     category: string;
-    pricePerDay: number;
-    imageUrl: string;
+    costFor3Days?: number;
+    pricePerDay?: number;
+    imageUrl: string | null;
     isActive: boolean;
     displayOrder: number;
 }
