@@ -1,7 +1,8 @@
 // lib/api/compressedAir.ts
 import axios from "axios";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const rawApiUrl = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API_BASE_URL = rawApiUrl.endsWith("/api") ? rawApiUrl : `${rawApiUrl}/api`;
 
 const api = axios.create({
     baseURL: API_BASE_URL,
@@ -13,7 +14,10 @@ const api = axios.create({
 api.interceptors.request.use(
     (config) => {
         if (typeof window !== "undefined") {
-            const token = localStorage.getItem("adminToken");
+            const token =
+                localStorage.getItem("adminToken") ||
+                localStorage.getItem("admin_token") ||
+                localStorage.getItem("token");
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             }
@@ -82,15 +86,14 @@ export async function bulkDeleteCompressedAirOptions(ids: string[]) {
     return response.data;
 }
 
-// FIXED: Toggle active status - Use PUT update instead
+// Toggle active status via toggle-status endpoint (with PUT fallback)
 export async function toggleCompressedAirStatus(id: string, isActive: boolean) {
     try {
-        const response = await api.put(`/admin/compressed-air/${id}`, { isActive });
+        const response = await api.patch(`/admin/compressed-air/${id}/toggle-status`, { isActive });
         return response.data;
     } catch (error: any) {
         if (error.response?.status === 404) {
-            // Try PATCH as fallback
-            const response = await api.patch(`/admin/compressed-air/${id}/toggle-status`, { isActive });
+            const response = await api.put(`/admin/compressed-air/${id}`, { isActive });
             return response.data;
         }
         throw error;

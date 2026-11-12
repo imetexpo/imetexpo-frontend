@@ -72,9 +72,11 @@ export default function CompressedAirPage() {
       const totalCost = calculateTotal();
 
       const response = await extraRequirementsAPI.submit({
+        type: 'exhibitor',
+        description: 'Compressed air requirement submission',
         generalInfo,
         boothDetails,
-        eventName: 'Tyre Expo 2024',
+        eventName: 'IndiaMET 2027',
         compressedAir: {
           qty: formData.connections,
           cfmRange: selectedOption.cfmRange,
@@ -82,8 +84,13 @@ export default function CompressedAirPage() {
           costPerConnection: selectedOption.costPerConnection,
           totalCost: totalCost
         },
+        totals: {
+          servicesTotal: totalCost,
+          gst: Math.round(totalCost * 0.18),
+          total: Math.round(totalCost * 1.18),
+        },
         notes: `Equipment: ${formData.usage}. Option: ${selectedOption.name}`
-      });
+      } as any);
 
       if (response.success) {
         setSubmitted(true);
