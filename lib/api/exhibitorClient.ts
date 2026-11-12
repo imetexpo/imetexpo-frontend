@@ -928,13 +928,17 @@ export const rentalItemsAPI = {
 
 export interface FurnitureItem {
     id: string;
-    name: string;
+    code?: string;
+    name?: string;
     description: string;
+    size?: string | null;
     category: string;
-    pricePerDay: number;
-    imageUrl: string;
-    stockStatus: string;
+    cost3Days?: number;
+    pricePerDay?: number;
+    imageUrl: string | null;
+    stockStatus?: string;
     inStock: boolean;
+    isActive?: boolean;
 }
 
 export const furnitureAPI = {

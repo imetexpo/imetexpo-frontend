@@ -8,7 +8,7 @@ import { getFurnitureById, updateFurniture, Furniture } from "@/lib/api/furnitur
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
 
-const categories = ["Tables", "Chairs", "Seating", "Counters", "Storage", "Display", "Decor"];
+const categories = ["Furniture", "Tables", "Chairs", "Seating", "Counters", "Storage", "Display", "Lighting", "Electrical", "Decor", "Accessories"];
 
 export default function EditFurniturePage() {
     const router = useRouter();
