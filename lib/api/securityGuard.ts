@@ -1,7 +1,8 @@
 // lib/api/securityGuard.ts
 import axios from "axios";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const RAW_API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API_BASE_URL = RAW_API_URL.endsWith("/api") ? RAW_API_URL : `${RAW_API_URL}/api`;
 
 const api = axios.create({
     baseURL: API_BASE_URL,
@@ -13,7 +14,11 @@ const api = axios.create({
 api.interceptors.request.use(
     (config) => {
         if (typeof window !== "undefined") {
-            const token = localStorage.getItem("adminToken") || localStorage.getItem("exhibitorToken");
+            const token =
+                localStorage.getItem("adminToken") ||
+                localStorage.getItem("admin_token") ||
+                localStorage.getItem("token") ||
+                localStorage.getItem("exhibitorToken");
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             }
@@ -74,14 +79,11 @@ export async function getSecurityGuardRatePerDay(): Promise<number> {
 
 // Validate security guard rate - SYNCHRONOUS function
 export function validateSecurityGuardRate(ratePerGuardPerDay: number): { valid: boolean; message?: string } {
-    if (ratePerGuardPerDay < 0) {
-        return { valid: false, message: 'Rate cannot be negative' };
+    if (isNaN(ratePerGuardPerDay) || ratePerGuardPerDay < 0) {
+        return { valid: false, message: 'Rate cannot be negative (minimum ₹0)' };
     }
-    if (ratePerGuardPerDay < 500) {
-        return { valid: false, message: 'Rate seems too low. Minimum recommended rate is ₹500 per day' };
-    }
-    if (ratePerGuardPerDay > 10000) {
-        return { valid: false, message: 'Rate seems too high. Maximum recommended rate is ₹10,000 per day' };
+    if (ratePerGuardPerDay > 100000) {
+        return { valid: false, message: 'Rate seems too high. Maximum allowed rate is ₹1,00,000 per day' };
     }
     return { valid: true };
 }
