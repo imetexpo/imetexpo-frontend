@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Container from '../ui/container';
 import Link from 'next/link';
+import { getImageAlt } from '@/lib/imageAlts';
 
 const slides = [
   { id: 1, image: '/images/picx1.png' },
@@ -42,7 +43,7 @@ export default function HeroSection() {
               {!imageErrors[slide.id] ? (
                 <Image
                   src={slide.image}
-                  alt="IndiaMet Expo"
+                  alt={getImageAlt(slide.image, 'IndiaMET Expo')}
                   fill
                   className="object-cover"
                   priority={index === 0}

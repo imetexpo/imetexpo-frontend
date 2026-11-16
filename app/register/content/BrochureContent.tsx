@@ -66,7 +66,7 @@ export default function BrochureContent() {
         <div className="relative w-120 h-82 rotate-[-4deg] shadow-md rounded-sm overflow-hidden border border-gray-150">
           <Image
             src="/images/indiamet_Brochure.png"
-            alt="Event Brochure"
+            alt="IndiaMET exhibition brochure featuring metrology technology and event details"
             fill
             className="object-cover"
           />

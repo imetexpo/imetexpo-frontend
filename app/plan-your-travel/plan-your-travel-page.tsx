@@ -10,6 +10,7 @@ import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getImageAlt } from '@/lib/imageAlts';
 
 
 export default function PlanYourTravelPage() {
@@ -261,7 +262,7 @@ export default function PlanYourTravelPage() {
     return (
       <Image
         src={src}
-        alt={alt}
+        alt={getImageAlt(src, alt)}
         fill
         sizes="(max-width: 768px) 100vw, 400px"
         className={`object-cover ${className}`}

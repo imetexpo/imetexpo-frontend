@@ -13,6 +13,7 @@ import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getImageAlt } from '@/lib/imageAlts';
 
 
 const statsData = [
@@ -165,7 +166,7 @@ export default function ConferenceProgrammePage() {
                 <div className="order-1 lg:order-2 relative h-[300px] sm:h-[400px] lg:h-[500px] w-full overflow-hidden rounded-sm border border-gray-150 bg-gray-100">
                   <Image
                     src="/images/confe.jpg"
-                    alt="Conference"
+                    alt="Speaker addressing a seated audience at a professional conference"
                     fill
                     className="object-cover"
                   />
@@ -231,7 +232,7 @@ export default function ConferenceProgrammePage() {
                           <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-gray-100 rounded-t-sm">
                             <Image
                               src={event.image}
-                              alt={event.title}
+                              alt={getImageAlt(event.image, event.title)}
                               fill
                               className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />
@@ -269,7 +270,7 @@ export default function ConferenceProgrammePage() {
                       <div className="relative h-20 w-full overflow-hidden mx-auto bg-white border border-gray-150 p-2 rounded-sm">
                         <Image
                           src={partner.logo}
-                          alt={partner.name}
+                          alt={getImageAlt(partner.logo, partner.name)}
                           fill
                           className="object-contain p-1"
                         />

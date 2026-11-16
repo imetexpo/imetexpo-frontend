@@ -8,6 +8,7 @@ import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getImageAlt } from '@/lib/imageAlts';
 
 
 export default function ExhibitorResourceCenterPage() {
@@ -142,7 +143,7 @@ const faqItems = [
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src={src}
-        alt={alt}
+        alt={getImageAlt(src, alt)}
         className={`h-full w-full ${objectFit === "contain" ? "object-contain" : "object-cover"} ${className}`}
         onError={() => setError(true)}
       />
@@ -167,7 +168,7 @@ const faqItems = [
                 <div className="order-1 lg:order-2 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3]">
                   <ImageWithFallback
                     src="/images/Explore_Opportunities.jpg"
-                    alt="INDIAMET Expo"
+                    alt="Visitors discussing technology with exhibitors at a manufacturing trade show"
                     fallbackIcon="🏢"
                     className="h-full w-full"
                   />

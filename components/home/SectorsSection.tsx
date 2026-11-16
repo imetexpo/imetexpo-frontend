@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '../ui/container';
+import { getImageAlt } from '@/lib/imageAlts';
 
 const sectorsData = [
   {
@@ -98,7 +99,7 @@ export default function SectorsSection() {
                 <div className="relative h-[220px] sm:h-[240px] lg:h-[280px] xl:h-[320px]">
                   <Image
                     src={sector.image}
-                    alt={sector.title}
+                    alt={getImageAlt(sector.image, sector.title)}
                     fill
                     className="object-cover group-hover:scale-105 transition duration-500"
                   />

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Container from '@/components/ui/container';
+import { getImageAlt } from '@/lib/imageAlts';
 
 type Exhibition = {
   name: string;
@@ -119,7 +120,7 @@ export default function OurExhibitionsSection() {
               <div>
                 <Image
                   src={event.logo}
-                  alt={event.name}
+                  alt={getImageAlt(event.logo, event.name)}
                   width={500}
                   height={500}
                   className="h-32 w-auto object-contain"

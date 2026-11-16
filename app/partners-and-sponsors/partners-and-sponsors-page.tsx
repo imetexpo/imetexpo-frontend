@@ -6,6 +6,7 @@ import PageHero from '@/components/layout/PageHero';
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/ui/container';
+import { getImageAlt } from '@/lib/imageAlts';
 
 export default function PartnersSponsorsPage() {
   const eventPartners = [
@@ -74,7 +75,7 @@ export default function PartnersSponsorsPage() {
                   <div className="h-32 flex items-center justify-center">
                     <Image
                       src={partner.logo}
-                      alt={partner.name}
+                      alt={getImageAlt(partner.logo, partner.name)}
                       width={140}
                       height={100}
                       className="object-contain max-h-28"
@@ -110,7 +111,7 @@ export default function PartnersSponsorsPage() {
                   <div className="h-32 flex items-center justify-center">
                     <Image
                       src={partner.logo}
-                      alt={partner.name}
+                      alt={getImageAlt(partner.logo, partner.name)}
                       width={140}
                       height={100}
                       className="object-contain max-h-28"
@@ -147,7 +148,7 @@ export default function PartnersSponsorsPage() {
                   <div className="h-24 flex items-center justify-center">
                     <Image
                       src={partner.logo}
-                      alt={partner.name}
+                      alt={getImageAlt(partner.logo, partner.name)}
                       width={120}
                       height={80}
                       className="object-contain max-h-20"

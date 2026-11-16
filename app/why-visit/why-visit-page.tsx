@@ -11,6 +11,7 @@ import BackToTop from "@/components/layout/BackToTop";
 import React from "react";
 import PageHero from "@/components/layout/PageHero";
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getImageAlt } from '@/lib/imageAlts';
 
 
 export default function WhyVisitPage() {
@@ -244,7 +245,7 @@ export default function WhyVisitPage() {
 
                     <Image
                       src="/images/precision_manufacturing.jpg"                     
-                      alt="Precision Metrology and Measurement Technology"
+                      alt="Engineers examining a turbine component with digital design overlays"
                       fill
                       className="object-cover"
                     />
@@ -265,7 +266,7 @@ export default function WhyVisitPage() {
                 <div className="absolute inset-0">
                   <img
                     src="https://miningworldexpo.com/imgs/shape-1.svg"
-                    alt="INDIAMET background"
+                    alt=""
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -379,8 +380,8 @@ export default function WhyVisitPage() {
                 <div className="absolute inset-0">
 
                   <img
-                    src="/images//img_3_4b6edc76d1.jpg"
-                    alt="INDIAMET Exhibition"
+                    src="/images/img_3_4b6edc76d1.jpg"
+                    alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                     className="h-full w-full object-cover"
                   />
 
@@ -396,7 +397,7 @@ export default function WhyVisitPage() {
 
                       <img
                         src="/images/indiamet_Brochure.png"
-                        alt="INDIAMET Event Brochure"
+                        alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                         className="h-48 sm:h-56 lg:h-64 w-auto object-contain"
                       />
 
@@ -506,7 +507,7 @@ export default function WhyVisitPage() {
 
                     <Image
                       src="/images/india_precision_manufcturing.webp"
-                      alt="Precision Manufacturing Business Areas"
+                      alt="Technicians assembling precision components on an electronics production line"
                       fill
                       className="object-cover"
                     />
@@ -544,7 +545,7 @@ export default function WhyVisitPage() {
 
                     <img
                       src="/images/img_3_4b6edc76d1.jpg"
-                      alt="Industries and Manufacturing Professionals"
+                      alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                       className="absolute inset-0 h-full w-full object-cover"
                     />
 
@@ -584,7 +585,7 @@ export default function WhyVisitPage() {
 
                     <img
                       src="/images/img_3_4b6edc76d1.jpg"
-                      alt="Metrology Technology Solutions"
+                      alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                       className="absolute inset-0 h-full w-full object-cover"
                     />
 
@@ -678,7 +679,7 @@ export default function WhyVisitPage() {
 
                         <Image
                           src={item.image}
-                          alt={item.title}
+                          alt={getImageAlt(item.image, item.title)}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
