@@ -36,13 +36,15 @@ const COUNTRIES = [
 ];
 
 const INTERESTS = [
-  'Die & Mould Manufacturers',
-  'OEMs & Automotive',
-  'Precision Engineering',
-  'Tooling & Components',
-  'Distributors & Wholesalers',
-  'Retailers & Resellers',
-  'Photographer & Videographer',
+  'Metrology & Measuring Instruments',
+  'Quality Control & Testing Equipment',
+  'Optical & Vision Systems / 3D Scanning',
+  'CMM & Precision Engineering',
+  'Sensors, Probes & Calibration',
+  'OEMs & Automotive Manufacturing',
+  'Automation & Digital Metrology',
+  'Tooling, Machinery & Materials',
+  'Distributors & Dealers',
   'Media & Publications',
 ];
 
@@ -242,7 +244,7 @@ export default function PassRegisterPage() {
 
   return (
     <div className="min-h-screen bg-[#F3F5F9] font-parabolica">
-      <div className="relative overflow-hidden bg-gradient-to-r from-[#004A96] via-[#003875] to-[#004A96] text-white">
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#003A77] via-[#002D5C] to-[#003A77] text-white">
         <PassesChrome backHref="/passes" backLabel="Back to Exhibitions" />
         <div className="mx-auto max-w-5xl px-5 pb-7 pt-20 sm:pb-8 sm:pt-24">
           <div className="flex flex-wrap items-center gap-2.5">
@@ -265,14 +267,14 @@ export default function PassRegisterPage() {
           <p className="text-xs font-bold uppercase tracking-wide text-slate-400">Event Details</p>
           <div className="mt-4 space-y-4 text-sm">
             <div className="flex gap-3">
-              <CalendarDays className="mt-0.5 h-4 w-4 text-[#004A96]" />
+              <CalendarDays className="mt-0.5 h-4 w-4 text-[#003A77]" />
               <div>
                 <p className="font-semibold text-slate-500">Event Dates</p>
                 <p className="font-bold text-slate-800">24–26 Mar 2027</p>
               </div>
             </div>
             <div className="flex gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 text-[#004A96]" />
+              <MapPin className="mt-0.5 h-4 w-4 text-[#003A77]" />
               <div>
                 <p className="font-semibold text-slate-500">Venue</p>
                 <p className="font-bold text-slate-800">Auto Cluster Exhibition Centre, Pune</p>
@@ -320,7 +322,7 @@ export default function PassRegisterPage() {
               </button> */}
             </div>
 
-            <div className="mt-4 rounded-xl border border-[#004A96]/20 bg-[#E8F1F8] px-4 py-3 text-sm text-[#004A96]">
+            <div className="mt-4 rounded-xl border border-[#003A77]/20 bg-[#E8F1F8] px-4 py-3 text-sm text-[#003A77]">
               OTP will be sent via <strong>{channelLabel}</strong>
               {channel === 'email' ? ' to your email address.' : ' to your phone number.'}
             </div>
@@ -364,7 +366,7 @@ export default function PassRegisterPage() {
                 value={mobile}
                 onChange={(event) => setMobile(event.target.value.replace(/\D/g, '').slice(0, selectedCountry.max))}
                 placeholder={countryCode === '+91' ? '10-digit mobile number' : 'Mobile number'}
-                className="h-12 flex-1 rounded-xl border border-slate-200 px-4 text-sm outline-none transition focus:border-[#004A96] focus:ring-4 focus:ring-[#004A96]/15"
+                className="h-12 flex-1 rounded-xl border border-slate-200 px-4 text-sm outline-none transition focus:border-[#003A77] focus:ring-4 focus:ring-[#003A77]/15"
               />
             </div>
             <p className="mt-2 text-xs text-slate-400">Select your country code and enter your mobile number.</p>
@@ -376,7 +378,7 @@ export default function PassRegisterPage() {
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   placeholder="you@company.com"
-                  className="mt-2 h-12 w-full rounded-xl border border-slate-200 px-4 text-sm outline-none transition focus:border-[#004A96] focus:ring-4 focus:ring-[#004A96]/15"
+                  className="mt-2 h-12 w-full rounded-xl border border-slate-200 px-4 text-sm outline-none transition focus:border-[#003A77] focus:ring-4 focus:ring-[#003A77]/15"
                 />
                 <p className="mt-2 text-xs text-slate-400">Use email to receive the OTP and visitor pass while testing.</p>
               </div>
@@ -387,12 +389,12 @@ export default function PassRegisterPage() {
               type="button"
               disabled={!isValidMobile || loading || (channel === 'email' && !isValidEmail)}
               onClick={sendOtp}
-              className="mt-6 w-full rounded-2xl bg-gradient-to-r from-[#004A96] to-[#004A96] py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition hover:brightness-110 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 disabled:shadow-none"
+              className="mt-6 w-full rounded-2xl bg-gradient-to-r from-[#003A77] to-[#003A77] py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition hover:brightness-110 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:from-slate-300 disabled:to-slate-300 disabled:shadow-none"
             >
               {loading ? 'Sending OTP…' : `Send OTP via ${channelLabel}`}
             </button>
             <p className="mt-3 text-center text-xs text-slate-400">
-              {channelLabel} OTP from DIEMEX · Expires in 10 minutes
+              {channelLabel} OTP from IndiaMET · Expires in 10 minutes
             </p>
             <p className="mt-6 flex items-center justify-center gap-1.5 text-[11px] text-slate-400">
               <Lock className="h-3.5 w-3.5" />
@@ -412,7 +414,7 @@ export default function PassRegisterPage() {
                   setStep('phone');
                   setVerificationToken('');
                 }}
-                className="text-sm font-semibold text-[#004A96] hover:underline"
+                className="text-sm font-semibold text-[#003A77] hover:underline"
               >
                 Change Number
               </button>
@@ -468,7 +470,7 @@ export default function PassRegisterPage() {
                 <select
                   value={form.source}
                   onChange={(event) => setForm((prev) => ({ ...prev, source: event.target.value }))}
-                  className="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-[#004A96]"
+                  className="h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-[#003A77]"
                 >
                   <option value="">Select a source</option>
                   {SOURCES.map((source) => (
@@ -490,7 +492,7 @@ export default function PassRegisterPage() {
                         type="button"
                         onClick={() => toggleInterest(interest)}
                         className={`rounded-full px-3 py-1.5 text-xs font-semibold ring-1 transition ${selected
-                          ? 'bg-[#004A96] text-white ring-[#004A96]'
+                          ? 'bg-[#003A77] text-white ring-[#003A77]'
                           : 'bg-white text-slate-600 ring-slate-200 hover:ring-slate-300'
                           }`}
                       >
@@ -500,7 +502,7 @@ export default function PassRegisterPage() {
                   })}
                 </div>
                 {form.interests.length === 0 ? (
-                  <p className="mt-3 rounded-xl bg-[#E8F1F8] px-3 py-2 text-xs text-[#004A96]">
+                  <p className="mt-3 rounded-xl bg-[#E8F1F8] px-3 py-2 text-xs text-[#003A77]">
                     Please select at least one interest to continue.
                   </p>
                 ) : null}
@@ -511,7 +513,7 @@ export default function PassRegisterPage() {
               <button
                 type="submit"
                 disabled={!canSubmitDetails || loading}
-                className="w-full rounded-2xl bg-[#004A96] py-3.5 text-sm font-bold text-white transition hover:bg-[#003875] disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full rounded-2xl bg-[#003A77] py-3.5 text-sm font-bold text-white transition hover:bg-[#002D5C] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {loading ? 'Issuing your pass…' : 'Complete Registration'}
               </button>
@@ -563,7 +565,7 @@ function Field({
         required={required}
         placeholder={placeholder}
         onChange={(event) => onChange(event.target.value)}
-        className="h-12 w-full rounded-xl border border-slate-200 px-4 text-sm outline-none transition focus:border-[#004A96] focus:ring-4 focus:ring-[#004A96]/15"
+        className="h-12 w-full rounded-xl border border-slate-200 px-4 text-sm outline-none transition focus:border-[#003A77] focus:ring-4 focus:ring-[#003A77]/15"
       />
     </label>
   );

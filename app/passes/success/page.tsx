@@ -103,7 +103,7 @@ export default function PassSuccessPage() {
           <VisitorPassCard pass={pass} />
         </div>
 
-        <div className="mt-6 rounded-2xl border border-[#004A96]/20 bg-[#E8F1F8] px-5 py-4 text-left">
+        <div className="mt-6 rounded-2xl border border-[#003A77]/20 bg-[#E8F1F8] px-5 py-4 text-left">
           <p className="inline-flex items-center gap-2 text-sm font-bold text-slate-800">
             <CheckCircle2 className="h-4 w-4 text-emerald-600" />
             Next step
@@ -142,7 +142,7 @@ export default function PassSuccessPage() {
             type="button"
             onClick={() => sendVia('sms')}
             disabled={sending !== null}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#004A96] py-3.5 text-sm font-bold text-white disabled:opacity-60"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#003A77] py-3.5 text-sm font-bold text-white disabled:opacity-60"
           >
             <MessageSquare className="h-4 w-4" />
             {sending === 'sms' ? 'Sending…' : 'Send pass via SMS'}
@@ -186,7 +186,7 @@ export default function PassSuccessPage() {
             Another Registration
           </Link>
         </div>
-        <p className="mt-6 text-xs text-slate-400">Need help? Contact us at visitor@diemex.in</p>
+        <p className="mt-6 text-xs text-slate-400">Need help? Contact us at info@indiametexpo.com</p>
       </div>
     </div>
   );
@@ -203,7 +203,7 @@ function StatusTile({
 }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left">
-      <Icon className="h-5 w-5 text-[#004A96]" />
+      <Icon className="h-5 w-5 text-[#003A77]" />
       <p className="mt-2 text-sm font-bold text-slate-800">{title}</p>
       <p className="text-xs text-slate-500">{subtitle}</p>
     </div>
