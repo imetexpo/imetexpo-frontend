@@ -95,7 +95,7 @@ export default function Navbar() {
   <UTMLink href="/">
     <Image
       src="/footer_logo.png"
-      alt="IndiaMet Expo"
+      alt="IndiaMET exhibition logo"
       width={200}
       height={100}
       className="h-16 w-auto cursor-pointer object-contain xl:h-25"

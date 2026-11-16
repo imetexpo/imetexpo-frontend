@@ -9,6 +9,7 @@ import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getImageAlt } from '@/lib/imageAlts';
 
 
 export default function SectorsPage() {
@@ -184,7 +185,7 @@ export default function SectorsPage() {
                       <div className="relative h-56 w-full overflow-hidden bg-gray-100 rounded-t-sm">
                         <Image
                           src={sector.image}
-                          alt={sector.title}
+                          alt={getImageAlt(sector.image, sector.title)}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-110"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
@@ -233,7 +234,7 @@ export default function SectorsPage() {
                     <div className="relative h-48 w-full overflow-hidden">
                       <Image
                         src={item.image}
-                        alt={item.title}
+                        alt={getImageAlt(item.image, item.title)}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                       />

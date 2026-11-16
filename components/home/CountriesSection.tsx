@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '../ui/container';
+import { getImageAlt } from '@/lib/imageAlts';
 
 interface Country {
   name: string;
@@ -52,7 +53,7 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
             <div key={country.name} className="flex items-center gap-3">
               <Image
                 src={country.flag}
-                alt={country.name}
+                alt={getImageAlt(country.flag, country.name)}
                 width={32}
                 height={32}
                 className="w-6 h-6 sm:w-8 sm:h-8 rounded-full object-cover shadow-md"

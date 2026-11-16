@@ -272,7 +272,7 @@ function SidebarBrand({ onClose }: { onClose?: () => void }) {
       <div className="relative h-10 w-[140px] shrink-0">
         <Image
           src="/ITS_logo_white.png"
-          alt="IndiaMET Expo"
+          alt="IndiaMET exhibition logo for dark backgrounds"
           fill
           className="object-contain object-left drop-shadow-sm"
           sizes="140px"

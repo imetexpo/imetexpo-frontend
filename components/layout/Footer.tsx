@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Image
               src="/ITS_logo_white.png"
-              alt="IndiaMet Expo"
+              alt="IndiaMET exhibition logo for dark backgrounds"
               width={280}
               height={100}
               priority
@@ -170,7 +170,7 @@ export default function Footer() {
               <span className="text-xs uppercase tracking-wider text-neutral-100 font-bold sm:text-[16px]">Organised By</span>
               <Image
                 src="/maxx_logo.png"
-                alt="ITE"
+                alt="MaxX Business Media Pvt Ltd white logo"
                 width={270}
                 height={75}
                 className="h-auto w-auto max-w-[100px] object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:max-w-[200px]"

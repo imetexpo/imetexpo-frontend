@@ -20,7 +20,7 @@ export default function AboutSection() {
           <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] rounded-lg overflow-hidden">
             <Image
               src="/images/pic1.jpg"
-              alt="IndiaMet Expo"
+              alt="Coordinate measuring probe inspecting a small precision metal component"
               width={200}
               height={500}
               className="w-full h-full object-cover"

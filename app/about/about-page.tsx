@@ -10,6 +10,7 @@ import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getImageAlt } from '@/lib/imageAlts';
 
 
 export default function AboutPage() {
@@ -100,7 +101,7 @@ export default function AboutPage() {
              <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
                 <img
                   src="/images/about_indiamet.jpg"
-                  alt="expo excavator"
+                  alt="Visitors exploring industrial exhibitors in a busy exhibition hall"
                   className="w-full h-full object-cover"
                 />
               </div> 
@@ -215,7 +216,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0">
                   <img
                     src="/images/img_3_4b6edc76d1.jpg"
-                    alt="Event Background"
+                    alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -228,7 +229,7 @@ export default function AboutPage() {
                       <div className="flex justify-center md:col-span-5 lg:col-span-4">
                         <img
                           src="/images/indiamet_Brochure.png"
-                          alt="Brochure"
+                          alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                           className="h-48 sm:h-56 lg:h-64 w-auto object-contain"
                         />
                       </div>
@@ -274,7 +275,7 @@ export default function AboutPage() {
                   <div className="mt-6 sm:mt-8 w-full overflow-hidden rounded-sm">
                     <img
                       src="/images/image2.png"
-                      alt="Exhibitors"
+                      alt=""
                       className="h-[200px] sm:h-[280px] md:h-[350px] lg:h-[400px] w-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
@@ -341,7 +342,7 @@ export default function AboutPage() {
                         <div className="relative h-48 sm:h-56 w-full overflow-hidden">
                           <Image
                             src={event.image}
-                            alt={event.title}
+                            alt={getImageAlt(event.image, event.title)}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                           />

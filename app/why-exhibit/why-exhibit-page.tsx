@@ -8,6 +8,7 @@ import SectorsSection from "@/components/home/SectorsSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
+import { getImageAlt } from '@/lib/imageAlts';
 
 export default function WhyExhibitPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -187,7 +188,7 @@ export default function WhyExhibitPage() {
                   ].map((benefit, idx) => (
                     <div key={idx} className="flex flex-col gap-4 font-sans">
                       <div className="flex items-center justify-center h-16 w-16 rounded-sm bg-[#FCF8F3] border border-gray-100 shadow-sm">
-                        <img src={benefit.icon} alt={benefit.title} className="h-8 w-8 object-contain" />
+                        <img src={benefit.icon} alt="" className="h-8 w-8 object-contain" />
                       </div>
                       <h3 className="font-bebas text-2xl text-[#003A77] mt-2 font-bold">{benefit.title}</h3>
                       <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">{benefit.desc}</p>
@@ -244,7 +245,7 @@ export default function WhyExhibitPage() {
                     <div className="h-[300px] sm:h-[400px] lg:h-full w-full overflow-hidden rounded-sm">
                       <img
                         src="/images/why_exhibit.png"
-                        alt="Visitors"
+                        alt="Visitors examining advanced sensing equipment at a busy trade show"
                         className="h-full w-full object-cover"
                       />
                     </div>
@@ -262,7 +263,7 @@ export default function WhyExhibitPage() {
                 <div className="absolute inset-0">
                   <img
                     src="/images/img_3_4b6edc76d1.jpg"
-                    alt="Event Background"
+                    alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -274,7 +275,7 @@ export default function WhyExhibitPage() {
                     <div className="flex justify-center md:col-span-4">
                       <img
                         src="/images/indiamet_Brochure.png"
-                        alt="Brochure"
+                        alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                         className="h-64 w-auto object-contain"
                       />
                     </div>
@@ -323,7 +324,7 @@ export default function WhyExhibitPage() {
                   ].map((item, idx) => (
                     <div key={idx} className="relative flex min-h-[350px] flex-col overflow-hidden text-white rounded-sm border border-white/10">
                       <div className="absolute inset-0">
-                        <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
+                        <img src={item.image} alt={getImageAlt(item.image, item.title)} className="h-full w-full object-cover" />
                       </div>
                       <div className="absolute inset-0 bg-[#003A77]/60"></div>
                       <div className="relative z-10 flex h-full flex-col justify-end gap-4 p-6 font-sans">

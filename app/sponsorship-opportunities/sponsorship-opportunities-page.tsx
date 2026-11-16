@@ -8,6 +8,7 @@ import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import PageHero from "@/components/layout/PageHero";
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getImageAlt } from '@/lib/imageAlts';
 
 
 export default function AdvertisingDetailsPage() {
@@ -358,7 +359,7 @@ export default function AdvertisingDetailsPage() {
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src={src}
-        alt={alt}
+        alt={getImageAlt(src, alt)}
         className={`h-full w-full ${objectFit === "contain" ? "object-contain" : "object-cover"} ${className}`}
         onError={() => setError(true)}
       />

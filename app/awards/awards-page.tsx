@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
 import PageHero from '@/components/layout/PageHero';
+import { getImageAlt } from '@/lib/imageAlts';
 
 const HERO_IMAGE = '/images/gmea_awards.png';
 
@@ -283,7 +284,7 @@ export default function AwardsPage() {
               </div>
             </div>
             <div className="relative h-80 overflow-hidden rounded-sm border border-[#00A1B1]/20 bg-[#FCF8F3] lg:h-96">
-              <img src={HERO_IMAGE} alt="Global Metrology Excellence Awards" className="h-full w-full object-cover" />
+              <img src={HERO_IMAGE} alt={getImageAlt(HERO_IMAGE, 'IndiaMET Global Metrology Excellence Awards presentation on stage')} className="h-full w-full object-cover" />
             </div>
           </div>
         </Container>
@@ -304,7 +305,7 @@ export default function AwardsPage() {
                 className="overflow-hidden rounded-sm border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="relative h-52 w-full overflow-hidden bg-[#FCF8F3] sm:h-56">
-                  <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
+                  <img src={item.image} alt={getImageAlt(item.image, item.title)} className="h-full w-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="mb-2 font-bebas text-xl uppercase tracking-wide text-[#003A77]">{item.title}</h3>
@@ -334,7 +335,7 @@ export default function AwardsPage() {
                 <div className="relative w-full aspect-[3/2] overflow-hidden bg-[#05172b]">
                   <img
                     src={category.image}
-                    alt={category.title}
+                    alt={getImageAlt(category.image, category.title)}
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>

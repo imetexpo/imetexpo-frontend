@@ -87,7 +87,7 @@ export default function ExhibitorLoginPage() {
           <div className="mb-5 text-center sm:mb-8">
             <Image
               src="/ITS_logo_white.png"
-              alt="IndiaMet Expo"
+              alt="IndiaMET exhibition logo for dark backgrounds"
               width={370}
               height={150}
               className="mx-auto mb-3 h-auto w-[150px] object-contain sm:mb-4 sm:w-[180px]"

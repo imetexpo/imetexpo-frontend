@@ -49,7 +49,7 @@ export default function ContactUsPage() {
                       </div>
                       <Image
                         src="/images/maxx_logo.png"
-                        alt="Maxx Business Media"
+                        alt="MaxX Business Media Pvt Ltd logo"
                         width={360}
                         height={140}
                         className="h-auto w-[220px] object-contain sm:w-[260px]"

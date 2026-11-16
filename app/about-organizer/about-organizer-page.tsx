@@ -9,6 +9,7 @@ import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getImageAlt } from '@/lib/imageAlts';
 
 
 export default function AboutITEPage() {
@@ -71,7 +72,7 @@ export default function AboutITEPage() {
                     <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77]">About </h2>
                     <Image
                       src="/images/maxx_logo.png"
-                      alt="Maxx Business Media"
+                      alt="MaxX Business Media Pvt Ltd logo"
                       width={280}
                       height={80}
                       className="h-14 w-auto object-contain sm:h-10 md:h-10 lg:h-18"
@@ -125,7 +126,7 @@ export default function AboutITEPage() {
                       <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-gray-200 rounded-t-sm">
                         <Image
                           src={item.image}
-                          alt={item.title}
+                          alt={getImageAlt(item.image, item.title)}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                           onError={(e) => {

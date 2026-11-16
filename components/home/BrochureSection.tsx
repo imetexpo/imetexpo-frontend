@@ -9,7 +9,7 @@ export default function BrochureSection() {
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28 text-white">
       <Image
         src="/images/img_3_4b6edc76d1.jpg"
-        alt="Background"
+        alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
         fill
         className="object-cover"
       />
@@ -17,7 +17,7 @@ export default function BrochureSection() {
       
       <Image
         src="/imgs/shape-1.svg"
-        alt="Shape"
+        alt=""
         width={500}
         height={500}
         className="absolute right-0 top-1/2 w-[300px] sm:w-[400px] lg:w-[500px] -translate-y-1/2 opacity-30 hidden md:block"
@@ -30,14 +30,14 @@ export default function BrochureSection() {
             <div className="relative w-[250px] sm:w-[300px] lg:w-[380px]">
               <Image
                 src="/images/indiamet_Brochure.png"
-                alt="Brochure"
+                alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                 width={380}
                 height={380}
                 className="absolute top-4 sm:top-6 left-4 sm:left-6 rotate-[-8deg] opacity-80 shadow-xl"
               />
               <Image
                 src="/images/indiamet_Brochure.png"
-                alt="Brochure"
+                alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                 width={380}
                 height={380}
                 className="relative rotate-[-2deg] shadow-2xl"
