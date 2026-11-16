@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Html5Qrcode } from 'html5-qrcode';
+import type { Html5Qrcode } from 'html5-qrcode';
 import { useRouter } from 'next/navigation';
 import {
   fetchScannerSummary,
@@ -171,7 +171,9 @@ export default function ScannerPage() {
       await priorTeardown;
       if (disposed) return;
       busyRef.current = false;
-      const camera = new Html5Qrcode(regionId);
+      const { Html5Qrcode: Html5QrcodeClass } = await import('html5-qrcode');
+      if (disposed) return;
+      const camera = new Html5QrcodeClass(regionId);
       cameraRef.current = camera;
       startCamera();
     }, 0);
