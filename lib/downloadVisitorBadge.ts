@@ -73,8 +73,8 @@ export async function renderVisitorBadgeCanvas(pass: VisitorPass): Promise<HTMLC
   ctx.stroke();
 
   const header = ctx.createLinearGradient(40, 40, 640, 40);
-  header.addColorStop(0, '#0F766E');
-  header.addColorStop(1, '#16A34A');
+  header.addColorStop(0, '#003A77');
+  header.addColorStop(1, '#00A1B1');
   ctx.save();
   ctx.beginPath();
   ctx.moveTo(76, 40);
@@ -97,8 +97,8 @@ export async function renderVisitorBadgeCanvas(pass: VisitorPass): Promise<HTMLC
   ctx.beginPath();
   ctx.arc(width / 2, 210, 48, 0, Math.PI * 2);
   const avatar = ctx.createLinearGradient(width / 2 - 48, 162, width / 2 + 48, 258);
-  avatar.addColorStop(0, '#34D399');
-  avatar.addColorStop(1, '#0F766E');
+  avatar.addColorStop(0, '#00A1B1');
+  avatar.addColorStop(1, '#003A77');
   ctx.fillStyle = avatar;
   ctx.fill();
   ctx.fillStyle = '#FFFFFF';
@@ -155,9 +155,9 @@ export async function renderVisitorBadgeCanvas(pass: VisitorPass): Promise<HTMLC
   ctx.fillText(pass.event.dates, width / 2, 918);
 
   roundRect(ctx, width / 2 - 80, 948, 160, 36, 18);
-  ctx.fillStyle = '#ECFDF5';
+  ctx.fillStyle = '#E6F7F8';
   ctx.fill();
-  ctx.fillStyle = '#047857';
+  ctx.fillStyle = '#003A77';
   ctx.font = '700 14px Arial, sans-serif';
   ctx.fillText('VISITOR', width / 2, 972);
 
