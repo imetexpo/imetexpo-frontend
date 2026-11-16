@@ -251,7 +251,7 @@ export default function PassRegisterPage() {
             <span className="inline-flex items-center rounded-full bg-blue-400/20 px-2.5 py-0.5 text-xs font-semibold text-text-200 ring-1 ring-blue-300/30">
               Registration Open
             </span>
-            <span className="text-xs text-white/70">· 12–14 May 2027 · Pune, India</span>
+            <span className="text-xs text-white/70">· 13–15 May 2027 · Pune, India</span>
           </div>
           <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Visitor Pass Registration — IndiaMET 2027
@@ -270,7 +270,7 @@ export default function PassRegisterPage() {
               <CalendarDays className="mt-0.5 h-4 w-4 text-[#003A77]" />
               <div>
                 <p className="font-semibold text-slate-500">Event Dates</p>
-                <p className="font-bold text-slate-800">24–26 Mar 2027</p>
+                <p className="font-bold text-slate-800">13–15 May 2027</p>
               </div>
             </div>
             <div className="flex gap-3">
