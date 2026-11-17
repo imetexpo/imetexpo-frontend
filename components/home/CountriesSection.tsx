@@ -15,14 +15,6 @@ interface CountriesSectionProps {
 export default function CountriesSection({ countries }: CountriesSectionProps) {
   return (
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28 text-white">
-      <Image
-        src=""
-        alt="Background"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
-      />
       <div className="absolute inset-0 bg-[#003A77]" />
       
       {/* Orange polygon overlay — inline style for clip-path */}
