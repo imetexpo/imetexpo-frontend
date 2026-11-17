@@ -97,7 +97,7 @@ export default function EnquiryForm() {
       name: formData.name,
       designation: formData.designation,
       company: formData.company,
-      address: formData.address,
+      address: formData.address || [formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", "),
       country: formData.country,
       state: formData.state,
       city: formData.city,

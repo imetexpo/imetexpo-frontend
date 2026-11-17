@@ -94,6 +94,7 @@ export default function ExhibitorForm() {
       state: formData.state,
       city: formData.city,
       pincode: formData.pincode,
+      address: [formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", "),
       productSector: formData.productSector,
       message: formData.comments,
       interestLevel: formData.interestLevel,
@@ -150,21 +151,50 @@ export default function ExhibitorForm() {
 
   if (submitSuccess) {
     return (
-      <div className="bg-white rounded-sm border border-gray-100 p-8 max-w-md mx-auto text-center shadow-sm">
-        <div className="w-16 h-16 bg-[#FCF8F3] border border-gray-150 rounded-sm flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-[#00A1B1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+      <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-8 max-w-lg mx-auto text-center animate-fadeIn">
+        <div className="w-16 h-16 bg-[#E8F1F8] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#00A1B1]/40 shadow-xs">
+          <svg className="w-8 h-8 text-[#003A77]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="font-bebas text-4xl text-[#003A77] mb-3 uppercase tracking-wide">Thank You!</h2>
-        <p className="text-lg sm:text-xl text-gray-600 mb-6 leading-relaxed">
-          Your enquiry has been submitted successfully. Our team will contact you shortly.
+        <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#00A1B1] bg-[#E8F1F8] px-3 py-1 rounded-full mb-3">
+          IndiaMET 2027 • Exhibitor Registration
+        </span>
+        <h2 className="font-bebas text-4xl text-[#003A77] mb-2 uppercase tracking-wide">
+          Thank You, {formData.firstName || formData.companyName || "Partner"}!
+        </h2>
+        <p className="text-base text-gray-600 mb-5 leading-relaxed">
+          Your exhibiting enquiry for <strong>IndiaMET 2027 Exhibition &amp; Summit</strong> (13–15 May 2027, Pune) has been submitted successfully.
         </p>
-        <Link href="/">
-          <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
-            Back to Home
-          </button>
-        </Link>
+        <div className="bg-[#F8FAFC] border border-gray-200/80 rounded-xl p-4 text-left text-xs space-y-2 mb-6">
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Name:</span>
+            <span className="font-semibold text-gray-800">{[formData.firstName, formData.lastName].filter(Boolean).join(" ").trim() || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Company:</span>
+            <span className="font-bold text-gray-800">{formData.companyName || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Job Title:</span>
+            <span className="font-semibold text-gray-800">{formData.jobTitle || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Phone Number:</span>
+            <span className="font-semibold text-gray-800">{formData.phone || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Email:</span>
+            <span className="font-semibold text-[#003A77]">{formData.workEmail || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-500 font-medium">Address:</span>
+            <span className="font-semibold text-gray-800">{[formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", ") || "Not provided"}</span>
+          </div>
+        </div>
+        <p className="text-xs text-gray-500 leading-relaxed">
+          A confirmation email has been dispatched to <strong className="text-gray-700">{formData.workEmail}</strong>. Our exhibition management team will reach out to you shortly with booth layout options and pricing details.
+        </p>
       </div>
     );
   }

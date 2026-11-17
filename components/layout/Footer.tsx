@@ -39,11 +39,12 @@ export default function Footer() {
           {/* Logo */}
           <div className="space-y-4">
             <Image
-              src="/ITS_logo_white.png"
+              src="/footer_logo.png"
               alt="IndiaMET exhibition logo for dark backgrounds"
               width={280}
               height={100}
               priority
+              suppressHydrationWarning
               className="h-auto w-auto object-contain"
               style={{ width: 'auto', height: 'auto' }}
             />
