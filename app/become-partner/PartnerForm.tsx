@@ -77,14 +77,14 @@ export default function PartnerForm() {
     }
 
     try {
-      const response = await fetch('https://your-backend-url.com/api/contact', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           ...formData,
-          formType: 'tyre-expo-partner',
+          formType: 'partner-registration',
           submittedAt: new Date().toISOString(),
         }),
       });

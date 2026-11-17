@@ -250,19 +250,52 @@ export default function PassRegistrationsPage() {
     <main className="mx-auto max-w-7xl space-y-6 p-4 sm:p-8">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="text-sm font-semibold text-[#00A1B1]">Visitor registration</p>
+          <p className="text-sm font-semibold text-[#00A1B1]">IndiaMET 2027 • Visitor Management</p>
           <h1 className="mt-1 flex items-center gap-3 text-3xl font-bold text-slate-900">
             <Ticket className="h-7 w-7 text-[#003A77]" />
-            Pass Registrations
+            Visitor Pass Registrations
           </h1>
           <p className="mt-2 text-sm text-slate-600">
-            View registered visitors, their badges, check-ins, and CMS sync status.
+            Real-time registered visitors for IndiaMET 2027, their QR badges, check-in status, and CMS sync pipeline.
           </p>
         </div>
         <button type="button" className={buttonClass} onClick={() => setRefresh((value) => value + 1)} disabled={loading}>
           <RefreshCw className={'h-4 w-4 ' + (loading ? 'animate-spin' : '')} />
           Refresh
         </button>
+      </div>
+
+      {/* KPI STATS CARDS - INDIAMET THEME */}
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Visitors</p>
+          <p className="mt-2 text-3xl font-black text-[#003A77]">{data?.total ?? 0}</p>
+          <p className="mt-1 text-xs text-slate-400">Total pass requests</p>
+        </div>
+
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#00A1B1]">Active Passes</p>
+          <p className="mt-2 text-3xl font-black text-[#00A1B1]">
+            {data?.registrations?.filter((r) => r.status === 'issued' || r.status === 'checked_in').length ?? 0}
+          </p>
+          <p className="mt-1 text-xs text-slate-400">Issued & valid</p>
+        </div>
+
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">Checked In</p>
+          <p className="mt-2 text-3xl font-black text-emerald-600">
+            {data?.registrations?.filter((r) => r.status === 'checked_in').length ?? 0}
+          </p>
+          <p className="mt-1 text-xs text-slate-400">At venue gates</p>
+        </div>
+
+        <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-[#003A77] to-[#00A1B1] p-5 text-white shadow-xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-white/80">CMS Sync</p>
+          <p className="mt-2 text-3xl font-black text-white">
+            {data?.registrations?.filter((r) => r.cmsSync?.status === 'synced').length ?? 0}
+          </p>
+          <p className="mt-1 text-xs text-white/70">Central Maxx CMS Leads</p>
+        </div>
       </div>
 
       {error ? (

@@ -174,17 +174,17 @@ export default function EnquiryForm() {
   if (submitSuccess) {
     return (
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-md mx-auto text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        <div className="w-16 h-16 bg-[#E8F1F8] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#00A1B1]/30">
+          <svg className="w-8 h-8 text-[#003A77]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank You, {submittedName}!</h2>
-        <p className="text-lg sm:text-xl text-gray-600 mb-6">
-          Your visitor registration for INDIAMET Expo 2026 has been submitted successfully.
-          A confirmation email has been sent to your registered email address.
+        <h2 className="text-2xl font-bold text-[#003A77] mb-2">Thank You, {submittedName}!</h2>
+        <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
+          Your visitor registration for <strong>IndiaMET 2027 Exhibition &amp; Summit</strong> has been submitted successfully.
+          A confirmation email with your registration details has been sent to your email address.
         </p>
-        <Link href="/" className="inline-block bg-[#00A1B1] text-white px-6 py-2 rounded-lg hover:bg-[#003A77] transition">
+        <Link href="/" className="inline-block bg-[#003A77] hover:bg-[#00A1B1] text-white font-semibold px-7 py-2.5 rounded-lg transition shadow-sm">
           Back to Home
         </Link>
       </div>

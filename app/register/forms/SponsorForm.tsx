@@ -69,7 +69,7 @@ export default function SponsorForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          formType: "tyre-expo-partner",
+          formType: "partner-registration",
           submittedAt: new Date().toISOString(),
         }),
       });
