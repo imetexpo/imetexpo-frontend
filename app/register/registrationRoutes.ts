@@ -5,7 +5,7 @@ export const REGISTRATION_TABS: RegistrationTab[] = [
     'exhibitor',
     'sponsor',
     'brochure',
-    'awards',
+    // 'awards',
 ];
 
 export const TAB_QUERY_PARAM = 't';
