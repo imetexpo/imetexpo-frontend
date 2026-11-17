@@ -47,8 +47,8 @@ function RegisterPageContent() {
         return <SponsorContent />;
       case "brochure":
         return <BrochureContent />;
-      case "awards":
-        return <AwardsContent />;
+      // case "awards":
+      //   return <AwardsContent />;
       default:
         return <EnquiryContent />;
     }
@@ -64,8 +64,8 @@ function RegisterPageContent() {
         return <SponsorForm />;
       case "brochure":
         return <BrochureForm />;
-      case "awards":
-        return <AwardsForm />;
+      // case "awards":
+      //   return <AwardsForm />;
       default:
         return <EnquiryForm />;
     }
