@@ -16,6 +16,8 @@ import {
 import OtpModal from '@/components/passes/OtpModal';
 import PassesChrome from '@/components/passes/PassesChrome';
 import CountryFlag from '@/components/passes/CountryFlag';
+import { submitContactForm, PROJECT_ID_VAR } from '@/lib/graphql-client';
+import { useUTMData } from '@/hooks/useUTMTracker';
 import {
   registerVisitorPass,
   savePassSession,
@@ -61,6 +63,7 @@ type Step = 'phone' | 'details';
 
 export default function PassRegisterPage() {
   const router = useRouter();
+  const { utmData } = useUTMData();
   const [step, setStep] = useState<Step>('phone');
   const [channel, setChannel] = useState<PassChannel>('sms');
   const [email, setEmail] = useState('');
@@ -80,6 +83,7 @@ export default function PassRegisterPage() {
     name: '',
     designation: '',
     company: '',
+    email: '',
     pinCode: '',
     area: '',
     city: '',
@@ -99,10 +103,16 @@ export default function PassRegisterPage() {
   const channelLabel = channel === 'whatsapp' ? 'WhatsApp' : channel === 'email' ? 'Email' : 'SMS';
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
-  const canSubmitDetails = useMemo(
-    () => form.name.trim().length >= 2 && form.company.trim().length >= 2 && form.interests.length > 0,
-    [form]
-  );
+  const canSubmitDetails = useMemo(() => {
+    const activeEmail = (form.email || email).trim();
+    const validEmail = activeEmail.length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(activeEmail);
+    return (
+      form.name.trim().length >= 2 &&
+      form.company.trim().length >= 2 &&
+      validEmail &&
+      form.interests.length > 0
+    );
+  }, [form, email]);
 
   const handleChannelChange = (nextChannel: PassChannel) => {
     setChannel(nextChannel);
@@ -212,11 +222,14 @@ export default function PassRegisterPage() {
     if (!canSubmitDetails) return;
     setLoading(true);
     setError('');
+    const visitorEmail = (form.email || email).trim();
     try {
       const result = await registerVisitorPass({
         verificationToken,
         name: form.name,
+        designation: form.designation,
         company: form.company,
+        email: visitorEmail || undefined,
         pinCode: form.pinCode,
         area: form.area,
         city: form.city,
@@ -225,6 +238,71 @@ export default function PassRegisterPage() {
         source: form.source,
         interests: form.interests,
       });
+
+      // Background Lead Sync to Maxx Media CMS (matching Diemex submitRegistrationInBackground)
+      const resolvedEmail =
+        visitorEmail ||
+        `${result.pass.registrationNumber.toLowerCase().replace(/[^a-z0-9]/g, '')}@visitor.indiametexpo.com`;
+
+      if (PROJECT_ID_VAR.projectId) {
+        submitContactForm(PROJECT_ID_VAR.projectId, {
+          formType: 'visitor-registration',
+          name: form.name,
+          contactPerson: form.name,
+          companyName: form.company,
+          jobTitle: form.designation,
+          phone: verifiedPhone || mobile,
+          email: resolvedEmail,
+          country: form.country,
+          state: form.state,
+          city: form.city,
+          address: form.area,
+          pincode: form.pinCode,
+          profile: form.interests.join(', '),
+          message: `Visitor Pass: ${result.pass.registrationNumber}. Interests: ${form.interests.join(', ')}`,
+          utmSource: utmData?.utm_source || form.source || 'Pass Registration',
+          utmMedium: utmData?.utm_medium || '',
+          utmCampaign: utmData?.utm_campaign || '',
+          utmTerm: utmData?.utm_term || '',
+          utmContent: utmData?.utm_content || '',
+          utmId: utmData?.utm_id || '',
+          landingPage: utmData?.landingPage || (typeof window !== 'undefined' ? window.location.href : ''),
+          referrer: utmData?.referrer || '',
+        }).catch((err) => console.warn('Frontend CMS lead sync notice:', err));
+      }
+
+      // Background submission to contact API for records & notifications
+      const rawApi = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api').replace(/\/+$/, '');
+      const contactUrl = rawApi.endsWith('/api') ? `${rawApi}/contact` : `${rawApi}/api/contact`;
+      fetch(contactUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'visitor-registration',
+          email: resolvedEmail,
+          name: form.name,
+          contactPerson: form.name,
+          jobTitle: form.designation,
+          designation: form.designation,
+          company: form.company,
+          companyName: form.company,
+          phone: verifiedPhone || mobile,
+          mobile: verifiedPhone || mobile,
+          countryCode,
+          country: form.country,
+          state: form.state,
+          city: form.city,
+          address: form.area,
+          pincode: form.pinCode,
+          pinCode: form.pinCode,
+          profile: form.interests.join(', '),
+          interests: form.interests,
+          visitorCode: result.pass.registrationNumber,
+          passUrl: result.pass.passUrl,
+          submittedAt: new Date().toISOString(),
+        }),
+      }).catch((err) => console.warn('Contact submission background call notice:', err));
+
       savePassSession({
         countryCode,
         mobile,
@@ -453,6 +531,18 @@ export default function PassRegisterPage() {
               </div>
 
               <Field
+                label="Email Address"
+                value={form.email || email}
+                type="email"
+                onChange={(value) => {
+                  setForm((prev) => ({ ...prev, email: value }));
+                  setEmail(value);
+                }}
+                placeholder="name@company.com"
+                required
+              />
+
+              <Field
                 label="Search By Area / Pin Code"
                 value={form.pinCode}
                 onChange={lookupPin}
@@ -547,12 +637,14 @@ function Field({
   onChange,
   placeholder,
   required,
+  type = 'text',
 }: {
   label: string;
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   required?: boolean;
+  type?: string;
 }) {
   return (
     <label className="block">
@@ -561,6 +653,7 @@ function Field({
         {required ? ' *' : ''}
       </span>
       <input
+        type={type}
         value={value}
         required={required}
         placeholder={placeholder}
