@@ -2,10 +2,11 @@
 import { redirect } from "next/navigation";
 import { redirectToRegister } from "@/app/register/registrationRoutes";
 
-export default function EventBrochureRedirect({
+export default async function EventBrochureRedirect({
   searchParams,
 }: {
-  searchParams: Record<string, string | string[] | undefined>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  redirect(redirectToRegister("brochure", searchParams));
+  const resolvedParams = await searchParams;
+  redirect(redirectToRegister("brochure", resolvedParams));
 }

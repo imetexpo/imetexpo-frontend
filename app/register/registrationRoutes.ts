@@ -87,7 +87,7 @@ export function redirectToRegister(
 ): string {
     const params = new URLSearchParams();
 
-    if (searchParams) {
+    if (searchParams && typeof searchParams === 'object' && typeof (searchParams as any).then !== 'function') {
         for (const [key, value] of Object.entries(searchParams)) {
             if (key === TAB_QUERY_PARAM) continue;
             if (typeof value === 'string') params.set(key, value);

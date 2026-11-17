@@ -2,10 +2,11 @@
 import { redirect } from "next/navigation";
 import { redirectToRegister } from "@/app/register/registrationRoutes";
 
-export default function BecomePartnerRedirect({
+export default async function BecomePartnerRedirect({
   searchParams,
 }: {
-  searchParams: Record<string, string | string[] | undefined>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  redirect(redirectToRegister("sponsor", searchParams));
+  const resolvedParams = await searchParams;
+  redirect(redirectToRegister("sponsor", resolvedParams));
 }
