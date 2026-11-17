@@ -2,10 +2,11 @@
 import { redirect } from "next/navigation";
 import { redirectToRegister } from "@/app/register/registrationRoutes";
 
-export default function VisitorRegistrationRedirect({
+export default async function VisitorRegistrationRedirect({
   searchParams,
 }: {
-  searchParams: Record<string, string | string[] | undefined>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  redirect(redirectToRegister("enquiry", searchParams));
+  const resolvedParams = await searchParams;
+  redirect(redirectToRegister("enquiry", resolvedParams));
 }
