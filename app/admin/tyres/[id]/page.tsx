@@ -24,22 +24,22 @@ interface TyreDetail {
 
 const sampleTyre: TyreDetail = {
     id: "1",
-    brand: "Apollo",
-    model: "Alnac 4G",
-    category: "Passenger",
-    size: "185/65 R15",
-    loadIndex: "88H",
-    speedRating: "H",
-    price: "₹4,500",
-    stock: 45,
+    brand: "Zeiss",
+    model: "PRISMO CMM",
+    category: "CMM",
+    size: "900x1200x700 mm",
+    loadIndex: "0.7+L/400 μm",
+    speedRating: "VAST gold",
+    price: "₹45,00,000",
+    stock: 5,
     status: "active",
-    description: "The Apollo Alnac 4G is a premium touring tyre designed for comfort and performance. It features an optimized tread pattern for reduced road noise and improved wet grip.",
+    description: "The Zeiss PRISMO coordinate measuring machine is the reference standard in high-precision measurement. It delivers exceptional volumetric accuracy, high scanning speeds, and robust resistance to environmental fluctuations.",
     specifications: [
-        { key: "Tread Depth", value: "8.5 mm" },
-        { key: "UTQG Rating", value: "500 A A" },
-        { key: "Max Pressure", value: "44 PSI" },
-        { key: "Tyre Weight", value: "8.5 kg" },
-        { key: "Warranty", value: "60,000 km" },
+        { key: "Measuring Range", value: "900 x 1200 x 700 mm" },
+        { key: "Accuracy (MPE_E)", value: "0.7 + L/400 μm" },
+        { key: "Max Table Load", value: "1,000 kg" },
+        { key: "Probe System", value: "VAST gold active scanning" },
+        { key: "Controller", value: "C99 with CALYPSO software" },
     ],
     images: [],
 };
@@ -47,7 +47,7 @@ const sampleTyre: TyreDetail = {
 export default function TyreDetailPage() {
     const params = useParams();
     const router = useRouter();
-    const [tyre] = useState(sampleTyre);
+    const [equipment] = useState(sampleTyre);
 
     return (
         <div className="space-y-6 p-6">
@@ -58,7 +58,7 @@ export default function TyreDetailPage() {
                         <ArrowLeft className="h-5 w-5 text-gray-400" />
                     </button>
                     <div>
-                        <h1 className="text-2xl font-bold text-white">{tyre.brand} {tyre.model}</h1>
+                        <h1 className="text-2xl font-bold text-white">{equipment.brand} {equipment.model}</h1>
                         <p className="text-gray-400 mt-1">Product ID: {params.id}</p>
                     </div>
                 </div>
@@ -75,17 +75,17 @@ export default function TyreDetailPage() {
             </div>
 
             {/* Status Banner */}
-            <div className={`flex items-center justify-between p-4 rounded-xl border ${tyre.status === "active" ? "bg-green-500/10 border-green-500/30" : "bg-gray-500/10 border-gray-500/30"}`}>
+            <div className={`flex items-center justify-between p-4 rounded-xl border ${equipment.status === "active" ? "bg-green-500/10 border-green-500/30" : "bg-gray-500/10 border-gray-500/30"}`}>
                 <div className="flex items-center gap-3">
-                    {tyre.status === "active" ? (
+                    {equipment.status === "active" ? (
                         <CheckCircle className="h-5 w-5 text-green-400" />
                     ) : (
                         <XCircle className="h-5 w-5 text-gray-400" />
                     )}
-                    <span className="font-medium text-white">{tyre.status.toUpperCase()}</span>
+                    <span className="font-medium text-white">{equipment.status.toUpperCase()}</span>
                 </div>
                 <div className="flex items-center gap-4">
-                    <span className="text-sm text-gray-400">Stock: {tyre.stock} units</span>
+                    <span className="text-sm text-gray-400">Stock: {equipment.stock} units</span>
                     <button className="text-sm text-orange-400 hover:underline">Update Stock</button>
                 </div>
             </div>
@@ -102,36 +102,36 @@ export default function TyreDetailPage() {
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <p className="text-sm text-gray-400">Brand</p>
-                                <p className="text-white font-medium">{tyre.brand}</p>
+                                <p className="text-white font-medium">{equipment.brand}</p>
                             </div>
                             <div>
                                 <p className="text-sm text-gray-400">Model</p>
-                                <p className="text-white">{tyre.model}</p>
+                                <p className="text-white">{equipment.model}</p>
                             </div>
                             <div>
                                 <p className="text-sm text-gray-400">Category</p>
-                                <p className="text-white">{tyre.category}</p>
+                                <p className="text-white">{equipment.category}</p>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-400">Size</p>
-                                <p className="text-white">{tyre.size}</p>
+                                <p className="text-sm text-gray-400">Range / Size</p>
+                                <p className="text-white">{equipment.size}</p>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-400">Load Index</p>
-                                <p className="text-white">{tyre.loadIndex}</p>
+                                <p className="text-sm text-gray-400">Accuracy</p>
+                                <p className="text-white">{equipment.loadIndex}</p>
                             </div>
                             <div>
-                                <p className="text-sm text-gray-400">Speed Rating</p>
-                                <p className="text-white">{tyre.speedRating}</p>
+                                <p className="text-sm text-gray-400">Sensor</p>
+                                <p className="text-white">{equipment.speedRating}</p>
                             </div>
                             <div>
                                 <p className="text-sm text-gray-400">Price</p>
-                                <p className="text-orange-400 font-bold text-xl">{tyre.price}</p>
+                                <p className="text-orange-400 font-bold text-xl">{equipment.price}</p>
                             </div>
                             <div>
                                 <p className="text-sm text-gray-400">Stock Status</p>
-                                <p className={`font-medium ${tyre.stock > 10 ? "text-green-400" : tyre.stock > 0 ? "text-yellow-400" : "text-red-400"}`}>
-                                    {tyre.stock > 10 ? "In Stock" : tyre.stock > 0 ? "Low Stock" : "Out of Stock"}
+                                <p className={`font-medium ${equipment.stock > 10 ? "text-green-400" : equipment.stock > 0 ? "text-yellow-400" : "text-red-400"}`}>
+                                    {equipment.stock > 10 ? "In Stock" : equipment.stock > 0 ? "Low Stock" : "Out of Stock"}
                                 </p>
                             </div>
                         </div>
@@ -140,7 +140,7 @@ export default function TyreDetailPage() {
                     {/* Description */}
                     <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-6">
                         <h2 className="text-lg font-semibold text-white mb-4">Description</h2>
-                        <p className="text-gray-300 leading-relaxed">{tyre.description}</p>
+                        <p className="text-gray-300 leading-relaxed">{equipment.description}</p>
                     </div>
 
                     {/* Technical Specifications */}
@@ -150,7 +150,7 @@ export default function TyreDetailPage() {
                             Technical Specifications
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {tyre.specifications.map((spec, idx) => (
+                            {equipment.specifications.map((spec, idx) => (
                                 <div key={idx} className="flex justify-between py-2 border-b border-gray-700">
                                     <span className="text-gray-400">{spec.key}</span>
                                     <span className="text-white font-medium">{spec.value}</span>

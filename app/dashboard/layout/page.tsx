@@ -46,7 +46,7 @@ export default function FloorLayoutPage() {
 
         const floorPlanData: FloorPlanData = {
           id: apiData.id,
-          name: apiData.name || 'Hall A - Tyre Pavilion | Ground Floor',
+          name: apiData.name || 'Hall A - Metrology Pavilion | Ground Floor',
           // Handle different possible property names from API
           imageUrl: apiData.imageUrl || apiData.baseImageUrl,
           baseImageUrl: apiData.baseImageUrl || apiData.imageUrl,
@@ -219,7 +219,7 @@ export default function FloorLayoutPage() {
           <div>
             <h3 className="font-semibold text-gray-800">Hall Information</h3>
             <p className="text-sm text-gray-600 mt-1">
-              <strong>Hall:</strong> Hall A | <strong>Pavilion:</strong> Tyre Pavilion | <strong>Floor:</strong> Ground Floor
+              <strong>Hall:</strong> Hall A | <strong>Pavilion:</strong> Metrology Pavilion | <strong>Floor:</strong> Ground Floor
             </p>
             {floorPlan.imageWidth && floorPlan.imageHeight && (
               <p className="text-sm text-gray-600">

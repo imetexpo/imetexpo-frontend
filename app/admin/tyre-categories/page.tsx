@@ -17,13 +17,13 @@ interface TyreCategory {
 }
 
 const sampleCategories: TyreCategory[] = [
-    { id: "1", name: "Passenger Car Tyres", slug: "passenger-car", description: "Tyres for cars, sedans, and hatchbacks", tyreCount: 342, status: "active", subCategories: ["Summer", "Winter", "All-Season", "Performance"] },
-    { id: "2", name: "Truck & Bus Tyres", slug: "truck-bus", description: "Commercial vehicle tyres for trucks and buses", tyreCount: 286, status: "active", subCategories: ["Steer", "Drive", "Trailer", "Regional"] },
-    { id: "3", name: "Two-Wheeler Tyres", slug: "two-wheeler", description: "Motorcycle and scooter tyres", tyreCount: 198, status: "active", subCategories: ["Scooter", "Motorcycle", "Sport", "Cruiser"] },
-    { id: "4", name: "Off-Road Tyres", slug: "off-road", description: "SUV and off-road vehicle tyres", tyreCount: 124, status: "active", subCategories: ["Mud Terrain", "All Terrain", "Rugged Terrain"] },
-    { id: "5", name: "Agricultural Tyres", slug: "agricultural", description: "Tractor and farm equipment tyres", tyreCount: 78, status: "active", subCategories: ["Tractor", "Implement", "Harvester"] },
-    { id: "6", name: "Industrial Tyres", slug: "industrial", description: "Forklift and industrial equipment tyres", tyreCount: 56, status: "inactive", subCategories: ["Solid", "Pneumatic", "Cushion"] },
-    { id: "7", name: "Racing Tyres", slug: "racing", description: "High-performance racing tyres", tyreCount: 32, status: "active", subCategories: ["Slick", "Wet", "Intermediate"] },
+    { id: "1", name: "Coordinate Measuring Machines (CMM)", slug: "cmm", description: "Bridge, gantry, horizontal, and portable coordinate measuring systems", tyreCount: 142, status: "active", subCategories: ["Bridge CMM", "Gantry CMM", "Shop-Floor CMM", "Multisensor CMM"] },
+    { id: "2", name: "Optical & 3D Scanning Systems", slug: "optical-3d-scanning", description: "Structured light scanners, laser scanners, and photogrammetry", tyreCount: 186, status: "active", subCategories: ["Blue Light Scanners", "Handheld 3D Scanners", "Photogrammetry", "Automated Cells"] },
+    { id: "3", name: "Laser Trackers & Metrology Arms", slug: "laser-trackers-arms", description: "Large volume measurement systems and articulated arms", tyreCount: 98, status: "active", subCategories: ["Laser Trackers", "Articulated Arms", "Target Probing", "Dynamic Tracking"] },
+    { id: "4", name: "Surface & Form Metrology", slug: "surface-form", description: "Roughness, roundness, contour, and profilometry measurement", tyreCount: 124, status: "active", subCategories: ["Roughness Testers", "Roundness Testers", "Contour Measuring", "Optical Profilers"] },
+    { id: "5", name: "Non-Destructive Testing (NDT)", slug: "ndt-inspection", description: "Ultrasonic, X-ray, industrial CT scanning and Eddy current testing", tyreCount: 78, status: "active", subCategories: ["Industrial CT", "Ultrasonic", "Eddy Current", "X-Ray Inspection"] },
+    { id: "6", name: "Calibration Standards & Gauges", slug: "calibration-gauges", description: "Gauge blocks, air gauges, micrometers, and calibration standards", tyreCount: 156, status: "active", subCategories: ["Gauge Blocks", "Air Gauges", "Digital Calipers", "Torque Standards"] },
+    { id: "7", name: "Vision Systems & Microscopes", slug: "vision-systems", description: "Industrial vision inspection systems and digital microscopes", tyreCount: 82, status: "active", subCategories: ["Automated Vision", "Digital Microscopes", "Toolmaker Microscopes", "AI Inspection"] },
 ];
 
 export default function TyreCategoriesPage() {
@@ -44,8 +44,8 @@ export default function TyreCategoriesPage() {
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Tyre Categories</h1>
-                    <p className="text-gray-400 mt-1">Manage tyre product categories</p>
+                    <h1 className="text-2xl font-bold text-white">Metrology Categories</h1>
+                    <p className="text-gray-400 mt-1">Manage industrial metrology and inspection equipment categories</p>
                 </div>
                 <Link
                     href="/admin/tyre-categories/new"

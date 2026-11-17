@@ -61,12 +61,12 @@ const exhibitions: Exhibition[] = [
     href: 'https://diemex.in',
   },
   {
-    name: 'IndiaMet',
+    name: 'IndiaMet 2027',
     logo: '/images/indiamet1.webp',
-    description: 'Inernational Metrology Exhibition & Summit.',
-    startDate: 'May 13th, 2026',
-    endDate: 'May 15th, 2026',
-    venue: 'Auto Cluter Exhibition Centre, Pune, India.',
+    description: "India's Dedicated Industrial Metrology Exhibition And Summit",
+    startDate: 'May 13th, 2027',
+    endDate: 'May 15th, 2027',
+    venue: 'Auto Cluster Exhibition Centre, Pune, India',
     href: 'https://indiametexpo.com',
   },
  

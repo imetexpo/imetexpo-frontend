@@ -118,7 +118,7 @@ export default function InsightsPage() {
               </div>
 
               <p className="text-gray-700 text-sm leading-relaxed">
-                With growing demand for innovative rubber products and reliable tyre manufacturing suppliers,
+                With growing demand for high-precision measurement solutions and reliable industrial metrology equipment,
                 getting access to key market data is essential to establish a robust footprint in the industry.
               </p>
     
@@ -135,7 +135,7 @@ export default function InsightsPage() {
                   },
                   {
                     title: "EXCLUSIVE REGIONAL DATA",
-                    desc: "Access key statistics, trends, and forecasts across the global tyre markets.",
+                    desc: "Access key statistics, trends, and forecasts across the global industrial metrology and precision quality inspection markets.",
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-3">

@@ -137,7 +137,7 @@ export default function HostessServicesPage() {
       const response = await extraRequirementsAPI.submit({
         generalInfo,
         boothDetails,
-        eventName: 'Tyre Expo 2024',
+        eventName: 'IndiaMet 2027',
         hostessRequirements,
         notes: formData.specialRequests || 'No special requests'
       });

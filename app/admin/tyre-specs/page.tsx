@@ -16,13 +16,13 @@ interface TyreSpecification {
 }
 
 const sampleSpecs: TyreSpecification[] = [
-    { id: "1", name: "Tyre Size", unit: "mm", description: "Width/Profile/Rim diameter", values: ["185/65 R15", "195/60 R15", "205/55 R16", "215/60 R16", "225/45 R17"], isRequired: true, status: "active" },
-    { id: "2", name: "Load Index", unit: "", description: "Maximum load capacity", values: ["88", "91", "94", "97", "100"], isRequired: true, status: "active" },
-    { id: "3", name: "Speed Rating", unit: "", description: "Maximum speed capability", values: ["H (210 km/h)", "V (240 km/h)", "W (270 km/h)", "Y (300 km/h)"], isRequired: true, status: "active" },
-    { id: "4", name: "Tread Depth", unit: "mm", description: "Initial tread depth", values: ["7.5", "8.0", "8.5", "9.0"], isRequired: true, status: "active" },
-    { id: "5", name: "UTQG Rating", unit: "", description: "Uniform Tire Quality Grading", values: ["500 A A", "400 A A", "300 A A"], isRequired: false, status: "active" },
-    { id: "6", name: "Max Pressure", unit: "PSI", description: "Maximum inflation pressure", values: ["44", "51", "55"], isRequired: true, status: "active" },
-    { id: "7", name: "Treadwear Warranty", unit: "km", description: "Manufacturer warranty", values: ["40000", "50000", "60000", "80000"], isRequired: false, status: "inactive" },
+    { id: "1", name: "Measuring Range (XYZ)", unit: "mm", description: "Coordinate measuring volume (X x Y x Z)", values: ["500x500x400 mm", "700x1000x600 mm", "900x1500x800 mm", "1200x2000x1000 mm"], isRequired: true, status: "active" },
+    { id: "2", name: "Volumetric Accuracy (MPE_E)", unit: "μm", description: "Maximum permissible error per ISO 10360", values: ["0.7 + L/400 μm", "1.2 + L/350 μm", "1.8 + L/300 μm", "2.5 + L/250 μm"], isRequired: true, status: "active" },
+    { id: "3", name: "Scanning Speed", unit: "pts/s", description: "Point acquisition rate", values: ["500,000", "1,200,000", "2,000,000", "5,000,000"], isRequired: true, status: "active" },
+    { id: "4", name: "Probe Configuration", unit: "", description: "Sensor & probing system", values: ["Tactile Trigger", "Continuous Scanning", "Blue Laser Scanner", "Optical Multisensor"], isRequired: true, status: "active" },
+    { id: "5", name: "Max Workpiece Weight", unit: "kg", description: "Maximum permissible table load", values: ["250", "500", "1000", "2500"], isRequired: false, status: "active" },
+    { id: "6", name: "Repeatability", unit: "μm", description: "Measurement repeatability (MPE_P)", values: ["0.3", "0.5", "1.0", "1.5"], isRequired: true, status: "active" },
+    { id: "7", name: "Operating Temperature", unit: "°C", description: "Permissible ambient temperature range", values: ["18 - 22", "15 - 30", "10 - 40"], isRequired: false, status: "active" },
 ];
 
 export default function TyreSpecsPage() {
@@ -41,8 +41,8 @@ export default function TyreSpecsPage() {
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Tyre Specifications</h1>
-                    <p className="text-gray-400 mt-1">Manage tyre specification attributes</p>
+                    <h1 className="text-2xl font-bold text-white">Measurement Specifications</h1>
+                    <p className="text-gray-400 mt-1">Manage metrology and inspection equipment specification attributes</p>
                 </div>
                 <Link
                     href="/admin/tyre-specs/new"
@@ -118,11 +118,11 @@ export default function TyreSpecsPage() {
                             <div className="flex items-start justify-between mb-4">
                                 <div className="flex items-center gap-3">
                                     <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center">
-                                        {spec.name === "Tyre Size" && <Ruler className="h-6 w-6 text-orange-400" />}
-                                        {spec.name === "Load Index" && <Weight className="h-6 w-6 text-orange-400" />}
-                                        {spec.name === "Speed Rating" && <Gauge className="h-6 w-6 text-orange-400" />}
-                                        {spec.name === "Tread Depth" && <Ruler className="h-6 w-6 text-orange-400" />}
-                                        {!["Tyre Size", "Load Index", "Speed Rating", "Tread Depth"].includes(spec.name) && <Thermometer className="h-6 w-6 text-orange-400" />}
+                                        {spec.name.includes("Measuring") && <Ruler className="h-6 w-6 text-orange-400" />}
+                                        {spec.name.includes("Accuracy") && <Gauge className="h-6 w-6 text-orange-400" />}
+                                        {spec.name.includes("Weight") && <Weight className="h-6 w-6 text-orange-400" />}
+                                        {spec.name.includes("Temperature") && <Thermometer className="h-6 w-6 text-orange-400" />}
+                                        {!spec.name.includes("Measuring") && !spec.name.includes("Accuracy") && !spec.name.includes("Weight") && !spec.name.includes("Temperature") && <Gauge className="h-6 w-6 text-orange-400" />}
                                     </div>
                                     <div>
                                         <div className="flex items-center gap-2">

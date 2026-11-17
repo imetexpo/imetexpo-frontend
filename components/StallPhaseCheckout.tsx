@@ -31,10 +31,11 @@ export default function StallPhaseCheckout({
       setBusy(true);
       try {
         const token =
+          localStorage.getItem('indiamet_token') ||
+          localStorage.getItem('token') ||
           localStorage.getItem('tyre_expo_token') ||
           localStorage.getItem('exhibitorToken') ||
-          localStorage.getItem('exhibitor_token') ||
-          localStorage.getItem('token');
+          localStorage.getItem('exhibitor_token');
         await fetch(`${API_BASE_URL}/api/cashfree/verify-payment/${orderId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });

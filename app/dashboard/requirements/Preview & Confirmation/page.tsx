@@ -343,7 +343,7 @@ export default function PreviewAndPaymentPage() {
                     sqMtrBooked: allFormData.boothDetails?.sqMtrBooked || '',
                     contactPerson: allFormData.boothDetails?.contactPerson || '',
                 },
-                eventName: 'Tyre Expo 2024',
+                eventName: 'IndiaMet 2027',
                 eventDate: new Date().toISOString(),
                 furnitureItems: furnitureItems,
                 electricalLoad: allFormData.electricalLoad ? {

@@ -88,7 +88,7 @@ export default function PersonnelRequirementsPage() {
       const response = await extraRequirementsAPI.submit({
         generalInfo,
         boothDetails,
-        eventName: 'Tyre Expo 2024',
+        eventName: 'IndiaMet 2027',
         notes: `Exhibitor Passes Requested: ${personnel.filter(p => p.name).length} persons\n\nPersonnel Details:\n${personnel.filter(p => p.name).map(p => `- ${p.name} (${p.designation || 'N/A'}) - ${p.email || 'No email'}`).join('\n')}`
       });
 

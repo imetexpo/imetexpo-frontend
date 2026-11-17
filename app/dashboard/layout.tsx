@@ -72,7 +72,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   // Check authentication
   useEffect(() => {
-    const token = localStorage.getItem('tyre_expo_token') || localStorage.getItem('exhibitorToken');
+    const token =
+      localStorage.getItem('indiamet_token') ||
+      localStorage.getItem('token') ||
+      localStorage.getItem('tyre_expo_token') ||
+      localStorage.getItem('exhibitorToken');
     if (!token) {
       router.push('/login');
     } else {
@@ -93,6 +97,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   const handleLogout = () => {
     // Clear all localStorage items
+    localStorage.removeItem('indiamet_token');
+    localStorage.removeItem('indiamet_exhibitor_data');
     localStorage.removeItem('tyre_expo_token');
     localStorage.removeItem('exhibitorToken');
     localStorage.removeItem('exhibitorData');
@@ -285,10 +291,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               </button>
               <div className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center">
-                  <span className="text-sm font-semibold text-white">TE</span>
+                  <span className="text-sm font-semibold text-white">IM</span>
                 </div>
                 <div className="hidden sm:block">
-                  <p className="text-sm font-medium text-gray-700">Tyre Expo</p>
+                  <p className="text-sm font-medium text-gray-700">IndiaMet 2027</p>
                   <p className="text-xs text-gray-500">Exhibitor Portal</p>
                 </div>
               </div>

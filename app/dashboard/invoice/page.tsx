@@ -62,10 +62,11 @@ export default function ExhibitorInvoicesPage() {
 
   const getAuthToken = () => {
     return (
+      localStorage.getItem('indiamet_token') ||
+      localStorage.getItem('token') ||
       localStorage.getItem('tyre_expo_token') ||
       localStorage.getItem('exhibitorToken') ||
-      localStorage.getItem('exhibitor_token') ||
-      localStorage.getItem('token')
+      localStorage.getItem('exhibitor_token')
     );
   };
 
@@ -97,6 +98,7 @@ export default function ExhibitorInvoicesPage() {
       });
       
       if (response.status === 401) {
+        localStorage.removeItem('indiamet_token');
         localStorage.removeItem('tyre_expo_token');
         localStorage.removeItem('exhibitorToken');
         localStorage.removeItem('token');

@@ -24,38 +24,38 @@ const statsData = [
 
 const mainEventsData = [
   {
-    title: "Tyre Manufacturing Leaders Forum – Strategic Insights for Industry Growth",
+    title: "Industrial Metrology Leaders Forum – Strategic Insights for Quality Excellence",
     content: (
       <ul className="list-disc space-y-3 pl-5 text-sm text-gray-700 leading-relaxed font-sans">
         <li>
-          <strong>Main Plenary Session: </strong>Featuring top executives from leading tyre manufacturers, rubber processors, and equipment suppliers across Asia and beyond.
+          <strong>Main Plenary Session: </strong>Featuring top executives from leading metrology instrumentation manufacturers, optical 3D measurement specialists, and precision engineering leaders across Asia and beyond.
           <br />
-          Focus: Digital transformation, sustainable manufacturing, and supply chain resilience in the tyre industry.
+          Focus: Digital transformation, automated quality inspection, and zero-defect manufacturing in precision industries.
         </li>
         <li>
-          <strong>Industry 4.0 in Tyre Manufacturing: </strong>A showcase of the most effective digital and automation projects transforming tyre production worldwide.
+          <strong>Industry 4.0 in Precision Metrology: </strong>A showcase of inline 3D measurement, robotic scanning, and automated gauging systems transforming precision manufacturing.
         </li>
       </ul>
     ),
   },
   {
-    title: "New for 2026 – Exclusive Forums and Round Tables",
+    title: "New for 2027 – Exclusive Forums and Round Tables",
     content: (
       <ul className="list-disc space-y-3 pl-5 text-sm text-gray-700 leading-relaxed font-sans">
         <li>
-          <strong>Sustainability Forum – Debut Edition: </strong>Carbon Neutrality and Circular Economy: New Standards for Tyre Manufacturing.
+          <strong>Digital Metrology Forum – Debut Edition: </strong>Digital Twins and Closed-Loop Quality: New Standards for Industrial Metrology.
         </li>
         <li>
-          <strong>Round Table: The Future of Raw Materials: </strong>In-depth dialogue on natural rubber sourcing, synthetic alternatives, and sustainable compounding strategies.
+          <strong>Round Table: Optical & 3D Scanning Technologies: </strong>In-depth dialogue on structured light scanning, photogrammetry, and LiDAR applications in automated manufacturing.
         </li>
         <li>
-          <strong>Round Table: Smart Factory & Automation: </strong>AI-driven quality control, predictive maintenance, and IoT integration in tyre plants.
+          <strong>Round Table: Smart Factory & Inline Inspection: </strong>AI-driven quality control, predictive metrology, and IoT integration on production lines.
         </li>
         <li>
-          <strong>Round Table: Testing & Quality Assurance: </strong>Advanced uniformity, durability, and X-ray inspection technologies.
+          <strong>Round Table: Calibration & Standards: </strong>Traceability, ISO/IEC standards, and international calibration protocols.
         </li>
         <li>
-          <strong>Round Table: Emerging Markets & Investment: </strong>Exploring growth opportunities in ASEAN, India, and Africa.
+          <strong>Round Table: Advanced Manufacturing & Metrology: </strong>Exploring growth opportunities in aerospace, automotive, defense, and medical devices.
         </li>
       </ul>
     ),
@@ -65,10 +65,10 @@ const mainEventsData = [
     content: (
       <ul className="list-disc space-y-3 pl-5 text-sm text-gray-700 leading-relaxed font-sans">
         <li>
-          <strong>Rubber Processing & Compounding: </strong>Latest innovations in mixing, extrusion, and curing technologies from leading processing plant experts.
+          <strong>Coordinate Measuring & Dimensional Inspection: </strong>Latest innovations in tactile, optical, and multisensor CMM technology from leading global experts.
         </li>
         <li>
-          <strong>Tyre Testing & Lab Equipment:</strong> New methods and instruments for quality assurance, regulatory compliance, and performance benchmarking.
+          <strong>Quality Engineering & Laboratory Equipment:</strong> New methods and instruments for geometric dimensioning and tolerancing (GD&T), surface roughness, and automated benchmarking.
         </li>
       </ul>
     ),
@@ -77,19 +77,19 @@ const mainEventsData = [
 
 const keyEventsData = [
   {
-    title: "The Tyre Manufacturing Leaders' Forum",
+    title: "The Industrial Metrology Leaders' Forum",
     image: "/images/confe.jpg",
   },
   {
-    title: "Industry 4.0 in Tyre Manufacturing",
+    title: "Industry 4.0 in Precision Metrology",
     image: "/images/industry4.jpg",
   },
   {
-    title: "Sustainability Forum",
+    title: "Digital Metrology & Quality Summit",
     image: "/images/4_C4_A3872_1202c590ba.jpg",
   },
   {
-    title: "Technical Conferences",
+    title: "Technical Metrology Conferences",
     image: "/images/4_C4_A5222_ad4a659bdc.jpg",
   },
 ];
@@ -102,7 +102,7 @@ const conferencePartners = [
     url: "https://www.zyfra.com/",
   },
   {
-    name: "Modern Tyre Industry",
+    name: "Industrial Metrology Insights",
     logo: "/images/3_c5c5637a9c.png",
     type: "Media Partner",
     url: "",
@@ -140,7 +140,7 @@ export default function ConferenceProgrammePage() {
                     </h1>
                   </div>
                   <p className="text-base sm:text-lg leading-relaxed text-gray-705">
-                    A dynamic three-day conference featuring industry leaders from tyre manufacturers, rubber processing plants, and equipment suppliers. Designed for decision-makers, engineers, and specialists, the program tackles key challenges, innovations, and trends shaping the tyre manufacturing sector.
+                    A dynamic three-day conference featuring industry leaders from precision measurement equipment manufacturers, optical metrology specialists, and quality engineering leaders. Designed for decision-makers, quality heads, design engineers, and calibration specialists, the program tackles key challenges, innovations, and trends shaping the precision manufacturing and metrology sector.
                   </p>
                   
                   {/* Stats Grid */}
@@ -186,7 +186,7 @@ export default function ConferenceProgrammePage() {
                     Main Events of the Business Programme
                   </h2>
                   <p className="text-sm font-bold text-[#00A1B1] uppercase tracking-wider">
-                    08 – 09 October 2026
+                    13 – 15 May 2027 • Auto Cluster Exhibition Centre, Pune, India
                   </p>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -217,7 +217,7 @@ export default function ConferenceProgrammePage() {
                   Key Events
                 </h3>
                 <p className="text-sm text-gray-650 leading-relaxed">
-                  The INDIAMET Expo 2026 conference programme unites top experts and industry leaders for three days of in-depth discussions. Participants share valuable insights and explore sustainability in tyre manufacturing, with a focus on innovations, business processes, and management strategies vital for the sector's future.
+                  The IndiaMet 2027 - India's Dedicated Industrial Metrology Exhibition And Summit conference programme unites top experts and industry leaders for three days of in-depth discussions. Participants share valuable insights and explore innovations in precision measurement, dimensional gauging, CMM, 3D scanning, and Industry 4.0 quality assurance strategies vital for the sector's future.
                 </p>
               </div>
               <div className="relative mt-8 w-full">

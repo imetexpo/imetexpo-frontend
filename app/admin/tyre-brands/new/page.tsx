@@ -42,8 +42,8 @@ export default function AddTyreBrandPage() {
                     <ArrowLeft className="h-5 w-5 text-gray-400" />
                 </button>
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Add New Tyre Brand</h1>
-                    <p className="text-gray-400 mt-1">Add a new tyre brand to the exhibition</p>
+                    <h1 className="text-2xl font-bold text-white">Add New Metrology Brand</h1>
+                    <p className="text-gray-400 mt-1">Add a new metrology brand to the exhibition</p>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@ export default function AddTyreBrandPage() {
                                 value={formData.name}
                                 onChange={handleChange}
                                 className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                                placeholder="e.g., Apollo Tyres"
+                                placeholder="e.g., Zeiss Industrial Metrology"
                             />
                         </div>
 
