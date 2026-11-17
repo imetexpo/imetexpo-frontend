@@ -94,8 +94,8 @@ export default function PassSuccessPage() {
   return (
     <div className="min-h-screen bg-[#F7F8FC] px-4 py-10">
       <div className="mx-auto max-w-xl text-center">
-        <div className="inline-flex items-center gap-2 text-lg font-black text-emerald-600">
-          <CheckCircle2 className="h-6 w-6" />
+        <div className="inline-flex items-center gap-2 text-lg font-black text-[#003A77]">
+          <CheckCircle2 className="h-6 w-6 text-[#00A1B1]" />
           Registration Successful!
         </div>
 
@@ -105,7 +105,7 @@ export default function PassSuccessPage() {
 
         <div className="mt-6 rounded-2xl border border-[#003A77]/20 bg-[#E8F1F8] px-5 py-4 text-left">
           <p className="inline-flex items-center gap-2 text-sm font-bold text-slate-800">
-            <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+            <CheckCircle2 className="h-4 w-4 text-[#00A1B1]" />
             Next step
           </p>
           <p className="mt-1 text-sm text-slate-600">
@@ -120,7 +120,7 @@ export default function PassSuccessPage() {
           type="button"
           onClick={downloadBadge}
           disabled={downloading}
-          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-700 disabled:opacity-60"
+          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#003A77] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#003A77]/20 transition hover:bg-[#002957] disabled:opacity-60 cursor-pointer"
         >
           <Download className="h-4 w-4" />
           {downloading ? 'Preparing badge…' : 'Download Full Badge'}
@@ -173,7 +173,7 @@ export default function PassSuccessPage() {
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           <Link
             href="/"
-            className="rounded-2xl bg-emerald-600 py-3 text-sm font-bold text-white"
+            className="rounded-2xl bg-[#00A1B1] hover:bg-[#003A77] py-3 text-sm font-bold text-white transition-colors"
             onClick={() => clearPassSession()}
           >
             Back to Home
