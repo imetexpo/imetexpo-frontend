@@ -13,15 +13,15 @@ export default function ExhibitorContent() {
           Why <span className="text-[#00A1B1]">Exhibit?</span>
         </h2>
         <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
-          Showcase your solutions to senior buyers across the full tyre manufacturing value chain.
+          Showcase your solutions to senior buyers across the full precision manufacturing and industrial metrology value chain.
         </p>
-        <p className="text-lg sm:text-xl text-gray-800 font-bold">INDIAMET Expo is the leading platform to:</p>
+        <p className="text-lg sm:text-xl text-gray-800 font-bold">INDIAMET Expo 2027 is the leading platform to:</p>
         <ul className="space-y-3">
           {[
-            "Connect with decision-makers from 20+ countries",
-            "Launch new products to buyers actively sourcing equipment",
-            "Build relationships with procurement heads and engineers",
-            "Grow your presence in one of the world's fastest-growing tyre markets",
+            "Connect with decision-makers from 20+ countries and across India",
+            "Launch new metrology products to buyers actively sourcing precision equipment",
+            "Build relationships with procurement heads, plant managers, and quality engineers",
+            "Grow your market presence in India's booming precision engineering and manufacturing hub",
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-2.5">
               <span className="text-[#00A1B1] mt-0.5">✓</span>

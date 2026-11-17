@@ -82,11 +82,12 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="shrink-0">
               <Image
-                src="/ITS_logo_white.png"
+                src="/footer_logo.png"
                 alt="IndiaMET exhibition logo for dark backgrounds"
                 width={270}
                 height={100}
                 className="h-11 w-auto max-w-[125px] object-contain sm:h-16 sm:max-w-[280px]"
+                suppressHydrationWarning
               />
             </Link>
 

@@ -271,12 +271,13 @@ function SidebarBrand({ onClose }: { onClose?: () => void }) {
     <div className="flex h-16 shrink-0 items-center gap-2.5 border-b border-white/10 px-4">
       <div className="relative h-10 w-[140px] shrink-0">
         <Image
-          src="/ITS_logo_white.png"
+          src="/footer_logo.png"
           alt="IndiaMET exhibition logo for dark backgrounds"
           fill
           className="object-contain object-left drop-shadow-sm"
           sizes="140px"
           priority
+          suppressHydrationWarning
         />
       </div>
       <span className="rounded border border-[#00A1B1]/40 bg-[#00A1B1]/15 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#00A1B1]">

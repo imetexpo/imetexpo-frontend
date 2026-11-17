@@ -5,7 +5,7 @@ export default function BrochureContent() {
     <div className="flex flex-col gap-6">
       <div className="space-y-3">
         <h2 className="font-bebas text-3xl leading-[1.05] tracking-tight uppercase text-[#003A77]">
-          INDIAMET Expo <span className="text-[#00A1B1]">2026</span>
+          INDIAMET Expo <span className="text-[#00A1B1]">2027</span>
         </h2>
         <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
   Step into India’s premier exhibition for metrology, precision measurement, 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   Plus,
   Eye,
@@ -186,6 +186,17 @@ export default function ExhibitorsPage() {
     return matchesSearch && matchesStatus;
   });
 
+  const stats = useMemo(() => {
+    const total = exhibitors.length;
+    const active = exhibitors.filter((e) => {
+      const s = (e.status || "").toLowerCase();
+      return s === "active" || s === "approved";
+    }).length;
+    const pending = exhibitors.filter((e) => (e.status || "").toLowerCase() === "pending").length;
+    const boothsAssigned = exhibitors.filter((e) => Boolean(e.booth || e.boothNumber)).length;
+    return { total, active, pending, boothsAssigned };
+  }, [exhibitors]);
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -193,7 +204,7 @@ export default function ExhibitorsPage() {
         <div>
           <h1 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">Exhibitors</h1>
           <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-            Manage all exhibition exhibitors ({exhibitors.length} registered)
+            Manage all IndiaMET 2027 exhibition exhibitors ({exhibitors.length} registered)
           </p>
         </div>
         <button
@@ -203,6 +214,53 @@ export default function ExhibitorsPage() {
           <Plus className="h-4 w-4" />
           Add Exhibitor
         </button>
+      </div>
+
+      {/* KPI Stats Cards */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-xs">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Total Exhibitors</span>
+            <span className="p-2 bg-[#E8F1F8] text-[#003A77] rounded-lg">
+              <Building className="h-4 w-4" />
+            </span>
+          </div>
+          <p className="text-2xl sm:text-3xl font-bold text-[#003A77] mt-2">{stats.total}</p>
+          <p className="text-[11px] text-gray-500 mt-1">Registered for IndiaMET 2027</p>
+        </div>
+
+        <div className="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-xs">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Active / Confirmed</span>
+            <span className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+              <CheckCircle className="h-4 w-4" />
+            </span>
+          </div>
+          <p className="text-2xl sm:text-3xl font-bold text-emerald-600 mt-2">{stats.active}</p>
+          <p className="text-[11px] text-gray-500 mt-1">Confirmed participants</p>
+        </div>
+
+        <div className="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-xs">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Pending Review</span>
+            <span className="p-2 bg-amber-50 text-amber-600 rounded-lg">
+              <Clock className="h-4 w-4" />
+            </span>
+          </div>
+          <p className="text-2xl sm:text-3xl font-bold text-amber-600 mt-2">{stats.pending}</p>
+          <p className="text-[11px] text-gray-500 mt-1">Awaiting approval</p>
+        </div>
+
+        <div className="bg-white rounded-xl p-4 sm:p-5 border border-gray-200/80 shadow-xs">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Booths Assigned</span>
+            <span className="p-2 bg-[#E6F6F8] text-[#00A1B1] rounded-lg">
+              <Package className="h-4 w-4" />
+            </span>
+          </div>
+          <p className="text-2xl sm:text-3xl font-bold text-[#00A1B1] mt-2">{stats.boothsAssigned}</p>
+          <p className="text-[11px] text-gray-500 mt-1">Allocated floor booths</p>
+        </div>
       </div>
 
       {/* Search & Filter Bar */}

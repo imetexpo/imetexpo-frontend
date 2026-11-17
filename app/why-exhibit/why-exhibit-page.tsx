@@ -17,40 +17,40 @@ export default function WhyExhibitPage() {
 
   const sectors = [
     {
-      title: "Raw Materials & Compounds",
-      slug: "raw-materials-and-compounds",
-      description: "Natural rubber, synthetic rubber, carbon black, silica, processing oils, and specialty chemicals.",
-      image: "/images/raw-materials-and-compounds.jpg"
+      title: "Coordinate Measuring Machines (CMM)",
+      slug: "coordinate-measuring-machines",
+      description: "Bridge, gantry, horizontal arm, and portable articulated arm CMMs for high-accuracy component inspection.",
+      image: "/images/cmm.jpg"
     },
     {
-      title: "Tyre Manufacturing Machinery",
-      slug: "tyre-manufacturing-machinery",
-      description: "Banbury mixers, calenders, extruders, tyre building machines, curing presses, and finishing equipment.",
-      image: "/images/tyre-manufacturing-machinery.jpg"
+      title: "3D Scanning & Optical Metrology",
+      slug: "3d-scanning-and-optical-metrology",
+      description: "Laser scanners, structured light scanners, photogrammetry, and non-contact 3D inspection systems.",
+      image: "/images/3dscan.jpg"
     },
     {
-      title: "Rubber Processing Equipment",
-      slug: "rubber-processing-equipment",
-      description: "Two-roll mills, internal mixers, strainers, pelletizers, and rubber bale cutters.",
-      image: "/images/rubber-processing-equipment.jpg"
+      title: "Dimensional Gauging & Tooling",
+      slug: "dimensional-gauging-and-tooling",
+      description: "Air gauges, electronic gauges, dial indicators, bore gauges, height masters, and custom multi-gauging fixtures.",
+      image: "/images/metrology.jpg"
     },
     {
-      title: "Tyre Testing & Quality Control",
-      slug: "tyre-testing-and-quality-control",
-      description: "Testing equipment, quality control systems, and inspection technologies for tyres.",
-      image: "/images/tyre-testing-and-quality-control.jpg"
+      title: "Surface & Form Measurement",
+      slug: "surface-and-form-measurement",
+      description: "Roughness testers, roundness testers, profilometers, contour measurement systems, and interferometers.",
+      image: "/images/testing.jpg"
     },
     {
-      title: "Retreading & Repair Materials",
-      slug: "retreading-and-repair-materials",
-      description: "Retreading equipment, tread rubber, repair patches, and vulcanizing materials.",
-      image: "/images/retreading-and-repair-materials.jpg"
+      title: "Calibration & Standards",
+      slug: "calibration-and-standards",
+      description: "Calibration standards, gauge blocks, laser interferometers, master rings, and NABL-accredited laboratory equipment.",
+      image: "/images/quality.jpg"
     },
     {
-      title: "Recycling & Sustainability Solutions",
-      slug: "recycling-and-sustainability-solutions",
-      description: "Tyre recycling machinery, crumb rubber processing, and sustainable manufacturing solutions.",
-      image: "/images/recycling-and-sustainability-solutions.jpg"
+      title: "Automated & In-Line Inspection",
+      slug: "automated-and-inline-inspection",
+      description: "Robotic inspection cells, automated optical inspection (AOI), machine vision systems, and smart factory metrology.",
+      image: "/images/ai.jpg"
     }
   ];
 
@@ -158,9 +158,9 @@ export default function WhyExhibitPage() {
             <div className="animated-block-target">
               <Container>
                 <div className="grid gap-5">
-                  <h2 className="font-bebas text-6xl text-[#003A77] md:text-7xl">Why Exhibit at INDIAMET Expo</h2>
+                  <h2 className="font-bebas text-6xl text-[#003A77] md:text-7xl">Why Exhibit at INDIAMET Expo 2027</h2>
                   <p className="text-lg sm:text-xl text-gray-700">
-                    Exhibiting at INDIAMET Expo puts you at the center of India's fastest-growing metrology and measurement technology hub. Connect directly with over 10,000 professionals with real purchasing power, showcase your solutions to a USD 45 billion industry, and expand your network across 50+ countries. This is your chance to generate high-quality leads, forge valuable partnerships, and position your brand as a leader in the region's rapidly modernizing rubber and tyre sector.
+                    Exhibiting at INDIAMET Expo puts you at the center of India's fastest-growing metrology, precision measurement, and quality assurance hub. Connect directly with over 10,000 professionals with real purchasing power, showcase your solutions to high-growth automotive, aerospace, defence, and precision manufacturing sectors, and expand your market reach. This is your prime opportunity to generate high-quality sales leads, forge valuable OEM partnerships, and position your brand as a technology leader.
                   </p>
                 </div>
                 <div className="my-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -350,9 +350,9 @@ export default function WhyExhibitPage() {
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {[
-                    { name: "Somchai Wongsuwan", title: "VP of Manufacturing", company: "Bridgestone Thailand", quote: "INDIAMET Expo provides unparalleled access to the ASEAN tyre manufacturing ecosystem. Over three days, we connected with key suppliers and signed three major contracts." },
-                    { name: "Lisa Tan", title: "Regional Director", company: "Continental Tyres", quote: "We've exhibited for 5 consecutive years, and ITS remains our most valuable platform for launching new products and networking with industry leaders across Southeast Asia." },
-                    { name: "Nguyen Van Hieu", title: "Procurement Manager", company: "Casumina", quote: "The quality of visitors and exhibitors is exceptional. We found new raw material suppliers and advanced testing equipment that significantly improved our production efficiency." }
+                    { name: "Rajesh Kulkarni", title: "VP of Quality Assurance", company: "Precision Auto Components", quote: "INDIAMET Expo provides unparalleled access to India's precision manufacturing ecosystem. Over three days, we connected with key tier-1 suppliers and secured high-value contracts." },
+                    { name: "Vikram Sharma", title: "Managing Director", company: "Metrology Systems India", quote: "We've exhibited consistently, and IndiaMET remains our most valuable platform for launching new CMMs and 3D optical scanning solutions across western and northern India." },
+                    { name: "Anita Rao", title: "Head of Procurement", company: "Aerospace Precision Tools", quote: "The quality of visitors and metrology equipment showcased is exceptional. We connected with advanced calibration providers that significantly elevated our inspection capabilities." }
                   ].map((testimonial, idx) => (
                     <div key={idx} className="relative flex h-full flex-col overflow-hidden rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300 font-sans">
                       <div className="text-4xl mb-4 text-[#00A1B1] font-serif">&ldquo;</div>

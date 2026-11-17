@@ -99,6 +99,7 @@ export default function BrochureForm() {
       state: formData.state,
       city: formData.city,
       pincode: formData.pincode,
+      address: [formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", "),
       website: formData.website,
       productSectors: formData.productSectors,
       submittedAt: new Date().toISOString(),
