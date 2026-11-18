@@ -25,7 +25,7 @@ export const navItems: NavItem[] = [
       { text: 'Event Sectors', href: '/sectors/' },
       { text: 'Plan Your Travel', href: '/plan-your-travel/?tab=exhibitor' },
      
-      { text: 'Become an Exhibitor', href: '/exhibiting-enquiry/' },
+      { text: 'Become an Exhibitor', href: '/register?t=exhibitor/' },
       { text: 'Sponsorship Opportunities', href: '/sponsorship-opportunities/' },
       { text: 'View Exhibitor List 2027', href: '/exhibition-directory/' },
     ],

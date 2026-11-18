@@ -29,7 +29,7 @@ export const sectorsData: Sector[] = [
     description: "Advanced coordinate measuring machines and 3D measurement systems for precision inspection and quality control.",
     image: "/images/cmm.png",
     buttonText: "Explore CMM",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "The Coordinate Measuring Machines (CMM) sector at INDIAMET showcases advanced technologies for high-precision dimensional measurement and inspection. From bridge and gantry CMMs to portable and articulating arm systems, this sector brings together solutions that help manufacturers achieve dimensional accuracy, improve quality control, and meet demanding production requirements.",
     subSectors: [
       {
@@ -68,7 +68,7 @@ export const sectorsData: Sector[] = [
     description: "Precision measurement instruments and gauging solutions for dimensional, tolerance, and geometric inspection.",
     image: "/images/measure.jpg",
     buttonText: "Explore Measurement",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "The Dimensional Measurement & Gauging sector brings together precision instruments and inspection technologies used to verify dimensions, tolerances, geometry, and manufacturing accuracy. From traditional precision instruments to advanced digital measurement systems, exhibitors showcase solutions for quality inspection across a wide range of manufacturing applications.",
     subSectors: [
       {
@@ -107,7 +107,7 @@ export const sectorsData: Sector[] = [
     description: "Advanced optical measurement, machine vision, video inspection, microscopy, and non-contact metrology systems.",
     image: "/images/optical.jpg",
     buttonText: "Explore Vision Metrology",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "Optical & Vision Metrology at INDIAMET showcases advanced non-contact measurement and inspection technologies. These solutions combine optics, imaging, sensors, and software to inspect complex components, detect defects, verify dimensions, and automate quality inspection processes across modern manufacturing environments.",
     subSectors: [
       {
@@ -146,7 +146,7 @@ export const sectorsData: Sector[] = [
     description: "3D scanning, laser measurement, structured-light systems, reverse engineering, and digital inspection solutions.",
     image: "/images/3dscan2.jpg",
     buttonText: "Explore 3D Measurement",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "The 3D Scanning & Digital Measurement sector presents advanced technologies for capturing accurate three-dimensional data from physical objects. These solutions support dimensional inspection, reverse engineering, product development, surface analysis, and digital quality workflows across precision manufacturing industries.",
     subSectors: [
       {
@@ -185,7 +185,7 @@ export const sectorsData: Sector[] = [
     description: "Precision technologies for surface texture, contour, roundness, cylindricity, profile, and form measurement.",
     image: "/images/surface.jpeg",
     buttonText: "Explore Surface Measurement",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "Surface & Form Measurement is essential for controlling the functional performance and quality of precision components. This sector showcases advanced instruments for analysing surface texture, roughness, contour, roundness, cylindricity, profile, and other geometric characteristics required in demanding manufacturing applications.",
     subSectors: [
       {
@@ -224,7 +224,7 @@ export const sectorsData: Sector[] = [
     description: "Calibration technologies, reference standards, master instruments, laboratory systems, and measurement traceability solutions.",
     image: "/images/calibration.webp",
     buttonText: "Explore Calibration",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "The Calibration & Reference Standards sector focuses on technologies that ensure measurement accuracy, reliability, and traceability. It brings together calibration equipment, master instruments, reference standards, calibration software, and laboratory solutions supporting quality systems across manufacturing and testing environments.",
     subSectors: [
       {
@@ -263,7 +263,7 @@ export const sectorsData: Sector[] = [
     description: "Testing and inspection technologies for materials, components, products, and manufacturing quality assurance.",
     image: "/images/quality.webp",
     buttonText: "Explore Testing",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "The Testing & Quality Inspection sector brings together technologies used to verify material properties, component performance, product integrity, and manufacturing quality. From mechanical and material testing to non-destructive inspection and laboratory systems, this sector supports manufacturers in maintaining consistent quality and meeting industry standards.",
     subSectors: [
       {
@@ -302,7 +302,7 @@ export const sectorsData: Sector[] = [
     description: "Advanced sensors, probes, encoders, transducers, laser measurement systems, and precision data acquisition technologies.",
     image: "/images/sensors.webp",
     buttonText: "Explore Sensors",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "Sensors, probes, and measurement systems form the foundation of modern automated and digital metrology. This sector showcases technologies that capture accurate measurement data from manufacturing processes, machines, and components, enabling real-time inspection, process control, automation, and data-driven quality management.",
     subSectors: [
       {
@@ -341,7 +341,7 @@ export const sectorsData: Sector[] = [
     description: "Metrology software, inspection planning, SPC, QMS, data management, reporting, analytics, and digital quality solutions.",
     image: "/images/software.png",
     buttonText: "Explore Software",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "Digital transformation is changing how manufacturers collect, analyse, and manage quality data. The Metrology Software & Digital Quality sector showcases software platforms that connect measurement equipment with quality processes, enabling automated reporting, statistical analysis, traceability, inspection planning, and data-driven decision-making.",
     subSectors: [
       {
@@ -380,7 +380,7 @@ export const sectorsData: Sector[] = [
     description: "Automation, robotics, inline metrology, AI-powered inspection, connected measurement, and Industry 4.0 quality technologies.",
     image: "/images/ind4.0.jpg",
     buttonText: "Explore Automation",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "Automation & Industry 4.0 technologies are transforming inspection and quality control by connecting measurement systems directly with manufacturing processes. This sector showcases robotic inspection, inline metrology, automated gauging, machine vision, artificial intelligence, connected sensors, and smart quality solutions for next-generation manufacturing.",
     subSectors: [
       {
@@ -419,7 +419,7 @@ export const sectorsData: Sector[] = [
     description: "Precision hand instruments, gauges, indicators, thread and gear measurement systems, and specialised inspection equipment.",
     image: "/images/Precision.webp",
     buttonText: "Explore Instruments",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "The Precision Instruments & Gauges sector brings together essential measurement tools used throughout manufacturing and quality inspection. From precision hand instruments and gauges to specialised thread, gear, and component measurement systems, this sector supports accurate and reliable inspection across diverse industrial applications.",
     subSectors: [
       {
@@ -458,7 +458,7 @@ export const sectorsData: Sector[] = [
     description: "Professional metrology services, calibration laboratories, testing, inspection, certification, consultancy, and training solutions.",
     image: "/images/Laboratory.jpg",
     buttonText: "Explore Services",
-    buttonLink: "/exhibiting-enquiry",
+    buttonLink: "/register?t=exhibitor",
     content: "The Metrology Services & Laboratories sector connects manufacturers with specialist organisations providing calibration, testing, inspection, certification, consultancy, and technical training. These services play a critical role in maintaining measurement accuracy, traceability, regulatory compliance, and continuous quality improvement across the manufacturing ecosystem.",
     subSectors: [
       {

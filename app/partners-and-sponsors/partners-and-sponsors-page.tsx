@@ -43,7 +43,7 @@ export default function PartnersSponsorsPage() {
     { name: '', logo: '', type: 'Media Partner', website: '' },
     ];
 
-  const quickLinks = [
+  const quickLinks = [register?t=exhibitor
     { label: "Enquire to Exhibit", link: "/exhibiting-enquiry", icon: "/images/Vector_1_440f5852b9.png" },
     { label: "Download Event Brochure", link: "/event-brochure", icon: "/images/Group_e024d13500.png" },
     { label: "Exhibitor List", link: "/exhibitor-list", icon: "/images/Vector_ceea3d1488.png" },

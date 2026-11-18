@@ -12,14 +12,14 @@ export const TAB_QUERY_PARAM = 't';
 
 export const LEGACY_PATH_TO_TAB: Record<string, RegistrationTab> = {
     '/visitor-registration': 'enquiry',
-    '/exhibiting-enquiry': 'exhibitor',
+    '/register?t=exhibitor': 'exhibitor',
     '/become-partner': 'sponsor',
     '/event-brochure': 'brochure',
 };
 
 export const TAB_TO_LEGACY_PATH: Partial<Record<RegistrationTab, string>> = {
     enquiry: '/visitor-registration',
-    exhibitor: '/exhibiting-enquiry',
+    exhibitor: '/register?t=exhibitor',
     sponsor: '/become-partner',
     brochure: '/event-brochure',
 };

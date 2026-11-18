@@ -116,7 +116,7 @@ export default function Footer() {
           <div className="lg:max-w-md space-y-5 font-sans text-white">
             <div>
               <h5 className="mb-2 text-xl font-bold uppercase tracking-wider text-white font-bebas">Quick Links</h5>
-              <div className="flex flex-col gap-2 text-white/70">
+              <div className=register?t=exhibitor-2 text-white/70">
                 <Link href="/exhibiting-enquiry" className="hover:underline hover:text-white transition-colors">
                   Become an Exhibitor
                 </Link>

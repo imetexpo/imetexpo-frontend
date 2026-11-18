@@ -81,7 +81,7 @@ export default function HeroSection() {
 
             {/* Exhibit button */}
             <div className="flex-shrink-0 w-full lg:w-auto">
-              <Link
+              <Linkregister?t=exhibitor
                 href="/exhibiting-enquiry/"
                 className="inline-block w-full lg:w-auto text-center bg-[#00A1B1] hover:bg-[#FFD154] text-white px-10 py-4 text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap rounded-sm shadow-lg hover:scale-105"
               >
