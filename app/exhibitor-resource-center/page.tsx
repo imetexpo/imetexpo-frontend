@@ -248,7 +248,7 @@ const faqItems = [
                         <p className="text-lg sm:text-xl text-gray-650 leading-relaxed line-clamp-4">{option.description}</p>
                       </div>
                     </div>
-                    <div className="p-5 pt-0 mt-auto">
+                    <div className=register?t=exhibitor>
                       <Link href="/exhibiting-enquiry">
                         <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                           Enquire Now

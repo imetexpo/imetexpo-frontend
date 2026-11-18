@@ -8,7 +8,7 @@ import { COUNTRIES, INDUSTRIES, AWARD_CATEGORIES } from "@/lib/registrationOptio
 import AwardsTurnstile from "./AwardsTurnstile";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
-import { getContactApiUrl } from "@/lib/api/backendUrl";
+import { sendContactEmail } from "@/lib/api/contact";
 
 const inputClass = "w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[#00A1B1] focus:ring-2 focus:ring-[#00A1B1]";
 const initialForm = {
@@ -112,15 +112,10 @@ export default function AwardsForm() {
         throw new Error(result.message || "Unable to submit your awards enquiry. Please try again.");
       }
 
-      // Also submit to backend contact endpoint for email dispatch and storage
-      await fetch(getContactApiUrl(), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          formType: "award-nomination",
-          ...formData,
-        }),
-      }).catch((err) => console.warn("Backend contact notification error:", err));
+      await sendContactEmail({
+        formType: "award-nomination",
+        ...formData,
+      });
 
       setSubmitted(true);
     } catch (submitError) {

@@ -103,7 +103,7 @@ export default function CompanyDirectory() {
         subtitle="Explore participating companies and innovators exhibiting at INDIAMET Expo."
       >
         <Link
-          href="/exhibiting-enquiry/"
+          href="/register?t=exhibitor/"
           className="inline-block rounded-sm bg-[#00A1B1] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
         >
           Exhibit at INDIAMET Expo →

@@ -87,7 +87,7 @@ export default function WhyExhibitPage() {
   const goToNextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
   const goToSlide = (index: number) => setCurrentSlide(index);
 
-  const quickLinks = [
+  const quickLinks = [register?t=exhibitor
     { label: "Enquire to Exhibit", link: "/exhibiting-enquiry", icon: "/icons/enquire.png" },
     { label: "Download Event Brochure", link: "/event-brochure", icon: "/icons/brochure.png" },
     { label: "Exhibitor List", link: "/exhibitor-list", icon: "/icons/list.png" },
@@ -194,7 +194,7 @@ export default function WhyExhibitPage() {
                       <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">{benefit.desc}</p>
                     </div>
                   ))}
-                </div>
+                </div>register?t=exhibitor
                 <Link href="/exhibiting-enquiry">
                   <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Book A Stand</button>
                 </Link>
@@ -235,7 +235,7 @@ export default function WhyExhibitPage() {
                         <p className="text-sm font-semibold uppercase text-[#003A77]">Senior Management & C-Level Executives</p>
                       </div>
                     </div>
-                    <div className="mt-10">
+                    <div className=register?t=exhibitor
                       <Link href="/exhibiting-enquiry">
                         <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Enquire to Exhibit</button>
                       </Link>
