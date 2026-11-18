@@ -110,6 +110,17 @@ export default function AwardsForm() {
       if (!response.ok || !result.success) {
         throw new Error(result.message || "Unable to submit your awards enquiry. Please try again.");
       }
+
+      // Also submit to backend contact endpoint for email dispatch and storage
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "award-nomination",
+          ...formData,
+        }),
+      }).catch((err) => console.warn("Backend contact notification error:", err));
+
       setSubmitted(true);
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : "Unable to submit. Please try again.");
@@ -121,11 +132,56 @@ export default function AwardsForm() {
   }
 
   if (submitted) {
+    const displayName = formData.name || formData.companyName || "Nominee";
+    const address = [formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", ") || "Not provided";
+
     return (
-      <div role="status" className="py-10 text-center">
-        <h2 className="mb-3 font-bebas text-3xl text-[#003A77]">Thank you, {formData.name}!</h2>
-        <p className="text-gray-600">Your awards enquiry has been received. Our team will contact you with further details.</p>
-        <Link href="/awards/" className="mt-6 inline-block font-semibold text-[#00A1B1] hover:underline">Explore the awards →</Link>
+      <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-8 max-w-lg mx-auto text-center animate-fadeIn">
+        <div className="w-16 h-16 bg-[#E8F1F8] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#00A1B1]/40 shadow-xs">
+          <svg className="w-8 h-8 text-[#003A77]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#00A1B1] bg-[#E8F1F8] px-3 py-1 rounded-full mb-3">
+          IndiaMET 2027 • Awards &amp; Nomination
+        </span>
+        <h2 className="font-bebas text-4xl text-[#003A77] mb-2 uppercase tracking-wide">
+          Thank You, {displayName}!
+        </h2>
+        <p className="text-base text-gray-600 mb-5 leading-relaxed">
+          Your nomination enquiry for <strong>IndiaMET 2027 Exhibition &amp; Summit</strong> (13–15 May 2027, Pune) has been submitted successfully.
+        </p>
+
+        <div className="bg-[#F8FAFC] border border-gray-200/80 rounded-xl p-4 text-left text-xs space-y-2 mb-6">
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Name:</span>
+            <span className="font-semibold text-gray-800">{displayName}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Company:</span>
+            <span className="font-bold text-gray-800">{formData.companyName || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Job Title:</span>
+            <span className="font-semibold text-gray-800">{formData.jobTitle || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Phone Number:</span>
+            <span className="font-semibold text-gray-800">{formData.phone || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-gray-200/60">
+            <span className="text-gray-500 font-medium">Email:</span>
+            <span className="font-semibold text-[#003A77]">{formData.email || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-500 font-medium">Address:</span>
+            <span className="font-semibold text-gray-800">{address}</span>
+          </div>
+        </div>
+
+        <p className="text-xs text-gray-500 leading-relaxed">
+          A confirmation email has been dispatched to <strong className="text-gray-700">{formData.email}</strong>. Our awards management team will reach out to you shortly with further details.
+        </p>
       </div>
     );
   }

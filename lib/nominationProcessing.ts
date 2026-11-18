@@ -48,31 +48,107 @@ async function saveToCms(data: NominationData, submissionId: string, submittedAt
 
 async function sendConfirmation(data: NominationData, submissionId: string) {
   const name = escapeHtml(data.contactPerson);
-  const nominee = escapeHtml(data.nomineeName);
-  const category = escapeHtml(data.category);
-  const reference = escapeHtml(submissionId);
-  const html = `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;background:#FCF8F3;font-family:Arial,sans-serif;color:#374151">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-    <tr><td align="center" style="padding:32px 16px">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#fff;border:1px solid #e5e7eb;border-radius:12px">
-        <tr><td style="padding:28px;background:#003A77;color:#fff;border-radius:12px 12px 0 0">
-          <p style="margin:0 0 8px;font-size:13px;letter-spacing:2px">INDIAMET EXPO</p>
-          <h1 style="margin:0;font-size:26px">Thank you for your nomination</h1>
-        </td></tr>
-        <tr><td style="padding:28px;line-height:1.7">
-          <p>Dear ${name},</p>
-          <p>Thank you for nominating <strong>${nominee}</strong> for the INDIAMET Expo Awards.</p>
-          <p><strong>Award category:</strong> ${category}</p>
-          <p>Our team will review your nomination and contact you if further information is needed.</p>
-          <p style="padding:14px;background:#FCF8F3;font-size:13px"><strong>Submission reference:</strong> ${reference}</p>
-          <p>Best regards,<br><strong>INDIAMET Expo Awards Team</strong></p>
-        </td></tr>
-      </table>
-    </td></tr>
+  const company = escapeHtml(data.nominatorName);
+  const jobTitle = escapeHtml(data.designation);
+  const phone = escapeHtml(data.mobile);
+  const email = escapeHtml(data.email);
+  const address = [data.address, data.nominatorCity, data.nominatorState, data.nominatorCountry, data.pinCode].filter(Boolean).map(escapeHtml).join(", ") || "Not provided";
+
+  const html = `<!DOCTYPE html>
+<html>
+<body style="margin:0; padding:0; background:#f2f2f2; font-family:Arial, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f2f2f2; padding:25px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border-radius:8px; overflow:hidden; border:1px solid #E2E8F0;">
+          
+          <!-- LOGO HEADER (REDUCED COLOR, NO DARK BANNER) -->
+          <tr>
+            <td align="center" style="background:#F2F8FA; padding:25px 24px; border-bottom:1px solid #E2E8F0;">
+              <img 
+                src="https://res.cloudinary.com/deo4vpw8f/image/upload/v1793946695/indimet_LOGO_cusfu7.png"
+                style="max-width:180px; display:block; margin:0 auto;"
+                alt="IndiaMET 2027 Logo"
+              />
+            </td>
+          </tr>
+
+          <!-- MAIN BODY OF THE CARD -->
+          <tr>
+            <td style="padding:30px; color:#333; font-family:Arial, sans-serif; text-align:left;">
+              <p style="font-size:16px; margin:0 0 16px 0; color:#1e293b;">
+                Dear ${name},
+              </p>
+
+              <p style="font-size:16px; line-height:1.6; margin:0 0 20px 0; color:#334155;">
+                Thank you for your interest in submitting your nomination for <strong>IndiaMET 2027 – Dedicated Industrial Metrology Exhibition &amp; Summit</strong>. Below are your registration details:
+              </p>
+
+              <table width="100%" cellpadding="8" cellspacing="0" 
+                style="background:#F2F8FA; margin:20px 0; border:1px solid #CBD5E1; border-radius:6px; border-collapse:collapse; font-size:14px; text-align:left;">
+                <tr>
+                  <td width="35%" style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Name</strong></td>
+                  <td style="border-bottom:1px solid #CBD5E1; font-weight:600; color:#1e293b; padding:8px 12px;">: ${name}</td>
+                </tr>
+                <tr>
+                  <td style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Company</strong></td>
+                  <td style="border-bottom:1px solid #CBD5E1; color:#1e293b; padding:8px 12px;">: ${company}</td>
+                </tr>
+                <tr>
+                  <td style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Job Title</strong></td>
+                  <td style="border-bottom:1px solid #CBD5E1; color:#1e293b; padding:8px 12px;">: ${jobTitle}</td>
+                </tr>
+                <tr>
+                  <td style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Phone Number</strong></td>
+                  <td style="border-bottom:1px solid #CBD5E1; color:#1e293b; padding:8px 12px;">: ${phone}</td>
+                </tr>
+                <tr>
+                  <td style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Email</strong></td>
+                  <td style="border-bottom:1px solid #CBD5E1; color:#1e293b; padding:8px 12px;">: ${email}</td>
+                </tr>
+                <tr>
+                  <td style="color:#003A77; padding:8px 12px;"><strong>Address</strong></td>
+                  <td style="color:#1e293b; padding:8px 12px;">: ${address}</td>
+                </tr>
+              </table>
+
+              <p style="font-size:14px; color:#555; margin:20px 0 0 0; line-height:1.5;">
+                If you have any questions, feel free to contact us at <a href="mailto:pad@maxxmedia.in" style="color:#003A77; text-decoration:none; font-weight:bold;">pad@maxxmedia.in</a>.
+              </p>
+
+              <p style="font-size:15px; margin:20px 0 0 0; line-height:1.5; color:#1e293b;">
+                Best regards,<br/>
+                <strong style="color:#003A77;">IndiaMET 2027 Awards Team</strong>
+              </p>
+            </td>
+          </tr>
+
+          <!-- FOOTER: DATE & VENUE -->
+          <tr>
+            <td style="background:#003A77; color:#ffffff; padding:15px; text-align:center; font-size:14px;">
+              <strong>13-15 May 2027</strong> • Auto Cluster Exhibition Centre, Pune, India
+            </td>
+          </tr>
+
+          <!-- FOOTER: ORGANIZER -->
+          <tr>
+            <td style="background:#E6EEF7; padding:20px; font-size:12px; color:#333; text-align:center; line-height:1.6;">
+              Organizer: <img 
+                src="https://res.cloudinary.com/deo4vpw8f/image/upload/v1774687173/maxxlogo_lulkwh.png"
+                style="max-width:180px; display:block; margin:8px auto;"
+                alt="Maxx Business Media Logo"
+              /><br/>
+              T9, Swastik Manandi Arcade, Bengaluru, India<br/>
+              Tel: +91 91483 19993 | pad@maxxmedia.in | www.indiametexpo.com
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
   </table>
-</body></html>`;
+</body>
+</html>`;
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
@@ -83,17 +159,24 @@ async function sendConfirmation(data: NominationData, submissionId: string) {
     body: JSON.stringify({
       from: process.env.RESEND_FROM,
       to: [data.email],
-      subject: 'Thank you for your nomination | INDIAMET Expo Awards',
+      subject: 'Award Nomination Confirmed - IndiaMET 2027',
       html,
       text: [
         'Dear ' + data.contactPerson + ',',
         '',
-        'Thank you for nominating ' + data.nomineeName + ' for the INDIAMET Expo Awards.',
-        'Award category: ' + data.category,
-        'Our team will review your nomination and contact you if further information is needed.',
+        'Thank you for your interest in submitting your nomination for IndiaMET 2027 – Dedicated Industrial Metrology Exhibition & Summit.',
         '',
-        'Submission reference: ' + submissionId,
-        'INDIAMET Expo Awards Team',
+        'Name: ' + data.contactPerson,
+        'Company: ' + data.nominatorName,
+        'Job Title: ' + data.designation,
+        'Phone Number: ' + data.mobile,
+        'Email: ' + data.email,
+        'Address: ' + address,
+        '',
+        'If you have any questions, feel free to contact us at pad@maxxmedia.in.',
+        '',
+        'Best regards,',
+        'IndiaMET 2027 Awards Team',
       ].join('\n'),
     }),
     signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
