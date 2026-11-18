@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Container from '@/components/ui/container';
 import PartnersSection from '@/components/home/PartnersSection';
 import { Button } from '@/components/ui/button';
+import { getContactApiUrl } from '@/lib/api/backendUrl';
 
 const productSectors = [
   "Coordinate Measuring Machines (CMM)",
@@ -141,7 +142,7 @@ export default function SponsorshipEnquiryPage() {
       );
 
       // 2. Submit notification API
-      const emailResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/contact`, {
+      const emailResponse = await fetch(getContactApiUrl(), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
