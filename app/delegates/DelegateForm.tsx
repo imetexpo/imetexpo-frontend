@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getContactApiUrl } from '@/lib/api/backendUrl';
 
 
 type Country = { name: string };
@@ -153,8 +154,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
     }
 
     try {
-      const apiBase = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
-      const response = await fetch(`${apiBase}/contact`, {
+      const response = await fetch(getContactApiUrl(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

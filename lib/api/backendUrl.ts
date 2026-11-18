@@ -8,3 +8,12 @@ export function getBackendUrl(): string {
 
   return url.replace(/\/$/, '').replace(/\/api$/, '');
 }
+
+export function getContactApiUrl(): string {
+  const raw = (
+    process.env.NEXT_PUBLIC_API_URL ||
+    process.env.NEXT_PUBLIC_BACKEND_URL ||
+    'http://localhost:5000/api'
+  ).replace(/\/+$/, '');
+  return raw.endsWith('/api') ? `${raw}/contact` : `${raw}/api/contact`;
+}

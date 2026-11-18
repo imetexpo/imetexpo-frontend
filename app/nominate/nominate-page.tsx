@@ -17,6 +17,7 @@ import {
   type NominationData, type NominationField, type NominationErrors,
 } from '@/lib/nominationForm';
 import LoadingDots from '@/components/ui/LoadingDots';
+import { getContactApiUrl } from '@/lib/api/backendUrl';
 
 
 export default function NominatePage() {
@@ -143,7 +144,7 @@ export default function NominatePage() {
         throw new Error(result.message || 'Your nomination could not be submitted. Please try again.');
       }
       // Also notify backend contact endpoint for email dispatch and storage
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/contact`, {
+      await fetch(getContactApiUrl(), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
