@@ -130,16 +130,26 @@ async function sendConfirmation(data: NominationData, submissionId: string) {
             </td>
           </tr>
 
-          <!-- FOOTER: ORGANIZER -->
+          <!-- FOOTER: ORGANIZER (LEFT LOGO, RIGHT END ADDRESS) -->
           <tr>
-            <td style="background:#E6EEF7; padding:20px; font-size:12px; color:#333; text-align:center; line-height:1.6;">
-              Organizer: <img 
-                src="https://res.cloudinary.com/deo4vpw8f/image/upload/v1774687173/maxxlogo_lulkwh.png"
-                style="max-width:180px; display:block; margin:8px auto;"
-                alt="Maxx Business Media Logo"
-              /><br/>
-              T9, Swastik Manandi Arcade, Bengaluru, India<br/>
-              Tel: +91 91483 19993 | pad@maxxmedia.in | www.indiametexpo.com
+            <td style="background:#E6EEF7; padding:20px; font-size:12px; color:#333;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="38%" align="left" valign="middle">
+                    <span style="font-size:11px; color:#666; font-weight:bold; text-transform:uppercase; display:block; margin-bottom:6px;">Organized By:</span>
+                    <img 
+                      src="https://res.cloudinary.com/deo4vpw8f/image/upload/v1774687173/maxxlogo_lulkwh.png"
+                      style="max-width:140px; display:block;"
+                      alt="Maxx Business Media Logo"
+                    />
+                  </td>
+                  <td width="62%" align="right" valign="middle" style="font-size:12px; color:#333; line-height:1.6; text-align:right;">
+                    <strong>Maxx Business Media Pvt Ltd</strong><br/>
+                    T9, Swastik Manandi Arcade, Bengaluru, India<br/>
+                    Tel: +91 91483 19993 | pad@maxxmedia.in | www.indiametexpo.com
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
 
