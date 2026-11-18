@@ -47,12 +47,51 @@ async function saveToCms(data: NominationData, submissionId: string, submittedAt
 }
 
 async function sendConfirmation(data: NominationData, submissionId: string) {
-  const name = escapeHtml(data.contactPerson);
-  const company = escapeHtml(data.nominatorName);
-  const jobTitle = escapeHtml(data.designation);
-  const phone = escapeHtml(data.mobile);
-  const email = escapeHtml(data.email);
-  const address = [data.address, data.nominatorCity, data.nominatorState, data.nominatorCountry, data.pinCode].filter(Boolean).map(escapeHtml).join(", ") || "Not provided";
+  const name = escapeHtml(data.contactPerson || "Nominee");
+  const firstName = escapeHtml(data.contactPerson?.split(" ")[0] || "Not provided");
+  const lastName = escapeHtml(data.contactPerson?.includes(" ") ? data.contactPerson.split(" ").slice(1).join(" ") : "Not provided");
+  const companyname = escapeHtml(data.nominatorName || "Not provided");
+  const jobtittle = escapeHtml(data.designation || "Not provided");
+  const mail = escapeHtml(data.email || "Not provided");
+  const phone = escapeHtml(data.mobile || "Not provided");
+  const website = escapeHtml(data.website || "N/A");
+  const address = escapeHtml(data.address || [data.nominatorCity, data.nominatorState, data.nominatorCountry].filter(Boolean).join(", ") || "Not provided");
+  const country = escapeHtml(data.nominatorCountry || "Not provided");
+  const state = escapeHtml(data.nominatorState || "Not provided");
+  const city = escapeHtml(data.nominatorCity || "Not provided");
+  const pin = escapeHtml(data.pinCode || "Not provided");
+  const awardCategory = escapeHtml(data.category || (data as any).awardCategory || "N/A");
+  const industry = escapeHtml((data as any).industry || (data as any).productSector || "N/A");
+  const message = escapeHtml(data.achievements || data.additionalComments || "N/A");
+
+  const fieldRows = [
+    ["firstname", firstName],
+    ["lastname", lastName],
+    ["companyname", companyname],
+    ["jobtittle", jobtittle],
+    ["mail", mail],
+    ["phone number", phone],
+    ["website", website],
+    ["address", address],
+    ["country", country],
+    ["state", state],
+    ["city", city],
+    ["pin", pin],
+    ["Award Category", awardCategory],
+    ["industry", industry],
+    ["message", message],
+  ];
+
+  const tableRowsHtml = fieldRows.map(([label, value], index) => {
+    const isLast = index === fieldRows.length - 1;
+    const borderStyle = isLast ? "" : "border-bottom:1px solid #CBD5E1;";
+    return `
+      <tr>
+        <td width="38%" style="${borderStyle} color:#003A77; padding:8px 12px;"><strong>${label}</strong></td>
+        <td style="${borderStyle} color:#1e293b; padding:8px 12px;">: ${value}</td>
+      </tr>
+    `;
+  }).join("");
 
   const html = `<!DOCTYPE html>
 <html>
@@ -85,31 +124,8 @@ async function sendConfirmation(data: NominationData, submissionId: string) {
               </p>
 
               <table width="100%" cellpadding="8" cellspacing="0" 
-                style="background:#F2F8FA; margin:20px 0; border:1px solid #CBD5E1; border-radius:6px; border-collapse:collapse; font-size:14px; text-align:left;">
-                <tr>
-                  <td width="35%" style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Name</strong></td>
-                  <td style="border-bottom:1px solid #CBD5E1; font-weight:600; color:#1e293b; padding:8px 12px;">: ${name}</td>
-                </tr>
-                <tr>
-                  <td style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Company</strong></td>
-                  <td style="border-bottom:1px solid #CBD5E1; color:#1e293b; padding:8px 12px;">: ${company}</td>
-                </tr>
-                <tr>
-                  <td style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Job Title</strong></td>
-                  <td style="border-bottom:1px solid #CBD5E1; color:#1e293b; padding:8px 12px;">: ${jobTitle}</td>
-                </tr>
-                <tr>
-                  <td style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Phone Number</strong></td>
-                  <td style="border-bottom:1px solid #CBD5E1; color:#1e293b; padding:8px 12px;">: ${phone}</td>
-                </tr>
-                <tr>
-                  <td style="border-bottom:1px solid #CBD5E1; color:#003A77; padding:8px 12px;"><strong>Email</strong></td>
-                  <td style="border-bottom:1px solid #CBD5E1; color:#1e293b; padding:8px 12px;">: ${email}</td>
-                </tr>
-                <tr>
-                  <td style="color:#003A77; padding:8px 12px;"><strong>Address</strong></td>
-                  <td style="color:#1e293b; padding:8px 12px;">: ${address}</td>
-                </tr>
+                style="background:#E8F1F8; margin:20px 0; border:1px solid #CBD5E1; border-radius:6px; border-collapse:collapse; font-size:14px; text-align:left;">
+                ${tableRowsHtml}
               </table>
 
               <p style="font-size:14px; color:#555; margin:20px 0 0 0; line-height:1.5;">
