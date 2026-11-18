@@ -7,6 +7,8 @@ import CountryStateCityFields from '@/components/common/CountryStateCityFields';
 
 export default function PartnerForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submittedData, setSubmittedData] = useState<any>(null);
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -92,26 +94,13 @@ export default function PartnerForm() {
       const result = await response.json();
 
       if (result.success) {
-        toast.success('Partner registration submitted successfully! Our team will contact you soon.');
-        
-        setFormData({
-          firstName: '',
-          lastName: '',
-          jobTitle: '',
-          email: '',
-          phone: '',
-          companyName: '',
-          gstin: '',
-          address: '',
-          country: '',
-          city: '',
-          state: '',
-          pincode: '',
-          website: '',
-          partnershipType: '',
-          marketingConsent: false,
-          privacyConsent: false
+        setSubmittedData({
+          ...formData,
+          contactPerson: `${formData.firstName} ${formData.lastName}`.trim(),
+          address: [formData.address, formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", "),
         });
+        setSubmitSuccess(true);
+        toast.success('Thank you! Your partner registration has been submitted.');
       } else {
         toast.error(result.message || 'Failed to submit registration. Please try again.');
       }
@@ -122,6 +111,66 @@ export default function PartnerForm() {
       setIsSubmitting(false);
     }
   };
+
+  if (submitSuccess && submittedData) {
+    const displayName = [submittedData.firstName, submittedData.lastName].filter(Boolean).join(" ").trim() || submittedData.companyName || "Partner";
+
+    return (
+      <div className="max-w-xl mx-auto my-12 bg-white rounded-2xl shadow-md border border-purple-100 p-8 text-center animate-fadeIn">
+        <div className="w-16 h-16 bg-[#FAF5FF] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#7E22CE]/30 shadow-xs">
+          <svg className="w-8 h-8 text-[#6B21A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#6B21A8] bg-[#FAF5FF] border border-purple-200/80 px-3 py-1 rounded-full mb-3">
+          IndiaMET 2027 • Partner Registration
+        </span>
+        <h2 className="font-bebas text-4xl text-[#581C87] mb-2 uppercase tracking-wide">
+          Thank You, {displayName}!
+        </h2>
+        <p className="text-base text-gray-600 mb-5 leading-relaxed">
+          Your partner enquiry for <strong>IndiaMET 2027 Exhibition &amp; Summit</strong> (13–15 May 2027, Pune) has been submitted successfully.
+        </p>
+
+        <div className="bg-[#FAF5FF]/70 border border-purple-100 rounded-xl p-4 text-left text-xs space-y-2 mb-6">
+          <div className="flex justify-between pb-1.5 border-b border-purple-100">
+            <span className="text-gray-500 font-medium">Name:</span>
+            <span className="font-semibold text-gray-800">{displayName}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-purple-100">
+            <span className="text-gray-500 font-medium">Company:</span>
+            <span className="font-bold text-gray-800">{submittedData.companyName || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-purple-100">
+            <span className="text-gray-500 font-medium">Job Title:</span>
+            <span className="font-semibold text-gray-800">{submittedData.jobTitle || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-purple-100">
+            <span className="text-gray-500 font-medium">Phone Number:</span>
+            <span className="font-semibold text-gray-800">{submittedData.phone || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-purple-100">
+            <span className="text-gray-500 font-medium">Email:</span>
+            <span className="font-semibold text-[#6B21A8]">{submittedData.email || "Not provided"}</span>
+          </div>
+          <div className="flex justify-between pb-1.5 border-b border-purple-100">
+            <span className="text-gray-500 font-medium">Address:</span>
+            <span className="font-semibold text-gray-800">{[submittedData.address, submittedData.city, submittedData.state, submittedData.country, submittedData.pincode].filter(Boolean).join(", ") || "Not provided"}</span>
+          </div>
+          {submittedData.partnershipType && (
+            <div className="flex justify-between">
+              <span className="text-gray-500 font-medium">Partnership Type:</span>
+              <span className="font-semibold text-[#6B21A8] capitalize">{submittedData.partnershipType}</span>
+            </div>
+          )}
+        </div>
+
+        <p className="text-xs text-gray-500 leading-relaxed">
+          A confirmation email has been dispatched to <strong className="text-gray-700">{submittedData.email}</strong>. Our partnership management team will reach out to you shortly with branding guidelines, entitlements, and participation packages.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <>

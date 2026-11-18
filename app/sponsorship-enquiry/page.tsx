@@ -170,19 +170,62 @@ export default function SponsorshipEnquiryPage() {
   };
 
   if (submitSuccess) {
+    const displayName = `${formData.firstName} ${formData.lastName}`.trim() || formData.companyName || "Partner";
+
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-20">
-        <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-20 px-4">
+        <div className="bg-white rounded-2xl shadow-md border border-purple-100 p-8 max-w-lg w-full text-center animate-fadeIn">
+          <div className="w-16 h-16 bg-[#FAF5FF] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#7E22CE]/30 shadow-xs">
+            <svg className="w-8 h-8 text-[#6B21A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h2>
-          <p className="text-gray-600 mb-6">Your sponsorship enquiry has been submitted successfully. Our team will contact you shortly.</p>
-          <Link href="/" className="inline-block bg-[#00A1B1] text-white px-6 py-2 rounded-lg hover:bg-[#003A77] transition">
-            Back to Home
-          </Link>
+          <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#6B21A8] bg-[#FAF5FF] border border-purple-200/80 px-3 py-1 rounded-full mb-3">
+            IndiaMET 2027 • Sponsorship Enquiry
+          </span>
+          <h2 className="font-bebas text-4xl text-[#581C87] mb-2 uppercase tracking-wide">
+            Thank You, {displayName}!
+          </h2>
+          <p className="text-base text-gray-600 mb-5 leading-relaxed">
+            Your sponsorship enquiry for <strong>IndiaMET 2027 Exhibition &amp; Summit</strong> (13–15 May 2027, Pune) has been submitted successfully.
+          </p>
+
+          <div className="bg-[#FAF5FF]/70 border border-purple-100 rounded-xl p-4 text-left text-xs space-y-2 mb-6">
+            <div className="flex justify-between pb-1.5 border-b border-purple-100">
+              <span className="text-gray-500 font-medium">Name:</span>
+              <span className="font-semibold text-gray-800">{displayName}</span>
+            </div>
+            <div className="flex justify-between pb-1.5 border-b border-purple-100">
+              <span className="text-gray-500 font-medium">Company:</span>
+              <span className="font-bold text-gray-800">{formData.companyName || "Not provided"}</span>
+            </div>
+            <div className="flex justify-between pb-1.5 border-b border-purple-100">
+              <span className="text-gray-500 font-medium">Job Title:</span>
+              <span className="font-semibold text-gray-800">{formData.jobTitle || "Not provided"}</span>
+            </div>
+            <div className="flex justify-between pb-1.5 border-b border-purple-100">
+              <span className="text-gray-500 font-medium">Phone Number:</span>
+              <span className="font-semibold text-gray-800">{formData.phone || "Not provided"}</span>
+            </div>
+            <div className="flex justify-between pb-1.5 border-b border-purple-100">
+              <span className="text-gray-500 font-medium">Email:</span>
+              <span className="font-semibold text-[#6B21A8]">{formData.workEmail || "Not provided"}</span>
+            </div>
+            <div className="flex justify-between pb-1.5 border-b border-purple-100">
+              <span className="text-gray-500 font-medium">Address:</span>
+              <span className="font-semibold text-gray-800">{formData.country || "Not provided"}</span>
+            </div>
+            {formData.productSectors && formData.productSectors.length > 0 && (
+              <div className="flex justify-between">
+                <span className="text-gray-500 font-medium">Sectors:</span>
+                <span className="font-semibold text-[#6B21A8]">{formData.productSectors.join(", ")}</span>
+              </div>
+            )}
+          </div>
+
+          <p className="text-xs text-gray-500 leading-relaxed">
+            A confirmation email has been dispatched to <strong className="text-gray-700">{formData.workEmail}</strong>. Our sponsorship and partnerships management team will reach out to you shortly with tailored sponsorship packages, branding deliverables, and booth layout options.
+          </p>
         </div>
       </div>
     );
