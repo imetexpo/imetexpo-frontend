@@ -5,7 +5,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
-import { getContactApiUrl } from "@/lib/api/backendUrl";
+import { sendContactEmail } from "@/lib/api/contact";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
 
@@ -134,17 +134,13 @@ export default function EnquiryForm() {
 
       const result = await submitContactForm(PROJECT_ID_VAR.projectId, payload);
 
-      await fetch(getContactApiUrl(), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      }).catch(() => null);
-
       if (result.errors) {
         toast.error(result.errors[0]?.message || "Failed to save registration lead");
         setLoading(false);
         return;
       }
+
+      await sendContactEmail(payload);
 
       setSubmittedName(formData.name.split(" ")[0] || "Visitor");
       setSubmitSuccess(true);

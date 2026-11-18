@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
-import { getContactApiUrl } from "@/lib/api/backendUrl";
+import { sendContactEmail } from "@/lib/api/contact";
 
 export default function SponsorForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -75,23 +75,12 @@ export default function SponsorForm() {
         submittedAt: new Date().toISOString(),
       };
 
-      const response = await fetch(getContactApiUrl(), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const result = await response.json().catch(() => ({ success: false }));
-
-      if (result.success) {
-        setSubmittedData(payload);
-        setSubmitSuccess(true);
-        toast.success("Thank you! Your sponsor registration has been submitted.");
-      } else {
-        toast.error(result.message || "Failed to submit registration. Please try again.");
-      }
+      await sendContactEmail(payload);
+      setSubmittedData(payload);
+      setSubmitSuccess(true);
+      toast.success("Thank you! Your sponsor registration has been submitted.");
     } catch (error) {
-      toast.error("Network error. Please check your connection and try again.");
+      toast.error(error instanceof Error ? error.message : "Network error. Please check your connection and try again.");
       console.error("Submission error:", error);
     } finally {
       setIsSubmitting(false);

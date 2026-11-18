@@ -5,7 +5,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
-import { getContactApiUrl } from "@/lib/api/backendUrl";
+import { sendContactEmail } from "@/lib/api/contact";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
 
@@ -126,12 +126,6 @@ export default function ExhibitorForm() {
 
       const result = await submitContactForm(PROJECT_ID_VAR.projectId, payload);
 
-      await fetch(getContactApiUrl(), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      }).catch(() => null);
-
       if (result.errors) {
         setSubmitError(result.errors[0]?.message || "Failed to submit exhibiting enquiry");
         toast.error("Submission failed. Please try again.");
@@ -139,12 +133,14 @@ export default function ExhibitorForm() {
         return;
       }
 
+      await sendContactEmail(payload);
+
       setSubmitSuccess(true);
       toast.success("Thank you! Your exhibiting enquiry has been submitted.");
     } catch (error: any) {
       console.error("Error submitting form:", error);
       setSubmitError(error.message || "Network error occurred. Please try again.");
-      toast.error("A network error occurred. Please try again.");
+      toast.error(error.message || "A network error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
