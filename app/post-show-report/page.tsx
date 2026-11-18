@@ -252,7 +252,7 @@ export default function PostShowReportPage() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed font-sans">
-                Gain a clear picture of the opportunities shaping Asia's tyre manufacturing and rubber processing industry.
+                Gain a clear picture of the opportunities shaping Asia's industrial metrology, precision measurement, and quality engineering industry.
                 The Post-Show Report provides verified visitor and exhibitor data, event highlights, 
                 and technical session summaries to help you evaluate the market and plan your next participation.
               </p>

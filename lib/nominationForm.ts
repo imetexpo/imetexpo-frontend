@@ -1,10 +1,10 @@
 import { COUNTRIES } from './registrationOptions';
 
 export const NOMINATION_CATEGORIES = [
-  'Outstanding Tyre Manufacturing',
-  'Best Rubber Compound Innovation',
+  'Outstanding Metrology Innovation',
+  'Dimensional Metrology Excellence',
   'Quality Excellence Award',
-  'Tyre Testing & QC Award',
+  'Optical & 3D Scanning QC Award',
   'Machinery & Automation Award',
   'Inspection Technology Award',
   'Recycling & Sustainability Award',

@@ -9,10 +9,11 @@ function getApiBase() {
 function getExhibitorToken() {
   if (typeof window === "undefined") return null;
   return (
+    localStorage.getItem("indiamet_token") ||
+    localStorage.getItem("token") ||
     localStorage.getItem("tyre_expo_token") ||
     localStorage.getItem("exhibitorToken") ||
-    localStorage.getItem("exhibitor_token") ||
-    localStorage.getItem("token")
+    localStorage.getItem("exhibitor_token")
   );
 }
 

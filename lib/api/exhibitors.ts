@@ -398,10 +398,11 @@ export const dashboardAPI = {
         const baseUrl = rawUrl.replace(/\/api\/?$/, "");
         const token =
             (typeof window !== "undefined" && (
+                localStorage.getItem("indiamet_token") ||
+                localStorage.getItem("token") ||
                 localStorage.getItem("tyre_expo_token") ||
                 localStorage.getItem("exhibitorToken") ||
-                localStorage.getItem("exhibitor_token") ||
-                localStorage.getItem("token")
+                localStorage.getItem("exhibitor_token")
             )) || "";
         const response = await axios.get(`${baseUrl}/api/exhibitorDashboard/payment`, {
             headers: { Authorization: `Bearer ${token}` }
@@ -417,10 +418,11 @@ export const dashboardAPI = {
         const baseUrl = rawUrl.replace(/\/api\/?$/, "");
         const token =
             (typeof window !== "undefined" && (
+                localStorage.getItem("indiamet_token") ||
+                localStorage.getItem("token") ||
                 localStorage.getItem("tyre_expo_token") ||
                 localStorage.getItem("exhibitorToken") ||
-                localStorage.getItem("exhibitor_token") ||
-                localStorage.getItem("token")
+                localStorage.getItem("exhibitor_token")
             )) || "";
         const response = await axios.post(`${baseUrl}/api/exhibitorDashboard/confirm-stall-payment`, payload, {
             headers: { Authorization: `Bearer ${token}` }

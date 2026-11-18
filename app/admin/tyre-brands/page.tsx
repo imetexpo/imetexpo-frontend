@@ -17,13 +17,13 @@ interface TyreBrand {
 }
 
 const sampleBrands: TyreBrand[] = [
-    { id: "1", name: "Apollo Tyres", logo: "A", country: "India", yearFounded: 1972, description: "Leading tyre manufacturer in India", tyreCount: 24, status: "active" },
-    { id: "2", name: "MRF", logo: "M", country: "India", yearFounded: 1946, description: "India's largest tyre manufacturer", tyreCount: 32, status: "active" },
-    { id: "3", name: "Bridgestone", logo: "B", country: "Japan", yearFounded: 1931, description: "World's largest tyre manufacturer", tyreCount: 18, status: "active" },
-    { id: "4", name: "CEAT", logo: "C", country: "India", yearFounded: 1958, description: "Leading tyre brand in India", tyreCount: 20, status: "active" },
-    { id: "5", name: "JK Tyre", logo: "J", country: "India", yearFounded: 1974, description: "Leading tyre manufacturer", tyreCount: 15, status: "inactive" },
-    { id: "6", name: "Continental", logo: "Co", country: "Germany", yearFounded: 1871, description: "Premium German tyre brand", tyreCount: 12, status: "active" },
-    { id: "7", name: "Goodyear", logo: "G", country: "USA", yearFounded: 1898, description: "American tyre giant", tyreCount: 10, status: "active" },
+    { id: "1", name: "Zeiss Industrial Metrology", logo: "Z", country: "Germany", yearFounded: 1846, description: "Leading optical and industrial coordinate metrology systems", tyreCount: 24, status: "active" },
+    { id: "2", name: "Mitutoyo", logo: "M", country: "Japan", yearFounded: 1934, description: "World leader in precision measuring instruments and CMMs", tyreCount: 32, status: "active" },
+    { id: "3", name: "Hexagon Manufacturing Intelligence", logo: "H", country: "Sweden", yearFounded: 1992, description: "Digital reality and autonomous measurement solutions", tyreCount: 18, status: "active" },
+    { id: "4", name: "Renishaw", logo: "R", country: "UK", yearFounded: 1973, description: "Industrial measurement probes and calibration systems", tyreCount: 20, status: "active" },
+    { id: "5", name: "Keyence", logo: "K", country: "Japan", yearFounded: 1974, description: "Sensors, vision systems, and 3D measurement instruments", tyreCount: 15, status: "inactive" },
+    { id: "6", name: "Faro Technologies", logo: "F", country: "USA", yearFounded: 1981, description: "3D measurement, laser scanning, and imaging systems", tyreCount: 12, status: "active" },
+    { id: "7", name: "Mahr", logo: "Ma", country: "Germany", yearFounded: 1861, description: "High-precision dimensional metrology equipment", tyreCount: 10, status: "active" },
 ];
 
 export default function TyreBrandsPage() {
@@ -42,8 +42,8 @@ export default function TyreBrandsPage() {
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Tyre Brands</h1>
-                    <p className="text-gray-400 mt-1">Manage tyre brands participating in the exhibition</p>
+                    <h1 className="text-2xl font-bold text-white">Metrology Brands</h1>
+                    <p className="text-gray-400 mt-1">Manage metrology and precision instrumentation brands participating in IndiaMet 2027</p>
                 </div>
                 <Link
                     href="/admin/tyre-brands/new"
@@ -73,7 +73,7 @@ export default function TyreBrandsPage() {
                 <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
                     <div className="flex items-center gap-2 text-gray-400 mb-2">
                         <Package size={16} />
-                        <span className="text-sm">Total Tyres</span>
+                        <span className="text-sm">Total Instruments</span>
                     </div>
                     <p className="text-2xl font-bold text-white">{sampleBrands.reduce((acc, b) => acc + b.tyreCount, 0)}</p>
                 </div>
@@ -140,7 +140,7 @@ export default function TyreBrandsPage() {
                                     <p className="text-white">{brand.yearFounded}</p>
                                 </div>
                                 <div className="text-center">
-                                    <span className="text-xs text-gray-500">Tyre Models</span>
+                                    <span className="text-xs text-gray-500">Instruments</span>
                                     <p className="text-white font-semibold">{brand.tyreCount}</p>
                                 </div>
                                 <div>
@@ -157,7 +157,7 @@ export default function TyreBrandsPage() {
             {filteredBrands.length === 0 && (
                 <div className="text-center py-12 bg-gray-800/50 rounded-xl border border-gray-700">
                     <Package className="h-12 w-12 text-gray-500 mx-auto mb-3" />
-                    <p className="text-gray-400">No tyre brands found</p>
+                    <p className="text-gray-400">No metrology brands found</p>
                 </div>
             )}
         </div>

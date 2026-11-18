@@ -12,7 +12,11 @@ const exhibitorClient = axios.create({
 
 // Add auth token - but don't redirect for public endpoints
 exhibitorClient.interceptors.request.use((config) => {
-    const token = localStorage.getItem('tyre_expo_token') || localStorage.getItem('exhibitorToken');
+    const token =
+        localStorage.getItem('indiamet_token') ||
+        localStorage.getItem('token') ||
+        localStorage.getItem('tyre_expo_token') ||
+        localStorage.getItem('exhibitorToken');
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }
@@ -36,6 +40,8 @@ exhibitorClient.interceptors.response.use(
         }
 
         if (error.response?.status === 401 && isAuthEndpoint) {
+            localStorage.removeItem('indiamet_token');
+            localStorage.removeItem('indiamet_exhibitor_data');
             localStorage.removeItem('tyre_expo_token');
             localStorage.removeItem('exhibitorToken');
             localStorage.removeItem('exhibitorData');

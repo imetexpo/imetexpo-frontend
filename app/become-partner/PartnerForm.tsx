@@ -352,7 +352,7 @@ export default function PartnerForm() {
                 className="mt-1 h-5 w-5 border-gray-300 rounded focus:ring-[#00A1B1] text-[#00A1B1]"
               />
               <label htmlFor="consent" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
-                I hereby give consent to <strong>Tyre Expo Organizing Committee</strong>
+                I hereby give consent to <strong>IndiaMet 2027 Organizing Committee</strong>
                 for automated and mixed processing of my personal data in accordance
                 with the <a href="/privacy-policy" className="text-[#00A1B1] hover:text-[#d97000] underline font-medium">Personal Data Policy</a>.
                 <span className="text-[#00A1B1] ml-1">*</span>

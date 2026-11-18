@@ -327,10 +327,10 @@ export default function EnquiryForm() {
           className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
         >
           <option value="">Select your industry profile</option>
-          <option value="Tyre Manufacturing">Tyre Manufacturing</option>
-          <option value="Rubber Processing">Rubber Processing</option>
-          <option value="Automotive">Automotive</option>
-          <option value="Machinery">Machinery & Equipment</option>
+          <option value="Precision Metrology & Inspection">Precision Metrology & Inspection</option>
+          <option value="Quality Assurance & Testing">Quality Assurance & Testing</option>
+          <option value="Automotive">Automotive & Aerospace</option>
+          <option value="Machinery">Machinery & Tooling</option>
           <option value="Raw Materials">Raw Materials Supply</option>
           <option value="Logistics">Logistics & Supply Chain</option>
           <option value="Research">Research & Development</option>

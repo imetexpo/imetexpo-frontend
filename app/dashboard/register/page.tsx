@@ -80,15 +80,19 @@ export default function RegisterPage() {
 
     // Simulate API call
     setTimeout(() => {
-      localStorage.setItem('tyre_expo_token', 'mock_token_123');
-      localStorage.setItem('tyre_exhibitor_data', JSON.stringify({
+      const exhibitorPayload = JSON.stringify({
         id: '1',
         company: formData.companyName,
         email: formData.email,
         name: formData.contactPerson,
         phone: formData.phone,
         boothNumber: 'TBD'
-      }));
+      });
+      localStorage.setItem('indiamet_token', 'mock_token_123');
+      localStorage.setItem('token', 'mock_token_123');
+      localStorage.setItem('tyre_expo_token', 'mock_token_123');
+      localStorage.setItem('indiamet_exhibitor_data', exhibitorPayload);
+      localStorage.setItem('tyre_exhibitor_data', exhibitorPayload);
       router.push('/dashboard');
       setLoading(false);
     }, 1000);
@@ -110,7 +114,7 @@ export default function RegisterPage() {
                 <circle cx="12" cy="12" r="4" strokeWidth="1.5" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-white">Register for Tyre Expo 2024</h2>
+            <h2 className="text-2xl font-bold text-white">Register for IndiaMet 2027</h2>
             <p className="text-gray-300 mt-2">Create your exhibitor account</p>
           </div>
 

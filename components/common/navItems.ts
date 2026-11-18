@@ -27,7 +27,7 @@ export const navItems: NavItem[] = [
      
       { text: 'Become an Exhibitor', href: '/exhibiting-enquiry/' },
       { text: 'Sponsorship Opportunities', href: '/sponsorship-opportunities/' },
-      { text: 'View Exhibitor List 2026', href: '/exhibition-directory/' },
+      { text: 'View Exhibitor List 2027', href: '/exhibition-directory/' },
     ],
   },
   {

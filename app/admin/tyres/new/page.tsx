@@ -56,8 +56,8 @@ export default function AddTyrePage() {
         }, 1000);
     };
 
-    const categories = ["Passenger", "Truck/Bus", "Two-Wheeler", "Off-Road", "Agricultural", "Industrial", "Racing"];
-    const brands = ["Apollo", "MRF", "Bridgestone", "CEAT", "JK Tyre", "Continental", "Goodyear"];
+    const categories = ["CMM", "Optical 3D Scanning", "Laser Trackers", "Surface Metrology", "Vision Systems", "Calibration", "NDT"];
+    const brands = ["Zeiss", "Mitutoyo", "Hexagon", "Renishaw", "Faro", "Keyence", "Mahr"];
 
     return (
         <div className="space-y-6 p-6">
@@ -67,8 +67,8 @@ export default function AddTyrePage() {
                     <ArrowLeft className="h-5 w-5 text-gray-400" />
                 </button>
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Add New Tyre Product</h1>
-                    <p className="text-gray-400 mt-1">Add a new tyre product to the catalog</p>
+                    <h1 className="text-2xl font-bold text-white">Add New Metrology Equipment</h1>
+                    <p className="text-gray-400 mt-1">Add new metrology and inspection equipment to the catalog</p>
                 </div>
             </div>
 
@@ -174,7 +174,7 @@ export default function AddTyrePage() {
 
                         <div>
                             <label className="block text-sm font-medium text-gray-300 mb-2">
-                                Price (per tyre)
+                                Price (per unit)
                             </label>
                             <input
                                 type="text"

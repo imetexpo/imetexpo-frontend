@@ -36,7 +36,7 @@ export default function BrandsPage() {
 
     const fetchBrands = async () => {
         try {
-            const token = localStorage.getItem('tyre_expo_token');
+            const token = localStorage.getItem('indiamet_token') || localStorage.getItem('token') || localStorage.getItem('tyre_expo_token');
             const response = await fetch(`${API_BASE}/exhibitorDashboard/brands`, {
                 headers: { 'Authorization': `Bearer ${token}` },
             });
@@ -54,7 +54,7 @@ export default function BrandsPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const token = localStorage.getItem('tyre_expo_token');
+            const token = localStorage.getItem('indiamet_token') || localStorage.getItem('token') || localStorage.getItem('tyre_expo_token');
             const url = editingBrand
                 ? `${API_BASE}/exhibitorDashboard/brands/${editingBrand.id}`
                 : `${API_BASE}/exhibitorDashboard/brands`;
@@ -82,7 +82,7 @@ export default function BrandsPage() {
     const handleDelete = async (id: string) => {
         if (!confirm('Are you sure you want to delete this brand?')) return;
         try {
-            const token = localStorage.getItem('tyre_expo_token');
+            const token = localStorage.getItem('indiamet_token') || localStorage.getItem('token') || localStorage.getItem('tyre_expo_token');
             const response = await fetch(`${API_BASE}/exhibitorDashboard/brands/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` },

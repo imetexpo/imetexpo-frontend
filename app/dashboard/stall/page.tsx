@@ -182,7 +182,7 @@ export default function MyStallsPage() {
             <div className="flex justify-between items-start">
               <div>
                 <h2 className="text-2xl font-bold">{stall.boothNumber || 'Stall Not Assigned'}</h2>
-                <p className="text-sm text-amber-100 mt-1">Tyre Pavilion, Hall A</p>
+                <p className="text-sm text-amber-100 mt-1">Metrology Pavilion, Hall A</p>
               </div>
               <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(stall.status)}`}>
                 {getStatusIcon(stall.status)}

@@ -291,7 +291,7 @@ export default function ElectricalRequirementsPage() {
                 value={formData.specialEquipment}
                 onChange={(e) => setFormData({ ...formData, specialEquipment: e.target.value })}
                 className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500"
-                placeholder="Describe any special electrical equipment you'll be using (e.g., tyre curing press, extruder, etc.)"
+                placeholder="Describe any special electrical equipment you'll be using (e.g., CMM, laser tracker, optical scanner, etc.)"
               />
             </div>
 

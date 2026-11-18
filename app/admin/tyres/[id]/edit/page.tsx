@@ -12,22 +12,22 @@ export default function EditTyrePage() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
-        brand: "Apollo",
-        model: "Alnac 4G",
-        category: "Passenger",
-        size: "185/65 R15",
-        loadIndex: "88H",
-        speedRating: "H",
-        price: "4500",
-        stock: "45",
-        description: "The Apollo Alnac 4G is a premium touring tyre designed for comfort and performance.",
+        brand: "Zeiss",
+        model: "PRISMO CMM",
+        category: "CMM",
+        size: "900x1200x700 mm",
+        loadIndex: "0.7+L/400 μm",
+        speedRating: "VAST gold",
+        price: "4500000",
+        stock: "5",
+        description: "The Zeiss PRISMO coordinate measuring machine is the reference standard in high-precision measurement.",
         status: "active",
     });
 
     const [specifications, setSpecifications] = useState([
-        { key: "Tread Depth", value: "8.5 mm" },
-        { key: "UTQG Rating", value: "500 A A" },
-        { key: "Max Pressure", value: "44 PSI" },
+        { key: "Measuring Range", value: "900 x 1200 x 700 mm" },
+        { key: "Accuracy (MPE_E)", value: "0.7 + L/400 μm" },
+        { key: "Max Table Load", value: "1,000 kg" },
     ]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -58,8 +58,8 @@ export default function EditTyrePage() {
         }, 1000);
     };
 
-    const categories = ["Passenger", "Truck/Bus", "Two-Wheeler", "Off-Road", "Agricultural", "Industrial", "Racing"];
-    const brands = ["Apollo", "MRF", "Bridgestone", "CEAT", "JK Tyre", "Continental", "Goodyear"];
+    const categories = ["CMM", "Optical 3D Scanning", "Laser Trackers", "Surface Metrology", "Vision Systems", "Calibration", "NDT"];
+    const brands = ["Zeiss", "Mitutoyo", "Hexagon", "Renishaw", "Faro", "Keyence", "Mahr"];
 
     return (
         <div className="space-y-6 p-6">
@@ -69,8 +69,8 @@ export default function EditTyrePage() {
                     <ArrowLeft className="h-5 w-5 text-gray-400" />
                 </button>
                 <div>
-                    <h1 className="text-2xl font-bold text-white">Edit Tyre Product</h1>
-                    <p className="text-gray-400 mt-1">Update tyre product information</p>
+                    <h1 className="text-2xl font-bold text-white">Edit Metrology Equipment</h1>
+                    <p className="text-gray-400 mt-1">Update metrology equipment information</p>
                 </div>
             </div>
 

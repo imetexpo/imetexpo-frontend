@@ -80,7 +80,7 @@ export default function MachineryRequirementsPage() {
         </div>
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Machinery Setup Requirements</h1>
-          <p className="text-gray-500 text-sm">Tyre manufacturing and display machinery details</p>
+          <p className="text-gray-500 text-sm">Industrial metrology, inspection, and display machinery details</p>
         </div>
       </div>
 
@@ -107,7 +107,7 @@ export default function MachineryRequirementsPage() {
                   value={machine.name}
                   onChange={(e) => handleMachineChange(machine.id, 'name', e.target.value)}
                   className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500"
-                  placeholder="e.g., Tyre Curing Press, Extruder, Mixer"
+                  placeholder="e.g., Coordinate Measuring Machine, Optical Scanner, Calibration Rig"
                   required
                 />
               </div>

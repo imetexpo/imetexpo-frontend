@@ -43,14 +43,14 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/a
 const DEFAULT_SECTIONS: ManualSection[] = [
   {
     id: '1',
-    title: 'Welcome to IndiaMet Expo 2027',
-    content: 'Welcome to the IndiaMet Expo 2027. This manual contains important information for all exhibitors. Please read all sections carefully to ensure a smooth and successful exhibition experience.\n\nKey Highlights:\n• Over 200+ exhibitors from 15+ countries\n• 50,000+ expected visitors\n• 2,000+ sq.m of exhibition space\n• 3 days of networking and business opportunities',
+    title: "Welcome to IndiaMet 2027 - India's Dedicated Industrial Metrology Exhibition And Summit",
+    content: 'Welcome to IndiaMet 2027 - India\'s Dedicated Industrial Metrology Exhibition And Summit. This manual contains important information for all exhibitors. Please read all sections carefully to ensure a smooth and successful exhibition experience.\n\nKey Highlights:\n• Over 200+ exhibitors from 15+ countries\n• 15,000+ expected trade visitors\n• Dedicated precision metrology, CMM, 3D scanning & quality testing zones\n• 3 days of high-value B2B networking and technical conferences',
     category: 'general'
   },
   {
     id: '2',
     title: 'Important Dates & Deadlines',
-    content: 'Setup Schedule:\n• Setup Begins: 13th November, 2024 (9:00 AM)\n• Setup Ends: 14th November, 2024 (6:00 PM)\n\nExhibition Days:\n• Day 1: 14th November, 2024 (10:00 AM - 7:00 PM)\n• Day 2: 15th November, 2024 (10:00 AM - 7:00 PM)\n• Day 3: 16th November, 2024 (10:00 AM - 7:00 PM)\n• Day 4: 17th November, 2024 (10:00 AM - 5:00 PM)\n\nDismantling:\n• Dismantling Begins: 18th November, 2024 (9:00 AM)\n• Site Clearance Deadline: 20th November, 2024 (6:00 PM)\n\nPayment Deadlines:\n• Early Bird Discount: 30th September, 2024\n• Standard Registration: 31st October, 2024\n• Late Registration (with fee): After 31st October, 2024',
+    content: 'Setup Schedule:\n• Setup Begins: 12th May, 2027 (9:00 AM)\n• Setup Ends: 12th May, 2027 (10:00 PM)\n\nExhibition Days (13–15 May 2027):\n• Day 1: 13th May, 2027 (10:00 AM - 6:00 PM)\n• Day 2: 14th May, 2027 (10:00 AM - 6:00 PM)\n• Day 3: 15th May, 2027 (10:00 AM - 5:00 PM)\n\nDismantling:\n• Dismantling Begins: 15th May, 2027 (6:00 PM)\n• Site Clearance Deadline: 16th May, 2027 (12:00 PM)\n\nDeadlines:\n• Stall Design Approval: 15th April, 2027\n• Extra Requirements Due: 25th April, 2027\n• Badges & Passes Registration: 5th May, 2027',
     category: 'dates'
   },
   {
@@ -62,19 +62,19 @@ const DEFAULT_SECTIONS: ManualSection[] = [
   {
     id: '4',
     title: 'Rules & Regulations',
-    content: 'General Rules:\n• No loud music or announcements without prior approval\n• Food and beverage sales require separate license\n• No subletting of booth space allowed\n• All exhibits must be relevant to the tyre industry\n\nProhibited Items:\n• Hazardous materials\n• Weapons or explosives\n• Unauthorized promotional materials\n• Live animals (except service animals)\n\nViolation of rules may result in:\n• Immediate booth closure\n• Fine and penalties\n• Ban from future exhibitions',
+    content: 'General Rules:\n• No loud music or announcements without prior approval\n• Food and beverage sales require separate license\n• No subletting of booth space allowed\n• All exhibits must be relevant to industrial metrology, precision measurement, quality testing, and inspection\n\nProhibited Items:\n• Hazardous materials\n• Weapons or explosives\n• Unauthorized promotional materials\n• Live animals (except service animals)\n\nViolation of rules may result in:\n• Immediate booth closure\n• Fine and penalties\n• Ban from future exhibitions',
     category: 'regulations'
   },
   {
     id: '5',
     title: 'Security & Safety',
-    content: 'Security Services:\n• 24/7 security personnel on-site\n• CCTV surveillance throughout the venue\n• Access control at all entry points\n• Baggage scanning at entrances\n\nEmergency Procedures:\n• Fire exits are marked throughout the venue\n• First aid room located near Hall 1 entrance\n• Emergency contact: 911 (within venue)\n• In case of emergency, follow venue announcements\n\nInsurance:\n• All exhibitors must have valid public liability insurance\n• Insurance certificate must be submitted before setup\n• Coverage of at least ₹1 Crore recommended',
+    content: 'Security Services:\n• 24/7 security personnel on-site\n• CCTV surveillance throughout the venue\n• Access control at all entry points\n• Baggage scanning at entrances\n\nEmergency Procedures:\n• Fire exits are marked throughout the venue\n• First aid room located near Hall 1 entrance\n• Emergency contact: Available on site\n• In case of emergency, follow venue announcements\n\nInsurance:\n• All exhibitors must have valid public liability insurance\n• Insurance certificate must be submitted before setup\n• Coverage of at least ₹1 Crore recommended',
     category: 'security'
   },
   {
     id: '6',
     title: 'Logistics & Shipping',
-    content: 'Shipping Address:\nIndiaMet Expo 2027\n[Exhibitor Name], Booth No. [Your Booth Number]\nIndia Expo Centre & Mart\nGreater Noida, Uttar Pradesh - 201306\n\nImportant Notes:\n• All shipments must be labeled properly\n• On-site handling charges apply\n• Storage available from 10th November, 2024\n• Empty crate storage available\n\nCustoms Clearance (International Exhibitors):\n• Temporary import documentation required\n• Contact logistics partner for assistance\n• Allow 5-7 days for customs clearance',
+    content: 'Shipping Address:\nIndiaMet 2027 Exhibition\n[Exhibitor Name], Booth No. [Your Booth Number]\nAuto Cluster Exhibition Centre\nOld Mumbai - Pune Highway, Chinchwad, Pune, Maharashtra 411019, India\n\nImportant Notes:\n• All shipments must be labeled properly\n• On-site handling charges apply\n• Storage available from 11th May, 2027\n• Empty crate storage available\n\nCustoms Clearance (International Exhibitors):\n• Temporary import documentation required\n• Contact logistics partner for assistance\n• Allow 5-7 days for customs clearance',
     category: 'logistics'
   }
 ];

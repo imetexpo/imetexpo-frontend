@@ -204,7 +204,7 @@ export default function SponsorshipEnquiryPage() {
               </h1>
               <div className="font-sans text-[16px] sm:text-[18px] text-gray-700 leading-[1.6] space-y-4">
                 <p>
-                  Showcase your brand to thousands of tyre industry professionals 
+                  Showcase your brand to thousands of precision metrology and quality engineering professionals 
                   and decision-makers from across the globe.
                 </p>
                 <p>

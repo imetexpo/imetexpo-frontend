@@ -21,19 +21,19 @@ interface BrandDetail {
 
 const sampleBrand: BrandDetail = {
     id: "1",
-    name: "Apollo Tyres",
-    logo: "A",
-    country: "India",
-    yearFounded: 1972,
-    description: "Apollo Tyres is a leading tyre manufacturer based in India. The company produces a wide range of tyres for passenger cars, commercial vehicles, and off-road vehicles.",
+    name: "Zeiss Industrial Metrology",
+    logo: "Z",
+    country: "Germany",
+    yearFounded: 1846,
+    description: "Zeiss Industrial Metrology is a leading manufacturer of multidimensional metrology solutions. The company produces coordinate measuring machines, optical and multisensor systems, and metrology software for industrial manufacturing.",
     tyreCount: 24,
     exhibitorCount: 3,
     status: "active",
     products: [
-        { id: "p1", name: "Alnac 4G", category: "Passenger" },
-        { id: "p2", name: "Amazer", category: "Passenger" },
-        { id: "p3", name: "Apterra", category: "SUV" },
-        { id: "p4", name: "Apterra HT", category: "SUV" },
+        { id: "p1", name: "PRISMO CMM", category: "Coordinate Measuring Machines" },
+        { id: "p2", name: "COMET 3D Scanner", category: "Optical & 3D Scanning" },
+        { id: "p3", name: "SURFCOM NEX", category: "Surface & Form Metrology" },
+        { id: "p4", name: "O-INSPECT", category: "Multisensor Systems" },
     ],
 };
 
@@ -117,7 +117,7 @@ export default function BrandDetailPage() {
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-lg font-semibold text-white flex items-center gap-2">
                                 <Package size={18} className="text-orange-400" />
-                                Tyre Products ({brand.tyreCount})
+                                Metrology Products ({brand.tyreCount})
                             </h2>
                             <Link href="/admin/tyres/new" className="text-sm text-orange-400 hover:text-orange-300">
                                 + Add Product

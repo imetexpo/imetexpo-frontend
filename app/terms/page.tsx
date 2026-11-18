@@ -7,24 +7,24 @@ import { Save, Eye, Clock } from 'lucide-react';
 export default function TermsPage() {
     const [content, setContent] = useState(`# Terms & Conditions
 
-Last updated: January 15, 2024
+Last updated: May 2027
 
 ## 1. Acceptance of Terms
 
-By accessing and using the Logistics Exhibition 2024 website and services, you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.
+By accessing and using the IndiaMet 2027 - India's Dedicated Industrial Metrology Exhibition And Summit website and services, you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.
 
 ## 2. Exhibition Registration
 
 ### 2.1 Eligibility
-Registration is open to professionals in the logistics and supply chain industry. You must be at least 18 years old to register.
+Registration is open to professionals in the industrial metrology, precision engineering, quality control, and manufacturing inspection industries. You must be at least 18 years old to register.
 
 ### 2.2 Registration Process
 - Complete the online registration form with accurate information
-- Pay the applicable registration fees
+- Pay the applicable registration fees (if applicable)
 - Receive confirmation via email
 
 ### 2.3 Registration Fees
-- All fees are in US Dollars (USD)
+- All fees are in Indian Rupees (INR) unless specified otherwise
 - Fees are non-refundable except as specified in our Cancellation Policy
 - Early bird discounts are available until specified dates
 
@@ -32,9 +32,9 @@ Registration is open to professionals in the logistics and supply chain industry
 
 ### 3.1 Payment Methods
 We accept the following payment methods:
-- Credit cards (Visa, MasterCard, American Express)
-- Bank transfers
-- Company checks
+- Credit cards / Debit cards
+- Net Banking / UPI
+- Bank transfers (NEFT / RTGS)
 
 ### 3.2 Payment Deadlines
 Full payment must be received by the dates specified during registration. Late payments may incur additional fees.
@@ -54,7 +54,7 @@ We reserve the right to cancel or reschedule the exhibition. In such cases, regi
 All attendees, exhibitors, and speakers must adhere to our Code of Conduct, which includes:
 - Professional behavior at all times
 - Respect for other participants
-- Compliance with venue rules and regulations
+- Compliance with venue rules and regulations at Auto Cluster Exhibition Centre, Pune, India
 - No harassment or discrimination of any kind
 
 ## 6. Intellectual Property
@@ -79,17 +79,17 @@ We reserve the right to modify these terms at any time. Continued use of our ser
 
 ## 10. Governing Law
 
-These terms shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of law provisions.
+These terms shall be governed by and construed in accordance with the laws of India, under the jurisdiction of the courts of Pune, Maharashtra.
 
 ## 11. Contact Information
 
 For questions about these Terms & Conditions, please contact us at:
 
-Email: legal@logistics-expo.com
-Phone: +1 (555) 123-4567
-Address: 123 Exhibition Center, Downtown, City, Country 12345`);
+Email: info@indiametexpo.com
+Venue: Auto Cluster Exhibition Centre, Pune, India
+Dates: 13-15 May 2027`);
 
-    const [lastSaved, setLastSaved] = useState('2024-01-15 11:15 AM');
+    const [lastSaved, setLastSaved] = useState('2027-05-01 10:00 AM');
     const [isSaving, setIsSaving] = useState(false);
 
     const handleSave = async () => {

@@ -48,7 +48,7 @@ export type FinancePayment = {
 
 export function getAdminAuthToken() {
   if (typeof window === "undefined") return null;
-  return localStorage.getItem("token") || localStorage.getItem("admin_token") || localStorage.getItem("tyre_expo_token");
+  return localStorage.getItem("indiamet_token") || localStorage.getItem("token") || localStorage.getItem("admin_token") || localStorage.getItem("tyre_expo_token");
 }
 
 function parseJson<T>(value: T | string | null | undefined): T | undefined {

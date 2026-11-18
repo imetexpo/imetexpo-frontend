@@ -96,7 +96,7 @@ export default function ExhibitorDetailPage() {
     if (navigator.share) {
       navigator.share({
         title: company?.name,
-        text: `Check out ${company?.name} at INDIAMET Expo 2026`,
+        text: `Check out ${company?.name} at IndiaMet 2027 - India's Dedicated Industrial Metrology Exhibition And Summit`,
         url: window.location.href,
       });
     } else {

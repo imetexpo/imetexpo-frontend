@@ -73,6 +73,7 @@ export default function CashfreePayment({
     try {
       // Get exhibitor details from localStorage
       const exhibitorData = 
+        localStorage.getItem('indiamet_exhibitor_data') ||
         localStorage.getItem('exhibitor_data') || 
         localStorage.getItem('exhibitorData') || 
         localStorage.getItem('tyre_exhibitor_data');
@@ -87,10 +88,11 @@ export default function CashfreePayment({
       }
 
       const token = 
+        localStorage.getItem('indiamet_token') ||
+        localStorage.getItem('token') ||
         localStorage.getItem('tyre_expo_token') || 
         localStorage.getItem('exhibitorToken') || 
-        localStorage.getItem('exhibitor_token') || 
-        localStorage.getItem('token');
+        localStorage.getItem('exhibitor_token');
       const payableAmount = roundMoney(amount);
 
       if (payableAmount < 1) {

@@ -66,6 +66,7 @@ function getApiBaseUrl(): string {
 function getAuthToken(): string | null {
   if (typeof window === 'undefined') return null;
   return (
+    localStorage.getItem('indiamet_token') ||
     localStorage.getItem('adminToken') ||
     localStorage.getItem('admin_token') ||
     localStorage.getItem('token') ||
