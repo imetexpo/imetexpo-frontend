@@ -176,7 +176,7 @@ export default function TyresPage() {
                 ))}
             </div>
 
-            {filteredTyres.length === 0 && (
+            {filteredEquipment.length === 0 && (
                 <div className="text-center py-12 bg-gray-800/50 rounded-xl border border-gray-700">
                     <Truck className="h-12 w-12 text-gray-500 mx-auto mb-3" />
                     <p className="text-gray-400">No metrology equipment found</p>
