@@ -3,7 +3,6 @@
 import React from "react";
 import { MessageCircle } from "lucide-react";
 
-// whats chat direct 
 const WhatsAppButton = () => {
   const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "9148319993"; // Replace with your WhatsApp number
   const message = "Hello, I would like to know more about your event.";
