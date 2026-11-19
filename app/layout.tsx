@@ -8,6 +8,7 @@ import Script from "next/script";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { Providers } from "./providers";
 import { Toaster } from "react-hot-toast";
 import { UTMProvider } from "@/components/UTMProvider";
@@ -183,6 +184,8 @@ export default function RootLayout({
         </div>
 
         {!hideFooter && <Footer />}
+
+        <WhatsAppButton />
       </body>
     </html>
   );
