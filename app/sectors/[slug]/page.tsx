@@ -1,55 +1,81 @@
 // app/sectors/[slug]/page.tsx
-"use client";
-
-import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getSectorBySlug, Sector } from "@/data/sectors";
+import { getSectorBySlug, getAllSectorSlugs } from "@/data/sectors";
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
-import LoadingDots from '@/components/ui/LoadingDots';
 
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
-export default function SectorPage() {
-  const params = useParams();
-  const slug = params.slug as string;
-  
-  const [loading, setLoading] = useState(true);
-  const [sector, setSector] = useState<Sector | null>(null);
+export function generateStaticParams() {
+  return getAllSectorSlugs().map((slug) => ({
+    slug,
+  }));
+}
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 800);
-    const foundSector = getSectorBySlug(slug);
-    setSector(foundSector || null);
-    return () => clearTimeout(timer);
-  }, [slug]);
-
-  if (loading) {
-    return (
-      <LoadingDots fullScreen />
-    );
-  }
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const sector = getSectorBySlug(slug);
 
   if (!sector) {
-    return (
-      <div className="page-spacing-wrapper lg:pt-0">
-        <Container className="py-20 text-center">
-          <h1 className="font-bebas text-5xl text-[#003A77] md:text-6xl lg:text-7xl">
-            Sector Not Found
-          </h1>
-          <p className="mt-5 text-lg text-gray-600">
-            The sector you're looking for doesn't exist or has been moved.
-          </p>
-          <Link href="/sectors">
-            <button className="mt-8 bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
-              Back to All Sectors
-            </button>
-          </Link>
-        </Container>
-      </div>
-    );
+    return {
+      title: "Sector Not Found | IndiaMET Expo 2027",
+      description: "The requested sector could not be found.",
+    };
+  }
+
+  const title = `${sector.title} | IndiaMET Expo 2027`;
+  const description = sector.shortText || sector.description;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.indiametexpo.com/sectors/${slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://www.indiametexpo.com/sectors/${slug}`,
+      siteName: "IndiaMET Expo",
+      images: [
+        {
+          url: sector.image.startsWith("http")
+            ? sector.image
+            : `https://www.indiametexpo.com${sector.image}`,
+          alt: sector.title,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [
+        sector.image.startsWith("http")
+          ? sector.image
+          : `https://www.indiametexpo.com${sector.image}`,
+      ],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
+export default async function SectorPage({ params }: PageProps) {
+  const { slug } = await params;
+  const sector = getSectorBySlug(slug);
+
+  if (!sector) {
+    notFound();
   }
 
   const quickGuideItems = [
@@ -71,7 +97,7 @@ export default function SectorPage() {
       title: "Become a Visitor",
       description: "Find out who we are, what we do, and how best we can help you achieve your strategic business goals all wrapped up in our concise event brochure.",
       buttonText: "Register Now",
-      buttonLink: "/visitor-registration",
+      buttonLink: "/passes",
       image: "/images/mw24_1077_min_75a8122d24.jpg"
     }
   ];
@@ -229,38 +255,6 @@ export default function SectorPage() {
       </div>
 
       <BackToTop />
-
-      <style jsx>{`
-        .font-bebas {
-          font-family: 'Bebas Neue', cursive;
-        }
-        .line-clamp-3 {
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        
-        .animated-block {
-          opacity: 0;
-          transform: translateY(30px);
-          animation: fadeInUp 0.6s ease forwards;
-        }
-        
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animated-block:nth-child(1) { animation-delay: 0.1s; }
-        .animated-block:nth-child(2) { animation-delay: 0.3s; }
-        .animated-block:nth-child(3) { animation-delay: 0.5s; }
-        .animated-block:nth-child(4) { animation-delay: 0.6s; }
-        .animated-block:nth-child(5) { animation-delay: 0.7s; }
-        .animated-block:nth-child(6) { animation-delay: 0.8s; }
-      `}</style>
     </div>
   );
 }
