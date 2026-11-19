@@ -1,106 +1,20 @@
 // app/sectors/page.tsx
 "use client";
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
-import LoadingDots from '@/components/ui/LoadingDots';
 import { getImageAlt } from '@/lib/imageAlts';
+import { Sector, sectorsData } from '@/data/sectors';
 
-
-export default function SectorsPage() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <LoadingDots fullScreen />
-    );
-  }
-
-  const sectors = [
-    {
-  title: "Coordinate Measuring Machines (CMM)",
-  slug: "coordinate-measuring-machines-cmm",
-  description: "Bridge, gantry, portable, and articulating CMMs for high-precision dimensional inspection, geometric measurement, and quality control.",
-  image: "/images/cmm.png"
-},
-{
-  title: "Dimensional Measurement & Gauging",
-  slug: "dimensional-measurement-and-gauging",
-  description: "Precision measuring instruments, gauges, comparators, height gauges, micrometers, and advanced solutions for dimensional and tolerance measurement.",
-  image: "/images/measure.jpg"
-},
-{
-  title: "Optical & Vision Metrology",
-  slug: "optical-and-vision-metrology",
-  description: "Video measuring machines, optical systems, machine vision, microscopes, non-contact measurement, and automated visual inspection technologies.",
-  image: "/images/optical.jpg"
-},
-{
-  title: "3D Scanning & Digital Measurement",
-  slug: "3d-scanning-and-digital-measurement",
-  description: "Laser scanners, structured-light scanners, handheld 3D scanners, point-cloud systems, reverse engineering, and digital inspection solutions.",
-  image: "/images/3dscan2.jpg"
-},
-{
-  title: "Surface & Form Measurement",
-  slug: "surface-and-form-measurement",
-  description: "Advanced systems for surface roughness, contour, roundness, cylindricity, waviness, profile, and precision form measurement.",
-  image: "/images/surface.jpeg"
-},
-{
-  title: "Calibration & Reference Standards",
-  slug: "calibration-and-reference-standards",
-  description: "Calibration equipment, reference standards, master instruments, calibration software, traceability solutions, and laboratory measurement systems.",
-  image: "/images/calibration.webp"
-},
-{
-  title: "Testing & Quality Inspection",
-  slug: "testing-and-quality-inspection",
-  description: "Material testing, mechanical testing, dimensional inspection, non-destructive testing, laboratory equipment, and advanced quality inspection solutions.",
-  image: "/images/quality.webp"
-},
-{
-  title: "Sensors, Probes & Measurement Systems",
-  slug: "sensors-probes-and-measurement-systems",
-  description: "Precision sensors, probes, encoders, laser measurement systems, displacement sensors, force measurement, and advanced data acquisition technologies.",
-  image: "/images/sensors.webp"
-},
-{
-  title: "Metrology Software & Digital Quality",
-  slug: "metrology-software-and-digital-quality",
-  description: "Inspection software, SPC, QMS, measurement data management, digital reporting, analytics, and connected quality management solutions.",
-  image: "/images/software.png"
-},
-{
-  title: "Automation & Industry 4.0",
-  slug: "automation-and-industry-40",
-  description: "Automated inspection, robotic measurement, inline metrology, smart manufacturing, AI-powered inspection, and connected Industry 4.0 solutions.",
-  image: "/images/ind4.0.jpg"
-},
-{
-  title: "Precision Instruments & Gauges",
-  slug: "precision-instruments-and-gauges",
-  description: "Micrometers, vernier instruments, dial indicators, thread gauges, gear measurement systems, precision gauges, and specialised inspection equipment.",
-  image: "/images/Precision.webp"
-},
-{
-  title: "Metrology Services & Laboratories",
-  slug: "metrology-services-and-laboratories",
-  description: "Calibration laboratories, testing services, dimensional measurement, inspection services, certification, consultancy, training, and metrology support.",
-  image: "/images/Laboratory.jpg"
+interface SectorsPageProps {
+  sectors?: Sector[];
 }
-  ];
 
+export default function SectorsPage({ sectors = sectorsData }: SectorsPageProps) {
   const quickGuideItems = [
   {
     title: "Become an Exhibitor",
@@ -120,7 +34,7 @@ export default function SectorsPage() {
     title: "Become a Visitor",
     description: "Discover the latest metrology and measurement technologies, connect with leading solution providers, meet industry professionals, and explore innovations shaping precision manufacturing.",
     buttonText: "Register Now",
-    buttonLink: "/visitor-registration",
+    buttonLink: "/passes",
     image: "/images/become_visitor.jpg"
   }
 ];
