@@ -1,4 +1,4 @@
-// app/register?t=exhibitor/page.tsx
+// app/exhibiting-enquiry/page.tsx
 import { redirect } from "next/navigation";
 import { redirectToRegister } from "@/app/register/registrationRoutes";
 

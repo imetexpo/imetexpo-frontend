@@ -46,7 +46,7 @@ export default function PlanYourTravelPage() {
 
   const quickLinks = [
     {
-      label: "register?t=exhibitor",
+      label: "Enquire to Exhibit",
       link: "/exhibiting-enquiry",
       icon: "📋",
     },

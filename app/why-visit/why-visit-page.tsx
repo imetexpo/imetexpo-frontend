@@ -148,7 +148,7 @@ export default function WhyVisitPage() {
 
   const quickLinks = [
     {
-      label: "register?t=exhibitorr",
+      label: "Become an Exhibitor",
       link: "/exhibiting-enquiry",
       icon:
         "/images/Vector_1_440f5852b9.png",

@@ -90,7 +90,7 @@ export default function ExhibitorPreparationChecklistPage() {
           image: '/images/photo-1551836022-d5d88e9218df.jpg',
           fallbackIcon: '📌',
           buttonText: 'Enquire Now',
-          buttonLink: '/register?t=exhibitor',
+          buttonLink: '/exhibiting-enquiry',
         },
       ]}
       faqHeading="Checklist"

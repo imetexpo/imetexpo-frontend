@@ -112,7 +112,7 @@ export default function MobileMenu({ isOpen, onClose, topOffset = 80 }: MobileMe
         {/* Action Button at the Bottom */}
         <div className="mt-8 flex flex-col gap-3 pt-4">
           <Link
-            href="/register?t=exhibitor/"
+            href="/exhibiting-enquiry/"
             onClick={onClose}
             className="block w-full rounded-sm border border-[#00A1B1] bg-[#00A1B1] py-3.5 text-center font-bebas text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#003A77]"
           >

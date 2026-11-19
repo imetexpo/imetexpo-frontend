@@ -105,7 +105,7 @@ export default function SectorsPage() {
   {
     title: "Become an Exhibitor",
     description: "Showcase your metrology, measurement, inspection, calibration, and quality technologies to manufacturers, engineers, quality professionals, and key industry decision-makers.",
-    buttonText: "Bregister?t=exhibitor
+    buttonText: "Book A Stand",
     buttonLink: "/exhibiting-enquiry",
     image: "/images/become_exhibitor.jpg"
   },

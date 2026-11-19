@@ -57,7 +57,7 @@ export default function SectorPage() {
       title: "Become an Exhibitor",
       description: "Connect with 10,000+ metrology industry professionals across 3 days for unparalleled networking opportunities.",
       buttonText: "Book A Stand",
-      buttonLink: "/register?t=exhibitor",
+      buttonLink: "/exhibiting-enquiry",
       image: "/images/mw24_1062_min_91b90d653f.jpg"
     },
     {
@@ -102,7 +102,7 @@ export default function SectorPage() {
                 </p>
                 {sector.buttonText && (
                   <div className="pt-4">
-                    <Link href={sector.buttonLink || "/register?t=exhibitor"}>
+                    <Link href={sector.buttonLink || "/exhibiting-enquiry"}>
                       <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                         {sector.buttonText}
                       </button>
