@@ -51,6 +51,7 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 }
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -131,18 +132,22 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
+
   html,
   body {
     overflow-x: hidden;
     max-width: 100%;
   }
 }
+
 @layer utilities {
   .font-heading {
     font-family: var(--font-heading);
@@ -160,6 +165,7 @@ body {
     from {
       transform: translateX(0);
     }
+
     to {
       transform: translateX(-50%);
     }
@@ -169,8 +175,9 @@ body {
     animation: awards-marquee 18s linear infinite;
   }
 }
+
 /* Show the same three brand dots while the animation engine loads. */
-.loading-dots-visual:has(svg) > .loading-dots-placeholder {
+.loading-dots-visual:has(svg)>.loading-dots-placeholder {
   visibility: hidden;
 }
 
@@ -179,7 +186,48 @@ body {
     display: none;
   }
 
-  .loading-dots-visual:has(svg) > .loading-dots-placeholder {
+  .loading-dots-visual:has(svg)>.loading-dots-placeholder {
     visibility: visible;
+  }
+}
+
+
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 60px;
+  height: 60px;
+
+  background-color: #25D366;
+  color: #ffffff;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  z-index: 9999;
+  text-decoration: none;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    bottom: 18px;
+    right: 18px;
   }
 }
