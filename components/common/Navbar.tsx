@@ -94,7 +94,7 @@ export default function Navbar() {
 <div className="flex shrink-0 flex-col items-center">
   <UTMLink href="/">
     <Image
-      src="/footer_logo.png"
+      src="/footer_logo.webp"
       alt="IndiaMET exhibition logo"
       width={200}
       height={100}

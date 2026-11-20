@@ -6,7 +6,7 @@ export const SITE_NAME = 'IndiaMet Expo';
 export const ORGANIZER_NAME = 'Maxx Business Media Pvt. Ltd.';
 
 // Confirm this file exists inside your project's public folder.
-export const OG_IMAGE = `${SITE_URL}/footer_logo.png`;
+export const OG_IMAGE = `${SITE_URL}/footer_logo.webp`;
 
 export type SeoFaq = {
   question: string;

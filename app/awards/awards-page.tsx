@@ -6,7 +6,7 @@ import BackToTop from '@/components/layout/BackToTop';
 import PageHero from '@/components/layout/PageHero';
 import { getImageAlt } from '@/lib/imageAlts';
 
-const HERO_IMAGE = '/images/gmea_awards.png';
+const HERO_IMAGE = '/images/gmea_awards.webp';
 
 const stats = [
   ['17', 'Award Categories'],
@@ -17,32 +17,32 @@ const stats = [
 
 const whyParticipate = [
   {
-    image: '/images/awards2.png',
+    image: '/images/awards2.webp',
     title: 'Industry Recognition',
     description: 'Gain recognition among global leaders in metrology and precision engineering.',
   },
   {
-    image: '/images/photo-1521737604893-d14cc237f11d.jpg',
+    image: '/images/photo-1521737604893-d14cc237f11d.webp',
     title: 'Global Visibility',
     description: 'Showcase your achievements on an international industry platform.',
   },
   {
-    image: '/images/photo-1517245386807-bb43f82c33c4.jpg',
+    image: '/images/photo-1517245386807-bb43f82c33c4.webp',
     title: 'Business Networking',
     description: 'Connect with key decision makers and expand your business network.',
   },
   {
-    image: '/images/photo-1551836022-d5d88e9218df.jpg',
+    image: '/images/photo-1551836022-d5d88e9218df.webp',
     title: 'Brand Credibility',
     description: 'Strengthen your brand image and build trust with customers.',
   },
   {
-    image: '/images/innovation.png',
+    image: '/images/innovation.webp',
     title: 'Innovation Leadership',
     description: 'Position your organization as an innovator and industry trailblazer.',
   },
   {
-    image: '/images/photo-1454165804606-c3d57bc86b40.jpg',
+    image: '/images/photo-1454165804606-c3d57bc86b40.webp',
     title: 'Benchmark Against Industry',
     description: 'Measure your performance and stand out from the competition.',
   },
@@ -50,103 +50,103 @@ const whyParticipate = [
 
 const categories = [
   {
-    image: '/images/awards/bestmetrology.png',
+    image: '/images/awards/bestmetrology.webp',
     title: 'Best Metrology Company Award',
     description:
       'Recognizing overall excellence in metrology solutions, innovation, and industry impact.',
   },
   {
-    image: '/images/awards/innovatoin.png',
+    image: '/images/awards/innovatoin.webp',
     title: 'Innovation in Measurement Award',
     description:
       'Honouring outstanding innovation in measurement technologies, precision instruments, and advanced solutions.',
   },
   {
-    image: '/images/awards/calibration.png',
+    image: '/images/awards/calibration.webp',
     title: 'Excellence in Calibration Award',
     description:
       'Awarded to organizations demonstrating the highest standards in calibration services, accuracy, and reliability.',
   },
   {
-    image: '/images/awards/quality.png',
+    image: '/images/awards/quality.webp',
     title: 'Quality Leadership Award',
     description:
       'Recognizing leadership in driving quality culture, continuous improvement, and customer satisfaction.',
   },
   {
-    image: '/images/awards/cmm.png',
+    image: '/images/awards/cmm.webp',
     title: 'CMM Technology Award',
     description:
       'For excellence in design, performance, and advancement in coordinate measuring machine (CMM) technologies.',
   },
   {
-    image: '/images/awards/inspection.png',
+    image: '/images/awards/inspection.webp',
     title: 'Smart Inspection Solution Award',
     description:
       'Honouring innovative inspection solutions, machine vision, and automated optical systems that drive accuracy and smart manufacturing.',
   },
   {
-    image: '/images/awards/emerging.png',
+    image: '/images/awards/emerging.webp',
     title: 'Emerging Metrology Company Award',
     description:
       'Recognizing emerging companies that are shaping the future of metrology with innovation, potential, and performance.',
   },
   {
-    image: '/images/awards/bestlab.png',
+    image: '/images/awards/bestlab.webp',
     title: 'Best Calibration Lab Award',
     description:
       'Honouring calibration laboratories that demonstrate exceptional accuracy, reliability, and adherence to global standards.',
   },
   {
-    image: '/images/awards/innovation_metrology.png',
+    image: '/images/awards/innovation_metrology.webp',
     title: 'Innovation in Metrology Award',
     description:
       'Honouring innovative solutions that advance metrology technology and drive industrial transformation.',
   },
   {
-    image: '/images/awards/metrology_edu.png',
+    image: '/images/awards/metrology_edu.webp',
     title: 'Metrology Education & Training Award',
     description:
       'Recognizing institutions and programs that empower the next generation of metrology professionals through excellence in education and training.',
   },
   {
-    image: '/images/awards/startup.png',
+    image: '/images/awards/startup.webp',
     title: 'Metrology Start-Up Award',
     description:
       'Celebrating innovative start-ups driving disruption and delivering next-generation metrology solutions for a smarter tomorrow.',
   },
   {
-    image: '/images/awards/quality_champ.png',
+    image: '/images/awards/quality_champ.webp',
     title: 'Quality Champion Award',
     description:
       'Honouring organizations that uphold the highest standards of quality, precision, and reliability in metrology and continuous improvement.',
   },
   {
-    image: '/images/awards/outstamding.png',
+    image: '/images/awards/outstamding.webp',
     title: 'Outstanding Metrology Solution Award',
     description:
       'Celebrating organizations that deliver ingenious metrology solutions, drive operational excellence, and create measurable impact across industries.',
   },
   {
-    image: '/images/awards/lifetime.png',
+    image: '/images/awards/lifetime.webp',
     title: 'Lifetime Achievement Award',
     description:
       'Recognizing exceptional individuals who have made outstanding contributions to the advancement of metrology and quality, leaving a lasting legacy that inspires excellence.',
   },
   {
-    image: '/images/awards/young.png',
+    image: '/images/awards/young.webp',
     title: 'Young Professional Award',
     description:
       'Honouring young professionals who demonstrate exceptional promise, innovation, and dedication in advancing metrology, measurement, and quality excellence.',
   },
   {
-    image: '/images/awards/sustain.png',
+    image: '/images/awards/sustain.webp',
     title: 'Sustainability Award',
     description:
       'Honouring organizations that lead with purpose and responsibility—integrating sustainable practices, reducing environmental impact, and building a better tomorrow through innovation in metrology and quality.',
   },
   {
-    image: '/images/awards/r&d.png',
+    image: '/images/awards/r&d.webp',
     title: 'R&D Excellence Award',
     description:
       'Honouring organizations that demonstrate outstanding commitment to research and development, creating innovative metrology solutions that advance technology, improve accuracy, and drive industry progress.',

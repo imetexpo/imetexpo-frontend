@@ -214,7 +214,7 @@ export default function BrandsPage() {
                                     value={formData.logoUrl}
                                     onChange={(e) => setFormData({ ...formData, logoUrl: e.target.value })}
                                     className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-amber-500"
-                                    placeholder="https://example.com/logo.png"
+                                    placeholder="https://example.com/logo.webp"
                                 />
                             </div>
                             <div className="flex gap-3 pt-4">

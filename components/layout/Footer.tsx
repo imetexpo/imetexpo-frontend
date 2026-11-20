@@ -39,7 +39,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="space-y-4">
             <Image
-              src="/footer_logo.png"
+              src="/footer_logo.webp"
               alt="IndiaMET exhibition logo for dark backgrounds"
               width={280}
               height={100}
@@ -170,7 +170,7 @@ export default function Footer() {
             <div className="flex shrink-0 items-center gap-3">
               <span className="text-xs uppercase tracking-wider text-neutral-100 font-bold sm:text-[16px]">Organised By</span>
               <Image
-                src="/maxx_logo.png"
+                src="/maxx_logo.webp"
                 alt="MaxX Business Media Pvt Ltd white logo"
                 width={270}
                 height={75}

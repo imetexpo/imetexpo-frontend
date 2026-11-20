@@ -20,37 +20,37 @@ export default function WhyExhibitPage() {
       title: "Coordinate Measuring Machines (CMM)",
       slug: "coordinate-measuring-machines",
       description: "Bridge, gantry, horizontal arm, and portable articulated arm CMMs for high-accuracy component inspection.",
-      image: "/images/cmm.jpg"
+      image: "/images/cmm.webp"
     },
     {
       title: "3D Scanning & Optical Metrology",
       slug: "3d-scanning-and-optical-metrology",
       description: "Laser scanners, structured light scanners, photogrammetry, and non-contact 3D inspection systems.",
-      image: "/images/3dscan.jpg"
+      image: "/images/3dscan.webp"
     },
     {
       title: "Dimensional Gauging & Tooling",
       slug: "dimensional-gauging-and-tooling",
       description: "Air gauges, electronic gauges, dial indicators, bore gauges, height masters, and custom multi-gauging fixtures.",
-      image: "/images/metrology.jpg"
+      image: "/images/metrology.webp"
     },
     {
       title: "Surface & Form Measurement",
       slug: "surface-and-form-measurement",
       description: "Roughness testers, roundness testers, profilometers, contour measurement systems, and interferometers.",
-      image: "/images/testing.jpg"
+      image: "/images/testing.webp"
     },
     {
       title: "Calibration & Standards",
       slug: "calibration-and-standards",
       description: "Calibration standards, gauge blocks, laser interferometers, master rings, and NABL-accredited laboratory equipment.",
-      image: "/images/quality.jpg"
+      image: "/images/quality.webp"
     },
     {
       title: "Automated & In-Line Inspection",
       slug: "automated-and-inline-inspection",
       description: "Robotic inspection cells, automated optical inspection (AOI), machine vision systems, and smart factory metrology.",
-      image: "/images/ai.jpg"
+      image: "/images/ai.webp"
     }
   ];
 
@@ -88,11 +88,11 @@ export default function WhyExhibitPage() {
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   const quickLinks = [
-    { label: "Enquire to Exhibit", link: "/exhibiting-enquiry", icon: "/icons/enquire.png" },
-    { label: "Download Event Brochure", link: "/event-brochure", icon: "/icons/brochure.png" },
-    { label: "Exhibitor List", link: "/exhibitor-list", icon: "/icons/list.png" },
-    { label: "Plan Your Travel", link: "/plan-your-travel", icon: "/icons/travel.png" },
-    { label: "Why Visit", link: "/why-visit", icon: "/icons/visit.png" }
+    { label: "Enquire to Exhibit", link: "/exhibiting-enquiry", icon: "/icons/enquire.webp" },
+    { label: "Download Event Brochure", link: "/event-brochure", icon: "/icons/brochure.webp" },
+    { label: "Exhibitor List", link: "/exhibitor-list", icon: "/icons/list.webp" },
+    { label: "Plan Your Travel", link: "/plan-your-travel", icon: "/icons/travel.webp" },
+    { label: "Why Visit", link: "/why-visit", icon: "/icons/visit.webp" }
   ];
 
   return (
@@ -168,22 +168,22 @@ export default function WhyExhibitPage() {
                     {
                       title: "Struggling to find qualified buyers?",
                       desc: "Meet a focused audience of manufacturers, OEMs, engineers, quality professionals, procurement teams, and decision-makers actively looking for metrology, measurement, inspection, calibration, and quality solutions.",
-                      icon: "/images/recruitment_12105214_9abca4ba0e.png"
+                      icon: "/images/recruitment_12105214_9abca4ba0e.webp"
                     },
                     {
                       title: "Looking to expand your market presence?",
                       desc: "Gain direct access to India’s growing precision manufacturing ecosystem, including automotive, aerospace, defence, engineering, electronics, medical devices, and other high-precision industries.",
-                      icon: "/images/goal_2974630_407b28db91.png"
+                      icon: "/images/goal_2974630_407b28db91.webp"
                     },
                     {
                       title: "Worried about standing out in a competitive market?",
                       desc: "Showcase your latest metrology and measurement technologies through live demonstrations and direct engagement with industry professionals looking for advanced solutions to improve accuracy, quality, and productivity.",
-                      icon: "/images/marketing_14125861_0aab65a0a8.png"
+                      icon: "/images/marketing_14125861_0aab65a0a8.webp"
                     },
                     {
                       title: "Looking for buyers ready to invest?",
                       desc: "Connect with companies investing in advanced measurement, inspection, automation, digital quality, and Industry 4.0 technologies — and turn technology demonstrations into qualified business opportunities.ng.",
-                      icon: "/images/contract_10861184_2c90043b14.png"
+                      icon: "/images/contract_10861184_2c90043b14.webp"
                     }
                   ].map((benefit, idx) => (
                     <div key={idx} className="flex flex-col gap-4 font-sans">
@@ -244,7 +244,7 @@ export default function WhyExhibitPage() {
                   <div className="order-first h-full lg:col-span-2">
                     <div className="h-[300px] sm:h-[400px] lg:h-full w-full overflow-hidden rounded-sm">
                       <img
-                        src="/images/why_exhibit.png"
+                        src="/images/why_exhibit.webp"
                         alt="Visitors examining advanced sensing equipment at a busy trade show"
                         className="h-full w-full object-cover"
                       />
@@ -262,7 +262,7 @@ export default function WhyExhibitPage() {
                 {/* BACKGROUND IMAGE */}
                 <div className="absolute inset-0">
                   <img
-                    src="/images/img_3_4b6edc76d1.jpg"
+                    src="/images/img_3_4b6edc76d1.webp"
                     alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                     className="h-full w-full object-cover"
                   />
@@ -274,7 +274,7 @@ export default function WhyExhibitPage() {
                   <div className="grid items-center gap-10 md:grid-cols-12">
                     <div className="flex justify-center md:col-span-4">
                       <img
-                        src="/images/indiamet_Brochure.png"
+                        src="/images/indiamet_Brochure.webp"
                         alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                         className="h-64 w-auto object-contain"
                       />
@@ -309,17 +309,17 @@ export default function WhyExhibitPage() {
                     {
                       title: "Rapid Growth in Precision Manufacturing",
                       desc: "India’s automotive, aerospace, defence, electronics, engineering, and industrial manufacturing sectors are rapidly adopting advanced technologies to achieve higher precision, productivity, and quality. This is driving strong demand for modern metrology, inspection, and measurement solutions..",
-                      image: "/images/wide_angle_shot_excavation_machines_lookout_jackerath_garzweiler_skywalk_germany_58dec187f5.jpg"
+                      image: "/images/wide_angle_shot_excavation_machines_lookout_jackerath_garzweiler_skywalk_germany_58dec187f5.webp"
                     },
                     {
                       title: "Rise of Smart & Automated Manufacturing",
                       desc: "The shift toward Industry 4.0, automation, digital manufacturing, and data-driven quality management is transforming how manufacturers measure and control production. Advanced CMMs, 3D scanning, machine vision, sensors, and connected metrology systems are becoming increasingly important.",
-                      image: "/images/business_team_global_business_planning_working_concept_4d7db7d78d.jpg"
+                      image: "/images/business_team_global_business_planning_working_concept_4d7db7d78d.webp"
                     },
                     {
                       title: "Growing Focus on Quality & Global Standards",
                       desc: "Indian manufacturers are increasingly focused on achieving global quality standards, improving dimensional accuracy, reducing production errors, and strengthening traceability. This is creating new opportunities for calibration, testing, inspection, measurement software, and quality technologies.",
-                      image: "/images/view_heavy_machinery_used_construction_industry_a179c698c8.jpg"
+                      image: "/images/view_heavy_machinery_used_construction_industry_a179c698c8.webp"
                     }
                   ].map((item, idx) => (
                     <div key={idx} className="relative flex min-h-[350px] flex-col overflow-hidden text-white rounded-sm border border-white/10">

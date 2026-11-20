@@ -245,7 +245,7 @@ export default function ProductsPage() {
                                     value={formData.imageUrl}
                                     onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
                                     className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-amber-500"
-                                    placeholder="https://example.com/product-image.jpg"
+                                    placeholder="https://example.com/product-image.webp"
                                 />
                             </div>
                             <div className="flex gap-3 pt-4">

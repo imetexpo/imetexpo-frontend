@@ -386,7 +386,7 @@ export default function CompanyProfilePage() {
           </div>
           <div>
             <p className="text-sm text-gray-600">Upload your company logo</p>
-            <p className="text-xs text-gray-400 mt-1">PNG, JPG up to 2MB</p>
+            <p className="text-xs text-gray-400 mt-1">webp, webp up to 2MB</p>
           </div>
         </div>
       </div>

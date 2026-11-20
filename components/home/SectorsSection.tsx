@@ -12,21 +12,21 @@ const sectorsData = [
     title: "Coordinate Measuring Machines (CMM)",
     slug: "coordinate-measuring-machines-cmm",
     shortText: 'Advanced CMMs and 3D coordinate measurement systems for high-precision inspection and quality control.',
-    image: '/images/cmm.png',
+    image: '/images/cmm.webp',
   },
   {
     id: 2,
     title: "Dimensional Measurement & Gauging",
     slug: "dimensional-measurement-and-gauging",
     shortText: 'Precision instruments and systems for dimensional, form, surface, and geometric measurement.',
-    image: '/images/measure.jpg',
+    image: '/images/measure.webp',
   },
   {
     id: 3,
     title: "Optical & Vision Metrology",
     slug: "optical-and-vision-metrology",
     shortText: 'Optical measurement, machine vision, 3D scanning, and non-contact inspection technologies.',
-    image: '/images/optical.jpg',
+    image: '/images/optical.webp',
   },
   {
     id: 4,
@@ -40,14 +40,14 @@ const sectorsData = [
     title: "Surface & Form Measurement",
     slug: "surface-and-form-measurement",
     shortText: 'Advanced solutions for surface roughness, contour, roundness, cylindricity, and form measurement.',
-    image: '/images/surface.jpeg',
+    image: '/images/surface.webp',
   },
   {
     id: 6,
     title: "Calibration & Reference Standards",
     slug: "calibration-and-reference-standards",
     shortText: 'Smart metrology software, automation, digital inspection, data analytics, and connected quality solutions.',
-    image: '/images/software.png',
+    image: '/images/software.webp',
   },
 ];
 

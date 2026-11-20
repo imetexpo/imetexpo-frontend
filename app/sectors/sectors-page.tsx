@@ -21,21 +21,21 @@ export default function SectorsPage({ sectors = sectorsData }: SectorsPageProps)
     description: "Showcase your metrology, measurement, inspection, calibration, and quality technologies to manufacturers, engineers, quality professionals, and key industry decision-makers.",
     buttonText: "Book A Stand",
     buttonLink: "/exhibiting-enquiry",
-    image: "/images/become_exhibitor.jpg"
+    image: "/images/become_exhibitor.webp"
   },
   {
     title: "Download Your Event Brochure",
     description: "Explore INDIAMET 2027, discover the exhibition sectors, visitor profile, exhibiting opportunities, and everything you need to plan your participation.",
     buttonText: "Download Now",
     buttonLink: "/event-brochure",
-    image: "/images/Untitled_500_x_500_px_cd8f081eec.png"
+    image: "/images/Untitled_500_x_500_px_cd8f081eec.webp"
   },
   {
     title: "Become a Visitor",
     description: "Discover the latest metrology and measurement technologies, connect with leading solution providers, meet industry professionals, and explore innovations shaping precision manufacturing.",
     buttonText: "Register Now",
     buttonLink: "/passes",
-    image: "/images/become_visitor.jpg"
+    image: "/images/become_visitor.webp"
   }
 ];
   return (
@@ -44,7 +44,7 @@ export default function SectorsPage({ sectors = sectorsData }: SectorsPageProps)
       <div className="fixed left-0 top-0 z-50 w-full bg-[#003A77] px-5 py-2 lg:hidden">
         <div className="flex justify-between">
           <Link href="/">
-            <Image src="/imgs/logo-its.png" alt="INDIAMET Expo" width={140} height={40} className="h-auto w-auto object-contain" />
+            <Image src="/imgs/logo-its.webp" alt="INDIAMET Expo" width={140} height={40} className="h-auto w-auto object-contain" />
           </Link>
           <button className="z-10" aria-label="Menu">
             <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">

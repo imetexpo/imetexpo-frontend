@@ -48,7 +48,7 @@ export default function ContactUsPage() {
                         <div className="mt-1 h-0.5 w-16 bg-[#00A1B1]"></div>
                       </div>
                       <Image
-                        src="/images/maxx_logo.png"
+                        src="/images/maxx_logo.webp"
                         alt="MaxX Business Media Pvt Ltd logo"
                         width={360}
                         height={140}

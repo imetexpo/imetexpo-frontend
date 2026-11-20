@@ -518,7 +518,7 @@ export const faqItems = [
 ];
 
 export const venueImages = [
-  '/images/auto_cluster1.png',
-  '/images/auto_cluster2.jpg',
-  '/images/auto_cluster3.jpg',
+  '/images/auto_cluster1.webp',
+  '/images/auto_cluster2.webp',
+  '/images/auto_cluster3.webp',
 ];

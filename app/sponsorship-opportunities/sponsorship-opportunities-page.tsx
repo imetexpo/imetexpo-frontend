@@ -29,37 +29,37 @@ export default function AdvertisingDetailsPage() {
     {
       title: "Reach Your Target Audience",
       description: "Communicate directly with industry specialists and decision-makers.",
-      icon: "/images/4_7579e3b4df.png",
+      icon: "/images/4_7579e3b4df.webp",
       fallbackIcon: "🎯"
     },
     {
       title: "Increase Stand Traffic",
       description: "Drive more visitors to your booth and create meaningful connections.",
-      icon: "/images/5_e69e2d6c8b.png",
+      icon: "/images/5_e69e2d6c8b.webp",
       fallbackIcon: "📊"
     },
     {
       title: "Gain a Competitive Edge",
       description: "Stand out among exhibitors and position your brand as an industry leader.",
-      icon: "/images/6_1234567890.png",
+      icon: "/images/6_1234567890.webp",
       fallbackIcon: "⚡"
     },
     {
       title: "Boost Brand Awareness",
       description: "Strengthen your company's image and market visibility.",
-      icon: "/images/7_93579318f2.png",
+      icon: "/images/7_93579318f2.webp",
       fallbackIcon: "🏷️"
     },
     {
       title: "Showcase Innovations",
       description: "Highlight new products and services to a highly relevant audience.",
-      icon: "/images/8_fa2729f754.png",
+      icon: "/images/8_fa2729f754.webp",
       fallbackIcon: "💡"
     },
     {
       title: "Drive Sales & Business Growth",
       description: "Convert exhibition exposure into direct sales opportunities.",
-      icon: "/images/9_1c550dbab6.png",
+      icon: "/images/9_1c550dbab6.webp",
       fallbackIcon: "📈"
     }
   ];
@@ -89,7 +89,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/presenting.jpg",
+      image: "/images/presenting.webp",
       fallbackIcon: "🏆"
     },
     {
@@ -154,7 +154,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/silver.jpg",
+      image: "/images/silver.webp",
       fallbackIcon: "🥉"
     },
 
@@ -241,7 +241,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/technology.png",
+      image: "/images/technology.webp",
       fallbackIcon: "🔬"
     },
         {
@@ -256,7 +256,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/session.jpg",
+      image: "/images/session.webp",
       fallbackIcon: "📰"
     }
 ,
@@ -300,7 +300,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/conflunch.jpg",
+      image: "/images/conflunch.webp",
       fallbackIcon: "📰"
     }
 ,
@@ -325,7 +325,7 @@ export default function AdvertisingDetailsPage() {
       ],
       buttonText: "Enquire Now",
       buttonLink: "/sponsorship-enquiry",
-      image: "/images/exhibitor_dinner.jpg",
+      image: "/images/exhibitor_dinner.webp",
       fallbackIcon: "📰"
     }
 

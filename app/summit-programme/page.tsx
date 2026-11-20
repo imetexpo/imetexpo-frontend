@@ -78,32 +78,32 @@ const mainEventsData = [
 const keyEventsData = [
   {
     title: "The Industrial Metrology Leaders' Forum",
-    image: "/images/confe.jpg",
+    image: "/images/confe.webp",
   },
   {
     title: "Industry 4.0 in Precision Metrology",
-    image: "/images/industry4.jpg",
+    image: "/images/industry4.webp",
   },
   {
     title: "Digital Metrology & Quality Summit",
-    image: "/images/4_C4_A3872_1202c590ba.jpg",
+    image: "/images/4_C4_A3872_1202c590ba.webp",
   },
   {
     title: "Technical Metrology Conferences",
-    image: "/images/4_C4_A5222_ad4a659bdc.jpg",
+    image: "/images/4_C4_A5222_ad4a659bdc.webp",
   },
 ];
 
 const conferencePartners = [
   {
     name: "Zyfra",
-    logo: "/images/2_48e8e636ac.png",
+    logo: "/images/2_48e8e636ac.webp",
     type: "Technology Partner",
     url: "https://www.zyfra.com/",
   },
   {
     name: "Industrial Metrology Insights",
-    logo: "/images/3_c5c5637a9c.png",
+    logo: "/images/3_c5c5637a9c.webp",
     type: "Media Partner",
     url: "",
   },
@@ -165,7 +165,7 @@ export default function ConferenceProgrammePage() {
                 {/* Image */}
                 <div className="order-1 lg:order-2 relative h-[300px] sm:h-[400px] lg:h-[500px] w-full overflow-hidden rounded-sm border border-gray-150 bg-gray-100">
                   <Image
-                    src="/images/confe.jpg"
+                    src="/images/confe.webp"
                     alt="Speaker addressing a seated audience at a professional conference"
                     fill
                     className="object-cover"

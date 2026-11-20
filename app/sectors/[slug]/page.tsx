@@ -84,21 +84,21 @@ export default async function SectorPage({ params }: PageProps) {
       description: "Connect with 10,000+ metrology industry professionals across 3 days for unparalleled networking opportunities.",
       buttonText: "Book A Stand",
       buttonLink: "/exhibiting-enquiry",
-      image: "/images/mw24_1062_min_91b90d653f.jpg"
+      image: "/images/mw24_1062_min_91b90d653f.webp"
     },
     {
       title: "Download Your Event Brochure",
       description: "Not ready to become an exhibitor? Visit the exhibition for free and find out what to expect for the following edition.",
       buttonText: "Download Now",
       buttonLink: "/event-brochure",
-      image: "/images/Untitled_500_x_500_px_cd8f081eec.png"
+      image: "/images/Untitled_500_x_500_px_cd8f081eec.webp"
     },
     {
       title: "Become a Visitor",
       description: "Find out who we are, what we do, and how best we can help you achieve your strategic business goals all wrapped up in our concise event brochure.",
       buttonText: "Register Now",
       buttonLink: "/passes",
-      image: "/images/mw24_1077_min_75a8122d24.jpg"
+      image: "/images/mw24_1077_min_75a8122d24.webp"
     }
   ];
 

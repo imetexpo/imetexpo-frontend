@@ -15,11 +15,11 @@ interface MediaItem {
 }
 
 const sampleMedia: MediaItem[] = [
-    { id: "1", name: "indiamet-hall-1-layout.jpg", type: "image", url: "/placeholder.jpg", size: "2.4 MB", uploadedAt: "2027-01-15", category: "Floor Plan" },
+    { id: "1", name: "indiamet-hall-1-layout.webp", type: "image", url: "/placeholder.webp", size: "2.4 MB", uploadedAt: "2027-01-15", category: "Floor Plan" },
     { id: "2", name: "metallurgical-summit-promo.mp4", type: "video", url: "/placeholder.mp4", size: "45.2 MB", uploadedAt: "2027-01-14", category: "Promotional" },
     { id: "3", name: "indiamet-exhibitor-manual.pdf", type: "document", url: "/placeholder.pdf", size: "1.8 MB", uploadedAt: "2027-01-13", category: "Documents" },
-    { id: "4", name: "steel-machinery-booth.jpg", type: "image", url: "/placeholder.jpg", size: "3.1 MB", uploadedAt: "2027-01-12", category: "Booth Images" },
-    { id: "5", name: "metals-extrusion-display.jpg", type: "image", url: "/placeholder.jpg", size: "2.8 MB", uploadedAt: "2027-01-11", category: "Product Images" },
+    { id: "4", name: "steel-machinery-booth.webp", type: "image", url: "/placeholder.webp", size: "3.1 MB", uploadedAt: "2027-01-12", category: "Booth Images" },
+    { id: "5", name: "metals-extrusion-display.webp", type: "image", url: "/placeholder.webp", size: "2.8 MB", uploadedAt: "2027-01-11", category: "Product Images" },
     { id: "6", name: "inauguration-ceremony.mp4", type: "video", url: "/placeholder.mp4", size: "68.3 MB", uploadedAt: "2027-01-10", category: "Event" },
 ];
 

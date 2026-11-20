@@ -665,7 +665,7 @@ export default function AdminFurniturePage() {
                         />
                       </label>
                       <p className="text-xs text-gray-500 mt-2">
-                        JPEG, PNG, GIF, WebP (Max 5MB)
+                        webp, webp, GIF, WebP (Max 5MB)
                       </p>
                     </div>
                   </div>

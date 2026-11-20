@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { getImageAlt } from '@/lib/imageAlts';
 
 const slides = [
-  { id: 1, image: '/images/picx1.png' },
-  { id: 2, image: '/images/picx2.png' },
+  { id: 1, image: '/images/picx1.webp' },
+  { id: 2, image: '/images/picx2.webp' },
 ];
 
 export default function HeroSection() {

@@ -8,7 +8,7 @@ export default function BrochureSection() {
   return (
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28 text-white">
       <Image
-        src="/images/img_3_4b6edc76d1.jpg"
+        src="/images/img_3_4b6edc76d1.webp"
         alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
         fill
         className="object-cover"
@@ -29,14 +29,14 @@ export default function BrochureSection() {
           <div className="relative flex justify-center lg:justify-start w-full lg:w-auto">
             <div className="relative w-[250px] sm:w-[300px] lg:w-[380px]">
               <Image
-                src="/images/indiamet_Brochure.png"
+                src="/images/indiamet_Brochure.webp"
                 alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                 width={380}
                 height={380}
                 className="absolute top-4 sm:top-6 left-4 sm:left-6 rotate-[-8deg] opacity-80 shadow-xl"
               />
               <Image
-                src="/images/indiamet_Brochure.png"
+                src="/images/indiamet_Brochure.webp"
                 alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                 width={380}
                 height={380}

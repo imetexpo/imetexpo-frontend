@@ -142,7 +142,7 @@ export default function CreateRentalItemPage() {
                   <p className="text-sm font-medium text-gray-700 mb-1">
                     Click or drag to upload item image
                   </p>
-                  <p className="text-xs text-gray-400">JPEG, PNG, GIF, WebP up to 5MB</p>
+                  <p className="text-xs text-gray-400">webp, webp, GIF, WebP up to 5MB</p>
                   <label className="mt-3.5 inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-white border border-gray-300 text-gray-700 text-xs font-semibold rounded-lg hover:bg-gray-50 transition cursor-pointer shadow-xs">
                     <Upload size={14} />
                     Select Image
