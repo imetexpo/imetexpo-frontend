@@ -4,7 +4,7 @@ import React from "react";
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
-  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "9148319993"; // Replace with your WhatsApp number
+  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919148319993"; // Replace with your WhatsApp number
   const message = "Hello, I would like to know more about your event.";
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -17,7 +17,8 @@ const WhatsAppButton = () => {
       aria-label="Chat with us on WhatsApp"
       className="whatsapp-float"
     >
-      <MessageCircle size={30} color="#ffffff" />
+      <span className="whatsapp-tooltip">BOOK YOUR STALL</span>
+      <MessageCircle size={35} color="#ffffff" />
     </a>
   );
 };
