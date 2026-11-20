@@ -36,9 +36,8 @@ export default function HeroSection() {
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === activeSlide ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === activeSlide ? 'opacity-100' : 'opacity-0'
+                }`}
             >
               {!imageErrors[slide.id] ? (
                 <Image
@@ -75,8 +74,9 @@ export default function HeroSection() {
           <div className="mt-4 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-5 lg:gap-8">
             {/* Description — fixed readable font size, no vw */}
             <p className="font-sans text-lg sm:text-xl text-gray-200 leading-relaxed max-w-3xl">
-            INDIAMET Expo Connects Global Industry Leaders And Quality Professionals To Discover 
-            Advanced Measurement, Inspection, Calibration, And Quality Solutions For Precision Manufacturing.
+              International Metrology Exhibition in India
+              <br />
+              13–15 May 2027 | Auto Cluster Exhibition Centre, Pune, India
             </p>
 
             {/* Exhibit button */}
@@ -90,7 +90,7 @@ export default function HeroSection() {
             </div>
           </div>
         </Container>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }
