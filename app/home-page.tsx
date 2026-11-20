@@ -8,11 +8,15 @@ import LoadingSpinner from '@/components/ui/loadingSpinner';
 import HeroSection from '@/components/home/HeroSection';
 import AboutSection from '@/components/home/AboutSection';
 import CountriesSection from '@/components/home/CountriesSection';
+import MeasurementTechnologySection from '@/components/home/MeasurementTechnologySection';
+import WhyVisitHomeSection from '@/components/home/WhyVisitHomeSection';
 import OutcomesSection from '@/components/home/OutcomesSection';
 import WhyExhibitSection from '@/components/home/WhyExhibitSection';
 import SectorsSection from '@/components/home/SectorsSection';
+import WhoShouldAttendSection from '@/components/home/WhoShouldAttendSection';
 import BrochureSection from '@/components/home/BrochureSection';
 import ArticlesSection from '@/components/home/ArticlesSection';
+import BePartOfIndiaMetSection from '@/components/home/BePartOfIndiaMetSection';
 import NewsletterSection from '@/components/home/NewsletterSection';
 import PartnersSection from '@/components/home/PartnersSection';
 import { getLatestArticles } from '@/app/articles/data'; // Import from your data.ts
@@ -52,7 +56,7 @@ const outcomesData = [
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
-  
+
   // ✅ Use your existing data.ts - get the 3 latest articles
   const articlesData = getLatestArticles(3);
 
@@ -72,12 +76,15 @@ export default function HomePage() {
         <HeroSection />
         <AboutSection />
         <CountriesSection countries={countriesData} />
+        <MeasurementTechnologySection />
         <OutcomesSection outcomes={outcomesData} />
+        <WhyVisitHomeSection />
         <WhyExhibitSection />
         <SectorsSection />
+        <WhoShouldAttendSection />
         <BrochureSection />
         <ArticlesSection articles={articlesData} />
-        <NewsletterSection />
+        <BePartOfIndiaMetSection />
         <PartnersSection />
       </main>
       {/* <Footer /> */}
