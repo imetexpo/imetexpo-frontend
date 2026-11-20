@@ -131,7 +131,7 @@ export default function WhyVisitPage() {
       description:
         "Recognise outstanding achievements, innovations, technologies, and contributions that are advancing measurement science, quality engineering, inspection, calibration, and precision manufacturing.",
       image:
-        "/images/QR_MW_eng_web_site_e73baacf2e.svg",
+        "/images/gmea.webp",
       buttonText: "View Awards",
       buttonLink: "/awards",
     },
@@ -140,7 +140,7 @@ export default function WhyVisitPage() {
       description:
         "Build valuable professional connections with manufacturers, technology providers, quality experts, engineers, OEMs, buyers, and decision-makers from India's growing precision manufacturing ecosystem.",
       image:
-        "/images/QR_MW_eng_web_site_e73baacf2e.svg",
+        "/images/connect.webp",
       buttonText: "Connect",
       buttonLink: "/https://wwww.metrologyupdate.com",
     },
