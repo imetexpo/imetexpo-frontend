@@ -53,14 +53,14 @@ export default function OutcomesSection({ outcomes }: OutcomesSectionProps) {
           ))}
         </div>
 
-        <div className="mt-8 sm:mt-10 lg:mt-12">
+        {/* <div className="mt-8 sm:mt-10 lg:mt-12">
           <Link
             href="/post-show-report/"
             className="inline-block bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm"
           >
             Download Expo Brochure
           </Link>
-        </div>
+        </div> */}
       </Container>
     </section>
   );
