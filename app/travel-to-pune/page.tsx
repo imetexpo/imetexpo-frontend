@@ -13,7 +13,7 @@ export default function TravelToPunePage() {
       introBody="Plan your journey to Pune for INDIAMET 2027. Pune International Airport, city railway stations, and the Mumbai–Pune Expressway all connect you to the Auto Cluster Exhibition Center in Chinchwad. Book flights and hotels early, and allow extra time on move-in and opening mornings."
       introCtaText="View Hotels"
       introCtaHref="/plan-your-travel"
-      introImage="/images/pune_city.jpg"
+      introImage="/images/pune_city.webp"
       introImageAlt="Travel to Pune for INDIAMET 2027"
       benefitsHeading="Getting to"
       benefitsAccent="Pune"
@@ -22,42 +22,42 @@ export default function TravelToPunePage() {
           title: 'Pune International Airport',
           description:
             'Pune Airport (PNQ) is the nearest airport. Taxis and app cabs run to Chinchwad; the transfer is typically 45–75 minutes depending on traffic.',
-          icon: '/images/staff_management_1_e3b60c1db6.png',
+          icon: '/images/staff_management_1_e3b60c1db6.webp',
           fallbackIcon: '✈️',
         },
         {
           title: 'Railway Stations',
           description:
             'Pune Junction is the main station. Chinchwad is closer to the venue and a short taxi ride from the Auto Cluster Exhibition Center.',
-          icon: '/images/partnership_41fd66a951.png',
+          icon: '/images/partnership_41fd66a951.webp',
           fallbackIcon: '🚆',
         },
         {
           title: 'By Road',
           description:
             'Drive or take a coach via the Mumbai–Pune Expressway, then follow Mumbai–Pune Road to Chinchwad East, Plot C-181.',
-          icon: '/images/meeting_3e0de9e870.png',
+          icon: '/images/meeting_3e0de9e870.webp',
           fallbackIcon: '🚗',
         },
         {
           title: 'Local Transport',
           description:
             'App-based cabs, taxis, and auto-rickshaws are widely available. Use them between hotels in Hinjewadi, Wakad, Chinchwad, and the venue.',
-          icon: '/images/branding_c56168b0cb.png',
+          icon: '/images/branding_c56168b0cb.webp',
           fallbackIcon: '🚕',
         },
         {
           title: 'Hotels for Teams',
           description:
             'Stay in Chinchwad, Hinjewadi, or Wakad for convenient access during build-up and show days. See recommended hotels on Plan Your Travel.',
-          icon: '/images/research_5ebaa8133d.png',
+          icon: '/images/research_5ebaa8133d.webp',
           fallbackIcon: '🏨',
         },
         {
           title: 'International Teams',
           description:
             'Overseas staff should confirm Indian visa requirements, flight connections, and travel insurance. Allow time for immigration and the transfer into Pune.',
-          icon: '/images/product_release_d7b5bbb99c.png',
+          icon: '/images/product_release_d7b5bbb99c.webp',
           fallbackIcon: '🌍',
         },
       ]}
@@ -69,7 +69,7 @@ export default function TravelToPunePage() {
           title: 'By Air',
           description:
             'Fly into Pune International Airport. Mumbai Airport is an alternative with a longer road transfer on the Expressway. Pre-book cabs for stand crews arriving with tools and samples.',
-          image: '/images/photo-1436491865332-7a61a109cc05.jpg',
+          image: '/images/photo-1436491865332-7a61a109cc05.webp',
           fallbackIcon: '✈️',
           buttonText: 'View Hotels',
           buttonLink: '/plan-your-travel',
@@ -78,7 +78,7 @@ export default function TravelToPunePage() {
           title: 'By Rail',
           description:
             'Arrive at Pune Junction or Chinchwad. Intercity and Mumbai–Pune trains run throughout the day. From Chinchwad station the venue is a short taxi ride.',
-          image: '/images/photo-1474487548417-781cb71495f3.jpg',
+          image: '/images/photo-1474487548417-781cb71495f3.webp',
           fallbackIcon: '🚆',
           buttonText: 'Contact Us',
           buttonLink: '/contact-us',
@@ -87,7 +87,7 @@ export default function TravelToPunePage() {
           title: 'By Road',
           description:
             'Use the Mumbai–Pune Expressway and Mumbai–Pune Road toward Chinchwad East. Freight vehicles should follow the official logistics move-in windows, not visitor drop-off lanes.',
-          image: '/images/car.jpg',
+          image: '/images/car.webp',
           fallbackIcon: '🚗',
           buttonText: 'Freight Guide',
           buttonLink: '/freight-handling-logistics',

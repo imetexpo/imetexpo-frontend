@@ -46,28 +46,28 @@ export default function WhyVisitPage() {
       description:
         "Explore advanced Coordinate Measuring Machines, optical and vision systems, 3D scanning, precision instruments, surface and form measurement, calibration equipment, sensors, probes, testing systems, and digital metrology solutions.",
       image:
-        "/images/latest_technology.png",
+        "/images/latest_technology.webp",
     },
     {
       title: "Meet India's Precision Manufacturing Decision-Makers",
       description:
         "Connect with quality heads, metrology professionals, inspection engineers, manufacturing leaders, plant managers, procurement teams, OEMs, Tier 1 and Tier 2 suppliers, and technical decision-makers responsible for measurement and quality solutions.",
       image:
-        "/images/decision_makers.jpg",
+        "/images/decision_makers.webp",
     },
     {
       title: "Compare Measurement & Inspection Solutions",
       description:
         "Evaluate technologies from leading solution providers, compare capabilities and specifications, discuss applications with experts, and identify the right metrology and inspection solutions for your manufacturing requirements.",
       image:
-        "/images/inspection_solutions.jpg",
+        "/images/inspection_solutions.webp",
     },
     {
       title: "Stay Ahead of Precision Manufacturing Trends",
       description:
         "Understand how digital metrology, automation, Industry 4.0, artificial intelligence, 3D measurement, connected quality systems, and data-driven inspection are transforming modern manufacturing.",
       image:
-        "/images/precision_manufacuring_trends.jpeg",
+        "/images/precision_manufacuring_trends.webp",
     },
   ];
 
@@ -122,7 +122,7 @@ export default function WhyVisitPage() {
       description:
         "Gain valuable insights from industry experts, technology leaders, quality professionals, and manufacturing specialists discussing the latest developments in metrology, measurement, inspection, calibration, digital quality, and precision manufacturing.",
       image:
-        "/images/MW_24_2304_0004_FORUM_i_c9f88bc608.jpg",
+        "/images/MW_24_2304_0004_FORUM_i_c9f88bc608.webp",
       buttonText: "Explore Summit",
       buttonLink: "/summit",
     },
@@ -131,7 +131,7 @@ export default function WhyVisitPage() {
       description:
         "Recognise outstanding achievements, innovations, technologies, and contributions that are advancing measurement science, quality engineering, inspection, calibration, and precision manufacturing.",
       image:
-        "/images/QR_MW_eng_web_site_e73baacf2e.svg",
+        "/images/gmea.webp",
       buttonText: "View Awards",
       buttonLink: "/awards",
     },
@@ -140,7 +140,7 @@ export default function WhyVisitPage() {
       description:
         "Build valuable professional connections with manufacturers, technology providers, quality experts, engineers, OEMs, buyers, and decision-makers from India's growing precision manufacturing ecosystem.",
       image:
-        "/images/QR_MW_eng_web_site_e73baacf2e.svg",
+        "/images/connect.webp",
       buttonText: "Connect",
       buttonLink: "/https://wwww.metrologyupdate.com",
     },
@@ -151,25 +151,25 @@ export default function WhyVisitPage() {
       label: "Become an Exhibitor",
       link: "/exhibiting-enquiry",
       icon:
-        "/images/Vector_1_440f5852b9.png",
+        "/images/Vector_1_440f5852b9.webp",
     },
     {
       label: "Register as a Visitor",
       link: "/visitor-registration",
       icon:
-        "/images/Vector_2_9be2b98909.png",
+        "/images/Vector_2_9be2b98909.webp",
     },
     {
       label: "Download Event Brochure",
       link: "/event-brochure",
       icon:
-        "/images/Group_e024d13500.png",
+        "/images/Group_e024d13500.webp",
     },
     {
       label: "Plan Your Travel",
       link: "/plan-your-travel",
       icon:
-        "/images/Vector_1_b2c1ab92d0.png",
+        "/images/Vector_1_b2c1ab92d0.webp",
     },
   ];
 
@@ -244,7 +244,7 @@ export default function WhyVisitPage() {
                   <div className="order-1 lg:order-2 relative h-[400px] sm:h-[500px] lg:h-[600px] w-full overflow-hidden rounded-lg">
 
                     <Image
-                      src="/images/precision_manufacturing.jpg"                     
+                      src="/images/precision_manufacturing.webp"                     
                       alt="Engineers examining a turbine component with digital design overlays"
                       fill
                       className="object-cover"
@@ -380,7 +380,7 @@ export default function WhyVisitPage() {
                 <div className="absolute inset-0">
 
                   <img
-                    src="/images/img_3_4b6edc76d1.jpg"
+                    src="/images/img_3_4b6edc76d1.webp"
                     alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                     className="h-full w-full object-cover"
                   />
@@ -396,7 +396,7 @@ export default function WhyVisitPage() {
                     <div className="flex justify-center md:col-span-4">
 
                       <img
-                        src="/images/indiamet_Brochure.png"
+                        src="/images/indiamet_Brochure.webp"
                         alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                         className="h-48 sm:h-56 lg:h-64 w-auto object-contain"
                       />
@@ -544,7 +544,7 @@ export default function WhyVisitPage() {
                   <div className="relative min-h-[350px] sm:min-h-[400px] overflow-hidden rounded-sm border border-white/10">
 
                     <img
-                      src="/images/img_3_4b6edc76d1.jpg"
+                      src="/images/img_3_4b6edc76d1.webp"
                       alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                       className="absolute inset-0 h-full w-full object-cover"
                     />
@@ -584,7 +584,7 @@ export default function WhyVisitPage() {
                   <div className="relative min-h-[350px] sm:min-h-[400px] overflow-hidden rounded-sm border border-white/10">
 
                     <img
-                      src="/images/img_3_4b6edc76d1.jpg"
+                      src="/images/img_3_4b6edc76d1.webp"
                       alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                       className="absolute inset-0 h-full w-full object-cover"
                     />

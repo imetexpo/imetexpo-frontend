@@ -105,7 +105,7 @@ async function sendConfirmation(data: NominationData, submissionId: string) {
           <tr>
             <td align="center" style="background:#F2F8FA; padding:25px 24px; border-bottom:1px solid #E2E8F0;">
               <img 
-                src="https://res.cloudinary.com/deo4vpw8f/image/upload/v1793946695/indimet_LOGO_cusfu7.png"
+                src="https://res.cloudinary.com/deo4vpw8f/image/upload/v1793946695/indimet_LOGO_cusfu7.webp"
                 style="max-width:180px; display:block; margin:0 auto;"
                 alt="IndiaMET 2027 Logo"
               />
@@ -154,7 +154,7 @@ async function sendConfirmation(data: NominationData, submissionId: string) {
                   <td width="38%" align="left" valign="middle">
                     <span style="font-size:11px; color:#666; font-weight:bold; text-transform:uppercase; display:block; margin-bottom:6px;">Organized By:</span>
                     <img 
-                      src="https://res.cloudinary.com/deo4vpw8f/image/upload/v1774687173/maxxlogo_lulkwh.png"
+                      src="https://res.cloudinary.com/deo4vpw8f/image/upload/v1774687173/maxxlogo_lulkwh.webp"
                       style="max-width:140px; display:block;"
                       alt="Maxx Business Media Logo"
                     />

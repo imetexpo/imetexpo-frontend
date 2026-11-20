@@ -192,7 +192,7 @@ const termsOfVisitingPageData = {
                 id: "40",
                 name: "CargoTalk",
                 slug: "cargo-talk",
-                logo: "https://cdn.itegroupnews.com/Cargo_Talk_ME_logo_final_ff5213a4fd.jpg",
+                logo: "https://cdn.itegroupnews.com/Cargo_Talk_ME_logo_final_ff5213a4fd.webp",
             },
             {
                 id: "34",
@@ -204,7 +204,7 @@ const termsOfVisitingPageData = {
                 id: "43",
                 name: "BizToday",
                 slug: "trans-russia-partner-1",
-                logo: "https://cdn.itegroupnews.com/Logo_Biz_Today_International_JPG_dd5d3adcb2.jpg",
+                logo: "https://cdn.itegroupnews.com/Logo_Biz_Today_International_webp_dd5d3adcb2.webp",
             },
             {
                 id: "23",

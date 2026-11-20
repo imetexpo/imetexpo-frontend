@@ -35,42 +35,42 @@ export default function ExhibitorResourceCenterPage() {
     title: "Generate New Business Leads",
     description:
       "Connect with qualified buyers, OEMs, engineers, quality professionals, and decision-makers actively looking for metrology, measurement, inspection, calibration, and quality solutions.",
-    icon: "/images/staff_management_1_e3b60c1db6.png",
+    icon: "/images/staff_management_1_e3b60c1db6.webp",
     fallbackIcon: "🎯",
   },
   {
     title: "Strengthen Customer Relationships",
     description:
       "Meet existing customers face-to-face, understand their evolving requirements, demonstrate new solutions, and strengthen long-term business relationships.",
-    icon: "/images/partnership_41fd66a951.png",
+    icon: "/images/partnership_41fd66a951.webp",
     fallbackIcon: "🤝",
   },
   {
     title: "Conduct Business Meetings",
     description:
       "Create dedicated meeting areas for technical discussions, product consultations, negotiations, project requirements, and focused business conversations with key decision-makers.",
-    icon: "/images/meeting_3e0de9e870.png",
+    icon: "/images/meeting_3e0de9e870.webp",
     fallbackIcon: "📊",
   },
   {
     title: "Build Brand Visibility",
     description:
       "Stand out at INDIAMET with a strong exhibition presence, impactful branding, live demonstrations, and professional product displays that strengthen your position in the precision manufacturing market.",
-    icon: "/images/branding_c56168b0cb.png",
+    icon: "/images/branding_c56168b0cb.webp",
     fallbackIcon: "🏷️",
   },
   {
     title: "Study Market & Competitors",
     description:
       "Gain valuable insights into market trends, competing technologies, customer expectations, and emerging opportunities across India's metrology, measurement, inspection, and quality ecosystem.",
-    icon: "/images/research_5ebaa8133d.png",
+    icon: "/images/research_5ebaa8133d.webp",
     fallbackIcon: "🔍",
   },
   {
     title: "Launch New Technologies",
     description:
       "Use INDIAMET as a powerful platform to introduce new products, technologies, equipment, and solutions through live demonstrations and direct engagement with prospective customers.",
-    icon: "/images/product_release_d7b5bbb99c.png",
+    icon: "/images/product_release_d7b5bbb99c.webp",
     fallbackIcon: "🚀",
   },
 ];
@@ -80,14 +80,14 @@ const standOptions = [
     title: "Individual Construction",
     description:
       "Choosing an individual project stand is highly recommended as it allows for an effective presentation of your company, highlights your high status, emphasizes your unique style, and attracts more clients.",
-    image: "/images/raw.jpg",
+    image: "/images/raw.webp",
     fallbackIcon: "🏗️",
   },
   {
     title: "Standard Shell Scheme",
     description:
       "A professional and cost-effective stand solution for companies looking for a ready-to-use exhibition space. Enhance your stand with company branding, graphics, product displays, furniture, lighting, and other essential exhibition accessories.",
-    image: "/images/shell.jpg",
+    image: "/images/shell.webp",
     fallbackIcon: "📦",
   },
   
@@ -167,7 +167,7 @@ const faqItems = [
                 {/* RIGHT IMAGE */}
                 <div className="order-1 lg:order-2 h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-sm border border-gray-100 bg-[#FCF8F3]">
                   <ImageWithFallback
-                    src="/images/Explore_Opportunities.jpg"
+                    src="/images/Explore_Opportunities.webp"
                     alt="Visitors discussing technology with exhibitors at a manufacturing trade show"
                     fallbackIcon="🏢"
                     className="h-full w-full"

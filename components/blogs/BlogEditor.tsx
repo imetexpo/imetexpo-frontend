@@ -88,8 +88,8 @@ export default function BlogEditor({ id }: { id?: string }) {
 
   async function upload(file?: File) {
     if (!file) return;
-    if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || file.size > 5 * 1024 * 1024) {
-      setError('Choose a JPG, PNG or WebP image smaller than 5 MB.');
+    if (!['image/webp', 'image/webp', 'image/webp'].includes(file.type) || file.size > 5 * 1024 * 1024) {
+      setError('Choose a webp, webp or WebP image smaller than 5 MB.');
       return;
     }
     setUploading(true);
@@ -282,7 +282,7 @@ export default function BlogEditor({ id }: { id?: string }) {
               <span className="sr-only">Upload cover image</span>
               <input
                 type="file"
-                accept="image/jpeg,image/png,image/webp"
+                accept="image/webp,image/webp,image/webp"
                 disabled={uploading}
                 onChange={(event) => {
                   upload(event.target.files?.[0]);
@@ -292,7 +292,7 @@ export default function BlogEditor({ id }: { id?: string }) {
               />
             </label>
             <p role="status" className="text-xs text-slate-500">
-              {uploading ? 'Uploading image...' : 'JPG, PNG or WebP. Maximum 5 MB.'}
+              {uploading ? 'Uploading image...' : 'webp, webp or WebP. Maximum 5 MB.'}
             </p>
             <label className="block text-xs text-slate-500">
               Or paste an image URL

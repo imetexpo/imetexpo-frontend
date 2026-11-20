@@ -671,7 +671,7 @@ export default function AdminRentalItemsPage() {
                           className="hidden"
                         />
                       </label>
-                      <p className="text-xs text-gray-500 mt-1.5">Max 5MB (JPEG, PNG, GIF, WebP)</p>
+                      <p className="text-xs text-gray-500 mt-1.5">Max 5MB (webp, webp, GIF, WebP)</p>
                     </div>
                   </div>
                 </div>

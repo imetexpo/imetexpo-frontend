@@ -55,7 +55,7 @@ export default function AdminProfilePage() {
                             </div>
                             <div>
                                 <h3 className="text-sm font-bold text-gray-900">Profile Photo</h3>
-                                <p className="text-xs text-gray-400 mt-0.5">JPG, PNG or GIF. Max 2MB.</p>
+                                <p className="text-xs text-gray-400 mt-0.5">webp, webp or GIF. Max 2MB.</p>
                                 <button type="button" className="mt-2.5 px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-xs font-semibold text-gray-700 transition flex items-center gap-1.5">
                                     <Upload size={13} />
                                     Upload Photo

@@ -13,7 +13,7 @@ for (const [key, value] of Object.entries(IMAGE_ALTS)) {
 
 /**
  * Returns the recommended accessible alt text for a given image source path.
- * Matches by full web path (e.g. '/images/about_indiamet.jpg') or by filename ('about_indiamet.jpg').
+ * Matches by full web path (e.g. '/images/about_indiamet.webp') or by filename ('about_indiamet.webp').
  * If the image is decorative, returns empty string `""` as per accessibility standards.
  */
 export function getImageAlt(src: string | undefined | null, fallback?: string): string {

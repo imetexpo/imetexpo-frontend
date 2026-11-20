@@ -39,17 +39,17 @@ export default function AboutITEPage() {
     {
       title: "The Mission",
       content: "To create unique and valuable events for the success of your business and the development of industries and economies.",
-      image: "/images/mission.jpg"
+      image: "/images/mission.webp"
     },
     {
       title: "The Vision",
       content: "Connecting businesses year-round, both online and in person, allowing professionals to establish long-term business partnerships.",
-      image: "/images/vision.jpg"
+      image: "/images/vision.webp"
     },
     {
       title: "Our Values",
       content: "Entrepreneurship, Integrity, Excellence, Positive Thinking, Commitment to Result",
-      image: "/images/values.jpg"
+      image: "/images/values.webp"
     }
   ];
 
@@ -71,7 +71,7 @@ export default function AboutITEPage() {
                   <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                     <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77]">About </h2>
                     <Image
-                      src="/images/maxx_logo.png"
+                      src="/images/maxx_logo.webp"
                       alt="MaxX Business Media Pvt Ltd logo"
                       width={280}
                       height={80}

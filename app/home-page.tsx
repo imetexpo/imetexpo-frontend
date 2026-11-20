@@ -20,14 +20,14 @@ import { getLatestArticles } from '@/app/articles/data'; // Import from your dat
 
 // Sample data - replace with actual data from API
 const countriesData = [
-  { name: 'India', flag: '/images/in.png' },
-  { name: 'Germany', flag: '/images/de.png' },
-  { name: 'China', flag: '/images/cn.png' },
-  { name: 'Japan', flag: '/images/jp.png' },
-  { name: 'USA', flag: '/images/us.png' },
-  { name: 'South Korea', flag: '/images/kr.png' },
-  { name: 'Thailand', flag: '/images/th.png' },
-  { name: 'Vietnam', flag: '/images/vn.png' },
+  { name: 'India', flag: '/images/in.webp' },
+  { name: 'Germany', flag: '/images/de.webp' },
+  { name: 'China', flag: '/images/cn.webp' },
+  { name: 'Japan', flag: '/images/jp.webp' },
+  { name: 'USA', flag: '/images/us.webp' },
+  { name: 'South Korea', flag: '/images/kr.webp' },
+  { name: 'Thailand', flag: '/images/th.webp' },
+  { name: 'Vietnam', flag: '/images/vn.webp' },
 ];
 
 
@@ -36,17 +36,17 @@ const outcomesData = [
   {
     title: 'GENERATE NEW LEADS',
     content: 'Meet manufacturers, quality professionals, engineers, procurement teams, and decision-makers actively looking for advanced measurement, inspection, calibration, and quality solutions.',
-    image: '/images/generate.png',
+    image: '/images/generate.webp',
   },
   {
     title: 'STRENGTHEN YOUR BRAND',
     content: 'Position your company alongside leading global and Indian metrology brands and increase visibility among key players across automotive, aerospace, engineering, defence, electronics, medical devices, and other precision industries.',
-    image: '/images/strength.png',
+    image: '/images/strength.webp',
   },
   {
     title: 'BUILD STRONG RELATIONSHIPS',
     content: 'Engage directly with existing customers, develop new partnerships, explore emerging markets, and create opportunities for long-term business growth.',
-    image: '/images/build.png',
+    image: '/images/build.webp',
   },
 ];
 

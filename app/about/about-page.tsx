@@ -71,15 +71,15 @@ export default function AboutPage() {
   ];
 
   const keyEvents = [
-    { title: "Conference Programme", description: "INDIAMET brings together industry leaders, metrology experts, manufacturing professionals, and technical specialists through a comprehensive conference programme featuring industry forums, expert presentations, panel discussions, and technical sessions. The programme explores emerging technologies, industry challenges, standards, and the latest trends shaping metrology, measurement, inspection, calibration, and precision manufacturing.", image: "/images/confe.jpg", buttonText: "Learn More", buttonLink: "/summit" }, { title: "INDIAMET Connect", description: "INDIAMET Connect is the exhibition's dedicated business networking platform, designed to connect exhibitors, visitors, manufacturers, quality professionals, metrology experts, media, professional associations, and industry leaders. The platform helps participants discover new technologies, build valuable business relationships, and explore new business opportunities.", image: "/images/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.png", buttonText: "Join Now", buttonLink: "/http://www.metrologyupdate.com" }, { title: "Global Metrology Excellence Awards", description: "The Global Metrology Excellence Awards (GMEA) recognise outstanding achievements and innovation in metrology, measurement technology, inspection, calibration, quality engineering, and precision manufacturing. The awards celebrate organisations and professionals developing advanced solutions that improve accuracy, productivity, quality, and manufacturing performance.", image: "/images/awards2.png", buttonText: "Learn More", buttonLink: "/awards" }
+    { title: "Conference Programme", description: "INDIAMET brings together industry leaders, metrology experts, manufacturing professionals, and technical specialists through a comprehensive conference programme featuring industry forums, expert presentations, panel discussions, and technical sessions. The programme explores emerging technologies, industry challenges, standards, and the latest trends shaping metrology, measurement, inspection, calibration, and precision manufacturing.", image: "/images/confe.webp", buttonText: "Learn More", buttonLink: "/summit" }, { title: "INDIAMET Connect", description: "INDIAMET Connect is the exhibition's dedicated business networking platform, designed to connect exhibitors, visitors, manufacturers, quality professionals, metrology experts, media, professional associations, and industry leaders. The platform helps participants discover new technologies, build valuable business relationships, and explore new business opportunities.", image: "/images/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.webp", buttonText: "Join Now", buttonLink: "/http://www.metrologyupdate.com" }, { title: "Global Metrology Excellence Awards", description: "The Global Metrology Excellence Awards (GMEA) recognise outstanding achievements and innovation in metrology, measurement technology, inspection, calibration, quality engineering, and precision manufacturing. The awards celebrate organisations and professionals developing advanced solutions that improve accuracy, productivity, quality, and manufacturing performance.", image: "/images/awards2.webp", buttonText: "Learn More", buttonLink: "/awards" }
   ];
 
   const quickLinks = [
-    { label: "Enquire to Exhibit", link: "/exhibiting-enquiry", icon: "/images/Vector_1_440f5852b9.png" },
-    { label: "Download Event Brochure", link: "/event-brochure", icon: "/images/Group_e024d13500.png" },
-    { label: "Exhibitor List", link: "/exhibition-directory", icon: "/images/Vector_ceea3d1488.png" },
-    { label: "Plan Your Travel", link: "/plan-your-travel", icon: "/images/Vector_1_b2c1ab92d0.png" },
-    { label: "Why Visit", link: "/why-visit", icon: "/images/Vector_2_9be2b98909.png" }
+    { label: "Enquire to Exhibit", link: "/exhibiting-enquiry", icon: "/images/Vector_1_440f5852b9.webp" },
+    { label: "Download Event Brochure", link: "/event-brochure", icon: "/images/Group_e024d13500.webp" },
+    { label: "Exhibitor List", link: "/exhibition-directory", icon: "/images/Vector_ceea3d1488.webp" },
+    { label: "Plan Your Travel", link: "/plan-your-travel", icon: "/images/Vector_1_b2c1ab92d0.webp" },
+    { label: "Why Visit", link: "/why-visit", icon: "/images/Vector_2_9be2b98909.webp" }
   ];
 
   return (
@@ -100,7 +100,7 @@ export default function AboutPage() {
              {/* LEFT IMAGE - Responsive cover-fit matching screenshot 4*/}
              <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
                 <img
-                  src="/images/about_indiamet.jpg"
+                  src="/images/about_indiamet.webp"
                   alt="Visitors exploring industrial exhibitors in a busy exhibition hall"
                   className="w-full h-full object-cover"
                 />
@@ -215,7 +215,7 @@ export default function AboutPage() {
               <div className="relative mx-auto overflow-hidden py-12 sm:py-16 lg:py-20 text-white">
                 <div className="absolute inset-0">
                   <img
-                    src="/images/img_3_4b6edc76d1.jpg"
+                    src="/images/img_3_4b6edc76d1.webp"
                     alt="Precision manufacturing and measurement technology banner with CNC machine and caliper"
                     className="h-full w-full object-cover"
                   />
@@ -228,7 +228,7 @@ export default function AboutPage() {
                     <div className="grid items-center gap-8 md:grid-cols-12">
                       <div className="flex justify-center md:col-span-5 lg:col-span-4">
                         <img
-                          src="/images/indiamet_Brochure.png"
+                          src="/images/indiamet_Brochure.webp"
                           alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                           className="h-48 sm:h-56 lg:h-64 w-auto object-contain"
                         />
@@ -274,7 +274,7 @@ export default function AboutPage() {
                           
                   <div className="mt-6 sm:mt-8 w-full overflow-hidden rounded-sm">
                     <img
-                      src="/images/image2.png"
+                      src="/images/image2.webp"
                       alt=""
                       className="h-[200px] sm:h-[280px] md:h-[350px] lg:h-[400px] w-full object-cover transition-transform duration-500 hover:scale-105"
                     />

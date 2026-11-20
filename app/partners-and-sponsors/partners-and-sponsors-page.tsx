@@ -44,11 +44,11 @@ export default function PartnersSponsorsPage() {
     ];
 
   const quickLinks = [
-    { label: "Enquire to Exhibit", link: "/exhibiting-enquiry", icon: "/images/Vector_1_440f5852b9.png" },
-    { label: "Download Event Brochure", link: "/event-brochure", icon: "/images/Group_e024d13500.png" },
-    { label: "Exhibitor List", link: "/exhibitor-list", icon: "/images/Vector_ceea3d1488.png" },
-    { label: "Plan Your Travel", link: "/plan-your-travel", icon: "/images/Vector_1_b2c1ab92d0.png" },
-    { label: "Why Visit", link: "/why-visit", icon: "/images/Vector_2_9be2b98909.png" }
+    { label: "Enquire to Exhibit", link: "/exhibiting-enquiry", icon: "/images/Vector_1_440f5852b9.webp" },
+    { label: "Download Event Brochure", link: "/event-brochure", icon: "/images/Group_e024d13500.webp" },
+    { label: "Exhibitor List", link: "/exhibitor-list", icon: "/images/Vector_ceea3d1488.webp" },
+    { label: "Plan Your Travel", link: "/plan-your-travel", icon: "/images/Vector_1_b2c1ab92d0.webp" },
+    { label: "Why Visit", link: "/why-visit", icon: "/images/Vector_2_9be2b98909.webp" }
   ];
 
   return (

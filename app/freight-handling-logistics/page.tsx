@@ -13,7 +13,7 @@ export default function FreightHandlingLogisticsPage() {
       introBody="Coordinate freight, on-site handling, delivery windows, installation, and removal with appointed logistics partners. Share crate lists, weights, and special requirements early so machinery, displays, and stand materials arrive on time at the Auto Cluster Exhibition Center."
       introCtaText="Enquire Now"
       introCtaHref="/exhibiting-enquiry"
-      introImage="/images/cargo.jpg"
+      introImage="/images/cargo.webp"
       introImageAlt="Freight handling and exhibition logistics"
       benefitsHeading="Logistics"
       benefitsAccent="Support"
@@ -22,42 +22,42 @@ export default function FreightHandlingLogisticsPage() {
           title: 'Inbound Freight',
           description:
             'Plan road, air, or sea freight into Pune with packing lists, insurance, and delivery slots that match the official exhibitor move-in timetable.',
-          icon: '/images/staff_management_1_e3b60c1db6.png',
+          icon: '/images/staff_management_1_e3b60c1db6.webp',
           fallbackIcon: '📦',
         },
         {
           title: 'On-Site Handling',
           description:
             'Forklifts, rigging, and hall access are coordinated through appointed handlers. Heavy or oversized exhibits must be declared in advance.',
-          icon: '/images/partnership_41fd66a951.png',
+          icon: '/images/partnership_41fd66a951.webp',
           fallbackIcon: '🏗️',
         },
         {
           title: 'Customs & Documentation',
           description:
             'International exhibitors should prepare commercial invoices, packing lists, and ATA Carnet or temporary import papers with their freight forwarder.',
-          icon: '/images/meeting_3e0de9e870.png',
+          icon: '/images/meeting_3e0de9e870.webp',
           fallbackIcon: '📄',
         },
         {
           title: 'Stand Materials',
           description:
             'Graphics, furniture, tools, and construction materials should follow the same delivery windows as product cargo to avoid delays on build-up days.',
-          icon: '/images/branding_c56168b0cb.png',
+          icon: '/images/branding_c56168b0cb.webp',
           fallbackIcon: '🧰',
         },
         {
           title: 'Live Equipment',
           description:
             'Machinery demonstrations may need extra power, compressed air, or floor loading checks. Confirm technical services before shipment leaves your warehouse.',
-          icon: '/images/research_5ebaa8133d.png',
+          icon: '/images/research_5ebaa8133d.webp',
           fallbackIcon: '⚙️',
         },
         {
           title: 'Empty Cases & Removal',
           description:
             'Empty case storage and outbound collection are arranged through the official logistics desk. Label crates clearly for a faster move-out after close of show.',
-          icon: '/images/product_release_d7b5bbb99c.png',
+          icon: '/images/product_release_d7b5bbb99c.webp',
           fallbackIcon: '🚚',
         },
       ]}

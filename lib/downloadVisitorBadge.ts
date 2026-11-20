@@ -167,7 +167,7 @@ export async function renderVisitorBadgeCanvas(pass: VisitorPass): Promise<HTMLC
 
 export async function generateVisitorBadgeDataUrl(pass: VisitorPass): Promise<string> {
   const canvas = await renderVisitorBadgeCanvas(pass);
-  return canvas.toDataURL('image/png');
+  return canvas.toDataURL('image/webp');
 }
 
 export async function generateVisitorBadgeBlob(pass: VisitorPass): Promise<Blob> {
@@ -176,7 +176,7 @@ export async function generateVisitorBadgeBlob(pass: VisitorPass): Promise<Blob>
     canvas.toBlob((blob) => {
       if (blob) resolve(blob);
       else reject(new Error('Could not create badge blob'));
-    }, 'image/png');
+    }, 'image/webp');
   });
 }
 
@@ -184,7 +184,7 @@ export async function downloadVisitorBadge(pass: VisitorPass) {
   const dataUrl = await generateVisitorBadgeDataUrl(pass);
   const link = document.createElement('a');
   link.href = dataUrl;
-  link.download = `${pass.registrationNumber}.png`;
+  link.download = `${pass.registrationNumber}.webp`;
   document.body.appendChild(link);
   link.click();
   link.remove();

@@ -147,7 +147,7 @@ export default function FloorPlanViewer() {
 
     const link = document.createElement("a");
     link.href = baseImage;
-    link.download = `floor-plan-${Date.now()}.png`;
+    link.download = `floor-plan-${Date.now()}.webp`;
     link.target = "_blank";
     link.click();
     toast.success("Opening floor plan image");

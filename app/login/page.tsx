@@ -86,7 +86,7 @@ export default function ExhibitorLoginPage() {
         <div className="rounded-sm border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur-xl sm:rounded-2xl sm:p-8">
           <div className="mb-5 text-center sm:mb-8">
             <Image
-              src="/footer_logo.png"
+              src="/indiamet_logo.webp"
               alt="IndiaMET exhibition logo for dark backgrounds"
               width={370}
               height={150}

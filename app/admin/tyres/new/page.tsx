@@ -272,7 +272,7 @@ export default function AddTyrePage() {
                     <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center">
                         <Upload className="h-10 w-10 text-gray-500 mx-auto mb-3" />
                         <p className="text-gray-400 mb-2">Click or drag and drop to upload product images</p>
-                        <p className="text-xs text-gray-500">PNG, JPG up to 5MB (Multiple images allowed)</p>
+                        <p className="text-xs text-gray-500">webp, webp up to 5MB (Multiple images allowed)</p>
                         <input type="file" accept="image/*" multiple className="hidden" />
                         <button type="button" className="mt-4 px-4 py-2 bg-gray-700 rounded-lg text-gray-300 hover:bg-gray-600 transition">
                             Choose Images
