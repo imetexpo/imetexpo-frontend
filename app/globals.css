@@ -195,11 +195,11 @@ body {
 
 .whatsapp-float {
   position: fixed;
-  bottom: 25px;
+  bottom: 130px;
   right: 25px;
 
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
 
   background-color: #25D366;
   color: #ffffff;
@@ -222,12 +222,42 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
+.whatsapp-tooltip {
+  position: absolute;
+  right: 74px;
+
+  background: #eb141e;
+  color: #fff;
+
+  padding: 8px 14px;
+  border-radius: 6px;
+
+  font-size: 13px;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .whatsapp-float {
-    width: 52px;
-    height: 52px;
-    bottom: 18px;
+    width: 56px;
+    height: 56px;
+    bottom: 110px;
     right: 18px;
+  }
+
+  .whatsapp-tooltip {
+    right: 66px;
+    font-size: 12px;
+    padding: 6px 10px;
   }
 }
