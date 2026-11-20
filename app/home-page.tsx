@@ -20,7 +20,7 @@ import { getLatestArticles } from '@/app/articles/data'; // Import from your dat
 
 // Sample data - replace with actual data from API
 const countriesData = [
-  { name: 'India', flag: '/images/in.webp' },
+  { name: 'India', flag: '/images/in.png' },
   { name: 'Germany', flag: '/images/de.webp' },
   { name: 'China', flag: '/images/cn.webp' },
   { name: 'Japan', flag: '/images/jp.webp' },
