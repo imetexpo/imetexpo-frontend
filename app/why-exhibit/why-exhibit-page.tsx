@@ -309,7 +309,7 @@ export default function WhyExhibitPage() {
                     {
                       title: "Rapid Growth in Precision Manufacturing",
                       desc: "India’s automotive, aerospace, defence, electronics, engineering, and industrial manufacturing sectors are rapidly adopting advanced technologies to achieve higher precision, productivity, and quality. This is driving strong demand for modern metrology, inspection, and measurement solutions..",
-                      image: "/images/wide_angle_shot_excavation_machines_lookout_jackerath_garzweiler_skywalk_germany_58dec187f5.webp"
+                      image: "/images/Precision.webp"
                     },
                     {
                       title: "Rise of Smart & Automated Manufacturing",
@@ -319,7 +319,7 @@ export default function WhyExhibitPage() {
                     {
                       title: "Growing Focus on Quality & Global Standards",
                       desc: "Indian manufacturers are increasingly focused on achieving global quality standards, improving dimensional accuracy, reducing production errors, and strengthening traceability. This is creating new opportunities for calibration, testing, inspection, measurement software, and quality technologies.",
-                      image: "/images/view_heavy_machinery_used_construction_industry_a179c698c8.webp"
+                      image: "/images/growing.webp"
                     }
                   ].map((item, idx) => (
                     <div key={idx} className="relative flex min-h-[350px] flex-col overflow-hidden text-white rounded-sm border border-white/10">
