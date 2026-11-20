@@ -15,23 +15,23 @@ const reasons = [
 
 export default function WhyExhibitSection() {
   return (
-    <section className="bg-[#003A77] text-white py-16 sm:py-20 lg:py-28">
+    <section className="bg-[#003A77] text-white py-12 sm:py-16 lg:py-24">
       <Container>
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-16 items-stretch">
 
           {/* LEFT SIDE */}
-          <div className="flex-1 flex flex-col gap-5 justify-between">
-            <div className="flex flex-col gap-4">
+          <div className="flex-1 flex flex-col gap-4 sm:gap-5 justify-between">
+            <div className="flex flex-col gap-3 sm:gap-4">
               <div className="flex flex-col">
-                <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-[#00A1B1] uppercase">
+                <h2 className="font-bebas text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight text-[#00A1B1] uppercase">
                   WHY EXHIBIT
                 </h2>
-                <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-white uppercase">
+                <h2 className="font-bebas text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight text-white uppercase mt-1">
                   AT INDIAMET 2027 ?
                 </h2>
               </div>
 
-              <p className="font-sans text-lg sm:text-xl text-gray-400 leading-relaxed mt-2">
+              <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed mt-1 sm:mt-2">
                 Showcase your innovations at an industrial metrology exhibition designed to connect measurement technology companies with relevant manufacturing audiences.
                 INDIAMET 2027 offers an opportunity for metrology equipment manufacturers, calibration solution providers, inspection technology companies, and quality engineering specialists to present their capabilities to industry professionals.
               </p>
@@ -39,7 +39,7 @@ export default function WhyExhibitSection() {
 
             <Link
               href="/register?t=exhibitor"
-              className="inline-block bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 w-fit text-center"
+              className="inline-block bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-4 sm:mt-6 w-full sm:w-fit text-center"
             >Book Your Exhibition Stall
             </Link>
           </div>
@@ -52,12 +52,12 @@ export default function WhyExhibitSection() {
             {reasons.map((text, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 sm:gap-5 border-b border-white/10 pb-5 pt-5 first:pt-0 last:border-b-0"
+                className="flex items-start gap-3 sm:gap-5 border-b border-white/10 pb-4 pt-4 sm:pb-5 sm:pt-5 first:pt-0 last:border-b-0"
               >
-                <span className="text-[#00A1B1] text-sm sm:text-base font-bold font-sans flex-shrink-0 mt-1">
+                <span className="text-[#00A1B1] text-xs sm:text-base font-bold font-sans flex-shrink-0 mt-0.5 sm:mt-1">
                   0{index + 1}.
                 </span>
-                <p className="font-bebas text-lg sm:text-xl md:text-2xl tracking-wide leading-snug text-gray-200 uppercase">
+                <p className="font-bebas text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide leading-snug text-gray-200 uppercase">
                   {text}
                 </p>
               </div>

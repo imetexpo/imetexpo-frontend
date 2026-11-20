@@ -27,20 +27,18 @@ export default function CountriesSection({ countries }: CountriesSectionProps) {
         <p className="text-[#00A1B1] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
           Countries Represented
         </p>
-        <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-white uppercase tracking-tight mt-3">
+        <h2 className="font-bebas text-3xl sm:text-5xl lg:text-6xl text-white uppercase tracking-tight mt-3">
           CONNECTING THE WORLD OF METROLOGY
         </h2>
 
-
-        
         <Link
           href="/exhibition-directory"
-          className="inline-block bg-[#00A1B1] hover:bg-[#d67300] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6 whitespace-nowrap"
+          className="inline-block w-full sm:w-auto text-center bg-[#00A1B1] hover:bg-[#d67300] text-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm mt-6"
         >
           Explore the 2027 Exhibitor List
         </Link>
 
-        <div className="mt-8 sm:mt-10 lg:mt-12 bg-[#003A77]/75 backdrop-blur-md border border-white/10 rounded-sm px-6 py-6 flex flex-wrap gap-6 sm:gap-8 items-center justify-center md:justify-start">
+        <div className="mt-8 sm:mt-10 lg:mt-12 bg-[#003A77]/75 backdrop-blur-md border border-white/10 rounded-sm px-4 sm:px-6 py-5 sm:py-6 flex flex-wrap gap-4 sm:gap-8 items-center justify-center md:justify-start">
           {countries.map((country) => (
             <div key={country.name} className="flex items-center gap-3">
               <Image

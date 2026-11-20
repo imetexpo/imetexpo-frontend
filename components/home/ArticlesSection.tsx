@@ -22,17 +22,17 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
             <p className="text-[#00A1B1] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
               Articles
             </p>
-            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#003A77] leading-tight uppercase tracking-tight mt-3">
+            <h2 className="font-bebas text-3xl sm:text-5xl lg:text-6xl text-[#003A77] leading-tight uppercase tracking-tight mt-2 sm:mt-3">
               EVENT INSIGHTS & INDUSTRY TRENDS
             </h2>
-            <p className="text-gray-600 mt-2 text-lg sm:text-xl font-sans">
+            <p className="text-gray-600 mt-2 text-sm sm:text-base lg:text-xl font-sans">
               Stay up to date with the latest updates in the industry and the show
             </p>
           </div>
 
           <Button
             href="/articles/"
-            className="border border-[#00A1B1] text-[#00A1B1] bg-[#00A1B1] hover:bg-[#ff8c00] hover:text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-full sm:w-auto text-center"
+            className="border border-[#00A1B1] text-[#00A1B1] bg-[#00A1B1] hover:bg-[#ff8c00] hover:text-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-full sm:w-auto text-center"
           >
             VIEW ALL ARTICLES
           </Button>
@@ -43,7 +43,7 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
           {/* LEFT FEATURED ARTICLE */}
           {featuredArticle && (
             <div className="lg:w-[65%] group cursor-pointer min-w-0">
-              <div className="relative h-[250px] sm:h-[300px] md:h-[340px] lg:h-[360px] rounded-sm overflow-hidden shadow-sm">
+              <div className="relative h-[220px] sm:h-[300px] md:h-[340px] lg:h-[360px] rounded-sm overflow-hidden shadow-sm">
                 <Image
                   src={featuredArticle.image}
                   alt={featuredArticle.title}
@@ -51,16 +51,16 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
                   className="object-cover group-hover:scale-105 transition duration-500"
                 />
               </div>
-              <div className="mt-4">
+              <div className="mt-3 sm:mt-4">
                 <p className="text-[#00A1B1] text-xs font-semibold font-sans">
                   {formatDate(featuredArticle.publishedDate)}
                 </p>
                 <Link href={`/articles/${featuredArticle.slug}`}>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#003A77] mt-2 leading-snug hover:text-[#00A1B1] transition">
+                  <h3 className="text-base sm:text-xl md:text-2xl font-bold text-[#003A77] mt-1.5 sm:mt-2 leading-snug hover:text-[#00A1B1] transition">
                     {featuredArticle.title}
                   </h3>
                 </Link>
-                <p className="text-gray-600 mt-2 text-lg sm:text-xl leading-relaxed line-clamp-3 font-sans">
+                <p className="text-gray-600 mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base leading-relaxed line-clamp-3 font-sans">
                   {featuredArticle.excerpt}
                 </p>
               </div>
@@ -68,10 +68,10 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
           )}
 
           {/* RIGHT ARTICLES */}
-          <div className="lg:w-[35%] flex flex-col gap-6 min-w-0">
+          <div className="lg:w-[35%] flex flex-col gap-4 sm:gap-6 min-w-0">
             {restArticles.map((article) => (
-              <div key={article.slug} className="grid grid-cols-[35%_65%] sm:grid-cols-[40%_60%] gap-3 sm:gap-4 items-start group cursor-pointer">
-                <div className="relative h-[90px] sm:h-[100px] md:h-[110px] lg:h-[120px] rounded-sm overflow-hidden shadow-sm">
+              <div key={article.slug} className="grid grid-cols-[30%_70%] sm:grid-cols-[35%_65%] gap-3 sm:gap-4 items-start group cursor-pointer">
+                <div className="relative h-[80px] sm:h-[100px] md:h-[110px] lg:h-[120px] rounded-sm overflow-hidden shadow-sm">
                   <Image
                     src={article.image}
                     alt={article.title}
@@ -84,11 +84,11 @@ export default function ArticlesSection({ articles }: ArticlesSectionProps) {
                     {formatDate(article.publishedDate)}
                   </p>
                   <Link href={`/articles/${article.slug}`}>
-                    <h4 className="text-base sm:text-lg font-bold text-[#003A77] mt-1 leading-snug hover:text-[#00A1B1] transition line-clamp-2">
+                    <h4 className="text-xs sm:text-sm md:text-base font-bold text-[#003A77] mt-0.5 sm:mt-1 leading-snug hover:text-[#00A1B1] transition line-clamp-2">
                       {article.title}
                     </h4>
                   </Link>
-                  <p className="text-gray-600 text-lg sm:text-xl mt-1 leading-relaxed line-clamp-3 font-sans">
+                  <p className="text-gray-600 text-xs sm:text-sm mt-0.5 sm:mt-1 leading-relaxed line-clamp-2 font-sans">
                     {article.excerpt}
                   </p>
                 </div>

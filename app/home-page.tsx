@@ -72,7 +72,7 @@ export default function HomePage() {
   return (
     <>
       {/* <Header /> */}
-      <main className="intro-animation">
+      <main className="intro-animation overflow-x-hidden w-full">
         <HeroSection />
         <AboutSection />
         <CountriesSection countries={countriesData} />
