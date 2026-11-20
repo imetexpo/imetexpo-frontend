@@ -59,14 +59,14 @@ export default function SectorsSection() {
 
       <div>
         <Container>
-          <div className="mb-8 sm:mb-10 lg:mb-12">
+          <div className="mb-6 sm:mb-10 lg:mb-12">
             <p className="text-[#00A1B1] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">
               Event Sectors &amp; Measurement Technologies
             </p>
-            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-[#003A77] leading-tight uppercase tracking-tight mt-3">
+            <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight uppercase tracking-tight mt-2 sm:mt-3">
               EXPLORE ADVANCED MEASUREMENT TECHNOLOGY AT INDIAMET 2027
             </h2>
-            <p className="mt-3 font-sans text-base sm:text-lg text-gray-600 max-w-3xl leading-relaxed">
+            <p className="mt-2 sm:mt-3 font-sans text-sm sm:text-base lg:text-lg text-gray-600 max-w-3xl leading-relaxed">
               INDIAMET 2027 brings the world of precision measurement and quality engineering into focus, highlighting solutions supporting accurate, reliable, and efficient manufacturing processes.
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function SectorsSection() {
             }
           `}</style>
 
-        <div className="relative mt-8 max-w-full overflow-hidden sm:mt-10 lg:mt-12">
+        <div className="relative mt-6 max-w-full overflow-hidden sm:mt-10 lg:mt-12">
           <div className="marquee-track flex gap-4 sm:gap-5 lg:gap-6 w-max">
 
             {/* Render list TWICE for seamless loop */}
@@ -94,9 +94,9 @@ export default function SectorsSection() {
               <Link
                 key={`${sector.id}-${index}`}
                 href={`/sectors/${sector.slug}`}
-                className="min-w-[280px] sm:min-w-[320px] lg:min-w-[380px] xl:min-w-[420px] flex-shrink-0 overflow-hidden group relative block cursor-pointer rounded-sm shadow-sm"
+                className="min-w-[260px] sm:min-w-[320px] lg:min-w-[380px] xl:min-w-[420px] flex-shrink-0 overflow-hidden group relative block cursor-pointer rounded-sm shadow-sm"
               >
-                <div className="relative h-[220px] sm:h-[240px] lg:h-[280px] xl:h-[320px]">
+                <div className="relative h-[200px] sm:h-[240px] lg:h-[280px] xl:h-[320px]">
                   <Image
                     src={sector.image}
                     alt={getImageAlt(sector.image, sector.title)}
@@ -105,14 +105,14 @@ export default function SectorsSection() {
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-sm" />
-                <div className="absolute bottom-0 left-0 p-4 sm:p-5 text-white w-full">
-                  <h3 className="font-bebas text-xl sm:text-2xl lg:text-3xl tracking-wide uppercase leading-tight line-clamp-2">
+                <div className="absolute bottom-0 left-0 p-3.5 sm:p-5 text-white w-full">
+                  <h3 className="font-bebas text-lg sm:text-2xl lg:text-3xl tracking-wide uppercase leading-tight line-clamp-2">
                     {sector.title}
                   </h3>
-                  <p className="font-sans text-lg sm:text-xl text-gray-300 mt-1 sm:mt-2 leading-relaxed line-clamp-2">
+                  <p className="font-sans text-xs sm:text-sm md:text-base text-gray-300 mt-1 sm:mt-2 leading-relaxed line-clamp-2">
                     {sector.shortText}
                   </p>
-                  <span className="inline-block mt-3 font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#00A1B1] group-hover:underline">
+                  <span className="inline-block mt-2 sm:mt-3 font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#00A1B1] group-hover:underline">
                     Read More →
                   </span>
                 </div>
@@ -123,9 +123,9 @@ export default function SectorsSection() {
         </div>
 
         <Container>
-          <div className="mt-8 sm:mt-10 lg:mt-12">
-            <Link href="/sectors/">
-              <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+          <div className="mt-6 sm:mt-10 lg:mt-12">
+            <Link href="/sectors/" className="block sm:inline-block">
+              <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
                 Explore All The Sectors
               </button>
             </Link>

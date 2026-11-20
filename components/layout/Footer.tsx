@@ -35,7 +35,7 @@ export default function Footer() {
       {/* Top Section */}
       <Container className="py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 xl:gap-20">
-          
+
           {/* Logo */}
           <div className="space-y-4">
             <Image
@@ -95,7 +95,7 @@ export default function Footer() {
               <div className="space-y-1.5 text-x">
                 <p>13 May 2027: 10:00 - 18:00</p>
                 <p>14 May 2027: 10:00 - 18:00</p>
-                <p>15 May 2027: 10:00 - 16:00</p>
+                <p>15 May 2027: 10:00 - 18:00</p>
               </div>
             </div>
 

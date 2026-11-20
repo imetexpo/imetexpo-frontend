@@ -24,16 +24,16 @@ export default function BrochureSection() {
       />
 
       <Container className="relative z-10">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-16 items-center">
           {/* LEFT IMAGE */}
           <div className="relative flex justify-center lg:justify-start w-full lg:w-auto">
-            <div className="relative w-[250px] sm:w-[300px] lg:w-[380px]">
+            <div className="relative w-[220px] sm:w-[280px] lg:w-[380px]">
               <Image
                 src="/images/indiamet_Brochure.webp"
                 alt="IndiaMET exhibition brochure featuring metrology technology and event details"
                 width={380}
                 height={380}
-                className="absolute top-4 sm:top-6 left-4 sm:left-6 rotate-[-8deg] opacity-80 shadow-xl"
+                className="absolute top-3 sm:top-6 left-3 sm:left-6 rotate-[-8deg] opacity-80 shadow-xl"
               />
               <Image
                 src="/images/indiamet_Brochure.webp"
@@ -46,19 +46,19 @@ export default function BrochureSection() {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 text-center lg:text-left">
-            <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl text-white leading-tight uppercase tracking-tight">
+          <div className="flex flex-col gap-3 sm:gap-5 lg:gap-6 text-center lg:text-left">
+            <h2 className="font-bebas text-3xl sm:text-5xl lg:text-6xl text-white leading-tight uppercase tracking-tight">
               UNLOCK NEW OPPORTUNITIES IN METROLOGY
             </h2>
-            <p className="text-lg sm:text-xl text-white/80 font-sans font-semibold">
+            <p className="text-base sm:text-xl text-white/90 font-sans font-semibold">
               Discover how INDIAMET can help your business grow
             </p>
-            <p className="text-lg sm:text-xl text-white/70 max-w-[650px] leading-relaxed mx-auto lg:mx-0 font-sans">
+            <p className="text-sm sm:text-base lg:text-lg text-white/75 max-w-[650px] leading-relaxed mx-auto lg:mx-0 font-sans">
              Download the Event Brochure to explore participation opportunities, industry sectors, visitor profiles, and key benefits of exhibiting. Discover how INDIAMET can help you connect with qualified buyers, showcase your latest technologies, strengthen your market presence, and accelerate business growth.
             </p>
             <Button
               href="/event-brochure/"
-              className="bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mx-auto lg:mx-0"
+              className="bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-full sm:w-fit mx-auto lg:mx-0 text-center"
             >
               Download Your Event Brochure
             </Button>
