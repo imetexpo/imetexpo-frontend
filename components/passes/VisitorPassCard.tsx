@@ -1,6 +1,6 @@
 'use client';
 
-import { CheckCircle2, QrCode } from 'lucide-react';
+import Image from 'next/image';
 import type { VisitorPass } from '@/lib/api/passes';
 
 type VisitorPassCardProps = {
@@ -9,52 +9,55 @@ type VisitorPassCardProps = {
 };
 
 export default function VisitorPassCard({ pass, cardId = 'visitor-pass' }: VisitorPassCardProps) {
-  const initial = (pass.name || 'V').trim().charAt(0).toUpperCase();
+  const registrationDigits = (pass.registrationNumber || '').replace(/\D/g, '');
+  const visitorId = 'IM-' + registrationDigits.slice(-6);
 
   return (
     <article
       id={cardId}
       data-visitor-pass="true"
-      className="mx-auto w-full max-w-[340px] overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_24px_60px_rgba(15,47,92,0.18)]"
+      className="mx-auto flex min-h-[540px] w-full max-w-[340px] flex-col overflow-hidden border border-slate-200 bg-white shadow-[0_24px_60px_rgba(15,47,92,0.18)]"
     >
-      <div className="flex items-center justify-between bg-gradient-to-r from-[#003A77] to-[#00A1B1] px-5 py-3 text-white">
-        <p className="text-xs font-black tracking-[0.22em]">VISITOR PASS</p>
-        <QrCode className="h-4 w-4 opacity-80" />
-      </div>
+      <Image
+        src="/indiamet-logo.png"
+        alt="IndiaMET"
+        width={1288}
+        height={374}
+        unoptimized
+        className="mx-auto mt-[29px] h-auto w-[168px]"
+      />
+      <div className="mx-auto mt-[57px] h-[2px] w-[calc(100%-24px)] bg-[#00A651]" />
 
-      <div className="px-6 pb-6 pt-5 text-center">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#00A1B1] to-[#003A77] text-2xl font-black text-white shadow-lg shadow-[#003A77]/20">
-          {initial}
-        </div>
-        <h3 className="mt-3 text-xl font-black capitalize text-slate-900">{pass.name}</h3>
-        <p className="text-sm font-medium text-slate-500">{pass.company}</p>
-        {pass.location ? (
-          <p className="mt-1 text-xs text-slate-400">{pass.location}</p>
+      <div className="flex flex-col items-center px-4 text-center text-black">
+        <h3 className="mt-[25px] flex h-[38px] w-full items-center justify-center text-[22px] font-extrabold uppercase leading-tight">
+          {pass.name}
+        </h3>
+        {pass.designation ? (
+          <p className="mt-[6px] h-[17px] w-full truncate text-[13px] font-normal uppercase leading-[17px]">
+            {pass.designation}
+          </p>
+        ) : null}
+        <p className={(pass.designation ? 'mt-[4px]' : 'mt-[6px]') + ' h-[23px] w-full truncate text-[13px] font-normal uppercase leading-[23px]'}>
+          {pass.company}
+        </p>
+        {pass.country ? (
+          <p className={(pass.designation ? 'mt-[4px]' : 'mt-[5px]') + ' h-[15px] w-full truncate text-[12px] font-normal uppercase leading-[15px]'}>
+            {pass.country}
+          </p>
         ) : null}
 
-        <div className="relative mx-auto mt-5 w-[210px]">
-          <img
-            src={pass.qrDataUrl}
-            alt="Visitor pass QR code"
-            className="h-[210px] w-[210px] rounded-2xl border border-slate-100 bg-white p-2"
-          />
-          <span className="pointer-events-none absolute left-3 right-3 top-1/2 h-0.5 -translate-y-1/2 bg-[#00A1B1]/80 shadow-[0_0_12px_rgba(0,161,177,0.8)]" />
-        </div>
-
-        <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
-          Scan at entry
+        <img
+          src={pass.qrDataUrl}
+          alt="Visitor pass QR code"
+          className={(pass.country ? 'mt-[5px]' : 'mt-[25px]') + ' h-[156px] w-[156px] max-w-full bg-white object-contain'}
+        />
+        <p className="mt-[2px] h-[17px] text-[10px] font-normal leading-[17px]">
+          Visitor ID: {visitorId}
         </p>
-        <p className="mt-1 font-mono text-[11px] font-semibold text-slate-600">
-          {pass.registrationNumber}
-        </p>
-        <p className="mt-4 text-sm font-semibold text-slate-800">{pass.event.name}</p>
-        <p className="text-xs text-slate-500">{pass.event.venue}</p>
-        <p className="text-xs text-slate-400">{pass.event.dates}</p>
+      </div>
 
-        <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#E6F7F8] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-[#003A77]">
-          <CheckCircle2 className="h-3.5 w-3.5" />
-          Visitor
-        </div>
+      <div className="mx-auto mb-[27px] mt-auto flex h-[48px] w-[calc(100%-24px)] items-center justify-center bg-[#00A651] text-[16px] font-bold tracking-[3px] text-black">
+        VISITOR
       </div>
     </article>
   );
