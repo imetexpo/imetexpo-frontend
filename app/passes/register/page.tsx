@@ -16,7 +16,6 @@ import {
 import OtpModal from '@/components/passes/OtpModal';
 import PassesChrome from '@/components/passes/PassesChrome';
 import CountryFlag from '@/components/passes/CountryFlag';
-import { submitContactForm, PROJECT_ID_VAR } from '@/lib/graphql-client';
 import { useUTMData } from '@/hooks/useUTMTracker';
 import {
   registerVisitorPass,
@@ -237,71 +236,16 @@ export default function PassRegisterPage() {
         country: form.country,
         source: form.source,
         interests: form.interests,
-      });
-
-      // Background Lead Sync to Maxx Media CMS (matching Diemex submitRegistrationInBackground)
-      const resolvedEmail =
-        visitorEmail ||
-        `${result.pass.registrationNumber.toLowerCase().replace(/[^a-z0-9]/g, '')}@visitor.indiametexpo.com`;
-
-      if (PROJECT_ID_VAR.projectId) {
-        submitContactForm(PROJECT_ID_VAR.projectId, {
-          formType: 'visitor-registration',
-          name: form.name,
-          contactPerson: form.name,
-          companyName: form.company,
-          jobTitle: form.designation,
-          phone: verifiedPhone || mobile,
-          email: resolvedEmail,
-          country: form.country,
-          state: form.state,
-          city: form.city,
-          address: form.area,
-          pincode: form.pinCode,
-          profile: form.interests.join(', '),
-          message: `Visitor Pass: ${result.pass.registrationNumber}. Interests: ${form.interests.join(', ')}`,
+        tracking: {
           utmSource: utmData?.utm_source || form.source || 'Pass Registration',
           utmMedium: utmData?.utm_medium || '',
           utmCampaign: utmData?.utm_campaign || '',
           utmTerm: utmData?.utm_term || '',
           utmContent: utmData?.utm_content || '',
           utmId: utmData?.utm_id || '',
-          landingPage: utmData?.landingPage || (typeof window !== 'undefined' ? window.location.href : ''),
-          referrer: utmData?.referrer || '',
-        }).catch((err) => console.warn('Frontend CMS lead sync notice:', err));
-      }
-
-      // Background submission to contact API for records & notifications
-      const rawApi = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api').replace(/\/+$/, '');
-      const contactUrl = rawApi.endsWith('/api') ? `${rawApi}/contact` : `${rawApi}/api/contact`;
-      fetch(contactUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          formType: 'visitor-registration',
-          email: resolvedEmail,
-          name: form.name,
-          contactPerson: form.name,
-          jobTitle: form.designation,
-          designation: form.designation,
-          company: form.company,
-          companyName: form.company,
-          phone: verifiedPhone || mobile,
-          mobile: verifiedPhone || mobile,
-          countryCode,
-          country: form.country,
-          state: form.state,
-          city: form.city,
-          address: form.area,
-          pincode: form.pinCode,
-          pinCode: form.pinCode,
-          profile: form.interests.join(', '),
-          interests: form.interests,
-          visitorCode: result.pass.registrationNumber,
-          passUrl: result.pass.passUrl,
-          submittedAt: new Date().toISOString(),
-        }),
-      }).catch((err) => console.warn('Contact submission background call notice:', err));
+          utmUrl: utmData?.landingPage || (typeof window !== 'undefined' ? window.location.href : ''),
+        },
+      });
 
       savePassSession({
         countryCode,
