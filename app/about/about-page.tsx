@@ -40,34 +40,34 @@ export default function AboutPage() {
       buttonLink: "/why-exhibit"
     },
     {
-  title: "INDIAMET Summit",
+      title: "INDIAMET Summit",
 
-  description: "Throughout the exhibition and beyond, INDIAMET brings together industry leaders, technology experts, and manufacturing professionals through conferences, forums, and focused summit sessions. These programmes are designed to explore the latest developments in metrology, measurement technology, inspection, quality, and precision manufacturing.",
+      description: "Throughout the exhibition and beyond, INDIAMET brings together industry leaders, technology experts, and manufacturing professionals through conferences, forums, and focused summit sessions. These programmes are designed to explore the latest developments in metrology, measurement technology, inspection, quality, and precision manufacturing.",
 
-  points: [
-    "Gain insights from leading metrology experts, manufacturing leaders, and technology innovators.",
-    "Discuss emerging technologies, industry challenges, standards, and best practices in measurement and quality.",
-    "Participate in focused sessions covering CMMs, 3D measurement, vision inspection, calibration, automation, and Industry 4.0."
-  ],
+      points: [
+        "Gain insights from leading metrology experts, manufacturing leaders, and technology innovators.",
+        "Discuss emerging technologies, industry challenges, standards, and best practices in measurement and quality.",
+        "Participate in focused sessions covering CMMs, 3D measurement, vision inspection, calibration, automation, and Industry 4.0."
+      ],
 
-  buttonText: "Explore Summit",
-  buttonLink: "/summit"
-},
+      buttonText: "Explore Summit",
+      buttonLink: "/summit"
+    },
 
-{
-  title: "INDIAMET Connect",
+    {
+      title: "INDIAMET Connect",
 
-  description: "INDIAMET Connect is the digital layer of the INDIAMET ecosystem — an online platform designed to keep industry professionals connected before, during, and after the exhibition. Through Connect, participants can:",
+      description: "INDIAMET Connect is the digital layer of the INDIAMET ecosystem — an online platform designed to keep industry professionals connected before, during, and after the exhibition. Through Connect, participants can:",
 
-  points: [
-    "Connect with manufacturers, buyers, suppliers, and metrology professionals throughout the year.",
-    "Access industry insights, technology updates, expert content, and exhibitor information.",
-    "Discover new business opportunities, connect with exhibitors, and follow up with potential partners online."
-  ],
+      points: [
+        "Connect with manufacturers, buyers, suppliers, and metrology professionals throughout the year.",
+        "Access industry insights, technology updates, expert content, and exhibitor information.",
+        "Discover new business opportunities, connect with exhibitors, and follow up with potential partners online."
+      ],
 
-  buttonText: "Explore Connect",
-  buttonLink: "/https://www.metrologyupdate.com"
-}
+      buttonText: "Explore Connect",
+      buttonLink: "/https://www.metrologyupdate.com"
+    }
   ];
 
   const keyEvents = [
@@ -96,62 +96,59 @@ export default function AboutPage() {
           {/* Transforming Metrology Operations Section */}
           <Container className="py-12 sm:py-16 lg:py-20">
             <div className="w-full grid items-start gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
-  
-             {/* LEFT IMAGE - Responsive cover-fit matching screenshot 4*/}
-             <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
+
+              {/* LEFT IMAGE - Responsive cover-fit matching screenshot 4*/}
+              <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
                 <img
                   src="/images/about_indiamet.webp"
                   alt="Visitors exploring industrial exhibitors in a busy exhibition hall"
                   className="w-full h-full object-cover"
                 />
-              </div> 
-  
+              </div>
+
               {/* RIGHT CONTENT */}
               <div className="flex flex-col justify-center">
                 <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#003A77]">
-                  Transforming Precision Manufacturing <br className="hidden sm:block" /> Through Metrology
+                  About INDIAMET 2027 – International Metrology & Measurement Technology Exhibition
                 </h2>
-  
+
                 <p className="mt-4 sm:mt-6 text-lg sm:text-xl leading-relaxed text-gray-700">
-                INDIAMET is India’s international exhibition for metrology, measurement technology, 
-                inspection, calibration, and quality engineering, bringing together the technologies 
-                and solutions driving the future of precision manufacturing.
+                  INDIAMET 2027 is India’s international exhibition for metrology, measurement technology, inspection, calibration, and quality engineering. Scheduled from 13–15 May 2027 at the Auto Cluster Exhibition Centre, Pune, the event connects measurement technology providers, industry professionals, manufacturers, and decision-makers working towards higher accuracy and quality in manufacturing.
                   <br /><br />
-                  The exhibition connects leading Indian and global companies with manufacturers, 
-                  engineers, quality professionals, procurement leaders, and decision-makers to 
-                  discover advanced measurement technologies, build business partnerships, and 
-                  explore new opportunities across the manufacturing ecosystem.
+                  As a dedicated INDIAMET metrology exhibition, the event provides a platform for exploring technologies that support dimensional accuracy, reliable inspection, efficient calibration, and improved manufacturing quality.
+                  <br /><br />
+                  The INDIAMET measurement technology expo aims to encourage industry collaboration, knowledge exchange, and business opportunities across precision manufacturing and quality engineering.
                 </p>
-  
+
                 {/* STATS SECTION */}
                 <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-between bg-[#FCF8F3] border border-gray-100 px-4 sm:px-6 py-6 sm:py-8 rounded-sm gap-4 sm:gap-0">
                   <div className="text-center flex-1 min-w-[80px]">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">1st</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 font-sans">EDITION</p>
                   </div>
-  
+
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
-  
+
                   <div className="text-center flex-1 min-w-[80px]">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">10,000+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 font-sans">VISITORS</p>
                   </div>
-  
+
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
-  
+
                   <div className="text-center flex-1 min-w-[80px]">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">150+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 font-sans">EXHIBITORS</p>
                   </div>
-  
+
                   <div className="hidden md:block h-12 w-px bg-gray-200"></div>
-  
+
                   <div className="text-center flex-1 min-w-[80px]">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">50+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 font-sans">SPEAKERS</p>
                   </div>
                 </div>
-  
+
                 <div className="mt-8 sm:mt-10">
                   <Link href="/why-exhibit">
                     <button className="bg-[#00A1B1] hover: text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
@@ -165,9 +162,9 @@ export default function AboutPage() {
 
           {/* Explore Our Event Sectors Section */}
           <SectorsSection />
-          
+
           {/* Year-Round Industry Ecosystem Section */}
-          <Container> 
+          <Container>
             <div className="animated-block ">
               <div className="animated-block-target">
                 <div className="w-full max-w-[1600px] 2xl:max-w-[1800px] ">
@@ -193,7 +190,7 @@ export default function AboutPage() {
                             ))}
                           </ul>
                         </div>
-                          
+
                         <div className="mt-5">
                           <Link href={item.buttonLink}>
                             <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
@@ -238,12 +235,12 @@ export default function AboutPage() {
                         <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
                           Download Your Event Brochure
                         </h3>
-                  
+
                         <p className="max-w-[700px] text-lg sm:text-xl text-gray-200">
                           Make sure you grab your copy of the event brochure to learn more
                           about the show and explore your participation opportunities.
                         </p>
-                  
+
                         <Link href="/event-brochure">
                           <button className="bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit">
                             Download Now
@@ -266,12 +263,12 @@ export default function AboutPage() {
                     Meet the Leading Exhibitors of 2027
                   </h3>
                 </Container>
-                          
+
                 <div className="mt-6 sm:mt-8 lg:mt-10 mx-4 bg-[#FCF8F3] border border-gray-100 p-6 sm:p-8 flex flex-col rounded-sm shadow-sm">
                   <h4 className="font-bebas text-3xl sm:text-4xl lg:text-5xl text-[#003A77]">
                     Exhibiting at INDIAMET Elevates Your Brand and Expands Your Business Network
                   </h4>
-                          
+
                   <div className="mt-6 sm:mt-8 w-full overflow-hidden rounded-sm">
                     <img
                       src="/images/image2.webp"
@@ -279,7 +276,7 @@ export default function AboutPage() {
                       className="h-[200px] sm:h-[280px] md:h-[350px] lg:h-[400px] w-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
-                          
+
                   <div className="mt-6 sm:mt-8">
                     <Link href="/exhibition-directory" target="_blank">
                       <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
@@ -403,10 +400,10 @@ export default function AboutPage() {
               </div>
             </div>
           </div> */}
-          
+
           {/* <hr className="border-t-6 border-[#00A1B1]" /> */}
         </div>
-        <BackToTop/>
+        <BackToTop />
       </div>
 
       <style jsx>{`
