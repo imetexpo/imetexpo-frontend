@@ -136,6 +136,11 @@ export default function PassSuccessPage() {
           <StatusTile icon={Download} title="Badge Ready" subtitle="Download above" />
           <StatusTile icon={CalendarDays} title="Event Reminder" subtitle="We'll remind you" />
         </div>
+        {delivery?.success === false && delivery.error ? (
+          <p role="alert" className="mt-3 rounded-lg bg-red-50 p-3 text-left text-sm text-red-700">
+            Pass delivery failed: {delivery.error}
+          </p>
+        ) : null}
 
         <div className="mt-5 grid gap-3">
           <button
