@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
 import SectorsSection from "@/components/home/SectorsSection";
+import VisionSection from "@/components/home/VisionSection";
+import ExploringTechnologiesSection from "@/components/about/ExploringTechnologiesSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
@@ -108,9 +110,9 @@ export default function AboutPage() {
 
               {/* RIGHT CONTENT */}
               <div className="flex flex-col justify-center">
-                <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#003A77]">
+                <h1 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#003A77]">
                   About INDIAMET 2027 – International Metrology & Measurement Technology Exhibition
-                </h2>
+                </h1>
 
                 <p className="mt-4 sm:mt-6 text-lg sm:text-xl leading-relaxed text-gray-700">
                   INDIAMET 2027 is India’s international exhibition for metrology, measurement technology, inspection, calibration, and quality engineering. Scheduled from 13–15 May 2027 at the Auto Cluster Exhibition Centre, Pune, the event connects measurement technology providers, industry professionals, manufacturers, and decision-makers working towards higher accuracy and quality in manufacturing.
@@ -160,6 +162,9 @@ export default function AboutPage() {
             </div>
           </Container>
 
+          {/* Our Vision Section */}
+          <VisionSection />
+
           {/* Explore Our Event Sectors Section */}
           <SectorsSection />
 
@@ -205,6 +210,9 @@ export default function AboutPage() {
               </div>
             </div>
           </Container>
+
+          {/* Exploring Advanced Metrology & Measurement Technologies Section */}
+          <ExploringTechnologiesSection />
 
           {/* Download Brochure Section */}
           <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
@@ -372,9 +380,9 @@ export default function AboutPage() {
             <div className="animated-block-target">
               <div className="border-t-8 border-[#00A1B1] bg-[#003A77] py-12 sm:py-16 lg:py-20 text-white">
                 <Container>
-                  <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                  <h1 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                     Quick Navigation
-                  </h2>
+                  </h1>
                           
                   <div className="mt-10 sm:mt-12 lg:mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-8 sm:gap-y-10 gap-x-4">
                     {quickLinks.map((item, idx) => (
