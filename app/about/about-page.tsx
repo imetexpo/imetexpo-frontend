@@ -8,6 +8,9 @@ import PartnersSection from "@/components/home/PartnersSection";
 import SectorsSection from "@/components/home/SectorsSection";
 import VisionSection from "@/components/home/VisionSection";
 import ExploringTechnologiesSection from "@/components/about/ExploringTechnologiesSection";
+import ConnectingIndustriesSection from "@/components/about/ConnectingIndustriesSection";
+import WhyIndiaMetMattersSection from "@/components/about/WhyIndiaMetMattersSection";
+import JoinIndiaMetSection from "@/components/about/JoinIndiaMetSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
@@ -96,11 +99,11 @@ export default function AboutPage() {
           />
 
           {/* Transforming Metrology Operations Section */}
-          <Container className="py-12 sm:py-16 lg:py-20">
+          <Container className="py-10 sm:py-16 lg:py-20">
             <div className="w-full grid items-start gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
 
-              {/* LEFT IMAGE - Responsive cover-fit matching screenshot 4*/}
-              <div className="w-full h-64 sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-sm overflow-hidden shadow-sm relative">
+              {/* LEFT IMAGE */}
+              <div className="w-full h-56 sm:h-80 md:h-[450px] lg:h-[550px] rounded-sm overflow-hidden shadow-sm relative">
                 <img
                   src="/images/about_indiamet.webp"
                   alt="Visitors exploring industrial exhibitors in a busy exhibition hall"
@@ -110,11 +113,11 @@ export default function AboutPage() {
 
               {/* RIGHT CONTENT */}
               <div className="flex flex-col justify-center">
-                <h1 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#003A77]">
+                <h1 className="font-bebas text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#003A77]">
                   About INDIAMET 2027 – International Metrology & Measurement Technology Exhibition
                 </h1>
 
-                <p className="mt-4 sm:mt-6 text-lg sm:text-xl leading-relaxed text-gray-700">
+                <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg leading-relaxed text-gray-700">
                   INDIAMET 2027 is India’s international exhibition for metrology, measurement technology, inspection, calibration, and quality engineering. Scheduled from 13–15 May 2027 at the Auto Cluster Exhibition Centre, Pune, the event connects measurement technology providers, industry professionals, manufacturers, and decision-makers working towards higher accuracy and quality in manufacturing.
                   <br /><br />
                   As a dedicated INDIAMET metrology exhibition, the event provides a platform for exploring technologies that support dimensional accuracy, reliable inspection, efficient calibration, and improved manufacturing quality.
@@ -123,37 +126,31 @@ export default function AboutPage() {
                 </p>
 
                 {/* STATS SECTION */}
-                <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-between bg-[#FCF8F3] border border-gray-100 px-4 sm:px-6 py-6 sm:py-8 rounded-sm gap-4 sm:gap-0">
-                  <div className="text-center flex-1 min-w-[80px]">
+                <div className="mt-6 sm:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-0 bg-[#FCF8F3] border border-gray-100 p-4 sm:py-6 sm:px-4 rounded-sm sm:divide-x divide-gray-200">
+                  <div className="text-center p-2 sm:p-0">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">1st</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 font-sans">EDITION</p>
                   </div>
 
-                  <div className="hidden md:block h-12 w-px bg-gray-200"></div>
-
-                  <div className="text-center flex-1 min-w-[80px]">
+                  <div className="text-center p-2 sm:p-0">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">10,000+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 font-sans">VISITORS</p>
                   </div>
 
-                  <div className="hidden md:block h-12 w-px bg-gray-200"></div>
-
-                  <div className="text-center flex-1 min-w-[80px]">
+                  <div className="text-center p-2 sm:p-0">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">150+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 font-sans">EXHIBITORS</p>
                   </div>
 
-                  <div className="hidden md:block h-12 w-px bg-gray-200"></div>
-
-                  <div className="text-center flex-1 min-w-[80px]">
+                  <div className="text-center p-2 sm:p-0">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">50+</h3>
                     <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 font-sans">SPEAKERS</p>
                   </div>
                 </div>
 
-                <div className="mt-8 sm:mt-10">
+                <div className="mt-6 sm:mt-8">
                   <Link href="/why-exhibit">
-                    <button className="bg-[#00A1B1] hover: text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                    <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
                       Why Exhibit
                     </button>
                   </Link>
@@ -169,36 +166,36 @@ export default function AboutPage() {
           <SectorsSection />
 
           {/* Year-Round Industry Ecosystem Section */}
-          <Container>
+          <Container className="py-10 sm:py-16 lg:py-20">
             <div className="animated-block ">
               <div className="animated-block-target">
                 <div className="w-full max-w-[1600px] 2xl:max-w-[1800px] ">
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77]">INDIAMET: A Year-Round Metrology & Manufacturing Ecosystem</h3>
-                  <p className="mt-4 sm:mt-5 text-lg sm:text-xl text-gray-700">
+                  <h3 className="font-bebas text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">INDIAMET: A Year-Round Metrology & Manufacturing Ecosystem</h3>
+                  <p className="mt-3 sm:mt-5 text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed font-sans">
                     INDIAMET is a premier international platform for metrology, measurement technology, inspection, calibration, and quality engineering. It brings together technology providers, manufacturers, quality professionals, engineers, and decision-makers from across India and global markets.
                     <br /><br />
                     But INDIAMET is more than a three-day exhibition — it is a year-round industry ecosystem designed to connect the metrology and precision manufacturing community through exhibitions, knowledge-sharing, industry insights, networking, and business opportunities.
                   </p>
 
-                  <div className="mt-8 sm:mt-10 grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="mt-6 sm:mt-10 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {ecosystemItems.map((item, idx) => (
                       <div
                         key={idx}
-                        className="relative flex flex-col overflow-hidden rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+                        className="relative flex flex-col justify-between overflow-hidden rounded-sm bg-[#FCF8F3] border border-gray-100 p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
                       >
-                        <div className="flex flex-col flex-1 gap-3 sm:gap-4 font-sans">
-                          <h4 className="text-lg sm:text-xl font-bold text-[#003A77]">{item.title}</h4>
-                          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">{item.description}</p>
-                          <ul className="list-disc space-y-1.5 pl-5 text-lg sm:text-xl text-gray-600 flex-1 leading-relaxed">
+                        <div className="flex flex-col flex-1 gap-2.5 sm:gap-4 font-sans">
+                          <h4 className="text-base sm:text-lg md:text-xl font-bold text-[#003A77]">{item.title}</h4>
+                          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                          <ul className="list-disc space-y-1.5 pl-4 sm:pl-5 text-xs sm:text-sm text-gray-600 flex-1 leading-relaxed">
                             {item.points.map((point, pIdx) => (
                               <li key={pIdx}>{point}</li>
                             ))}
                           </ul>
                         </div>
 
-                        <div className="mt-5">
-                          <Link href={item.buttonLink}>
-                            <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                        <div className="mt-4 sm:mt-6">
+                          <Link href={item.buttonLink} className="block sm:inline-block">
+                            <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
                               {item.buttonText}
                             </button>
                           </Link>
@@ -215,9 +212,9 @@ export default function AboutPage() {
           <ExploringTechnologiesSection />
 
           {/* Download Brochure Section */}
-          <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
+          <div className="animated-block mt-10 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
-              <div className="relative mx-auto overflow-hidden py-12 sm:py-16 lg:py-20 text-white">
+              <div className="relative mx-auto overflow-hidden py-10 sm:py-16 lg:py-20 text-white">
                 <div className="absolute inset-0">
                   <img
                     src="/images/img_3_4b6edc76d1.webp"
@@ -230,27 +227,27 @@ export default function AboutPage() {
 
                 <Container className="relative z-10">
                   <div className="max-w-[1600px] 2xl:max-w-[1800px] mx-auto">
-                    <div className="grid items-center gap-8 md:grid-cols-12">
+                    <div className="grid items-center gap-6 sm:gap-8 md:grid-cols-12">
                       <div className="flex justify-center md:col-span-5 lg:col-span-4">
                         <img
                           src="/images/indiamet_Brochure.webp"
                           alt="IndiaMET exhibition brochure featuring metrology technology and event details"
-                          className="h-48 sm:h-56 lg:h-64 w-auto object-contain"
+                          className="h-40 sm:h-56 lg:h-64 w-auto object-contain"
                         />
                       </div>
 
-                      <div className="flex flex-col gap-4 sm:gap-5 md:col-span-7 lg:col-span-8">
-                        <h3 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
+                      <div className="flex flex-col gap-3 sm:gap-5 md:col-span-7 lg:col-span-8 text-center md:text-left items-center md:items-start">
+                        <h3 className="font-bebas text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
                           Download Your Event Brochure
                         </h3>
 
-                        <p className="max-w-[700px] text-lg sm:text-xl text-gray-200">
+                        <p className="max-w-[700px] text-sm sm:text-base lg:text-lg text-gray-200 font-sans leading-relaxed">
                           Make sure you grab your copy of the event brochure to learn more
                           about the show and explore your participation opportunities.
                         </p>
 
-                        <Link href="/event-brochure">
-                          <button className="bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit">
+                        <Link href="/event-brochure" className="w-full sm:w-auto">
+                          <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
                             Download Now
                           </button>
                         </Link>
@@ -262,63 +259,34 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Leading Exhibitors Section */}
-          <div className="animated-block mt-12 sm:mt-16 lg:mt-20">
-            <div className="animated-block-target">
-              <div className="w-full max-w-[1600px] 2xl:max-w-[1800px] mx-auto">
-                <Container>
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77]">
-                    Meet the Leading Exhibitors of 2027
-                  </h3>
-                </Container>
+          {/* Connecting Industries Through Precision Measurement Section */}
+          <ConnectingIndustriesSection />
 
-                <div className="mt-6 sm:mt-8 lg:mt-10 mx-4 bg-[#FCF8F3] border border-gray-100 p-6 sm:p-8 flex flex-col rounded-sm shadow-sm">
-                  <h4 className="font-bebas text-3xl sm:text-4xl lg:text-5xl text-[#003A77]">
-                    Exhibiting at INDIAMET Elevates Your Brand and Expands Your Business Network
-                  </h4>
-
-                  <div className="mt-6 sm:mt-8 w-full overflow-hidden rounded-sm">
-                    <img
-                      src="/images/image2.webp"
-                      alt=""
-                      className="h-[200px] sm:h-[280px] md:h-[350px] lg:h-[400px] w-full object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="mt-6 sm:mt-8">
-                    <Link href="/exhibition-directory" target="_blank">
-                      <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
-                        View Full Exhibitor List
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Why INDIAMET 2027 Matters Section */}
+          <WhyIndiaMetMattersSection />
 
           {/* Venue Section */}
-          <Container className="py-12 sm:py-16 lg:py-20">
+          <Container className="py-10 sm:py-16 lg:py-20">
             <div className="animated-block">
               <div className="animated-block-target">
                 <div className="w-full flex flex-col text-[#003A77]">
-                  <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77]">Here's Where You Can Find Us!</h3>
-                  <div className="mt-1 sm:mt-1 lg:mt-2 grid gap-5 sm:gap-6 lg:grid-cols-2">
-                    <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 font-sans">
-                      <p className="mb-2 font-bold text-sm sm:text-base text-[#003A77]">Opening Hours</p>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">13 May 2027: 10:00 - 18:00</h4>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">14 May 2027: 10:00 - 18:00</h4>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">15 May  2027: 10:00 - 16:00</h4>
+                  <h3 className="font-bebas text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">Here's Where You Can Find Us!</h3>
+                  <div className="mt-4 sm:mt-6 grid gap-4 sm:gap-6 lg:grid-cols-2">
+                    <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-4 sm:p-6 font-sans">
+                      <p className="mb-2 font-bold text-xs sm:text-sm text-[#00A1B1] uppercase tracking-wider">Opening Hours</p>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold text-gray-800">13 May 2027: 10:00 - 18:00</h4>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold text-gray-800 mt-1">14 May 2027: 10:00 - 18:00</h4>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold text-gray-800 mt-1">15 May 2027: 10:00 - 18:00</h4>
                     </div>
-                    <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-5 sm:p-6 font-sans">
-                      <p className="mb-2 font-bold text-sm sm:text-base text-[#003A77]">Venue</p>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800">Auto Cluster Exhibition Center, Pune, India</h4>
+                    <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-4 sm:p-6 font-sans">
+                      <p className="mb-2 font-bold text-xs sm:text-sm text-[#00A1B1] uppercase tracking-wider">Venue</p>
+                      <h4 className="text-sm sm:text-base md:text-lg font-bold text-gray-800">Auto Cluster Exhibition Center, Pune, India</h4>
                     </div>
                   </div>
                   <div className="mt-6 sm:mt-8 overflow-hidden rounded-lg">
                     <iframe
                       src="https://www.google.com/maps?q=Auto%20Cluster%20Exhibition%20Center%2C%20Pune&output=embed"
-                      className="w-full h-[300px] sm:h-[350px] md:h-[400px] border-0"
+                      className="w-full h-[240px] sm:h-[320px] md:h-[400px] border-0"
                       allowFullScreen
                       loading="lazy"
                     ></iframe>
@@ -329,22 +297,22 @@ export default function AboutPage() {
           </Container>
 
           {/* Key Events Section */}
-          <Container className="py-12 sm:py-16 lg:py-20">
+          <Container className="py-10 sm:py-16 lg:py-20">
             <div className="animated-block">
               <div className="animated-block-target">
                 <div className="w-full">
-                  <div className="mb-6 sm:mb-8 flex flex-col lg:flex-row justify-between lg:items-end gap-4">
+                  <div className="mb-6 sm:mb-8 flex flex-col lg:flex-row justify-between lg:items-end gap-3 sm:gap-4">
                     <div className="lg:basis-2/3">
-                      <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77]">Key Events</h3>
-                      <p className="mt-3 text-lg sm:text-xl text-gray-600">
+                      <h3 className="font-bebas text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">Key Events</h3>
+                      <p className="mt-2 sm:mt-3 text-sm sm:text-base lg:text-lg text-gray-600 font-sans leading-relaxed">
                         INDIAMET Connect is a professional networking platform designed to connect exhibitors, visitors, manufacturers, metrology professionals, industry experts, media, and professional associations. It helps the industry discover new technologies, build valuable business relationships, and stay connected throughout the year.
                       </p>
                     </div>
                   </div>
-                  <div className="grid min-w-0 gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid min-w-0 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {keyEvents.map((event, idx) => (
                       <div key={idx} className="group flex min-w-0 flex-col overflow-hidden bg-[#FCF8F3] border border-gray-100 rounded-sm transition-shadow duration-300 ease-in-out hover:shadow-lg">
-                        <div className="relative h-48 sm:h-56 w-full overflow-hidden">
+                        <div className="relative h-44 sm:h-56 w-full overflow-hidden">
                           <Image
                             src={event.image}
                             alt={getImageAlt(event.image, event.title)}
@@ -353,12 +321,14 @@ export default function AboutPage() {
                           />
                           <div className="absolute inset-0 bg-[#003A77]/20 group-hover:bg-[#003A77]/40 transition"></div>
                         </div>
-                        <div className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
-                          <h4 className="text-lg sm:text-xl font-bold text-[#003A77]">{event.title}</h4>
-                          <p className="text-lg sm:text-xl text-gray-600 line-clamp-4 leading-relaxed">{event.description}</p>
+                        <div className="flex flex-col flex-1 justify-between gap-3 sm:gap-4 p-4 sm:p-5 font-sans">
+                          <div>
+                            <h4 className="text-base sm:text-lg font-bold text-[#003A77]">{event.title}</h4>
+                            <p className="mt-1 text-xs sm:text-sm text-gray-600 line-clamp-4 leading-relaxed">{event.description}</p>
+                          </div>
                           {event.buttonText && (
-                            <Link href={event.buttonLink}>
-                              <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm w-fit mt-2">
+                            <Link href={event.buttonLink} className="block sm:inline-block mt-2">
+                              <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
                                 {event.buttonText}
                               </button>
                             </Link>
@@ -371,6 +341,9 @@ export default function AboutPage() {
               </div>
             </div>
           </Container>
+
+          {/* Join INDIAMET 2027 in Pune Section */}
+          <JoinIndiaMetSection />
 
           {/* Partners Section */}
           <PartnersSection />
