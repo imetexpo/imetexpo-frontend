@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import { useUTMData } from "@/hooks/useUTMTracker";
-import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
-import { sendContactEmail } from "@/lib/api/contact";
+import { queueContactSubmission } from "@/lib/api/contactSubmission";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
 
@@ -122,22 +121,7 @@ export default function BrochureForm() {
     };
 
     try {
-      if (!PROJECT_ID_VAR.projectId) {
-        toast.error("CMS Project ID is missing.");
-        setIsSubmitting(false);
-        return;
-      }
-
-      const result = await submitContactForm(PROJECT_ID_VAR.projectId, payload);
-
-      if (result.errors) {
-        setSubmitError(result.errors[0]?.message || "Failed to save brochure download request");
-        toast.error("Submission failed. Please try again.");
-        setIsSubmitting(false);
-        return;
-      }
-
-      await sendContactEmail(payload);
+      await queueContactSubmission(payload);
 
       setSubmitSuccess(true);
       toast.success("Thank you! Your brochure request has been submitted.");
