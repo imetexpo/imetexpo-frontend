@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
-import { sendContactEmail } from "@/lib/api/contact";
+import { queueContactSubmission } from "@/lib/api/contactSubmission";
 
 export default function SponsorForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -75,7 +75,7 @@ export default function SponsorForm() {
         submittedAt: new Date().toISOString(),
       };
 
-      await sendContactEmail(payload);
+      await queueContactSubmission(payload);
       setSubmittedData(payload);
       setSubmitSuccess(true);
       toast.success("Thank you! Your sponsor registration has been submitted.");
@@ -141,7 +141,7 @@ export default function SponsorForm() {
         </div>
 
         <p className="text-xs text-gray-500 leading-relaxed">
-          A confirmation email has been dispatched to <strong className="text-gray-700">{submittedData.email}</strong>. Our sponsorship and partnerships management team will reach out to you shortly with tailored sponsorship packages, branding deliverables, and booth layout options.
+          A confirmation email will be sent to <strong className="text-gray-700">{submittedData.email}</strong>. Our sponsorship and partnerships management team will reach out to you shortly with tailored sponsorship packages, branding deliverables, and booth layout options.
         </p>
       </div>
     );

@@ -101,6 +101,7 @@ export async function submitContactForm(
         'exhibitor-enquiry': 'EXHIBITOR',
         'event-brochure': 'BROCHURE',
         'sponsor-registration': 'SPONSOR',
+        'partner-registration': 'SPONSOR',
     };
 
     const leadType = leadTypeMap[input.formType] || 'OTHER';

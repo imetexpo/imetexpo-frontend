@@ -6,7 +6,10 @@ type ContactEmailResponse = {
   message?: string;
 };
 
-export async function sendContactEmail(payload: Record<string, unknown>): Promise<void> {
+export async function sendContactEmail(
+  payload: Record<string, unknown>,
+  options: { signal?: AbortSignal } = {},
+): Promise<void> {
   const fallbackMessage =
     'We could not confirm your email was sent. Your details may already be saved. Please contact pad@maxxmedia.in for help.';
 
@@ -16,6 +19,7 @@ export async function sendContactEmail(payload: Record<string, unknown>): Promis
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
+      signal: options.signal,
     });
   } catch {
     throw new Error(fallbackMessage);

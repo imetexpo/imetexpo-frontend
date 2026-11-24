@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Container from '@/components/ui/container';
 import PartnersSection from '@/components/home/PartnersSection';
 import { Button } from '@/components/ui/button';
-import { getContactApiUrl } from '@/lib/api/backendUrl';
+import { queueContactSubmission } from '@/lib/api/contactSubmission';
 
 const productSectors = [
   "Coordinate Measuring Machines (CMM)",
@@ -50,7 +50,6 @@ const countries = [
 
 import { useUTMData } from "@/hooks/useUTMTracker";
 import toast from "react-hot-toast";
-import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
 import LoadingDots from '@/components/ui/LoadingDots';
 
 
@@ -130,34 +129,7 @@ export default function SponsorshipEnquiryPage() {
     };
 
     try {
-      // 1. Submit to GraphQL CMS
-      if (!PROJECT_ID_VAR.projectId) {
-        toast.error("CMS Project ID is missing.");
-        return;
-      }
-      
-      const result = await submitContactForm(
-        PROJECT_ID_VAR.projectId,
-        payload
-      );
-
-      // 2. Submit notification API
-      const emailResponse = await fetch(getContactApiUrl(), {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const emailResult = await emailResponse.json().catch(() => ({ success: false }));
-
-      if (result.errors) {
-        setSubmitError(result.errors[0]?.message || 'Failed to submit sponsorship enquiry');
-        toast.error("Submission failed. Please try again.");
-        setIsSubmitting(false);
-        return;
-      }
+      await queueContactSubmission(payload);
 
       setSubmitSuccess(true);
       toast.success("Thank you! Your sponsorship enquiry has been submitted.");
@@ -225,7 +197,7 @@ export default function SponsorshipEnquiryPage() {
           </div>
 
           <p className="text-xs text-gray-500 leading-relaxed">
-            A confirmation email has been dispatched to <strong className="text-gray-700">{formData.workEmail}</strong>. Our sponsorship and partnerships management team will reach out to you shortly with tailored sponsorship packages, branding deliverables, and booth layout options.
+            A confirmation email will be sent to <strong className="text-gray-700">{formData.workEmail}</strong>. Our sponsorship and partnerships management team will reach out to you shortly with tailored sponsorship packages, branding deliverables, and booth layout options.
           </p>
         </div>
       </div>
