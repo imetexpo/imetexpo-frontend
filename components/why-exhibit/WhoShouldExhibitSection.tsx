@@ -162,7 +162,7 @@ export default function WhoShouldExhibitSection() {
                     const Icon = item.icon;
                     return (
                       <div
-                        // key={item.step}
+                        key={item.step}
                         className="group flex flex-col justify-between rounded-xl sm:rounded-2xl border border-[#003A77]/10 bg-[#FCF8F3] p-5 sm:p-6 shadow-[0_2px_12px_rgba(19,45,73,0.02)] transition-all duration-300 hover:border-[#00A1B1]/40 hover:bg-white hover:shadow-[0_8px_24px_rgba(0,161,177,0.08)] motion-safe:hover:-translate-y-0.5"
                       >
                         <div>
