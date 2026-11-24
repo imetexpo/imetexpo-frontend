@@ -7,7 +7,6 @@ import Footer from "@/components/layout/Footer";
 import { Providers } from "@/app/providers";
 import { Toaster } from "react-hot-toast";
 import { UTMProvider } from "@/components/UTMProvider";
-import { UTMDebugger } from "@/components/UTMDebugger";
 import { getUTMParams } from "@/lib/utmTracker";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -58,7 +57,6 @@ export default function ClientLayoutShell({
                             {children}
                             <Toaster position="top-right" />
                         </Providers>
-                        <UTMDebugger />
                     </UTMProvider>
                 </Suspense>
             </div>
