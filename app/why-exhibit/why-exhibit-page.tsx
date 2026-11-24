@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
 import SectorsSection from "@/components/home/SectorsSection";
+import WhyChooseIndiaMetSection from "@/components/why-exhibit/WhyChooseIndiaMetSection";
+import WhoShouldExhibitSection from "@/components/why-exhibit/WhoShouldExhibitSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
@@ -96,7 +98,7 @@ export default function WhyExhibitPage() {
   ];
 
   return (
-    <div className="intro-animation">
+    <div className="intro-animation min-h-screen overflow-x-hidden bg-white">
       <div className="page-spacing-wrapper">
         <div className="lg:pt-0">
           <PageHero
@@ -108,41 +110,50 @@ export default function WhyExhibitPage() {
           {/* Powering Progress Section */}
           <div className="animated-block">
             <div className="animated-block-target">
-              <Container className="py-12 sm:py-16">
-                <div className="grid items-center gap-10 overflow-hidden lg:grid-cols-5 lg:gap-20">
+              <Container className="py-10 sm:py-16 lg:py-20">
+                <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-5 lg:gap-14 xl:gap-20">
                   <div className="lg:col-span-5">
-                    <div className="flex flex-col gap-5">
-                      <p className="font-bold text-[#00A1B1]">Your Gateway to Precision Manufacturing Growth in India</p>
-                      <h2 className="font-bebas text-6xl text-[#003A77] md:text-7xl">Powering the Future of Metrology, Measurement & Quality</h2>
-                      <p className="text-lg sm:text-xl text-gray-700">
-                       As manufacturing moves toward greater precision, automation, digitalisation, and quality excellence, 
-                       India’s metrology and measurement industry is entering a new era of growth. INDIAMET connects you with 
-                       leading manufacturers, technology providers, quality professionals, engineers, OEMs, and decision-makers 
-                       shaping the future of precision manufacturing.
-                        </p>
-                        <p className="text-lg sm:text-xl text-gray-700"> Discover advanced metrology and inspection technologies, build valuable business connections, and unlock new opportunities across India’s rapidly evolving manufacturing ecosystem.           </p>
+                    <div className="flex flex-col gap-3 sm:gap-5">
+                      <p className="font-bold text-[#00A1B1] text-xs sm:text-sm uppercase tracking-wider font-sans">
+                        Your Gateway to Precision Manufacturing Growth in India
+                      </p>
+                      <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">
+                        Powering the Future of Metrology, Measurement &amp; Quality
+                      </h2>
+                      <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed font-sans">
+                        As manufacturing moves toward greater precision, automation, digitalisation, and quality excellence,
+                        India’s metrology and measurement industry is entering a new era of growth. INDIAMET connects you with
+                        leading manufacturers, technology providers, quality professionals, engineers, OEMs, and decision-makers
+                        shaping the future of precision manufacturing.
+                      </p>
+                      <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed font-sans">
+                        Discover advanced metrology and inspection technologies, build valuable business connections, and unlock new opportunities across India’s rapidly evolving manufacturing ecosystem.
+                      </p>
                     </div>
-                    <div className="mt-10 flex flex-wrap gap-8 2xl:gap-16">
-                      <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] md:text-6xl">1st</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-[#003A77] font-sans">Edition</p>
+
+                    {/* Stats Grid */}
+                    <div className="mt-6 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-0 bg-[#FCF8F3] border border-gray-100 p-4 sm:py-6 sm:px-4 rounded-sm sm:divide-x divide-gray-200 font-sans">
+                      <div className="text-center p-2 sm:p-0">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">1st</h3>
+                        <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 uppercase">Edition</p>
                       </div>
-                      <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] md:text-6xl">10,000+</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-[#003A77] font-sans">Trade Visitors</p>
+                      <div className="text-center p-2 sm:p-0">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">10,000+</h3>
+                        <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 uppercase">Trade Visitors</p>
                       </div>
-                      <div className="flex w-fit flex-col justify-center border-r border-gray-200 pr-8 font-bebas last-of-type:border-none 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] md:text-6xl">150+</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-[#003A77] font-sans">Exhibitors</p>
+                      <div className="text-center p-2 sm:p-0">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">150+</h3>
+                        <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 uppercase">Exhibitors</p>
                       </div>
-                      <div className="flex w-fit flex-col justify-center font-bebas last-of-type:border-none lg:border-r lg:pr-8 2xl:pr-16">
-                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] md:text-6xl">50+</h3>
-                        <p className="text-sm font-semibold tracking-wider uppercase text-[#003A77] font-sans">Conference Speakers</p>
+                      <div className="text-center p-2 sm:p-0">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-[#00A1B1] font-bold">50+</h3>
+                        <p className="text-[10px] sm:text-xs tracking-wider text-[#003A77] font-semibold mt-1 uppercase">Speakers</p>
                       </div>
                     </div>
-                    <div className="mt-10">
-                      <Link href="/about">
-                        <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+
+                    <div className="mt-6 sm:mt-8">
+                      <Link href="/about" className="inline-block w-full sm:w-auto">
+                        <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
                           About INDIAMET Expo
                         </button>
                       </Link>
@@ -154,16 +165,24 @@ export default function WhyExhibitPage() {
           </div>
 
           {/* Why Exhibit Section */}
-          <div className="animated-block mt-20">
+          <div className="animated-block mt-10 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
               <Container>
-                <div className="grid gap-5">
-                  <h2 className="font-bebas text-6xl text-[#003A77] md:text-7xl">Why Exhibit at INDIAMET Expo 2027</h2>
-                  <p className="text-lg sm:text-xl text-gray-700">
-                    Exhibiting at INDIAMET Expo puts you at the center of India's fastest-growing metrology, precision measurement, and quality assurance hub. Connect directly with over 10,000 professionals with real purchasing power, showcase your solutions to high-growth automotive, aerospace, defence, and precision manufacturing sectors, and expand your market reach. This is your prime opportunity to generate high-quality sales leads, forge valuable OEM partnerships, and position your brand as a technology leader.
+                <div className="grid gap-3 sm:gap-4">
+                  <h1 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">
+                    Why Exhibit at INDIAMET Expo 2027 ?
+                  </h1>
+                  <h2 className="font-bebas text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#003A77] leading-tight">
+                    Put Your Measurement Technology in Front of the Right Industry Audience
+                  </h2>
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed font-sans">
+                    INDIAMET 2027 is an international exhibition dedicated to metrology, measurement technology, industrial inspection, calibration and quality engineering. Taking place from 13–15 May 2027 at the Auto Cluster Exhibition Centre in Pune, the event is designed to connect solution providers with professionals seeking greater accuracy, efficiency and confidence in precision manufacturing.
+                    <br /><br />
+                    For manufacturers and suppliers evaluating an industrial metrology exhibition, INDIAMET offers a focused platform to present capabilities, start technical conversations and build relationships across the manufacturing quality ecosystem.
                   </p>
                 </div>
-                <div className="my-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+                <div className="my-8 sm:my-12 grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                   {[
                     {
                       title: "Struggling to find qualified buyers?",
@@ -182,21 +201,26 @@ export default function WhyExhibitPage() {
                     },
                     {
                       title: "Looking for buyers ready to invest?",
-                      desc: "Connect with companies investing in advanced measurement, inspection, automation, digital quality, and Industry 4.0 technologies — and turn technology demonstrations into qualified business opportunities.ng.",
+                      desc: "Connect with companies investing in advanced measurement, inspection, automation, digital quality, and Industry 4.0 technologies — and turn technology demonstrations into qualified business opportunities.",
                       icon: "/images/contract_10861184_2c90043b14.webp"
                     }
                   ].map((benefit, idx) => (
-                    <div key={idx} className="flex flex-col gap-4 font-sans">
-                      <div className="flex items-center justify-center h-16 w-16 rounded-sm bg-[#FCF8F3] border border-gray-100 shadow-sm">
-                        <img src={benefit.icon} alt="" className="h-8 w-8 object-contain" />
+                    <div key={idx} className="group flex flex-col justify-between rounded-xl sm:rounded-2xl border border-[#003A77]/10 bg-[#FCF8F3] p-4 sm:p-5 shadow-[0_2px_12px_rgba(19,45,73,0.02)] transition-all duration-300 hover:border-[#00A1B1]/40 hover:bg-white hover:shadow-[0_8px_24px_rgba(0,161,177,0.08)] motion-safe:hover:-translate-y-0.5 font-sans">
+                      <div>
+                        <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-[#EDF4FB] border border-[#003A77]/10 text-[#003A77] group-hover:border-[#00A1B1] group-hover:bg-[#00A1B1] transition-colors p-2.5">
+                          <img src={benefit.icon} alt="" className="h-full w-full object-contain" />
+                        </div>
+                        <h3 className="text-base sm:text-lg font-bold text-[#003A77] leading-snug mt-3 sm:mt-4">{benefit.title}</h3>
+                        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mt-2">{benefit.desc}</p>
                       </div>
-                      <h3 className="font-bebas text-2xl text-[#003A77] mt-2 font-bold">{benefit.title}</h3>
-                      <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">{benefit.desc}</p>
                     </div>
                   ))}
                 </div>
-                <Link href="/exhibiting-enquiry">
-                  <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Book A Stand</button>
+
+                <Link href="/exhibiting-enquiry" className="inline-block w-full sm:w-auto">
+                  <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
+                    Book A Stall
+                  </button>
                 </Link>
               </Container>
             </div>
@@ -204,45 +228,52 @@ export default function WhyExhibitPage() {
 
           <SectorsSection />
 
+          {/* Why Choose INDIAMET for Your Next Exhibition? Section */}
+          <WhyChooseIndiaMetSection />
+
           {/* Visitor Breakdown Section */}
-          <div className="animated-block mt-20">
+          <div className="animated-block mt-10 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
               <Container>
-                <div className="grid items-center gap-10 overflow-hidden lg:grid-cols-5 lg:gap-20">
+                <div className="grid items-center gap-8 sm:gap-10 overflow-hidden lg:grid-cols-5 lg:gap-14 xl:gap-20">
                   <div className="lg:col-span-3">
-                    <div className="flex flex-col gap-5">
-                      <p className="font-bold text-orange-600">Visitor Breakdown</p>
-                      <h3 className="font-bebas text-6xl text-[#003A77] md:text-7xl">Connecting You to Precision Manufacturing Decision-Makers</h3>
-                      <p className="text-lg sm:text-xl text-gray-700">
-                        From manufacturing leaders and procurement specialists to quality managers, metrology engineers, R&D professionals, and inspection experts, INDIAMET brings together the decision-makers shaping India’s precision manufacturing and quality ecosystem.
+                    <div className="flex flex-col gap-3 sm:gap-5">
+                      <p className="font-bold text-[#00A1B1] text-xs sm:text-sm uppercase tracking-wider font-sans">Visitor Breakdown</p>
+                      <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">
+                        Connecting You to Precision Manufacturing Decision-Makers
+                      </h3>
+                      <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed font-sans">
+                        From manufacturing leaders and procurement specialists to quality managers, metrology engineers, R&amp;D professionals, and inspection experts, INDIAMET brings together the decision-makers shaping India’s precision manufacturing and quality ecosystem.
                       </p>
                     </div>
-                    <div className="mt-10 grid grid-cols-2 gap-6 bg-[#FCF8F3] border border-gray-100 p-8 rounded-sm font-sans">
+                    <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-3 sm:gap-6 bg-[#FCF8F3] border border-gray-100 p-4 sm:p-6 lg:p-8 rounded-sm font-sans">
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] font-bebas">68%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#003A77]">Industry Decision-Makers</p>
+                        <h3 className="mb-1 sm:mb-2 text-3xl sm:text-4xl md:text-5xl font-bold text-[#00A1B1] font-bebas">68%</h3>
+                        <p className="text-xs sm:text-sm font-semibold uppercase text-[#003A77]">Industry Decision-Makers</p>
                       </div>
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] font-bebas">72%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#003A77]">Manufacturing & Engineering Professionals</p>
+                        <h3 className="mb-1 sm:mb-2 text-3xl sm:text-4xl md:text-5xl font-bold text-[#00A1B1] font-bebas">72%</h3>
+                        <p className="text-xs sm:text-sm font-semibold uppercase text-[#003A77]">Manufacturing &amp; Engineering Professionals</p>
                       </div>
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] font-bebas">45%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#003A77]">Procurement & Purchase Influencers</p>
+                        <h3 className="mb-1 sm:mb-2 text-3xl sm:text-4xl md:text-5xl font-bold text-[#00A1B1] font-bebas">45%</h3>
+                        <p className="text-xs sm:text-sm font-semibold uppercase text-[#003A77]">Procurement &amp; Purchase Influencers</p>
                       </div>
                       <div className="flex w-fit flex-col">
-                        <h3 className="mb-3 text-5xl font-bold text-[#00A1B1] font-bebas">30%</h3>
-                        <p className="text-sm font-semibold uppercase text-[#003A77]">Senior Management & C-Level Executives</p>
+                        <h3 className="mb-1 sm:mb-2 text-3xl sm:text-4xl md:text-5xl font-bold text-[#00A1B1] font-bebas">30%</h3>
+                        <p className="text-xs sm:text-sm font-semibold uppercase text-[#003A77]">Senior Management &amp; C-Level Executives</p>
                       </div>
                     </div>
-                    <div className="mt-10">
-                      <Link href="/exhibiting-enquiry">
-                        <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">Enquire to Exhibit</button>
+                    <div className="mt-6 sm:mt-8">
+                      <Link href="/exhibiting-enquiry" className="inline-block w-full sm:w-auto">
+                        <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
+                          Enquire to Exhibit
+                        </button>
                       </Link>
                     </div>
                   </div>
-                  <div className="order-first h-full lg:col-span-2">
-                    <div className="h-[300px] sm:h-[400px] lg:h-full w-full overflow-hidden rounded-sm">
+                  <div className="order-first lg:order-last h-full lg:col-span-2">
+                    <div className="h-[220px] sm:h-[350px] lg:h-full w-full overflow-hidden rounded-sm shadow-sm">
                       <img
                         src="/images/why_exhibit.webp"
                         alt="Visitors examining advanced sensing equipment at a busy trade show"
@@ -256,9 +287,9 @@ export default function WhyExhibitPage() {
           </div>
 
           {/* Download Brochure Section */}
-          <div className="animated-block mt-20">
+          <div className="animated-block mt-10 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
-              <div className="relative mx-auto overflow-hidden py-20 text-white">
+              <div className="relative mx-auto overflow-hidden py-10 sm:py-16 lg:py-20 text-white">
                 {/* BACKGROUND IMAGE */}
                 <div className="absolute inset-0">
                   <img
@@ -271,24 +302,24 @@ export default function WhyExhibitPage() {
                 <div className="absolute inset-0 bg-[#003A77]/60"></div>
                 {/* CONTENT */}
                 <Container className="relative z-10">
-                  <div className="grid items-center gap-10 md:grid-cols-12">
+                  <div className="grid items-center gap-6 sm:gap-10 md:grid-cols-12 text-center md:text-left">
                     <div className="flex justify-center md:col-span-4">
                       <img
                         src="/images/indiamet_Brochure.webp"
                         alt="IndiaMET exhibition brochure featuring metrology technology and event details"
-                        className="h-64 w-auto object-contain"
+                        className="h-40 sm:h-52 lg:h-64 w-auto object-contain"
                       />
                     </div>
-                    <div className="flex flex-col gap-5 md:col-span-8">
-                      <h3 className="font-bebas text-6xl md:text-7xl leading-tight">
+                    <div className="flex flex-col gap-3 sm:gap-5 md:col-span-8 items-center md:items-start">
+                      <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
                         Download Your Event Brochure
                       </h3>
-                      <p className="max-w-[700px] text-lg sm:text-xl text-gray-200">
+                      <p className="max-w-[700px] text-sm sm:text-base lg:text-lg text-gray-200 leading-relaxed font-sans">
                         Make sure you grab your copy of the event brochure to learn more
                         about the show and explore your participation opportunities.
                       </p>
-                      <Link href="/event-brochure">
-                        <button className="bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm">
+                      <Link href="/event-brochure" className="inline-block w-full sm:w-auto">
+                        <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-white hover:text-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
                           Download Now
                         </button>
                       </Link>
@@ -299,16 +330,16 @@ export default function WhyExhibitPage() {
             </div>
           </div>
 
-          {/* Why ASEAN Section */}
-          <div className="animated-block mt-20">
+          {/* Why India Section */}
+          <div className="animated-block mt-10 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
               <Container>
-                <h2 className="mb-10 font-bebas text-6xl text-[#003A77] md:text-7xl">Why India?</h2>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <h2 className="mb-6 sm:mb-10 font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">Why India?</h2>
+                <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
                       title: "Rapid Growth in Precision Manufacturing",
-                      desc: "India’s automotive, aerospace, defence, electronics, engineering, and industrial manufacturing sectors are rapidly adopting advanced technologies to achieve higher precision, productivity, and quality. This is driving strong demand for modern metrology, inspection, and measurement solutions..",
+                      desc: "India’s automotive, aerospace, defence, electronics, engineering, and industrial manufacturing sectors are rapidly adopting advanced technologies to achieve higher precision, productivity, and quality. This is driving strong demand for modern metrology, inspection, and measurement solutions.",
                       image: "/images/Precision.webp"
                     },
                     {
@@ -322,14 +353,14 @@ export default function WhyExhibitPage() {
                       image: "/images/growing.webp"
                     }
                   ].map((item, idx) => (
-                    <div key={idx} className="relative flex min-h-[350px] flex-col overflow-hidden text-white rounded-sm border border-white/10">
+                    <div key={idx} className="relative flex min-h-[280px] sm:min-h-[350px] flex-col overflow-hidden text-white rounded-sm border border-white/10 shadow-sm">
                       <div className="absolute inset-0">
                         <img src={item.image} alt={getImageAlt(item.image, item.title)} className="h-full w-full object-cover" />
                       </div>
                       <div className="absolute inset-0 bg-[#003A77]/60"></div>
-                      <div className="relative z-10 flex h-full flex-col justify-end gap-4 p-6 font-sans">
-                        <h3 className="text-xl font-bold leading-tight">{item.title}</h3>
-                        <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">{item.desc}</p>
+                      <div className="relative z-10 flex h-full flex-col justify-end gap-2.5 sm:gap-4 p-4 sm:p-6 font-sans">
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold leading-tight">{item.title}</h3>
+                        <p className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed font-sans">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -338,61 +369,29 @@ export default function WhyExhibitPage() {
             </div>
           </div>
 
-          {/* Testimonials Section */}
-          {/* <div className="animated-block mt-20">
-            <div className="animated-block-target">
-              <Container>
-                <div className="mb-10 flex justify-between max-lg:flex-col lg:items-end">
-                  <div className="lg:basis-2/3">
-                    <p className="font-bold text-[#00A1B1]">Testimonials</p>
-                    <h3 className="my-3 font-bebas text-6xl text-[#003A77] md:text-7xl">Why the Industry Chooses INDIAMET Expo</h3>
-                  </div>
-                </div>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {[
-                    { name: "Rajesh Kulkarni", title: "VP of Quality Assurance", company: "Precision Auto Components", quote: "INDIAMET Expo provides unparalleled access to India's precision manufacturing ecosystem. Over three days, we connected with key tier-1 suppliers and secured high-value contracts." },
-                    { name: "Vikram Sharma", title: "Managing Director", company: "Metrology Systems India", quote: "We've exhibited consistently, and IndiaMET remains our most valuable platform for launching new CMMs and 3D optical scanning solutions across western and northern India." },
-                    { name: "Anita Rao", title: "Head of Procurement", company: "Aerospace Precision Tools", quote: "The quality of visitors and metrology equipment showcased is exceptional. We connected with advanced calibration providers that significantly elevated our inspection capabilities." }
-                  ].map((testimonial, idx) => (
-                    <div key={idx} className="relative flex h-full flex-col overflow-hidden rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300 font-sans">
-                      <div className="text-4xl mb-4 text-[#00A1B1] font-serif">&ldquo;</div>
-                      <p className="mb-auto text-lg sm:text-xl italic text-gray-700 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
-                      <div className="mt-6 flex items-center gap-4 border-t border-gray-200 pt-5">
-                        <div className="h-12 w-12 rounded-sm bg-gradient-to-br from-[#00A1B1] to-orange-600 flex items-center justify-center text-white font-bold text-lg">
-                          {testimonial.name.charAt(0)}
-                        </div>
-                        <div>
-                          <h5 className="text-sm font-bold text-[#003A77]">{testimonial.name}</h5>
-                          <p className="text-xs text-gray-500 leading-tight mt-1">{testimonial.title}<br />{testimonial.company}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </Container>
-            </div>
-          </div> */}
+          {/* Who Should Exhibit? Section */}
+          <WhoShouldExhibitSection />
 
           {/* When and Where Section */}
-          <div className="animated-block mt-20">
+          <div className="animated-block mt-10 sm:mt-16 lg:mt-20">
             <div className="animated-block-target">
               <Container className="text-[#003A77]">
-                <h2 className="mb-10 font-bebas text-6xl md:text-7xl">When and Where</h2>
-                <div className="grid gap-6 lg:grid-cols-2">
-                  <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 font-sans">
-                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#003A77]">Opening Hours</p>
-                    <h4 className="text-lg font-bold text-gray-800">13, 14 May 2027: 10:00 - 18:00</h4>
-                    <h4 className="mt-2 text-lg font-bold text-gray-800">15 May  2027: 10:00 - 16:00</h4>
+                <h2 className="mb-6 sm:mb-8 font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">When and Where</h2>
+                <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
+                  <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-4 sm:p-6 font-sans">
+                    <p className="mb-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#00A1B1]">Opening Hours</p>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold text-gray-800">13, 14 May 2027: 10:00 - 18:00</h4>
+                    <h4 className="mt-1 text-sm sm:text-base md:text-lg font-bold text-gray-800">15 May 2027: 10:00 - 18:00</h4>
                   </div>
-                  <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-6 font-sans">
-                    <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#003A77]">Venue</p>
-                    <h4 className="text-lg font-bold text-gray-800">Auto Cluster Exhibition Center, Pune, India</h4>
+                  <div className="rounded-sm bg-[#FCF8F3] border border-gray-100 p-4 sm:p-6 font-sans">
+                    <p className="mb-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#00A1B1]">Venue</p>
+                    <h4 className="text-sm sm:text-base md:text-lg font-bold text-gray-800">Auto Cluster Exhibition Center, Pune, India</h4>
                   </div>
                 </div>
-                <div className="mt-8 overflow-hidden rounded-sm border border-gray-200">
+                <div className="mt-6 sm:mt-8 overflow-hidden rounded-sm border border-gray-200">
                   <iframe
                     src="https://www.google.com/maps?q=Auto%20Cluster%20Exhibition%20Center%2C%20Pune&output=embed"
-                    className="w-full h-[400px] border-0"
+                    className="w-full h-[240px] sm:h-[320px] md:h-[400px] border-0"
                     allowFullScreen
                     loading="lazy"
                   ></iframe>
