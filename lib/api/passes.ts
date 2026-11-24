@@ -173,6 +173,10 @@ export async function registerVisitorPass(payload: {
   country?: string;
   source?: string;
   interests: string[];
+  tracking?: {
+    utmSource?: string; utmMedium?: string; utmCampaign?: string;
+    utmTerm?: string; utmContent?: string; utmId?: string; utmUrl?: string;
+  };
 }) {
   const response = await fetch(`${API_BASE}/passes/register`, {
     method: 'POST',
