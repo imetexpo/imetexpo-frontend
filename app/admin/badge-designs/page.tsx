@@ -24,6 +24,7 @@ export default function BadgeDesignsPage() {
   const [settings, setSettings] = useState<BadgeDesignSettings | null>(null);
   const [selected, setSelected] = useState<BadgeDesignId>('design1');
   const [previews, setPreviews] = useState<Partial<Record<BadgeDesignId, string>>>({});
+  const [previewFailures, setPreviewFailures] = useState<Partial<Record<BadgeDesignId, boolean>>>({});
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -34,20 +35,31 @@ export default function BadgeDesignsPage() {
     const urls: string[] = [];
     Promise.all([
       fetchBadgeDesignSettings(),
-      fetchBadgeDesignPreview('design1'),
-      fetchBadgeDesignPreview('design2'),
+      Promise.all([
+        fetchBadgeDesignPreview('design1').catch(() => null),
+        fetchBadgeDesignPreview('design2').catch(() => null),
+      ]),
     ])
-      .then(([config, first, second]) => {
-        const firstUrl = URL.createObjectURL(first);
-        const secondUrl = URL.createObjectURL(second);
-        urls.push(firstUrl, secondUrl);
-        if (cancelled) {
-          urls.forEach((url) => URL.revokeObjectURL(url));
-          return;
+      .then(([config, [first, second]]) => {
+        if (cancelled) return;
+        const nextPreviews: Partial<Record<BadgeDesignId, string>> = {};
+        const nextFailures: Partial<Record<BadgeDesignId, boolean>> = {};
+        if (first) {
+          nextPreviews.design1 = URL.createObjectURL(first);
+          urls.push(nextPreviews.design1);
+        } else {
+          nextFailures.design1 = true;
+        }
+        if (second) {
+          nextPreviews.design2 = URL.createObjectURL(second);
+          urls.push(nextPreviews.design2);
+        } else {
+          nextFailures.design2 = true;
         }
         setSettings(config);
         setSelected(config.design);
-        setPreviews({ design1: firstUrl, design2: secondUrl });
+        setPreviews(nextPreviews);
+        setPreviewFailures(nextFailures);
       })
       .catch((failure: unknown) => {
         if (!cancelled) setError(errorMessage(failure));
@@ -143,6 +155,10 @@ export default function BadgeDesignsPage() {
                       alt={`${design.name} sample visitor badge`}
                       className="mx-auto h-auto w-full max-w-[320px] bg-white shadow-md"
                     />
+                  ) : previewFailures[design.id] ? (
+                    <p className="mx-auto max-w-[320px] bg-white p-8 text-center text-sm text-slate-500">
+                      Sample preview is unavailable. Badge settings are still usable.
+                    </p>
                   ) : null}
                 </div>
                 <p className="p-4 text-sm leading-6 text-slate-600">{design.description}</p>
