@@ -1,4 +1,5 @@
 import Container from '@/components/ui/container';
+import Link from 'next/link';
 import {
   Car,
   Plane,
@@ -106,6 +107,14 @@ export default function ConnectingIndustriesSection() {
                 manufacturing accuracy and product quality, INDIAMET aims to support the
                 adoption of advanced measurement technologies across industries.
               </p>
+            </div>
+
+            <div className="mt-6 sm:mt-8">
+              <Link href="/passes" className="inline-block w-full sm:w-auto">
+                <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
+                  Register as a Visitor
+                </button>
+              </Link>
             </div>
           </div>
         </Container>

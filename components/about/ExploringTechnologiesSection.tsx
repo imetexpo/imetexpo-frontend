@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Container from '@/components/ui/container';
 import {
   Ruler,
@@ -6,7 +7,6 @@ import {
   ShieldCheck,
   Compass,
   Layers,
-  Cpu,
   CheckCircle2,
 } from 'lucide-react';
 
@@ -47,12 +47,6 @@ const technologies = [
       'Surface roughness testing, profile measurement, and surface inspection systems.',
     icon: Layers,
   },
-  {
-    title: 'Smart Metrology',
-    description:
-      'Digital measurement, automated quality inspection, and Industry 4.0 applications.',
-    icon: Cpu,
-  },
 ];
 
 export default function ExploringTechnologiesSection() {
@@ -74,8 +68,8 @@ export default function ExploringTechnologiesSection() {
               </p>
             </div>
 
-            {/* 7 Technologies Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 mb-6 sm:mb-10">
+            {/* Technologies Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 mb-6 sm:mb-8">
               {technologies.map((item, idx) => {
                 const Icon = item.icon;
                 return (
@@ -110,6 +104,15 @@ export default function ExploringTechnologiesSection() {
                 product quality, reduce measurement uncertainty, and support consistent
                 production standards.
               </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="mt-6 sm:mt-8">
+              <Link href="/passes" className="inline-block w-full sm:w-auto">
+                <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-8 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
+                  Register as a Visitor
+                </button>
+              </Link>
             </div>
           </div>
         </Container>
