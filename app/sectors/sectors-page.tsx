@@ -4,6 +4,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import PartnersSection from "@/components/home/PartnersSection";
+import SectorOverviewSection from "@/components/sectors/SectorOverviewSection";
+import ExplorePuneSection from "@/components/sectors/ExplorePuneSection";
 import BackToTop from "@/components/layout/BackToTop";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/layout/PageHero";
@@ -16,53 +18,30 @@ interface SectorsPageProps {
 
 export default function SectorsPage({ sectors = sectorsData }: SectorsPageProps) {
   const quickGuideItems = [
-  {
-    title: "Become an Exhibitor",
-    description: "Showcase your metrology, measurement, inspection, calibration, and quality technologies to manufacturers, engineers, quality professionals, and key industry decision-makers.",
-    buttonText: "Book A Stand",
-    buttonLink: "/exhibiting-enquiry",
-    image: "/images/become_exhibitor.webp"
-  },
-  {
-    title: "Download Your Event Brochure",
-    description: "Explore INDIAMET 2027, discover the exhibition sectors, visitor profile, exhibiting opportunities, and everything you need to plan your participation.",
-    buttonText: "Download Now",
-    buttonLink: "/event-brochure",
-    image: "/images/Untitled_500_x_500_px_cd8f081eec.webp"
-  },
-  {
-    title: "Become a Visitor",
-    description: "Discover the latest metrology and measurement technologies, connect with leading solution providers, meet industry professionals, and explore innovations shaping precision manufacturing.",
-    buttonText: "Register Now",
-    buttonLink: "/passes",
-    image: "/images/become_visitor.webp"
-  }
-];
+    {
+      title: "Become an Exhibitor",
+      description: "Showcase your metrology, measurement, inspection, calibration, and quality technologies to manufacturers, engineers, quality professionals, and key industry decision-makers.",
+      buttonText: "Book A Stand",
+      buttonLink: "/exhibiting-enquiry",
+      image: "/images/become_exhibitor.webp"
+    },
+    {
+      title: "Download Your Event Brochure",
+      description: "Explore INDIAMET 2027, discover the exhibition sectors, visitor profile, exhibiting opportunities, and everything you need to plan your participation.",
+      buttonText: "Download Now",
+      buttonLink: "/event-brochure",
+      image: "/images/Untitled_500_x_500_px_cd8f081eec.webp"
+    },
+    {
+      title: "Become a Visitor",
+      description: "Discover the latest metrology and measurement technologies, connect with leading solution providers, meet industry professionals, and explore innovations shaping precision manufacturing.",
+      buttonText: "Register Now",
+      buttonLink: "/passes",
+      image: "/images/become_visitor.webp"
+    }
+  ];
   return (
-    <div className="intro-animation">
-      {/* Mobile Header */}
-      <div className="fixed left-0 top-0 z-50 w-full bg-[#003A77] px-5 py-2 lg:hidden">
-        <div className="flex justify-between">
-          <Link href="/">
-            <Image src="/imgs/logo-its.webp" alt="INDIAMET Expo" width={140} height={40} className="h-auto w-auto object-contain" />
-          </Link>
-          <button className="z-10" aria-label="Menu">
-            <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.66667 20C0.746193 20 0 19.2538 0 18.3333C0 17.4129 0.746193 16.6667 1.66667 16.6667H30.3333C31.2538 16.6667 32 17.4129 32 18.3333C32 19.2538 31.2538 20 30.3333 20H1.66667ZM1.66667 11.6667C0.746193 11.6667 0 10.9205 0 10C0 9.07952 0.746192 8.33333 1.66667 8.33333H30.3333C31.2538 8.33333 32 9.07952 32 10C32 10.9205 31.2538 11.6667 30.3333 11.6667H1.66667ZM1.66667 3.33333C0.746193 3.33333 0 2.58714 0 1.66667C0 0.746192 0.746192 0 1.66667 0H30.3333C31.2538 0 32 0.746192 32 1.66667C32 2.58714 31.2538 3.33333 30.3333 3.33333H1.66667Z" fill="#00A1B1"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {/* Back to Top Button */}
-      <div className="fixed bottom-3 right-3 z-50 opacity-0 transition-all duration-300 lg:bottom-10 lg:right-2">
-        <button className="m-0 rounded-full border-none bg-white p-0 outline-hidden drop-shadow-lg" aria-label="Back to top">
-          <svg className="size-10 fill-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M22 12c0-5.522-4.476-10-10-10C6.479 2 2 6.479 2 12c0 5.524 4.478 10 10 10c5.524 0 10-4.476 10-10zm-14.53.28a.75.75 0 0 1-.073-.976l.073-.084l4-4a.75.75 0 0 1 .977-.073l.085.072l4 4.002a.75.75 0 0 1-.977 1.133l-.084-.073l-2.72-2.721v6.691a.75.75 0 0 1-.649.743l-.102.007a.75.75 0 0 1-.743-.648l-.007-.102v-6.69l-2.72 2.72a.75.75 0 0 1-.976.072l-.084-.072z"></path>
-          </svg>
-        </button>
-      </div>
-
+    <div className="intro-animation min-h-screen overflow-x-hidden bg-white">
       {/* Main Content */}
       <div className="page-spacing-wrapper lg:pt-0">
         <PageHero
@@ -76,32 +55,28 @@ export default function SectorsPage({ sectors = sectorsData }: SectorsPageProps)
           <div className="animated-block-target">
             <Container>
               <div className="text-center lg:text-left">
-                <h2 className="mt-10 font-bebas text-5xl text-[#003A77] md:text-6xl lg:text-7xl">
-                  Sectors Showcased at <span className="text-[#00A1B1]">INDIAMET Expo</span>
-                </h2>
-                <p className="mx-auto mt-5 max-w-9xl text-lg sm:text-xl text-gray-700 lg:mx-0">
-                  INDIAMET brings together the complete spectrum of metrology, measurement, inspection, 
-                  calibration, testing, and quality technologies. From advanced CMMs and optical measurement 
-                  systems to calibration equipment, 3D scanning, machine vision, and smart metrology software, 
-                  the exhibition connects technology providers with manufacturers and quality professionals across 
-                  India's precision manufacturing ecosystem.
+                <h1 className="mt-6 sm:mt-10 font-bebas text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">
+                  Metrology Equipment, Measurement &amp; Inspection Sectors at INDIAMET 2027
+                </h1>
+                <p className="mx-auto mt-3 sm:mt-5 max-w-5xl text-xs sm:text-base lg:text-lg text-gray-700 lg:mx-0 leading-relaxed font-sans">
+                  Explore the technology sectors at INDIAMET 2027, an international exhibition focused on metrology, precision measurement, inspection, calibration and quality engineering. The exhibition connects measurement solution providers with manufacturing professionals seeking accuracy, consistency and reliable quality processes. Discover the equipment, instruments and digital technologies shaping modern industrial measurement.
                 </p>
               </div>
 
-              <div className="my-16 md:my-20">
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="my-8 sm:my-14 md:my-16">
+                <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {sectors.map((sector, idx) => (
                     <Link
                       key={idx}
                       href={`/sectors/${sector.slug}`}
-                      className="group relative block overflow-hidden rounded-sm shadow-sm border border-gray-100 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md"
+                      className="group relative block overflow-hidden rounded-lg sm:rounded-xl shadow-sm border border-gray-100 transition-all duration-300 ease-in-out hover:shadow-md motion-safe:hover:scale-[1.02]"
                     >
-                      <div className="relative h-56 w-full overflow-hidden bg-gray-100 rounded-t-sm">
+                      <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-gray-100">
                         <Image
                           src={sector.image}
                           alt={getImageAlt(sector.image, sector.title)}
                           fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-110"
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           onError={(e) => {
                             const target = e.currentTarget;
@@ -116,8 +91,8 @@ export default function SectorsPage({ sectors = sectorsData }: SectorsPageProps)
                           }}
                         />
                       </div>
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 pt-8 rounded-b-sm">
-                        <h3 className="text-center font-bebas text-lg sm:text-xl text-white transition-colors duration-300 group-hover:text-[#00A1B1] font-bold uppercase tracking-wide">
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-3.5 sm:p-4 pt-8">
+                        <h3 className="text-center font-bebas text-base sm:text-lg md:text-xl text-white transition-colors duration-300 group-hover:text-[#00A1B1] font-bold uppercase tracking-wide">
                           {sector.title}
                         </h3>
                       </div>
@@ -129,41 +104,46 @@ export default function SectorsPage({ sectors = sectorsData }: SectorsPageProps)
           </div>
         </div>
 
+        {/* Metrology Equipment, Measurement & Inspection Sectors Overview */}
+        <SectorOverviewSection />
+
         {/* Quick Guide Section */}
-        <div className="animated-block mt-12 lg:mt-20">
+        <div className="animated-block mt-8 sm:mt-16 lg:mt-20">
           <div className="animated-block-target">
             <Container>
-              <div className="mb-10 text-center lg:mb-12 lg:text-left">
-                <p className="font-bold text-[#00A1B1]">Quick Guide</p>
-                <h3 className="mt-2 font-bebas text-5xl text-[#003A77] md:text-6xl lg:text-7xl">
+              <div className="mb-6 sm:mb-10 text-center lg:text-left">
+                <p className="text-[#00A1B1] font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider">Quick Guide</p>
+                <h3 className="mt-1 sm:mt-2 font-bebas text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#003A77] leading-tight">
                   Simplifying Your <span className="text-[#00A1B1]">Participation Journey</span>
                 </h3>
               </div>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {quickGuideItems.map((item, idx) => (
                   <div
                     key={idx}
-                    className="group flex flex-col overflow-hidden rounded-sm bg-[#FCF8F3] border border-gray-100 transition-all duration-300 ease-in-out hover:shadow-lg shadow-sm"
+                    className="group flex flex-col justify-between overflow-hidden rounded-xl sm:rounded-2xl bg-[#FCF8F3] border border-gray-100 transition-all duration-300 ease-in-out hover:shadow-lg shadow-sm"
                   >
-                    <div className="relative h-48 w-full overflow-hidden">
+                    <div className="relative h-40 sm:h-48 w-full overflow-hidden">
                       <Image
                         src={item.image}
                         alt={getImageAlt(item.image, item.title)}
                         fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-[#003A77]/20 group-hover:bg-[#003A77]/40 transition-all duration-300"></div>
-                      <div className="absolute bottom-4 left-0 right-0 flex justify-start pl-4">
-                        <Link href={item.buttonLink}>
-                          <button className="bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                      <div className="absolute inset-0 bg-[#003A77]/20 group-hover:bg-[#003A77]/30 transition-all duration-300"></div>
+                    </div>
+                    <div className="flex flex-1 flex-col justify-between p-4 sm:p-5 font-sans">
+                      <div>
+                        <h4 className="text-base sm:text-lg md:text-xl font-bold text-[#003A77] leading-snug">{item.title}</h4>
+                        <p className="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                      </div>
+                      <div className="mt-4 pt-1">
+                        <Link href={item.buttonLink} className="inline-block w-full sm:w-auto">
+                          <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
                             {item.buttonText}
                           </button>
                         </Link>
                       </div>
-                    </div>
-                    <div className="flex flex-1 flex-col gap-3 p-5 font-sans">
-                      <h4 className="font-bebas text-2xl text-[#003A77] md:text-3xl font-bold">{item.title}</h4>
-                      <p className="text-lg sm:text-xl text-gray-600 leading-relaxed line-clamp-3">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -171,6 +151,9 @@ export default function SectorsPage({ sectors = sectorsData }: SectorsPageProps)
             </Container>
           </div>
         </div>
+
+        {/* Explore INDIAMET 2027 in Pune Section */}
+        <ExplorePuneSection />
 
         {/* Partners Section */}
         <div className="mt-12 lg:mt-20">
