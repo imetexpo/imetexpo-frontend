@@ -24,7 +24,7 @@ export default function BlogCover({
       <div>
         <span className="text-3xl font-black tracking-wider text-white sm:text-5xl">INDIAMET</span>
         <p className="mt-3 text-xs font-medium uppercase tracking-[0.2em] text-blue-100">
-          Metallurgy &amp; Metal Industry Insights
+          Precision Metrology &amp; Quality Engineering Insights
         </p>
       </div>
     </div>
