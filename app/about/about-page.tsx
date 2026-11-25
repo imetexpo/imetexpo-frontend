@@ -71,12 +71,12 @@ export default function AboutPage() {
       ],
 
       buttonText: "Explore Connect",
-      buttonLink: "/https://www.metrologyupdate.com"
+      buttonLink: "/contact-us"
     }
   ];
 
   const keyEvents = [
-    { title: "Conference Programme", description: "INDIAMET brings together industry leaders, metrology experts, manufacturing professionals, and technical specialists through a comprehensive conference programme featuring industry forums, expert presentations, panel discussions, and technical sessions. The programme explores emerging technologies, industry challenges, standards, and the latest trends shaping metrology, measurement, inspection, calibration, and precision manufacturing.", image: "/images/confe.webp", buttonText: "Learn More", buttonLink: "/summit" }, { title: "INDIAMET Connect", description: "INDIAMET Connect is the exhibition's dedicated business networking platform, designed to connect exhibitors, visitors, manufacturers, quality professionals, metrology experts, media, professional associations, and industry leaders. The platform helps participants discover new technologies, build valuable business relationships, and explore new business opportunities.", image: "/images/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.webp", buttonText: "Join Now", buttonLink: "/http://www.metrologyupdate.com" }, { title: "Global Metrology Excellence Awards", description: "The Global Metrology Excellence Awards (GMEA) recognise outstanding achievements and innovation in metrology, measurement technology, inspection, calibration, quality engineering, and precision manufacturing. The awards celebrate organisations and professionals developing advanced solutions that improve accuracy, productivity, quality, and manufacturing performance.", image: "/images/awards2.webp", buttonText: "Learn More", buttonLink: "/awards" }
+    { title: "Conference Programme", description: "INDIAMET brings together industry leaders, metrology experts, manufacturing professionals, and technical specialists through a comprehensive conference programme featuring industry forums, expert presentations, panel discussions, and technical sessions. The programme explores emerging technologies, industry challenges, standards, and the latest trends shaping metrology, measurement, inspection, calibration, and precision manufacturing.", image: "/images/confe.webp", buttonText: "Learn More", buttonLink: "/summit" }, { title: "INDIAMET Connect", description: "INDIAMET Connect is the exhibition's dedicated business networking platform, designed to connect exhibitors, visitors, manufacturers, quality professionals, metrology experts, media, professional associations, and industry leaders. The platform helps participants discover new technologies, build valuable business relationships, and explore new business opportunities.", image: "/images/Untitled_400_x_490_px_400_x_250_px_13b6d04f0b.webp", buttonText: "Join Now", buttonLink: "/contact-us" }, { title: "Global Metrology Excellence Awards", description: "The Global Metrology Excellence Awards (GMEA) recognise outstanding achievements and innovation in metrology, measurement technology, inspection, calibration, quality engineering, and precision manufacturing. The awards celebrate organisations and professionals developing advanced solutions that improve accuracy, productivity, quality, and manufacturing performance.", image: "/images/awards2.webp", buttonText: "Learn More", buttonLink: "/awards" }
   ];
 
   const quickLinks = [
@@ -194,10 +194,11 @@ export default function AboutPage() {
                         </div>
 
                         <div className="mt-4 sm:mt-6">
-                          <Link href={item.buttonLink} className="block sm:inline-block">
-                            <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
-                              {item.buttonText}
-                            </button>
+                          <Link
+                            href={item.buttonLink}
+                            className="inline-block w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center"
+                          >
+                            {item.buttonText}
                           </Link>
                         </div>
                       </div>
@@ -327,10 +328,11 @@ export default function AboutPage() {
                             <p className="mt-1 text-xs sm:text-sm text-gray-600 line-clamp-4 leading-relaxed">{event.description}</p>
                           </div>
                           {event.buttonText && (
-                            <Link href={event.buttonLink} className="block sm:inline-block mt-2">
-                              <button className="w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center">
-                                {event.buttonText}
-                              </button>
+                            <Link
+                              href={event.buttonLink}
+                              className="inline-block w-full sm:w-auto bg-[#00A1B1] hover:bg-[#003A77] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm text-center mt-2"
+                            >
+                              {event.buttonText}
                             </Link>
                           )}
                         </div>

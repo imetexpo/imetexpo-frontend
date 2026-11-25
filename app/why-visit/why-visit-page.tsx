@@ -142,7 +142,7 @@ export default function WhyVisitPage() {
       image:
         "/images/connect.webp",
       buttonText: "Connect",
-      buttonLink: "/https://wwww.metrologyupdate.com",
+      buttonLink: "/contact-us",
     },
   ];
 
