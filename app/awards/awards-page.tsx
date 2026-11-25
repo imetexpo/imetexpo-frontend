@@ -248,7 +248,7 @@ export default function AwardsPage() {
             Sponsor Now
           </Link>
           <Link
-            href="/register?t=awards"
+            href="/nominate"
             className="rounded-sm bg-[#00A1B1] px-6 py-3 text-center text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#FFD154]"
           >
             Nominate Now →
@@ -329,7 +329,7 @@ export default function AwardsPage() {
             {categories.map((category) => (
               <Link
                 key={category.title}
-                href={`/register?t=awards&category=${encodeURIComponent(category.title)}#awards-form`}
+                href="/nominate"
                 className="group flex flex-col overflow-hidden rounded-sm border border-gray-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00A1B1] hover:shadow-lg"
               >
                 <div className="relative w-full aspect-[3/2] overflow-hidden bg-[#05172b]">
