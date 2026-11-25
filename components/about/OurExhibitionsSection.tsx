@@ -4,7 +4,7 @@ import { getImageAlt } from '@/lib/imageAlts';
 
 type Exhibition = {
   name: string;
-  logo: string;
+  logo?: string;
   description: string;
   startDate: string;
   endDate: string;
@@ -117,14 +117,22 @@ export default function OurExhibitionsSection() {
               key={event.name}
               className="group flex flex-col gap-5 rounded-2xl border border-black/10 bg-white p-5 xl:p-7"
             >
-              <div>
-                <Image
-                  src={event.logo}
-                  alt={getImageAlt(event.logo, event.name)}
-                  width={500}
-                  height={500}
-                  className="h-32 w-auto object-contain"
-                />
+              <div className="flex h-32 w-full items-center justify-center">
+                {event.logo && event.logo.trim() !== '' ? (
+                  <Image
+                    src={event.logo}
+                    alt={getImageAlt(event.logo, event.name)}
+                    width={500}
+                    height={500}
+                    className="h-32 w-auto object-contain"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center rounded-xl border border-[#003A77]/10 bg-[#FAFBFD] px-4 text-center">
+                    <span className="font-bebas text-2xl sm:text-3xl text-[#003A77] tracking-wider">
+                      {event.name}
+                    </span>
+                  </div>
+                )}
               </div>
               <p className="text-lg leading-relaxed text-gray-700 sm:text-xl">{event.description}</p>
               <p className="text-lg text-gray-700 sm:text-xl">

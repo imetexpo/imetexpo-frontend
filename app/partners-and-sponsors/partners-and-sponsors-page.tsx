@@ -73,24 +73,38 @@ export default function PartnersSponsorsPage() {
                   className="flex w-full max-w-[320px] flex-col items-center gap-5 border border-gray-200 p-6 text-center rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   <div className="h-32 flex items-center justify-center">
-                    <Image
-                      src={partner.logo}
-                      alt={getImageAlt(partner.logo, partner.name)}
-                      width={140}
-                      height={100}
-                      className="object-contain max-h-28"
-                      unoptimized
-                    />
+                    {partner.logo && partner.logo.trim() !== '' ? (
+                      <Image
+                        src={partner.logo}
+                        alt={getImageAlt(partner.logo, partner.name || 'Sponsor')}
+                        width={140}
+                        height={100}
+                        className="object-contain max-h-28"
+                        unoptimized
+                      />
+                    ) : (
+                      <div className="flex h-24 w-40 items-center justify-center rounded-lg border border-dashed border-[#003A77]/20 bg-[#FCF8F3] px-3 text-center">
+                        <span className="font-bebas text-xl text-[#003A77] tracking-wider">
+                          {partner.name || 'Partner Logo'}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                  <h3 className="text-xl font-semibold text-[#003A77] text-center">{partner.name}</h3>
+                  <h3 className="text-xl font-semibold text-[#003A77] text-center">{partner.name || partner.type || 'Sponsor'}</h3>
                   <p className="text-orange-600 text-sm font-medium">{partner.type}</p>
-                  <Link
-                    href={partner.website}
-                    target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#00A1B1] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#003A77] transition-colors"
-                  >
-                    Visit Website
-                  </Link>
+                  {partner.website ? (
+                    <Link
+                      href={partner.website}
+                      target="_blank"
+                      className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#00A1B1] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#003A77] transition-colors"
+                    >
+                      Visit Website
+                    </Link>
+                  ) : (
+                    <span className="w-full mt-auto inline-flex items-center justify-center gap-2 border border-gray-200 bg-gray-50 text-gray-400 px-6 py-2.5 rounded-md text-sm font-medium">
+                      To Be Announced
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -109,24 +123,38 @@ export default function PartnersSponsorsPage() {
                   className="flex w-full max-w-[320px] flex-col items-center gap-5 border border-gray-200 p-6 text-center rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   <div className="h-32 flex items-center justify-center">
-                    <Image
-                      src={partner.logo}
-                      alt={getImageAlt(partner.logo, partner.name)}
-                      width={140}
-                      height={100}
-                      className="object-contain max-h-28"
-                      unoptimized
-                    />
+                    {partner.logo && partner.logo.trim() !== '' ? (
+                      <Image
+                        src={partner.logo}
+                        alt={getImageAlt(partner.logo, partner.name || 'Supporting Partner')}
+                        width={140}
+                        height={100}
+                        className="object-contain max-h-28"
+                        unoptimized
+                      />
+                    ) : (
+                      <div className="flex h-24 w-40 items-center justify-center rounded-lg border border-dashed border-[#003A77]/20 bg-[#FCF8F3] px-3 text-center">
+                        <span className="font-bebas text-xl text-[#003A77] tracking-wider">
+                          {partner.name || 'Partner Logo'}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                  <h3 className="text-xl font-semibold text-[#003A77] text-center">{partner.name}</h3>
+                  <h3 className="text-xl font-semibold text-[#003A77] text-center">{partner.name || partner.type || 'Supporting Partner'}</h3>
                   <p className="text-orange-600 text-sm font-medium">{partner.type}</p>
-                  <Link
-                    href={partner.website}
-                    target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#00A1B1] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#003A77] transition-colors"
-                  >
-                    Visit Website
-                  </Link>
+                  {partner.website ? (
+                    <Link
+                      href={partner.website}
+                      target="_blank"
+                      className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#00A1B1] text-white px-6 py-2.5 rounded-md font-semibold hover:bg-[#003A77] transition-colors"
+                    >
+                      Visit Website
+                    </Link>
+                  ) : (
+                    <span className="w-full mt-auto inline-flex items-center justify-center gap-2 border border-gray-200 bg-gray-50 text-gray-400 px-6 py-2.5 rounded-md text-sm font-medium">
+                      To Be Announced
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -146,26 +174,40 @@ export default function PartnersSponsorsPage() {
                   className="flex w-full max-w-[280px] flex-col items-center gap-4 border border-gray-200 p-5 text-center rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   <div className="h-24 flex items-center justify-center">
-                    <Image
-                      src={partner.logo}
-                      alt={getImageAlt(partner.logo, partner.name)}
-                      width={120}
-                      height={80}
-                      className="object-contain max-h-20"
-                      unoptimized
-                    />
+                    {partner.logo && partner.logo.trim() !== '' ? (
+                      <Image
+                        src={partner.logo}
+                        alt={getImageAlt(partner.logo, partner.name || 'Media Partner')}
+                        width={120}
+                        height={80}
+                        className="object-contain max-h-20"
+                        unoptimized
+                      />
+                    ) : (
+                      <div className="flex h-20 w-36 items-center justify-center rounded-lg border border-dashed border-[#003A77]/20 bg-[#FCF8F3] px-3 text-center">
+                        <span className="font-bebas text-lg text-[#003A77] tracking-wider">
+                          {partner.name || 'Media Logo'}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <h3 className="text-base font-semibold text-[#003A77] text-center line-clamp-2 min-h-[48px]">
-                    {partner.name}
+                    {partner.name || partner.type || 'Media Partner'}
                   </h3>
                   <p className="text-orange-600 text-xs font-medium">{partner.type}</p>
-                  <Link
-                    href={partner.website}
-                    target="_blank"
-                    className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#00A1B1] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#003A77] transition-colors"
-                  >
-                    Visit Website
-                  </Link>
+                  {partner.website ? (
+                    <Link
+                      href={partner.website}
+                      target="_blank"
+                      className="w-full mt-auto inline-flex items-center justify-center gap-2 bg-[#00A1B1] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#003A77] transition-colors"
+                    >
+                      Visit Website
+                    </Link>
+                  ) : (
+                    <span className="w-full mt-auto inline-flex items-center justify-center gap-2 border border-gray-200 bg-gray-50 text-gray-400 px-4 py-2 rounded-md text-xs font-medium">
+                      To Be Announced
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
