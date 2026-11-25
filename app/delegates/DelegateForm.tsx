@@ -1,11 +1,52 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import LoadingDots from '@/components/ui/LoadingDots';
-import { getContactApiUrl } from '@/lib/api/backendUrl';
+import { getBackendUrl, getContactApiUrl } from '@/lib/api/backendUrl';
 
 
+
+export const DELEGATE_PENDING_REGISTRATION_KEY = 'indiamet_delegate_pending_registration';
+declare global {
+  interface Window {
+    Cashfree?: (options: { mode: 'sandbox' | 'production' }) => {
+      checkout: (options: { paymentSessionId: string; redirectTarget: '_self' }) => Promise<{ orderId?: string; error?: string }>;
+    };
+  }
+}
+function loadCashfreeSdk() {
+  return new Promise<void>((resolve, reject) => {
+    if (window.Cashfree) return resolve();
+    const script = document.createElement('script');
+    script.src = 'https://sdk.cashfree.com/js/v3/cashfree.js';
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Could not load the Cashfree payment gateway.'));
+    document.body.appendChild(script);
+  });
+}
+async function finishPaidRegistration(orderId: string, registration: typeof emptyForm) {
+  let verification: any = null;
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    const response = await fetch(getBackendUrl() + '/api/cashfree/delegate/verify-payment/' + encodeURIComponent(orderId), { cache: 'no-store' });
+    const result = await response.json();
+    if (!response.ok || !result.success) throw new Error(result.error || 'Could not verify your payment.');
+    verification = result.data;
+    if (verification?.paymentStatus === 'SUCCESS') break;
+    if (verification?.paymentStatus !== 'PENDING') throw new Error('Payment was not completed. Please try again.');
+    if (attempt < 2) await new Promise((resolve) => window.setTimeout(resolve, 1200));
+  }
+  if (verification?.paymentStatus !== 'SUCCESS') throw new Error('Your payment is still being confirmed. Please refresh this page in a moment.');
+  const response = await fetch(getContactApiUrl(), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ...registration, formType: 'delegate-registration', paymentOrderId: orderId, paymentStatus: 'SUCCESS', submittedAt: new Date().toISOString() }),
+  });
+  const result = await response.json();
+  if (!response.ok || !result.success) throw new Error(result.message || result.error || 'Payment succeeded, but registration could not be completed.');
+  return registration.firstName;
+}
 type Country = { name: string };
 type State = { name: string };
 type City = { name: string };
@@ -41,6 +82,8 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedName, setSubmittedName] = useState('');
   const [showThankYou, setShowThankYou] = useState(false);
+  const [paymentError, setPaymentError] = useState('');
+  const callbackHandled = useRef(false);
   const [formData, setFormData] = useState(emptyForm);
 
   useEffect(() => {
@@ -53,6 +96,43 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  useEffect(() => {
+    const orderId = new URLSearchParams(window.location.search).get('delegate_order_id');
+    if (!orderId || callbackHandled.current) return;
+    callbackHandled.current = true;
+    let registration: typeof emptyForm;
+    try {
+      const saved = window.sessionStorage.getItem(DELEGATE_PENDING_REGISTRATION_KEY);
+      if (!saved) throw new Error('Your registration details could not be restored. Please choose a package and register again.');
+      registration = JSON.parse(saved);
+      setFormData(registration);
+    } catch (error) {
+      setPaymentError(error instanceof Error ? error.message : 'Could not restore your registration details.');
+      const url = new URL(window.location.href);
+      url.searchParams.delete('delegate_order_id');
+      window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+      return;
+    }
+    setIsSubmitting(true);
+    finishPaidRegistration(orderId, registration)
+      .then((name) => {
+        window.sessionStorage.removeItem(DELEGATE_PENDING_REGISTRATION_KEY);
+        setSubmittedName(name);
+        setShowThankYou(true);
+        setFormData(emptyForm);
+      })
+      .catch((error) => {
+        console.error('Delegate payment return error:', error);
+        setPaymentError(error instanceof Error ? error.message : 'Could not complete your delegate registration.');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+        const url = new URL(window.location.href);
+        url.searchParams.delete('delegate_order_id');
+        window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+      });
+  }, []);
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -147,48 +227,73 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
     fetchCities();
   }, [formData.country, formData.state]);
 
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
     if (!formData.notRobot) {
       toast.error('Please confirm that you are not a robot.');
-      setIsSubmitting(false);
+      return;
+    }
+    if (!formData.package) {
+      toast.error('Please choose a delegate package.');
       return;
     }
 
+    setIsSubmitting(true);
+    setPaymentError('');
     try {
-      const response = await fetch(getContactApiUrl(), {
+      const response = await fetch(getBackendUrl() + '/api/cashfree/delegate/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+<<<<<<< Updated upstream
           ...formData,
           pincode: formData.pin,
           companyName: formData.company,
           formType: 'delegate-registration',
           submittedAt: new Date().toISOString(),
+=======
+          package: formData.package,
+          customerDetails: {
+            customerName: [formData.firstName, formData.lastName].filter(Boolean).join(' '),
+            customerEmail: formData.email,
+            customerPhone: formData.phone,
+          },
+>>>>>>> Stashed changes
         }),
       });
-
-      if (!response.ok) {
-        throw new Error(`Backend responded with status ${response.status}`);
-      }
-
       const result = await response.json();
-      if (!result.success) {
-        toast.error(result.message || 'Failed to submit registration.');
-        return;
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Could not start secure payment.');
       }
-
-      toast.success('Delegate registration submitted successfully!');
-      setSubmittedName(formData.firstName);
-      setShowThankYou(true);
-      setFormData(emptyForm);
-      setStates([]);
-      setCities([]);
+      if (!result.data?.paymentSessionId || !result.data?.orderId) {
+        throw new Error('Cashfree did not return a payment session. Please try again.');
+      }
+      window.sessionStorage.setItem(DELEGATE_PENDING_REGISTRATION_KEY, JSON.stringify(formData));
+      await loadCashfreeSdk();
+      const cashfree = window.Cashfree?.({
+        mode: result.data.environment === 'sandbox' ? 'sandbox' : 'production',
+      });
+      if (!cashfree) throw new Error('Cashfree is not available. Please try again.');
+      const paymentResult = await cashfree.checkout({
+        paymentSessionId: result.data.paymentSessionId,
+        redirectTarget: '_self',
+      });
+      if (paymentResult?.error) throw new Error(paymentResult.error);
+      if (paymentResult?.orderId) {
+        const name = await finishPaidRegistration(paymentResult.orderId, formData);
+        window.sessionStorage.removeItem(DELEGATE_PENDING_REGISTRATION_KEY);
+        setSubmittedName(name);
+        setShowThankYou(true);
+        setFormData(emptyForm);
+      } else {
+        setPaymentError('Checkout was closed before payment finished. Your details are saved; choose Continue to Payment to try again.');
+      }
     } catch (error) {
-      console.error('Submission error:', error);
-      toast.error('Network error. Please check your connection.');
+      console.error('Delegate checkout error:', error);
+      const message = error instanceof Error ? error.message : 'Payment could not be started. Please try again.';
+      setPaymentError(message);
+      toast.error(message);
     } finally {
       setIsSubmitting(false);
     }
@@ -204,7 +309,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
           Thank You{submittedName ? `, ${submittedName}` : ''}
         </h3>
         <p className="mt-2 text-sm text-gray-600">
-          Your delegate registration has been received. Our team will contact you shortly.
+          Your payment and delegate registration are complete. Your delegate pass will be sent to your email.
         </p>
         <button
           type="button"
@@ -227,6 +332,8 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         <h3 className="border-b border-gray-100 pb-3 font-bebas text-2xl uppercase tracking-wide text-[#00A1B1]">
           Register as Delegate
         </h3>
+
+        {paymentError && <p role="alert" className="rounded-sm bg-red-50 p-3 text-sm text-red-700">{paymentError}</p>}
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
@@ -496,7 +603,7 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
             isSubmitting ? 'cursor-not-allowed opacity-70' : ''
           }`}
         >
-          {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Processing...</span> : 'Register as Delegate'}
+          {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Processing...</span> : 'Continue to Payment'}
         </button>
 
         <p className="text-[11px] leading-relaxed text-gray-500">

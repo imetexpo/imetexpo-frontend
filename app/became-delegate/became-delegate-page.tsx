@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
-import DelegateForm from '@/app/delegates/DelegateForm';
+import DelegateForm, { DELEGATE_PENDING_REGISTRATION_KEY } from '@/app/delegates/DelegateForm';
 import PageHero from '@/components/layout/PageHero';
 
 const delegatePackages = [
@@ -61,6 +61,16 @@ const delegatePackages = [
 export default function BecameDelegatePage() {
   const [selectedPackage, setSelectedPackage] = useState('');
 
+  useEffect(() => {
+    if (!new URLSearchParams(window.location.search).has('delegate_order_id')) return;
+    try {
+      const pending = window.sessionStorage.getItem(DELEGATE_PENDING_REGISTRATION_KEY);
+      if (pending) setSelectedPackage(JSON.parse(pending).package || '');
+    } catch (error) {
+      console.error('Could not restore delegate checkout details', error);
+    }
+  }, []);
+
   return (
     <main className="intro-animation overflow-hidden bg-white font-sans">
       <PageHero
@@ -91,15 +101,12 @@ export default function BecameDelegatePage() {
                   const packageKey = pkg.id === 3 ? 'group' : pkg.title.toLowerCase();
                   const isSelected = selectedPackage === packageKey;
                   return (
-                    <button
-                      type="button"
+                    <div
                       key={pkg.id}
-                      onClick={() => setSelectedPackage(packageKey)}
-                      className={`flex flex-col rounded-sm border p-4 text-left transition-all ${
-                        isSelected
-                          ? 'border-[#00A1B1] bg-[#00A1B1]/5 ring-1 ring-[#00A1B1]'
-                          : 'border-gray-100 bg-[#FCF8F3] hover:border-[#00A1B1]/50'
-                      }`}
+                      className={isSelected
+                        ? 'flex flex-col rounded-sm border border-[#00A1B1] bg-[#00A1B1]/5 p-4 text-left ring-1 ring-[#00A1B1]'
+                        : 'flex flex-col rounded-sm border border-gray-100 bg-[#FCF8F3] p-4 text-left transition-all hover:border-[#00A1B1]/50'
+                      }
                     >
                       <h3 className="mb-2 font-bebas text-2xl uppercase text-[#003A77]">
                         {pkg.title}
@@ -114,8 +121,16 @@ export default function BecameDelegatePage() {
                       </ul>
                       <div className="mt-auto border-t border-gray-200 pt-3">
                         <div className="font-bebas text-2xl text-[#00A1B1]">{pkg.price}</div>
+                        <button
+                          type="button"
+                          aria-pressed={isSelected}
+                          onClick={() => setSelectedPackage(packageKey)}
+                          className="mt-4 inline-flex w-full items-center justify-center rounded-sm bg-[#003A77] px-4 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#00A1B1]"
+                        >
+                          Purchase {pkg.title} Pass
+                        </button>
                       </div>
-                    </button>
+                    </div>
                   );
                 })}
               </div>
@@ -142,7 +157,16 @@ export default function BecameDelegatePage() {
 
             <div className="relative">
               <div className="lg:sticky lg:top-[calc(var(--site-header-height,13.75rem)+1rem)]">
-                <DelegateForm selectedPackage={selectedPackage} />
+                {selectedPackage ? (
+                  <DelegateForm selectedPackage={selectedPackage} />
+                ) : (
+                  <div className="rounded-sm border border-gray-100 bg-white p-6 text-center shadow-sm">
+                    <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#003A77]">Choose your package</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                      Select Student, General, or Group of 3 to continue to registration and secure payment.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
