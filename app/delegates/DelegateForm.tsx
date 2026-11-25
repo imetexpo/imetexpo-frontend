@@ -8,13 +8,6 @@ import { getBackendUrl, getContactApiUrl } from '@/lib/api/backendUrl';
 
 
 export const DELEGATE_PENDING_REGISTRATION_KEY = 'indiamet_delegate_pending_registration';
-declare global {
-  interface Window {
-    Cashfree?: (options: { mode: 'sandbox' | 'production' }) => {
-      checkout: (options: { paymentSessionId: string; redirectTarget: '_self' }) => Promise<{ orderId?: string; error?: string }>;
-    };
-  }
-}
 function loadCashfreeSdk() {
   return new Promise<void>((resolve, reject) => {
     if (window.Cashfree) return resolve();
@@ -246,20 +239,13 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-<<<<<<< Updated upstream
-          ...formData,
-          pincode: formData.pin,
-          companyName: formData.company,
-          formType: 'delegate-registration',
-          submittedAt: new Date().toISOString(),
-=======
           package: formData.package,
           customerDetails: {
             customerName: [formData.firstName, formData.lastName].filter(Boolean).join(' '),
             customerEmail: formData.email,
             customerPhone: formData.phone,
           },
->>>>>>> Stashed changes
+
         }),
       });
       const result = await response.json();
