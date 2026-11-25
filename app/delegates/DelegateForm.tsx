@@ -20,9 +20,13 @@ const emptyForm = {
   jobTitle: '',
   email: '',
   phone: '',
+  website: '',
+  address: '',
   country: '',
   state: '',
   city: '',
+  pin: '',
+  promocode: '',
   package: '',
   notRobot: false,
 };
@@ -159,6 +163,8 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
+          pincode: formData.pin,
+          companyName: formData.company,
           formType: 'delegate-registration',
           submittedAt: new Date().toISOString(),
         }),
@@ -253,63 +259,94 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
           </div>
         </div>
 
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
+            <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
+              Company Name <span className="text-[#00A1B1]">*</span>
+            </label>
+            <input
+              type="text"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              required
+              className={inputClass}
+              placeholder="Company name"
+            />
+          </div>
+          <div>
+            <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
+              Job Title <span className="text-[#00A1B1]">*</span>
+            </label>
+            <input
+              type="text"
+              name="jobTitle"
+              value={formData.jobTitle}
+              onChange={handleChange}
+              required
+              className={inputClass}
+              placeholder="Job title"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
+            <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
+              Work Email <span className="text-[#00A1B1]">*</span>
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className={inputClass}
+              placeholder="you@company.com"
+            />
+          </div>
+          <div>
+            <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
+              Phone <span className="text-[#00A1B1]">*</span>
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className={inputClass}
+              placeholder="Phone number"
+            />
+          </div>
+        </div>
+
         <div>
           <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Company Name <span className="text-[#00A1B1]">*</span>
+            Website
           </label>
           <input
             type="text"
-            name="company"
-            value={formData.company}
+            name="website"
+            value={formData.website}
             onChange={handleChange}
-            required
             className={inputClass}
-            placeholder="Company name"
+            placeholder="Company website (e.g. https://example.com)"
           />
         </div>
 
         <div>
           <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Job Title <span className="text-[#00A1B1]">*</span>
+            Address <span className="text-[#00A1B1]">*</span>
           </label>
           <input
             type="text"
-            name="jobTitle"
-            value={formData.jobTitle}
+            name="address"
+            value={formData.address}
             onChange={handleChange}
             required
             className={inputClass}
-            placeholder="Job title"
-          />
-        </div>
-
-        <div>
-          <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Work Email <span className="text-[#00A1B1]">*</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className={inputClass}
-            placeholder="you@company.com"
-          />
-        </div>
-
-        <div>
-          <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
-            Phone <span className="text-[#00A1B1]">*</span>
-          </label>
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            className={inputClass}
-            placeholder="Phone number"
+            placeholder="Office or street address"
           />
         </div>
 
@@ -387,6 +424,36 @@ export default function DelegateForm({ selectedPackage = '' }: { selectedPackage
                 </option>
               ))}
             </select>{citiesLoading && <LoadingDots size="sm" className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2" label="Loading cities..." />}</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
+            <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
+              PIN / Pincode <span className="text-[#00A1B1]">*</span>
+            </label>
+            <input
+              type="text"
+              name="pin"
+              value={formData.pin}
+              onChange={handleChange}
+              required
+              className={inputClass}
+              placeholder="PIN / Postal Code"
+            />
+          </div>
+          <div>
+            <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-gray-700">
+              Promo Code
+            </label>
+            <input
+              type="text"
+              name="promocode"
+              value={formData.promocode}
+              onChange={handleChange}
+              className={inputClass}
+              placeholder="Promo code (optional)"
+            />
           </div>
         </div>
 
