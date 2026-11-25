@@ -7,6 +7,7 @@ import Container from '@/components/ui/container';
 import PartnersSection from '@/components/home/PartnersSection';
 import { Button } from '@/components/ui/button';
 import { queueContactSubmission } from '@/lib/api/contactSubmission';
+import CountryStateCityFields from '@/components/common/CountryStateCityFields';
 
 const productSectors = [
   "Coordinate Measuring Machines (CMM)",
@@ -23,31 +24,6 @@ const productSectors = [
   "Metrology Services & Laboratories",
 ];
 
-const countries = [
-  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", 
-  "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", 
-  "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", 
-  "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad", 
-  "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
-  "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", 
-  "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", 
-  "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", 
-  "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", 
-  "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kosovo", "Kuwait", "Kyrgyzstan", 
-  "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", 
-  "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", 
-  "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", 
-  "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Macedonia", "Norway", 
-  "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", 
-  "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", 
-  "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", 
-  "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", 
-  "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", 
-  "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", 
-  "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", 
-  "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
-];
-
 import { useUTMData } from "@/hooks/useUTMTracker";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
@@ -60,9 +36,15 @@ export default function SponsorshipEnquiryPage() {
     lastName: '',
     companyName: '',
     jobTitle: '',
-    country: '',
-    phone: '',
     workEmail: '',
+    phone: '',
+    website: '',
+    address: '',
+    country: '',
+    state: '',
+    city: '',
+    pincode: '',
+    partnershipType: '',
     productSectors: [] as string[],
   });
   
@@ -70,7 +52,7 @@ export default function SponsorshipEnquiryPage() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -88,7 +70,20 @@ export default function SponsorshipEnquiryPage() {
     e.preventDefault();
     
     // Validation
-    if (!formData.firstName || !formData.lastName || !formData.companyName || !formData.jobTitle || !formData.country || !formData.phone || !formData.workEmail) {
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.companyName ||
+      !formData.jobTitle ||
+      !formData.workEmail ||
+      !formData.phone ||
+      !formData.address ||
+      !formData.country ||
+      !formData.state ||
+      !formData.city ||
+      !formData.pincode ||
+      !formData.partnershipType
+    ) {
       setSubmitError('Please fill in all required fields');
       return;
     }
@@ -106,7 +101,14 @@ export default function SponsorshipEnquiryPage() {
       companyName: formData.companyName,
       jobTitle: formData.jobTitle,
       phone: formData.phone,
+      website: formData.website,
+      address: formData.address,
       country: formData.country,
+      state: formData.state,
+      city: formData.city,
+      pincode: formData.pincode,
+      pin: formData.pincode,
+      partnershipType: formData.partnershipType,
       productSectors: formData.productSectors,
       submittedAt: new Date().toISOString(),
 
@@ -184,9 +186,21 @@ export default function SponsorshipEnquiryPage() {
               <span className="text-gray-500 font-medium">Email:</span>
               <span className="font-semibold text-[#6B21A8]">{formData.workEmail || "Not provided"}</span>
             </div>
+            {formData.website && (
+              <div className="flex justify-between pb-1.5 border-b border-purple-100">
+                <span className="text-gray-500 font-medium">Website:</span>
+                <span className="font-semibold text-gray-800">{formData.website}</span>
+              </div>
+            )}
             <div className="flex justify-between pb-1.5 border-b border-purple-100">
               <span className="text-gray-500 font-medium">Address:</span>
-              <span className="font-semibold text-gray-800">{formData.country || "Not provided"}</span>
+              <span className="font-semibold text-gray-800">
+                {[formData.address, formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", ") || "Not provided"}
+              </span>
+            </div>
+            <div className="flex justify-between pb-1.5 border-b border-purple-100">
+              <span className="text-gray-500 font-medium">Partnership Type:</span>
+              <span className="font-semibold text-[#6B21A8] capitalize">{formData.partnershipType || "Not provided"}</span>
             </div>
             {formData.productSectors && formData.productSectors.length > 0 && (
               <div className="flex justify-between">
@@ -274,56 +288,53 @@ export default function SponsorshipEnquiryPage() {
                   </div>
                 </div>
 
-                {/* Company Name */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Company Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="companyName"
-                    value={formData.companyName}
-                    onChange={handleInputChange}
-                    placeholder="Type your Company Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white"
-                    required
-                  />
-                </div>
-
-                {/* Job Title */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Job Title <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="jobTitle"
-                    value={formData.jobTitle}
-                    onChange={handleInputChange}
-                    placeholder="Type your Job Title"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white"
-                    required
-                  />
-                </div>
-
-                {/* Country & Phone */}
+                {/* Company Name & Job Title */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Country <span className="text-red-500">*</span>
+                      Company Name <span className="text-red-500">*</span>
                     </label>
-                    <select
-                      name="country"
-                      value={formData.country}
+                    <input
+                      type="text"
+                      name="companyName"
+                      value={formData.companyName}
                       onChange={handleInputChange}
+                      placeholder="Type your Company Name"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white"
                       required
-                    >
-                      <option value="">Select your country</option>
-                      {countries.map(country => (
-                        <option key={country} value={country}>{country}</option>
-                      ))}
-                    </select>
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Job Title <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="jobTitle"
+                      value={formData.jobTitle}
+                      onChange={handleInputChange}
+                      placeholder="Type your Job Title"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Work Email & Phone */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Work Email <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="workEmail"
+                      value={formData.workEmail}
+                      onChange={handleInputChange}
+                      placeholder="Type your email"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white"
+                      required
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -341,17 +352,81 @@ export default function SponsorshipEnquiryPage() {
                   </div>
                 </div>
 
-                {/* Work Email */}
+                {/* Company Website & Partnership Type */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Company Website
+                    </label>
+                    <input
+                      type="url"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleInputChange}
+                      placeholder="https://example.com"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Partnership Type <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      name="partnershipType"
+                      value={formData.partnershipType}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white"
+                    >
+                      <option value="">Select Partnership Type</option>
+                      <option value="Platinum Partner">Platinum Partner</option>
+                      <option value="Gold Partner">Gold Partner</option>
+                      <option value="Silver Partner">Silver Partner</option>
+                      <option value="Exhibitor">Exhibitor</option>
+                      <option value="Sponsor">Sponsor</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Address */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Work Email <span className="text-red-500">*</span>
+                    Address <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    name="address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    placeholder="Enter company address"
+                    rows={2}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white resize-none"
+                    required
+                  />
+                </div>
+
+                {/* Country, State, City */}
+                <CountryStateCityFields
+                  country={formData.country}
+                  state={formData.state}
+                  city={formData.city}
+                  onCountryChange={(country) => setFormData((prev) => ({ ...prev, country, state: '', city: '' }))}
+                  onStateChange={(state) => setFormData((prev) => ({ ...prev, state, city: '' }))}
+                  onCityChange={(city) => setFormData((prev) => ({ ...prev, city }))}
+                  labelClassName="block text-sm font-medium text-gray-700 mb-1"
+                  inputClassName="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
+                />
+
+                {/* Pin / Postal Code */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Pin / Postal Code <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="email"
-                    name="workEmail"
-                    value={formData.workEmail}
+                    type="text"
+                    name="pincode"
+                    value={formData.pincode}
                     onChange={handleInputChange}
-                    placeholder="Type your email"
+                    placeholder="Enter pin / postal code"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white"
                     required
                   />
