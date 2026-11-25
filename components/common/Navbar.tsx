@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, usePathname } from 'next/navigation';
 import { ChevronDown } from 'lucide-react';
 import { navItems } from './navItems';
 
@@ -64,8 +64,13 @@ function UTMLink({ href, className, children, ...props }: { href: string; classN
 }
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    setOpenDropdown(null);
+  }, [pathname]);
 
   useEffect(() => () => {
     if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
@@ -159,7 +164,7 @@ export default function Navbar() {
               </button>
               {openDropdown === item.title && (
                 <div
-                  className={`absolute top-full z-50 w-56 max-w-[min(14rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#003A77] text-white shadow-lg ${
+                  className={`absolute top-full z-50 w-64 max-w-[min(16rem,calc(100vw-1.5rem))] rounded-md border border-gray-700 bg-[#003A77] text-white shadow-xl ${
                     alignRight ? 'right-0' : 'left-0'
                   }`}
                   onMouseEnter={() => handleMouseEnter(item.title)}
@@ -170,7 +175,8 @@ export default function Navbar() {
                       <UTMLink
                         key={link.text}
                         href={link.href}
-                        className="block px-4 py-2 text-sm hover:bg-[#00A1B1] hover:text-white transition-colors"
+                        onClick={() => setOpenDropdown(null)}
+                        className="block px-4 py-2.5 text-sm hover:bg-[#00A1B1] hover:text-white transition-colors"
                       >
                         {link.text}
                       </UTMLink>

@@ -1,15 +1,13 @@
 export default function BlogsLoading() {
   return (
-    <section className="bg-white py-10 sm:py-14">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-7 h-10 w-64 animate-pulse rounded bg-slate-200" />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, idx) => (
-            <div key={idx} className="h-72 animate-pulse rounded-lg bg-slate-100" />
-          ))}
-        </div>
+    <section aria-label="Loading blogs" aria-busy="true" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+      <p role="status" className="mb-4 text-sm text-slate-600">Loading the latest blogs…</p>
+      <div className="mb-7 h-10 w-72 animate-pulse rounded bg-slate-100" />
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {[0, 1, 2, 3, 4, 5].map((key) => (
+          <div key={key} className="h-80 animate-pulse rounded-lg bg-slate-100" />
+        ))}
       </div>
     </section>
   );
 }
-
