@@ -58,39 +58,35 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom content */}
-      <div className="w-full pb-6 sm:pb-8 md:pb-12 relative z-10">
+      <div className="w-full pb-8 sm:pb-10 md:pb-14 lg:pb-18 relative z-10">
         <Container>
           {/* HEADING — vw-based but clamped so it never overflows on mobile */}
           <h1
             className="font-bebas uppercase leading-none tracking-tight"
-            style={{ fontSize: 'clamp(2.25rem, 8.5vw, 8.5rem)' }}
+            style={{ fontSize: 'clamp(2.5rem, 8.5vw, 8.5rem)' }}
           >
-            <br />
             <span className="text-white">INDIAMET </span>
             <span className="text-[#00A1B1]">2027</span>
           </h1>
 
-          {/* BOTTOM ROW — stacks on mobile, side-by-side on lg+ */}
-          <div className="mt-3 sm:mt-4 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-4 sm:gap-5 lg:gap-8">
-            {/* Description — fixed readable font size, no vw */}
-            <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-3xl">
-              International Metrology Exhibition in India
-              <br />
-              13–15 May 2027 | Auto Cluster Exhibition Centre, Pune, India
-            </p>
+          {/* Description — fixed readable font size, no vw */}
+          <p className="mt-3 sm:mt-4 md:mt-5 font-sans text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-3xl">
+            International Metrology Exhibition in India
+            <br />
+            13–15 May 2027 | Auto Cluster Exhibition Centre, Pune, India
+          </p>
 
-            {/* Exhibit button */}
-            <div className="flex-shrink-0 w-full lg:w-auto">
-              <Link
-                href="/exhibiting-enquiry/"
-                className="inline-block w-full lg:w-auto text-center bg-[#00A1B1] hover:bg-[#FFD154] text-white px-6 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 rounded-sm shadow-lg hover:scale-105"
-              >
-                Become an Exhibitor
-              </Link>
-            </div>
+          {/* Exhibit button placed below description */}
+          <div className="mt-6 sm:mt-8 flex-shrink-0">
+            <Link
+              href="/exhibiting-enquiry/"
+              className="inline-block w-full sm:w-auto text-center bg-[#00A1B1] hover:bg-[#FFD154] hover:text-black text-white px-7 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 rounded-sm shadow-lg hover:scale-105"
+            >
+              Become an Exhibitor
+            </Link>
           </div>
         </Container>
-      </div >
+      </div>
     </section >
   );
 }
