@@ -7,6 +7,14 @@ const RAW_API = (
 ).replace(/\/+$/, '');
 const API_BASE = RAW_API.endsWith('/api') ? RAW_API : RAW_API + '/api';
 
+export function getDelegatePassViewUrl(publicCode: string) {
+  return '/passes/view/' + encodeURIComponent(publicCode);
+}
+
+export function getDelegatePassBadgeUrl(publicCode: string) {
+  return API_BASE + '/passes/' + encodeURIComponent(publicCode) + '/badge';
+}
+
 const api = axios.create({
   baseURL: API_BASE,
   headers: { 'Content-Type': 'application/json' },

@@ -12,6 +12,8 @@ import {
 } from 'lucide-react';
 import {
   fetchDelegatePasses,
+  getDelegatePassBadgeUrl,
+  getDelegatePassViewUrl,
   type DelegatePassList,
 } from '@/lib/api/delegatePasses';
 
@@ -235,7 +237,7 @@ export default function DelegatePassesPage() {
                     <td className="px-3 py-3.5">
                       <div className="flex items-center gap-2">
                         <a
-                          href={pass.passUrl}
+                          href={getDelegatePassViewUrl(pass.publicCode)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 rounded-md border border-slate-300 px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-white"
@@ -244,7 +246,7 @@ export default function DelegatePassesPage() {
                           View
                         </a>
                         <a
-                          href={pass.badgeUrl}
+                          href={getDelegatePassBadgeUrl(pass.publicCode)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center rounded-md border border-slate-300 px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-white"
