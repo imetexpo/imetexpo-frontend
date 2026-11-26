@@ -7,6 +7,7 @@ import { useUTMData } from "@/hooks/useUTMTracker";
 import { queueContactSubmission } from "@/lib/api/contactSubmission";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
+import RecaptchaCheckbox from "@/components/common/RecaptchaCheckbox";
 
 const productSectors = [
   "Coordinate Measuring Machines (CMM)",
@@ -35,16 +36,16 @@ export default function BrochureForm() {
     country: "",
     state: "",
     city: "",
-    pincode: "",
     phone: "",
     email: "",
     productSectors: [] as string[],
-    confirm: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [captchaToken, setCaptchaToken] = useState("");
+  const [captchaAttempt, setCaptchaAttempt] = useState(0);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -72,14 +73,14 @@ export default function BrochureForm() {
     if (
       !formData.firstName || !formData.lastName || !formData.company ||
       !formData.jobTitle || !formData.country || !formData.state ||
-      !formData.city || !formData.pincode || !formData.phone || !formData.email
+      !formData.city || !formData.phone || !formData.email
     ) {
       setSubmitError("Please fill in all required fields");
       return;
     }
 
-    if (!formData.confirm) {
-      setSubmitError("Please confirm that you are not a robot");
+    if (!captchaToken) {
+      setSubmitError("Please complete the security verification");
       return;
     }
 
@@ -89,6 +90,7 @@ export default function BrochureForm() {
     const payload = {
       email: formData.email,
       formType: "event-brochure",
+      captchaToken,
       firstName: formData.firstName,
       lastName: formData.lastName,
       contactPerson: `${formData.firstName} ${formData.lastName}`.trim(),
@@ -98,8 +100,6 @@ export default function BrochureForm() {
       country: formData.country,
       state: formData.state,
       city: formData.city,
-      pincode: formData.pincode,
-      address: [formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", "),
       website: formData.website,
       productSectors: formData.productSectors,
       submittedAt: new Date().toISOString(),
@@ -134,15 +134,15 @@ export default function BrochureForm() {
         country: "",
         state: "",
         city: "",
-        pincode: "",
         phone: "",
         email: "",
         productSectors: [],
-        confirm: false,
       });
     } catch (error: any) {
       console.error("Error submitting form:", error);
       setSubmitError(error.message || "Network error occurred. Please try again.");
+      setCaptchaToken("");
+      setCaptchaAttempt((attempt) => attempt + 1);
       toast.error(error.message || "A network error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -251,20 +251,6 @@ export default function BrochureForm() {
         inputClassName="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
       />
 
-      <div className="space-y-1">
-        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-          Pin Code / Zip Code <span className="text-red-500">*</span>
-        </label>
-        <input
-          name="pincode"
-          value={formData.pincode}
-          onChange={handleChange}
-          placeholder="Pin Code / Zip Code"
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
-          required
-        />
-      </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
@@ -316,17 +302,7 @@ export default function BrochureForm() {
         </div>
       </div>
 
-      <div className="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-sm">
-        <input
-          type="checkbox"
-          name="confirm"
-          checked={formData.confirm}
-          onChange={handleChange}
-          className="w-4 h-4 text-[#00A1B1] rounded-sm border-gray-300 focus:ring-[#00A1B1] cursor-pointer"
-          required
-        />
-        <span className="text-sm text-gray-650">I'm not a robot</span>
-      </div>
+      <RecaptchaCheckbox key={captchaAttempt} onVerify={setCaptchaToken} />
 
       {submitError && (
         <div className="bg-red-50 border border-red-200 rounded-sm p-3">
@@ -337,7 +313,7 @@ export default function BrochureForm() {
       <div className="pt-2">
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || !captchaToken}
           className="w-full bg-[#00A1B1] hover:bg-[#003A77] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
           {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : "DOWNLOAD BROCHURE"}

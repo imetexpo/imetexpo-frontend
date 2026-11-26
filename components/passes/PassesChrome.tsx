@@ -21,12 +21,6 @@ export default function PassesChrome({
           </span>
           {backLabel}
         </Link>
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-xs font-black text-[#003A77]">
-            D
-          </div>
-          <span className="hidden text-sm font-bold text-white sm:inline">IndiaMET 2027</span>
-        </div>
       </div>
     </header>
   );

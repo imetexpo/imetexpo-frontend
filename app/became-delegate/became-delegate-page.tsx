@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { X } from 'lucide-react';
 import Container from '@/components/ui/container';
 import BackToTop from '@/components/layout/BackToTop';
 import DelegateForm, { DELEGATE_PENDING_REGISTRATION_KEY } from '@/app/delegates/DelegateForm';
@@ -60,16 +61,36 @@ const delegatePackages = [
 
 export default function BecameDelegatePage() {
   const [selectedPackage, setSelectedPackage] = useState('');
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   useEffect(() => {
     if (!new URLSearchParams(window.location.search).has('delegate_order_id')) return;
     try {
       const pending = window.sessionStorage.getItem(DELEGATE_PENDING_REGISTRATION_KEY);
-      if (pending) setSelectedPackage(JSON.parse(pending).package || '');
+      if (pending) {
+        setSelectedPackage(JSON.parse(pending).package || '');
+        setIsFormOpen(true);
+      }
     } catch (error) {
       console.error('Could not restore delegate checkout details', error);
     }
   }, []);
+
+  useEffect(() => {
+    if (!isFormOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsFormOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isFormOpen]);
 
   return (
     <main className="intro-animation overflow-hidden bg-white font-sans">
@@ -81,7 +102,7 @@ export default function BecameDelegatePage() {
 
       <section className="py-12 lg:py-16">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
+          <div className="mx-auto max-w-6xl">
             <div>
               <h2 className="font-bebas text-4xl uppercase tracking-tight text-[#003A77] lg:text-5xl">
                 Choose Your Delegate Package
@@ -124,7 +145,10 @@ export default function BecameDelegatePage() {
                         <button
                           type="button"
                           aria-pressed={isSelected}
-                          onClick={() => setSelectedPackage(packageKey)}
+                          onClick={() => {
+                            setSelectedPackage(packageKey);
+                            setIsFormOpen(true);
+                          }}
                           className="mt-4 inline-flex w-full items-center justify-center rounded-sm bg-[#003A77] px-4 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#00A1B1]"
                         >
                           Purchase {pkg.title} Pass
@@ -155,23 +179,46 @@ export default function BecameDelegatePage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="lg:sticky lg:top-[calc(var(--site-header-height,13.75rem)+1rem)]">
-                {selectedPackage ? (
-                  <DelegateForm selectedPackage={selectedPackage} />
-                ) : (
-                  <div className="rounded-sm border border-gray-100 bg-white p-6 text-center shadow-sm">
-                    <h3 className="font-bebas text-2xl uppercase tracking-wide text-[#003A77]">Choose your package</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                      Select Student, General, or Group of 3 to continue to registration and secure payment.
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
           </div>
         </Container>
       </section>
+
+      {selectedPackage ? (
+        <div
+          className={isFormOpen
+            ? 'fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/60 p-3 sm:p-6'
+            : 'hidden'}
+          role="dialog"
+          aria-modal={isFormOpen}
+          aria-hidden={!isFormOpen}
+          aria-labelledby="delegate-registration-title"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setIsFormOpen(false);
+          }}
+        >
+          <div className="max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl overflow-y-auto rounded-md bg-white shadow-2xl sm:max-h-[calc(100dvh-3rem)]">
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-gray-100 bg-white/95 px-5 py-4 backdrop-blur">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#00A1B1]">Delegate registration</p>
+                <h2 id="delegate-registration-title" className="mt-1 text-lg font-bold text-[#003A77]">
+                  {delegatePackages.find((pkg) => (pkg.id === 3 ? 'group' : pkg.title.toLowerCase()) === selectedPackage)?.title || 'Selected package'} pass
+                </h2>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsFormOpen(false)}
+                aria-label="Close registration form"
+                className="rounded-full p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="p-4 sm:p-6">
+              <DelegateForm selectedPackage={selectedPackage} />
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <BackToTop />
     </main>

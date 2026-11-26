@@ -12,6 +12,11 @@ const ALLOWED_FORM_TYPES = new Set([
   'sponsor-registration',
   'partner-registration',
 ]);
+const CAPTCHA_REQUIRED_FORM_TYPES = new Set([
+  'exhibitor-enquiry',
+  'event-brochure',
+  'partner-registration',
+]);
 
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
@@ -35,6 +40,48 @@ export async function POST(request: Request) {
   if (!ALLOWED_FORM_TYPES.has(formType)) {
     return Response.json({ success: false, message: 'This form type is not supported.' }, { status: 400 });
   }
+
+  const submissionBody = { ...body };
+  delete submissionBody.captchaToken;
+
+  if (CAPTCHA_REQUIRED_FORM_TYPES.has(formType)) {
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+    const secret = process.env.RECAPTCHA_SECRET_KEY;
+    const token = body.captchaToken;
+
+    if (!siteKey || !secret) {
+      return Response.json({
+        success: false,
+        message: 'Security verification is temporarily unavailable. Please try again later.',
+      }, { status: 503 });
+    }
+    if (typeof token !== 'string' || !token || token.length > 2048) {
+      return Response.json({ success: false, message: 'Please complete security verification.' }, { status: 400 });
+    }
+
+    try {
+      const verification = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ secret, response: token }),
+        signal: AbortSignal.timeout(10000),
+      });
+      if (!verification.ok) throw new Error('Verification service unavailable');
+      const result = await verification.json() as { success?: boolean };
+      if (result.success !== true) {
+        return Response.json({
+          success: false,
+          message: 'Security verification expired or failed. Please try again.',
+        }, { status: 400 });
+      }
+    } catch {
+      return Response.json({
+        success: false,
+        message: 'Security verification is temporarily unavailable. Please try again.',
+      }, { status: 503 });
+    }
+  }
+
   if (!PROJECT_ID_VAR.projectId || !process.env.NEXT_PUBLIC_CMS_GRAPHQL_ENDPOINT) {
     return Response.json({
       success: false,
@@ -44,7 +91,7 @@ export async function POST(request: Request) {
 
   const submissionId = randomUUID();
   const data = {
-    ...body,
+    ...submissionBody,
     email,
     formType,
     submittedAt: new Date().toISOString(),
