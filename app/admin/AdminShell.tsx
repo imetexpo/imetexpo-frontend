@@ -271,7 +271,7 @@ function SidebarBrand({ onClose }: { onClose?: () => void }) {
     <div className="flex h-16 shrink-0 items-center gap-2.5 border-b border-white/10 px-4">
       <div className="relative h-10 w-[140px] shrink-0">
         <Image
-          src="/indiamet_logo.webp"
+          src="/footer_logo.webp"
           alt="IndiaMET exhibition logo for dark backgrounds"
           fill
           className="object-contain object-left drop-shadow-sm"

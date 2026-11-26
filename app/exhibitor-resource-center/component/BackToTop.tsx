@@ -27,7 +27,7 @@ export default function BackToTop() {
 
     return (
         <div
-            className={`fixed bottom-3 right-3 z-50 transition-all duration-300 lg:bottom-10 lg:right-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+            className={`fixed bottom-24 right-4 z-50 transition-all duration-300 lg:bottom-24 lg:right-6 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
                 }`}
         >
             <button
