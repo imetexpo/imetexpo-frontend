@@ -14,14 +14,14 @@ export default function BrochureSection() {
         className="object-cover"
       />
       <div className="absolute inset-0 bg-[#003A77]/70" />
-      
-      <Image
+
+      {/* <Image
         src="/imgs/shape-1.svg"
         alt=""
         width={500}
         height={500}
         className="absolute right-0 top-1/2 w-[300px] sm:w-[400px] lg:w-[500px] -translate-y-1/2 opacity-30 hidden md:block"
-      />
+      /> */}
 
       <Container className="relative z-10">
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-16 items-center">
@@ -54,7 +54,7 @@ export default function BrochureSection() {
               Discover how INDIAMET can help your business grow
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-white/75 max-w-[650px] leading-relaxed mx-auto lg:mx-0 font-sans">
-             Download the Event Brochure to explore participation opportunities, industry sectors, visitor profiles, and key benefits of exhibiting. Discover how INDIAMET can help you connect with qualified buyers, showcase your latest technologies, strengthen your market presence, and accelerate business growth.
+              Download the Event Brochure to explore participation opportunities, industry sectors, visitor profiles, and key benefits of exhibiting. Discover how INDIAMET can help you connect with qualified buyers, showcase your latest technologies, strengthen your market presence, and accelerate business growth.
             </p>
             <Button
               href="/event-brochure/"

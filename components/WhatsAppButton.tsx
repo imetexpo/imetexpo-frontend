@@ -31,7 +31,7 @@ const WhatsAppButton = () => {
         </svg>
       </span>
 
-      <span className="whatsapp-text">BOOK A STALL </span>
+      <span className="whatsapp-text">BOOK YOUR STALL </span>
     </a>
   );
 };
