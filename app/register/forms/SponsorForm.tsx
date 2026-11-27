@@ -1,18 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
-import RecaptchaCheckbox from "@/components/common/RecaptchaCheckbox";
+
 import { queueContactSubmission } from "@/lib/api/contactSubmission";
 
 export default function SponsorForm() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submittedData, setSubmittedData] = useState<any>(null);
-  const [captchaToken, setCaptchaToken] = useState("");
-  const [captchaAttempt, setCaptchaAttempt] = useState(0);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -66,13 +66,16 @@ export default function SponsorForm() {
       return;
     }
 
-    if (!captchaToken) {
-      toast.error("Please complete the security verification");
+    if (!executeRecaptcha) {
+      toast.error("Security verification is loading. Please try again.");
       setIsSubmitting(false);
       return;
     }
 
     try {
+      const captchaToken = await executeRecaptcha("sponsor_registration");
+      if (!captchaToken) throw new Error("Security verification failed. Please try again.");
+
       const payload = {
         ...formData,
         captchaToken,
@@ -83,12 +86,10 @@ export default function SponsorForm() {
       };
 
       await queueContactSubmission(payload);
-      setSubmittedData(payload);
+      setSubmittedData({ ...payload, captchaToken: undefined });
       setSubmitSuccess(true);
       toast.success("Thank you! Your sponsor registration has been submitted.");
     } catch (error) {
-      setCaptchaToken("");
-      setCaptchaAttempt((attempt) => attempt + 1);
       toast.error(error instanceof Error ? error.message : "Network error. Please check your connection and try again.");
       console.error("Submission error:", error);
     } finally {
@@ -319,7 +320,6 @@ export default function SponsorForm() {
       </div>
 
       <div className="space-y-4 pt-4">
-        <RecaptchaCheckbox key={captchaAttempt} onVerify={setCaptchaToken} />
 
         <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-gray-200">
           <input
@@ -345,7 +345,7 @@ export default function SponsorForm() {
 
       <button
         type="submit"
-        disabled={isSubmitting || !captchaToken}
+        disabled={isSubmitting}
         className={`w-full bg-[#00A1B1] hover:bg-[#003A77] text-white font-semibold py-3 px-4 rounded-lg transition-all hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-[#00A1B1] focus:ring-offset-2 ${
           isSubmitting ? "opacity-70 cursor-not-allowed" : ""
         }`}

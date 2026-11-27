@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { queueContactSubmission } from "@/lib/api/contactSubmission";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
-import RecaptchaCheckbox from "@/components/common/RecaptchaCheckbox";
+
 
 const productSectors = [
   "Coordinate Measuring Machines (CMM)",
@@ -26,6 +27,7 @@ const productSectors = [
 
 export default function BrochureForm() {
   const { utmData, campaign } = useUTMData();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -44,8 +46,6 @@ export default function BrochureForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
-  const [captchaToken, setCaptchaToken] = useState("");
-  const [captchaAttempt, setCaptchaAttempt] = useState(0);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -79,13 +79,29 @@ export default function BrochureForm() {
       return;
     }
 
-    if (!captchaToken) {
-      setSubmitError("Please complete the security verification");
-      return;
-    }
 
     setIsSubmitting(true);
     setSubmitError("");
+
+    if (!executeRecaptcha) {
+      setSubmitError("Security verification is loading. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    let captchaToken = "";
+    try {
+      captchaToken = await executeRecaptcha("brochure_download");
+    } catch {
+      setSubmitError("Security verification could not be completed. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+    if (!captchaToken) {
+      setSubmitError("Security verification could not be completed. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
 
     const payload = {
       email: formData.email,
@@ -141,8 +157,6 @@ export default function BrochureForm() {
     } catch (error: any) {
       console.error("Error submitting form:", error);
       setSubmitError(error.message || "Network error occurred. Please try again.");
-      setCaptchaToken("");
-      setCaptchaAttempt((attempt) => attempt + 1);
       toast.error(error.message || "A network error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -302,7 +316,6 @@ export default function BrochureForm() {
         </div>
       </div>
 
-      <RecaptchaCheckbox key={captchaAttempt} onVerify={setCaptchaToken} />
 
       {submitError && (
         <div className="bg-red-50 border border-red-200 rounded-sm p-3">
@@ -313,7 +326,7 @@ export default function BrochureForm() {
       <div className="pt-2">
         <button
           type="submit"
-          disabled={isSubmitting || !captchaToken}
+          disabled={isSubmitting}
           className="w-full bg-[#00A1B1] hover:bg-[#003A77] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
           {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : "DOWNLOAD BROCHURE"}

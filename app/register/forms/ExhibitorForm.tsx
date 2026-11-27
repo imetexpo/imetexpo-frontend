@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { queueContactSubmission } from "@/lib/api/contactSubmission";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
-import RecaptchaCheckbox from "@/components/common/RecaptchaCheckbox";
+
 
 
 const productSectors = [
@@ -27,6 +28,7 @@ const productSectors = [
 
 export default function ExhibitorForm() {
   const { utmData, campaign } = useUTMData();
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -45,8 +47,6 @@ export default function ExhibitorForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
-  const [captchaToken, setCaptchaToken] = useState("");
-  const [captchaAttempt, setCaptchaAttempt] = useState(0);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -72,13 +72,29 @@ export default function ExhibitorForm() {
       return;
     }
 
-    if (!captchaToken) {
-      setSubmitError("Please complete the security verification");
-      return;
-    }
 
     setIsSubmitting(true);
     setSubmitError("");
+
+    if (!executeRecaptcha) {
+      setSubmitError("Security verification is loading. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    let captchaToken = "";
+    try {
+      captchaToken = await executeRecaptcha("exhibitor_registration");
+    } catch {
+      setSubmitError("Security verification could not be completed. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+    if (!captchaToken) {
+      setSubmitError("Security verification could not be completed. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
 
     const payload = {
       email: formData.workEmail,
@@ -122,8 +138,6 @@ export default function ExhibitorForm() {
     } catch (error: any) {
       console.error("Error submitting form:", error);
       setSubmitError(error.message || "Network error occurred. Please try again.");
-      setCaptchaToken("");
-      setCaptchaAttempt((attempt) => attempt + 1);
       toast.error(error.message || "A network error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -320,12 +334,6 @@ export default function ExhibitorForm() {
         </select>
       </div>
 
-      <div className="space-y-2 pt-2">
-        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-          Please verify your request <span className="text-red-500">*</span>
-        </label>
-        <RecaptchaCheckbox key={captchaAttempt} onVerify={setCaptchaToken} />
-      </div>
 
       {submitError && (
         <div className="bg-red-50 border border-red-200 rounded-sm p-3">
@@ -336,7 +344,7 @@ export default function ExhibitorForm() {
       <div className="pt-2">
         <button
           type="submit"
-          disabled={isSubmitting || !captchaToken}
+          disabled={isSubmitting}
           className="w-full bg-[#00A1B1] hover:bg-[#003A77] text-white py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
           {isSubmitting ? <span className="inline-flex items-center justify-center gap-2"><LoadingDots size="sm" tone="light" label="" />Submitting...</span> : "Submit Enquiry"}
