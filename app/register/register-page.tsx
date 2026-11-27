@@ -28,6 +28,7 @@ import SponsorContent from "./content/SponsorContent";
 import BrochureContent from "./content/BrochureContent";
 import AwardsContent from "./content/AwardsContent";
 import LoadingDots from '@/components/ui/LoadingDots';
+import RecaptchaV3Provider from '@/components/common/RecaptchaCheckbox';
 
 
 function RegisterPageContent() {
@@ -101,8 +102,10 @@ function RegisterPageContent() {
 
 export default function RegisterPage() {
   return (
-    <Suspense fallback={<div className="flex min-h-72 items-center justify-center"><LoadingDots label="Loading registration form..." /></div>}>
-      <RegisterPageContent />
-    </Suspense>
+    <RecaptchaV3Provider>
+      <Suspense fallback={<div className="flex min-h-72 items-center justify-center"><LoadingDots label="Loading registration form..." /></div>}>
+        <RegisterPageContent />
+      </Suspense>
+    </RecaptchaV3Provider>
   );
 }

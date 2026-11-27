@@ -3,10 +3,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useUTMData } from "@/hooks/useUTMTracker";
 import { queueContactSubmission } from "@/lib/api/contactSubmission";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
+
 
 
 const productSectors = [
@@ -26,8 +28,8 @@ const productSectors = [
 
 export default function ExhibitorForm() {
   const { utmData, campaign } = useUTMData();
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
-    interestLevel: "",
     firstName: "",
     lastName: "",
     companyName: "",
@@ -36,12 +38,10 @@ export default function ExhibitorForm() {
     country: "",
     state: "",
     city: "",
-    pincode: "",
     phone: "",
     workEmail: "",
     productSector: "",
     comments: "",
-    agreeToTerms: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,25 +64,42 @@ export default function ExhibitorForm() {
     e.preventDefault();
 
     if (
-      !formData.interestLevel || !formData.firstName || !formData.lastName || !formData.companyName ||
+      !formData.firstName || !formData.lastName || !formData.companyName ||
       !formData.companyWebsite || !formData.jobTitle || !formData.country || !formData.state ||
-      !formData.city || !formData.pincode || !formData.phone || !formData.workEmail || !formData.productSector
+      !formData.city || !formData.phone || !formData.workEmail || !formData.productSector
     ) {
       setSubmitError("Please fill in all required fields");
       return;
     }
 
-    if (!formData.agreeToTerms) {
-      setSubmitError("Please verify your request");
-      return;
-    }
 
     setIsSubmitting(true);
     setSubmitError("");
 
+    if (!executeRecaptcha) {
+      setSubmitError("Security verification is loading. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    let captchaToken = "";
+    try {
+      captchaToken = await executeRecaptcha("exhibitor_registration");
+    } catch {
+      setSubmitError("Security verification could not be completed. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+    if (!captchaToken) {
+      setSubmitError("Security verification could not be completed. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
     const payload = {
       email: formData.workEmail,
       formType: "exhibitor-enquiry",
+      captchaToken,
       firstName: formData.firstName,
       lastName: formData.lastName,
       contactPerson: `${formData.firstName} ${formData.lastName}`.trim(),
@@ -93,11 +110,8 @@ export default function ExhibitorForm() {
       country: formData.country,
       state: formData.state,
       city: formData.city,
-      pincode: formData.pincode,
-      address: [formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", "),
       productSector: formData.productSector,
       message: formData.comments,
-      interestLevel: formData.interestLevel,
       submittedAt: new Date().toISOString(),
 
       utmSource: utmData?.utm_source || "",
@@ -170,7 +184,7 @@ export default function ExhibitorForm() {
           </div>
           <div className="flex justify-between">
             <span className="text-gray-500 font-medium">Address:</span>
-            <span className="font-semibold text-gray-800">{[formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", ") || "Not provided"}</span>
+            <span className="font-semibold text-gray-800">{[formData.city, formData.state, formData.country].filter(Boolean).join(", ") || "Not provided"}</span>
           </div>
         </div>
         <p className="text-xs text-gray-500 leading-relaxed">
@@ -182,30 +196,6 @@ export default function ExhibitorForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="space-y-2">
-        <label className="block text-sm font-bold text-gray-700 uppercase tracking-wider">
-          Your level of interest <span className="text-red-500">*</span>
-        </label>
-        <div className="space-y-2">
-          {["Ready to book my stand",  "Looking for sponsorship opportunities"].map(
-            (option) => (
-              <label key={option} className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="interestLevel"
-                  value={option}
-                  checked={formData.interestLevel === option}
-                  onChange={handleChange}
-                  className="w-4 h-4 text-[#00A1B1] focus:ring-[#00A1B1]"
-                  required
-                />
-                <span className="text-gray-700 text-sm">{option}</span>
-              </label>
-            )
-          )}
-        </div>
-      </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
@@ -293,21 +283,6 @@ export default function ExhibitorForm() {
         inputClassName="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
       />
 
-      <div className="space-y-1">
-        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-          Pin Code / Zip Code <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="text"
-          name="pincode"
-          value={formData.pincode}
-          onChange={handleChange}
-          placeholder="Enter pin code / zip code"
-          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition bg-white text-sm"
-          required
-        />
-      </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
@@ -359,22 +334,6 @@ export default function ExhibitorForm() {
         </select>
       </div>
 
-      <div className="space-y-2 pt-2">
-        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-          Please verify your request <span className="text-red-500">*</span>
-        </label>
-        <div className="flex items-center gap-2">
-          <input
-            type="checkbox"
-            name="agreeToTerms"
-            checked={formData.agreeToTerms}
-            onChange={handleChange}
-            className="w-4 h-4 text-[#00A1B1] focus:ring-[#00A1B1] rounded-sm border-gray-300 cursor-pointer"
-            required
-          />
-          <span className="text-sm text-gray-650">I agree to fill out this form</span>
-        </div>
-      </div>
 
       {submitError && (
         <div className="bg-red-50 border border-red-200 rounded-sm p-3">

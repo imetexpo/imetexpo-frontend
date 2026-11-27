@@ -1,12 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import toast from "react-hot-toast";
 import LoadingDots from '@/components/ui/LoadingDots';
 import CountryStateCityFields from "@/components/common/CountryStateCityFields";
+
 import { queueContactSubmission } from "@/lib/api/contactSubmission";
 
 export default function SponsorForm() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submittedData, setSubmittedData] = useState<any>(null);
@@ -18,15 +21,12 @@ export default function SponsorForm() {
     email: "",
     phone: "",
     companyName: "",
-    gstin: "",
     address: "",
     country: "",
     city: "",
     state: "",
-    pincode: "",
     website: "",
     partnershipType: "",
-    marketingConsent: false,
     privacyConsent: false,
   });
 
@@ -66,17 +66,27 @@ export default function SponsorForm() {
       return;
     }
 
+    if (!executeRecaptcha) {
+      toast.error("Security verification is loading. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
+      const captchaToken = await executeRecaptcha("sponsor_registration");
+      if (!captchaToken) throw new Error("Security verification failed. Please try again.");
+
       const payload = {
         ...formData,
+        captchaToken,
         contactPerson: `${formData.firstName} ${formData.lastName}`.trim(),
-        address: [formData.address, formData.city, formData.state, formData.country, formData.pincode].filter(Boolean).join(", "),
+        address: [formData.address, formData.city, formData.state, formData.country].filter(Boolean).join(", "),
         formType: "partner-registration",
         submittedAt: new Date().toISOString(),
       };
 
       await queueContactSubmission(payload);
-      setSubmittedData(payload);
+      setSubmittedData({ ...payload, captchaToken: undefined });
       setSubmitSuccess(true);
       toast.success("Thank you! Your sponsor registration has been submitted.");
     } catch (error) {
@@ -130,7 +140,7 @@ export default function SponsorForm() {
           </div>
           <div className="flex justify-between pb-1.5 border-b border-purple-100">
             <span className="text-gray-500 font-medium">Address:</span>
-            <span className="font-semibold text-gray-800">{[submittedData.address, submittedData.city, submittedData.state, submittedData.country, submittedData.pincode].filter(Boolean).join(", ") || "Not provided"}</span>
+            <span className="font-semibold text-gray-800">{[submittedData.address, submittedData.city, submittedData.state, submittedData.country].filter(Boolean).join(", ") || "Not provided"}</span>
           </div>
           {submittedData.partnershipType && (
             <div className="flex justify-between">
@@ -249,18 +259,6 @@ export default function SponsorForm() {
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">GSTIN</label>
-          <input
-            type="text"
-            name="gstin"
-            value={formData.gstin}
-            onChange={handleChange}
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition-all bg-white"
-            placeholder="22AAAAA0000A1Z5 (Optional)"
-          />
-        </div>
-
         <div className="md:col-span-2">
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Address <span className="text-[#00A1B1]">*</span>
@@ -285,22 +283,6 @@ export default function SponsorForm() {
             onStateChange={(state) => setFormData((prev) => ({ ...prev, state, city: "" }))}
             onCityChange={(city) => setFormData((prev) => ({ ...prev, city }))}
             labelClassName="block text-sm font-medium text-gray-700 mb-2"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Pincode <span className="text-[#00A1B1]">*</span>
-          </label>
-          <input
-            type="text"
-            name="pincode"
-            value={formData.pincode}
-            onChange={handleChange}
-            required
-            maxLength={6}
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A1B1] focus:border-[#00A1B1] outline-none transition-all bg-white"
-            placeholder="Enter pincode"
           />
         </div>
 
@@ -338,22 +320,6 @@ export default function SponsorForm() {
       </div>
 
       <div className="space-y-4 pt-4">
-        <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-gray-200">
-          <input
-            type="checkbox"
-            id="marketing"
-            name="marketingConsent"
-            checked={formData.marketingConsent}
-            onChange={handleChange}
-            className="mt-1 h-5 w-5 border-gray-300 rounded focus:ring-[#00A1B1] text-[#00A1B1]"
-          />
-          <label htmlFor="marketing" className="text-sm text-gray-600 leading-relaxed cursor-pointer">
-            I want to stay informed about exhibitions organized by
-            <strong> INDIAMET Expo Organizing Committee</strong>, and be the first to
-            receive information about exhibition stand sales, business program
-            events, advertising and sponsorship opportunities.
-          </label>
-        </div>
 
         <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-gray-200">
           <input
